@@ -66,6 +66,16 @@ local PVP = PVP
 -- GLOBALS: UnitPower, UnitHealth, UnitName, UnitClass, UnitIsDead, UnitIsGhost, UnitIsDeadOrGhost, UnitIsConnected -- override during testing groups
 -- GLOBALS: GetTitleNPC, Abbrev, GetClassPower, GetQuestData, UnitEffectiveLevel, NameHealthColor -- custom ones we made
 
+-- events that dont exist on 3.3.5 translated to their equivalents; unlisted events pass through
+-- (registering an unknown event is harmless on 3.3.5, it just never fires)
+local EventRemap = {
+	UNIT_HEALTH_FREQUENT = 'UNIT_HEALTH',
+	UNIT_POWER_FREQUENT = 'UNIT_MANA UNIT_RAGE UNIT_ENERGY UNIT_FOCUS UNIT_RUNIC_POWER',
+	UNIT_POWER_UPDATE = 'UNIT_MANA UNIT_RAGE UNIT_ENERGY UNIT_FOCUS UNIT_RUNIC_POWER',
+	UNIT_MAXPOWER = 'UNIT_MAXMANA UNIT_MAXRAGE UNIT_MAXENERGY UNIT_MAXFOCUS UNIT_MAXRUNIC_POWER',
+	UNIT_CONNECTION = 'PARTY_MEMBER_ENABLE PARTY_MEMBER_DISABLE',
+}
+
 local RefreshNewTags -- will turn true at EOF
 function E:AddTag(tagName, eventsOrSeconds, func, block, spells)
 	if block then return end -- easy killer for tags
@@ -73,7 +83,7 @@ function E:AddTag(tagName, eventsOrSeconds, func, block, spells)
 	if type(eventsOrSeconds) == 'number' then
 		Tags.OnUpdateThrottle[tagName] = eventsOrSeconds
 	else
-		Tags.Events[tagName] = 'UNIT_HEALTH'
+		Tags.Events[tagName] = gsub(eventsOrSeconds, '%S+', EventRemap)
 	end
 
 	-- we need to trigger the newindex on oUF side to set the env
@@ -115,6 +125,8 @@ end
 Tags.SharedEvents.PLAYER_GUILD_UPDATE = true
 Tags.SharedEvents.PLAYER_TALENT_UPDATE = true
 Tags.SharedEvents.QUEST_LOG_UPDATE = true
+Tags.SharedEvents.PARTY_MEMBER_ENABLE = true
+Tags.SharedEvents.PARTY_MEMBER_DISABLE = true
 
 ------------------------------------------------------------------------
 --	Tag Functions
@@ -214,7 +226,7 @@ for textFormat in pairs(E.GetFormattedTextStyles) do
 		end
 	end)
 
-	E:AddTag(format('classpower:%s', tagFormat), (E.myclass == 'DEATHKNIGHT' and 'RUNE_POWER_UPDATE ' or '') .. 'UNIT_DISPLAYPOWER', function(unit)
+	E:AddTag(format('classpower:%s', tagFormat), (E.myclass == 'DEATHKNIGHT' and 'RUNE_POWER_UPDATE ' or '') .. 'UNIT_POWER_UPDATE UNIT_MAXPOWER UNIT_DISPLAYPOWER', function(unit)
 		local powerType = UnitPowerType(unit)
 		local min, max = UnitPower(unit, powerType), UnitPowerMax(unit, powerType)
 		if min ~= 0 then
@@ -250,7 +262,7 @@ for textFormat in pairs(E.GetFormattedTextStyles) do
 			return E:GetFormattedText(textFormat, UnitPower(unit, SPELL_POWER_MANA), UnitPowerMax(unit, SPELL_POWER_MANA), nil, true)
 		end)
 
-		E:AddTag(format('classpower:%s:shortvalue', tagFormat), (E.myclass == 'MONK' and 'UNIT_AURA ' or E.myclass == 'DEATHKNIGHT' and 'RUNE_POWER_UPDATE ' or '') .. 'UNIT_DISPLAYPOWER', function(unit)
+		E:AddTag(format('classpower:%s:shortvalue', tagFormat), (E.myclass == 'MONK' and 'UNIT_AURA ' or E.myclass == 'DEATHKNIGHT' and 'RUNE_POWER_UPDATE ' or '') .. 'UNIT_POWER_UPDATE UNIT_MAXPOWER UNIT_DISPLAYPOWER', function(unit)
 			local powerType = UnitPowerType(unit)
 			local min, max = UnitPower(unit, powerType), UnitPowerMax(unit, powerType)
 			if min ~= 0 then
