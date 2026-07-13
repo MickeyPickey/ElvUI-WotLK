@@ -1270,6 +1270,47 @@ function S:HandleItemButton(b, setInside)
 end
 
 do
+	local function iconBorderColor(border, r, g, b)
+		if border.customBackdrop then
+			border.customBackdrop:SetBackdropBorderColor(r, g, b)
+		end
+	end
+
+	local function iconBorderHide(border)
+		if border.customBackdrop then
+			border.customBackdrop:SetBackdropBorderColor(unpack(E.media.bordercolor))
+		end
+	end
+
+	function S:HandleIconBorder(border, backdrop)
+		if not border then return end -- IconBorder only exists on patched (HD) clients
+
+		if not backdrop then
+			local parent = border:GetParent()
+			backdrop = parent.backdrop or parent
+		end
+
+		border.customBackdrop = backdrop
+
+		if not border.IconBorderHooked then
+			border:SetAlpha(0)
+
+			hooksecurefunc(border, 'SetVertexColor', iconBorderColor)
+			hooksecurefunc(border, 'Hide', iconBorderHide)
+
+			border.IconBorderHooked = true
+		end
+
+		local r, g, b = border:GetVertexColor()
+		if border:IsShown() and r then
+			iconBorderColor(border, r, g, b)
+		else
+			iconBorderHide(border)
+		end
+	end
+end
+
+do
 	local closeOnEnter = function(btn) if btn.Texture then btn.Texture:SetVertexColor(unpack(E.media.rgbvaluecolor)) end end
 	local closeOnLeave = function(btn) if btn.Texture then btn.Texture:SetVertexColor(1, 1, 1) end end
 
