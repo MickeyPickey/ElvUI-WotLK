@@ -56,6 +56,7 @@ local C_NewItems_RemoveNewItem = LC.C_NewItems.RemoveNewItem
 local EditBox_HighlightText = EditBox_HighlightText
 local BankFrameItemButton_UpdateLocked = BankFrameItemButton_UpdateLocked
 local BankFrame_UpdateCooldown = BankFrame_UpdateCooldown
+local BankButtonIDToInvSlotID = BankButtonIDToInvSlotID
 
 local ContainerIDToInventoryID = ContainerIDToInventoryID
 local GetContainerItemCooldown = GetContainerItemCooldown
@@ -483,17 +484,30 @@ function B:UpdateSlotColors(slot, isQuestItem, questId, isActiveQuest)
 	end
 end
 
-function B:GetBindTypeText(itemLink)
-	local bindType
-	local itemInfo = E.ScanTooltip:GetHyperlinkInfo(itemLink)
-	if itemInfo then
-		for i = 2, BIND do
-			local line = itemInfo.lines[i]
-			bindType = line and line.leftText
-			if B.BindText[bindType] then break end
-		end
+function B:GetBindText(itemInfo)
+	if not itemInfo then return end
 
-		return B.BindText[bindType]
+	local bindType
+	for i = 2, BIND do
+		local line = itemInfo.lines[i]
+		bindType = line and line.leftText
+		if B.BindText[bindType] then break end
+	end
+
+	return B.BindText[bindType]
+end
+
+function B:GetBindTypeText(itemLink)
+	return B:GetBindText(E.ScanTooltip:GetHyperlinkInfo(itemLink))
+end
+
+function B:GetSlotBindTypeText(bagID, slotID)
+	-- scan the physical slot instead of the hyperlink, so items that became
+	-- soulbound show no bind text instead of a stale BoE/BoU
+	if bagID == BANK_CONTAINER then
+		return B:GetBindText(E.ScanTooltip:GetInventoryInfo('player', BankButtonIDToInvSlotID(slotID)))
+	else
+		return B:GetBindText(E.ScanTooltip:GetBagItemInfo(bagID, slotID))
 	end
 end
 
@@ -564,7 +578,7 @@ function B:UpdateSlot(frame, bagID, slotID)
 	local isQuestItem, questId, isActiveQuest
 	if slot.itemLink then
 		local _, spellID = GetItemSpell(slot.itemLink)
-		local bindType = B:GetBindTypeText(slot.itemLink)
+		local bindType = B:GetSlotBindTypeText(bagID, slotID)
 		local name, _, _, iLvL, _, itemType, itemSubType, _, itemEquipLoc = GetItemInfo(slot.itemLink)
 		slot.name, slot.spellID, slot.isEquipment, slot.itemEquipLoc, slot.itemType, slot.itemSubType, slot.iLvL = name, spellID, B.IsEquipmentSlot[itemEquipLoc], itemEquipLoc, itemType, itemSubType, iLvL
 

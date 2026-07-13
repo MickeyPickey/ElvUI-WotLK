@@ -1047,6 +1047,14 @@ function E:ScanTooltip_HyperlinkInfo(link)
 	return E.ScanTooltip:GetTooltipData()
 end
 
+function E:ScanTooltip_BagItemInfo(bagID, slotID)
+	E.ScanTooltip:SetOwner(UIParent, 'ANCHOR_NONE')
+	E.ScanTooltip:SetBagItem(bagID, slotID)
+	E.ScanTooltip:Show()
+
+	return E.ScanTooltip:GetTooltipData()
+end
+
 function E:UnitTankedByGroup(unit)
 	for _, unitToken in next, E.GroupUnitsByRole.TANK do
 		if E:GetThreatSituation(unit, unitToken) == 3 then
@@ -1136,6 +1144,7 @@ function E:LoadAPI()
 	E.ScanTooltip.GetUnitInfo = E.ScanTooltip_UnitInfo
 	E.ScanTooltip.GetHyperlinkInfo = E.ScanTooltip_HyperlinkInfo
 	E.ScanTooltip.GetInventoryInfo = E.ScanTooltip_InventoryInfo
+	E.ScanTooltip.GetBagItemInfo = E.ScanTooltip_BagItemInfo
 
 	E:RegisterEvent('SPELL_UPDATE_USABLE', 'CheckRole')
 	E:RegisterEvent('ACTIVE_TALENT_GROUP_CHANGED', 'CheckRole')
