@@ -523,6 +523,54 @@ function M:UpdateSettings()
 			M:RegisterEvent('ADDON_LOADED')
 		end
 	end
+
+	M:RaiseMinimapButtons()
+end
+
+local strataOrder = {
+	BACKGROUND = 1,
+	LOW = 2,
+	MEDIUM = 3,
+	HIGH = 4,
+	DIALOG = 5,
+	FULLSCREEN = 6,
+	FULLSCREEN_DIALOG = 7,
+	TOOLTIP = 8,
+}
+
+local function GetFrameChildren(frame)
+	return {frame:GetChildren()}
+end
+
+-- Raising the Minimap to frame level 10 leaves addon buttons created before that
+-- (their levels don't follow the parent on this client) rendering behind the map
+-- texture. Lift any Button child back above the Minimap.
+function M:RaiseMinimapButtons()
+	local mapStrata, mapLevel = Minimap:GetFrameStrata(), Minimap:GetFrameLevel()
+	local mapOrder = strataOrder[mapStrata] or 0
+
+	for _, frame in ipairs({Minimap, _G.MinimapBackdrop}) do
+		-- addons like Questie parent thousands of pin frames to the Minimap; past
+		-- ~8000 children GetChildren() itself throws "Stack overflow", so guard it
+		local success, children = pcall(GetFrameChildren, frame)
+
+		if success then
+			for i = 1, #children do
+				local child = children[i]
+
+				if child:IsObjectType('Button') then
+					local order = strataOrder[child:GetFrameStrata()] or 0
+
+					if order < mapOrder then
+						child:SetFrameStrata(mapStrata)
+						child:SetFrameLevel(mapLevel + 1)
+					elseif order == mapOrder and child:GetFrameLevel() <= mapLevel then
+						child:SetFrameLevel(mapLevel + 1)
+					end
+				end
+			end
+		end
+	end
 end
 
 function M:Minimap_PostDrag()
@@ -574,6 +622,8 @@ function M:PLAYER_ENTERING_WORLD()
 	M:SetMinimapRotate()
 
 	M:Update_ZoneText()
+
+	M:RaiseMinimapButtons()
 end
 
 function M:GetMinimapShape()
