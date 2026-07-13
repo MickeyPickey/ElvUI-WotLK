@@ -48,7 +48,7 @@ local GetGuildBankTabInfo = GetGuildBankTabInfo
 
 local IsBagOpen = IsBagOpen
 local IsShiftKeyDown, IsControlKeyDown = IsShiftKeyDown, IsControlKeyDown
-local CloseBag, CloseBackpack, CloseBankFrame = CloseBag, CloseBackpack, CloseBankFrame
+local CloseBag, CloseBankFrame = CloseBag, CloseBankFrame
 
 local C_NewItems_IsNewItem = LC.C_NewItems.IsNewItem
 local C_NewItems_RemoveNewItem = LC.C_NewItems.RemoveNewItem
@@ -1993,6 +1993,16 @@ function B:Container_OnShow()
 	end
 end
 
+-- CloseBackpack wont hide the backpack once MerchantFrame or MailFrame call
+-- OpenBackpack while it is already open (ContainerFrame1.backpackWasOpen),
+-- which desyncs Blizzard's open state from our unified bag frame
+local function HideBackpack()
+	local index = IsBagOpen(BACKPACK_CONTAINER)
+	if index then
+		_G['ContainerFrame'..index]:Hide()
+	end
+end
+
 function B:Container_OnHide()
 	B:ClearListeners(self)
 	B:BagFrameHidden(self)
@@ -2001,7 +2011,7 @@ function B:Container_OnHide()
 	if self.isBank then
 		CloseBankFrame()
 	else
-		CloseBackpack()
+		HideBackpack()
 
 		for i = 1, NUM_BAG_FRAMES do
 			CloseBag(i)
@@ -2510,7 +2520,7 @@ local function ToggleAllBags()
 
 	if IsBagOpen(0) then
 		bagsOpen = bagsOpen + 1
-		CloseBackpack()
+		HideBackpack()
 	end
 
 	for i = 1, NUM_BAG_FRAMES do
@@ -2549,6 +2559,24 @@ local function ToggleAllBags()
 	end
 end
 _G.ToggleAllBags = ToggleAllBags
+
+-- Blizzard's OpenAllBags (the OPENALLBAGS binding) runs ToggleBag for every
+-- equipped bag, and our ToggleBag hook treats each call as a user toggle of the
+-- unified bag frame, flipping it once per bag; when everything is already open
+-- it hides the Blizzard frames and returns without touching a hooked function,
+-- leaving our frame open (#38)
+local function OpenAllBags(forceOpen)
+	if not UIParent:IsShown() or (forceOpen and IsBagOpen(BACKPACK_CONTAINER)) then
+		return
+	end
+
+	if B.Initialized then
+		_G.ToggleBackpack() -- one unified frame; same behavior as the Backpack toggle
+	else
+		ToggleAllBags()
+	end
+end
+_G.OpenAllBags = OpenAllBags
 
 function B:Initialize()
 	BIND = B:GetBindLines()
