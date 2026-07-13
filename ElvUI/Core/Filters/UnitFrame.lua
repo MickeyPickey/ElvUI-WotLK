@@ -1,5 +1,7 @@
 local E, L, V, P, G = unpack(ElvUI)
 
+local GetSpellInfo = GetSpellInfo
+
 local List = E.Filters.List
 local Aura = E.Filters.Aura
 
@@ -546,31 +548,32 @@ P.unitframe.filters = {
 }
 
 -- Ticks
+-- Keyed by spell name: the 3.3.5 UnitChannelInfo API doesn't return a spell ID
 G.unitframe.ChannelTicks = {
 	-- Warlock
-	[1120] = 5,	-- Drain Soul
-	[689] = 5,	-- Drain Life
-	[5138] = 5,	-- Drain Mana
-	[5740] = 4,	-- Rain of Fire
-	[755] = 10,	-- Health Funnel
-	[1949] = 15,	-- Hellfire
+	[GetSpellInfo(1120)] = 5,	-- Drain Soul
+	[GetSpellInfo(689)] = 5,	-- Drain Life
+	[GetSpellInfo(5138)] = 5,	-- Drain Mana
+	[GetSpellInfo(5740)] = 4,	-- Rain of Fire
+	[GetSpellInfo(755)] = 10,	-- Health Funnel
+	[GetSpellInfo(1949)] = 15,	-- Hellfire
 	-- Druid
-	[44203] = 4,	-- Tranquility
-	[16914] = 10, -- Hurricane
+	[GetSpellInfo(44203)] = 4,	-- Tranquility
+	[GetSpellInfo(16914)] = 10, -- Hurricane
 	-- Priest
-	[15407] = 3,	-- Mind Flay
-	[48045] = 5,	-- Mind Sear
-	[47540] = 3,	-- Penance
-	[64843] = 4,	-- Divine Hymn
-	[64901] = 4,	-- Hymn of Hope
+	[GetSpellInfo(15407)] = 3,	-- Mind Flay
+	[GetSpellInfo(48045)] = 5,	-- Mind Sear
+	[GetSpellInfo(47540)] = 3,	-- Penance
+	[GetSpellInfo(64843)] = 4,	-- Divine Hymn
+	[GetSpellInfo(64901)] = 4,	-- Hymn of Hope
 	-- Mage
-	[5143] = 5,	-- Arcane Missiles
-	[10] = 8,	-- Blizzard
-	[12051] = 4,	-- Evocation
+	[GetSpellInfo(5143)] = 5,	-- Arcane Missiles
+	[GetSpellInfo(10)] = 8,	-- Blizzard
+	[GetSpellInfo(12051)] = 4,	-- Evocation
 	-- Hunter
-	[58434] = 6,	-- Volley
+	[GetSpellInfo(58434)] = 6,	-- Volley
 	-- Death Knight
-	[42650] = 8,	-- Army of the Dead
+	[GetSpellInfo(42650)] = 8,	-- Army of the Dead
 }
 
 -- This should probably be the same as the whitelist filter + any personal class ones that may be important to watch
