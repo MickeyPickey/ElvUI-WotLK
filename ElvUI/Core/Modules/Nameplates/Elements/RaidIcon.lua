@@ -4,6 +4,14 @@ local NP = E:GetModule("NamePlates")
 --Lua functions
 --WoW API / Variables
 
+function NP:Construct_RaidIcon(parent)
+	local texture = parent:CreateTexture(nil, "OVERLAY")
+	texture:SetTexture([[Interface\TargetingFrame\UI-RaidTargetingIcons]])
+	texture:Hide()
+
+	return texture
+end
+
 function NP:Update_RaidIcon(frame)
 	local db = self.db.units[frame.UnitType].raidTargetIndicator
 	local icon = frame.RaidIcon

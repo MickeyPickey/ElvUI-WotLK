@@ -452,6 +452,7 @@ function NP:OnHide(isConfig, dontHideHighlight)
 	frame.Elite:Hide()
 	frame.CPoints:Hide()
 	frame.IconFrame:Hide()
+	frame.RaidIcon:Hide()
 	frame:Hide()
 	frame.isTarget = nil
 	frame.isTargetChanged = false
@@ -616,8 +617,9 @@ function NP:OnCreated(frame)
 	unitFrame.oldLevel = Level
 
 	unitFrame.Threat = Threat
-	RaidIcon:SetParent(unitFrame)
-	unitFrame.RaidIcon = RaidIcon
+	RaidIcon:SetAlpha(0)
+	unitFrame.oldRaidIcon = RaidIcon
+	unitFrame.RaidIcon = NP:Construct_RaidIcon(unitFrame)
 
 	unitFrame.BossIcon = BossIcon
 	unitFrame.EliteIcon = EliteIcon
@@ -878,11 +880,14 @@ function NP:OnUpdate()
 end
 
 function NP:CheckRaidIcon(frame)
-	if frame.RaidIcon:IsShown() then
-		local ux, uy = frame.RaidIcon:GetTexCoord()
+	if frame.oldRaidIcon:IsShown() then
+		local ux, uy = frame.oldRaidIcon:GetTexCoord()
 		frame.RaidIconType = RaidIconCoordinate[ux][uy]
+		frame.RaidIcon:SetTexCoord(frame.oldRaidIcon:GetTexCoord())
+		frame.RaidIcon:Show()
 	else
 		frame.RaidIconType = nil
+		frame.RaidIcon:Hide()
 	end
 end
 
@@ -1209,9 +1214,9 @@ function NP:TogleTestFrame(unitType)
 		unitFrame.oldLevel:SetText(E.mylevel)
 		unitFrame.Buffs.forceShow = true
 		unitFrame.Debuffs.forceShow = true
-		unitFrame.RaidIcon:SetTexture([[Interface\TargetingFrame\UI-RaidTargetingIcons]])
-		SetRaidTargetIconTexture(unitFrame.RaidIcon, random(1, 8))
-		unitFrame.RaidIcon:Show()
+		unitFrame.oldRaidIcon:SetTexture([[Interface\TargetingFrame\UI-RaidTargetingIcons]])
+		SetRaidTargetIconTexture(unitFrame.oldRaidIcon, random(1, 8))
+		unitFrame.oldRaidIcon:Show()
 
 		if not ElvNP_Test:IsShown() then
 			ElvNP_Test:Show()
