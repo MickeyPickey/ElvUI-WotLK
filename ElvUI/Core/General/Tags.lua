@@ -2,6 +2,7 @@ local E, L, V, P, G = unpack(ElvUI)
 local ElvUF = E.oUF
 local Tags = ElvUF.Tags
 local LC = E.Libs.Compat
+local HealComm = E.Libs.HealComm
 
 -- local RangeCheck = E.Libs.RangeCheck
 local Translit = E.Libs.Translit
@@ -30,7 +31,6 @@ local UnitClassification = UnitClassification
 local UnitDetailedThreatSituation = UnitDetailedThreatSituation
 local UnitExists = UnitExists
 local UnitFactionGroup = UnitFactionGroup
-local UnitGetIncomingHeals = UnitGetIncomingHeals
 local UnitGUID = UnitGUID
 local UnitHealthMax = UnitHealthMax
 local UnitIsAFK = UnitIsAFK
@@ -565,26 +565,27 @@ E:AddTag('manacolor', 'UNIT_DISPLAYPOWER', function()
 	return Hex(color.r, color.g, color.b)
 end)
 
-E:AddTag('incomingheals:personal', 'UNIT_HEAL_PREDICTION', function(unit)
-	local heal = UnitGetIncomingHeals(unit, 'player') or 0
+E:AddTag('incomingheals:personal', 0.25, function(unit)
+	local guid = UnitGUID(unit)
+	local heal = guid and HealComm:GetHealAmount(guid, HealComm.ALL_HEALS, nil, E.myguid) or 0
 	if heal ~= 0 then
-		return E:ShortValue(heal)
+		return E:ShortValue(heal * (HealComm:GetHealModifier(guid) or 1))
 	end
 end)
 
-E:AddTag('incomingheals:others', 'UNIT_HEAL_PREDICTION', function(unit)
-	local personal = UnitGetIncomingHeals(unit, 'player') or 0
-	local heal = UnitGetIncomingHeals(unit) or 0
-	local others = heal - personal
-	if others ~= 0 then
-		return E:ShortValue(others)
+E:AddTag('incomingheals:others', 0.25, function(unit)
+	local guid = UnitGUID(unit)
+	local heal = guid and HealComm:GetOthersHealAmount(guid, HealComm.ALL_HEALS) or 0
+	if heal ~= 0 then
+		return E:ShortValue(heal * (HealComm:GetHealModifier(guid) or 1))
 	end
 end)
 
-E:AddTag('incomingheals', 'UNIT_HEAL_PREDICTION', function(unit)
-	local heal = UnitGetIncomingHeals(unit) or 0
+E:AddTag('incomingheals', 0.25, function(unit)
+	local guid = UnitGUID(unit)
+	local heal = guid and HealComm:GetHealAmount(guid, HealComm.ALL_HEALS) or 0
 	if heal ~= 0 then
-		return E:ShortValue(heal)
+		return E:ShortValue(heal * (HealComm:GetHealModifier(guid) or 1))
 	end
 end)
 

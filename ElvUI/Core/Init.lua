@@ -137,6 +137,7 @@ do
 	E:AddLib('Translit', 'LibTranslit-1.0')
 	E:AddLib('DualSpec', 'LibDualSpec-1.0')
 	E:AddLib('Compat', 'LibCompat-1.0')
+	E:AddLib('HealComm', 'LibHealComm-4.0')
 
 	-- libraries used for options
 	E:AddLib('AceGUI', 'AceGUI-3.0')
