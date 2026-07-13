@@ -133,6 +133,8 @@ do
 	E:AddLib('ItemSearch', 'LibItemSearch-1.2-ElvUI')
 	E:AddLib('CustomGlow', 'LibCustomGlow-1.0-ElvUI')
 	E:AddLib('Deflate', 'LibDeflate')
+	E:AddLib('Compress', 'LibCompress')
+	E:AddLib('Base64', 'LibBase64-1.0-ElvUI')
 	E:AddLib('Masque', 'Masque', true)
 	E:AddLib('Translit', 'LibTranslit-1.0')
 	E:AddLib('DualSpec', 'LibDualSpec-1.0')

@@ -3,6 +3,8 @@ local D = E:GetModule('Distributor')
 local NP = E:GetModule('NamePlates')
 local LC = E.Libs.Compat
 local LibDeflate = E.Libs.Deflate
+local LibCompress = E.Libs.Compress
+local LibBase64 = E.Libs.Base64
 
 local _G = _G
 local tonumber, type, gsub, pairs, pcall, loadstring = tonumber, type, gsub, pairs, pcall, loadstring
@@ -476,17 +478,23 @@ function D:CreateProfileExport(dataType, dataKey, dataString)
 end
 
 function D:GetImportStringType(dataString)
-	return (strmatch(dataString, '^'..EXPORT_PREFIX) and 'Deflate') or (strmatch(dataString, '^{') and 'Table') or ''
+	return (strmatch(dataString, '^'..EXPORT_PREFIX) and 'Deflate') or (strmatch(dataString, '^{') and 'Table') or (LibBase64:IsBase64(dataString) and 'Base64') or ''
 end
 
 function D:Decode(dataString)
 	local stringType = D:GetImportStringType(dataString)
 	local profileInfo, profileType, profileKey, profileData
 
-	if stringType == 'Deflate' then
-		local data = gsub(dataString, '^'..EXPORT_PREFIX, '')
-		local decodedData = LibDeflate:DecodeForPrint(data)
-		local decompressed = LibDeflate:DecompressDeflate(decodedData)
+	if stringType == 'Deflate' or stringType == 'Base64' then
+		local decompressed
+		if stringType == 'Deflate' then
+			local data = gsub(dataString, '^'..EXPORT_PREFIX, '')
+			local decodedData = LibDeflate:DecodeForPrint(data)
+			decompressed = decodedData and LibDeflate:DecompressDeflate(decodedData)
+		else -- Base64: import string from a version prior to 7.00
+			local decodedData = LibBase64:Decode(dataString)
+			decompressed = decodedData and LibCompress:Decompress(decodedData)
+		end
 
 		if not decompressed then
 			E:Print('Error decompressing data.')
