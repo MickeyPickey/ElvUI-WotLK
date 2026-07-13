@@ -47,6 +47,7 @@ end
 local function PanelGroup_Delete(panel)
 	E.Options.args.datatexts.args.panels.args[panel] = nil
 	E.db.datatexts.panels[panel] = nil
+	E.db.datatexts.battlePanel[panel] = nil
 	E.global.datatexts.customPanels[panel] = nil
 
 	DT:ReleasePanel(panel)
