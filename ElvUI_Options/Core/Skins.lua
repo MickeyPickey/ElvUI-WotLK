@@ -24,6 +24,7 @@ local toggles = {
 	help = L["Help Frame"],
 	inspect = L["Inspect"],
 	loot = L["Loot Frame"],
+	lootRoll = L["Loot Roll"],
 	macro = L["MACROS"],
 	mail = L["Mail Frame"],
 	merchant = L["Merchant Frame"],
