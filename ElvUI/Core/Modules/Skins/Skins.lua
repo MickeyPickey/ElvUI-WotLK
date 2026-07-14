@@ -1825,8 +1825,7 @@ function S:Initialize()
 	end
 
 	for addonName, object in pairs(S.addonsToLoad) do
-		local isLoaded, isFinished = IsAddOnLoaded(addonName)
-		if isLoaded and isFinished then
+		if IsAddOnLoaded(addonName) then -- single return on 3.3.5, there is no second `isFinished` value
 			S:CallLoadedAddon(addonName, object)
 		end
 	end

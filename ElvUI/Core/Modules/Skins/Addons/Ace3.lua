@@ -561,6 +561,7 @@ function S:Ace3_SkinTooltip(lib, minor) -- lib: AceConfigDialog or AceGUI
 	end
 end
 
+local wrappedRegisterFuncs = setmetatable({}, {__mode = 'k'})
 function S:Ace3_MetaIndex(k, v)
 	if k == 'tooltip' then
 		rawset(self, k, v)
@@ -571,7 +572,15 @@ function S:Ace3_MetaIndex(k, v)
 
 		S:SecureHookScript(v, 'OnShow', S.Ace3_StylePopup)
 	elseif k == 'RegisterAsContainer' then
-		rawset(self, k, function(s, w, ...)
+		-- pass through untouched when clearing the key (wrapping nil would recreate
+		-- the key and block the next real definition) or when HookAce3's early-restore
+		-- re-assigns our own wrapper (stacking another wrapper on top skins twice)
+		if not v or wrappedRegisterFuncs[v] then
+			rawset(self, k, v)
+			return
+		end
+
+		local fn = function(s, w, ...)
 			if E.private.skins.ace3Enable then
 				S.Ace3_RegisterAsContainer(s, w, ...)
 			end
@@ -582,15 +591,26 @@ function S:Ace3_MetaIndex(k, v)
 			end
 
 			return v(s, w, ...)
-		end)
+		end
+
+		wrappedRegisterFuncs[fn] = true
+		rawset(self, k, fn)
 	elseif k == 'RegisterAsWidget' then
-		rawset(self, k, function(...)
+		if not v or wrappedRegisterFuncs[v] then
+			rawset(self, k, v)
+			return
+		end
+
+		local fn = function(...)
 			if E.private.skins.ace3Enable then
 				S.Ace3_RegisterAsWidget(...)
 			end
 
 			return v(...)
-		end)
+		end
+
+		wrappedRegisterFuncs[fn] = true
+		rawset(self, k, fn)
 	else
 		rawset(self, k, v)
 	end
@@ -605,7 +625,7 @@ function S:Ace3_ColorizeEnable(L)
 end
 
 local lastMinor = 0
-function S:HookAce3(lib, minor, early) -- lib: AceGUI
+function S:HookAce3(lib, minor, early, registering) -- lib: AceGUI
 	if not lib or (not minor or minor < minorGUI) then return end
 
 	local earlyContainer, earlyWidget
@@ -613,7 +633,15 @@ function S:HookAce3(lib, minor, early) -- lib: AceGUI
 	if lastMinor < minor then
 		lastMinor = minor
 	end
-	if early then
+
+	-- when this fires from the NewLibrary hook for a newer AceGUI, the incoming file
+	-- body is about to redefine RegisterAsWidget/RegisterAsContainer: the keys must
+	-- stay nil so those assignments run through Ace3_MetaIndex and get wrapped.
+	-- Restoring the old functions here makes the new definitions plain assignments,
+	-- silently disabling Ace3 skinning for the rest of the session.
+	local upgrading = registering and oldMinor ~= minor
+
+	if early and not upgrading then
 		earlyContainer = lib.RegisterAsContainer
 		earlyWidget = lib.RegisterAsWidget
 	end
@@ -647,12 +675,14 @@ do -- Early Skin Loading
 
 	local LibStub = LibStub
 	local numEnding = '%-[%d%.]+$'
-	function S:LibStub_NewLib(major)
+	function S:LibStub_NewLib(major, requestedMinor)
+		-- requestedMinor is only passed when invoked through the NewLibrary hook;
+		-- the startup scan at the bottom of this file calls with just the major
 		local early = not E.initialized
 		local n = gsub(major, numEnding, '')
 		if Libraries[n] then
 			if n == 'AceGUI' then
-				S:HookAce3(LibStub.libs[major], LibStub.minors[major], early)
+				S:HookAce3(LibStub.libs[major], LibStub.minors[major], early, requestedMinor ~= nil)
 				if early then
 					tinsert(S.EarlyAceTooltips, major)
 				else
