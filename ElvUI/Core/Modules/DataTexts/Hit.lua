@@ -6,7 +6,7 @@ local strjoin = strjoin
 local format = format
 
 local GetCombatRating = GetCombatRating
-local GetHitModifier = GetHitModifier
+local GetHitModifier = _G.GetHitModifier -- not in stock 3.3.5, some modified clients provide it
 local GetCombatRatingBonus = GetCombatRatingBonus
 local GetArmorPenetration = GetArmorPenetration
 
@@ -27,7 +27,7 @@ local hitValue, hitPercent, hitPercentFromTalents
 local function OnEvent(self)
 	hitValue = GetCombatRating(ratingIndex)
 	hitPercent = GetCombatRatingBonus(ratingIndex)
-	hitPercentFromTalents = ratingIndex == CR_HIT_MELEE and GetHitModifier() or 0
+	hitPercentFromTalents = (ratingIndex == CR_HIT_MELEE and GetHitModifier and GetHitModifier()) or 0
 
 	if db.NoLabel then
 		self.text:SetFormattedText(displayString, hitPercent + hitPercentFromTalents)
