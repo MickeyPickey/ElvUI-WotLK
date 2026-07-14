@@ -493,7 +493,7 @@ local function FontTemplate(fs, font, size, style, skip)
 
 	-- grab values from profile before conversion
 	if not style then style = E.db.general.fontStyle or P.general.fontStyle end
-	if not size or size == 0 then size = E.db.general.fontSize or P.general.fontSize end
+	if not size or size <= 0 or size ~= size then size = E.db.general.fontSize or P.general.fontSize end -- reject 0, negative and NaN sizes
 	if style == 'NONE' then style = '' end -- none isnt a real style
 
 	local shadow = strsub(style, 0, 6) == 'SHADOW'

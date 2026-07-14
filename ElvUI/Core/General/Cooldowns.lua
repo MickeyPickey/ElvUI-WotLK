@@ -85,6 +85,9 @@ function E:Cooldown_OnUpdate(elapsed)
 end
 
 function E:Cooldown_OnSizeChanged(cd, width, force)
+	-- the client can report an invalid width (0, negative or NaN) before the frame is properly sized
+	if width and (width <= 0 or width ~= width) then width = nil end
+
 	local scale = width and (floor(width + 0.5) / ICON_SIZE)
 
 	-- dont bother updating when the fontScale is the same, unless we are passing the force arg
@@ -97,7 +100,7 @@ function E:Cooldown_OnSizeChanged(cd, width, force)
 	end
 
 	if cd.customFont then -- override font
-		cd.text:FontTemplate(cd.customFont, (scale * cd.customFontSize), cd.customFontOutline)
+		cd.text:FontTemplate(cd.customFont, ((scale or 1) * cd.customFontSize), cd.customFontOutline)
 	elseif scale then -- default, no override
 		cd.text:FontTemplate(nil, (scale * FONT_SIZE), "OUTLINE")
 	else -- this should never happen but just incase
