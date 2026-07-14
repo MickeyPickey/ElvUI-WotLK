@@ -3853,23 +3853,33 @@ E.Options.args.nameplates = {
 							get = function(info) return E.db.nameplates.threat.useThreatColor end,
 							set = function(info, value) E.db.nameplates.threat.useThreatColor = value end
 						},
-						goodScale = {
+						useScale = {
 							order = 3,
+							type = "toggle",
+							name = L["Use Threat Scale"],
+							desc = L["Scale nameplates based on your threat situation in combat."],
+							get = function(info) return E.db.nameplates.threat.useScale end,
+							set = function(info, value) E.db.nameplates.threat.useScale = value NP:ConfigureAll() end
+						},
+						goodScale = {
+							order = 4,
 							type = "range",
 							name = L["Good Scale"],
 							get = function(info) return E.db.nameplates.threat[info[#info]] end,
 							set = function(info, value) E.db.nameplates.threat[info[#info]] = value end,
 							min = 0.3, max = 2, step = 0.01,
-							isPercent = true
+							isPercent = true,
+							disabled = function() return not E.db.nameplates.threat.useScale end
 						},
 						badScale = {
-							order = 4,
+							order = 5,
 							type = "range",
 							name = L["Bad Scale"],
 							get = function(info) return E.db.nameplates.threat[info[#info]] end,
 							set = function(info, value) E.db.nameplates.threat[info[#info]] = value end,
 							min = 0.3, max = 2, step = 0.01,
-							isPercent = true
+							isPercent = true,
+							disabled = function() return not E.db.nameplates.threat.useScale end
 						},
 					}
 				},
