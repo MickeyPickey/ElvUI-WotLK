@@ -25,7 +25,10 @@ local roleIconTextures = {
 
 function UF:UpdateRoleIcon(event)
 	local lfdrole = self.GroupRoleIndicator
-	if not self.db then return end
+	if not self.db then
+		lfdrole:Hide() -- don't leave a stale texture visible
+		return
+	end
 	local db = self.db.roleIcon
 
 	if (not db) or (db and not db.enable) then
