@@ -446,9 +446,22 @@ local function GetOptionsTable_Auras(auraType, updateFunc, groupName, numUnits)
 			sizeOverride = {
 				order = 5,
 				type = "range",
-				name = L["Size Override"],
+				name = function() return E.db.unitframe.units[groupName][auraType].keepSizeRatio and L["Size Override"] or L["Width Override"] end,
 				desc = L["If not set to 0 then override the size of the aura icon to this."],
 				min = 0, max = 60, step = 1
+			},
+			keepSizeRatio = {
+				order = 5.1,
+				type = "toggle",
+				name = L["Keep Size Ratio"]
+			},
+			height = {
+				order = 5.2,
+				type = "range",
+				name = L["Height"],
+				desc = L["Set the height of the aura icons."],
+				hidden = function() return E.db.unitframe.units[groupName][auraType].keepSizeRatio end,
+				min = 6, max = 60, step = 1
 			},
 			xOffset = {
 				order = 6,
