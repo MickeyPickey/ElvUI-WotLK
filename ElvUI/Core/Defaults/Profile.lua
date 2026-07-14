@@ -525,6 +525,7 @@ P.nameplates = {
 	},
 	fadeIn = true,
 	threat = {
+		useScale = false,
 		goodScale = 0.8,
 		badScale = 1.2,
 		useThreatColor = true

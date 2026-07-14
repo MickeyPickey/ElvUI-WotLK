@@ -92,6 +92,10 @@ function NP:Update_HealthColor(frame)
 		frame.Health.r, frame.Health.g, frame.Health.b = r, g, b
 	end
 
+	if not NP.db.threat.useScale then
+		scale = 1
+	end
+
 	if frame.ThreatScale ~= scale then
 		frame.ThreatScale = scale
 		if frame.isTarget and self.db.useTargetScale then
