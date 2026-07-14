@@ -3963,11 +3963,16 @@ E.Options.args.nameplates = {
 					type = "range",
 					isPercent = true,
 					name = L["Non-Target Alpha"],
+					desc = L["Alpha of nameplates that are not your current target. Overridden by the alpha action of the ElvUI_NonTarget style filter while that filter is enabled."],
 					min = 0, max = 1, step = 0.01,
 					get = function(info) return E.db.nameplates.nonTargetTransparency end,
 					set = function(info, value)
 						E.db.nameplates.nonTargetTransparency = value
 						NP:ConfigureAll()
+					end,
+					disabled = function()
+						local filter = E.db.nameplates.filters.ElvUI_NonTarget
+						return filter and filter.triggers and filter.triggers.enable
 					end
 				},
 				spacer1 = {

@@ -103,6 +103,7 @@ L["Allow Sharing"] = true
 L["Allows you to tie a stack count to an aura when you add it to the list, which allows the trigger to act when an aura reaches X number of stacks."] = true
 L["Alpha channel is taken from the color option."] = true
 L["Alpha Fading"] = true
+L["Alpha of nameplates that are not your current target. Overridden by the alpha action of the ElvUI_NonTarget style filter while that filter is enabled."] = true
 L["Alpha Key"] = true
 L["Alpha"] = true
 L["ALT_KEY_TEXT"] = "ALT"
