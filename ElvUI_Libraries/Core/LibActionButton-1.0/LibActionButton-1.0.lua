@@ -1151,8 +1151,13 @@ function Generic:SetKey(key)
 end
 
 local function clearBindings(binding)
-	while GetBindingKey(binding) do
-		SetBinding(GetBindingKey(binding), nil)
+	local key = GetBindingKey(binding)
+	while key do
+		SetBinding(key, nil)
+
+		local nextKey = GetBindingKey(binding)
+		if nextKey == key then break end -- SetBinding can no-op (combat lockdown); bail instead of freezing
+		key = nextKey
 	end
 end
 

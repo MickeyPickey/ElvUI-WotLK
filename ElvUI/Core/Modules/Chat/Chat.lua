@@ -2201,16 +2201,21 @@ function CH:UpdateFading()
 	end
 end
 
+local historyAttempts = 0
 function CH:DisplayChatHistory()
 	local data = ElvCharacterDB.ChatHistoryLog
 	if not (data and next(data)) then return end
 
 	if not CH:GetPlayerInfoByGUID(E.myguid) then
-		E:Delay(0.1, CH.DisplayChatHistory)
-		return
+		historyAttempts = historyAttempts + 1
+		if historyAttempts < 50 then -- under heavy latency the name query can take a while; give up after 5s and use saved names
+			E:Delay(0.1, CH.DisplayChatHistory)
+			return
+		end
 	end
 
 	CH.SoundTimer = true -- ignore sounds during pass through ChatFrame_GetMessageEventFilters
+	CH.ReplayingHistory = true -- block native name queries for stale GUIDs, see CH:GetPlayerInfoByGUID
 
 	for _, frameName in ipairs(_G.CHAT_FRAMES) do
 		local chat = _G[frameName]
@@ -2233,6 +2238,7 @@ function CH:DisplayChatHistory()
 		end
 	end
 
+	CH.ReplayingHistory = nil
 	CH.SoundTimer = nil
 end
 
@@ -2299,7 +2305,10 @@ function CH:SaveChatHistory(event, ...)
 		tempHistory[52] = coloredName or CH:GetColoredName(event, ...)
 
 		tinsert(data, tempHistory)
-		while #data >= CH.db.historySize do
+
+		local historySize = tonumber(CH.db.historySize)
+		if not historySize or historySize < 10 then historySize = P.chat.historySize end -- a value below the slider minimum would loop forever below
+		while #data >= historySize do
 			tremove(data, 1)
 		end
 	end
@@ -2781,6 +2790,11 @@ end
 function CH:GetPlayerInfoByGUID(guid)
 	local data = CH.GuidCache[guid]
 	if not data then
+		-- history replay feeds GUIDs from a previous session through here; each uncached
+		-- GUID makes the client fire a server name query, and a burst of those on a fresh
+		-- (especially laggy) login can hard-freeze the 3.3.5 client. Saved names are used instead.
+		if CH.ReplayingHistory then return end
+
 		local ok, localizedClass, englishClass, localizedRace, englishRace, sex, name, realm = pcall(GetPlayerInfoByGUID, guid)
 		if not (ok and englishClass) then return end
 
