@@ -988,8 +988,8 @@ function UF:LoadUnits()
 	self.unitstoload = nil
 
 	for group, groupOptions in pairs(self.unitgroupstoload) do
-		local numGroup, template = unpack(groupOptions)
-		self:CreateAndUpdateUFGroup(group, numGroup, template)
+		local numGroup = unpack(groupOptions)
+		self:CreateAndUpdateUFGroup(group, numGroup)
 	end
 	self.unitgroupstoload = nil
 

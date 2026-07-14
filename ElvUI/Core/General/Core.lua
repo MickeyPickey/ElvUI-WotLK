@@ -1705,7 +1705,14 @@ do
 	end
 
 	function E:CallLoadFunc(func, ...)
-		xpcall(func, Errorhandler, ...)
+		-- xpcall in 3.3.5 (Lua 5.1) does not forward extra arguments to func
+		local n = select('#', ...)
+		if n == 0 then
+			xpcall(func, Errorhandler)
+		else
+			local args = {...}
+			xpcall(function() return func(unpack(args, 1, n)) end, Errorhandler)
+		end
 	end
 end
 

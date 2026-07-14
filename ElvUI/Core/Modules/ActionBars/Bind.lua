@@ -24,7 +24,7 @@ local UIParent = UIParent
 local LoadBindings, SaveBindings = LoadBindings, SaveBindings
 local SecureActionButton_OnClick = SecureActionButton_OnClick
 
-local GetSpellBookItemName = GetSpellBookItemName
+local GetSpellName = GetSpellName
 
 local BOOKTYPE_SPELL = BOOKTYPE_SPELL
 
@@ -179,7 +179,7 @@ function AB:BindUpdate(button, spellmacro)
 	elseif spellmacro == 'SPELL' then
 		local slotIndex = button.slotIndex or button:GetParent().slotIndex
 		if slotIndex then
-			bind.name = GetSpellBookItemName(slotIndex, BOOKTYPE_SPELL) or nil
+			bind.name = GetSpellName(slotIndex, BOOKTYPE_SPELL) or nil
 		end
 
 		if bind.name then button.bindstring = 'SPELL '..bind.name end

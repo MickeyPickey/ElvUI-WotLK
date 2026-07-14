@@ -31,7 +31,7 @@ function UF:UpdateRangeCheckSpells()
 		for spellID in pairs(spells) do
 			local enabled = spells[spellID]
 			if enabled then --We will allow value to be false to disable this spell from being used
-				AddSpell(tbl, spellID, enabled)
+				AddSpell(tbl, spellID)
 			end
 		end
 	end

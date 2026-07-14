@@ -350,7 +350,7 @@ function M:UpdateIcons()
 			E:DisableMover(M.ClusterHolder.mover.name)
 		end
 
-		M.HandleTrackingButton()
+		M:HandleTrackingButton()
 
 		local hidden = not Minimap:IsShown()
 		if gameTime then

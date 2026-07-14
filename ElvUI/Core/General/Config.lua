@@ -671,7 +671,7 @@ function E:Config_RepositionOnLeave()
 		self.texture:SetVertexColor(1, 1, 1, 0.8)
 	end
 
-	E.Config_ButtonOnLeave()
+	E:Config_ButtonOnLeave()
 end
 
 function E:Config_PreviousLocation(editbox)

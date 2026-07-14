@@ -14,7 +14,6 @@ local strmatch = strmatch
 local tonumber = tonumber
 local tostring = tostring
 local GetSpellInfo = GetSpellInfo
-local GetSpellSubtext = GetSpellSubtext
 
 local quickSearchText, selectedSpell, selectedFilter, filterList, spellList = '', nil, nil, {}, {}
 local defaultFilterList = { ['Aura Indicator (Global)'] = 'Aura Indicator (Global)', ['Aura Indicator (Class)'] = 'Aura Indicator (Class)', ['Aura Indicator (Pet)'] = 'Aura Indicator (Pet)', ['Aura Indicator (Profile)'] = 'Aura Indicator (Profile)', ['AuraBar Colors'] = 'AuraBar Colors'--[[ , ['Aura Highlight'] = 'Aura Highlight' ]] }

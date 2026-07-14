@@ -111,7 +111,7 @@ local function Update(self, elapsed)
 		OnEvent(self)
 
 		if enteredFrame then
-			OnEnter(self)
+			OnEnter()
 		end
 
 		self.timeSinceUpdate = 0

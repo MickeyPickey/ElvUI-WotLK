@@ -67,7 +67,6 @@ local PLAYER_FACTION_GROUP = PLAYER_FACTION_GROUP
 local MAX_PLAYER_LEVEL_TABLE = MAX_PLAYER_LEVEL_TABLE
 
 local GameMenuButtonLogout = GameMenuButtonLogout
-local GameMenuButtonAddOns = GameMenuButtonAddOns
 local GameMenuFrame = GameMenuFrame
 local UIErrorsFrame = UIErrorsFrame
 -- GLOBALS: ElvDB, ElvUI
@@ -961,7 +960,7 @@ function E:SetupGameMenu()
 	E:ScaleGameMenu()
 
 	button:Size(GameMenuButtonLogout:GetSize())
-	button:Point('TOPLEFT', GameMenuButtonAddOns, 'BOTTOMLEFT', 0, -1)
+	button:Point('TOPLEFT', GameMenuButtonLogout, 'BOTTOMLEFT', 0, -1)
 	hooksecurefunc(GameMenuFrame, 'Show', E.PositionGameMenuButton)
 end
 

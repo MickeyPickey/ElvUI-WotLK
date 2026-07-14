@@ -27,9 +27,9 @@ local function OnEvent(self)
 	resilience = min(resilience, spell)
 
 	local lowestRating = CR_CRIT_TAKEN_MELEE
-	if ( melee == minResilience ) then
+	if ( melee == resilience ) then
 		lowestRating = CR_CRIT_TAKEN_MELEE
-	elseif ( ranged == minResilience ) then
+	elseif ( ranged == resilience ) then
 		lowestRating = CR_CRIT_TAKEN_RANGED
 	else
 		lowestRating = CR_CRIT_TAKEN_SPELL

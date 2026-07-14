@@ -34,7 +34,7 @@ function AB:UPDATE_SHAPESHIFT_COOLDOWN()
 		end
 	end
 
-	AB:StyleShapeShift('UPDATE_SHAPESHIFT_COOLDOWN')
+	AB:StyleShapeShift()
 end
 
 function AB:StyleShapeShift()

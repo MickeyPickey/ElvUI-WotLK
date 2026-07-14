@@ -79,7 +79,7 @@ local function OnEvent(self)
 	self.text:SetFormattedText(displayString, numQuests, MAX_QUESTLOG_QUESTS)
 
 	if MouseIsOver(self) then
-		OnEnter(self)
+		OnEnter()
 	end
 end
 
