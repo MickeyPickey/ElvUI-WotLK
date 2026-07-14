@@ -41,8 +41,8 @@ local function Update(self, event)
 
 	local isTank, isHealer, isDamage = UnitGroupRolesAssigned(self.unit)
 	if(isTank or isHealer or isDamage) then
-		local role = isTank and "tank" or isHealer and "healer" or isDamage and "dps"
-		element:SetTexture("Interface\\AddOns\\ElvUI\\media\\textures\\" .. role)
+		local role = isTank and "Tank" or isHealer and "Healer" or isDamage and "DPS"
+		element:SetTexture("Interface\\AddOns\\ElvUI\\Core\\Media\\Textures\\" .. role)
 		element:Show()
 	else
 		element:Hide()
@@ -87,7 +87,10 @@ local function Enable(self)
 		end
 
 		if(element:IsObjectType('Texture') and not element:GetTexture()) then
-			element:SetTexture([[Interface\LFGFrame\UI-LFG-ICON-PORTRAITROLES]])
+			-- don't default to UI-LFG-ICON-PORTRAITROLES: it packs all four role
+			-- icons into one texture and nothing here crops it, so it renders as
+			-- a block of 4 mini icons until the first real update
+			element:Hide()
 		end
 
 		return true
