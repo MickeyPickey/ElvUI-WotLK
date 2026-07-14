@@ -201,6 +201,7 @@ function UF:Configure_Auras(frame, auraType)
 	auras:ClearAllPoints()
 	auras:Point(E.InversePoints[auras.db.anchorPoint], attachTo, auras.db.anchorPoint, x + auras.db.xOffset, y + auras.db.yOffset)
 	auras:Height(auras.size * rows)
+	auras:OffsetFrameLevel(30, frame) -- above Health (10) and Power (15) so icons moved onto the frame stay visible, below RaisedElementParent (100+)
 	auras["growth-y"] = find(auras.db.anchorPoint, "TOP") and "UP" or "DOWN"
 	auras["growth-x"] = auras.db.anchorPoint == "LEFT" and "LEFT" or auras.db.anchorPoint == "RIGHT" and "RIGHT" or (find(auras.db.anchorPoint, "LEFT") and "RIGHT" or "LEFT")
 	auras.initialAnchor = E.InversePoints[auras.db.anchorPoint]
