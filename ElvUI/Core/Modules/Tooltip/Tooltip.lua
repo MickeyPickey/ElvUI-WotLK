@@ -293,7 +293,9 @@ function TT:SetUnitText(tt, unit, isPlayerUnit)
 
 		return nameColor
 	else
-		local levelLine = TT:GetLevelLine(tt, 2)
+		-- GetLevelLine scans the lines AFTER the given index; plain NPCs have
+		-- their level on line 2 (line 3 only when a title line is present)
+		local levelLine = TT:GetLevelLine(tt, 1)
 		if levelLine then
 			local pvpFlag, classificationString = '', ''
 			local level = UnitLevel(unit)
