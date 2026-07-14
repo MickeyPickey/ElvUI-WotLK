@@ -177,13 +177,16 @@ S:AddCallback("Skin_WorldMap", function()
 		end
 	end
 
-	if not E.private.worldmap.enable then
-		WorldMapFrame:EnableMouse(false)
-		WorldMapFrame.EnableMouse = E.noop
-	end
-
 	WorldMapTitleButton:Hide()
-	WorldMapFrame.backdrop:EnableMouse(true)
+
+	if not E:IsAddOnEnabled('Mapster') then -- Mapster needs mouse input on WorldMapFrame to drag the map
+		if not E.private.worldmap.enable then
+			WorldMapFrame:EnableMouse(false)
+			WorldMapFrame.EnableMouse = E.noop
+		end
+
+		WorldMapFrame.backdrop:EnableMouse(true)
+	end
 
 	FixSkin()
 	S:SetUIPanelWindowInfo(WorldMapFrame, "width", 594)
