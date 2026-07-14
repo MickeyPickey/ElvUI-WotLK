@@ -106,6 +106,27 @@ local function DelayCall()
 	end
 end
 
+-- on this client OpenColorPicker maps info.swatchFunc onto ColorPickerFrame.func,
+-- so `func` is the commit callback native consumers (WeakAuras, etc) rely on;
+-- our AceGUI widget assigns both `swatchFunc` and `func`
+local function CommitFunc(frame)
+	local func = frame.func or frame.swatchFunc
+	if func ~= E.noop then
+		return func
+	end
+end
+
+local function QueueCommit(func)
+	if not func or delayFunc == func then return end
+
+	if delayFunc then
+		DelayCall() -- flush a different pending commit so it can't be dropped
+	end
+
+	delayFunc = func
+	E:Delay(delayWait, DelayCall)
+end
+
 local last = {r = 0, g = 0, b = 0, a = 0}
 local function OnAlphaValueChanged(_, value)
 	local alpha = AlphaValue(value)
@@ -120,13 +141,7 @@ local function OnAlphaValueChanged(_, value)
 	if not ColorPickerFrame:IsVisible() then
 		DelayCall()
 	else
-		local opacityFunc = ColorPickerFrame.opacityFunc
-		if delayFunc and (delayFunc ~= opacityFunc) then
-			delayFunc = opacityFunc
-		elseif not delayFunc then
-			delayFunc = opacityFunc
-			E:Delay(delayWait, DelayCall)
-		end
+		QueueCommit(ColorPickerFrame.opacityFunc)
 	end
 end
 
@@ -157,9 +172,8 @@ local function OnColorSelect(frame, r, g, b)
 
 	if not frame:IsVisible() then
 		DelayCall()
-	elseif not delayFunc then
-		delayFunc = ColorPickerFrame.swatchFunc
-		E:Delay(delayWait, DelayCall)
+	else
+		QueueCommit(CommitFunc(frame))
 	end
 end
 
@@ -182,6 +196,23 @@ function BL:EnhanceColorPicker()
 	S:HandleSliderFrame(_G.OpacitySliderFrame)
 	S:HandleButton(_G.ColorPickerOkayButton)
 	S:HandleButton(_G.ColorPickerCancelButton)
+
+	-- commit any throttled change before Okay hides the frame (widgets ignore
+	-- color callbacks once the picker is hidden), and drop pending commits on
+	-- Cancel so they can't override the color restored by cancelFunc
+	local okayClick = _G.ColorPickerOkayButton:GetScript('OnClick')
+	_G.ColorPickerOkayButton:SetScript('OnClick', function(...)
+		DelayCall()
+		if okayClick then okayClick(...) end
+	end)
+
+	local cancelClick = _G.ColorPickerCancelButton:GetScript('OnClick')
+	_G.ColorPickerCancelButton:SetScript('OnClick', function(...)
+		delayFunc = nil
+		if cancelClick then cancelClick(...) end
+	end)
+
+	ColorPickerFrame:HookScript('OnHide', DelayCall)
 
 	-- Memory Fix, Colorpicker will call the self.func() 100x per second, causing fps/memory issues,
 	-- We overwrite these two scripts and set a limit on how often we allow a call their update functions
@@ -266,6 +297,7 @@ function BL:EnhanceColorPicker()
 		if ColorPickerFrame.hasOpacity then
 			_G.OpacitySliderFrame:SetValue(0)
 		end
+		DelayCall() -- commit immediately, a discrete change shouldn't wait on the throttle
 	end)
 
 	-- add paste button to the ColorPickerFrame
@@ -285,6 +317,7 @@ function BL:EnhanceColorPicker()
 				_G.OpacitySliderFrame:SetValue(colorBuffer.a)
 			end
 		end
+		DelayCall() -- commit immediately, a discrete change shouldn't wait on the throttle
 	end)
 
 	-- add defaults button to the ColorPickerFrame
@@ -307,6 +340,7 @@ function BL:EnhanceColorPicker()
 				_G.OpacitySliderFrame:SetValue(colors.a)
 			end
 		end
+		DelayCall() -- commit immediately, a discrete change shouldn't wait on the throttle
 	end)
 
 	-- position Color Swatch for copy color
@@ -351,7 +385,7 @@ function BL:EnhanceColorPicker()
 		-- set up scripts to handle event appropriately
 		if i == 5 then
 			box:SetScript('OnEscapePressed', function(eb) eb:ClearFocus() UpdateAlpha(eb) end)
-			box:SetScript('OnEnterPressed', function(eb) eb:ClearFocus() UpdateAlpha(eb) end)
+			box:SetScript('OnEnterPressed', function(eb) eb:ClearFocus() UpdateAlpha(eb) DelayCall() end)
 			box:SetScript('OnChar', function(eb, key)
 				local copyPaste = IsControlKeyDown() and key == 'V'
 				if copyPaste or (strlen(key) == 1 and not IsModifierKeyDown()) then
@@ -360,7 +394,7 @@ function BL:EnhanceColorPicker()
 			end)
 		else
 			box:SetScript('OnEscapePressed', function(eb) eb:ClearFocus() UpdateColorTexts(nil, nil, nil, eb) UpdateColor() end)
-			box:SetScript('OnEnterPressed', function(eb) eb:ClearFocus() UpdateColorTexts(nil, nil, nil, eb) UpdateColor() end)
+			box:SetScript('OnEnterPressed', function(eb) eb:ClearFocus() UpdateColorTexts(nil, nil, nil, eb) UpdateColor() DelayCall() end)
 			box:SetScript('OnChar', function(eb, key)
 				local copyPaste = IsControlKeyDown() and key == 'V'
 				if copyPaste or (strlen(key) == 1 and not IsModifierKeyDown()) then
