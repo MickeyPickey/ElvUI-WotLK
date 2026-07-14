@@ -31,6 +31,9 @@ S:AddCallback("Skin_Gossip", function()
 	for i = 1, NUMGOSSIPBUTTONS do
 		local button = _G["GossipTitleButton"..i]
 		S:HandleButtonHighlight(button)
+		-- GossipResize grows the button to fit multi-line text; the gradient's fixed size would leave part of it unhighlighted
+		button.highlightGradient:ClearAllPoints()
+		button.highlightGradient:SetAllPoints()
 		select(3, button:GetRegions()):SetTextColor(1, 1, 1)
 	end
 
