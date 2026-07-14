@@ -637,7 +637,14 @@ S:AddCallback("Skin_Friends", function()
 	S:HandleButton(RaidFrameNotInRaidRaidBrowserButton)
 
 	RaidFrameConvertToRaidButton:PointXY(45, -33)
-	RaidFrameRaidInfoButton:PointXY(69, 0)
+
+	-- only nudge the stock anchor: when in a raid, Blizzard_RaidUI's
+	-- RaidGroupFrame_Update re-anchors this to RaidFrameReadyCheckButton,
+	-- and applying our offsets to that anchor pushes the button off-frame
+	local _, raidInfoAnchor = RaidFrameRaidInfoButton:GetPoint()
+	if raidInfoAnchor == RaidFrameConvertToRaidButton then
+		RaidFrameRaidInfoButton:PointXY(69, 0)
+	end
 
 	-- Raid Info Frame
 	RaidInfoFrame:StripTextures(true)
