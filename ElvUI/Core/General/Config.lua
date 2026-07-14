@@ -1382,6 +1382,10 @@ function E:ToggleOptions(msg)
 		end
 
 		ACD[mode](ACD, 'ElvUI')
+
+		if pages then
+			ACD:SelectGroup('ElvUI', unpack(pages))
+		end
 	end
 
 	if not frame then
@@ -1573,10 +1577,6 @@ function E:ToggleOptions(msg)
 			E:Config_CreateBottomButtons(frame, unskinned)
 			E:Config_UpdateLeftScroller(frame)
 			E:Config_WindowOpened(frame)
-		end
-
-		if ACD and pages then
-			ACD:SelectGroup('ElvUI', unpack(pages))
 		end
 	end
 end
