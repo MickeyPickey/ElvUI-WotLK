@@ -211,7 +211,7 @@ local function OnEvent(self, event, message)
 	dataValid = false
 
 	if not IsAltKeyDown() and event == 'MODIFIER_STATE_CHANGED' and MouseIsOver(self) then
-		OnEnter(self)
+		OnEnter()
 	end
 
 	if db.NoLabel then

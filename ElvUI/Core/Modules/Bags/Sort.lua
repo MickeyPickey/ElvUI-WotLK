@@ -426,7 +426,7 @@ function B:SplitItem(bag, slot, amount)
 	end
 end
 
-function B:GetNumSlots(bag)
+function B:GetNumSlots(bag, role)
 	if IsGuildBankBag(bag) then
 		local name, _, canView = GetGuildBankTabInfo(bag - 50)
 		if name and canView then
@@ -446,7 +446,7 @@ function B:ConvertLinkToID(link)
 	if item then return tonumber(item) end
 end
 
-local function DefaultCanMove()
+local function DefaultCanMove(_, _, _) -- (itemID, bag, slot)
 	return true
 end
 

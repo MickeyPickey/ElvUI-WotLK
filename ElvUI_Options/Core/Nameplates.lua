@@ -2584,7 +2584,7 @@ local function GetUnitSettings(unit, name)
 									return (blockText and format("|cFF999999%s|r %s", L["BLOCK"], blockText)) or localized or text
 								end,
 								stateSwitchOnClick = function()
-									filterPriority("buffs", unit, carryFilterFrom, nil, nil, true)
+									filterPriority("buffs", unit, carryFilterFrom)
 								end,
 								values = function()
 									local str = E.db.nameplates.units[unit].buffs.filters.priority
@@ -2961,7 +2961,7 @@ local function GetUnitSettings(unit, name)
 									return (blockText and format("|cFF999999%s|r %s", L["BLOCK"], blockText)) or localized or text
 								end,
 								stateSwitchOnClick = function(info)
-									filterPriority("debuffs", unit, carryFilterFrom, nil, nil, true)
+									filterPriority("debuffs", unit, carryFilterFrom)
 								end,
 								values = function()
 									local str = E.db.nameplates.units[unit].debuffs.filters.priority

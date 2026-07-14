@@ -582,7 +582,7 @@ function S:Ace3_MetaIndex(k, v)
 
 		local fn = function(s, w, ...)
 			if E.private.skins.ace3Enable then
-				S.Ace3_RegisterAsContainer(s, w, ...)
+				S.Ace3_RegisterAsContainer(s, w)
 			end
 
 			if w.treeframe and not w.old_RefreshTree then

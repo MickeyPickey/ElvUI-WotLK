@@ -3,7 +3,6 @@ local DT = E:GetModule('DataTexts')
 
 local strjoin = strjoin
 
-local GetSpellHitModifier = GetSpellHitModifier
 local GetCombatRatingBonus = GetCombatRatingBonus
 local CR_HIT_SPELL = CR_HIT_SPELL
 

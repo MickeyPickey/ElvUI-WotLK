@@ -209,7 +209,7 @@ local function OnEvent(self, event)
 	if event == 'LOADING_SCREEN_ENABLED' and enteredFrame then
 		OnLeave()
 	elseif event == 'UPDATE_INSTANCE_INFO' and enteredFrame then
-		OnEnter(self)
+		OnEnter()
 	end
 end
 
@@ -225,7 +225,7 @@ function OnUpdate(self, t)
 	end
 
 	if enteredFrame then
-		OnEnter(self)
+		OnEnter()
 	end
 
 	local Hr, Min, Sec, AmPm = GetTimeValues()
