@@ -1690,6 +1690,8 @@ P.unitframe = {
 				overlayAlpha = 0.35
 			},
 			buffs = {
+				keepSizeRatio = true,
+				height = 30,
 				enable = false,
 				perrow = 8,
 				numrows = 1,
@@ -1709,6 +1711,8 @@ P.unitframe = {
 				yOffset = 0
 			},
 			debuffs = {
+				keepSizeRatio = true,
+				height = 30,
 				enable = true,
 				perrow = 8,
 				numrows = 1,
@@ -1899,6 +1903,8 @@ P.unitframe = {
 				overlayAlpha = 0.35
 			},
 			buffs = {
+				keepSizeRatio = true,
+				height = 30,
 				enable = true,
 				perrow = 8,
 				numrows = 1,
@@ -1918,6 +1924,8 @@ P.unitframe = {
 				yOffset = 0
 			},
 			debuffs = {
+				keepSizeRatio = true,
+				height = 30,
 				enable = true,
 				perrow = 8,
 				numrows = 1,
@@ -2087,6 +2095,8 @@ P.unitframe = {
 				overlayAlpha = 0.35
 			},
 			buffs = {
+				keepSizeRatio = true,
+				height = 30,
 				enable = false,
 				perrow = 7,
 				numrows = 1,
@@ -2106,6 +2116,8 @@ P.unitframe = {
 				yOffset = 0
 			},
 			debuffs = {
+				keepSizeRatio = true,
+				height = 30,
 				enable = true,
 				perrow = 5,
 				numrows = 1,
@@ -2211,6 +2223,8 @@ P.unitframe = {
 				overlayAlpha = 0.35
 			},
 			buffs = {
+				keepSizeRatio = true,
+				height = 30,
 				enable = false,
 				perrow = 7,
 				numrows = 1,
@@ -2230,6 +2244,8 @@ P.unitframe = {
 				yOffset = 0
 			},
 			debuffs = {
+				keepSizeRatio = true,
+				height = 30,
 				enable = true,
 				perrow = 5,
 				numrows = 1,
@@ -2341,6 +2357,8 @@ P.unitframe = {
 				overlayAlpha = 0.35
 			},
 			buffs = {
+				keepSizeRatio = true,
+				height = 30,
 				enable = false,
 				perrow = 7,
 				numrows = 1,
@@ -2360,6 +2378,8 @@ P.unitframe = {
 				yOffset = 0
 			},
 			debuffs = {
+				keepSizeRatio = true,
+				height = 30,
 				enable = true,
 				perrow = 5,
 				numrows = 1,
@@ -2511,6 +2531,8 @@ P.unitframe = {
 				overlayAlpha = 0.35
 			},
 			buffs = {
+				keepSizeRatio = true,
+				height = 30,
 				enable = false,
 				perrow = 7,
 				numrows = 1,
@@ -2530,6 +2552,8 @@ P.unitframe = {
 				yOffset = 0
 			},
 			debuffs = {
+				keepSizeRatio = true,
+				height = 30,
 				enable = false,
 				perrow = 5,
 				numrows = 1,
@@ -2643,6 +2667,8 @@ P.unitframe = {
 				width = 10
 			},
 			buffs = {
+				keepSizeRatio = true,
+				height = 30,
 				enable = false,
 				perrow = 7,
 				numrows = 1,
@@ -2662,6 +2688,8 @@ P.unitframe = {
 				yOffset = 0
 			},
 			debuffs = {
+				keepSizeRatio = true,
+				height = 30,
 				enable = false,
 				perrow = 5,
 				numrows = 1,
@@ -2802,6 +2830,8 @@ P.unitframe = {
 				overlayAlpha = 0.35
 			},
 			buffs = {
+				keepSizeRatio = true,
+				height = 30,
 				enable = false,
 				perrow = 7,
 				numrows = 1,
@@ -2821,6 +2851,8 @@ P.unitframe = {
 				yOffset = 0
 			},
 			debuffs = {
+				keepSizeRatio = true,
+				height = 30,
 				enable = false,
 				perrow = 5,
 				numrows = 1,
@@ -2922,6 +2954,8 @@ P.unitframe = {
 				attachTextTo = "Health"
 			},
 			buffs = {
+				keepSizeRatio = true,
+				height = 30,
 				enable = true,
 				perrow = 3,
 				numrows = 1,
@@ -2942,6 +2976,8 @@ P.unitframe = {
 				sizeOverride = 22
 			},
 			debuffs = {
+				keepSizeRatio = true,
+				height = 30,
 				enable = true,
 				perrow = 3,
 				numrows = 2,
@@ -3077,6 +3113,8 @@ P.unitframe = {
 				overlayAlpha = 0.35
 			},
 			buffs = {
+				keepSizeRatio = true,
+				height = 30,
 				enable = true,
 				perrow = 3,
 				numrows = 1,
@@ -3097,6 +3135,8 @@ P.unitframe = {
 				yOffset = 16
 			},
 			debuffs = {
+				keepSizeRatio = true,
+				height = 30,
 				enable = true,
 				perrow = 3,
 				numrows = 1,
@@ -3244,6 +3284,8 @@ P.unitframe = {
 				overlayAlpha = 0.35
 			},
 			buffs = {
+				keepSizeRatio = true,
+				height = 30,
 				enable = false,
 				perrow = 4,
 				numrows = 1,
@@ -3263,6 +3305,8 @@ P.unitframe = {
 				yOffset = 0
 			},
 			debuffs = {
+				keepSizeRatio = true,
+				height = 30,
 				enable = true,
 				perrow = 4,
 				numrows = 1,
@@ -3512,6 +3556,8 @@ P.unitframe = {
 				overlayAlpha = 0.35
 			},
 			buffs = {
+				keepSizeRatio = true,
+				height = 30,
 				enable = false,
 				perrow = 3,
 				numrows = 1,
@@ -3531,6 +3577,8 @@ P.unitframe = {
 				yOffset = 0
 			},
 			debuffs = {
+				keepSizeRatio = true,
+				height = 30,
 				enable = false,
 				perrow = 3,
 				numrows = 1,
@@ -3721,6 +3769,8 @@ P.unitframe = {
 				overlayAlpha = 0.35
 			},
 			buffs = {
+				keepSizeRatio = true,
+				height = 30,
 				enable = false,
 				perrow = 3,
 				numrows = 1,
@@ -3740,6 +3790,8 @@ P.unitframe = {
 				yOffset = 0
 			},
 			debuffs = {
+				keepSizeRatio = true,
+				height = 30,
 				enable = false,
 				perrow = 3,
 				numrows = 1,
@@ -3904,6 +3956,8 @@ P.unitframe = {
 				overlayAlpha = 0.35
 			},
 			buffs = {
+				keepSizeRatio = true,
+				height = 30,
 				enable = false,
 				perrow = 3,
 				numrows = 1,
@@ -3923,6 +3977,8 @@ P.unitframe = {
 				yOffset = 0
 			},
 			debuffs = {
+				keepSizeRatio = true,
+				height = 30,
 				enable = false,
 				perrow = 3,
 				numrows = 1,
@@ -4027,6 +4083,8 @@ P.unitframe = {
 				delay = 0
 			},
 			buffs = {
+				keepSizeRatio = true,
+				height = 30,
 				enable = false,
 				perrow = 6,
 				numrows = 1,
@@ -4046,6 +4104,8 @@ P.unitframe = {
 				yOffset = 2
 			},
 			debuffs = {
+				keepSizeRatio = true,
+				height = 30,
 				enable = false,
 				perrow = 6,
 				numrows = 1,
@@ -4175,6 +4235,8 @@ P.unitframe = {
 				delay = 0
 			},
 			buffs = {
+				keepSizeRatio = true,
+				height = 30,
 				enable = false,
 				perrow = 6,
 				numrows = 1,
@@ -4194,6 +4256,8 @@ P.unitframe = {
 				yOffset = 2
 			},
 			debuffs = {
+				keepSizeRatio = true,
+				height = 30,
 				enable = false,
 				perrow = 6,
 				numrows = 1,

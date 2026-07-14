@@ -92,11 +92,18 @@ function UF:UpdateAuraSettings(auras, button)
 	if button.db then
 		button.count:FontTemplate(LSM:Fetch("font", button.db.countFont), button.db.countFontSize, button.db.countFontOutline)
 	end
+	local width = (auras and auras.size) or 30
+	local height = (auras and (auras.height or auras.size)) or 30
+
 	if button.icon then
-		button.icon:SetTexCoords()
+		if width == height then
+			button.icon:SetTexCoords()
+		else
+			button.icon:SetTexCoord(E:CropRatio(width, height))
+		end
 	end
 
-	button:Size((auras and auras.size) or 30)
+	button:Size(width, height)
 
 	button.needsUpdateCooldownPosition = true
 end
@@ -151,6 +158,7 @@ function UF:Configure_Auras(frame, auraType)
 	auras.forceShow = frame.forceShowAuras
 	auras.num = auras.db.perrow * rows
 	auras.size = auras.db.sizeOverride ~= 0 and auras.db.sizeOverride or ((((auras:GetWidth() - (auras.spacing*(auras.num/rows - 1))) / auras.num)) * rows)
+	auras.height = (auras.db.keepSizeRatio and auras.size) or auras.db.height
 	auras.disableMouse = auras.db.clickThrough
 
 	if auras.db.sizeOverride and auras.db.sizeOverride > 0 then
@@ -200,7 +208,7 @@ function UF:Configure_Auras(frame, auraType)
 
 	auras:ClearAllPoints()
 	auras:Point(E.InversePoints[auras.db.anchorPoint], attachTo, auras.db.anchorPoint, x + auras.db.xOffset, y + auras.db.yOffset)
-	auras:Height(auras.size * rows)
+	auras:Height(auras.height * rows)
 	auras:OffsetFrameLevel(30, frame) -- above Health (10) and Power (15) so icons moved onto the frame stay visible, below RaisedElementParent (100+)
 	auras["growth-y"] = find(auras.db.anchorPoint, "TOP") and "UP" or "DOWN"
 	auras["growth-x"] = auras.db.anchorPoint == "LEFT" and "LEFT" or auras.db.anchorPoint == "RIGHT" and "RIGHT" or (find(auras.db.anchorPoint, "LEFT") and "RIGHT" or "LEFT")
@@ -473,9 +481,9 @@ function UF:UpdateBuffsPositionAndDebuffHeight()
 
 	if numDebuffs > 0 then
 		local numRows = ceil(numDebuffs/db.debuffs.perrow)
-		debuffs:Height(debuffs.size * (numRows > db.debuffs.numrows and db.debuffs.numrows or numRows))
+		debuffs:Height((debuffs.height or debuffs.size) * (numRows > db.debuffs.numrows and db.debuffs.numrows or numRows))
 	else
-		debuffs:Height(debuffs.size)
+		debuffs:Height(debuffs.height or debuffs.size)
 	end
 end
 
@@ -496,9 +504,9 @@ function UF:UpdateDebuffsPositionAndBuffHeight()
 
 	if numBuffs > 0 then
 		local numRows = ceil(numBuffs/db.buffs.perrow)
-		buffs:Height(buffs.size * (numRows > db.buffs.numrows and db.buffs.numrows or numRows))
+		buffs:Height((buffs.height or buffs.size) * (numRows > db.buffs.numrows and db.buffs.numrows or numRows))
 	else
-		buffs:Height(buffs.size)
+		buffs:Height(buffs.height or buffs.size)
 	end
 end
 
@@ -510,9 +518,9 @@ function UF:UpdateBuffsHeight()
 
 	if numBuffs > 0 then
 		local numRows = ceil(numBuffs/db.buffs.perrow)
-		buffs:Height(buffs.size * (numRows > db.buffs.numrows and db.buffs.numrows or numRows))
+		buffs:Height((buffs.height or buffs.size) * (numRows > db.buffs.numrows and db.buffs.numrows or numRows))
 	else
-		buffs:Height(buffs.size)
+		buffs:Height(buffs.height or buffs.size)
 		-- Any way to get rid of the last row as well?
 		-- Using buffs:Height(0) makes frames anchored to this one disappear
 	end
@@ -526,9 +534,9 @@ function UF:UpdateDebuffsHeight()
 
 	if numDebuffs > 0 then
 		local numRows = ceil(numDebuffs/db.debuffs.perrow)
-		debuffs:Height(debuffs.size * (numRows > db.debuffs.numrows and db.debuffs.numrows or numRows))
+		debuffs:Height((debuffs.height or debuffs.size) * (numRows > db.debuffs.numrows and db.debuffs.numrows or numRows))
 	else
-		debuffs:Height(debuffs.size)
+		debuffs:Height(debuffs.height or debuffs.size)
 		-- Any way to get rid of the last row as well?
 		-- Using debuffs:Height(0) makes frames anchored to this one disappear
 	end
