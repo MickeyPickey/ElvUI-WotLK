@@ -573,6 +573,13 @@ function M:RaiseMinimapButtons()
 	end
 end
 
+-- LFDSearchStatus ("Assembling Group") is declared TOOLTIP strata in XML, but
+-- reparenting/restrata-ing its parent eye (UpdateIcons/RaiseMinimapButtons)
+-- flattens that on this client, leaving the panel behind the Minimap.
+function M:LFDSearchStatus_OnShow()
+	self:SetFrameStrata('TOOLTIP')
+end
+
 function M:Minimap_PostDrag()
 	_G.MinimapBackdrop:ClearAllPoints()
 	_G.MinimapBackdrop:SetAllPoints(Minimap)
@@ -724,6 +731,10 @@ function M:Initialize()
 
 	Minimap:HookScript('OnEnter', M.Minimap_OnEnter)
 	Minimap:HookScript('OnLeave', M.Minimap_OnLeave)
+
+	if _G.LFDSearchStatus then
+		_G.LFDSearchStatus:HookScript('OnShow', M.LFDSearchStatus_OnShow)
+	end
 
 	local killFrames = {
 		_G.MinimapBorder,
