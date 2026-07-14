@@ -4004,7 +4004,8 @@ E.Options.args.nameplates = {
 						["style5"] = L["Border Glow"].." + "..L["Top Arrow"],
 						["style6"] = L["Background Glow"].." + "..L["Top Arrow"],
 						["style7"] = L["Border Glow"].." + "..L["Side Arrows"],
-						["style8"] = L["Background Glow"].." + "..L["Side Arrows"]
+						["style8"] = L["Background Glow"].." + "..L["Side Arrows"],
+						["style9"] = L["Border"]
 					}
 				},
 				arrowSize = {
