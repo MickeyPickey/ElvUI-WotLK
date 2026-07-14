@@ -9,6 +9,7 @@ local getmetatable = getmetatable
 local hooksecurefunc = hooksecurefunc
 
 local CreateFrame = CreateFrame
+local GetCurrencyListSize = GetCurrencyListSize
 local GetInventoryItemQuality = GetInventoryItemQuality
 local GetInventoryItemTexture = GetInventoryItemTexture
 local GetItemInfo = GetItemInfo
@@ -96,11 +97,23 @@ local function HandleTabs()
 			tab:Point('TOPLEFT', lastTab, 'TOPRIGHT', -15.5, 0)
 		end
 
-		if IsAddOnLoaded('Blizzard_TokenUI') and index == 5 then
-			tab:Show()
-		end
-
 		lastTab = tab
+	end
+end
+
+-- TokenFrame_Update applies this rule (hide when the currency list is empty, show
+-- otherwise) only when the Currency tab is clicked, and currency data arrives from
+-- the server after the skin has positioned the tabs — so a one-shot Show here is
+-- either wrong (empty list: the tab vanishes when clicked) or too early (data not
+-- in yet: the tab never appears). Keep the tab in sync with the currency events.
+local function UpdateCurrencyTabVisibility()
+	local tab = _G.CharacterFrameTab5
+	if not tab then return end
+
+	if GetCurrencyListSize() > 0 then
+		tab:Show()
+	else
+		tab:Hide()
 	end
 end
 
@@ -782,6 +795,15 @@ S:AddCallback('Skin_Character', function()
 			HandleTabs()
 		end
 	end)
+
+	-- Currency tab visibility (see UpdateCurrencyTabVisibility)
+	UpdateCurrencyTabVisibility()
+
+	local currencyWatcher = CreateFrame('Frame')
+	currencyWatcher:RegisterEvent('CURRENCY_DISPLAY_UPDATE')
+	currencyWatcher:RegisterEvent('KNOWN_CURRENCY_TYPES_UPDATE')
+	currencyWatcher:RegisterEvent('PLAYER_ENTERING_WORLD')
+	currencyWatcher:SetScript('OnEvent', UpdateCurrencyTabVisibility)
 
 	-- Handle other HD interface frames
 	if E:IsHDPatch() then
