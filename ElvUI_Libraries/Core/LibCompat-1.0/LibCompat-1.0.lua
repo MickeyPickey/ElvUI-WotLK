@@ -957,14 +957,15 @@ do
 			else
 				ticker._callback(ticker)
 
-				if ticker._iterations == -1 then
+				local iterations = ticker._iterations
+				if iterations == -1 then
 					ticker._delay = ticker._duration
 					i = i + 1
-				elseif ticker._iterations > 1 then
-					ticker._iterations = ticker._iterations - 1
+				elseif type(iterations) == "number" and iterations > 1 then
+					ticker._iterations = iterations - 1
 					ticker._delay = ticker._duration
 					i = i + 1
-				elseif ticker._iterations == 1 then
+				else -- finished (iterations == 1) or invalid; drop it or this loop never advances
 					del(tremove(WaitTable, i))
 					total = total - 1
 				end
