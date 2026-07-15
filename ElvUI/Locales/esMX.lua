@@ -527,3 +527,7 @@ L["EHELP_COMMANDS"] = ([=[Aquí hay una lista de todos los comandos importantes 
  */guildlist|r ^minPlayers|r  -  Dumps the sorted list of guilds from the finder.
  */guildapply|r ^"message"|r  -  Applies to the top 5 new guilds with an optional message.
 ]=]):gsub("*", E.InfoColor):gsub("%^", E.InfoColor2)
+L["In Combat"] = "En combate"
+L["Out of Combat"] = "Fuera de combate"
+L["New Mail"] = "Correo nuevo"
+L["No Mail"] = "Sin correo"

@@ -128,7 +128,7 @@ L["Data From: %s"] = "Данные от: %s"
 L["Dead"] = "Труп"
 L["Debuffs"] = "Дебаффы"
 L["Deficit:"] = "Убыток:"
-L["Delete gray items?"] = "Удалить серый предметы?"
+L["Delete gray items?"] = "Удалить серые предметы?"
 L["Deposit Reagents"] = "Сложить материалы"
 L["Deposit Warbound Items"] = true
 L["Disable Warning"] = "Отключить предупреждение"
@@ -536,3 +536,7 @@ L["EHELP_COMMANDS"] = ([=[Ниже представлен список всех 
  */guildlist|r ^minPlayers|r  -  Dumps the sorted list of guilds from the finder.
  */guildapply|r ^"message"|r  -  Applies to the top 5 new guilds with an optional message.
 ]=]):gsub("*", E.InfoColor):gsub("%^", E.InfoColor2)
+L["In Combat"] = "В бою"
+L["Out of Combat"] = "Вне боя"
+L["New Mail"] = "Новое письмо"
+L["No Mail"] = "Нет писем"

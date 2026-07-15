@@ -2415,3 +2415,10 @@ L["*Block Everything, Except Whitelisted Auras:|r ^(1) Whitelist"] =
 L["*Block Everything, Except Whitelisted Auras That Are Cast By Yourself:|r ^(1) blockNonPersonal | (2) Whitelist"] =
 	"*Блокировать все, кроме аур в белом списке, наложенных Вами:|r ^(1) '[Блокировать] Чужие' | (2) 'Белый список'"
 ----------------------------------
+L["Alpha of nameplates that are not your current target. Overridden by the alpha action of the ElvUI_NonTarget style filter while that filter is enabled."] =
+	"Прозрачность индикаторов здоровья, которые не являются вашей текущей целью. Переопределяется действием прозрачности фильтра стиля ElvUI_NonTarget, пока этот фильтр включен."
+L["Scale nameplates based on your threat situation in combat."] =
+	"Масштабировать индикаторы здоровья в зависимости от вашего уровня угрозы в бою."
+L["Set the height of the aura icons."] = "Установить высоту иконок аур."
+L["Use Threat Scale"] = "Использовать масштаб от угрозы"
+L["Width Override"] = "Своя ширина"

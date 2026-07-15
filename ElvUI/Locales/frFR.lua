@@ -529,3 +529,5 @@ L["EHELP_COMMANDS"] = ([=[Voici une liste de toutes les commandes importantes d'
  */guildlist|r ^minPlayers|r  -  Dumps the sorted list of guilds from the finder.
  */guildapply|r ^"message"|r  -  Applies to the top 5 new guilds with an optional message.
 ]=]):gsub("*", E.InfoColor):gsub("%^", E.InfoColor2)
+L["New Mail"] = true
+L["No Mail"] = true

@@ -2309,3 +2309,12 @@ L["*Block Everything, Except Whitelisted Auras:|r ^(1) Whitelist"] =
 L["*Block Everything, Except Whitelisted Auras That Are Cast By Yourself:|r ^(1) blockNonPersonal | (2) Whitelist"] =
 	"*Bloquear Tudo, Exceto Auras Permitidas Que Forem Lançadas por Você:|r ^(1) [Bloquear] Não Pessoal | (2) Lista de Permissão"
 ----------------------------------
+L["Alpha of nameplates that are not your current target. Overridden by the alpha action of the ElvUI_NonTarget style filter while that filter is enabled."] =
+	"Transparência das placas de identificação que não são o seu alvo atual. Substituída pela ação de transparência do filtro de estilo ElvUI_NonTarget enquanto esse filtro estiver ativado."
+L["Choosing Settings %s. This will reload the UI.\n\n Are you sure?"] =
+	"Escolhendo as configurações %s. Isto irá recarregar a interface.\n\n Tem certeza?"
+L["Scale nameplates based on your threat situation in combat."] =
+	"Escala as placas de identificação com base na sua situação de ameaça em combate."
+L["Set the height of the aura icons."] = "Define a altura dos ícones das auras."
+L["Use Threat Scale"] = "Usar Escala de Ameaça"
+L["Width Override"] = "Sobrescrever Largura"
