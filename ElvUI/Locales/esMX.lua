@@ -3,7 +3,7 @@ local E = unpack(ElvUI)
 local L = E.Libs.ACL:NewLocale("ElvUI", "esMX")
 
 L["Restrict Pings"] = "Limitar Marcas"
-L["Player"] = true
+L["Player"] = "Jugador"
 L["Small"] = "Pequeño"
 L["Medium"] = "Mediano"
 L["Large"] = "Grande"
@@ -129,7 +129,7 @@ L["Debuffs"] = "Perjuicios"
 L["Deficit:"] = "Déficit:"
 L["Delete gray items?"] = "¿Eliminar objetos grises?"
 L["Deposit Reagents"] = "Depositar Componentes"
-L["Deposit Warbound Items"] = true
+L["Deposit Warbound Items"] = "Depositar Objetos Ligados a la Banda Guerrera"
 L["Disable Warning"] = "Deshabilitar Advertencia"
 L["Disable"] = "Desactivar"
 L["Disabled"] = "Desactivado"
@@ -207,7 +207,7 @@ L["Importance: |cFF33FF33Low|r"] = "Importancia: |cFF33FF33Baja|r"
 L["Importance: |cffD3CF00Medium|r"] = "Importancia: |cffD3CF00Media|r"
 L["Importance: |cffFF3333High|r"] = "Importancia: |cffFF3333Alta|r"
 L["In Progress"] = "En Progreso"
-L["Include Reagents"] = true
+L["Include Reagents"] = "Incluir Componentes"
 L["INCOMPATIBLE_ADDON"] = "%s is not compatible with %s.\nPlease select the addon/module to use."
 L["Installation Complete"] = "Instalación Completa"
 L["Interrupted %s's |cff71d5ff|Hspell:%d:0|h[%s]|h|r!"] = "¡|cff71d5ff|Hspell:%d:0|h[%s]|h|r de %s Interrumpido!"
@@ -299,7 +299,7 @@ L["One or more of the changes you have made will effect all characters using thi
 	"Uno o más de los cambios que has hecho afectaran a todos los personajes que usen este addon. Tendrás que recargar la intefaz de usuario para ver el cambio que has realizado."
 L["Output Audio Device"] = "Dispositivo de Salida de Audio"
 L["P"] = "G"
-L["Paragon"] = true
+L["Paragon"] = "Dechado"
 L["Party Frames"] = "Marco de Grupo"
 L["Pending"] = "Pendiente"
 L["Pet Aura Bars"] = "Barras de Aura de Mascota"
@@ -407,7 +407,7 @@ L["The in-game configuration menu can be accessed by typing the /ec command. Pre
 L["The profile you tried to import already exists. Choose a new name or accept to overwrite the existing profile."] =
 	"El perfil que has intentado importar ya existe. Elige un nuevo nombre o acepta sobreescribir el perfil existente."
 L["The spell '%s' has been added to the '%s' unitframe aura filter."] =
-	"El hechizo '%s' ha sido añadido a la Lista Negra del filtro de auras del marco de unidad."
+	"El hechizo '%s' ha sido añadido al filtro de auras '%s' del marco de unidad."
 L["Theme Set"] = "Establecer Tema"
 L["Theme Setup"] = "Configurar Tema"
 L["This install process will help you learn some of the features in ElvUI has to offer and also prepare your user interface for usage."] =
@@ -431,7 +431,7 @@ L["To setup chat colors, chat channels and chat font size, right-click the chat 
 L["Toggle Bags"] = "Mostrar/Ocultar Bolsas"
 L["Toggle Chat Frame"] = "Mostrar/Ocultar Marco de Chat"
 L["Toggle Configuration"] = "Mostrar/Ocultar Configuración"
-L["Toggle Mover Mode"] = true
+L["Toggle Mover Mode"] = "Alternar Modo de Fijadores"
 L["Toggle Volume Stream"] = "Mostrar/Ocultar Flujo de Volumen"
 L["Tooltip"] = "Descripción Emergente"
 L["TopCenterWidget"] = true
