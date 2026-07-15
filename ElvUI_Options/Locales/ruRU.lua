@@ -18,21 +18,22 @@ L["LEFT"] = "Слева"
 L["RIGHT"] = "Справа"
 L["TOP"] = "Вверху"
 ------------  Strata  ------------
-L["BACKGROUND"] = true
-L["DIALOG"] = true
-L["HIGH"] = true
-L["LOW"] = true
-L["MEDIUM"] = true
+L["BACKGROUND"] = "Фон"
+L["DIALOG"] = "Диалог"
+L["HIGH"] = "Высокий"
+L["LOW"] = "Низкий"
+L["MEDIUM"] = "Средний"
 L["TOOLTIP"] = true
 ----------------------------------
 
-L["BigWigs Spell Rename"] = true
+L["BigWigs Spell Rename"] = "Переименование заклинаний BigWigs"
 L["Allows BigWigs to rename specific encounter spells on your castbar to something better to understand.\nExample: 'Impaling Eruption' becomes 'Frontal' and 'Twilight Massacre' becomes 'Dash'."] =
-	true
+	"Позволяет BigWigs переименовывать определенные заклинания боссов на Вашей полосе заклинаний в более понятные названия.\nНапример: 'Impaling Eruption' становится 'Frontal', а 'Twilight Massacre' — 'Dash'."
 L["Add Aura ID"] = "Добавить ID Ауры"
 L["Remove Aura"] = "Удалить Ауру"
 L["Select Aura"] = "Выбрать Ауру"
-L["Add an aura to the filter. Aura IDs can be acquired using the tooltip to find the correct ID."] = true
+L["Add an aura to the filter. Aura IDs can be acquired using the tooltip to find the correct ID."] =
+	"Добавить ауру в фильтр. Правильный ID ауры можно узнать с помощью подсказки."
 L["Primary Unit"] = "Основная цель"
 L["Requires the unit to be the primary target to display."] =
 	"Отображается, когда юнит является основной целью"
@@ -122,7 +123,7 @@ L["ALT_KEY_TEXT"] = "Alt"
 L["Always Display"] = "Всегда отображать"
 L["Always Show Player"] = "Всегда показывать игрока"
 L["Always Show Realm"] = "Всегда отображать сервер"
-L["Always Split Professions"] = true
+L["Always Split Professions"] = "Всегда разделять профессии"
 L["Anchor Point"] = "Точка фиксации"
 L["Anchor"] = "Фиксатор"
 L["Anima Diversion"] = "Поток анимы"
@@ -323,7 +324,8 @@ L["CHALLENGE_MODE"] = "Режим испытаний"
 L["Change settings for the display of the location text that is on the minimap."] =
 	"Изменяет опции отображения названия локации на миникарте."
 L["Change the alpha level of the frame."] = "Изменяет прозрачность этого элемента."
-L["Change the scale of the Game Menu which shows up when you press ESC."] = true
+L["Change the scale of the Game Menu which shows up when you press ESC."] =
+	"Изменяет масштаб меню игры, которое появляется при нажатии ESC."
 L["Change the width and controls how big of an area on the screen will accept clicks to target unit."] =
 	"Изменяет ширину и контролирует размер области, которая будет регистрировать клики для выделения юнита."
 L["Changelog"] = "Список изменений"
@@ -952,7 +954,8 @@ L["Hide Zone Text"] = "Скрыть текст зоны"
 L["Hide"] = "Скрыть"
 L["Hides the bling animation on buttons at the end of the global cooldown."] =
 	"Прятать анимацию вспышки на кнопках в конце глобального времени восстановления."
-L["Hides the yellow quest progress text and red error text at the top of the screen while in combat."] = true
+L["Hides the yellow quest progress text and red error text at the top of the screen while in combat."] =
+	"Скрывает желтый текст прогресса заданий и красный текст ошибок в верхней части экрана во время боя."
 L["High"] = "Верхний"
 L["Highlight Color Style"] = "Стиль подсветки"
 L["History Size"] = "Размер истории"
