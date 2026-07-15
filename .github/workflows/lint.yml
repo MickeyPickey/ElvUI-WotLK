@@ -1,18 +1,27 @@
-name: lint
+name: Lint
 
 on:
   push:
     paths:
-      - '.github/workflows/**.yml'
+      - '.github/workflows/lint.yml'
       - '**.lua'
       - '.luarc.json'
+  # No path filter: runs on every PR so it can serve as a required status check.
   pull_request:
-    paths:
-      - '**.lua'
-      - '.luarc.json'
+  workflow_dispatch:
+
+# Only keep the newest run per ref; cancel superseded ones.
+concurrency:
+  group: lint-${{ github.ref }}
+  cancel-in-progress: true
+
+# Least privilege: the check only reads the checkout.
+permissions:
+  contents: read
 
 jobs:
-  lint:
+  luals:
+    name: lua-language-server
     runs-on: ubuntu-latest
 
     env:
