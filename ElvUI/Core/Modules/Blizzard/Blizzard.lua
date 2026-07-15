@@ -78,7 +78,7 @@ function BL:ObjectiveTracker_Expand(frame)
 end
 
 function BL:ObjectiveTracker_AutoHideOnShow()
-	local tracker = (E.Mists and _G.WatchFrame) or _G.ObjectiveTrackerFrame
+	local tracker = _G.WatchFrame
 	if tracker and BL:ObjectiveTracker_IsCollapsed(tracker) then
 		BL:ObjectiveTracker_Expand(tracker)
 	end
