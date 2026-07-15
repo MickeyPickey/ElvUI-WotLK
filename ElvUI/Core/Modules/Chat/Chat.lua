@@ -1862,10 +1862,11 @@ function CH:MessageFormatter(
 	end
 
 	-- ElvUI: data from populated guid info
-	local realm
+	local realm, nameWithRealm
 	local data = CH:GetPlayerInfoByGUID(arg12)
 	if data then
 		realm = data.realm
+		nameWithRealm = data.nameWithRealm
 	end
 
 	local playerLink
@@ -1879,7 +1880,9 @@ function CH:MessageFormatter(
 		playerLinkDisplayText = format("[%s]", coloredName)
 	end
 
-	local playerName, lineID, bnetIDAccount = arg2, arg11, arg13
+	-- 3.3.5 servers only resolve realm-qualified whisper targets for cross-realm players,
+	-- so same-realm player links must stay plain or click-to-whisper breaks
+	local playerName, lineID, bnetIDAccount = (realm and nameWithRealm) or arg2, arg11, arg13
 	if chatType == "BN_WHISPER" or chatType == "BN_WHISPER_INFORM" or chatType == "BN_CONVERSATION" then
 		playerLink = GetBNPlayerLink(playerName, playerLinkDisplayText, bnetIDAccount, lineID, chatGroup, chatTarget)
 	else
@@ -1926,7 +1929,7 @@ function CH:MessageFormatter(
 			or chatType == "RAID_LEADER"
 			or chatType == "INSTANCE_CHAT"
 			or chatType == "INSTANCE_CHAT_LEADER"
-		) and lfgRoles[playerName]
+		) and lfgRoles[nameWithRealm or playerName]
 		if lfgRole then
 			pflag = pflag .. lfgRole
 		end
@@ -3010,7 +3013,7 @@ function CH:CheckLFGRoles()
 		if unit then
 			local name, realm = UnitName(unit)
 			if role and name then
-				name = (realm and realm ~= "" and name .. "-" .. realm) or name .. "-" .. PLAYER_REALM
+				name = (realm and realm ~= "" and name .. "-" .. E:ShortenRealm(realm)) or name .. "-" .. PLAYER_REALM
 				lfgRoles[name] = CH.RoleIcons[role]
 			end
 		end
