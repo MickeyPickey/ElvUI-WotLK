@@ -118,7 +118,7 @@ L["ALT_KEY_TEXT"] = "ALT"
 L["Always Display"] = "Exibir sempre"
 L["Always Show Player"] = "Sempre Mostrar Jogador"
 L["Always Show Realm"] = "Sempre Mostrar Reino"
-L["Always Split Professions"] = true
+L["Always Split Professions"] = "Sempre Dividir Profissões"
 L["Anchor Point"] = "Ponto de Fixação"
 L["Anchor"] = "Âncora"
 L["Anima Diversion"] = "Desvio de Anima"
@@ -1458,7 +1458,7 @@ L["Percentage amount for horizontal overlap of Nameplates."] =
 	"Quantidade (porcentagem) para sobreposição horizontal das Placas de identificação"
 L["Percentage amount for vertical overlap of Nameplates."] =
 	"Quantidade (porcentagem) para sobreposição vertical das Placas de identificação"
-L["Trading Post"] = true
+L["Trading Post"] = "Posto Comercial"
 L["Personal"] = "Pessoal"
 L["Pet Battle"] = "Batalha de Mascote"
 L["Pet Group"] = "Grupo de Mascote"

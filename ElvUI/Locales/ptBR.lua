@@ -3,7 +3,7 @@ local E = unpack(ElvUI)
 local L = E.Libs.ACL:NewLocale("ElvUI", "ptBR")
 
 L["Restrict Pings"] = "Restringir Pings"
-L["Player"] = true
+L["Player"] = "Jogador"
 L["Small"] = "Pequeno"
 L["Medium"] = "Médio"
 L["Large"] = "Grande"
@@ -62,7 +62,7 @@ L["Aura Bars"] = "Barras de Auras"
 L["Auras Set"] = "Auras Selecionadas"
 L["Auras"] = true
 L["Auto Scale"] = "Dimensionar automaticamente"
-L["AVD: "] = true
+L["AVD: "] = "ESQ: "
 L["Avoidance Breakdown"] = "Separação de Evasão"
 L["Azerite Bar"] = "Barra de Azerita"
 L["Bag Bar"] = "Barra das Bolsas"
@@ -279,7 +279,7 @@ L["New Profile will create a fresh profile for this character."] =
 	"Novo Perfil irá criar um perfil limpo para este personagem."
 L["New Profile"] = "Novo Perfil"
 L["No bindings set."] = "Sem atalhos definidos"
-L["No gray items to sell."] = true
+L["No gray items to sell."] = "Nenhum item cinza para vender."
 L["No Guild"] = "Sem Guilda"
 L["No Loot"] = "Sem Saque"
 L["None"] = "Nenhum"
@@ -427,7 +427,7 @@ L["To setup chat colors, chat channels and chat font size, right-click the chat 
 L["Toggle Bags"] = "Mostrar/Ocultar Bolsas"
 L["Toggle Chat Frame"] = "Mostrar/Ocultar Bate-papo"
 L["Toggle Configuration"] = "Mostrar/Ocultar Modo de Configuração"
-L["Toggle Mover Mode"] = true
+L["Toggle Mover Mode"] = "Mostrar/Ocultar Modo de Mover"
 L["Toggle Volume Stream"] = "Mostrar/Ocultar Volume do Canal"
 L["Tooltip"] = "Dica"
 L["TopCenterWidget"] = "Widget Central"
