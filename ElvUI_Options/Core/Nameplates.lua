@@ -4829,7 +4829,6 @@ E.Options.args.nameplates = {
 					end,
 					set = function(info, key, value)
 						E.db.nameplates.units.TARGET.arrow = key
-						NP:UpdateCVars()
 						NP:ConfigureAll()
 					end,
 				},
