@@ -2,7 +2,7 @@
 local E = unpack(ElvUI)
 local L = E.Libs.ACL:NewLocale("ElvUI", "ruRU")
 
-L["Restrict Pings"] = true
+L["Restrict Pings"] = "Ограничить сигналы"
 L["Player"] = "Игрок"
 L["Small"] = "Малый"
 L["Medium"] = "Средний"
@@ -18,8 +18,10 @@ L["UPDATE_REQUEST"] =
 L[" |cff00ff00bound to |r"] = " |cff00ff00назначено для |r"
 L["%s frame has a conflicting anchor point. Forcing the Buffs to be attached to the main unitframe."] =
 	"Фрейм %s содержит конфликтующие точки крепления. Баффы будут принудительно закреплены на самом фрейме."
-L["%s is attempting to share the Private Profile (%s) with you. Would you like to accept the request?"] = true
-L["%s is attempting to share the Global Profile with you. Would you like to accept the request?"] = true
+L["%s is attempting to share the Private Profile (%s) with you. Would you like to accept the request?"] =
+	"%s хочет передать Вам приватный профиль (%s). Желаете ли Вы принять его?"
+L["%s is attempting to share the Global Profile with you. Would you like to accept the request?"] =
+	"%s хочет передать Вам глобальный профиль. Желаете ли Вы принять его?"
 L["%s is attempting to share the Profile (%s) with you. Would you like to accept the request?"] =
 	"%s хочет передать Вам профиль (%s). Желаете ли Вы принять его?"
 L["(Ctrl & Shift Click) Toggle CPU Profiling"] =
@@ -128,9 +130,9 @@ L["Data From: %s"] = "Данные от: %s"
 L["Dead"] = "Труп"
 L["Debuffs"] = "Дебаффы"
 L["Deficit:"] = "Убыток:"
-L["Delete gray items?"] = "Удалить серый предметы?"
+L["Delete gray items?"] = "Удалить серые предметы?"
 L["Deposit Reagents"] = "Сложить материалы"
-L["Deposit Warbound Items"] = true
+L["Deposit Warbound Items"] = "Положить предметы боевого отряда"
 L["Disable Warning"] = "Отключить предупреждение"
 L["Disable"] = "Выключить"
 L["Disabled"] = "Отключено"
@@ -161,7 +163,8 @@ L["Error resetting UnitFrame."] = "Ошибка сброса рамки юнит
 L["EventToastWidget"] = "Виджет событий"
 L["Experience Bar"] = "Полоса опыта"
 L["Experience"] = "Опыт"
-L["Download complete from %s, would you like to apply changes now?"] = true
+L["Download complete from %s, would you like to apply changes now?"] =
+	"Загрузка от %s завершена. Желаете ли Вы применить изменения сейчас?"
 L["Finished"] = "Завершить"
 L["Fishy Loot"] = "Улов"
 L["Focus Aura Bars"] = "Полосы аур фокуса"
@@ -207,7 +210,7 @@ L["Importance: |cFF33FF33Low|r"] = "Важность: |cFF33FF33Низкая|r"
 L["Importance: |cffD3CF00Medium|r"] = "Важность: |cffD3CF00Средняя|r"
 L["Importance: |cffFF3333High|r"] = "Важность: |cffFF3333Высокая|r"
 L["In Progress"] = "В процессе"
-L["Include Reagents"] = true
+L["Include Reagents"] = "Включая реагенты"
 L["INCOMPATIBLE_ADDON"] =
 	"%s несовместимо с %s.\nВыберите какой аддон/модуль использовать."
 L["Installation Complete"] = "Установка завершена"
@@ -285,7 +288,7 @@ L["New Profile will create a fresh profile for this character."] =
 	'"Новый профиль" создаст чистый профиль для этого персонажа.'
 L["New Profile"] = "Новый профиль"
 L["No bindings set."] = "Нет назначений"
-L["No gray items to sell."] = true
+L["No gray items to sell."] = "Нет серых предметов для продажи."
 L["No Guild"] = "Нет гильдии"
 L["No Loot"] = "Нет добычи"
 L["None"] = "Нет"
@@ -436,7 +439,7 @@ L["To setup chat colors, chat channels and chat font size, right-click the chat 
 L["Toggle Bags"] = "Показать сумки"
 L["Toggle Chat Frame"] = "Показать/скрыть чат"
 L["Toggle Configuration"] = "Конфигурация"
-L["Toggle Mover Mode"] = true
+L["Toggle Mover Mode"] = "Переключить режим перемещения"
 L["Toggle Volume Stream"] = "Вкл/откл звуковой поток"
 L["Tooltip"] = "Подсказка"
 L["TopCenterWidget"] = "Центральный виджет"
@@ -536,3 +539,7 @@ L["EHELP_COMMANDS"] = ([=[Ниже представлен список всех 
  */guildlist|r ^minPlayers|r  -  Dumps the sorted list of guilds from the finder.
  */guildapply|r ^"message"|r  -  Applies to the top 5 new guilds with an optional message.
 ]=]):gsub("*", E.InfoColor):gsub("%^", E.InfoColor2)
+L["In Combat"] = "В бою"
+L["Out of Combat"] = "Вне боя"
+L["New Mail"] = "Новое письмо"
+L["No Mail"] = "Нет писем"

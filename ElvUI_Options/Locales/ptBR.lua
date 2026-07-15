@@ -26,9 +26,9 @@ L["MEDIUM"] = "Médio"
 L["TOOLTIP"] = "Dicas de Interface"
 ----------------------------------
 
-L["BigWigs Spell Rename"] = true
+L["BigWigs Spell Rename"] = "Renomear Feitiços do BigWigs"
 L["Allows BigWigs to rename specific encounter spells on your castbar to something better to understand.\nExample: 'Impaling Eruption' becomes 'Frontal' and 'Twilight Massacre' becomes 'Dash'."] =
-	true
+	"Permite que o BigWigs renomeie feitiços específicos de encontros na sua barra de lançamento para algo mais fácil de entender.\nExemplo: 'Impaling Eruption' se torna 'Frontal' e 'Twilight Massacre' se torna 'Dash'."
 L["Add Aura ID"] = "Adicionar ID de Aura"
 L["Remove Aura"] = "Remover Aura"
 L["Select Aura"] = "Selecionar Aura"
@@ -118,7 +118,7 @@ L["ALT_KEY_TEXT"] = "ALT"
 L["Always Display"] = "Exibir sempre"
 L["Always Show Player"] = "Sempre Mostrar Jogador"
 L["Always Show Realm"] = "Sempre Mostrar Reino"
-L["Always Split Professions"] = true
+L["Always Split Professions"] = "Sempre Dividir Profissões"
 L["Anchor Point"] = "Ponto de Fixação"
 L["Anchor"] = "Âncora"
 L["Anima Diversion"] = "Desvio de Anima"
@@ -505,7 +505,7 @@ L["Cursor Anchor Offset X"] = "Deslocamento X da Âncora do Cursor"
 L["Cursor Anchor Offset Y"] = "Deslocamento Y da Âncora do Cursor"
 L["Cursor Anchor Type"] = "Tipo de Âncora do Cursor"
 L["Cursor Anchor"] = "Âncora do Cursor"
-L["CURSOR"] = true
+L["CURSOR"] = "Cursor"
 L["CURSOR_LEFT"] = "Esquerdo do cursor"
 L["CURSOR_RIGHT"] = "Direito do cursor"
 L["Custom Backdrop"] = "Fundo Customizado"
@@ -1451,14 +1451,14 @@ L["Party Indicator"] = "Indicador de Grupo"
 L["Party Only"] = "Apenas Party"
 L["Party PVP"] = "Grupo JxJ"
 L["Party"] = "Grupo"
-L["Pause"] = true
+L["Pause"] = "Pausar"
 L["Per Row"] = "Por Linha"
 L["Percent"] = "Porcentagem"
 L["Percentage amount for horizontal overlap of Nameplates."] =
 	"Quantidade (porcentagem) para sobreposição horizontal das Placas de identificação"
 L["Percentage amount for vertical overlap of Nameplates."] =
 	"Quantidade (porcentagem) para sobreposição vertical das Placas de identificação"
-L["Trading Post"] = true
+L["Trading Post"] = "Posto Comercial"
 L["Personal"] = "Pessoal"
 L["Pet Battle"] = "Batalha de Mascote"
 L["Pet Group"] = "Grupo de Mascote"
@@ -2309,3 +2309,12 @@ L["*Block Everything, Except Whitelisted Auras:|r ^(1) Whitelist"] =
 L["*Block Everything, Except Whitelisted Auras That Are Cast By Yourself:|r ^(1) blockNonPersonal | (2) Whitelist"] =
 	"*Bloquear Tudo, Exceto Auras Permitidas Que Forem Lançadas por Você:|r ^(1) [Bloquear] Não Pessoal | (2) Lista de Permissão"
 ----------------------------------
+L["Alpha of nameplates that are not your current target. Overridden by the alpha action of the ElvUI_NonTarget style filter while that filter is enabled."] =
+	"Transparência das placas de identificação que não são o seu alvo atual. Substituída pela ação de transparência do filtro de estilo ElvUI_NonTarget enquanto esse filtro estiver ativado."
+L["Choosing Settings %s. This will reload the UI.\n\n Are you sure?"] =
+	"Escolhendo as configurações %s. Isto irá recarregar a interface.\n\n Tem certeza?"
+L["Scale nameplates based on your threat situation in combat."] =
+	"Escala as placas de identificação com base na sua situação de ameaça em combate."
+L["Set the height of the aura icons."] = "Define a altura dos ícones das auras."
+L["Use Threat Scale"] = "Usar Escala de Ameaça"
+L["Width Override"] = "Sobrescrever Largura"

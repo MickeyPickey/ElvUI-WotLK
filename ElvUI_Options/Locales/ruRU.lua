@@ -8,7 +8,7 @@ L["NONE"] = "Нет"
 L["GROUP"] = "Группа"
 
 -----------  Position  -----------
-L["CENTER"] = true
+L["CENTER"] = "По центру"
 L["BOTTOM"] = "Внизу"
 L["BOTTOMLEFT"] = "Внизу слева"
 L["BOTTOMRIGHT"] = "Внизу справа"
@@ -18,21 +18,22 @@ L["LEFT"] = "Слева"
 L["RIGHT"] = "Справа"
 L["TOP"] = "Вверху"
 ------------  Strata  ------------
-L["BACKGROUND"] = true
-L["DIALOG"] = true
-L["HIGH"] = true
-L["LOW"] = true
-L["MEDIUM"] = true
+L["BACKGROUND"] = "Фон"
+L["DIALOG"] = "Диалог"
+L["HIGH"] = "Высокий"
+L["LOW"] = "Низкий"
+L["MEDIUM"] = "Средний"
 L["TOOLTIP"] = true
 ----------------------------------
 
-L["BigWigs Spell Rename"] = true
+L["BigWigs Spell Rename"] = "Переименование заклинаний BigWigs"
 L["Allows BigWigs to rename specific encounter spells on your castbar to something better to understand.\nExample: 'Impaling Eruption' becomes 'Frontal' and 'Twilight Massacre' becomes 'Dash'."] =
-	true
-L["Add Aura ID"] = true
-L["Remove Aura"] = true
-L["Select Aura"] = true
-L["Add an aura to the filter. Aura IDs can be acquired using the tooltip to find the correct ID."] = true
+	"Позволяет BigWigs переименовывать определенные заклинания боссов на Вашей полосе заклинаний в более понятные названия.\nНапример: 'Impaling Eruption' становится 'Frontal', а 'Twilight Massacre' — 'Dash'."
+L["Add Aura ID"] = "Добавить ID Ауры"
+L["Remove Aura"] = "Удалить Ауру"
+L["Select Aura"] = "Выбрать Ауру"
+L["Add an aura to the filter. Aura IDs can be acquired using the tooltip to find the correct ID."] =
+	"Добавить ауру в фильтр. Правильный ID ауры можно узнать с помощью подсказки."
 L["Primary Unit"] = "Основная цель"
 L["Requires the unit to be the primary target to display."] =
 	"Отображается, когда юнит является основной целью"
@@ -122,7 +123,7 @@ L["ALT_KEY_TEXT"] = "Alt"
 L["Always Display"] = "Всегда отображать"
 L["Always Show Player"] = "Всегда показывать игрока"
 L["Always Show Realm"] = "Всегда отображать сервер"
-L["Always Split Professions"] = true
+L["Always Split Professions"] = "Всегда разделять профессии"
 L["Anchor Point"] = "Точка фиксации"
 L["Anchor"] = "Фиксатор"
 L["Anima Diversion"] = "Поток анимы"
@@ -323,7 +324,8 @@ L["CHALLENGE_MODE"] = "Режим испытаний"
 L["Change settings for the display of the location text that is on the minimap."] =
 	"Изменяет опции отображения названия локации на миникарте."
 L["Change the alpha level of the frame."] = "Изменяет прозрачность этого элемента."
-L["Change the scale of the Game Menu which shows up when you press ESC."] = true
+L["Change the scale of the Game Menu which shows up when you press ESC."] =
+	"Изменяет масштаб меню игры, которое появляется при нажатии ESC."
 L["Change the width and controls how big of an area on the screen will accept clicks to target unit."] =
 	"Изменяет ширину и контролирует размер области, которая будет регистрировать клики для выделения юнита."
 L["Changelog"] = "Список изменений"
@@ -757,7 +759,7 @@ L["Equipped"] = "Надето"
 L["Error decoding data. Import string may be corrupted!"] =
 	"Ошибка при кодировании. Импортируемая строка может быть повреждена!"
 L["Error exporting profile!"] = "Ошибка при экспорте профиля!"
-L["Quest Progress and Error Text"] = true
+L["Quest Progress and Error Text"] = "Выполнение заданий и сообщения об ошибках"
 L["Event Log"] = "Журнал событий"
 L["Exclude Name"] = "Исключить имя"
 L["Excluded names will not be class colored."] =
@@ -852,7 +854,7 @@ L["Full Time"] = "Время полностью"
 L["Full"] = "Полный"
 L["FURY"] = "Гнев"
 L["Gaining Threat"] = "Получение угрозы"
-L["Game Menu"] = true
+L["Game Menu"] = "Меню игры"
 L["GARRISON_LOCATION_TOOLTIP"] = "Гарнизон"
 L["Gems"] = "Самоцветы"
 L["Gender"] = "Пол"
@@ -931,7 +933,8 @@ L["Hide Channels"] = "Скрыть каналы"
 L["Hide Chat Toggles"] = "Скрыть переключатели чата"
 L["Hide Copy Button"] = "Скрыть кнопку копирования"
 L["Hide Delay"] = "Задержка скрытия"
-L["Hide Quest Progress and Error Text"] = true
+L["Hide Quest Progress and Error Text"] =
+	"Скрыть выполнение заданий и сообщения об ошибках"
 L["Hide Frame"] = "Скрыть рамку"
 L["Hide Icon"] = "Скрыть иконку"
 L["Hide In Combat"] = "Скрывать в бою"
@@ -951,7 +954,8 @@ L["Hide Zone Text"] = "Скрыть текст зоны"
 L["Hide"] = "Скрыть"
 L["Hides the bling animation on buttons at the end of the global cooldown."] =
 	"Прятать анимацию вспышки на кнопках в конце глобального времени восстановления."
-L["Hides the yellow quest progress text and red error text at the top of the screen while in combat."] = true
+L["Hides the yellow quest progress text and red error text at the top of the screen while in combat."] =
+	"Скрывает желтый текст прогресса заданий и красный текст ошибок в верхней части экрана во время боя."
 L["High"] = "Верхний"
 L["Highlight Color Style"] = "Стиль подсветки"
 L["History Size"] = "Размер истории"
@@ -1526,7 +1530,7 @@ L["Percentage amount for horizontal overlap of Nameplates."] =
 	"Процент перекрытия индикаторов по горизонтали."
 L["Percentage amount for vertical overlap of Nameplates."] =
 	"Процент перекрытия индикаторов по вертикали."
-L["Trading Post"] = true
+L["Trading Post"] = "Торговая лавка"
 L["Personal"] = "Свое"
 L["Pet Battle"] = "Битвы питомцев"
 L["Pet Group"] = "Питомцы"
@@ -2414,3 +2418,10 @@ L["*Block Everything, Except Whitelisted Auras:|r ^(1) Whitelist"] =
 L["*Block Everything, Except Whitelisted Auras That Are Cast By Yourself:|r ^(1) blockNonPersonal | (2) Whitelist"] =
 	"*Блокировать все, кроме аур в белом списке, наложенных Вами:|r ^(1) '[Блокировать] Чужие' | (2) 'Белый список'"
 ----------------------------------
+L["Alpha of nameplates that are not your current target. Overridden by the alpha action of the ElvUI_NonTarget style filter while that filter is enabled."] =
+	"Прозрачность индикаторов здоровья, которые не являются вашей текущей целью. Переопределяется действием прозрачности фильтра стиля ElvUI_NonTarget, пока этот фильтр включен."
+L["Scale nameplates based on your threat situation in combat."] =
+	"Масштабировать индикаторы здоровья в зависимости от вашего уровня угрозы в бою."
+L["Set the height of the aura icons."] = "Установить высоту иконок аур."
+L["Use Threat Scale"] = "Использовать масштаб от угрозы"
+L["Width Override"] = "Своя ширина"
