@@ -1,4 +1,52 @@
-.luacheckcache
-.vscode/lua.booster.lint.json
-.gpt-runner/copilot.gpt.md
-.vscode/settings.json
+# ─── Operating system files ──────────────────────────────
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+# Linux
+*~
+.directory
+.Trash-*
+
+# ─── Editors and IDEs ────────────────────────────────────
+# VS Code — machine-specific settings stay local; only share extensions/tasks/launch
+.vscode/*
+!.vscode/extensions.json
+!.vscode/launch.json
+!.vscode/tasks.json
+# JetBrains
+.idea/
+# Vim / Neovim
+*.swp
+*.swo
+*~.un~
+# Sublime Text
+*.sublime-workspace
+
+# ─── Local tooling ───────────────────────────────────────
+# Claude Code (personal, machine-local overrides)
+.claude/settings.local.json
+# gpt-runner
+.gpt-runner/
+
+# ─── WoW addon packaging ─────────────────────────────────
+# BigWigs packager / release build output
+.release/
+*.zip
+
+# ─── Project tooling ─────────────────────────────────────
+# Pinned lua-language-server + StyLua fetched by `just setup`
+.tools/
+
+# ─── Misc ────────────────────────────────────────────────
+*.bak
+*.log
+*.tmp
