@@ -10,7 +10,9 @@ local GetTradePlayerItemLink = GetTradePlayerItemLink
 local GetTradeTargetItemLink = GetTradeTargetItemLink
 
 S:AddCallback("Skin_Trade", function()
-	if not E.private.skins.blizzard.enable or not E.private.skins.blizzard.trade then return end
+	if not E.private.skins.blizzard.enable or not E.private.skins.blizzard.trade then
+		return
+	end
 
 	TradeFrame:StripTextures(true)
 	TradeFrame:CreateBackdrop("Transparent")
@@ -30,12 +32,12 @@ S:AddCallback("Skin_Trade", function()
 	S:HandleEditBox(TradePlayerInputMoneyFrameCopper)
 
 	for i = 1, MAX_TRADE_ITEMS do
-		local player = _G["TradePlayerItem"..i]
-		local recipient = _G["TradeRecipientItem"..i]
-		local playerButton = _G["TradePlayerItem"..i.."ItemButton"]
-		local playerButtonIcon = _G["TradePlayerItem"..i.."ItemButtonIconTexture"]
-		local recipientButton = _G["TradeRecipientItem"..i.."ItemButton"]
-		local recipientButtonIcon = _G["TradeRecipientItem"..i.."ItemButtonIconTexture"]
+		local player = _G["TradePlayerItem" .. i]
+		local recipient = _G["TradeRecipientItem" .. i]
+		local playerButton = _G["TradePlayerItem" .. i .. "ItemButton"]
+		local playerButtonIcon = _G["TradePlayerItem" .. i .. "ItemButtonIconTexture"]
+		local recipientButton = _G["TradeRecipientItem" .. i .. "ItemButton"]
+		local recipientButtonIcon = _G["TradeRecipientItem" .. i .. "ItemButtonIconTexture"]
 
 		player:StripTextures()
 		recipient:StripTextures()
@@ -57,13 +59,13 @@ S:AddCallback("Skin_Trade", function()
 		playerButton.bg = CreateFrame("Frame", nil, playerButton)
 		playerButton.bg:SetTemplate("Default")
 		playerButton.bg:Point("TOPLEFT", playerButton, "TOPRIGHT", 4, 0)
-		playerButton.bg:Point("BOTTOMRIGHT", _G["TradePlayerItem"..i.."NameFrame"], "BOTTOMRIGHT", 0, 14)
+		playerButton.bg:Point("BOTTOMRIGHT", _G["TradePlayerItem" .. i .. "NameFrame"], "BOTTOMRIGHT", 0, 14)
 		playerButton.bg:OffsetFrameLevel(-3, playerButton)
 
 		recipientButton.bg = CreateFrame("Frame", nil, recipientButton)
 		recipientButton.bg:SetTemplate("Default")
 		recipientButton.bg:Point("TOPLEFT", recipientButton, "TOPRIGHT", 4, 0)
-		recipientButton.bg:Point("BOTTOMRIGHT", _G["TradeRecipientItem"..i.."NameFrame"], "BOTTOMRIGHT", 0, 14)
+		recipientButton.bg:Point("BOTTOMRIGHT", _G["TradeRecipientItem" .. i .. "NameFrame"], "BOTTOMRIGHT", 0, 14)
 		recipientButton.bg:OffsetFrameLevel(-3, recipientButton)
 	end
 
@@ -89,11 +91,11 @@ S:AddCallback("Skin_Trade", function()
 	TradeHighlightRecipientEnchant:SetFrameStrata("HIGH")
 
 	hooksecurefunc("TradeFrame_UpdatePlayerItem", function(id)
-		local tradeItemButton = _G["TradePlayerItem"..id.."ItemButton"]
+		local tradeItemButton = _G["TradePlayerItem" .. id .. "ItemButton"]
 		local link = GetTradePlayerItemLink(id)
 
 		if link then
-			local tradeItemName = _G["TradePlayerItem"..id.."Name"]
+			local tradeItemName = _G["TradePlayerItem" .. id .. "Name"]
 			local quality = select(3, GetItemInfo(link))
 
 			tradeItemName:SetTextColor(E:GetItemQualityColor(quality))
@@ -109,11 +111,11 @@ S:AddCallback("Skin_Trade", function()
 	end)
 
 	hooksecurefunc("TradeFrame_UpdateTargetItem", function(id)
-		local tradeItemButton = _G["TradeRecipientItem"..id.."ItemButton"]
+		local tradeItemButton = _G["TradeRecipientItem" .. id .. "ItemButton"]
 		local link = GetTradeTargetItemLink(id)
 
 		if link then
-			local tradeItemName = _G["TradeRecipientItem"..id.."Name"]
+			local tradeItemName = _G["TradeRecipientItem" .. id .. "Name"]
 			local quality = select(3, GetItemInfo(link))
 
 			tradeItemName:SetTextColor(E:GetItemQualityColor(quality))

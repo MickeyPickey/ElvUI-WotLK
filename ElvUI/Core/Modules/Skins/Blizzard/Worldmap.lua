@@ -5,7 +5,9 @@ local S = E:GetModule("Skins")
 --WoW API / Variables
 
 S:AddCallback("Skin_WorldMap", function()
-	if not E.private.skins.blizzard.enable or not E.private.skins.blizzard.worldmap then return end
+	if not E.private.skins.blizzard.enable or not E.private.skins.blizzard.worldmap then
+		return
+	end
 
 	WorldMapFrame:DisableDrawLayer("BACKGROUND")
 	WorldMapFrame:DisableDrawLayer("ARTWORK")
@@ -117,7 +119,9 @@ S:AddCallback("Skin_WorldMap", function()
 
 	local function SmallSkin()
 		if WORLDMAP_SETTINGS.advanced then
-			if currentMapMode == 0 then return end
+			if currentMapMode == 0 then
+				return
+			end
 			currentMapMode = 0
 
 			WorldMapFrame.backdrop:Point("TOPLEFT", 3, 2)
@@ -128,7 +132,9 @@ S:AddCallback("Skin_WorldMap", function()
 
 			setPoint(WorldMapLevelDropDown, "TOPRIGHT", WorldMapPositioningGuide, "TOPRIGHT", -419, -24)
 		else
-			if currentMapMode == 1 then return end
+			if currentMapMode == 1 then
+				return
+			end
 			currentMapMode = 1
 
 			WorldMapFrame.backdrop:Point("TOPLEFT", 11, -12)
@@ -142,7 +148,9 @@ S:AddCallback("Skin_WorldMap", function()
 	end
 
 	local function LargeSkin()
-		if currentMapMode == 2 then return end
+		if currentMapMode == 2 then
+			return
+		end
 		currentMapMode = 2
 
 		WorldMapFrame.backdrop:Point("TOPLEFT", WorldMapDetailFrame, "TOPLEFT", -8, 70)
@@ -155,7 +163,9 @@ S:AddCallback("Skin_WorldMap", function()
 	end
 
 	local function QuestSkin()
-		if currentMapMode == 3 then return end
+		if currentMapMode == 3 then
+			return
+		end
 		currentMapMode = 3
 
 		WorldMapFrame.backdrop:Point("TOPLEFT", WorldMapDetailFrame, "TOPLEFT", -9, 70)
@@ -179,7 +189,7 @@ S:AddCallback("Skin_WorldMap", function()
 
 	WorldMapTitleButton:Hide()
 
-	if not E:IsAddOnEnabled('Mapster') then -- Mapster needs mouse input on WorldMapFrame to drag the map
+	if not E:IsAddOnEnabled("Mapster") then -- Mapster needs mouse input on WorldMapFrame to drag the map
 		if not E.private.worldmap.enable then
 			WorldMapFrame:EnableMouse(false)
 			WorldMapFrame.EnableMouse = E.noop

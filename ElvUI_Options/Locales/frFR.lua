@@ -1,5 +1,5 @@
 -- French localization file for frFR.
-local L = ElvUI[1].Libs.ACL:NewLocale('ElvUI', 'frFR')
+local L = ElvUI[1].Libs.ACL:NewLocale("ElvUI", "frFR")
 
 L["ALT"] = true
 L["CTRL"] = true
@@ -27,15 +27,18 @@ L["TOOLTIP"] = true
 ----------------------------------
 
 L["BigWigs Spell Rename"] = true
-L["Allows BigWigs to rename specific encounter spells on your castbar to something better to understand.\nExample: 'Impaling Eruption' becomes 'Frontal' and 'Twilight Massacre' becomes 'Dash'."] = true
+L["Allows BigWigs to rename specific encounter spells on your castbar to something better to understand.\nExample: 'Impaling Eruption' becomes 'Frontal' and 'Twilight Massacre' becomes 'Dash'."] =
+	true
 L["Add Aura ID"] = true
 L["Remove Aura"] = true
 L["Select Aura"] = true
 L["Add an aura to the filter. Aura IDs can be acquired using the tooltip to find the correct ID."] = true
 L["Primary Unit"] = "Unité principale"
-L["Requires the unit to be the primary target to display."] = "Nécessite que l'unité soit la cible principale pour s'afficher."
+L["Requires the unit to be the primary target to display."] =
+	"Nécessite que l'unité soit la cible principale pour s'afficher."
 L["Pet Specific"] = "Spécifique au familier"
-L["Use the profile specific filter Aura Indicator (Pet) instead of the global filter Aura Indicator."] = "Utiliser le filtre spécifique au profil Indicateur d'Aura (Familier) au lieu du filtre global Indicateur d'Aura."
+L["Use the profile specific filter Aura Indicator (Pet) instead of the global filter Aura Indicator."] =
+	"Utiliser le filtre spécifique au profil Indicateur d'Aura (Familier) au lieu du filtre global Indicateur d'Aura."
 L["%s and then %s"] = "%s et alors %s"
 L["24-Hour Time"] = "Mode 24 Heures"
 L["2D"] = true
@@ -56,7 +59,8 @@ L["Add / Remove"] = "Ajouter / Enlever"
 L["Add a Item Name or ID to the list."] = "Ajoutez un nom d'objet ou un ID à la liste."
 L["Add a Name or NPC ID to the list."] = "Ajouter le nom ou l'ID d'un PNJ à la liste"
 L["Add a spell to the filter."] = "Ajouter un sort au filtre."
-L["Add an Item by dragging it, shift-clicking, or entering the Item ID onto this field."] = "Ajoutez un objet en le faisant glisser, en cliquant avec Maj enfoncée, ou en entrant l'ID de l'objet dans ce champ."
+L["Add an Item by dragging it, shift-clicking, or entering the Item ID onto this field."] =
+	"Ajoutez un objet en le faisant glisser, en cliquant avec Maj enfoncée, ou en entrant l'ID de l'objet dans ce champ."
 L["Add Currency by ID"] = "Ajouter la monnaie par ID"
 L["Add Currency"] = "Ajouter la monnaie"
 L["Add Current"] = "Ajouter l'actuel"
@@ -82,10 +86,12 @@ L["Additional Power"] = "Puissance additionnelle"
 L["Additional spacing between each individual group."] = "Espace additionnel entre chaque groupe individuel."
 L["Additive Blend"] = "Mélange additif"
 L["AddOn Manager"] = "Gestionnaire d'add-ons"
-L["Adds an arrow in front of the chat lines to copy the entire line."] = "Ajoute une flèche devant les lignes de chat pour copier toute la ligne."
+L["Adds an arrow in front of the chat lines to copy the entire line."] =
+	"Ajoute une flèche devant les lignes de chat pour copier toute la ligne."
 L["Adjust the height of your left chat panel."] = "Ajustez la hauteur de votre panneau de discussion gauche."
 L["Adjust the height of your right chat panel."] = "Ajuste la hauteur de la fenêtre de discussion de droite."
-L["Adjust the scale of the minimap and also the pins. Eg: Quests, Resource nodes, Group members"] = "Ajuste l'échelle de la minicarte ainsi que des repères. Exemple : quêtes, ressources, membres du groupe"
+L["Adjust the scale of the minimap and also the pins. Eg: Quests, Resource nodes, Group members"] =
+	"Ajuste l'échelle de la minicarte ainsi que des repères. Exemple : quêtes, ressources, membres du groupe"
 L["Adjust the size of the minimap."] = "Ajuster la taille de la minicarte."
 L["Adjust the width of the bag frame."] = "Ajuster la largeur de la fenêtre du sac."
 L["Adjust the width of the bank frame."] = "Ajuster la largeur de la fenêtre du sac de banque."
@@ -98,9 +104,11 @@ L["Alive"] = "En vie"
 L["Alliance"] = true
 L["Allied Races"] = "Races alliées"
 L["Allow Masque to handle the skinning of this element."] = "Autoriser Masque à gérer l'habillage de cet élement."
-L["Allow newly learned spells to be automatically placed on an empty actionbar slot."] = "Autoriser les nouveaux sorts à être automatiquement ajoutés dans un emplacement vide d'une barre d'action."
+L["Allow newly learned spells to be automatically placed on an empty actionbar slot."] =
+	"Autoriser les nouveaux sorts à être automatiquement ajoutés dans un emplacement vide d'une barre d'action."
 L["Allow Sharing"] = "Autoriser le partage"
-L["Allows you to tie a stack count to an aura when you add it to the list, which allows the trigger to act when an aura reaches X number of stacks."] = "Vous permet d'associer un compte de piles à une aura lorsque vous l'ajoutez à la liste, ce qui permet au déclencheur d'agir lorsque une aura atteint un nombre de piles X."
+L["Allows you to tie a stack count to an aura when you add it to the list, which allows the trigger to act when an aura reaches X number of stacks."] =
+	"Vous permet d'associer un compte de piles à une aura lorsque vous l'ajoutez à la liste, ce qui permet au déclencheur d'agir lorsque une aura atteint un nombre de piles X."
 L["Alpha channel is taken from the color option."] = "Le canal alpha est pris à partir de l'option de couleur."
 L["Alpha Fading"] = "Estompage alpha"
 L["Alpha Key"] = "Touche Alpha"
@@ -114,28 +122,45 @@ L["Anchor Point"] = "Point d'ancrage"
 L["Anchor"] = "Point d'ancrage"
 L["Anima Diversion"] = "Détournement d'anima"
 L["Announce Interrupts"] = "Annoncer les interruptions"
-L["Announce when you interrupt a spell to the specified chat channel."] = "Annonce quand vous interrompez un sort dans le canal de chat spécifié."
+L["Announce when you interrupt a spell to the specified chat channel."] =
+	"Annonce quand vous interrompez un sort dans le canal de chat spécifié."
 L["Another Players Pet"] = "Familier d'un autre joueur"
 L["Any"] = "Tous"
-L["Applies the font and font size settings throughout the entire user interface. Note: Some font size settings will be skipped due to them having a smaller font size by default."] = "Applique les paramètres de taille de la police et de police à l'ensemble de l'interface. Remarque: Certains réglages de taille de la police seront ignorées en raison d'une taille de police plus petite par défaut."
+L["Applies the font and font size settings throughout the entire user interface. Note: Some font size settings will be skipped due to them having a smaller font size by default."] =
+	"Applique les paramètres de taille de la police et de police à l'ensemble de l'interface. Remarque: Certains réglages de taille de la police seront ignorées en raison d'une taille de police plus petite par défaut."
 L["Apply Font To All"] = "Appliquer la police partout"
-L["Apply this filter if a buff has remaining time greater than this. Set to zero to disable."] = "Appliquer ce filtre si un buff a un temps restant supérieur à cela. Mettez zéro pour désactiver."
-L["Apply this filter if a buff has remaining time less than this. Set to zero to disable."] = "Appliquer ce filtre si un buff a un temps restant inférieur à cela. Mettez zéro pour désactiver."
-L["Apply this filter if a debuff has remaining time greater than this. Set to zero to disable."] = "Appliquer ce filtre si un debuff a un temps restant supérieur à cela. Mettez zéro pour désactiver."
-L["Apply this filter if a debuff has remaining time less than this. Set to zero to disable."] = "Appliquer ce filtre si un debuff a un temps restant inférieur à cela. Mettez zéro pour désactiver."
+L["Apply this filter if a buff has remaining time greater than this. Set to zero to disable."] =
+	"Appliquer ce filtre si un buff a un temps restant supérieur à cela. Mettez zéro pour désactiver."
+L["Apply this filter if a buff has remaining time less than this. Set to zero to disable."] =
+	"Appliquer ce filtre si un buff a un temps restant inférieur à cela. Mettez zéro pour désactiver."
+L["Apply this filter if a debuff has remaining time greater than this. Set to zero to disable."] =
+	"Appliquer ce filtre si un debuff a un temps restant supérieur à cela. Mettez zéro pour désactiver."
+L["Apply this filter if a debuff has remaining time less than this. Set to zero to disable."] =
+	"Appliquer ce filtre si un debuff a un temps restant inférieur à cela. Mettez zéro pour désactiver."
 L["Apply To All"] = "Appliquer à tous"
 L["Archaeology Frame"] = "Fenêtre d'Archéologie"
-L["Are you sure you want to reset ActionBars settings?"] = "Etes-vous sûr de vouloir réinitialiser les paramètres des Barres d'Action ?"
-L["Are you sure you want to reset Auras settings?"] = "Etes-vous sûr de vouloir réinitialiser les paramètres des Auras ?"
-L["Are you sure you want to reset Bags settings?"] = "Etes-vous sûr de vouloir réinitialiser les paramètres des Sacs ?"
-L["Are you sure you want to reset Chat settings?"] = "Etes-vous sûr de vouloir réinitialiser les paramètres du Tchat ?"
-L["Are you sure you want to reset Cooldown settings?"] = "Etes-vous sûr de vouloir réinitialiser les paramètres des Cooldowns ?"
-L["Are you sure you want to reset DataBars settings?"] = "Etes-vous sûr de vouloir réinitialiser les paramètres des Barres d'Expérience ?"
-L["Are you sure you want to reset DataTexts settings?"] = "Etes-vous sûr de vouloir réinitialiser les paramètres des Textes d'Informations ?"
-L["Are you sure you want to reset General settings?"] = "Etes-vous sûr de vouloir réinitialiser les paramètres Généraux ?"
-L["Are you sure you want to reset NamePlates settings?"] = "Etes-vous sûr de vouloir réinitialiser les paramètres des Noms ?"
-L["Are you sure you want to reset Tooltip settings?"] = "Etes-vous sûr de vouloir réinitialiser les paramètres des Infobulles ?"
-L["Are you sure you want to reset UnitFrames settings?"] = "Etes-vous sûr de vouloir réinitialiser les paramètres des Cadres d'Unités ?"
+L["Are you sure you want to reset ActionBars settings?"] =
+	"Etes-vous sûr de vouloir réinitialiser les paramètres des Barres d'Action ?"
+L["Are you sure you want to reset Auras settings?"] =
+	"Etes-vous sûr de vouloir réinitialiser les paramètres des Auras ?"
+L["Are you sure you want to reset Bags settings?"] =
+	"Etes-vous sûr de vouloir réinitialiser les paramètres des Sacs ?"
+L["Are you sure you want to reset Chat settings?"] =
+	"Etes-vous sûr de vouloir réinitialiser les paramètres du Tchat ?"
+L["Are you sure you want to reset Cooldown settings?"] =
+	"Etes-vous sûr de vouloir réinitialiser les paramètres des Cooldowns ?"
+L["Are you sure you want to reset DataBars settings?"] =
+	"Etes-vous sûr de vouloir réinitialiser les paramètres des Barres d'Expérience ?"
+L["Are you sure you want to reset DataTexts settings?"] =
+	"Etes-vous sûr de vouloir réinitialiser les paramètres des Textes d'Informations ?"
+L["Are you sure you want to reset General settings?"] =
+	"Etes-vous sûr de vouloir réinitialiser les paramètres Généraux ?"
+L["Are you sure you want to reset NamePlates settings?"] =
+	"Etes-vous sûr de vouloir réinitialiser les paramètres des Noms ?"
+L["Are you sure you want to reset Tooltip settings?"] =
+	"Etes-vous sûr de vouloir réinitialiser les paramètres des Infobulles ?"
+L["Are you sure you want to reset UnitFrames settings?"] =
+	"Etes-vous sûr de vouloir réinitialiser les paramètres des Cadres d'Unités ?"
 L["Arena Registrar"] = "Registraire d'arène"
 L["Arrow Scale"] = "Échelle de la flèche"
 L["Arrow Spacing"] = "Espacement des flèches"
@@ -145,12 +170,15 @@ L["Ascending"] = "Ascendant"
 L["Assigned Icon"] = "Icône assignée"
 L["Assist Frames"] = "Cadre des Soutiens"
 L["Assist"] = true
-L["At what point should the text be displayed. Set to -1 to disable."] = "A quel moment le texte devrait être affiché. Mettre à -1 pour désactiver."
+L["At what point should the text be displayed. Set to -1 to disable."] =
+	"A quel moment le texte devrait être affiché. Mettre à -1 pour désactiver."
 L["Attach Text To"] = "Attacher le texte à"
 L["Attach To"] = "Attacher à"
-L["Attempt to create URL links inside the chat."] = "Tentative pour créer un lien URL dans les fenêtres de discussion."
+L["Attempt to create URL links inside the chat."] =
+	"Tentative pour créer un lien URL dans les fenêtres de discussion."
 L["Attempt to support eyefinity/nvidia surround."] = "Tente de supporter eyefinity/nvidia surround."
-L["Attempts to center UI elements in a 16:9 format for ultrawide monitors"] = "Tente de centrer les éléments de l'interface dans le format 16:9 pour les écrans ultra-larges"
+L["Attempts to center UI elements in a 16:9 format for ultrawide monitors"] =
+	"Tente de centrer les éléments de l'interface dans le format 16:9 pour les écrans ultra-larges"
 L["Auction House"] = "Hôtel des ventes"
 L["AUCTIONS"] = "Ventes"
 L["Aura Filters"] = "Filtres d'auras"
@@ -165,11 +193,16 @@ L["Auto Track Reputation"] = "Suivi automatique de la réputation"
 L["Auto-Close Pet Battle Log"] = "Fermeture automatique du journal de combat des mascottes"
 L["Auto-Hide"] = "Masquer Automatiquement"
 L["Automatic"] = "Automatique"
-L["Automatically accept invites from guild/friends."] = "Accepter automatiquement les invitations venant d'amis / joueurs de la guilde."
-L["Automatically hide the objective frame during boss fights while you are running a key."] = "Masquer automatiquement le cadre d'objectif pendant les combats de boss lorsque vous exécutez une clé."
-L["Automatically hide the objective frame during boss or arena fights."] = "Masquer automatiquement le cadre d'objectif pendant les combats de boss ou d'arène."
-L["Automatically repair using the following method when visiting a merchant."] = "Répare automatiquement votre équipement chez le marchand selon le mode de réparation sélectionné."
-L["Automatically vendor gray items when visiting a vendor."] = "Vendre automatiquement les objets gris quand vous rendez visite à un marchand."
+L["Automatically accept invites from guild/friends."] =
+	"Accepter automatiquement les invitations venant d'amis / joueurs de la guilde."
+L["Automatically hide the objective frame during boss fights while you are running a key."] =
+	"Masquer automatiquement le cadre d'objectif pendant les combats de boss lorsque vous exécutez une clé."
+L["Automatically hide the objective frame during boss or arena fights."] =
+	"Masquer automatiquement le cadre d'objectif pendant les combats de boss ou d'arène."
+L["Automatically repair using the following method when visiting a merchant."] =
+	"Répare automatiquement votre équipement chez le marchand selon le mode de réparation sélectionné."
+L["Automatically vendor gray items when visiting a vendor."] =
+	"Vendre automatiquement les objets gris quand vous rendez visite à un marchand."
 L["Automation"] = "Automatisation"
 L["Available Tags"] = "Balises disponibles"
 L["Azerite Essence"] = "Essence d'azérite"
@@ -203,8 +236,10 @@ L["Bank %d"] = "Banque %d"
 L["Bank Only"] = "Banque seulement"
 L["BALANCE_ENERGY_LUNAR"] = "Énergie lunaire"
 L["BALANCE_ENERGY_SOLAR"] = "Énergie solaire"
-L["Bar %s is used for stance or forms.\nYou will have to adjust paging to use this bar.\nAre you sure?"] = "La barre %s est utilisée pour les postures ou les formes.\nVous devrez ajuster la pagination pour utiliser cette barre.\nÊtes-vous sûr?"
-L["Bar %s is used for stance or forms.\nYou will have to adjust paging to use this bar.\nAre you sure?"] = "La barre %s est utilisée pour les postures ou les formes.\nVous devrez ajuster la pagination pour utiliser cette barre.\nÊtes-vous sûr?"
+L["Bar %s is used for stance or forms.\nYou will have to adjust paging to use this bar.\nAre you sure?"] =
+	"La barre %s est utilisée pour les postures ou les formes.\nVous devrez ajuster la pagination pour utiliser cette barre.\nÊtes-vous sûr?"
+L["Bar %s is used for stance or forms.\nYou will have to adjust paging to use this bar.\nAre you sure?"] =
+	"La barre %s est utilisée pour les postures ou les formes.\nVous devrez ajuster la pagination pour utiliser cette barre.\nÊtes-vous sûr?"
 L["Bar Direction"] = "Direction de la barre"
 L["Bar Settings"] = "Paramètres de la barre"
 L["BARBERSHOP"] = "Salon de coiffure"
@@ -214,7 +249,8 @@ L["BATTLEFIELDS"] = "Champs de bataille"
 L["Battleground Friendly"] = "Champ de bataille (Allié)"
 L["Battleground Texts"] = "Textes des champs de bataille"
 L["Battlegrounds"] = "Champs de bataille"
-L["Begin a new row or column after this many auras."] = "Commencer une nouvelle ligne ou colonne après cette limite d'auras."
+L["Begin a new row or column after this many auras."] =
+	"Commencer une nouvelle ligne ou colonne après cette limite d'auras."
 L["Below Chat (Inside)"] = "En dessous du tchat (intérieur)"
 L["Below Chat"] = "En-dessous du tchat"
 L["Below"] = "En dessous"
@@ -237,7 +273,8 @@ L["Block Focus Glow"] = "Bloquer la lueur de focalisation"
 L["Block Mouseover Glow"] = "Bloquer la lueur au survol"
 L["Block Target Glow"] = "Bloquer la lueur de cible"
 L["Blocks all click events while in combat."] = "Empêche tous les clics d'évenements durant le combat."
-L["Blocks datatext tooltip from showing in combat."] = "Empêche l'affichage des infobulles des textes d'informations en combat."
+L["Blocks datatext tooltip from showing in combat."] =
+	"Empêche l'affichage des infobulles des textes d'informations en combat."
 L["Bonus Reward Position"] = "Position des récompenses bonus"
 L["Border Color"] = "Couleur de la bordure"
 L["Border Glow"] = "Lueur de la bordure"
@@ -278,10 +315,13 @@ L["Casted by Player Only"] = "Seulement lancé par le joueur"
 L["Casting"] = "Incantation"
 L["Center"] = "Centrer"
 L["CHALLENGE_MODE"] = "Mode Défi"
-L["Change settings for the display of the location text that is on the minimap."] = "Modifier les paramètres pour l'affichage du texte d'emplacement sur la minicarte."
+L["Change settings for the display of the location text that is on the minimap."] =
+	"Modifier les paramètres pour l'affichage du texte d'emplacement sur la minicarte."
 L["Change the alpha level of the frame."] = "Changer le niveau alpha de la fenêtre."
-L["Change the scale of the Game Menu which shows up when you press ESC."] = "Changer l'échelle du menu du jeu qui apparaît lorsque vous appuyez sur ÉCHAP."
-L["Change the width and controls how big of an area on the screen will accept clicks to target unit."] = "Change la largeur et contrôle la taille d'une zone de l'écran qui accepte les clics pour cibler l'unité."
+L["Change the scale of the Game Menu which shows up when you press ESC."] =
+	"Changer l'échelle du menu du jeu qui apparaît lorsque vous appuyez sur ÉCHAP."
+L["Change the width and controls how big of an area on the screen will accept clicks to target unit."] =
+	"Change la largeur et contrôle la taille d'une zone de l'écran qui accepte les clics pour cibler l'unité."
 L["Changelog"] = "Journal des modifications"
 L["Channel Alerts"] = "Alertes de canal"
 L["Channel Time Format"] = "Format du temps de canal"
@@ -302,16 +342,21 @@ L["CHAT_MSG_EMOTE"] = "Emote"
 L["Check Focus Cast"] = "Vérifier le lancement sur la focalisation"
 L["Check Mouseover Cast"] = "Vérifier le lancement sur le survol de la souris"
 L["Check Self Cast"] = "Vérifier le lancement sur soi-même"
-L["Check these to only have the filter active in certain difficulties. If none are checked, it is active in all difficulties."] = "Cochez ces cases pour activer le filtre uniquement dans certaines difficultés. Si aucune n'est cochée, le filtre sera actif dans toutes les difficultés."
+L["Check these to only have the filter active in certain difficulties. If none are checked, it is active in all difficulties."] =
+	"Cochez ces cases pour activer le filtre uniquement dans certaines difficultés. Si aucune n'est cochée, le filtre sera actif dans toutes les difficultés."
 L["CheckBox Skin"] = "Apparence des cases à cocher"
 L["CHI_POWER"] = "Chi"
 L["Choose Export Format"] = "Choisissez le format d'exportation"
-L["Choose UIPARENT to prevent it from hiding with the unitframe."] = "Choisissez UIPARENT pour empêcher qu'il se cache avec le cadre d'unité."
+L["Choose UIPARENT to prevent it from hiding with the unitframe."] =
+	"Choisissez UIPARENT pour empêcher qu'il se cache avec le cadre d'unité."
 L["Choose What To Export"] = "Choisissez quoi exporter"
-L["Choose when you want the tooltip to show in combat. If a modifier is chosen, then you need to hold that down to show the tooltip."] = "Choisissez quand vous voulez que l'infobulle s'affiche en combat. Si un modificateur est choisi, vous devez le maintenir enfoncé pour afficher l'infobulle."
-L["Choose when you want the tooltip to show. If a modifier is chosen, then you need to hold that down to show the tooltip."] = "Choisissez quand vous voulez que l'infobulle s'affiche. Si un modificateur est choisi, vous devez le maintenir enfoncé pour afficher l'infobulle."
+L["Choose when you want the tooltip to show in combat. If a modifier is chosen, then you need to hold that down to show the tooltip."] =
+	"Choisissez quand vous voulez que l'infobulle s'affiche en combat. Si un modificateur est choisi, vous devez le maintenir enfoncé pour afficher l'infobulle."
+L["Choose when you want the tooltip to show. If a modifier is chosen, then you need to hold that down to show the tooltip."] =
+	"Choisissez quand vous voulez que l'infobulle s'affiche. Si un modificateur est choisi, vous devez le maintenir enfoncé pour afficher l'infobulle."
 L["Chromie Time Frame"] = "Cadre du temps de Chromie"
-L["Clamp nameplates to the top of the screen when outside of view."] = "Fixez les noms des plaques d'identification en haut de l'écran lorsque vous êtes hors de vue."
+L["Clamp nameplates to the top of the screen when outside of view."] =
+	"Fixez les noms des plaques d'identification en haut de l'écran lorsque vous êtes hors de vue."
 L["Clamp Nameplates"] = "Fixer les barres de vie"
 L["Class Backdrop"] = "Fond selon la classe"
 L["Class Castbars"] = "Barres d'incantation selon la classe"
@@ -336,7 +381,8 @@ L["Clickable Width / Width"] = "Largeur cliquable / Largeur"
 L["Cluster Backdrop"] = "Fond du Groupe"
 L["Coding:"] = "Codage :"
 L["COLLECTIONS"] = "Collections"
-L["Color all buffs that reduce the unit's incoming damage."] = "Colorer toutes les améliorations réduisant les dégâts entrants de l'unité."
+L["Color all buffs that reduce the unit's incoming damage."] =
+	"Colorer toutes les améliorations réduisant les dégâts entrants de l'unité."
 L["Color aurabar debuffs by type."] = "Colore les affaiblissement de la barre d'auras par catégorie."
 L["Color Backdrop"] = "Fond Coloré"
 L["Color by Happiness"] = "Couleur selon le bonheur"
@@ -344,33 +390,43 @@ L["Color By Spec"] = "Couleur par spécialisation"
 L["Color by Unit Class"] = "Couleur par classe de l'unité"
 L["Color by Value"] = "Couleur par valeur"
 L["Color castbar by the class of the unit's class."] = "Colore la barre d'incantation selon la classe de l'unité."
-L["Color castbar by the reaction of the unit to the player."] = "Colore la barre d'incantation selon la réaction de l'unité envers le joueur."
-L["Color castbars by the class of player units."] = "Colore les barres d'incantation selon la classe des unités de joueur."
-L["Color castbars by the reaction type of non-player units."] = "Colore les barres d'incantation selon le type de réaction des unités non-joueur."
+L["Color castbar by the reaction of the unit to the player."] =
+	"Colore la barre d'incantation selon la réaction de l'unité envers le joueur."
+L["Color castbars by the class of player units."] =
+	"Colore les barres d'incantation selon la classe des unités de joueur."
+L["Color castbars by the reaction type of non-player units."] =
+	"Colore les barres d'incantation selon le type de réaction des unités non-joueur."
 L["Color Debuffs"] = "Couleur des affaiblissements"
 L["Color Enchants"] = "Couleur des enchantements"
 L["Color Gradient"] = "Dégradé de couleur"
 L["Color health by amount remaining."] = "Colore la barre de vie en fonction de la quantité restante."
-L["Color health by classcolor or reaction."] = "Colore la barre de vie en fonction de la couleur de la classe ou de la réaction."
+L["Color health by classcolor or reaction."] =
+	"Colore la barre de vie en fonction de la couleur de la classe ou de la réaction."
 L["Color health by color selection."] = "Colore la barre de vie en fonction d'une sélection de couleur."
-L["Color Keybind Text when Out of Range, instead of the button."] = "Colore le texte de raccourci lorsque hors de portée, plutôt que le bouton."
+L["Color Keybind Text when Out of Range, instead of the button."] =
+	"Colore le texte de raccourci lorsque hors de portée, plutôt que le bouton."
 L["Color Keybind Text"] = "Couleur du texte de raccourci"
 L["Color of the actionbutton when not usable."] = "Couleur du bouton d'action quand inutilisable"
-L["Color of the actionbutton when out of power (Mana, Rage, Focus, Holy Power)."] = "Couleur du bouton d'action quand il n'y a pas ressource (Mana, Rage, Focalisation, Puissance sacrée)."
+L["Color of the actionbutton when out of power (Mana, Rage, Focus, Holy Power)."] =
+	"Couleur du bouton d'action quand il n'y a pas ressource (Mana, Rage, Focalisation, Puissance sacrée)."
 L["Color of the actionbutton when out of range."] = "Couleur du bouton d'action quand hors de portée."
 L["Color of the actionbutton when usable."] = "Couleur du bouton d'action quand utilisable"
 L["Color of the Targets Aura time when expiring."] = "Couleur du temps de l'aura de la cible lorsqu'elle expire."
 L["Color of the Targets Aura time."] = "Couleur du temps de l'aura de la cible."
 L["Color Override"] = "Remplacement de couleur"
 L["Color Picker"] = "Sélecteur de couleur"
-L["Color power by classcolor or reaction."] = "Colore l'énergie de la classe par la couleur de la classe ou par l'aggro."
+L["Color power by classcolor or reaction."] =
+	"Colore l'énergie de la classe par la couleur de la classe ou par l'aggro."
 L["Color power by color selection."] = "Couleur de la puissance par sélection de couleur."
 L["Color score based on Blizzards API."] = "Couleur basée sur l'API de Blizzard."
 L["Color Score"] = "Score de couleur"
 L["Color some texts use."] = "Couleur utilisée par les Textes d'informations."
-L["Color the health backdrop by class or reaction."] = "Colore l'arrière-plan de la barre de vie par la couleur de la classe ou par l'aggro."
-L["Color the unit healthbar if there is a debuff that can be dispelled by you."] = "Colore la barre de vie de l'unité qui peut être dissipé par vous-même."
-L["Color tooltip border based on Item Quality."] = "Couleur de la bordure de l'infobulle en fonction de la qualité de l'objet."
+L["Color the health backdrop by class or reaction."] =
+	"Colore l'arrière-plan de la barre de vie par la couleur de la classe ou par l'aggro."
+L["Color the unit healthbar if there is a debuff that can be dispelled by you."] =
+	"Colore la barre de vie de l'unité qui peut être dissipé par vous-même."
+L["Color tooltip border based on Item Quality."] =
+	"Couleur de la bordure de l'infobulle en fonction de la qualité de l'objet."
 L["Color Turtle Buffs"] = "Couleur des améliorations de la tortue"
 L["Color when at half of the Low Health Threshold"] = "Couleur lorsqu'à la moitié du seuil de santé est faible"
 L["Color when at Low Health Threshold"] = "Couleur lorsque le seuil de santé faible est atteint"
@@ -379,14 +435,17 @@ L["Color when the text is in the days format."] = "Couleur quand le texte est ex
 L["Color when the text is in the hours format."] = "Couleur quand le texte est exprimé en heure."
 L["Color when the text is in the minutes format."] = "Couleur quand le texte est exprimé en minute."
 L["Color when the text is in the seconds format."] = "Couleur quand le texte est exprimé en seconde."
-L["Color when the text is using a modified timer rate."] = "Couleur lorsque le texte utilise un taux de minuterie modifié."
+L["Color when the text is using a modified timer rate."] =
+	"Couleur lorsque le texte utilise un taux de minuterie modifié."
 L["COLOR"] = "Couleur"
 L["Colored Icon"] = "Icône Coloré"
 L["Coloring (Specific)"] = "Coloration (Spécifique)"
 L["Coloring"] = "Coloration"
 L["Colorize Selected Text"] = "Coloriser le texte sélectionné"
-L["Colors the border according to the Quality of the Item."] = "Colore la bordure en fonction de la qualité de l'objet."
-L["Colors the border according to the type of items assigned to the bag."] = "Colore la bordure en fonction du type d'objets affectés au sac."
+L["Colors the border according to the Quality of the Item."] =
+	"Colore la bordure en fonction de la qualité de l'objet."
+L["Colors the border according to the type of items assigned to the bag."] =
+	"Colore la bordure en fonction du type d'objets affectés au sac."
 L["Colors"] = "Couleurs"
 L["Combat Font"] = "Police de combat"
 L["Combat Icon"] = "Icône de combat"
@@ -405,19 +464,27 @@ L["Connected"] = "Connecté"
 L["Conscious"] = "Conscient"
 L["Content"] = "Contenu"
 L["Contribution"] = true
-L["Control enemy nameplates toggling on or off when in combat."] = "Contrôle l'activation ou la désactivation des barres de vie des ennemis pendant le combat."
-L["Control friendly nameplates toggling on or off when in combat."] = "Contrôle l'activation ou la désactivation des barres de vie des alliés pendant le combat."
-L["Controls how big of an area on the screen will accept clicks to target unit."] = "Contrôle la zone de la fenêtre qui accepte les clics pour cibler l'unité."
-L["Controls how many seconds of inactivity has to pass before chat is faded."] = "Contrôle le nombre de secondes d'inactivité avant que le tchat ne s'estompe."
-L["Controls the amount of decimals used in values displayed on elements like NamePlates and UnitFrames."] = "Contrôle le nombre de décimales utilisées pour les valeurs affichées sur les éléments tels que les barres de vie et les cadres d'unité."
-L["Controls the speed at which smoothed bars will be updated."] = "Contrôle la vitesse à laquelle les barres lissées seront mises à jour."
-L["Controls the text displayed. Tags are available in the Available Tags section of the config."] = "Contrôle le texte affiché. Les balises sont disponibles dans la section Balises disponibles de la configuration."
+L["Control enemy nameplates toggling on or off when in combat."] =
+	"Contrôle l'activation ou la désactivation des barres de vie des ennemis pendant le combat."
+L["Control friendly nameplates toggling on or off when in combat."] =
+	"Contrôle l'activation ou la désactivation des barres de vie des alliés pendant le combat."
+L["Controls how big of an area on the screen will accept clicks to target unit."] =
+	"Contrôle la zone de la fenêtre qui accepte les clics pour cibler l'unité."
+L["Controls how many seconds of inactivity has to pass before chat is faded."] =
+	"Contrôle le nombre de secondes d'inactivité avant que le tchat ne s'estompe."
+L["Controls the amount of decimals used in values displayed on elements like NamePlates and UnitFrames."] =
+	"Contrôle le nombre de décimales utilisées pour les valeurs affichées sur les éléments tels que les barres de vie et les cadres d'unité."
+L["Controls the speed at which smoothed bars will be updated."] =
+	"Contrôle la vitesse à laquelle les barres lissées seront mises à jour."
+L["Controls the text displayed. Tags are available in the Available Tags section of the config."] =
+	"Contrôle le texte affiché. Les balises sont disponibles dans la section Balises disponibles de la configuration."
 L["Cooldown Text"] = "Texte des Cooldowns"
 L["Cooldowns"] = "Temps de recharge"
 L["Copy Chat Lines"] = "Copie les lignes de tchat"
 L["Copy From"] = "Copier depuis"
 L["Copy Primary Texture"] = "Copier la texture principale"
-L["Copy settings from %s. This will overwrite %s profile.\n\n Are you sure?"] = "Copier les réglages de %s. Cela écrasera le profil de %s.\n\n Êtes-vous sûr ?"
+L["Copy settings from %s. This will overwrite %s profile.\n\n Are you sure?"] =
+	"Copier les réglages de %s. Cela écrasera le profil de %s.\n\n Êtes-vous sûr ?"
 L["Copy settings from another unit."] = "Copier les options d'une autre unité"
 L["Copy settings from"] = "Copier les options de"
 L["Core |cff1784d1ElvUI|r options."] = "Options |cff1784d1ElvUI|r principales."
@@ -427,7 +494,8 @@ L["Covenant Preview"] = "Aperçu de la congrégation"
 L["Covenant Renown"] = "Renommée de la congrégation"
 L["Covenant Sanctum"] = "Sanctum de la congrégation"
 L["Craft"] = "Artisanat"
-L["Create a filter, once created a filter can be set inside the buffs/debuffs section of each unit."] = "Créer un filtre, chaque filtre créé peut être configuré dans la section Amélioration/Affaiblissements de chaque unité."
+L["Create a filter, once created a filter can be set inside the buffs/debuffs section of each unit."] =
+	"Créer un filtre, chaque filtre créé peut être configuré dans la section Amélioration/Affaiblissements de chaque unité."
 L["Create Custom Text"] = "Créer un texte personnalisé"
 L["Create Filter"] = "Créer un filtre"
 L["Creature Type"] = "Type de créature"
@@ -482,7 +550,8 @@ L["DEATH_RECAP_TITLE"] = "Circonstances de la mort"
 L["Debuff Highlighting"] = "Surbrillance des affaiblissements"
 L["Debuffs on Buffs"] = "Affaiblissements sur Améliorations"
 L["Debug Tools"] = "Outils de débogage"
-L["DEBUG_DESC"] = "Disable all addons (including Plugins) except ElvUI. During the same session, this can be clicked to reenable them."
+L["DEBUG_DESC"] =
+	"Disable all addons (including Plugins) except ElvUI. During the same session, this can be clicked to reenable them."
 L["Decimal Length"] = "Chiffres après la virgule"
 L["Decode Text"] = "Texte décodé"
 L["Decode"] = true
@@ -491,9 +560,11 @@ L["Default Font"] = "Police par défaut"
 L["Default Settings"] = "Options par défaut"
 L["DEFAULT"] = "Défaut"
 L["Defines how the group is sorted."] = "Définit la façon dont le groupe est trié."
-L["Defines the sort order of the selected sort method."] = "Définit l'ordre de tri selon la méthode choisie (Ascendant/Descendant)"
+L["Defines the sort order of the selected sort method."] =
+	"Définit l'ordre de tri selon la méthode choisie (Ascendant/Descendant)"
 L["Delay Alpha"] = "Délai de l'Alpha"
-L["Delete a created filter, you cannot delete pre-existing filters, only custom ones."] = "Supprimer un filtre créé. Vous ne pouvez pas supprimer un filtre préexistant mais seulement ceux que vous avez personnalisé."
+L["Delete a created filter, you cannot delete pre-existing filters, only custom ones."] =
+	"Supprimer un filtre créé. Vous ne pouvez pas supprimer un filtre préexistant mais seulement ceux que vous avez personnalisé."
 L["Delete Filter"] = "Supprimer un filtre"
 L["Delete"] = "Suppr."
 L["Desaturate Cooldowns"] = "Désaturer les cooldowns"
@@ -506,34 +577,47 @@ L["Descending"] = "Descendant"
 L["Detach From Frame"] = "Détacher du cadre"
 L["Detached Width"] = "Largeur de détachement"
 L["Development Version"] = "Version de développement"
-L["Direction the bag sorting will use to allocate the items."] = "Direction du tri du sac qui sera utilisé pour allouer les objets."
+L["Direction the bag sorting will use to allocate the items."] =
+	"Direction du tri du sac qui sera utilisé pour allouer les objets."
 L["Direction the bar moves on gains/losses"] = "Direction que prend la barre lors de gains/pertes"
-L["Direction the health bar moves when gaining/losing health."] = "Sens de direction de la barre de vie quand vous en gagnez ou perdez."
+L["Direction the health bar moves when gaining/losing health."] =
+	"Sens de direction de la barre de vie quand vous en gagnez ou perdez."
 L["Disable Blizzard Skins"] = "Désactiver les styles Blizzard"
 L["Disable Cluster"] = "Désactiver le regroupement"
 L["Disable Sort"] = "Désactiver le tri"
 L["Disable Tutorial Buttons"] = "Désactiver les boutons du tutoriel"
 L["Disabled Blizzard Frames"] = "Désactiver les cadres Blizzard"
 L["Disabled Blizzard"] = "Désactiver Blizzard"
-L["Disables the tutorial button found on some frames."] = "Désactive le bouton tutoriel présent sur certaines fenêtres."
+L["Disables the tutorial button found on some frames."] =
+	"Désactive le bouton tutoriel présent sur certaines fenêtres."
 L["Disconnected"] = "Déconnecté"
 L["Disease Effect"] = "Effet de maladie"
-L["Display a healer icon over known healers inside battlegrounds or arenas."] = "Affiche un icône soigneur sur le ou les soigneur(s) connu(s) à l'intérieur d'un champ de bataille ou arène"
-L["Display a panel across the bottom of the screen. This is for cosmetic only."] = "Affiche un bandeau au bas de l'écran. Option purement cosmétique."
-L["Display a panel across the top of the screen. This is for cosmetic only."] = "Affiche un bandeau en haut de l'écran. Option purement cosmétique."
-L["Display a spark texture at the end of the castbar statusbar to help show the differance between castbar and backdrop."] = "Affiche une texture lumineuse à la fin de la barre de sort pour aider à montrer la différence de couleur entre la barre de sort et le fond."
-L["Display a tank icon over known tanks inside battlegrounds or arenas."] = "Afficher une icône au-dessus des tanks connus dans les champs de bataille ou les arènes."
-L["Display battleground messages in the middle of the screen."] = "Afficher le message du champ de bataille au milieu de l'écran"
+L["Display a healer icon over known healers inside battlegrounds or arenas."] =
+	"Affiche un icône soigneur sur le ou les soigneur(s) connu(s) à l'intérieur d'un champ de bataille ou arène"
+L["Display a panel across the bottom of the screen. This is for cosmetic only."] =
+	"Affiche un bandeau au bas de l'écran. Option purement cosmétique."
+L["Display a panel across the top of the screen. This is for cosmetic only."] =
+	"Affiche un bandeau en haut de l'écran. Option purement cosmétique."
+L["Display a spark texture at the end of the castbar statusbar to help show the differance between castbar and backdrop."] =
+	"Affiche une texture lumineuse à la fin de la barre de sort pour aider à montrer la différence de couleur entre la barre de sort et le fond."
+L["Display a tank icon over known tanks inside battlegrounds or arenas."] =
+	"Afficher une icône au-dessus des tanks connus dans les champs de bataille ou les arènes."
+L["Display battleground messages in the middle of the screen."] =
+	"Afficher le message du champ de bataille au milieu de l'écran"
 L["Display bind names on action buttons."] = "Affiche les noms des raccourcis sur les boutons de la barre d'action."
 L["Display Character Info"] = "Afficher les infos du personnage"
-L["Display cooldown text on anything with the cooldown spiral."] = "Affiche le temps de recharge au format numérique plutôt que la spirale d'origine."
+L["Display cooldown text on anything with the cooldown spiral."] =
+	"Affiche le temps de recharge au format numérique plutôt que la spirale d'origine."
 L["Display current mount the unit is riding."] = "Affiche la monture que l'unité monte actuellement."
-L["Display data panels below the chat, used for datatexts."] = "Afficher les panneaux de données sous le Chat utilisés pour les textes d'information"
+L["Display data panels below the chat, used for datatexts."] =
+	"Afficher les panneaux de données sous le Chat utilisés pour les textes d'information"
 L["Display emotion icons in chat."] = "Afficher les émoticônes dans le chat"
 L["Display Frames"] = "Afficher les cadres"
 L["Display guild ranks if a unit is guilded."] = "Affiche le rang de la guilde si un joueur est guildé"
-L["Display how many of a certain item you have in your possession."] = "Affiche combien vous avez d'objets de ce type en votre possession."
-L["Display icon on arena frame indicating the units talent specialization or the units faction if inside a battleground."] = "Afficher une icône sur les cadres d'arènes indiquant la spécialisation des unités ou leurs factions si vous êtes dans un champs de bataille."
+L["Display how many of a certain item you have in your possession."] =
+	"Affiche combien vous avez d'objets de ce type en votre possession."
+L["Display icon on arena frame indicating the units talent specialization or the units faction if inside a battleground."] =
+	"Afficher une icône sur les cadres d'arènes indiquant la spécialisation des unités ou leurs factions si vous êtes dans un champs de bataille."
 L["Display In Main Tooltip"] = "Voir dans l'infobulle générale"
 L["Display Inspect Info"] = "Afficher les infos d'inspection"
 L["Display Interrupt Source"] = "Afficher la source d'interruption"
@@ -542,31 +626,42 @@ L["Display Item Level"] = "Afficher le niveau d'objet"
 L["Display LFG Icons in group chat."] = "Afficher l'icône RDG dans la discussion de groupe."
 L["Display macro names on action buttons."] = "Affiche les noms des macros sur les boutons dans la barre d'action."
 L["Display Mana"] = "Afficher le mana"
-L["Display messages from Guild and Whisper on AFK screen.\nThis chat can be dragged around (position will be saved)."] = "Afficher les messages de la guilde et des chuchotements sur l'écran d'AFK.\nCe chat peut être déplacé (la position sera sauvegardée)."
-L["Display minimap panels below the minimap, used for datatexts."] = "Afficher les panneaux sous la minicarte, utilisé pour les textes d'information."
+L["Display messages from Guild and Whisper on AFK screen.\nThis chat can be dragged around (position will be saved)."] =
+	"Afficher les messages de la guilde et des chuchotements sur l'écran d'AFK.\nCe chat peut être déplacé (la position sera sauvegardée)."
+L["Display minimap panels below the minimap, used for datatexts."] =
+	"Afficher les panneaux sous la minicarte, utilisé pour les textes d'information."
 L["Display player titles."] = "Affiche le titre du joueur"
 L["Display Player"] = "Afficher le joueur"
 L["Display Style"] = "Style d'affichage"
 L["Display Target"] = "Afficher la cible"
-L["Display Target's Aura Duration, when there is no CD displaying."] = "Afficher la durée de l'aura de la cible, lorsqu'il n'y a pas de CD affiché."
+L["Display Target's Aura Duration, when there is no CD displaying."] =
+	"Afficher la durée de l'aura de la cible, lorsqu'il n'y a pas de CD affiché."
 L["Display Text"] = "Afficher le texte"
 L["Display the castbar icon inside the castbar."] = "Afficher l'icône à l'intérieur de la barre d'incantation."
 L["Display the current Mythic+ Dungeon Score."] = "Affiche le score actuel du donjon mythique+"
-L["Display the hyperlink tooltip while hovering over a hyperlink."] = "Afficher une infobulle pendant le survol d'un lien d'objet, sort, etc..."
-L["Display the item level and current specialization of the unit on modifier press."] = "Affiche le niveau d'objet et la spécialisation actuelle de l'unité lors de l'appui sur la touche."
-L["Display the name of the unit on the chat bubble. This will not work if backdrop is disabled or when you are in an instance."] = "Affiche le nom de l'unité dans la bulle de discussion. Cela ne fonctionnera pas si l'arrière-plan est désactivé ou lorsque vous êtes dans une instance."
+L["Display the hyperlink tooltip while hovering over a hyperlink."] =
+	"Afficher une infobulle pendant le survol d'un lien d'objet, sort, etc..."
+L["Display the item level and current specialization of the unit on modifier press."] =
+	"Affiche le niveau d'objet et la spécialisation actuelle de l'unité lors de l'appui sur la touche."
+L["Display the name of the unit on the chat bubble. This will not work if backdrop is disabled or when you are in an instance."] =
+	"Affiche le nom de l'unité dans la bulle de discussion. Cela ne fonctionnera pas si l'arrière-plan est désactivé ou lorsque vous êtes dans une instance."
 L["Display the target of current cast."] = "Affiche la cible de l'incantation en cours."
-L["Display the unit name who interrupted a spell on the castbar. You should increase the Time to Hold to show properly."] = "Affiche le nom de l'unité qui a interrompu un sort sur la barre d'incantation. Vous devriez augmenter le temps de maintien pour l'afficher correctement."
+L["Display the unit name who interrupted a spell on the castbar. You should increase the Time to Hold to show properly."] =
+	"Affiche le nom de l'unité qui a interrompu un sort sur la barre d'incantation. Vous devriez augmenter le temps de maintien pour l'afficher correctement."
 L["Display the unit role in the tooltip."] = "Afficher le rôle de l'unité dans l'infobulle."
-L["Display tick marks on the castbar for channelled spells. This will adjust automatically for spells like Drain Soul and add additional ticks based on haste."] = "Affichage des marques de graduation (ticks) sur la barre de lancement de sort. Cela s'ajustera automatiquement pour les sorts comme Drain d'âme qui est basé sur la Hâte."
+L["Display tick marks on the castbar for channelled spells. This will adjust automatically for spells like Drain Soul and add additional ticks based on haste."] =
+	"Affichage des marques de graduation (ticks) sur la barre de lancement de sort. Cela s'ajustera automatiquement pour les sorts comme Drain d'âme qui est basé sur la Hâte."
 L["Display Types"] = "Types d'affichage"
 L["Displayed Currency"] = "Monnaie affichée"
-L["Displays a detailed report of every item sold when enabled."] = "Affiche un rapport détaillé pour chaque objet qui a été vendu."
+L["Displays a detailed report of every item sold when enabled."] =
+	"Affiche un rapport détaillé pour chaque objet qui a été vendu."
 L["Displays item info on center of item."] = "Affiche les informations de l'objet au centre de l'objet."
 L["Displays item level on equippable items."] = "Affiche le niveau d'objet sur les objets qui peuvent être équipés."
 L["Displays the gender of players."] = "Affiche le genre des joueurs."
-L["Don't display auras that are longer than this duration (in seconds). Set to zero to disable."] = "Ne pas afficher les auras qui dépassent cette durée (en secondes). 0 pour désactiver"
-L["Don't display auras that are shorter than this duration (in seconds). Set to zero to disable."] = "Ne pas afficher les auras qui ont une durée plus courte que cette durée (en secondes). 0 pour désactiver."
+L["Don't display auras that are longer than this duration (in seconds). Set to zero to disable."] =
+	"Ne pas afficher les auras qui dépassent cette durée (en secondes). 0 pour désactiver"
+L["Don't display auras that are shorter than this duration (in seconds). Set to zero to disable."] =
+	"Ne pas afficher les auras qui ont une durée plus courte que cette durée (en secondes). 0 pour désactiver."
 L["Donations:"] = "Donateurs :"
 L["Down"] = "En bas"
 L["DRESSUP_FRAME"] = "Cabine d'essayage"
@@ -579,27 +674,34 @@ L["Duration"] = "Durée"
 L["Editbox History"] = "Historique de la zone de texte"
 L["Editor Manager"] = "Gestionnaire d'éditeur"
 L["Elite Icon"] = "Icône élite"
-L["ELVUI_CREDITS"] = "Je voudrais remercier tout spécialement ceux qui m'ont aidé à maintenir cet addon avec les codeurs, testeurs et les personnes qui m'ont aussi aidé via les dons. Veuillez noter que pour les dons, je n'affiche que les noms des personnes qui m'ont envoyés un message privé sur le forum. Si votre nom est absent et que vous désirez que je l'ajoute, merci de m’envoyer un message privé."
+L["ELVUI_CREDITS"] =
+	"Je voudrais remercier tout spécialement ceux qui m'ont aidé à maintenir cet addon avec les codeurs, testeurs et les personnes qui m'ont aussi aidé via les dons. Veuillez noter que pour les dons, je n'affiche que les noms des personnes qui m'ont envoyés un message privé sur le forum. Si votre nom est absent et que vous désirez que je l'ajoute, merci de m’envoyer un message privé."
 L["Emote"] = true
 L["Emotion Icons"] = "Icônes d'émotions"
 L["Empower Stages"] = "Étapes de renforcement"
 L["Enable + Adjust Movers"] = "Activer + Ajuster les positionneurs"
 L["Enable a sound if you select a unit."] = "Activer un son si vous sélectionnez une unité."
 L["Enable Blizzard Skins"] = "Activer les thèmes de Blizzard"
-L["Enable the use of separate size options for the right chat panel."] = "Activer cette option pour utiliser une taille spécifique de la fenêtre de discussion de droite."
+L["Enable the use of separate size options for the right chat panel."] =
+	"Activer cette option pour utiliser une taille spécifique de la fenêtre de discussion de droite."
 L["Enable to hear sound if you receive a resurrect."] = "Activer pour entendre un son lorsque vous êtes ressuscité."
 L["Enable"] = "Activer"
 L["Enable/Disable the all-in-one bag."] = "Activer / désactiver le sac tout-en-un."
 L["Enable/Disable the loot frame."] = "Activer / désactiver le cadre de butin."
 L["Enable/Disable the loot roll frame."] = "Activer / désactiver le cadre du tirage au sort du butin."
-L["Enable/Disable the minimap. |cffFF3333Warning: This will prevent you from seeing the minimap datatexts.|r"] = "Activer/Désactiver la minicarte. |cffFF3333Avertissement : Cela vous empêchera de voir les textes d'informations de la minicarte.|r"
-L["Enable/Disable the on-screen zone text when you change zones."] = "Activer/Désactiver le texte de la zone à l'écran lorsque vous changez de zone."
+L["Enable/Disable the minimap. |cffFF3333Warning: This will prevent you from seeing the minimap datatexts.|r"] =
+	"Activer/Désactiver la minicarte. |cffFF3333Avertissement : Cela vous empêchera de voir les textes d'informations de la minicarte.|r"
+L["Enable/Disable the on-screen zone text when you change zones."] =
+	"Activer/Désactiver le texte de la zone à l'écran lorsque vous changez de zone."
 L["Enable/Disable the World Map Enhancements."] = "Activer/Désactiver les améliorations de la carte du monde."
 L["Enabled"] = "Activé"
 L["Enables the ElvUI Raid Control panel."] = "Activer le panneau de raid d'ElvUI"
-L["Enables the five-second-rule ticks for Mana classes and Energy ticks for Rogues and Druids."] = "Active les ticks de la règle des cinq secondes pour les classes utilisant la Mana et les ticks d'énergie pour les Voleurs et les Druides."
-L["Enabling this allows raid-wide sorting however you will not be able to distinguish between groups."] = "Activer ceci permet d'afficher les cadres des joueurs sans 'trou' en remplissant les groupes, mais vous ne serez plus en mesure de distinguer les groupes de raid."
-L["Enabling this inverts the grouping order when the raid is not full, this will reverse the direction it starts from."] = "Activer ceci inverse l'ordre du groupe quand il n'est pas complet, ceci inversera son ordre de départ"
+L["Enables the five-second-rule ticks for Mana classes and Energy ticks for Rogues and Druids."] =
+	"Active les ticks de la règle des cinq secondes pour les classes utilisant la Mana et les ticks d'énergie pour les Voleurs et les Druides."
+L["Enabling this allows raid-wide sorting however you will not be able to distinguish between groups."] =
+	"Activer ceci permet d'afficher les cadres des joueurs sans 'trou' en remplissant les groupes, mais vous ne serez plus en mesure de distinguer les groupes de raid."
+L["Enabling this inverts the grouping order when the raid is not full, this will reverse the direction it starts from."] =
+	"Activer ceci inverse l'ordre du groupe quand il n'est pas complet, ceci inversera son ordre de départ"
 L["Enabling this will check your health amount."] = "Activer ceci vérifiera votre niveau de vie."
 L["Enabling this will check your power amount."] = "Activer ceci vérifiera votre niveau de puissance."
 L["Enchanting"] = "Enchantement"
@@ -615,7 +717,8 @@ L["Engineering"] = "Ingénierie"
 L["Enhanced PVP Messages"] = "Messages PVP améliorés"
 L["Equipped Item"] = "Objet équipé"
 L["Equipped"] = "Équipé"
-L["Error decoding data. Import string may be corrupted!"] = "Erreur lors du décodage des données. Celles-ci sont peut être corropues"
+L["Error decoding data. Import string may be corrupted!"] =
+	"Erreur lors du décodage des données. Celles-ci sont peut être corropues"
 L["Error exporting profile!"] = "Erreur d'exportation du profil"
 L["Quest Progress and Error Text"] = true
 L["Event Log"] = "Journal d'evennements"
@@ -633,7 +736,8 @@ L["Extra Buttons"] = "Boutons supplémentaires"
 L["Fade Chat Toggles"] = "Fondu des boutons de chat"
 L["Fade Duration"] = "Durée du fondu"
 L["Fade Out Delay"] = "Retard d'affichage du fondu"
-L["Fade out the tooltip when it disappears, instant otherwise. Cursor anchored tooltips are unaffected."] = "Faire disparaître lentement l'infobulle lorsqu'elle disparaît, instantanément sinon. Les infobulles ancrées au curseur ne sont pas affectées."
+L["Fade out the tooltip when it disappears, instant otherwise. Cursor anchored tooltips are unaffected."] =
+	"Faire disparaître lentement l'infobulle lorsqu'elle disparaît, instantanément sinon. Les infobulles ancrées au curseur ne sont pas affectées."
 L["Fade Out"] = "Fondu"
 L["Fade Tabs No Backdrop"] = "Estomper les onglets sans arrière-plan"
 L["Fade the chat text when there is no activity."] = "Estomper la discussion quand il n'y a pas d'activité"
@@ -641,9 +745,12 @@ L["Fade Threshold"] = "Seuil du fondu"
 L["Fade Undocked Tabs"] = "Estompe l'affiche des onglets non groupés"
 L["Faded Charging Rune"] = "Rune de charge estompée"
 L["Fader"] = "Estompeur"
-L["Fades the buttons that toggle chat windows when that window has been toggled off."] = "Estompe les boutons qui permettent de basculer les fenêtres de discussion lorsque cette fenêtre a été désactivée."
-L["Fades the text on chat tabs that are docked in a panel where the backdrop is disabled."] = "Estompe le texte des onglets de discussion qui sont ancrés dans un panneau où le fond est désactivé."
-L["Fades the text on chat tabs that are not docked at the left or right chat panel."] = "Estompe le texte des onglets de discussion qui ne sont pas ancrés dans le panneau de discussion de gauche ou de droite."
+L["Fades the buttons that toggle chat windows when that window has been toggled off."] =
+	"Estompe les boutons qui permettent de basculer les fenêtres de discussion lorsque cette fenêtre a été désactivée."
+L["Fades the text on chat tabs that are docked in a panel where the backdrop is disabled."] =
+	"Estompe le texte des onglets de discussion qui sont ancrés dans un panneau où le fond est désactivé."
+L["Fades the text on chat tabs that are not docked at the left or right chat panel."] =
+	"Estompe le texte des onglets de discussion qui ne sont pas ancrés dans le panneau de discussion de gauche ou de droite."
 L["Fill"] = "Remplissage"
 L["Filled"] = "Rempli"
 L["Filter Modifiers"] = "Modificateurs de filtre"
@@ -675,11 +782,16 @@ L["Force Hide Blizzard Text"] = "Forcer la masquage du texte Blizzard"
 L["Force Off"] = "Forcer Off"
 L["Force On"] = "Forcer On"
 L["Force Reaction Color"] = "Forcer les couleurs suivant les réactions"
-L["Force the frames to show, they will act as if they are the player frame."] = "Forcer l'affichage des cadres, ils agiront comme sur le cadre de joueur."
-L["Forces Focus Glow to be disabled for these frames"] = "Force la désactivation de la lueur de focalisation pour ces cadres"
-L["Forces Mouseover Glow to be disabled for these frames"] = "Force la désactivation de la lueur au survol pour ces cadres"
-L["Forces reaction color instead of class color on units controlled by players."] = "Forcer les couleurs suivant les réactions au lieu des classes sur les unités contrôlées par les joueurs."
-L["Forces Target Glow to be disabled for these frames"] = "Force la désactivation de la lueur de la cible pour ces cadres"
+L["Force the frames to show, they will act as if they are the player frame."] =
+	"Forcer l'affichage des cadres, ils agiront comme sur le cadre de joueur."
+L["Forces Focus Glow to be disabled for these frames"] =
+	"Force la désactivation de la lueur de focalisation pour ces cadres"
+L["Forces Mouseover Glow to be disabled for these frames"] =
+	"Force la désactivation de la lueur au survol pour ces cadres"
+L["Forces reaction color instead of class color on units controlled by players."] =
+	"Forcer les couleurs suivant les réactions au lieu des classes sur les unités contrôlées par les joueurs."
+L["Forces Target Glow to be disabled for these frames"] =
+	"Force la désactivation de la lueur de la cible pour ces cadres"
 L["Format"] = true
 L["Frame Glow"] = "Lueur du cadre"
 L["Frame Level"] = "Niveau de la fenêtre"
@@ -724,7 +836,8 @@ L["Group Spacing"] = "Espacement entre les groupes"
 L["Group Units"] = "Groupes d'unités"
 L["Grouping & Sorting"] = "Regroupement et tri"
 L["Groups Per Row/Column"] = "Nombres de groupes par ligne/colonne"
-L["Groups will be maxed as Mythic to 4, Other Raids to 6, and PVP / World to 8."] = "Les groupes seront maximisés à 4 pour les Mythiques, à 6 pour les autres raids et à 8 pour le PVP / Monde."
+L["Groups will be maxed as Mythic to 4, Other Raids to 6, and PVP / World to 8."] =
+	"Les groupes seront maximisés à 4 pour les Mythiques, à 6 pour les autres raids et à 8 pour le PVP / Monde."
 L["Growth direction from the first unitframe."] = "Direction de croissance du premier cadre d'unité."
 L["Growth Direction"] = "Direction de la croissance"
 L["Growth X-Direction"] = "Direction de croissance X"
@@ -758,12 +871,14 @@ L["Health Color"] = "Couleur de santé"
 L["Health Threshold"] = "Seuil de santé"
 L["Health"] = "Vie"
 L["Height Multiplier"] = "Multiplicateur hauteur"
-L["Height of the objective tracker. Increase size to be able to see more objectives."] = "Hauteur de la fenêtre des suivis d'objectif, augmenter pour afficher plus d'objectifs"
+L["Height of the objective tracker. Increase size to be able to see more objectives."] =
+	"Hauteur de la fenêtre des suivis d'objectif, augmenter pour afficher plus d'objectifs"
 L["Height"] = "Hauteur"
 L["Help Frame"] = "Fenêtre d'Assistance clientèle"
 L["Help"] = "Aide"
 L["Herbalism"] = "Herboristerie"
-L["Here you can add items that you want to be excluded from sorting. To remove an item just click on its name in the list."] = "Ici, vous pouvez ajouter des objets que vous souhaitez exclure du tri. Pour supprimer un objet, il vous suffit de cliquer sur son nom dans la liste."
+L["Here you can add items that you want to be excluded from sorting. To remove an item just click on its name in the list."] =
+	"Ici, vous pouvez ajouter des objets que vous souhaitez exclure du tri. Pour supprimer un objet, il vous suffit de cliquer sur son nom dans la liste."
 L["HH:MM Threshold"] = "Seuil HH:MM"
 L["HH:MM"] = true
 L["Hide At Max Level"] = "Cacher au niveau maximum"
@@ -771,7 +886,8 @@ L["Hide Below Max Level"] = "Cacher en dessous du niveau maximum"
 L["Hide Both"] = "Masquer les deux"
 L["Hide by Application"] = "Cacher par application"
 L["Hide by Status"] = "Cacher par statut"
-L["Hide Castbar text. Useful if your power height is very low or if you use power offset."] = "Masquer le texte de la barre de sorts. Utile si la hauteur de la puissance est très basse ou si vous utilisez le décalage de puissance."
+L["Hide Castbar text. Useful if your power height is very low or if you use power offset."] =
+	"Masquer le texte de la barre de sorts. Utile si la hauteur de la puissance est très basse ou si vous utilisez le décalage de puissance."
 L["Hide Channels"] = "Cacher les canaux"
 L["Hide Chat Toggles"] = "Masquer les boutons de chat"
 L["Hide Copy Button"] = "Masquer le bouton de copie"
@@ -784,7 +900,8 @@ L["Hide In Keystone"] = "Masquer en Donjon Mythique"
 L["Hide In Vehicle"] = "Cacher en véhicule"
 L["Hide Out of Combat"] = "Cacher hors combat"
 L["Hide Outside PvP"] = "Cacher hors PVP"
-L["Hide specific sections in the datatext tooltip."] = "Masquer des sections spécifiques dans l'infobulle des textes de données."
+L["Hide specific sections in the datatext tooltip."] =
+	"Masquer des sections spécifiques dans l'infobulle des textes de données."
 L["Hide Spell Name"] = "Cacher le nom du sort"
 L["Hide Text"] = "Cacher le texte"
 L["Hide the channel names in chat."] = "Masquer les noms de canaux dans le chat."
@@ -793,7 +910,8 @@ L["Hide Voice Buttons"] = "Cacher les boutons vocaux"
 L["Hide When Empty"] = "Cacher quand vide"
 L["Hide Zone Text"] = "Masquer le texte de zone"
 L["Hide"] = "Masquer"
-L["Hides the bling animation on buttons at the end of the global cooldown."] = "Cacher l'animation des boutons à la fin du rechargement global."
+L["Hides the bling animation on buttons at the end of the global cooldown."] =
+	"Cacher l'animation des boutons à la fin du rechargement global."
 L["Hides the yellow quest progress text and red error text at the top of the screen while in combat."] = true
 L["High"] = "Élevé"
 L["Highlight Color Style"] = "Style de couleur de surbrillance"
@@ -814,11 +932,16 @@ L["Hours"] = "Heures"
 L["Hover Highlight"] = "Survol surligné"
 L["Hover"] = "Survoler"
 L["How far away the portrait is from the camera."] = "Configure la distance de la caméra par rapport au portrait."
-L["How long the cutaway health will take to fade out."] = "Combien de temps la réduction de la santé mettra pour s'estomper."
-L["How long the cutaway power will take to fade out."] = "Combien de temps la réduction de la puissance mettra pour s'estomper."
-L["How many seconds the castbar should stay visible after the cast failed or was interrupted."] = "Combien de secondes la barre d'incantation doit rester visible après un échec d'incantation ou une interruption."
-L["How much time before the cutaway health starts to fade."] = "Combien de temps avant que la réduction de la santé commence à s'estomper."
-L["How much time before the cutaway power starts to fade."] = "Combien de temps avant que la réduction de la puissance commence à s'estomper."
+L["How long the cutaway health will take to fade out."] =
+	"Combien de temps la réduction de la santé mettra pour s'estomper."
+L["How long the cutaway power will take to fade out."] =
+	"Combien de temps la réduction de la puissance mettra pour s'estomper."
+L["How many seconds the castbar should stay visible after the cast failed or was interrupted."] =
+	"Combien de secondes la barre d'incantation doit rester visible après un échec d'incantation ou une interruption."
+L["How much time before the cutaway health starts to fade."] =
+	"Combien de temps avant que la réduction de la santé commence à s'estomper."
+L["How much time before the cutaway power starts to fade."] =
+	"Combien de temps avant que la réduction de la puissance commence à s'estomper."
 L["Hyperlink Hover"] = "Survol des liens"
 L["Icon Height"] = "Hauteur de l'icône"
 L["Icon Inside Castbar"] = "Icône à l'intérieur de la barre d'incantation"
@@ -835,69 +958,132 @@ L["Icon: TOPLEFT"] = "Icône : HAUT-GAUCHE"
 L["Icon: TOPRIGHT"] = "Icône : HAUT-DROITE"
 L["Icons and Text (Short)"] = "Icônes et textes (court)"
 L["Icons and Text"] = "Icônes et textes"
-L["If enabled then it checks if auras are missing instead of being present on the unit."] = "Si activé, cela vérifie si les auras sont absentes au lieu d'être présentes sur l'unité."
-L["If enabled then it will require all auras to activate the filter. Otherwise it will only require any one of the auras to activate it."] = "Si activé, le filtre nécessitera toutes les auras pour s'activer. Sinon, il ne nécessitera qu'une seule des auras pour s'activer."
-L["If enabled then it will require all cooldowns to activate the filter. Otherwise it will only require any one of the cooldowns to activate it."] = "Si activé, le filtre nécessitera tous les temps de recharge pour s'activer. Sinon, il ne nécessitera qu'un seul des temps de recharge pour s'activer."
-L["If enabled then the filter will activate if the unit is casting anything."] = "Si activé, le filtre s'activera si l'unité lance quelque chose."
-L["If enabled then the filter will activate if the unit is channeling anything."] = "Si activé, le filtre s'activera si l'unité canalise quelque chose."
-L["If enabled then the filter will activate if the unit is not casting anything."] = "Si activé, le filtre s'activera si l'unité ne lance rien."
-L["If enabled then the filter will activate if the unit is not channeling anything."] = "Si activé, le filtre s'activera si l'unité ne canalise rien."
-L["If enabled then the filter will only activate if the level of the unit is equal to or higher than this value."] = "Si activé, le filtre ne s'activera que si le niveau de l'unité est égal ou supérieur à cette valeur."
-L["If enabled then the filter will only activate if the level of the unit is equal to or lower than this value."] = "Si activé, le filtre ne s'activera que si le niveau de l'unité est égal ou inférieur à cette valeur."
-L["If enabled then the filter will only activate if the level of the unit matches this value."] = "Si activé, le filtre ne s'activera que si le niveau de l'unité correspond à cette valeur."
-L["If enabled then the filter will only activate if the level of the unit matches your own."] = "Si activé, le filtre ne s'activera que si le niveau de l'unité correspond au vôtre."
-L["If enabled then the filter will only activate if the unit is casting interruptible spells."] = "Si activé, le filtre ne s'activera que si l'unité lance des sorts pouvant être interrompus."
-L["If enabled then the filter will only activate if the unit is casting not interruptible spells."] = "Si activé, le filtre ne s'activera que si l'unité lance des sorts non interruptibles."
-L["If enabled then the filter will only activate if the unit is not casting or channeling one of the selected spells."] = "Si activé, le filtre ne s'activera que si l'unité ne lance ni ne canalise l'un des sorts sélectionnés."
-L["If enabled then the filter will only activate when the unit can be attacked by the active player."] = "Si activé, le filtre ne s'activera que lorsque l'unité peut être attaquée par le joueur actif."
-L["If enabled then the filter will only activate when the unit can not be attacked by the active player."] = "Si activé, le filtre ne s'activera que lorsque l'unité ne peut pas être attaquée par le joueur actif."
-L["If enabled then the filter will only activate when the unit has a stealable buff(s)."] = "Si activé, le filtre ne s'activera que lorsque l'unité a un ou plusieurs buffs volables."
-L["If enabled then the filter will only activate when the unit has no stealable buff(s)."] = "Si activé, le filtre ne s'activera que lorsque l'unité n'a pas de buffs volables."
-L["If enabled then the filter will only activate when the unit is controlled by the player."] = "Si activé, le filtre ne s'activera que lorsque l'unité est contrôlée par le joueur."
-L["If enabled then the filter will only activate when the unit is in a Vehicle."] = "Si activé, le filtre ne s'activera que lorsque l'unité est dans un véhicule."
-L["If enabled then the filter will only activate when the unit is in combat."] = "Si activé, le filtre ne s'activera que lorsque l'unité est en combat."
-L["If enabled then the filter will only activate when the unit is in your Party."] = "Si activé, le filtre ne s'activera que lorsque l'unité est dans votre groupe."
-L["If enabled then the filter will only activate when the unit is in your Raid."] = "Si activé, le filtre ne s'activera que lorsque l'unité est dans votre raid."
-L["If enabled then the filter will only activate when the unit is not controlled by the player."] = "Si activé, le filtre ne s'activera que lorsque l'unité n'est pas contrôlée par le joueur."
-L["If enabled then the filter will only activate when the unit is not in a Vehicle."] = "Si activé, le filtre ne s'activera que lorsque l'unité n'est pas dans un véhicule."
-L["If enabled then the filter will only activate when the unit is not in your Party."] = "Si activé, le filtre ne s'activera que lorsque l'unité n'est pas dans votre groupe."
-L["If enabled then the filter will only activate when the unit is not in your Raid."] = "Si activé, le filtre ne s'activera que lorsque l'unité n'est pas dans votre raid."
-L["If enabled then the filter will only activate when the unit is not owned by the player."] = "Si activé, le filtre ne s'activera que lorsque l'unité n'est pas possédée par le joueur."
-L["If enabled then the filter will only activate when the unit is not pvp-flagged."] = "Si activé, le filtre ne s'activera que lorsque l'unité n'a pas activé le drapeau PVP."
-L["If enabled then the filter will only activate when the unit is not tap denied."] = "Si activé, le filtre ne s'activera que lorsque l'unité n'est pas marquée comme impossible à 'tagger'."
-L["If enabled then the filter will only activate when the unit is not targeting you."] = "Si activé, le filtre ne s'activera que lorsque l'unité ne vous cible pas."
-L["If enabled then the filter will only activate when the unit is not the active player's pet."] = "Si activé, le filtre ne s'activera que lorsque l'unité n'est pas l'animal de compagnie du joueur actif."
-L["If enabled then the filter will only activate when the unit is out of combat."] = "Si activé, le filtre ne s'activera que lorsque l'unité est hors combat."
-L["If enabled then the filter will only activate when the unit is owned by the player."] = "Si activé, le filtre ne s'activera que lorsque l'unité est possédée par le joueur."
-L["If enabled then the filter will only activate when the unit is pvp-flagged."] = "Si activé, le filtre ne s'activera que lorsque l'unité a activé le drapeau PVP."
-L["If enabled then the filter will only activate when the unit is tap denied."] = "Si activé, le filtre ne s'activera que lorsque l'unité est marquée comme impossible à 'tagger'."
-L["If enabled then the filter will only activate when the unit is targeting you."] = "Si activé, le filtre ne s'activera que lorsque l'unité vous cible."
-L["If enabled then the filter will only activate when the unit is the active player's pet."] = "Si activé, le filtre ne s'activera que lorsque l'unité est l'animal de compagnie du joueur actif."
-L["If enabled then the filter will only activate when you are focusing the unit."] = "Si activé, le filtre ne s'activera que lorsque vous ciblez l'unité."
-L["If enabled then the filter will only activate when you are in a Vehicle."] = "Si activé, le filtre ne s'activera que lorsque vous êtes dans un véhicule."
-L["If enabled then the filter will only activate when you are in combat."] = "Si activé, le filtre ne s'activera que lorsque vous êtes en combat."
-L["If enabled then the filter will only activate when you are not focusing the unit."] = "Si activé, le filtre ne s'activera que lorsque vous ne ciblez pas l'unité."
-L["If enabled then the filter will only activate when you are not in a Vehicle."] = "Si activé, le filtre ne s'activera que lorsque vous n'êtes pas dans un véhicule."
-L["If enabled then the filter will only activate when you are not targeting the unit."] = "Si activé, le filtre ne s'activera que lorsque vous ne ciblez pas l'unité."
-L["If enabled then the filter will only activate when you are out of combat."] = "Si activé, le filtre ne s'activera que lorsque vous êtes hors combat."
-L["If enabled then the filter will only activate when you are resting at an Inn."] = "Si activé, le filtre ne s'activera que lorsque vous vous reposez dans une auberge."
-L["If enabled, the style filter will only activate when you are in one of the instances specified in Instance ID."] = "Si activé, le filtre de style ne s'activera que lorsque vous serez dans l'une des instances spécifiées dans l'ID d'instance."
-L["If enabled, the style filter will only activate when you are in one of the maps specified in Map ID."] = "Si activé, le filtre de style ne s'activera que lorsque vous serez dans l'une des cartes spécifiées dans l'ID de carte."
-L["If enabled, the style filter will only activate when you are in one of the subzones specified in Add Subzone Name."] = "Si activé, le filtre de style ne s'activera que lorsque vous serez dans l'une des sous-zones spécifiées dans Ajouter le nom de la sous-zone."
-L["If enabled, the style filter will only activate when you are in one of the zones specified in Add Zone Name."] = "Si activé, le filtre de style ne s'activera que lorsque vous serez dans l'une des zones spécifiées dans Ajouter le nom de la zone."
-L["If enabled, then this currency will be displayed in the main Currencies datatext tooltip."] = "Si activé, cette devise sera affichée dans l'infobulle principale des devises."
-L["If not set to 0 then override the size of the aura icon to this."] = "Si ce n'est pas réglé à 0, cela va remplacer la taille de l'icône d'aura par cette valeur."
-L["If not set to true then the server time will be displayed instead."] = "Si ce n'est pas activé, l'heure du serveur sera affichée à la place."
-L["If the aura is listed with a number then you need to use that to remove it from the list."] = "Si l'aura est listée avec un nombre, vous devez utiliser celui-ci pour la retirer de la liste."
-L["If this is enabled then the reaction check will use your reputation with the faction the unit belongs to."] = "Si cela est activé, la vérification de la réaction utilisera votre réputation avec la faction à laquelle l'unité appartient."
-L["If this list is empty, and if Interruptible is checked, then the filter will activate on any type of cast that can be interrupted."] = "Si cette liste est vide et que Interruption est cochée, alors le filtre s'activera sur tout type d'incantation qui peut être interrompu."
-L["If this threshold is used then the health of the unit needs to be higher than this value in order for the filter to activate. Set to 0 to disable."] = "Si ce seuil est utilisé, la santé de l'unité doit être supérieure à cette valeur pour que le filtre s'active. Réglez sur 0 pour désactiver."
-L["If this threshold is used then the health of the unit needs to be lower than this value in order for the filter to activate. Set to 0 to disable."] = "Si ce seuil est utilisé, la santé de l'unité doit être inférieure à cette valeur pour que le filtre s'active. Réglez sur 0 pour désactiver."
-L["If this threshold is used then the power of the unit needs to be higher than this value in order for the filter to activate. Set to 0 to disable."] = "Si ce seuil est utilisé, la puissance de l'unité doit être supérieure à cette valeur pour que le filtre s'active. Réglez sur 0 pour désactiver."
-L["If this threshold is used then the power of the unit needs to be lower than this value in order for the filter to activate. Set to 0 to disable."] = "Si ce seuil est utilisé, la puissance de l'unité doit être inférieure à cette valeur pour que le filtre s'active. Réglez sur 0 pour désactiver."
-L["If you have a lot of 3D Portraits active then it will likely have a big impact on your FPS. Disable some portraits if you experience FPS issues."] = "Si vous avez beaucoup de portraits 3D actifs, cela pourrait avoir un impact important sur vos IPS (images par seconde). Désactivez certains portraits si vous rencontrez des problèmes de FPS."
-L["If you have any plugins supporting this feature installed you can find them in the selection dropdown to the right."] = "Si vous avez des plugins prenant en charge cette fonctionnalité installés, vous pouvez les trouver dans le menu déroulant de sélection à droite."
-L["If you unlock actionbars then trying to move a spell might instantly cast it if you cast spells on key press instead of key release."] = "Si vous déverrouillez les barres d'actions, essayer de déplacer un sort pourrait instantanément le lancer si vous lancez les sorts en appuyant sur la touche plutôt qu'en la relâchant."
+L["If enabled then it checks if auras are missing instead of being present on the unit."] =
+	"Si activé, cela vérifie si les auras sont absentes au lieu d'être présentes sur l'unité."
+L["If enabled then it will require all auras to activate the filter. Otherwise it will only require any one of the auras to activate it."] =
+	"Si activé, le filtre nécessitera toutes les auras pour s'activer. Sinon, il ne nécessitera qu'une seule des auras pour s'activer."
+L["If enabled then it will require all cooldowns to activate the filter. Otherwise it will only require any one of the cooldowns to activate it."] =
+	"Si activé, le filtre nécessitera tous les temps de recharge pour s'activer. Sinon, il ne nécessitera qu'un seul des temps de recharge pour s'activer."
+L["If enabled then the filter will activate if the unit is casting anything."] =
+	"Si activé, le filtre s'activera si l'unité lance quelque chose."
+L["If enabled then the filter will activate if the unit is channeling anything."] =
+	"Si activé, le filtre s'activera si l'unité canalise quelque chose."
+L["If enabled then the filter will activate if the unit is not casting anything."] =
+	"Si activé, le filtre s'activera si l'unité ne lance rien."
+L["If enabled then the filter will activate if the unit is not channeling anything."] =
+	"Si activé, le filtre s'activera si l'unité ne canalise rien."
+L["If enabled then the filter will only activate if the level of the unit is equal to or higher than this value."] =
+	"Si activé, le filtre ne s'activera que si le niveau de l'unité est égal ou supérieur à cette valeur."
+L["If enabled then the filter will only activate if the level of the unit is equal to or lower than this value."] =
+	"Si activé, le filtre ne s'activera que si le niveau de l'unité est égal ou inférieur à cette valeur."
+L["If enabled then the filter will only activate if the level of the unit matches this value."] =
+	"Si activé, le filtre ne s'activera que si le niveau de l'unité correspond à cette valeur."
+L["If enabled then the filter will only activate if the level of the unit matches your own."] =
+	"Si activé, le filtre ne s'activera que si le niveau de l'unité correspond au vôtre."
+L["If enabled then the filter will only activate if the unit is casting interruptible spells."] =
+	"Si activé, le filtre ne s'activera que si l'unité lance des sorts pouvant être interrompus."
+L["If enabled then the filter will only activate if the unit is casting not interruptible spells."] =
+	"Si activé, le filtre ne s'activera que si l'unité lance des sorts non interruptibles."
+L["If enabled then the filter will only activate if the unit is not casting or channeling one of the selected spells."] =
+	"Si activé, le filtre ne s'activera que si l'unité ne lance ni ne canalise l'un des sorts sélectionnés."
+L["If enabled then the filter will only activate when the unit can be attacked by the active player."] =
+	"Si activé, le filtre ne s'activera que lorsque l'unité peut être attaquée par le joueur actif."
+L["If enabled then the filter will only activate when the unit can not be attacked by the active player."] =
+	"Si activé, le filtre ne s'activera que lorsque l'unité ne peut pas être attaquée par le joueur actif."
+L["If enabled then the filter will only activate when the unit has a stealable buff(s)."] =
+	"Si activé, le filtre ne s'activera que lorsque l'unité a un ou plusieurs buffs volables."
+L["If enabled then the filter will only activate when the unit has no stealable buff(s)."] =
+	"Si activé, le filtre ne s'activera que lorsque l'unité n'a pas de buffs volables."
+L["If enabled then the filter will only activate when the unit is controlled by the player."] =
+	"Si activé, le filtre ne s'activera que lorsque l'unité est contrôlée par le joueur."
+L["If enabled then the filter will only activate when the unit is in a Vehicle."] =
+	"Si activé, le filtre ne s'activera que lorsque l'unité est dans un véhicule."
+L["If enabled then the filter will only activate when the unit is in combat."] =
+	"Si activé, le filtre ne s'activera que lorsque l'unité est en combat."
+L["If enabled then the filter will only activate when the unit is in your Party."] =
+	"Si activé, le filtre ne s'activera que lorsque l'unité est dans votre groupe."
+L["If enabled then the filter will only activate when the unit is in your Raid."] =
+	"Si activé, le filtre ne s'activera que lorsque l'unité est dans votre raid."
+L["If enabled then the filter will only activate when the unit is not controlled by the player."] =
+	"Si activé, le filtre ne s'activera que lorsque l'unité n'est pas contrôlée par le joueur."
+L["If enabled then the filter will only activate when the unit is not in a Vehicle."] =
+	"Si activé, le filtre ne s'activera que lorsque l'unité n'est pas dans un véhicule."
+L["If enabled then the filter will only activate when the unit is not in your Party."] =
+	"Si activé, le filtre ne s'activera que lorsque l'unité n'est pas dans votre groupe."
+L["If enabled then the filter will only activate when the unit is not in your Raid."] =
+	"Si activé, le filtre ne s'activera que lorsque l'unité n'est pas dans votre raid."
+L["If enabled then the filter will only activate when the unit is not owned by the player."] =
+	"Si activé, le filtre ne s'activera que lorsque l'unité n'est pas possédée par le joueur."
+L["If enabled then the filter will only activate when the unit is not pvp-flagged."] =
+	"Si activé, le filtre ne s'activera que lorsque l'unité n'a pas activé le drapeau PVP."
+L["If enabled then the filter will only activate when the unit is not tap denied."] =
+	"Si activé, le filtre ne s'activera que lorsque l'unité n'est pas marquée comme impossible à 'tagger'."
+L["If enabled then the filter will only activate when the unit is not targeting you."] =
+	"Si activé, le filtre ne s'activera que lorsque l'unité ne vous cible pas."
+L["If enabled then the filter will only activate when the unit is not the active player's pet."] =
+	"Si activé, le filtre ne s'activera que lorsque l'unité n'est pas l'animal de compagnie du joueur actif."
+L["If enabled then the filter will only activate when the unit is out of combat."] =
+	"Si activé, le filtre ne s'activera que lorsque l'unité est hors combat."
+L["If enabled then the filter will only activate when the unit is owned by the player."] =
+	"Si activé, le filtre ne s'activera que lorsque l'unité est possédée par le joueur."
+L["If enabled then the filter will only activate when the unit is pvp-flagged."] =
+	"Si activé, le filtre ne s'activera que lorsque l'unité a activé le drapeau PVP."
+L["If enabled then the filter will only activate when the unit is tap denied."] =
+	"Si activé, le filtre ne s'activera que lorsque l'unité est marquée comme impossible à 'tagger'."
+L["If enabled then the filter will only activate when the unit is targeting you."] =
+	"Si activé, le filtre ne s'activera que lorsque l'unité vous cible."
+L["If enabled then the filter will only activate when the unit is the active player's pet."] =
+	"Si activé, le filtre ne s'activera que lorsque l'unité est l'animal de compagnie du joueur actif."
+L["If enabled then the filter will only activate when you are focusing the unit."] =
+	"Si activé, le filtre ne s'activera que lorsque vous ciblez l'unité."
+L["If enabled then the filter will only activate when you are in a Vehicle."] =
+	"Si activé, le filtre ne s'activera que lorsque vous êtes dans un véhicule."
+L["If enabled then the filter will only activate when you are in combat."] =
+	"Si activé, le filtre ne s'activera que lorsque vous êtes en combat."
+L["If enabled then the filter will only activate when you are not focusing the unit."] =
+	"Si activé, le filtre ne s'activera que lorsque vous ne ciblez pas l'unité."
+L["If enabled then the filter will only activate when you are not in a Vehicle."] =
+	"Si activé, le filtre ne s'activera que lorsque vous n'êtes pas dans un véhicule."
+L["If enabled then the filter will only activate when you are not targeting the unit."] =
+	"Si activé, le filtre ne s'activera que lorsque vous ne ciblez pas l'unité."
+L["If enabled then the filter will only activate when you are out of combat."] =
+	"Si activé, le filtre ne s'activera que lorsque vous êtes hors combat."
+L["If enabled then the filter will only activate when you are resting at an Inn."] =
+	"Si activé, le filtre ne s'activera que lorsque vous vous reposez dans une auberge."
+L["If enabled, the style filter will only activate when you are in one of the instances specified in Instance ID."] =
+	"Si activé, le filtre de style ne s'activera que lorsque vous serez dans l'une des instances spécifiées dans l'ID d'instance."
+L["If enabled, the style filter will only activate when you are in one of the maps specified in Map ID."] =
+	"Si activé, le filtre de style ne s'activera que lorsque vous serez dans l'une des cartes spécifiées dans l'ID de carte."
+L["If enabled, the style filter will only activate when you are in one of the subzones specified in Add Subzone Name."] =
+	"Si activé, le filtre de style ne s'activera que lorsque vous serez dans l'une des sous-zones spécifiées dans Ajouter le nom de la sous-zone."
+L["If enabled, the style filter will only activate when you are in one of the zones specified in Add Zone Name."] =
+	"Si activé, le filtre de style ne s'activera que lorsque vous serez dans l'une des zones spécifiées dans Ajouter le nom de la zone."
+L["If enabled, then this currency will be displayed in the main Currencies datatext tooltip."] =
+	"Si activé, cette devise sera affichée dans l'infobulle principale des devises."
+L["If not set to 0 then override the size of the aura icon to this."] =
+	"Si ce n'est pas réglé à 0, cela va remplacer la taille de l'icône d'aura par cette valeur."
+L["If not set to true then the server time will be displayed instead."] =
+	"Si ce n'est pas activé, l'heure du serveur sera affichée à la place."
+L["If the aura is listed with a number then you need to use that to remove it from the list."] =
+	"Si l'aura est listée avec un nombre, vous devez utiliser celui-ci pour la retirer de la liste."
+L["If this is enabled then the reaction check will use your reputation with the faction the unit belongs to."] =
+	"Si cela est activé, la vérification de la réaction utilisera votre réputation avec la faction à laquelle l'unité appartient."
+L["If this list is empty, and if Interruptible is checked, then the filter will activate on any type of cast that can be interrupted."] =
+	"Si cette liste est vide et que Interruption est cochée, alors le filtre s'activera sur tout type d'incantation qui peut être interrompu."
+L["If this threshold is used then the health of the unit needs to be higher than this value in order for the filter to activate. Set to 0 to disable."] =
+	"Si ce seuil est utilisé, la santé de l'unité doit être supérieure à cette valeur pour que le filtre s'active. Réglez sur 0 pour désactiver."
+L["If this threshold is used then the health of the unit needs to be lower than this value in order for the filter to activate. Set to 0 to disable."] =
+	"Si ce seuil est utilisé, la santé de l'unité doit être inférieure à cette valeur pour que le filtre s'active. Réglez sur 0 pour désactiver."
+L["If this threshold is used then the power of the unit needs to be higher than this value in order for the filter to activate. Set to 0 to disable."] =
+	"Si ce seuil est utilisé, la puissance de l'unité doit être supérieure à cette valeur pour que le filtre s'active. Réglez sur 0 pour désactiver."
+L["If this threshold is used then the power of the unit needs to be lower than this value in order for the filter to activate. Set to 0 to disable."] =
+	"Si ce seuil est utilisé, la puissance de l'unité doit être inférieure à cette valeur pour que le filtre s'active. Réglez sur 0 pour désactiver."
+L["If you have a lot of 3D Portraits active then it will likely have a big impact on your FPS. Disable some portraits if you experience FPS issues."] =
+	"Si vous avez beaucoup de portraits 3D actifs, cela pourrait avoir un impact important sur vos IPS (images par seconde). Désactivez certains portraits si vous rencontrez des problèmes de FPS."
+L["If you have any plugins supporting this feature installed you can find them in the selection dropdown to the right."] =
+	"Si vous avez des plugins prenant en charge cette fonctionnalité installés, vous pouvez les trouver dans le menu déroulant de sélection à droite."
+L["If you unlock actionbars then trying to move a spell might instantly cast it if you cast spells on key press instead of key release."] =
+	"Si vous déverrouillez les barres d'actions, essayer de déplacer un sort pourrait instantanément le lancer si vous lancez les sorts en appuyant sur la touche plutôt qu'en la relâchant."
 L["Ignore mouse events."] = "Ignorer les événements de la souris."
 L["Ignored Items (Global)"] = "Objets ignorés (global)"
 L["Ignored Items (Profile)"] = "Objets ignorés (profil)"
@@ -913,7 +1099,8 @@ L["In Raid"] = "En raid"
 L["In Vehicle"] = "En véhicule"
 L["Inactivity Timer"] = "Minuteur d'inactivité"
 L["Index"] = true
-L["Indicate whether buffs you cast yourself should be separated before or after."] = "Indique si les améliorations que vous lancez vous-même doivent être séparées avant ou après."
+L["Indicate whether buffs you cast yourself should be separated before or after."] =
+	"Indique si les améliorations que vous lancez vous-même doivent être séparées avant ou après."
 L["Indicator Expiring"] = "Indicateur d'expiration"
 L["Indicator"] = "Indicateur"
 L["Individual Units"] = "Unités individuelles"
@@ -1020,7 +1207,8 @@ L["Limit the number of rows or columns."] = "Limiter le nombre de lignes ou de c
 L["Lines"] = "Lignes"
 L["Link to the latest development version."] = "Lien vers la dernière version de développement."
 L["Link to the latest PTR version."] = "Lien vers la dernière version PTR."
-L["List of words to color in chat if found in a message. If you wish to add multiple words, you must separate the words with a comma. To search for your current name, you can use %MYNAME%.\n\nExample:\n%MYNAME%, ElvUI, RBGs, Tank"] = "Liste des mots à colorer dans la fenêtre de discussion s'ils sont trouvés dans un message. Si vous souhaitez ajouter plusieurs mots, vous devez séparer les mots avec une virgule. Pour rechercher votre nom actuel, vous pouvez utiliser %MYNAME%.\n\nExemple:\n%MYNAME%, ElvUI, RBG, Tank"
+L["List of words to color in chat if found in a message. If you wish to add multiple words, you must separate the words with a comma. To search for your current name, you can use %MYNAME%.\n\nExample:\n%MYNAME%, ElvUI, RBGs, Tank"] =
+	"Liste des mots à colorer dans la fenêtre de discussion s'ils sont trouvés dans un message. Si vous souhaitez ajouter plusieurs mots, vous devez séparer les mots avec une virgule. Pour rechercher votre nom actuel, vous pouvez utiliser %MYNAME%.\n\nExemple:\n%MYNAME%, ElvUI, RBG, Tank"
 L["Load Distance"] = "Chargement à distance"
 L["Loadout Only"] = "Uniquement la tenue"
 L["Local Time"] = "Heure locale"
@@ -1028,7 +1216,8 @@ L["Location Text"] = "Texte de l'emplacement"
 L["Lock Distance Max"] = "Verrouiller à distance maximale"
 L["LOCK_ACTIONBAR_TEXT"] = "Verrouiller les barres d'action"
 L["Log Taints"] = "Journal des corruptions"
-L["Log the main chat frames history. So when you reloadui or log in and out, you see the history from your last session."] = "Enregistre l'historique des fenêtres de discussion principales. Ainsi, lorsque vous rechargez l'interface utilisateur ou que vous vous connectez et déconnectez, vous voyez l'historique de votre dernière session."
+L["Log the main chat frames history. So when you reloadui or log in and out, you see the history from your last session."] =
+	"Enregistre l'historique des fenêtres de discussion principales. Ainsi, lorsque vous rechargez l'interface utilisateur ou que vous vous connectez et déconnectez, vous voyez l'historique de votre dernière session."
 L["Login Message"] = "Message de connexion"
 L["Loot Roll"] = "Loot Roll"
 L["Losing Threat"] = "Perte de menace"
@@ -1039,7 +1228,8 @@ L["Low Health Threshold"] = "Seuil de faible santé"
 L["Low Threat"] = "Menace faible"
 L["Low Threshold"] = "Seuil bas"
 L["Low"] = "Faible"
-L["Lower numbers mean a higher priority. Filters are processed in order from 1 to 100."] = "Les numéros plus bas signifient une priorité plus élevée. Les filtres sont traités dans l'ordre de 1 à 100."
+L["Lower numbers mean a higher priority. Filters are processed in order from 1 to 100."] =
+	"Les numéros plus bas signifient une priorité plus élevée. Les filtres sont traités dans l'ordre de 1 à 100."
 L["LUNAR_POWER"] = "Puissance astrale"
 L["Macro Text"] = "Texte sur Macro"
 L["MACROS"] = "Macros"
@@ -1053,7 +1243,8 @@ L["Main Options"] = "Options principales"
 L["Main statusbar texture."] = "Texture de la barre d'état principale."
 L["Major Factions"] = "Factions majeures"
 L["Make textures transparent."] = "Rendre les textures transparentes."
-L["Make the unitframe glow when it is below this percent of health."] = "Faire briller le cadre d'unité lorsqu'il est en dessous de ce pourcentage de santé."
+L["Make the unitframe glow when it is below this percent of health."] =
+	"Faire briller le cadre d'unité lorsqu'il est en dessous de ce pourcentage de santé."
 L["Make the world map smaller."] = "Rendre la carte du monde plus petite."
 L["MANA"] = "Mana"
 L["Map ID"] = "ID de la carte"
@@ -1061,7 +1252,8 @@ L["Map Opacity When Moving"] = "Opacité de la carte en mouvement"
 L["MAP_FADE_TEXT"] = "Fondu de la carte en mouvement"
 L["Maps"] = "Cartes"
 L["Mark Quest Reward"] = "Marquer la récompense de quête"
-L["Marks the most valuable quest reward with a gold coin."] = "Marque la récompense de quête la plus précieuse avec une pièce d'or."
+L["Marks the most valuable quest reward with a gold coin."] =
+	"Marque la récompense de quête la plus précieuse avec une pièce d'or."
 L["Masque Support"] = "Support de Masque"
 L["Masque"] = true
 L["Match if Item Name or ID is NOT in the list."] = "Correspondre si le nom de l'objet ou l'ID n'est PAS dans la liste."
@@ -1070,22 +1262,26 @@ L["Match Player Level"] = "Correspondre au niveau du joueur"
 L["Match this trigger if the spell is not known."] = "Correspondre à ce déclencheur si le sort n'est pas connu."
 L["Max Allowed Groups"] = "Groupes maximum autorisés"
 L["Max Alpha"] = "Alpha maximum"
-L["Max amount of overflow allowed to extend past the end of the health bar."] = "Quantité maximale de débordement autorisée à dépasser la fin de la barre de vie."
+L["Max amount of overflow allowed to extend past the end of the health bar."] =
+	"Quantité maximale de débordement autorisée à dépasser la fin de la barre de vie."
 L["Max Bars"] = "Barres maximum"
 L["Max Distance"] = "Distance maximale"
 L["Max Lines"] = "Lignes maximales"
-L["Max Overflow is set to zero. Absorb Overflows will be hidden when using Overflow style.\nIf used together Max Overflow at zero and Overflow mode will act like Normal mode without the ending sliver of overflow."] = true
+L["Max Overflow is set to zero. Absorb Overflows will be hidden when using Overflow style.\nIf used together Max Overflow at zero and Overflow mode will act like Normal mode without the ending sliver of overflow."] =
+	true
 L["Max Overflow"] = "Dépassement maximum"
 L["Max Wraps"] = "Retour à la ligne maximale"
 L["Maximum Duration"] = "Durée maximum"
 L["Maximum Level"] = "Niveau maximum"
-L["Maximum tick rate allowed for tag updates per second."] = "Taux maximal de mise à jour des balises autorisé par seconde."
+L["Maximum tick rate allowed for tag updates per second."] =
+	"Taux maximal de mise à jour des balises autorisé par seconde."
 L["Maximum Time Left"] = "Temps maximal restant"
 L["Media"] = "Médias"
 L["Merchant Frame"] = "Fenêtre du marchand"
 L["Method to sort by."] = "Méthode de tri."
 L["Middle Click - Set Focus"] = "Clic milieu - Définir la focalisation"
-L["Middle clicking the unit frame will cause your focus to match the unit.\n|cffff3333Note:|r If Clique is enabled, this option only affects ElvUI frames if they are not blacklisted in Clique."] = "Cliquer avec le bouton du milieu sur le cadre de l'unité fera que votre focalisation correspondra à l'unité.\n|cffff3333Note :|r Si Clique est activé, cette option n'affecte que les cadres ElvUI s'ils ne sont pas sur liste noire dans Clique."
+L["Middle clicking the unit frame will cause your focus to match the unit.\n|cffff3333Note:|r If Clique is enabled, this option only affects ElvUI frames if they are not blacklisted in Clique."] =
+	"Cliquer avec le bouton du milieu sur le cadre de l'unité fera que votre focalisation correspondra à l'unité.\n|cffff3333Note :|r Si Clique est activé, cette option n'affecte que les cadres ElvUI s'ils ne sont pas sur liste noire dans Clique."
 L["Middle"] = "Milieu"
 L["Min Alpha"] = "Alpha minimal"
 L["Minimap Buttons"] = "Bouton de la minicarte"
@@ -1120,8 +1316,10 @@ L["Mouseover"] = "Survol de la souris"
 L["Movers"] = "Cadres mobiles"
 L["Multi-Monitor Support"] = "Support multi-écrans"
 L["Multiple Ranks"] = "Multiples grades"
-L["Multiply the backdrops height or width by this value. This is useful if you wish to have more than one bar behind a backdrop."] = "Multiplier la hauteur ou la largeur de l'arrière-plan par cette valeur. C'est utile si vous souhaitez avoir plus d'une barre derrière un arrière-plan."
-L["Must be in group with the player if he isn't on the same server as you."] = "Doit être dans un groupe avec le joueur s'il n'est pas sur le même serveur que vous."
+L["Multiply the backdrops height or width by this value. This is useful if you wish to have more than one bar behind a backdrop."] =
+	"Multiplier la hauteur ou la largeur de l'arrière-plan par cette valeur. C'est utile si vous souhaitez avoir plus d'une barre derrière un arrière-plan."
+L["Must be in group with the player if he isn't on the same server as you."] =
+	"Doit être dans un groupe avec le joueur s'il n'est pas sur le même serveur que vous."
 L["My Guild"] = "Ma guilde"
 L["Mythic+ Best Run"] = "Meilleure course Mythique+"
 L["Mythic+ Data"] = "Données Mythique+"
@@ -1189,8 +1387,10 @@ L["Number Allowed"] = "Nombre autorisé"
 L["Number of DataTexts"] = "Nombre de textes d'informations"
 L["Number of Groups"] = "Nombre de groupes"
 L["Number of messages you scroll for each step."] = "Nombre de messages par défilement."
-L["Number of repeat characters while in combat before the chat editbox is automatically closed."] = "Nombre de caractères répétés en combat avant que la zone de saisie du chat ne se ferme automatiquement."
-L["Number of time in seconds to scroll down to the bottom of the chat window if you are not scrolled down completely."] = "Temps en secondes pour faire défiler vers le bas de la fenêtre de discussion si vous ne l'avez pas fait défiler jusqu'en bas."
+L["Number of repeat characters while in combat before the chat editbox is automatically closed."] =
+	"Nombre de caractères répétés en combat avant que la zone de saisie du chat ne se ferme automatiquement."
+L["Number of time in seconds to scroll down to the bottom of the chat window if you are not scrolled down completely."] =
+	"Temps en secondes pour faire défiler vers le bas de la fenêtre de discussion si vous ne l'avez pas fait défiler jusqu'en bas."
 L["Objective Frame Height"] = "Hauteur du cadre d'objectif"
 L["OBJECTIVES_TRACKER_LABEL"] = "Objectifs"
 L["OBLITERUM_FORGE_TITLE"] = "Forge à oblitérium"
@@ -1200,21 +1400,26 @@ L["Off Tank Bad Transition"] = "Mauvaise transition du tank secondaire"
 L["Off Tank Good Transition"] = "Bonne transition du tank secondaire"
 L["Off Tank"] = "Tank secondaire"
 L["Officer"] = "Officier"
-L["Offset of the powerbar to the healthbar, set to 0 to disable."] = "Décalage de la barre de pouvoir à la barre de vie, mettre 0 pour désactiver."
+L["Offset of the powerbar to the healthbar, set to 0 to disable."] =
+	"Décalage de la barre de pouvoir à la barre de vie, mettre 0 pour désactiver."
 L["Offset"] = "Décalage"
 L["On Cooldown"] = "Sur Cooldown"
 L["On Me"] = "Sur moi"
 L["On Pet"] = "Sur le familier"
 L["On screen positions for different elements."] = "Positions à l'écran pour différents éléments."
 L["Only Free Slots"] = "Uniquement les emplacements libres"
-L["Only highlight the aura that originated from you and not others."] = "Ne surligne que les auras d'origine de votre personnage et pas celles des autres."
-L["Only load nameplates for units within this range."] = "Charge uniquement les barres d'info des unités se trouvant dans cette plage."
+L["Only highlight the aura that originated from you and not others."] =
+	"Ne surligne que les auras d'origine de votre personnage et pas celles des autres."
+L["Only load nameplates for units within this range."] =
+	"Charge uniquement les barres d'info des unités se trouvant dans cette plage."
 L["Only Low"] = "Uniquement faible"
 L["Only Match SpellID"] = "Seulement les ID de sort correspondants"
-L["Only show icons instead of specialization names"] = "Afficher uniquement les icônes au lieu des noms de spécialisation"
+L["Only show icons instead of specialization names"] =
+	"Afficher uniquement les icônes au lieu des noms de spécialisation"
 L["Only Used Slots"] = "Emplacements utilisés uniquement"
 L["OPACITY"] = "Opacité"
-L["OPTION_TOOLTIP_ACTION_BUTTON_USE_KEY_DOWN"] = "Les boutons d’action associés à un raccourci clavier se déclencheront au moment où la touche est enfoncée, et non relâchée."
+L["OPTION_TOOLTIP_ACTION_BUTTON_USE_KEY_DOWN"] =
+	"Les boutons d’action associés à un raccourci clavier se déclencheront au moment où la touche est enfoncée, et non relâchée."
 L["OPTION_TOOLTIP_TIMESTAMPS"] = "Sélectionner le format de l'heure dans les fenêtres de discussion."
 L["Order Hall Command Bar"] = "Barre du domaine de classe"
 L["Orderhall"] = "Domaine de classe"
@@ -1235,7 +1440,8 @@ L["Overflow"] = "Débordement"
 L["Overlap Horizontal"] = "Chevauchement horizontal"
 L["Overlap Vertical"] = "Chevauchement vertical"
 L["Overlay Alpha"] = "Transparence de la superposition"
-L["Overlay mode is forced when the Frame Orientation is set to Middle."] = "Le mode superposition est forcé lorsque l'orientation du cadre est réglée sur Milieu."
+L["Overlay mode is forced when the Frame Orientation is set to Middle."] =
+	"Le mode superposition est forcé lorsque l'orientation du cadre est réglée sur Milieu."
 L["Overlay"] = "Superposition"
 L["Override the default class color setting."] = "Remplacer les réglages des couleurs de classes par défaut."
 L["Owned By Player"] = "Possédé par le joueur"
@@ -1260,7 +1466,8 @@ L["Party"] = "Groupe"
 L["Pause"] = true
 L["Per Row"] = "Par ligne"
 L["Percent"] = "Pourcentage"
-L["Percentage amount for horizontal overlap of Nameplates."] = "Pourcentage de chevauchement horizontal des barres de nom."
+L["Percentage amount for horizontal overlap of Nameplates."] =
+	"Pourcentage de chevauchement horizontal des barres de nom."
 L["Percentage amount for vertical overlap of Nameplates."] = "Pourcentage de chevauchement vertical des barres de nom."
 L["Trading Post"] = true
 L["Personal"] = "Personnel"
@@ -1288,21 +1495,25 @@ L["Plugin"] = true
 L["Plugins"] = true
 L["Poison Effect"] = "Effet de poison"
 L["Portrait"] = "Portrait"
-L["Position of bonus quest reward frame relative to the objective tracker."] = "Position de la récompense de l'objectif par rapport à la fenêtre de suivi des objectifs"
-L["Position of the Chat EditBox, if datatexts are disabled this will be forced to be above chat."] = "Postion du cadre d'écriture de la fenêtre de Chat. Si les Texte d'informations sont désactivés, elle apparaitra au dessus du Chat."
+L["Position of bonus quest reward frame relative to the objective tracker."] =
+	"Position de la récompense de l'objectif par rapport à la fenêtre de suivi des objectifs"
+L["Position of the Chat EditBox, if datatexts are disabled this will be forced to be above chat."] =
+	"Postion du cadre d'écriture de la fenêtre de Chat. Si les Texte d'informations sont désactivés, elle apparaitra au dessus du Chat."
 L["Position the Model horizontally."] = "Position horizontale du modèle"
 L["Position the Model vertically."] = "Position verticale du modèle"
 L["Position"] = true
 L["Power Color"] = "Couleur de puissance"
 L["Power Prediction Color"] = "Couleur de prédiction de puissance"
 L["Power Prediction"] = "Prédiction de puissance"
-L["Power text will be hidden on NPC targets, in addition the name text will be repositioned to the power texts anchor point."] = "Le texte d'énergie sera masqué sur les PNJ ciblés, de plus le nom sera repositionné sur le texte d'énergie."
+L["Power text will be hidden on NPC targets, in addition the name text will be repositioned to the power texts anchor point."] =
+	"Le texte d'énergie sera masqué sur les PNJ ciblés, de plus le nom sera repositionné sur le texte d'énergie."
 L["Power Threshold"] = "Seuil de puissance"
 L["Power"] = "Énergie"
 L["POWER_TYPE_ARCANE_CHARGES"] = "Charges arcaniques"
 L["POWER_TYPE_ESSENCE"] = "Essence"
 L["Prefer Target Color"] = "Préférer la couleur de la cible"
-L["Prevent the same messages from displaying in chat more than once within this set amount of seconds, set to zero to disable."] = "Empêche l'affichage du même message plus d'une fois dans la fenêtre de discussion durant un laps de temps. Définir sur 0 pour désactiver."
+L["Prevent the same messages from displaying in chat more than once within this set amount of seconds, set to zero to disable."] =
+	"Empêche l'affichage du même message plus d'une fois dans la fenêtre de discussion durant un laps de temps. Définir sur 0 pour désactiver."
 L["Primary Texture"] = "Texture primaire"
 L["Priority"] = "Priorité"
 L["Private (Character Settings)"] = "Privée (Paramètres du personnages)"
@@ -1390,14 +1601,17 @@ L["Replace Font"] = "Remplacer la police"
 L["Replace Name Font"] = "Remplacer la police des noms"
 L["Replace Nameplate Fonts"] = "Remplacer les polices des barres de nom"
 L["Replace Text on Me"] = "Remplacer le texte sur moi"
-L["Replaces the default Blizzard fonts on various panels and frames with the fonts chosen in the Media section of the ElvUI Options. NOTE: Any font that inherits from the fonts ElvUI usually replaces will be affected as well if you disable this. Enabled by default."] = true
+L["Replaces the default Blizzard fonts on various panels and frames with the fonts chosen in the Media section of the ElvUI Options. NOTE: Any font that inherits from the fonts ElvUI usually replaces will be affected as well if you disable this. Enabled by default."] =
+	true
 L["Replaces the font on Blizzard Nameplates."] = "Remplace la police sur les barres de nom de Blizzard."
-L["Replaces the StatusBar texture setting on Unitframes and Nameplates with the primary texture."] = "Remplace la texture de la barre d'état sur les cadres d'unité et les noms par la texture principale."
+L["Replaces the StatusBar texture setting on Unitframes and Nameplates with the primary texture."] =
+	"Remplace la texture de la barre d'état sur les cadres d'unité et les noms par la texture principale."
 L["Reposition Window"] = "Repositionner la fenêtre"
 L["Reputation Alpha"] = true
 L["Reputation"] = "Réputation"
 L["Require All"] = "Requiert tous"
-L["Require holding the Alt key down to move cursor or cycle through messages in the editbox."] = "Nécessite de maintenir la touche Alt enfoncée pour déplacer le curseur ou parcourir les messages dans la zone de saisie."
+L["Require holding the Alt key down to move cursor or cycle through messages in the editbox."] =
+	"Nécessite de maintenir la touche Alt enfoncée pour déplacer le curseur ou parcourir les messages dans la zone de saisie."
 L["Require Target"] = "Requiert une cible"
 L["Reset Action Paging"] = "Réinitialiser la pagination des actions"
 L["Reset all frames to their original positions."] = "Réinitialise toutes les fenêtres à leurs positions d'origine."
@@ -1409,7 +1623,8 @@ L["Reset Filter - %s"] = "Réinitialiser le filtre - %s"
 L["Reset filter priority to the default state."] = "Réinitialise la priorité du filtre à l'état par défaut."
 L["Reset Filter"] = "Réinitialiser le filtre"
 L["Reset History"] = "Réinitialiser l'historique"
-L["Reset Nameplate CVars to the ElvUI recommended defaults."] = "Réinitialise les CVars de la barre de nom aux valeurs par défaut recommandées par ElvUI."
+L["Reset Nameplate CVars to the ElvUI recommended defaults."] =
+	"Réinitialise les CVars de la barre de nom aux valeurs par défaut recommandées par ElvUI."
 L["Reset Priority"] = "Réinitialiser la priorité"
 L["Reset the size and position of this frame."] = "Réinitialise la taille et la position de cette fenêtre."
 L["Reset Zoom"] = "Réinitialiser le zoom"
@@ -1424,7 +1639,8 @@ L["Return filter to its default state."] = "Réinitialiser le filtrage à sa val
 L["Reverse Bag Slots"] = "Inverser l'ordre des objets dans les sacs"
 L["Reverse Fill Direction"] = "Inverser la direction de remplissage"
 L["Reverse Fill"] = "Remplissage inversé"
-L["Reverse Toggle will enable Cooldown Text on this module when the global setting is disabled and disable them when the global setting is enabled."] = "L'inversion de basculement activera le texte de temps de recharge pour ce module lorsque le paramètre global est désactivé, et les désactivera lorsque le paramètre global est activé."
+L["Reverse Toggle will enable Cooldown Text on this module when the global setting is disabled and disable them when the global setting is enabled."] =
+	"L'inversion de basculement activera le texte de temps de recharge pour ce module lorsque le paramètre global est désactivé, et les désactivera lorsque le paramètre global est activé."
 L["Reverse Toggle"] = "Bascule inversée"
 L["Reverse"] = "Inverser"
 L["REVERSE_NEW_LOOT_TEXT"] = "Butin dans le sac le plus à gauche"
@@ -1488,19 +1704,27 @@ L["Separate Panel Sizes"] = "Séparer la taille des fenêtres de discussion."
 L["Separate"] = "Séparer"
 L["Set auras that are not from you to desaturated."] = "Définir les auras qui ne sont pas de vous en désaturé."
 L["Set Settings to Default"] = "Rétablir les paramètres par défaut"
-L["Set the alpha level of portrait when frame is overlayed."] = "Définir le niveau d'opacité du portrait lorsque la fenêtre est superposée."
-L["Set the filter type. Blacklist will hide any auras in the list and show all others. Whitelist will show any auras in the filter and hide all others."] = "Définir le type de filtre. La liste noire masquera toutes les auras dans la liste et rendra visible les autres. La liste blanche montrera les auras dans la liste et masquera tous les autres."
+L["Set the alpha level of portrait when frame is overlayed."] =
+	"Définir le niveau d'opacité du portrait lorsque la fenêtre est superposée."
+L["Set the filter type. Blacklist will hide any auras in the list and show all others. Whitelist will show any auras in the filter and hide all others."] =
+	"Définir le type de filtre. La liste noire masquera toutes les auras dans la liste et rendra visible les autres. La liste blanche montrera les auras dans la liste et masquera tous les autres."
 L["Set the font outline."] = "Configure le contour extérieur de la police."
-L["Set the font size for everything in UI. Note: This doesn't effect somethings that have their own separate options (UnitFrame Font, Datatext Font, ect..)"] = "Définie la taille de la police d'écriture pour toute l'interface utilisateur. Note: Ceci n'affecte pas les modules qui ont leurs propres paramètres (Portait d'unité, Textes d'Informations, etc)"
+L["Set the font size for everything in UI. Note: This doesn't effect somethings that have their own separate options (UnitFrame Font, Datatext Font, ect..)"] =
+	"Définie la taille de la police d'écriture pour toute l'interface utilisateur. Note: Ceci n'affecte pas les modules qui ont leurs propres paramètres (Portait d'unité, Textes d'Informations, etc)"
 L["Set the order that the group will sort."] = "Définir l'ordre de tri d'affichage du groupe"
 L["Set the orientation of the UnitFrame."] = "Définir l'orientation des cadres d'unités"
-L["Set the priority order of the spell, please note that priorities are only used for the raid debuff module, not the standard buff/debuff module. If you want to disable set to zero."] = "Définir l'ordre de priorité du sort, merci de noter que ces priorités ne sont utilisées que pour le mode d'affaiblissement de raid, ce n'est pas un module améliorations / affaiblissement standard. Si vous souhaitez le désactiver, mettez la valeur sur 0."
+L["Set the priority order of the spell, please note that priorities are only used for the raid debuff module, not the standard buff/debuff module. If you want to disable set to zero."] =
+	"Définir l'ordre de priorité du sort, merci de noter que ces priorités ne sont utilisées que pour le mode d'affaiblissement de raid, ce n'est pas un module améliorations / affaiblissement standard. Si vous souhaitez le désactiver, mettez la valeur sur 0."
 L["Set the size of the individual auras."] = "Définit la taille de l'aura individuelle."
 L["Set the size of your bag buttons."] = "Définissez la taille de vos boutons de sac."
-L["Set the type of auras to show when a unit is a foe."] = "Définir le type d'auras à afficher quand l'unité est hostile."
-L["Set the type of auras to show when a unit is friendly."] = "Définir le type d'auras à afficher quand l'unité est amical."
-L["Set to either stack nameplates vertically or allow them to overlap."] = "Définir si les barres d'info doivent être empilées verticalement ou autorisées à se chevaucher."
-L["Sets the font instance's horizontal text alignment style."] = "Réglages de l'alignement horizontal du texte de la police d'écriture."
+L["Set the type of auras to show when a unit is a foe."] =
+	"Définir le type d'auras à afficher quand l'unité est hostile."
+L["Set the type of auras to show when a unit is friendly."] =
+	"Définir le type d'auras à afficher quand l'unité est amical."
+L["Set to either stack nameplates vertically or allow them to overlap."] =
+	"Définir si les barres d'info doivent être empilées verticalement ou autorisées à se chevaucher."
+L["Sets the font instance's horizontal text alignment style."] =
+	"Réglages de l'alignement horizontal du texte de la police d'écriture."
 L["Setup on-screen display of information bars."] = "Configuration de l'affichage des différentes barres d'expérience"
 L["Share Current Profile"] = "Partagez votre profil actuel"
 L["Share Filters"] = "Partagez les filtres"
@@ -1513,7 +1737,8 @@ L["Shortcut to global filters."] = "Raccourci vers les filtres globaux."
 L["Shorten the channel names in chat."] = "Minimise le nom des canaux de discussion."
 L["Should tooltip be anchored to mouse cursor"] = "L'infobulle doit être ancrée sur le curseur de la souris"
 L["Show All Tracking Options"] = "Afficher toutes les options de suivi"
-L["Show an incoming heal prediction bar on the unitframe. Also display a slightly different colored bar for incoming overheals."] = "Afficher une barre de prédiction de soins entrants sur le cadre d'unité. Affiche également une barre de couleur légèrement différente pour les soins entrants excessifs."
+L["Show an incoming heal prediction bar on the unitframe. Also display a slightly different colored bar for incoming overheals."] =
+	"Afficher une barre de prédiction de soins entrants sur le cadre d'unité. Affiche également une barre de couleur légèrement différente pour les soins entrants excessifs."
 L["Show Assigned Color"] = "Afficher la couleur attribuée"
 L["Show Aura From Other Players"] = "Afficher les auras des autres joueurs"
 L["Show Auras"] = "Afficher les auras"
@@ -1521,7 +1746,8 @@ L["Show Badge"] = "Afficher le badge"
 L["Show Border"] = "Afficher la bordure"
 L["Show Both"] = "Afficher les deux"
 L["Show Bubbles"] = "Afficher les bulles"
-L["Show clickable Quick Join messages inside of the chat."] = "Afficher les messages de Quick Join cliquables à l'intérieur de la fenêtre de discussion."
+L["Show clickable Quick Join messages inside of the chat."] =
+	"Afficher les messages de Quick Join cliquables à l'intérieur de la fenêtre de discussion."
 L["Show Coins"] = "Afficher les pièces"
 L["Show Continent"] = "Afficher le continent"
 L["Show Count"] = "Afficher le décompte"
@@ -1543,16 +1769,20 @@ L["Show QuestXP"] = "Afficher les points d'expérience de quête"
 L["Show Special Bags Color"] = "Afficher la couleur des sacs spéciaux"
 L["Show Subzone"] = "Afficher la sous-zone"
 L["Show Text"] = "Afficher le texte"
-L["Show the castbar icon desaturated if a spell is not interruptible."] = "Afficher l'icône de la barre d'incantation en dégradé si le sort ne peut pas être interrompu."
+L["Show the castbar icon desaturated if a spell is not interruptible."] =
+	"Afficher l'icône de la barre d'incantation en dégradé si le sort ne peut pas être interrompu."
 L["Show Title"] = "Afficher le titre"
 L["Show When Not Active"] = "Afficher les manquants"
 L["Show With Target"] = "Afficher avec la cible"
 L["Show Zone"] = "Afficher la zone"
 L["Show"] = "Afficher"
 L["Show/Hide Test Frame"] = "Afficher/Masquer le cadre de test"
-L["Shows a swipe animation when a spell is recharging but still has charges left."] = "Affiche une animation de balayage lorsque le temps de recharge d'un sort est en cours, mais qu'il reste des charges."
-L["Shows item level of each item, enchants, and gems on the character page."] = "Affiche le niveau d'objet de chaque objet, les enchantements et les gemmes sur la page du personnage."
-L["Shows item level of each item, enchants, and gems when inspecting another player."] = "Affiche le niveau d'objet de chaque objet, les enchantements et les gemmes lors de l'inspection d'un autre joueur."
+L["Shows a swipe animation when a spell is recharging but still has charges left."] =
+	"Affiche une animation de balayage lorsque le temps de recharge d'un sort est en cours, mais qu'il reste des charges."
+L["Shows item level of each item, enchants, and gems on the character page."] =
+	"Affiche le niveau d'objet de chaque objet, les enchantements et les gemmes sur la page du personnage."
+L["Shows item level of each item, enchants, and gems when inspecting another player."] =
+	"Affiche le niveau d'objet de chaque objet, les enchantements et les gemmes lors de l'inspection d'un autre joueur."
 L["Side Arrows"] = "Flèches latérales"
 L["Size and Positions"] = "Taille et positions"
 L["Size Offset"] = "Décalage de taille"
@@ -1642,7 +1872,8 @@ L["Target Info"] = "Info de la cible"
 L["Target Marker Icon"] = "Icône de marqueur de cible"
 L["Target On Mouse-Down"] = "Cibler lors d'un appui sur le clic (et non pas en relachant le clic)"
 L["Target Reticle"] = "Réticule de cible"
-L["Target units on mouse down rather than mouse up.\n|cffff3333Note:|r If Clique is enabled, this option only effects ElvUI frames if they are not blacklisted in Clique."] = true
+L["Target units on mouse down rather than mouse up.\n|cffff3333Note:|r If Clique is enabled, this option only effects ElvUI frames if they are not blacklisted in Clique."] =
+	true
 L["Target"] = "Cible"
 L["Target/Low Health Indicator"] = "Indicateur de la cible"
 L["Targeted Glow"] = "Lueur de ciblage"
@@ -1668,68 +1899,114 @@ L["Textured Icon"] = "Texture de l'icône"
 L["Textures"] = true
 L["The amount of buttons to display per row."] = "Nombre de boutons à afficher par ligne."
 L["The amount of buttons to display."] = "Nombre de boutons à afficher."
-L["The button you must hold down in order to drag an ability to another action button."] = "Définir la touche qui doit être maintenue enfoncée pour pouvoir glisser une capacité sur un autre bouton d'action."
-L["The debuff needs to reach this amount of stacks before it is shown. Set to 0 to always show the debuff."] = "L'affaiblissement doit atteindre ce nombre de stacks pour être affiché. Mettre à 0 pour toujours afficher l'affaiblissement"
-L["The direction that the bag frames be (Horizontal or Vertical)."] = "La direction des fenêtres de sac (Horizontale ou Verticale)."
-L["The direction that the bag frames will grow from the anchor."] = "La direction que prendra la barre des sacs en partant du point d'ancrage."
-L["The direction the auras will grow and then the direction they will grow after they reach the wrap after limit."] = "Sens de progression des Auras sur la ligne et comment elles vont se comporter une fois la limite atteinte."
-L["The display format of the currency icons that get displayed below the main bag. (You have to be watching a currency for this to display)"] = "Le format d'affichage des icônes de devises qui sont affichés dans les sacs. (Vous devez montrer cette devise pour l'afficher)"
-L["The display format of the money text that is shown at the top of the main bag."] = "Le format d'affichage de l'argent que vous avez visible en haut du sac principal."
-L["The display format of the money text that is shown in the gold datatext and its tooltip."] = "L'affichage du format de l'argent que vous possédez dans le texte d'informations Argent et dans son infobulle."
-L["The durability percent that the datatext will start flashing. Set to -1 to disable."] = "Le pourcentage de durabilité à partir duquel le texte d'information commencera à clignoter. Mettez -1 pour désactiver."
+L["The button you must hold down in order to drag an ability to another action button."] =
+	"Définir la touche qui doit être maintenue enfoncée pour pouvoir glisser une capacité sur un autre bouton d'action."
+L["The debuff needs to reach this amount of stacks before it is shown. Set to 0 to always show the debuff."] =
+	"L'affaiblissement doit atteindre ce nombre de stacks pour être affiché. Mettre à 0 pour toujours afficher l'affaiblissement"
+L["The direction that the bag frames be (Horizontal or Vertical)."] =
+	"La direction des fenêtres de sac (Horizontale ou Verticale)."
+L["The direction that the bag frames will grow from the anchor."] =
+	"La direction que prendra la barre des sacs en partant du point d'ancrage."
+L["The direction the auras will grow and then the direction they will grow after they reach the wrap after limit."] =
+	"Sens de progression des Auras sur la ligne et comment elles vont se comporter une fois la limite atteinte."
+L["The display format of the currency icons that get displayed below the main bag. (You have to be watching a currency for this to display)"] =
+	"Le format d'affichage des icônes de devises qui sont affichés dans les sacs. (Vous devez montrer cette devise pour l'afficher)"
+L["The display format of the money text that is shown at the top of the main bag."] =
+	"Le format d'affichage de l'argent que vous avez visible en haut du sac principal."
+L["The display format of the money text that is shown in the gold datatext and its tooltip."] =
+	"L'affichage du format de l'argent que vous possédez dans le texte d'informations Argent et dans son infobulle."
+L["The durability percent that the datatext will start flashing. Set to -1 to disable."] =
+	"Le pourcentage de durabilité à partir duquel le texte d'information commencera à clignoter. Mettez -1 pour désactiver."
 L["The first button anchors itself to this point on the bar."] = "Ancrage du premier bouton sur le point de la barre."
-L["The font that appears on the text above players heads. |cffFF3333WARNING: This requires a game restart or re-log for this change to take effect.|r"] = "Police qui apparait sur le texte au dessus de la tête des joueurs. |cffFF3333ATTENTION: requiert un redémarrage du jeu ou une reconnexion pour que les changements soient pris en compte.|r"
-L["The font that combat text will use. |cffFF3333WARNING: This requires a game restart or re-log for this change to take effect.|r"] = "La police qui sera utilisée pour les textes de combat. |cffFF3333Note : Ce changement nécessite de relancer le jeu ou d'une reconnexion pour prendre effet.|r"
+L["The font that appears on the text above players heads. |cffFF3333WARNING: This requires a game restart or re-log for this change to take effect.|r"] =
+	"Police qui apparait sur le texte au dessus de la tête des joueurs. |cffFF3333ATTENTION: requiert un redémarrage du jeu ou une reconnexion pour que les changements soient pris en compte.|r"
+L["The font that combat text will use. |cffFF3333WARNING: This requires a game restart or re-log for this change to take effect.|r"] =
+	"La police qui sera utilisée pour les textes de combat. |cffFF3333Note : Ce changement nécessite de relancer le jeu ou d'une reconnexion pour prendre effet.|r"
 L["The font that the core of the UI will use."] = "La police que le cœur de l'Interface utilisera"
 L["The font that the unitframes will use."] = "Police utilisée par défaut pour les cadres d'unités."
-L["The frame is not shown unless you mouse over the frame."] = "Le cadre est invisible tant que vous n'avez pas passé votre souris dessus."
+L["The frame is not shown unless you mouse over the frame."] =
+	"Le cadre est invisible tant que vous n'avez pas passé votre souris dessus."
 L["The height of the action buttons."] = "La hauteur des boutons d'action."
-L["The initial group will start near the center and grow out."] = "Le premier groupe commence à proximité du centre et s'en développe hors."
+L["The initial group will start near the center and grow out."] =
+	"Le premier groupe commence à proximité du centre et s'en développe hors."
 L["The minimum item level required for it to be shown."] = "Le niveau d'objet minimum requis pour être affiché"
-L["The name you have selected is already in use by another element."] = "Le nom que vous avez sélectionné est déjà utilisé par un autre élément."
+L["The name you have selected is already in use by another element."] =
+	"Le nom que vous avez sélectionné est déjà utilisé par un autre élément."
 L["The object you want to attach to."] = "L'objet que vous souhaitez attacher à."
-L["The Portrait will overlay the Healthbar. This will be automatically happen if the Frame Orientation is set to Middle."] = "Le portrait se superposera à la barre de vie. Cela se produira automatiquement si l'orientation du cadre est réglée sur Milieu."
+L["The Portrait will overlay the Healthbar. This will be automatically happen if the Frame Orientation is set to Middle."] =
+	"Le portrait se superposera à la barre de vie. Cela se produira automatiquement si l'orientation du cadre est réglée sur Milieu."
 L["The size of the action buttons."] = "Taille des boutons d'action."
 L["The spacing between buttons."] = "Espacement entre deux boutons."
 L["The spacing between the backdrop and the buttons."] = "Espace entre le fond et les boutons."
-L["The texture that will be used mainly for statusbars."] = "La texture qui sera utilisé principalement pour la barre de statut."
-L["The Thin Border Theme option will change the overall appearance of your UI. Using the Thin Border Theme is a slight performance increase over the traditional layout."] = "L'option de thème à bordure fine changera l'apparence générale de votre interface. Utiliser le thème à bordure fine offre une légère amélioration des performances par rapport à la disposition traditionnelle."
-L["The unit prefixes you want to use when values are shortened in ElvUI. This is mostly used on UnitFrames."] = "Les préfixes d'unités que vous souhaitez utiliser lorsque les valeurs sont raccourcies dans ElvUI. Cela est principalement utilisé sur les cadres d'unités."
+L["The texture that will be used mainly for statusbars."] =
+	"La texture qui sera utilisé principalement pour la barre de statut."
+L["The Thin Border Theme option will change the overall appearance of your UI. Using the Thin Border Theme is a slight performance increase over the traditional layout."] =
+	"L'option de thème à bordure fine changera l'apparence générale de votre interface. Utiliser le thème à bordure fine offre une légère amélioration des performances par rapport à la disposition traditionnelle."
+L["The unit prefixes you want to use when values are shortened in ElvUI. This is mostly used on UnitFrames."] =
+	"Les préfixes d'unités que vous souhaitez utiliser lorsque les valeurs sont raccourcies dans ElvUI. Cela est principalement utilisé sur les cadres d'unités."
 L["The width of the action buttons."] = "La largeur des boutons d'action."
-L["These filters don't use a list of spells like the regular filters. Instead, they use the WoW API and some code logic to determine if an aura should be allowed or blocked."] = "Ces filtres n'utilisent pas une liste de sorts comme les filtres classiques. Au lieu de cela, ils utilisent l'API de WoW et une certaine logique de code pour déterminer si une aura doit être autorisée ou bloquée."
-L["These filters use a list of spells to determine if an aura should be allowed or blocked. The content of these filters can be modified in the Filters section of the config."] = "Ces filtres utilisent une liste de sorts pour déterminer si une aura doit être autorisée ou bloquée. Le contenu de ces filtres peut être modifié dans la section Filtres de la configuration."
+L["These filters don't use a list of spells like the regular filters. Instead, they use the WoW API and some code logic to determine if an aura should be allowed or blocked."] =
+	"Ces filtres n'utilisent pas une liste de sorts comme les filtres classiques. Au lieu de cela, ils utilisent l'API de WoW et une certaine logique de code pour déterminer si une aura doit être autorisée ou bloquée."
+L["These filters use a list of spells to determine if an aura should be allowed or blocked. The content of these filters can be modified in the Filters section of the config."] =
+	"Ces filtres utilisent une liste de sorts pour déterminer si une aura doit être autorisée ou bloquée. Le contenu de ces filtres peut être modifié dans la section Filtres de la configuration."
 L["Thin Borders"] = "Bordures fines"
-L["This allows you to create a new datatext which will track the currency with the supplied currency ID. The datatext can be added to a panel immediately after creation."] = "Cela vous permet de créer un nouveau texte d'informations qui suivra la devise avec l'ID de devise fourni. Le texte d'informations peut être ajouté à un panneau immédiatement après sa création."
+L["This allows you to create a new datatext which will track the currency with the supplied currency ID. The datatext can be added to a panel immediately after creation."] =
+	"Cela vous permet de créer un nouveau texte d'informations qui suivra la devise avec l'ID de devise fourni. Le texte d'informations peut être ajouté à un panneau immédiatement après sa création."
 L["This changes the size of the Aura Icon by this value."] = "Cela change la taille de l'icône d'aura de cette valeur."
-L["This dictates the size of the icon when it is not attached to the castbar."] = "Ceci force la taille de l'icône lorsqu'elle n'est pas rattachée à la barre d'incantation."
-L["This feature will allow you to transfer settings to other characters."] = "Cette fonctionnalité vous permettra de transférer les paramètres à d'autres personnages."
-L["This is for Customized Icons in your Interface/Icons folder."] = "Ceci est destiné aux icônes personnalisées dans votre dossier Interface/Icons."
-L["This list will display any textures Boss Mods have sent to the Boss Mod Auras element during the current session."] = "Cette liste affichera toutes les textures que les Boss Mods ont envoyées à l'élément des Auras des Boss pendant la session actuelle."
-L["This opens the AuraBar Colors filter. These settings affect specific spells."] = "Cela ouvre le filtre des couleurs des barres d'auras. Ces paramètres affectent des sorts spécifiques."
-L["This opens the UnitFrames Color settings. These settings affect all unitframes."] = "Ouvre la configuration des couleurs des unités. Ces options impactent toutes les barres d'unités."
-L["This option allows the overlay to span the whole health, including the background."] = "Cette option permet à la superposition de couvrir toute la barre de santé, y compris l'arrière-plan."
-L["This option controls the Blizzard setting for whether or not the Nameplates should be shown."] = "Cette option contrôle le paramètre Blizzard pour afficher ou non les barres d'info (nameplates)."
-L["This option will force hide Blizzard's cooldown text if it is enabled at [Interface > ActionBars > Show Numbers on Cooldown]."] = "Cette option masquera fortement le texte de recharge de Blizzard s'il est activé dans [Interface > Barres d'action > Afficher les nombres en recharge]."
-L["This section will allow you to copy settings to a select module from or to a different profile."] = "Cette section vous permettra de copier les paramètres vers un module sélectionné depuis ou vers un profil différent."
-L["This section will help reset specific settings back to default."] = "Cette section vous aidera à réinitialiser des paramètres spécifiques à leurs valeurs par défaut."
-L["This selects the Chat Frame to use as the output of ElvUI messages."] = "Cela sélectionne la fenêtre de discussion à utiliser comme sortie des messages ElvUI."
-L["This setting controls the size of text in item comparison tooltips."] = "Ce paramètre contrôle la taille du texte dans les infobulles de comparaison d'objets."
+L["This dictates the size of the icon when it is not attached to the castbar."] =
+	"Ceci force la taille de l'icône lorsqu'elle n'est pas rattachée à la barre d'incantation."
+L["This feature will allow you to transfer settings to other characters."] =
+	"Cette fonctionnalité vous permettra de transférer les paramètres à d'autres personnages."
+L["This is for Customized Icons in your Interface/Icons folder."] =
+	"Ceci est destiné aux icônes personnalisées dans votre dossier Interface/Icons."
+L["This list will display any textures Boss Mods have sent to the Boss Mod Auras element during the current session."] =
+	"Cette liste affichera toutes les textures que les Boss Mods ont envoyées à l'élément des Auras des Boss pendant la session actuelle."
+L["This opens the AuraBar Colors filter. These settings affect specific spells."] =
+	"Cela ouvre le filtre des couleurs des barres d'auras. Ces paramètres affectent des sorts spécifiques."
+L["This opens the UnitFrames Color settings. These settings affect all unitframes."] =
+	"Ouvre la configuration des couleurs des unités. Ces options impactent toutes les barres d'unités."
+L["This option allows the overlay to span the whole health, including the background."] =
+	"Cette option permet à la superposition de couvrir toute la barre de santé, y compris l'arrière-plan."
+L["This option controls the Blizzard setting for whether or not the Nameplates should be shown."] =
+	"Cette option contrôle le paramètre Blizzard pour afficher ou non les barres d'info (nameplates)."
+L["This option will force hide Blizzard's cooldown text if it is enabled at [Interface > ActionBars > Show Numbers on Cooldown]."] =
+	"Cette option masquera fortement le texte de recharge de Blizzard s'il est activé dans [Interface > Barres d'action > Afficher les nombres en recharge]."
+L["This section will allow you to copy settings to a select module from or to a different profile."] =
+	"Cette section vous permettra de copier les paramètres vers un module sélectionné depuis ou vers un profil différent."
+L["This section will help reset specific settings back to default."] =
+	"Cette section vous aidera à réinitialiser des paramètres spécifiques à leurs valeurs par défaut."
+L["This selects the Chat Frame to use as the output of ElvUI messages."] =
+	"Cela sélectionne la fenêtre de discussion à utiliser comme sortie des messages ElvUI."
+L["This setting controls the size of text in item comparison tooltips."] =
+	"Ce paramètre contrôle la taille du texte dans les infobulles de comparaison d'objets."
 L["This setting will be updated upon changing stances."] = "Ce réglage sera activé lors d'un changement de posture"
-L["This texture will get used on objects like chat windows and dropdown menus."] = "Cette texture sera utilisée pour les fenêtres de discussion et les menus déroulants."
-L["This uses the IsPlayerSpell API which is only required sometimes."] = "Cela utilise l'API IsPlayerSpell qui est nécessaire seulement parfois."
-L["This will allow you to toggle flashing of the time datatext when there are calendar invites."] = "Cela vous permettra d'activer ou de désactiver le clignotement du texte de l'heure lorsqu'il y a des invitations de calendrier."
-L["This will join auras together which are normally separated. Example: Bolstering and Force of Nature."] = "Cela regroupera les auras qui sont normalement séparées. Exemple : Renforcement et Force de la nature."
+L["This texture will get used on objects like chat windows and dropdown menus."] =
+	"Cette texture sera utilisée pour les fenêtres de discussion et les menus déroulants."
+L["This uses the IsPlayerSpell API which is only required sometimes."] =
+	"Cela utilise l'API IsPlayerSpell qui est nécessaire seulement parfois."
+L["This will allow you to toggle flashing of the time datatext when there are calendar invites."] =
+	"Cela vous permettra d'activer ou de désactiver le clignotement du texte de l'heure lorsqu'il y a des invitations de calendrier."
+L["This will join auras together which are normally separated. Example: Bolstering and Force of Nature."] =
+	"Cela regroupera les auras qui sont normalement séparées. Exemple : Renforcement et Force de la nature."
 L["This will override the global cooldown settings."] = "Cela remplacera les paramètres globaux de temps de recharge."
-L["This will pin the voice buttons to the chat's tab panel. Unchecking it will create a voice button panel with a mover."] = "Cela épinglera les boutons de voix au panneau d'onglets de discussion. Si vous le décochez, cela créera un panneau de boutons de voix avec un repère."
-L["This will reset the contents of this filter back to default. Any spell you have added to this filter will be removed."] = "Cela réinitialisera le contenu de ce filtre aux valeurs par défaut. Tous les sorts que vous avez ajoutés à ce filtre seront supprimés."
-L["This works like a macro, you can run different situations to get the actionbar to page differently.\n Example: '[combat] 2;'"] = "Ceci fonctionne comme une macro, vous pouvez exécuter différentes situations pour faire défiler la barre d'action différemment.\n Exemple : '[combat] 2;'"
-L["This works like a macro, you can run different situations to get the actionbar to show/hide differently.\n Example: '[combat] show;hide'"] = "Ceci fonctionne comme une macro, vous pouvez exécuter différentes situations pour faire afficher/masquer la barre d'action différemment.\n Exemple : '[combat] show;hide'"
+L["This will pin the voice buttons to the chat's tab panel. Unchecking it will create a voice button panel with a mover."] =
+	"Cela épinglera les boutons de voix au panneau d'onglets de discussion. Si vous le décochez, cela créera un panneau de boutons de voix avec un repère."
+L["This will reset the contents of this filter back to default. Any spell you have added to this filter will be removed."] =
+	"Cela réinitialisera le contenu de ce filtre aux valeurs par défaut. Tous les sorts que vous avez ajoutés à ce filtre seront supprimés."
+L["This works like a macro, you can run different situations to get the actionbar to page differently.\n Example: '[combat] 2;'"] =
+	"Ceci fonctionne comme une macro, vous pouvez exécuter différentes situations pour faire défiler la barre d'action différemment.\n Exemple : '[combat] 2;'"
+L["This works like a macro, you can run different situations to get the actionbar to show/hide differently.\n Example: '[combat] show;hide'"] =
+	"Ceci fonctionne comme une macro, vous pouvez exécuter différentes situations pour faire afficher/masquer la barre d'action différemment.\n Exemple : '[combat] show;hide'"
 L["Display Mode"] = "Mode d'affichage"
 L["Threat"] = "Menace"
-L["Threshold (in minutes) before text is shown in the HH:MM format. Set to -1 to never change to this format."] = "Seuil (en minutes) avant que le texte s'affiche au format HH:MM. Mettez -1 pour ne jamais changer ce format."
-L["Threshold (in seconds) before text is shown in the MM:SS format. Set to -1 to never change to this format."] = "Seuil (en secondes) avant que le texte s'affiche au format MM:SS. Mettez -1 pour ne jamais changer ce format."
-L["Threshold before text turns red and is in decimal form. Set to -1 for it to never turn red"] = "Seuil avant que le texte devienne rouge sous forme de décimal. Mettre -1 pour qu'il ne devienne jamais rouge."
-L["Threshold before the icon will fade out and back in. Set to -1 to disable."] = "Seuil avant que l'icône ne s'estompe et réapparaisse. Mettre -1 pour désactiver."
+L["Threshold (in minutes) before text is shown in the HH:MM format. Set to -1 to never change to this format."] =
+	"Seuil (en minutes) avant que le texte s'affiche au format HH:MM. Mettez -1 pour ne jamais changer ce format."
+L["Threshold (in seconds) before text is shown in the MM:SS format. Set to -1 to never change to this format."] =
+	"Seuil (en secondes) avant que le texte s'affiche au format MM:SS. Mettez -1 pour ne jamais changer ce format."
+L["Threshold before text turns red and is in decimal form. Set to -1 for it to never turn red"] =
+	"Seuil avant que le texte devienne rouge sous forme de décimal. Mettre -1 pour qu'il ne devienne jamais rouge."
+L["Threshold before the icon will fade out and back in. Set to -1 to disable."] =
+	"Seuil avant que l'icône ne s'estompe et réapparaisse. Mettre -1 pour désactiver."
 L["Threshold Colors"] = "Couleurs de seuil"
 L["Ticket Tracker"] = "Suivi des tickets"
 L["Ticks"] = true
@@ -1742,13 +2019,15 @@ L["Time"] = "Temps"
 L["TIMEMANAGER_TITLE"] = "Horloge"
 L["Timer Only"] = "Chronomètre seulement"
 L["TIMESTAMPS_LABEL"] = "Horodatage des messages"
-L["Title will only appear if Name Only is enabled or triggered in a Style Filter."] = "Le titre n'apparaîtra que si le paramètre «Nom uniquement» est activé ou déclenché dans un filtre de style."
+L["Title will only appear if Name Only is enabled or triggered in a Style Filter."] =
+	"Le titre n'apparaîtra que si le paramètre «Nom uniquement» est activé ou déclenché dans un filtre de style."
 L["Title"] = "Titre"
 L["Toggle 24-hour mode for the time datatext."] = "Activer le mode 24 heures pour le texte de l'heure."
 L["Toggle Anchors"] = "Basculer les ancres"
 L["Toggle Off While In Combat"] = "Activer pendant le combat"
 L["Toggle On While In Combat"] = "Désactiver pendant le combat"
-L["Toggle showing of the left and right chat panels."] = "Activer ou désactiver l'affichage des panneaux de discussion gauche et droit."
+L["Toggle showing of the left and right chat panels."] =
+	"Activer ou désactiver l'affichage des panneaux de discussion gauche et droit."
 L["Toggle the camera spin on the AFK screen."] = "Activer ou désactiver la rotation de la caméra sur l'écran AFK."
 L["Toggle the chat tab panel backdrop."] = "Affiche le fond de l'onglet du panneau de discussion."
 L["Toggle Tutorials"] = "Afficher les tutoriels"
@@ -1773,7 +2052,8 @@ L["TRADE"] = "Échanger"
 L["TRADESKILLS"] = "Artisanat"
 L["Trainer Frame"] = "Entraîneur"
 L["TRANSMOGRIFY"] = "Transmogrifier"
-L["Transparency level when not in combat, no target exists, full health, not casting, and no focus target exists."] = "Niveau de transparence lorsque vous n'êtes pas en combat, qu'aucune cible n'existe, que vous avez la santé complète, que vous ne lancez pas de sort et qu'aucune cible de focalisation n'existe."
+L["Transparency level when not in combat, no target exists, full health, not casting, and no focus target exists."] =
+	"Niveau de transparence lorsque vous n'êtes pas en combat, qu'aucune cible n'existe, que vous avez la santé complète, que vous ne lancez pas de sort et qu'aucune cible de focalisation n'existe."
 L["Transparent"] = "Transparent"
 L["Triggers"] = "Déclencheurs"
 L["Trivial"] = true
@@ -1800,17 +2080,21 @@ L["UNIT_NAMEPLATES_TYPES"] = "Affichage des barres d’info"
 L["Unitframe Thin Borders"] = "Bordures fines des cadres d'unité"
 L["Unitframes Border"] = "Bordures des cadres d'unité"
 L["UnitFrames"] = "Cadres d'unités"
-L["Unlock various elements of the UI to be repositioned."] = "Déverrouille divers éléments de l'interface utilisateur pour être repositionné."
+L["Unlock various elements of the UI to be repositioned."] =
+	"Déverrouille divers éléments de l'interface utilisateur pour être repositionné."
 L["Up"] = "Haut"
 L["Upgrade Icon"] = "Icône de mise à niveau"
 L["URL Links"] = "Liens URL"
 L["Usable"] = "Utilisable"
-L["Use a more visible flash animation for Auto Attacks."] = "Utiliser une animation flash plus visible pour les attaques automatiques."
+L["Use a more visible flash animation for Auto Attacks."] =
+	"Utiliser une animation flash plus visible pour les attaques automatiques."
 L["Use Alt Key"] = "Utiliser la touche Alt"
 L["Use Atlas Textures"] = "Utiliser les textures Atlas"
-L["Use BattleTag instead of Real ID names in chat. Chat History will always use BattleTag."] = "Utiliser le BattleTag à la place des noms ID réels dans le chat. L'historique du chat utilisera toujours le BattleTag."
+L["Use BattleTag instead of Real ID names in chat. Chat History will always use BattleTag."] =
+	"Utiliser le BattleTag à la place des noms ID réels dans le chat. L'historique du chat utilisera toujours le BattleTag."
 L["Use Blizzard Cleanup"] = "Utiliser le nettoyage de Blizzard"
-L["Use class color for the names of players when they are mentioned."] = "Utiliser la couleur de classe pour les noms des joueurs lorsqu'ils sont mentionnés."
+L["Use class color for the names of players when they are mentioned."] =
+	"Utiliser la couleur de classe pour les noms des joueurs lorsqu'ils sont mentionnés."
 L["Use Class Color"] = "Utiliser la couleur de classe"
 L["Use coin icons instead of colored text."] = "Utiliser les icônes de pièces au lieu du texte coloré."
 L["Use Custom Backdrop"] = "Utiliser un fond personnalisé"
@@ -1818,23 +2102,31 @@ L["Use Custom Level"] = "Utiliser un niveau personnalisé"
 L["Use Custom Strata"] = "Utiliser une strate personnalisée"
 L["Use Dead Backdrop"] = "Utiliser un fond pour les joueurs morts"
 L["Use Default"] = "Utiliser par défaut"
-L["Use drag and drop to rearrange filter priority or right click to remove a filter."] = "Utilisez le glisser-déposer pour réorganiser la priorité des filtres ou faites un clic droit pour supprimer un filtre."
+L["Use drag and drop to rearrange filter priority or right click to remove a filter."] =
+	"Utilisez le glisser-déposer pour réorganiser la priorité des filtres ou faites un clic droit pour supprimer un filtre."
 L["Use Icons"] = "Utiliser les icônes"
 L["Use Indicator Color"] = "Utiliser la couleur de l'indicateur"
 L["Use Instance ID or Name"] = "Utiliser l'ID ou le nom de l'instance"
 L["Use Map ID or Name"] = "Utiliser l'ID ou le nom de la carte"
 L["Use Modifier for Item Count"] = "Utiliser la touche de modification pour le compte des objets"
-L["Use Off Tank Color when another Tank has threat."] = "Utiliser la couleur du tank secondaire lorsque qu'un autre tank a l'aggro."
+L["Use Off Tank Color when another Tank has threat."] =
+	"Utiliser la couleur du tank secondaire lorsque qu'un autre tank a l'aggro."
 L["Use Portrait"] = "Utiliser le portrait"
 L["Use Real ID BattleTag"] = "Utiliser le BattleTag de l'ID réel"
-L["Use Shift+LeftClick to toggle between friendly or enemy or normal state. Normal state will allow the filter to be checked on all units. Friendly state is for friendly units only and enemy state is for enemy units."] = "Utilisez Maj+clic gauche pour basculer entre l'état amical, ennemi ou normal. L'état normal permettra au filtre d'être activé sur toutes les unités. L'état amical ne s'applique qu'aux unités amicales et l'état ennemi aux unités ennemies."
+L["Use Shift+LeftClick to toggle between friendly or enemy or normal state. Normal state will allow the filter to be checked on all units. Friendly state is for friendly units only and enemy state is for enemy units."] =
+	"Utilisez Maj+clic gauche pour basculer entre l'état amical, ennemi ou normal. L'état normal permettra au filtre d'être activé sur toutes les unités. L'état amical ne s'applique qu'aux unités amicales et l'état ennemi aux unités ennemies."
 L["Use Static Position"] = "Utiliser une position statique"
 L["Use Subzone Names"] = "Utiliser les noms de sous-zone"
-L["Use the custom backdrop color instead of a multiple of the main color."] = "Utiliser la couleur de fond personnalisée au lieu d'une multiplication de la couleur principale."
-L["Use the profile specific filter Aura Indicator (Profile) instead of the global filter Aura Indicator."] = "Utiliser l'indicateur d'aura spécifique au profil (Profile) au lieu de l'indicateur d'aura global."
-L["Use thin borders on certain nameplate elements."] = "Utiliser des bordures fines sur certains éléments des barres de nom."
-L["Use thin borders on certain unitframe elements."] = "Utiliser des bordures fines sur certains éléments des cadres d'unités."
-L["Use this backdrop color for units that are dead or ghosts."] = "Utiliser cette couleur de fond pour les unités mortes ou fantômes."
+L["Use the custom backdrop color instead of a multiple of the main color."] =
+	"Utiliser la couleur de fond personnalisée au lieu d'une multiplication de la couleur principale."
+L["Use the profile specific filter Aura Indicator (Profile) instead of the global filter Aura Indicator."] =
+	"Utiliser l'indicateur d'aura spécifique au profil (Profile) au lieu de l'indicateur d'aura global."
+L["Use thin borders on certain nameplate elements."] =
+	"Utiliser des bordures fines sur certains éléments des barres de nom."
+L["Use thin borders on certain unitframe elements."] =
+	"Utiliser des bordures fines sur certains éléments des cadres d'unités."
+L["Use this backdrop color for units that are dead or ghosts."] =
+	"Utiliser cette couleur de fond pour les unités mortes ou fantômes."
 L["Use Threat Color"] = "Utiliser la couleur de menace"
 L["Use Value Color"] = "Utiliser la couleur de la valeur"
 L["Use Zone Names"] = "Utiliser les noms de zone"
@@ -1855,26 +2147,37 @@ L["Visibility"] = "Visibilité"
 L["VOID_STORAGE"] = "Chambre du Vide"
 L["WeakAuras"] = true
 L["Weekly Rewards"] = "Récompenses hebdomadaires"
-L["What point to anchor to the frame you set to attach to."] = "Quel point d'ancrage sur le cadre vous choisissez à attacher."
+L["What point to anchor to the frame you set to attach to."] =
+	"Quel point d'ancrage sur le cadre vous choisissez à attacher."
 L["What to attach the anchor frame to."] = "À quoi attacher le cadre d'ancre."
 L["Whats New"] = "Quoi de neuf"
-L["When disabled, the Chat Background color has to be set via Blizzards Chat Tabs Background setting."] = "Quand désactivé, la couleur d'arrière-plan du chat doit être définie via le paramètre d'arrière-plan des onglets de discussion de Blizzard."
-L["When enabled it will only show spells that were added to the filter using a spell ID and not a name."] = "Si activé, seuls les sorts ajoutés au filtre à l'aide de leur ID et non d'un nom seront visibles."
-L["When enabled the nameplate will stay visible in a locked position."] = "Lorsqu'activé, la barre de nom restera visible dans une position verrouillée."
-L["When in a raid group display if anyone in your raid is targeting the current tooltip unit."] = "Dans un groupe de raid, affiche l'infobulle d une personne ciblée par une autre."
-L["When opening the Chat Editbox to type a message having this option set means it will retain the last channel you spoke in. If this option is turned off opening the Chat Editbox should always default to the SAY channel."] = "Permet de retenir les derniers messages sur le canal de discussion que vous avez utilisé. Si cette option est désactivé, le canal utilisé par défaut sera Dire."
-L["When this is enabled, Low Health Threshold colors will not be displayed while targeted."] = "Lorsque ceci est activé, les couleurs du seuil de santé faible ne seront pas affichées lorsque la cible est sélectionnée."
-L["When true, the header includes the player when not in a raid."] = "Quand vrai, l'en-tête inclut le joueur quand il n'est pas dans un raid."
-L["When using Static Position, this option also requires the target to be attackable."] = "Lors de l'utilisation de la position statique, cette option nécessite également que la cible puisse être attaquée."
+L["When disabled, the Chat Background color has to be set via Blizzards Chat Tabs Background setting."] =
+	"Quand désactivé, la couleur d'arrière-plan du chat doit être définie via le paramètre d'arrière-plan des onglets de discussion de Blizzard."
+L["When enabled it will only show spells that were added to the filter using a spell ID and not a name."] =
+	"Si activé, seuls les sorts ajoutés au filtre à l'aide de leur ID et non d'un nom seront visibles."
+L["When enabled the nameplate will stay visible in a locked position."] =
+	"Lorsqu'activé, la barre de nom restera visible dans une position verrouillée."
+L["When in a raid group display if anyone in your raid is targeting the current tooltip unit."] =
+	"Dans un groupe de raid, affiche l'infobulle d une personne ciblée par une autre."
+L["When opening the Chat Editbox to type a message having this option set means it will retain the last channel you spoke in. If this option is turned off opening the Chat Editbox should always default to the SAY channel."] =
+	"Permet de retenir les derniers messages sur le canal de discussion que vous avez utilisé. Si cette option est désactivé, le canal utilisé par défaut sera Dire."
+L["When this is enabled, Low Health Threshold colors will not be displayed while targeted."] =
+	"Lorsque ceci est activé, les couleurs du seuil de santé faible ne seront pas affichées lorsque la cible est sélectionnée."
+L["When true, the header includes the player when not in a raid."] =
+	"Quand vrai, l'en-tête inclut le joueur quand il n'est pas dans un raid."
+L["When using Static Position, this option also requires the target to be attackable."] =
+	"Lors de l'utilisation de la position statique, cette option nécessite également que la cible puisse être attaquée."
 L["When you go AFK display the AFK screen."] = "Quand vous êtes AFK, affiche un écran spécial."
 L["Whisper"] = "Chuchoter"
 L["Whitelist"] = "Liste blanche"
 L["Width Multiplier"] = "Multiplicateur de largeur"
 L["Width"] = "Largeur"
 L["Wiki:"] = "Wiki :"
-L["Will attempt to sell another item in set interval after the previous one was sold."] = "Tentative de vente d'un autre objet à un intervalle fixe après que le précédent ait été vendu."
+L["Will attempt to sell another item in set interval after the previous one was sold."] =
+	"Tentative de vente d'un autre objet à un intervalle fixe après que le précédent ait été vendu."
 L["Will display mana when the main power is:"] = "Affichera le mana lorsque la puissance principale est :"
-L["Will show Buffs in the Debuff position when there are no Debuffs active, or vice versa."] = "Affichera les améliorations à la place des affaiblissements quand il n'y a pas d'affaiblissement actif, ou vice versa."
+L["Will show Buffs in the Debuff position when there are no Debuffs active, or vice versa."] =
+	"Affichera les améliorations à la place des affaiblissements quand il n'y a pas d'affaiblissement actif, ou vice versa."
 L["Word Wrap"] = "Césure"
 L["World Latency"] = "Latence mondiale"
 L["World Map Coordinates"] = "Coordonnées de la carte du monde"
@@ -1885,20 +2188,30 @@ L["X-Offset"] = "Décalage X"
 L["XP Quest Percent"] = "Pourcentage de quête XP"
 L["Y-Offset"] = "Décalage de l'axe Y"
 L["Yell"] = "Crier"
-L["You are about to reset paging. Are you sure?"] = "Vous êtes sur le point de réinitialiser le paginage. Êtes-vous sûr ?"
-L["You are going to copy settings for |cffD3CF00\"%s\"|r from your current |cff4beb2c\"%s\"|r profile to |cff4beb2c\"%s\"|r profile. Are you sure?"] = "Vous êtes sur le point de copier les réglages pour |cffD3CF00\"%s\"|r de votre profil actuel |cff4beb2c\"%s\"|r vers le profil |cff4beb2c\"%s\"|r. Êtes-vous sûr ?"
-L["You are going to copy settings for |cffD3CF00\"%s\"|r from |cff4beb2c\"%s\"|r profile to your current |cff4beb2c\"%s\"|r profile. Are you sure?"] = "Vous êtes sur le point de copier les réglages pour |cffD3CF00\"%s\"|r du profil |cff4beb2c\"%s\"|r vers votre profil actuel |cff4beb2c\"%s\"|r. Êtes-vous sûr ?"
-L["You cannot copy settings from the same unit."] = "Vous ne pouvez pas copier les réglages à partir de la même unité."
-L["You do not need to use Is Casting Anything or Is Channeling Anything for these spells to trigger."] = "Vous n'avez pas besoin d'utiliser 'Lancer un sort' ou 'Canalisation d'un sort' pour que ces sorts se déclenchent."
+L["You are about to reset paging. Are you sure?"] =
+	"Vous êtes sur le point de réinitialiser le paginage. Êtes-vous sûr ?"
+L['You are going to copy settings for |cffD3CF00"%s"|r from your current |cff4beb2c"%s"|r profile to |cff4beb2c"%s"|r profile. Are you sure?'] =
+	'Vous êtes sur le point de copier les réglages pour |cffD3CF00"%s"|r de votre profil actuel |cff4beb2c"%s"|r vers le profil |cff4beb2c"%s"|r. Êtes-vous sûr ?'
+L['You are going to copy settings for |cffD3CF00"%s"|r from |cff4beb2c"%s"|r profile to your current |cff4beb2c"%s"|r profile. Are you sure?'] =
+	'Vous êtes sur le point de copier les réglages pour |cffD3CF00"%s"|r du profil |cff4beb2c"%s"|r vers votre profil actuel |cff4beb2c"%s"|r. Êtes-vous sûr ?'
+L["You cannot copy settings from the same unit."] =
+	"Vous ne pouvez pas copier les réglages à partir de la même unité."
+L["You do not need to use Is Casting Anything or Is Channeling Anything for these spells to trigger."] =
+	"Vous n'avez pas besoin d'utiliser 'Lancer un sort' ou 'Canalisation d'un sort' pour que ces sorts se déclenchent."
 L["You must be targeting a player."] = "Vous devez cibler un joueur."
 L["Your Auras First"] = "Vos Auras en premier"
 L["Zone Button"] = "Bouton de zone"
 L["Zone Name"] = "Nom de la zone"
-L["|cffFF3333This does not work in Instances or Garrisons!|r"] = "|cffFF3333Cela ne fonctionne pas dans les instances ou les fiefs !|r"
-L["|cffFF3333This is for information. This will not change the tags in the UI.|r"] = "|cffFF3333Ceci est à titre informatif. Cela ne changera pas les balises dans l'interface utilisateur.|r"
-L["|cffFF3333Warning:|r Changing options in this section will apply to all Aura Indicator auras. To change only one Aura, please click \"Configure Auras\" and change that specific Auras settings. If \"Profile Specific\" is selected it will apply to that filter set."] = "|cffFF3333Avertissement :|r Changer les options dans cette section affectera toutes les auras de l'indicateur d'aura. Pour ne changer qu'une seule aura, veuillez cliquer sur \"Configurer les auras\" et changer les paramètres spécifiques de cette aura. Si \"Spécifique au profil\" est sélectionné, cela s'appliquera à cet ensemble de filtres."
-L["|cffFF3333Warning:|r Click the arrow on the dropdown box to see a list of spells."] = "|cffFF3333Attention :|r Cliquez sur la flèche dans la boîte déroulante pour voir la liste des sorts."
-L["|cffFF3333Warning:|r Enable and Number of Groups are managed by Smart Raid Filter. Disable Smart Raid Filter in (UnitFrames - General) to change these settings."] = "|cffFF3333Avertissement :|r L'activation et le nombre de groupes sont gérés par le filtre de raid intelligent. Désactivez le filtre de raid intelligent dans (Cadres d'unité - Général) pour changer ces paramètres."
+L["|cffFF3333This does not work in Instances or Garrisons!|r"] =
+	"|cffFF3333Cela ne fonctionne pas dans les instances ou les fiefs !|r"
+L["|cffFF3333This is for information. This will not change the tags in the UI.|r"] =
+	"|cffFF3333Ceci est à titre informatif. Cela ne changera pas les balises dans l'interface utilisateur.|r"
+L['|cffFF3333Warning:|r Changing options in this section will apply to all Aura Indicator auras. To change only one Aura, please click "Configure Auras" and change that specific Auras settings. If "Profile Specific" is selected it will apply to that filter set.'] =
+	"|cffFF3333Avertissement :|r Changer les options dans cette section affectera toutes les auras de l'indicateur d'aura. Pour ne changer qu'une seule aura, veuillez cliquer sur \"Configurer les auras\" et changer les paramètres spécifiques de cette aura. Si \"Spécifique au profil\" est sélectionné, cela s'appliquera à cet ensemble de filtres."
+L["|cffFF3333Warning:|r Click the arrow on the dropdown box to see a list of spells."] =
+	"|cffFF3333Attention :|r Cliquez sur la flèche dans la boîte déroulante pour voir la liste des sorts."
+L["|cffFF3333Warning:|r Enable and Number of Groups are managed by Smart Raid Filter. Disable Smart Raid Filter in (UnitFrames - General) to change these settings."] =
+	"|cffFF3333Avertissement :|r L'activation et le nombre de groupes sont gérés par le filtre de raid intelligent. Désactivez le filtre de raid intelligent dans (Cadres d'unité - Général) pour changer ces paramètres."
 
 -- done by using labelN
 L["FACTION_STANDING_LABEL1"] = "Haï"
@@ -1951,8 +2264,10 @@ L["SKINS_DESC"] = "Ajuste les paramètres d'habillage."
 L["TOGGLESKIN_DESC"] = "Active ou désactive l'habillage ElvUI des éléments ci-dessous."
 L["TOOLTIP_DESC"] = "Configuration des infobulles."
 L["UNITFRAME_DESC"] = "Modifier les options des cadres d'unités."
-L["VISIBILITY_DESC"] = "La macro suivante doit être cochée pour que le groupe soit affiché, en plus de la configuration des filtres."
-L["TEXTURE_EXAMPLE"] = [=[Indiquez un nom de fichier situé dans le répertoire World of Warcraft, le dossier des Textures que vous souhaitez utiliser en fond de panneau.
+L["VISIBILITY_DESC"] =
+	"La macro suivante doit être cochée pour que le groupe soit affiché, en plus de la configuration des filtres."
+L["TEXTURE_EXAMPLE"] =
+	[=[Indiquez un nom de fichier situé dans le répertoire World of Warcraft, le dossier des Textures que vous souhaitez utiliser en fond de panneau.
 
 Notez:
 La taille de l'image recommandée est de 256x128 pixels
@@ -1964,27 +2279,46 @@ Exemple: Interface\AddOns\ElvUI\Core\Media\Textures\Copy
 Ou pour la majorité des utilsateurs, il serait plus simple de mettre le fichier tga dans le dossier de World of Warcraft puis de taper son nom ici.]=]
 
 ----------  FilterHelp  ----------
-L["*Whitelists:|r ^Boss, Mount, MyPet, OtherPet, Personal, nonPersonal, CastByUnit, notCastByUnit, Dispellable (includes steal-able), notDispellable, CastByNPC, CastByPlayers, BlizzardNameplate|r"] = "*Listes blanches :|r ^Boss, Monture, MonFamilier, AutreFamilier, Personnel, nonPersonnel, LancéParUnité, nonLancéParUnité, Dissipable (y compris les volables), nonDissipable, LancéParPNJ, LancéParJoueurs, NomplateBlizzard|r"
-L["*Blacklists:|r ^blockMount, blockNonPersonal, blockCastByPlayers, blockNoDuration, blockDispellable, blockNotDispellable | A blacklist filter is only effective against filters that come after it in the priority list. It will not block anything from the filters before it.|r"] = "*Listes noires :|r ^bloqueMonture, bloqueNonPersonnel, bloqueLancéParJoueurs, bloquePasDeDurée, bloqueDissipable, bloqueNonDissipable | Un filtre de liste noire n'est efficace que contre les filtres qui le suivent dans la liste de priorités. Il ne bloquera rien des filtres qui le précèdent.|r"
-L["^A blacklist filter is only effective against filters that come after it in the priority list. It will not block anything from the filters before it."] = "^Un filtre de liste noire n'est efficace que contre les filtres qui le suivent dans la liste de priorités. Il ne bloquera rien des filtres qui le précèdent."
-L["*Boss:|r ^Auras (debuffs only?) cast by a boss unit.|r"] = "*Boss :|r ^Auras (uniquement des debuffs ?) lancées par une unité de boss.|r"
+L["*Whitelists:|r ^Boss, Mount, MyPet, OtherPet, Personal, nonPersonal, CastByUnit, notCastByUnit, Dispellable (includes steal-able), notDispellable, CastByNPC, CastByPlayers, BlizzardNameplate|r"] =
+	"*Listes blanches :|r ^Boss, Monture, MonFamilier, AutreFamilier, Personnel, nonPersonnel, LancéParUnité, nonLancéParUnité, Dissipable (y compris les volables), nonDissipable, LancéParPNJ, LancéParJoueurs, NomplateBlizzard|r"
+L["*Blacklists:|r ^blockMount, blockNonPersonal, blockCastByPlayers, blockNoDuration, blockDispellable, blockNotDispellable | A blacklist filter is only effective against filters that come after it in the priority list. It will not block anything from the filters before it.|r"] =
+	"*Listes noires :|r ^bloqueMonture, bloqueNonPersonnel, bloqueLancéParJoueurs, bloquePasDeDurée, bloqueDissipable, bloqueNonDissipable | Un filtre de liste noire n'est efficace que contre les filtres qui le suivent dans la liste de priorités. Il ne bloquera rien des filtres qui le précèdent.|r"
+L["^A blacklist filter is only effective against filters that come after it in the priority list. It will not block anything from the filters before it."] =
+	"^Un filtre de liste noire n'est efficace que contre les filtres qui le suivent dans la liste de priorités. Il ne bloquera rien des filtres qui le précèdent."
+L["*Boss:|r ^Auras (debuffs only?) cast by a boss unit.|r"] =
+	"*Boss :|r ^Auras (uniquement des debuffs ?) lancées par une unité de boss.|r"
 L["*Mount:|r ^Auras which are classified as mounts.|r"] = "*Monture :|r ^Auras classées comme montures.|r"
 L["*Personal:|r ^Auras cast by yourself.|r"] = "*Personnel :|r ^Auras lancées par vous-même.|r"
-L["*nonPersonal:|r ^Auras cast by anyone other than yourself.|r"] = "*Non personnel :|r ^Auras lancées par quelqu'un d'autre que vous.|r"
-L["*CastByUnit:|r ^Auras cast by the unit of the unitframe or nameplate (so on target frame it only shows auras cast by the target unit).|r"] = "*Lancé par l'unité :|r ^Auras lancées par l'unité du cadre d'unité ou de la barre de nom (donc sur le cadre de la cible, cela montre uniquement les auras lancées par l'unité cible).|r"
-L["*notCastByUnit:|r ^Auras cast by anyone other than the unit of the unitframe or nameplate.|r"] = "*Non lancé par l'unité :|r ^Auras lancées par quelqu'un d'autre que l'unité du cadre d'unité ou de la barre de nom.|r"
-L["*Dispellable:|r ^Auras you can either dispel or spellsteal.|r"] = "*Dissipable :|r ^Auras que vous pouvez dissiper ou voler.|r"
+L["*nonPersonal:|r ^Auras cast by anyone other than yourself.|r"] =
+	"*Non personnel :|r ^Auras lancées par quelqu'un d'autre que vous.|r"
+L["*CastByUnit:|r ^Auras cast by the unit of the unitframe or nameplate (so on target frame it only shows auras cast by the target unit).|r"] =
+	"*Lancé par l'unité :|r ^Auras lancées par l'unité du cadre d'unité ou de la barre de nom (donc sur le cadre de la cible, cela montre uniquement les auras lancées par l'unité cible).|r"
+L["*notCastByUnit:|r ^Auras cast by anyone other than the unit of the unitframe or nameplate.|r"] =
+	"*Non lancé par l'unité :|r ^Auras lancées par quelqu'un d'autre que l'unité du cadre d'unité ou de la barre de nom.|r"
+L["*Dispellable:|r ^Auras you can either dispel or spellsteal.|r"] =
+	"*Dissipable :|r ^Auras que vous pouvez dissiper ou voler.|r"
 L["*CastByNPC:|r ^Auras cast by any NPC.|r"] = "*Lancé par un PNJ :|r ^Auras lancées par n'importe quel PNJ.|r"
-L["*CastByPlayers:|r ^Auras cast by any player-controlled unit (so no NPCs).|r"] = "*Lancé par des joueurs :|r ^Auras lancées par une unité contrôlée par un joueur (donc pas de PNJ).|r"
-L["*blockCastByPlayers:|r ^Blocks any aura that is cast by player-controlled units (so will only show auras cast by NPCs).|r"] = "*Bloquer lancé par des joueurs :|r ^Bloque toute aura lancée par des unités contrôlées par des joueurs (donc montre uniquement les auras lancées par des PNJ).|r"
-L["*blockNoDuration:|r ^Blocks any aura without a duration.|r"] = "*Bloquer sans durée :|r ^Bloque toute aura sans durée.|r"
-L["*blockNonPersonal:|r ^Blocks any aura that is not cast by yourself.|r"] = "*Bloquer non personnel :|r ^Bloque toute aura qui n'est pas lancée par vous-même.|r"
-L["*Show Everything:|r ^Set 'Max Duration' to 0 & Leave Priority List Empty or (1) Personal | (2) nonPersonal"] = "*Tout afficher :|r ^Réglez 'Durée maximale' sur 0 et laissez la liste de priorités vide ou (1) Personnel | (2) Non personnel"
-L["*Block Blacklisted Auras, Show Everything Else:|r ^(1) Blacklist| (2) Personal | (3) nonPersonal"] = "*Bloquer les auras sur liste noire, tout le reste :|r ^(1) Liste noire | (2) Personnel | (3) Non personnel"
-L["*Block Auras Without Duration, Show Everything Else:|r ^(1) blockNoDuration | (2) Personal | (3) nonPersonal"] = "*Bloquer les auras sans durée, tout le reste :|r ^(1) Bloquer sans durée | (2) Personnel | (3) Non personnel"
-L["*Block Auras Without Duration, Block Blacklisted Auras, Show Everything Else:|r ^(1) blockNoDuration | (2) Blacklist | (3) Personal | (4) nonPersonal"] = "*Bloquer les auras sans durée, bloquer les auras sur liste noire, tout le reste :|r ^(1) Bloquer sans durée | (2) Liste noire | (3) Personnel | (4) Non personnel"
-L["*Block Everything, Except Your Own Auras:|r ^(1) Personal"] = "*Tout bloquer, sauf vos propres auras :|r ^(1) Personnel"
-L["*Block Everything, Except Whitelisted Auras:|r ^(1) Whitelist"] = "*Tout bloquer, sauf les auras sur liste blanche :|r ^(1) Liste blanche"
-L["*Block Everything, Except Whitelisted Auras That Are Cast By Yourself:|r ^(1) blockNonPersonal | (2) Whitelist"] = "*Tout bloquer, sauf les auras sur liste blanche lancées par vous-même :|r ^(1) Bloquer non personnel | (2) Liste blanche"
+L["*CastByPlayers:|r ^Auras cast by any player-controlled unit (so no NPCs).|r"] =
+	"*Lancé par des joueurs :|r ^Auras lancées par une unité contrôlée par un joueur (donc pas de PNJ).|r"
+L["*blockCastByPlayers:|r ^Blocks any aura that is cast by player-controlled units (so will only show auras cast by NPCs).|r"] =
+	"*Bloquer lancé par des joueurs :|r ^Bloque toute aura lancée par des unités contrôlées par des joueurs (donc montre uniquement les auras lancées par des PNJ).|r"
+L["*blockNoDuration:|r ^Blocks any aura without a duration.|r"] =
+	"*Bloquer sans durée :|r ^Bloque toute aura sans durée.|r"
+L["*blockNonPersonal:|r ^Blocks any aura that is not cast by yourself.|r"] =
+	"*Bloquer non personnel :|r ^Bloque toute aura qui n'est pas lancée par vous-même.|r"
+L["*Show Everything:|r ^Set 'Max Duration' to 0 & Leave Priority List Empty or (1) Personal | (2) nonPersonal"] =
+	"*Tout afficher :|r ^Réglez 'Durée maximale' sur 0 et laissez la liste de priorités vide ou (1) Personnel | (2) Non personnel"
+L["*Block Blacklisted Auras, Show Everything Else:|r ^(1) Blacklist| (2) Personal | (3) nonPersonal"] =
+	"*Bloquer les auras sur liste noire, tout le reste :|r ^(1) Liste noire | (2) Personnel | (3) Non personnel"
+L["*Block Auras Without Duration, Show Everything Else:|r ^(1) blockNoDuration | (2) Personal | (3) nonPersonal"] =
+	"*Bloquer les auras sans durée, tout le reste :|r ^(1) Bloquer sans durée | (2) Personnel | (3) Non personnel"
+L["*Block Auras Without Duration, Block Blacklisted Auras, Show Everything Else:|r ^(1) blockNoDuration | (2) Blacklist | (3) Personal | (4) nonPersonal"] =
+	"*Bloquer les auras sans durée, bloquer les auras sur liste noire, tout le reste :|r ^(1) Bloquer sans durée | (2) Liste noire | (3) Personnel | (4) Non personnel"
+L["*Block Everything, Except Your Own Auras:|r ^(1) Personal"] =
+	"*Tout bloquer, sauf vos propres auras :|r ^(1) Personnel"
+L["*Block Everything, Except Whitelisted Auras:|r ^(1) Whitelist"] =
+	"*Tout bloquer, sauf les auras sur liste blanche :|r ^(1) Liste blanche"
+L["*Block Everything, Except Whitelisted Auras That Are Cast By Yourself:|r ^(1) blockNonPersonal | (2) Whitelist"] =
+	"*Tout bloquer, sauf les auras sur liste blanche lancées par vous-même :|r ^(1) Bloquer non personnel | (2) Liste blanche"
 
 ----------------------------------

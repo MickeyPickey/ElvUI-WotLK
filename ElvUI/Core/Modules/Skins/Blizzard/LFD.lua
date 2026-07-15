@@ -11,7 +11,9 @@ local GetLFGDungeonRewards = GetLFGDungeonRewards
 local hooksecurefunc = hooksecurefunc
 
 S:AddCallback("Skin_LFD", function()
-	if not E.private.skins.blizzard.enable or not E.private.skins.blizzard.lfd then return end
+	if not E.private.skins.blizzard.enable or not E.private.skins.blizzard.lfd then
+		return
+	end
 
 	LFDQueueFrame:StripTextures(true)
 	LFDQueueFrame:CreateBackdrop("Transparent")
@@ -38,10 +40,12 @@ S:AddCallback("Skin_LFD", function()
 	LFDQueueFrameRoleButtonLeader.checkButton:OffsetFrameLevel(2, LFDQueueFrameRoleButtonLeader.checkButton)
 
 	S:HandleDropDownBox(LFDQueueFrameTypeDropDown)
-	LFDQueueFrameTypeDropDown:HookScript("OnShow", function(self) self:Width(200) end)
+	LFDQueueFrameTypeDropDown:HookScript("OnShow", function(self)
+		self:Width(200)
+	end)
 
 	for i = 1, NUM_LFD_CHOICE_BUTTONS do
-		local button = _G["LFDQueueFrameSpecificListButton"..i]
+		local button = _G["LFDQueueFrameSpecificListButton" .. i]
 		button.enableButton:StripTextures()
 		button.enableButton:CreateBackdrop("Default")
 		button.enableButton.backdrop:SetInside(nil, 4, 4)
@@ -64,8 +68,20 @@ S:AddCallback("Skin_LFD", function()
 	LFDQueueFrameRandomScrollFrameScrollBar:Point("TOPLEFT", LFDQueueFrameRandomScrollFrame, "TOPRIGHT", 5, -22)
 	LFDQueueFrameRandomScrollFrameScrollBar:Point("BOTTOMLEFT", LFDQueueFrameRandomScrollFrame, "BOTTOMRIGHT", 5, 19)
 
-	LFDQueueFrameSpecificListScrollFrameScrollBar:Point("TOPLEFT", LFDQueueFrameSpecificListScrollFrame, "TOPRIGHT", 5, -17)
-	LFDQueueFrameSpecificListScrollFrameScrollBar:Point("BOTTOMLEFT", LFDQueueFrameSpecificListScrollFrame, "BOTTOMRIGHT", 5, 17)
+	LFDQueueFrameSpecificListScrollFrameScrollBar:Point(
+		"TOPLEFT",
+		LFDQueueFrameSpecificListScrollFrame,
+		"TOPRIGHT",
+		5,
+		-17
+	)
+	LFDQueueFrameSpecificListScrollFrameScrollBar:Point(
+		"BOTTOMLEFT",
+		LFDQueueFrameSpecificListScrollFrame,
+		"BOTTOMRIGHT",
+		5,
+		17
+	)
 
 	LFDQueueFrameFindGroupButton:Point("BOTTOMLEFT", 19, 12)
 	LFDQueueFrameCancelButton:Point("BOTTOMRIGHT", -11, 12)
@@ -83,11 +99,13 @@ S:AddCallback("Skin_LFD", function()
 	end)
 
 	local function skinLFDRandomDungeonLoot(frame)
-		if frame.isSkinned then return end
+		if frame.isSkinned then
+			return
+		end
 
-		local icon = _G[frame:GetName().."IconTexture"]
-		local nameFrame = _G[frame:GetName().."NameFrame"]
-		local count = _G[frame:GetName().."Count"]
+		local icon = _G[frame:GetName() .. "IconTexture"]
+		local nameFrame = _G[frame:GetName() .. "NameFrame"]
+		local count = _G[frame:GetName() .. "Count"]
 
 		frame:StripTextures()
 		frame:CreateBackdrop("Transparent")
@@ -119,12 +137,14 @@ S:AddCallback("Skin_LFD", function()
 
 	hooksecurefunc("LFDQueueFrameRandom_UpdateFrame", function()
 		local dungeonID = LFDQueueFrame.type
-		if not dungeonID then return end
+		if not dungeonID then
+			return
+		end
 
 		local _, _, _, _, _, numRewards = GetLFGDungeonRewards(dungeonID)
 		for i = 1, numRewards do
-			local frame = _G["LFDQueueFrameRandomScrollFrameChildFrameItem"..i]
-			local name = _G["LFDQueueFrameRandomScrollFrameChildFrameItem"..i.."Name"]
+			local frame = _G["LFDQueueFrameRandomScrollFrameChildFrameItem" .. i]
+			local name = _G["LFDQueueFrameRandomScrollFrameChildFrameItem" .. i .. "Name"]
 
 			skinLFDRandomDungeonLoot(frame)
 
@@ -182,7 +202,7 @@ S:AddCallback("Skin_LFD", function()
 	LFDDungeonReadyDialogLeaveQueueButton:Point("BOTTOMLEFT", LFDDungeonReadyDialog, "BOTTOM", 7, 10)
 	S:HandleButton(LFDDungeonReadyDialogLeaveQueueButton)
 
---[[
+	--[[
 	LFDDungeonReadyDialogRoleIcon:Size(57)
 	LFDDungeonReadyDialogRoleIcon:Point("BOTTOM", 1, 54)
 	LFDDungeonReadyDialogRoleIcon:SetTemplate("Default")
@@ -203,7 +223,9 @@ S:AddCallback("Skin_LFD", function()
 --]]
 
 	local function skinLFDDungeonReadyDialogReward(button)
-		if button.isSkinned then return end
+		if button.isSkinned then
+			return
+		end
 
 		button:Size(28)
 		button:SetTemplate("Default")

@@ -201,9 +201,17 @@ function NP:Configure_Glow(frame)
 		frame.Spark:ClearAllPoints()
 
 		if glowStyle == "style1" or glowStyle == "style5" or glowStyle == "style7" then
-			frame.Shadow:SetOutside(frame.IconOnlyChanged and frame.IconFrame or frame.Health, E:Scale(E.PixelMode and 6 or 8), E:Scale(E.PixelMode and 6 or 8))
+			frame.Shadow:SetOutside(
+				frame.IconOnlyChanged and frame.IconFrame or frame.Health,
+				E:Scale(E.PixelMode and 6 or 8),
+				E:Scale(E.PixelMode and 6 or 8)
+			)
 		elseif glowStyle == "style9" then
-			frame.TargetBorder:SetOutside(frame.IconOnlyChanged and frame.IconFrame or frame.Health, E.PixelMode and 2 or 3, E.PixelMode and 2 or 3)
+			frame.TargetBorder:SetOutside(
+				frame.IconOnlyChanged and frame.IconFrame or frame.Health,
+				E.PixelMode and 2 or 3,
+				E.PixelMode and 2 or 3
+			)
 		elseif glowStyle == "style2" or glowStyle == "style6" or glowStyle == "style8" then
 			if healthIsShown then
 				local size = E.Border + 14
@@ -217,17 +225,17 @@ function NP:Configure_Glow(frame)
 	end
 end
 
-local Textures = {"Spark", "TopIndicator", "LeftIndicator", "RightIndicator"}
+local Textures = { "Spark", "TopIndicator", "LeftIndicator", "RightIndicator" }
 
 function NP:Construct_Glow(frame)
 	frame.Shadow = CreateFrame("Frame", "$parentGlow", frame)
 	frame.Shadow:OffsetFrameLevel(-1, frame.Health)
-	frame.Shadow:SetBackdrop({edgeFile = LSM:Fetch("border", "ElvUI GlowBorder"), edgeSize = E:Scale(6)})
+	frame.Shadow:SetBackdrop({ edgeFile = LSM:Fetch("border", "ElvUI GlowBorder"), edgeSize = E:Scale(6) })
 	frame.Shadow:Hide()
 
 	frame.TargetBorder = CreateFrame("Frame", "$parentTargetBorder", frame)
 	frame.TargetBorder:OffsetFrameLevel(-1, frame.Health)
-	frame.TargetBorder:SetBackdrop({edgeFile = E.media.blankTex, edgeSize = E.mult * 2})
+	frame.TargetBorder:SetBackdrop({ edgeFile = E.media.blankTex, edgeSize = E.mult * 2 })
 	frame.TargetBorder:Hide()
 
 	for _, object in ipairs(Textures) do

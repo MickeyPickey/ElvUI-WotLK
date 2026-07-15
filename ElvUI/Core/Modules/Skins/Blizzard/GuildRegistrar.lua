@@ -5,7 +5,9 @@ local S = E:GetModule("Skins")
 --WoW API / Variables
 
 S:AddCallback("Skin_GuildRegistrar", function()
-	if not E.private.skins.blizzard.enable or not E.private.skins.blizzard.guildregistrar then return end
+	if not E.private.skins.blizzard.enable or not E.private.skins.blizzard.guildregistrar then
+		return
+	end
 
 	GuildRegistrarFrame:StripTextures(true)
 	GuildRegistrarFrame:CreateBackdrop("Transparent")
@@ -20,7 +22,7 @@ S:AddCallback("Skin_GuildRegistrar", function()
 	GuildRegistrarGreetingFrame:StripTextures()
 
 	for i = 1, 2 do
-		S:HandleButtonHighlight(_G["GuildRegistrarButton"..i])
+		S:HandleButtonHighlight(_G["GuildRegistrarButton" .. i])
 	end
 
 	S:HandleButton(GuildRegistrarFrameGoodbyeButton)

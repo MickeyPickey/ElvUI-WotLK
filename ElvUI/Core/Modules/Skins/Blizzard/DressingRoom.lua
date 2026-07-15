@@ -5,7 +5,9 @@ local S = E:GetModule("Skins")
 --WoW API / Variables
 
 S:AddCallback("Skin_DressingRoom", function()
-	if not E.private.skins.blizzard.enable or not E.private.skins.blizzard.dressingroom then return end
+	if not E.private.skins.blizzard.enable or not E.private.skins.blizzard.dressingroom then
+		return
+	end
 
 	DressUpFrame:StripTextures()
 	DressUpFrame:CreateBackdrop("Transparent")

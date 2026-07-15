@@ -1,5 +1,5 @@
 local E, L, V, P, G = unpack(ElvUI)
-local AB = E:GetModule('ActionBars')
+local AB = E:GetModule("ActionBars")
 
 local _G = _G
 local gsub = gsub
@@ -16,9 +16,9 @@ local RegisterStateDriver = RegisterStateDriver
 local NUM_SHAPESHIFT_SLOTS = NUM_SHAPESHIFT_SLOTS or 10
 
 local Masque = E.Masque
-local MasqueGroup = Masque and Masque:Group('ElvUI', 'Stance Bar')
+local MasqueGroup = Masque and Masque:Group("ElvUI", "Stance Bar")
 local WispSplode = [[Interface\Icons\Spell_Nature_WispSplode]]
-local bar = CreateFrame('Frame', 'ElvUI_StanceBar', E.UIParent, 'SecureHandlerStateTemplate')
+local bar = CreateFrame("Frame", "ElvUI_StanceBar", E.UIParent, "SecureHandlerStateTemplate")
 bar.buttons = {}
 
 function AB:UPDATE_SHAPESHIFT_COOLDOWN()
@@ -26,7 +26,7 @@ function AB:UPDATE_SHAPESHIFT_COOLDOWN()
 	local start, duration, active, cooldown
 	for i = 1, NUM_SHAPESHIFT_SLOTS do
 		if i <= numForms then
-			cooldown = _G['ElvUI_StanceBarButton'..i..'Cooldown']
+			cooldown = _G["ElvUI_StanceBarButton" .. i .. "Cooldown"]
 			start, duration, active = GetShapeshiftFormCooldown(i)
 			if (active and active ~= 0) and start > 0 and duration > 0 then
 				CooldownFrame_SetTimer(cooldown, start, duration, active)
@@ -40,13 +40,13 @@ end
 function AB:StyleShapeShift()
 	local numForms = GetNumShapeshiftForms()
 	local stance = GetShapeshiftForm()
-	local darken = AB.db.stanceBar.style == 'darkenInactive'
+	local darken = AB.db.stanceBar.style == "darkenInactive"
 
 	for i = 1, NUM_SHAPESHIFT_SLOTS do
-		local buttonName = 'ElvUI_StanceBarButton'..i
+		local buttonName = "ElvUI_StanceBarButton" .. i
 		local button = _G[buttonName]
-		local icon = _G[buttonName..'Icon']
-		local cooldown = _G[buttonName..'Cooldown']
+		local icon = _G[buttonName .. "Icon"]
+		local cooldown = _G[buttonName .. "Cooldown"]
 
 		if i > numForms then
 			break
@@ -100,8 +100,12 @@ function AB:PositionAndSizeBarShapeShift()
 	bar.mouseover = db.mouseover
 
 	if bar.LastButton then
-		if numButtons > bar.LastButton then numButtons = bar.LastButton end
-		if buttonsPerRow > bar.LastButton then buttonsPerRow = bar.LastButton end
+		if numButtons > bar.LastButton then
+			numButtons = bar.LastButton
+		end
+		if buttonsPerRow > bar.LastButton then
+			buttonsPerRow = bar.LastButton
+		end
 	end
 	if numButtons < buttonsPerRow then
 		buttonsPerRow = numButtons
@@ -110,7 +114,6 @@ function AB:PositionAndSizeBarShapeShift()
 	bar:SetParent(db.inheritGlobalFade and AB.fadeParent or E.UIParent)
 	bar:EnableMouse(not db.clickThrough)
 	bar:SetAlpha(bar.mouseover and 0 or db.alpha)
-
 
 	if bar.backdrop then
 		bar.backdrop:SetShown(db.backdrop)
@@ -124,11 +127,11 @@ function AB:PositionAndSizeBarShapeShift()
 	local useMasque = MasqueGroup and E.private.actionbar.masque.stanceBar
 
 	for i = 1, NUM_SHAPESHIFT_SLOTS do
-		button = _G['ElvUI_StanceBarButton'..i]
-		lastButton = _G['ElvUI_StanceBarButton'..i - 1]
-		lastColumnButton = _G['ElvUI_StanceBarButton'..i - buttonsPerRow]
+		button = _G["ElvUI_StanceBarButton" .. i]
+		lastButton = _G["ElvUI_StanceBarButton" .. i - 1]
+		lastColumnButton = _G["ElvUI_StanceBarButton" .. i - buttonsPerRow]
 
-		button.commandName = 'SHAPESHIFTBUTTON'..i
+		button.commandName = "SHAPESHIFTBUTTON" .. i
 
 		button.db = db
 
@@ -152,14 +155,25 @@ function AB:PositionAndSizeBarShapeShift()
 
 		if useMasque then
 			MasqueGroup:AddButton(bar.buttons[i])
-		elseif db.style == 'darkenInactive' then
-			button.checked:SetBlendMode('BLEND')
+		elseif db.style == "darkenInactive" then
+			button.checked:SetBlendMode("BLEND")
 		else
-			button.checked:SetBlendMode('ADD')
+			button.checked:SetBlendMode("ADD")
 		end
 	end
 
-	AB:HandleBackdropMultiplier(bar, backdropSpacing, buttonSpacing, db.widthMult, db.heightMult, anchorUp, anchorLeft, horizontal, lastShownButton, anchorRowButton)
+	AB:HandleBackdropMultiplier(
+		bar,
+		backdropSpacing,
+		buttonSpacing,
+		db.widthMult,
+		db.heightMult,
+		anchorUp,
+		anchorLeft,
+		horizontal,
+		lastShownButton,
+		anchorRowButton
+	)
 	AB:HandleBackdropMover(bar, backdropSpacing)
 
 	if db.enabled then
@@ -168,8 +182,8 @@ function AB:PositionAndSizeBarShapeShift()
 		E:DisableMover(bar.mover.name)
 	end
 
-	local visibility = gsub(db.visibility, '[\n\r]', '')
-	RegisterStateDriver(bar, 'visibility', (not db.enabled or GetNumShapeshiftForms() == 0) and 'hide' or visibility)
+	local visibility = gsub(db.visibility, "[\n\r]", "")
+	RegisterStateDriver(bar, "visibility", (not db.enabled or GetNumShapeshiftForms() == 0) and "hide" or visibility)
 
 	if useMasque then
 		AB:UpdateMasque(bar)
@@ -179,7 +193,7 @@ end
 function AB:AdjustMaxStanceButtons(event)
 	if InCombatLockdown() then
 		AB.NeedsAdjustMaxStanceButtons = event or true
-		AB:RegisterEvent('PLAYER_REGEN_ENABLED')
+		AB:RegisterEvent("PLAYER_REGEN_ENABLED")
 		return
 	end
 
@@ -190,15 +204,16 @@ function AB:AdjustMaxStanceButtons(event)
 	local numButtons = GetNumShapeshiftForms()
 	for i = 1, NUM_SHAPESHIFT_SLOTS do
 		if not bar.buttons[i] then
-			bar.buttons[i] = CreateFrame('CheckButton', format(bar:GetName()..'Button%d', i), bar, 'ShapeshiftButtonTemplate')
+			bar.buttons[i] =
+				CreateFrame("CheckButton", format(bar:GetName() .. "Button%d", i), bar, "ShapeshiftButtonTemplate")
 			bar.buttons[i]:SetID(i)
-			bar.buttons[i].parentName = 'ElvUI_StanceBar'
+			bar.buttons[i].parentName = "ElvUI_StanceBar"
 
-			AB:HookScript(bar.buttons[i], 'OnEnter', 'Button_OnEnter')
-			AB:HookScript(bar.buttons[i], 'OnLeave', 'Button_OnLeave')
+			AB:HookScript(bar.buttons[i], "OnEnter", "Button_OnEnter")
+			AB:HookScript(bar.buttons[i], "OnLeave", "Button_OnLeave")
 		end
 
-		local blizz = _G[format('StanceButton%d', i)]
+		local blizz = _G[format("StanceButton%d", i)]
 		if blizz and blizz.commandName then
 			bar.buttons[i].commandName = blizz.commandName
 		end
@@ -212,39 +227,41 @@ function AB:AdjustMaxStanceButtons(event)
 	AB:PositionAndSizeBarShapeShift()
 
 	-- sometimes after combat lock down `event` may be true because of passing it back with `AB.NeedsAdjustMaxStanceButtons`
-	if event == 'UPDATE_SHAPESHIFT_FORMS' or event == 'PLAYER_ENTERING_WORLD' then
+	if event == "UPDATE_SHAPESHIFT_FORMS" or event == "PLAYER_ENTERING_WORLD" then
 		AB:StyleShapeShift()
 	end
 end
 
 function AB:UpdateStanceBindings()
 	for i = 1, NUM_SHAPESHIFT_SLOTS do
-		local button = _G['ElvUI_StanceBarButton'..i]
-		if not button then break end
+		local button = _G["ElvUI_StanceBarButton" .. i]
+		if not button then
+			break
+		end
 
-		button.HotKey = _G[button:GetName()..'HotKey']
+		button.HotKey = _G[button:GetName() .. "HotKey"]
 
-		button.HotKey:SetText(GetBindingKey('SHAPESHIFTBUTTON'..i))
+		button.HotKey:SetText(GetBindingKey("SHAPESHIFTBUTTON" .. i))
 		AB:FixKeybindText(button)
 		AB:FixKeybindColor(button)
 	end
 end
 
 function AB:CreateBarShapeShift()
-	bar:CreateBackdrop(AB.db.transparent and 'Transparent', nil, nil, nil, nil, nil, nil, nil, 0)
+	bar:CreateBackdrop(AB.db.transparent and "Transparent", nil, nil, nil, nil, nil, nil, nil, 0)
 
-	bar:Point('TOPLEFT', E.UIParent, 'BOTTOMLEFT', 4, -769)
+	bar:Point("TOPLEFT", E.UIParent, "BOTTOMLEFT", 4, -769)
 
-	AB:HookScript(bar, 'OnEnter', 'Bar_OnEnter')
-	AB:HookScript(bar, 'OnLeave', 'Bar_OnLeave')
+	AB:HookScript(bar, "OnEnter", "Bar_OnEnter")
+	AB:HookScript(bar, "OnLeave", "Bar_OnLeave")
 
-	AB:RegisterEvent('UPDATE_SHAPESHIFT_COOLDOWN')
-	AB:RegisterEvent('UPDATE_SHAPESHIFT_FORMS', 'AdjustMaxStanceButtons')
-	AB:RegisterEvent('UPDATE_SHAPESHIFT_FORM', 'StyleShapeShift')
-	AB:RegisterEvent('UPDATE_SHAPESHIFT_USABLE', 'StyleShapeShift')
-	AB:RegisterEvent('ACTIONBAR_PAGE_CHANGED', 'StyleShapeShift')
+	AB:RegisterEvent("UPDATE_SHAPESHIFT_COOLDOWN")
+	AB:RegisterEvent("UPDATE_SHAPESHIFT_FORMS", "AdjustMaxStanceButtons")
+	AB:RegisterEvent("UPDATE_SHAPESHIFT_FORM", "StyleShapeShift")
+	AB:RegisterEvent("UPDATE_SHAPESHIFT_USABLE", "StyleShapeShift")
+	AB:RegisterEvent("ACTIONBAR_PAGE_CHANGED", "StyleShapeShift")
 
 	E:DelayedUpdate(AB.StyleShapeShift, AB)
 
-	E:CreateMover(bar, 'ShiftAB', L["Stance Bar"], nil, -3, nil, 'ALL,ACTIONBARS', nil, 'actionbar,stanceBar')
+	E:CreateMover(bar, "ShiftAB", L["Stance Bar"], nil, -3, nil, "ALL,ACTIONBARS", nil, "actionbar,stanceBar")
 end

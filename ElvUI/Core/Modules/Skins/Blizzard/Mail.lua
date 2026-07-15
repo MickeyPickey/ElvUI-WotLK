@@ -17,7 +17,9 @@ local ATTACHMENTS_MAX_SEND = ATTACHMENTS_MAX_SEND
 local ATTACHMENTS_MAX_RECEIVE = ATTACHMENTS_MAX_RECEIVE
 
 S:AddCallback("Skin_Mail", function()
-	if not E.private.skins.blizzard.enable or not E.private.skins.blizzard.mail then return end
+	if not E.private.skins.blizzard.enable or not E.private.skins.blizzard.mail then
+		return
+	end
 
 	-- Inbox Frame
 	MailFrame:StripTextures(true)
@@ -44,9 +46,9 @@ S:AddCallback("Skin_Mail", function()
 	end)
 
 	for i = 1, INBOXITEMS_TO_DISPLAY do
-		local mail = _G["MailItem"..i]
-		local button = _G["MailItem"..i.."Button"]
-		local icon = _G["MailItem"..i.."ButtonIcon"]
+		local mail = _G["MailItem" .. i]
+		local button = _G["MailItem" .. i .. "Button"]
+		local icon = _G["MailItem" .. i .. "ButtonIcon"]
 
 		mail:StripTextures()
 		mail:CreateBackdrop("Transparent")
@@ -74,7 +76,7 @@ S:AddCallback("Skin_Mail", function()
 			index = index + 1
 
 			if index <= numItems then
-				local button = _G["MailItem"..i.."Button"]
+				local button = _G["MailItem" .. i .. "Button"]
 				local packageIcon, _, _, _, _, _, _, _, _, _, _, _, isGM = GetInboxHeaderInfo(index)
 
 				if packageIcon and not isGM then
@@ -110,7 +112,7 @@ S:AddCallback("Skin_Mail", function()
 	S:HandleCloseButton(InboxCloseButton, MailFrame.backdrop)
 
 	for i = 1, 2 do
-		local tab = _G["MailFrameTab"..i]
+		local tab = _G["MailFrameTab" .. i]
 		tab:StripTextures()
 		S:HandleTab(tab)
 	end
@@ -127,7 +129,7 @@ S:AddCallback("Skin_Mail", function()
 
 	hooksecurefunc("SendMailFrame_Update", function()
 		for i = 1, ATTACHMENTS_MAX_SEND do
-			local button = _G["SendMailAttachment"..i]
+			local button = _G["SendMailAttachment" .. i]
 			local name = GetSendMailItem(i)
 
 			if not button.skinned then
@@ -168,7 +170,7 @@ S:AddCallback("Skin_Mail", function()
 	S:HandleButton(SendMailCancelButton)
 
 	for i = 1, 5 do
-		_G["AutoCompleteButton"..i]:StyleButton()
+		_G["AutoCompleteButton" .. i]:StyleButton()
 	end
 
 	SendMailScrollFrame:CreateBackdrop()
@@ -209,9 +211,9 @@ S:AddCallback("Skin_Mail", function()
 	OpenMailFrame:Point("TOPLEFT", InboxFrame, "TOPRIGHT", -44, 0)
 
 	for i = 1, ATTACHMENTS_MAX_SEND do
-		local button = _G["OpenMailAttachmentButton"..i]
-		local icon = _G["OpenMailAttachmentButton"..i.."IconTexture"]
-		local count = _G["OpenMailAttachmentButton"..i.."Count"]
+		local button = _G["OpenMailAttachmentButton" .. i]
+		local icon = _G["OpenMailAttachmentButton" .. i .. "IconTexture"]
+		local count = _G["OpenMailAttachmentButton" .. i .. "Count"]
 
 		button:StripTextures()
 		button:SetTemplate("Default", true)
@@ -229,7 +231,7 @@ S:AddCallback("Skin_Mail", function()
 	hooksecurefunc("OpenMailFrame_UpdateButtonPositions", function()
 		for i = 1, ATTACHMENTS_MAX_RECEIVE do
 			local itemLink = GetInboxItemLink(InboxFrame.openMailID, i)
-			local button = _G["OpenMailAttachmentButton"..i]
+			local button = _G["OpenMailAttachmentButton" .. i]
 
 			if itemLink then
 				local quality = select(3, GetItemInfo(itemLink))
@@ -246,7 +248,9 @@ S:AddCallback("Skin_Mail", function()
 	end)
 
 	hooksecurefunc("OpenMail_Update", function()
-		if not InboxFrame.openMailID then return end
+		if not InboxFrame.openMailID then
+			return
+		end
 
 		local point, relativeTo, relativePoint, x, y = OpenMailAttachmentText:GetPoint()
 		OpenMailAttachmentText:Point(point, relativeTo, relativePoint, x + 1, y + 8)

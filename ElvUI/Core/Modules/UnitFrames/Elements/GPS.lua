@@ -13,7 +13,7 @@ function UF:Construct_GPS(frame)
 	gps.Texture = gps:CreateTexture("OVERLAY")
 	gps.Texture:SetTexture(E.Media.Textures.Arrow)
 	gps.Texture:SetBlendMode("BLEND")
-	gps.Texture:SetVertexColor(214/255, 41/255, 41/255)
+	gps.Texture:SetVertexColor(214 / 255, 41 / 255, 41 / 255)
 	gps.Texture:SetAllPoints()
 
 	return gps

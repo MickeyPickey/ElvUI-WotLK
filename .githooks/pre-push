@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# Run the full lua-language-server lint before pushing.
+set -euo pipefail
+
+if ! command -v just >/dev/null 2>&1; then
+  echo "pre-push: 'just' not found; skipping lint. Install just and run 'just setup'." >&2
+  exit 0
+fi
+
+just lint

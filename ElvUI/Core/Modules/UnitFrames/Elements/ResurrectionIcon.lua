@@ -26,7 +26,13 @@ function UF:Configure_ResurrectionIcon(frame)
 
 		local attachPoint = self:GetObjectAnchorPoint(frame, db.resurrectIcon.attachToObject)
 		RI:ClearAllPoints()
-		RI:Point(db.resurrectIcon.attachTo, attachPoint, db.resurrectIcon.attachTo, db.resurrectIcon.xOffset, db.resurrectIcon.yOffset)
+		RI:Point(
+			db.resurrectIcon.attachTo,
+			attachPoint,
+			db.resurrectIcon.attachTo,
+			db.resurrectIcon.xOffset,
+			db.resurrectIcon.yOffset
+		)
 	else
 		if frame:IsElementEnabled("ResurrectIndicator") then
 			frame:DisableElement("ResurrectIndicator")

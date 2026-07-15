@@ -7,7 +7,7 @@ local UF = E:GetModule("UnitFrames")
 local RestingTextures = {
 	["DEFAULT"] = [[Interface\CharacterFrame\UI-StateIcon]],
 	["RESTING"] = E.Media.Textures.Resting,
-	["RESTING1"] = E.Media.Textures.Resting1
+	["RESTING1"] = E.Media.Textures.Resting1,
 }
 
 function UF:Construct_RestingIndicator(frame)
@@ -15,7 +15,9 @@ function UF:Construct_RestingIndicator(frame)
 end
 
 function UF:Configure_RestingIndicator(frame)
-	if not frame.VARIABLES_SET then return end
+	if not frame.VARIABLES_SET then
+		return
+	end
 
 	local Icon = frame.RestingIndicator
 	local db = frame.db.RestIcon
@@ -41,7 +43,7 @@ function UF:Configure_RestingIndicator(frame)
 			Icon:SetTexCoord(0, 1, 0, 1)
 		else
 			Icon:SetTexture(RestingTextures.DEFAULT)
-			Icon:SetTexCoord(0, .5, 0, .421875)
+			Icon:SetTexCoord(0, 0.5, 0, 0.421875)
 		end
 
 		Icon:Size(db.size)

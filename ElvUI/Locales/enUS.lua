@@ -1,6 +1,6 @@
 -- English localization file for enUS and enGB.
 local E = unpack(ElvUI)
-local L = E.Libs.ACL:NewLocale('ElvUI', 'enUS', true, true)
+local L = E.Libs.ACL:NewLocale("ElvUI", "enUS", true, true)
 
 L["Restrict Pings"] = true
 L["Player"] = true
@@ -9,7 +9,10 @@ L["Medium"] = true
 L["Large"] = true
 L["Countdown"] = "Countdown"
 L["Reset"] = "Reset"
-L["ELVUI_DESC"] = ("*ElvUI|r |cFFffffffis a complete User Interface replacement addon for World of Warcraft.|r"):gsub('*', E.InfoColor)
+L["ELVUI_DESC"] = ("*ElvUI|r |cFFffffffis a complete User Interface replacement addon for World of Warcraft.|r"):gsub(
+	"*",
+	E.InfoColor
+)
 L["UPDATE_REQUEST"] = "There seems to be an issue with your installation. Please reinstall ElvUI."
 L[" |cff00ff00bound to |r"] = true
 L["%s frame has a conflicting anchor point. Forcing the Buffs to be attached to the main unitframe."] = true
@@ -19,8 +22,10 @@ L["%s is attempting to share the Profile (%s) with you. Would you like to accept
 L["(Ctrl & Shift Click) Toggle CPU Profiling"] = true
 L["(Hold Shift) Memory Usage"] = true
 L["(Shift Click) Collect Garbage"] = true
-L["A raid marker feature is available by pressing Escape -> Keybinds. Scroll to the bottom -> ElvUI -> Raid Marker."] = true
-L["A setting you have changed will change an option for this character only. This setting that you have changed will be uneffected by changing user profiles. Changing this setting requires that you reload your User Interface."] = true
+L["A raid marker feature is available by pressing Escape -> Keybinds. Scroll to the bottom -> ElvUI -> Raid Marker."] =
+	true
+L["A setting you have changed will change an option for this character only. This setting that you have changed will be uneffected by changing user profiles. Changing this setting requires that you reload your User Interface."] =
+	true
 L["ABOVE_THREAT_FORMAT"] = "%s: %.0f%% [%.0f%% above |cff%02x%02x%02x%s|r]"
 L["Accepting this will reset the UnitFrame settings for %s. Are you sure?"] = true
 L["Accepting this will reset your Filter Priority lists for all auras on NamePlates. Are you sure?"] = true
@@ -64,7 +69,9 @@ L["Battleground datatexts temporarily hidden, to show type /bgstats"] = true
 L["Battleground datatexts will now show again if you are inside a battleground."] = true
 L["BelowMinimapWidget"] = true
 L["Binding"] = true
-L["BINDINGS_HELP"] = ("Hover your mouse over any *action|r, *micro|r, *macro|r, or *spellbook|r button to bind it. This also works for items in your *bag|r. Press the ^ESC|r key to ^clear|r the current bindings."):gsub('*', E.InfoColor):gsub('%^', E.InfoColor2)
+L["BINDINGS_HELP"] = ("Hover your mouse over any *action|r, *micro|r, *macro|r, or *spellbook|r button to bind it. This also works for items in your *bag|r. Press the ^ESC|r key to ^clear|r the current bindings.")
+	:gsub("*", E.InfoColor)
+	:gsub("%^", E.InfoColor2)
 L["Binds Discarded"] = true
 L["Binds Saved"] = true
 L["Blizzard Widgets"] = true
@@ -116,14 +123,16 @@ L["Disband Group"] = true
 L["Discard"] = true
 L["Discord"] = true
 L["DND"] = true
-L["Do you swear not to post in technical support about something not working without first disabling the addon/module combination first?"] = true
+L["Do you swear not to post in technical support about something not working without first disabling the addon/module combination first?"] =
+	true
 L["Don't forget to backup your WTF folder, all your profiles and settings are in there."] = true
 L["Download"] = true
 L["DPS"] = true
 L["Durability Frame"] = true
 L["Earned:"] = true
 L["Elite"] = true
-L["ElvUI has a dual spec feature which allows you to load different profiles based on your current spec on the fly. You can enable it in the profiles tab."] = true
+L["ElvUI has a dual spec feature which allows you to load different profiles based on your current spec on the fly. You can enable it in the profiles tab."] =
+	true
 L["ElvUI Installation"] = true
 L["ElvUI is five or more revisions out of date. You can download the newest version from tukui.org."] = true
 L["ElvUI is out of date. You can download the newest version from tukui.org."] = true
@@ -170,7 +179,8 @@ L["I"] = true
 L["Icons Only"] = true
 L["If you accidentally removed a default chat tab you can always re-run the chat part of the ElvUI installer."] = true
 L["If you are experiencing issues with ElvUI try disabling all your addons except ElvUI first."] = true
-L["If you have an icon or aurabar that you don't want to display simply hold down shift and right click the icon for it to disapear."] = true
+L["If you have an icon or aurabar that you don't want to display simply hold down shift and right click the icon for it to disapear."] =
+	true
 L["IL"] = true
 L["Importance: |cFF33FF33Low|r"] = true
 L["Importance: |cffD3CF00Medium|r"] = true
@@ -183,7 +193,8 @@ L["Installation Complete"] = true
 L["Interrupted %s's |cff71d5ff|Hspell:%d:0|h[%s]|h|r!"] = true
 L["Invalid Target"] = true
 L["is looking for members"] = true
-L["It appears one of your AddOns have disabled the AddOn Blizzard_CompactRaidFrames. This can cause errors and other issues. The AddOn will now be re-enabled."] = true
+L["It appears one of your AddOns have disabled the AddOn Blizzard_CompactRaidFrames. This can cause errors and other issues. The AddOn will now be re-enabled."] =
+	true
 L["Item level: %.2f"] = true
 L["Item Level:"] = true
 L["joined a group"] = true
@@ -218,8 +229,11 @@ L["List of installations in queue:"] = true
 L["Loadouts"] = true
 L["Location"] = true
 L["Lock"] = true
-L["LOGIN_MSG"] = ("Welcome to *ElvUI|r version *%s|r, type */ec|r to access the in-game configuration menu. If you are in need of technical support you can visit us at https://tukui.org or join our Discord: https://discord.tukui.org"):gsub('*', E.InfoColor)
-L["LOGIN_MSG_HELP"] = ("Please use */ehelp|r for a list of available *ElvUI|r commands."):gsub('*', E.InfoColor)
+L["LOGIN_MSG"] = ("Welcome to *ElvUI|r version *%s|r, type */ec|r to access the in-game configuration menu. If you are in need of technical support you can visit us at https://tukui.org or join our Discord: https://discord.tukui.org"):gsub(
+	"*",
+	E.InfoColor
+)
+L["LOGIN_MSG_HELP"] = ("Please use */ehelp|r for a list of available *ElvUI|r commands."):gsub("*", E.InfoColor)
 L["Loot / Alert Frames"] = true
 L["Loot Frame"] = true
 L["Lord! It's a miracle! The download up and vanished like a fart in the wind! Try Again!"] = true
@@ -253,7 +267,8 @@ L["Objective Frame"] = true
 L["Offline"] = true
 L["Oh lord, you have got ElvUI and Tukui both enabled at the same time. Select an addon to disable."] = true
 L["One or more of the changes you have made require a ReloadUI."] = true
-L["One or more of the changes you have made will effect all characters using this addon. You will have to reload the user interface to see the changes you have made."] = true
+L["One or more of the changes you have made will effect all characters using this addon. You will have to reload the user interface to see the changes you have made."] =
+	true
 L["Out of Combat"] = true
 L["Output Audio Device"] = true
 L["P"] = true
@@ -279,7 +294,8 @@ L["Please click the button below to setup your CVars."] = true
 L["Please click the button below to setup your Profile Settings."] = true
 L["Please press the continue button to go onto the next step."] = true
 L["PowerBarWidget"] = true
-L["Profile download complete from %s, but the profile %s already exists. Change the name or else it will overwrite the existing profile."] = true
+L["Profile download complete from %s, but the profile %s already exists. Change the name or else it will overwrite the existing profile."] =
+	true
 L["Profile download complete from %s, would you like to load the profile %s now?"] = true
 L["Profile request sent. Waiting for response from player."] = true
 L["Profile Settings Setup"] = true
@@ -313,7 +329,8 @@ L["Save"] = true
 L["Saved Dungeon(s)"] = true
 L["Saved Raid(s)"] = true
 L["says"] = true
-L["Select the type of aura system you want to use with ElvUI's unitframes. Set to Aura Bars to use both aura bars and icons, set to Icons Only to only see icons."] = true
+L["Select the type of aura system you want to use with ElvUI's unitframes. Set to Aura Bars to use both aura bars and icons, set to Icons Only to only see icons."] =
+	true
 L["Select Volume Stream"] = true
 L["Server: "] = true
 L["Session:"] = true
@@ -350,16 +367,22 @@ L["Targeted By:"] = true
 L["TargetTarget Frame"] = true
 L["TargetTargetTarget Frame"] = true
 L["Temporary Move"] = true
-L["The chat windows function the same as Blizzard standard chat windows, you can right click the tabs and drag them around, rename, etc. Please click the button below to setup your chat windows."] = true
-L["The in-game configuration menu can be accessed by typing the /ec command. Press the button below if you wish to skip the installation process."] = true
-L["The profile you tried to import already exists. Choose a new name or accept to overwrite the existing profile."] = true
+L["The chat windows function the same as Blizzard standard chat windows, you can right click the tabs and drag them around, rename, etc. Please click the button below to setup your chat windows."] =
+	true
+L["The in-game configuration menu can be accessed by typing the /ec command. Press the button below if you wish to skip the installation process."] =
+	true
+L["The profile you tried to import already exists. Choose a new name or accept to overwrite the existing profile."] =
+	true
 L["The spell '%s' has been added to the '%s' unitframe aura filter."] = true
 L["Theme Set"] = true
 L["Theme Setup"] = true
-L["This install process will help you learn some of the features in ElvUI has to offer and also prepare your user interface for usage."] = true
+L["This install process will help you learn some of the features in ElvUI has to offer and also prepare your user interface for usage."] =
+	true
 L["This part of the installation process sets up your chat windows names, positions and colors."] = true
-L["This part of the installation process sets up your World of Warcraft default options it is recommended you should do this step for everything to behave properly."] = true
-L["This setting caused a conflicting anchor point, where '%s' would be attached to itself. Please check your anchor points. Setting '%s' to be attached to '%s'."] = true
+L["This part of the installation process sets up your World of Warcraft default options it is recommended you should do this step for everything to behave properly."] =
+	true
+L["This setting caused a conflicting anchor point, where '%s' would be attached to itself. Please check your anchor points. Setting '%s' to be attached to '%s'."] =
+	true
 L["This will change the layout of your unitframes and actionbars."] = true
 L["Threat Bar"] = true
 L["Time Alert Frame"] = true
@@ -396,10 +419,13 @@ L["World Protocol:"] = true
 L["WoW Token:"] = true
 L["XP:"] = true
 L["yells"] = true
-L["You are now finished with the installation process. If you are in need of technical support please join our Discord."] = true
+L["You are now finished with the installation process. If you are in need of technical support please join our Discord."] =
+	true
 L["You are using CPU Profiling. This causes decreased performance. Do you want to disable it or continue?"] = true
-L["You can access the copy chat and chat menu functions by left/right clicking on the icon in the top right corner of the chat panel."] = true
-L["You can access the microbar by using middle mouse button on the minimap. You can also enable the MicroBar in the actionbar settings."] = true
+L["You can access the copy chat and chat menu functions by left/right clicking on the icon in the top right corner of the chat panel."] =
+	true
+L["You can access the microbar by using middle mouse button on the minimap. You can also enable the MicroBar in the actionbar settings."] =
+	true
 L["You can always change fonts and colors of any element of ElvUI from the in-game configuration."] = true
 L["You can enter the keybind mode by typing /kb"] = true
 L["You can now choose what layout you wish to use based on your combat role."] = true
@@ -447,4 +473,4 @@ L["EHELP_COMMANDS"] = ([=[Here is a list of all important *ElvUI|r commands:
   NOTE: */edebug|r ^off|r will re-enable the addons disabled from using */edebug|r ^on|r within that session.
  */guildlist|r ^minPlayers|r  -  Dumps the sorted list of guilds from the finder.
  */guildapply|r ^"message"|r  -  Applies to the top 5 new guilds with an optional message.
-]=]):gsub('*', E.InfoColor):gsub('%^', E.InfoColor2)
+]=]):gsub("*", E.InfoColor):gsub("%^", E.InfoColor2)

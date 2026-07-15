@@ -11,7 +11,9 @@ local GetItemInfo = GetItemInfo
 local GetMerchantNumItems = GetMerchantNumItems
 
 S:AddCallback("Skin_Merchant", function()
-	if not E.private.skins.blizzard.enable or not E.private.skins.blizzard.merchant then return end
+	if not E.private.skins.blizzard.enable or not E.private.skins.blizzard.merchant then
+		return
+	end
 
 	local MerchantFrame = _G.MerchantFrame
 	MerchantFrame:StripTextures(true)
@@ -39,12 +41,12 @@ S:AddCallback("Skin_Merchant", function()
 
 	local function skinMerchantButton(buttonName, buyback)
 		local button = _G[buttonName]
-		local itemButton = _G[buttonName.."ItemButton"]
-		local icon = _G[buttonName.."ItemButtonIconTexture"]
-		local name = _G[buttonName.."Name"]
-		local nameFrame = _G[buttonName.."NameFrame"]
-		local money = _G[buttonName.."MoneyFrame"]
-		local slot = _G[buttonName.."SlotTexture"]
+		local itemButton = _G[buttonName .. "ItemButton"]
+		local icon = _G[buttonName .. "ItemButtonIconTexture"]
+		local name = _G[buttonName .. "Name"]
+		local nameFrame = _G[buttonName .. "NameFrame"]
+		local money = _G[buttonName .. "MoneyFrame"]
+		local slot = _G[buttonName .. "SlotTexture"]
 
 		button:StripTextures(true)
 		button:CreateBackdrop("Default")
@@ -73,8 +75,8 @@ S:AddCallback("Skin_Merchant", function()
 
 		if not buyback then
 			for j = 1, 2 do
-				local currencyItem = _G[buttonName.."AltCurrencyFrameItem"..j]
-				local currencyIcon = _G[buttonName.."AltCurrencyFrameItem"..j.."Texture"]
+				local currencyItem = _G[buttonName .. "AltCurrencyFrameItem" .. j]
+				local currencyIcon = _G[buttonName .. "AltCurrencyFrameItem" .. j .. "Texture"]
 
 				currencyIcon.backdrop = CreateFrame("Frame", nil, currencyItem)
 				currencyIcon.backdrop:SetTemplate("Default")
@@ -88,10 +90,10 @@ S:AddCallback("Skin_Merchant", function()
 	end
 
 	for i = 1, 12 do
-		skinMerchantButton("MerchantItem"..i)
+		skinMerchantButton("MerchantItem" .. i)
 
 		if i % 2 == 0 then
-			_G["MerchantItem"..i]:Point("TOPLEFT", _G["MerchantItem"..i-1], "TOPRIGHT", 13, 0)
+			_G["MerchantItem" .. i]:Point("TOPLEFT", _G["MerchantItem" .. i - 1], "TOPRIGHT", 13, 0)
 		end
 	end
 
@@ -161,8 +163,8 @@ S:AddCallback("Skin_Merchant", function()
 			index = index + 1
 
 			if index <= numMerchantItems then
-				button = _G["MerchantItem"..i.."ItemButton"]
-				name = _G["MerchantItem"..i.."Name"]
+				button = _G["MerchantItem" .. i .. "ItemButton"]
+				name = _G["MerchantItem" .. i .. "Name"]
 
 				if button.link then
 					_, _, quality = GetItemInfo(button.link)
@@ -213,8 +215,8 @@ S:AddCallback("Skin_Merchant", function()
 				local itemName = GetBuybackItemInfo(i)
 
 				if itemName then
-					button = _G["MerchantItem"..i.."ItemButton"]
-					name = _G["MerchantItem"..i.."Name"]
+					button = _G["MerchantItem" .. i .. "ItemButton"]
+					name = _G["MerchantItem" .. i .. "Name"]
 					_, _, quality = GetItemInfo(itemName)
 
 					if quality and quality > 1 then

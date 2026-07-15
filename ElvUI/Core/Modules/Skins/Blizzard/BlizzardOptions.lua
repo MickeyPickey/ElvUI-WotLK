@@ -9,11 +9,13 @@ local InCombatLockdown = InCombatLockdown
 local hooksecurefunc = hooksecurefunc
 
 S:AddCallback("Skin_BlizzardOptions", function()
-	if not E.private.skins.blizzard.enable or not E.private.skins.blizzard.blizzardOptions then return end
+	if not E.private.skins.blizzard.enable or not E.private.skins.blizzard.blizzardOptions then
+		return
+	end
 
 	-- Game Menu Interface/Tabs
 	for i = 1, 2 do
-		local tab = _G["InterfaceOptionsFrameTab"..i]
+		local tab = _G["InterfaceOptionsFrameTab" .. i]
 
 		tab:StripTextures()
 		S:HandleTab(tab)
@@ -38,7 +40,7 @@ S:AddCallback("Skin_BlizzardOptions", function()
 	local frames = {
 		InterfaceOptionsFrame,
 		AudioOptionsFrame,
-		VideoOptionsFrame
+		VideoOptionsFrame,
 	}
 	for _, frame in ipairs(frames) do
 		frame:SetTemplate("Transparent")
@@ -47,7 +49,9 @@ S:AddCallback("Skin_BlizzardOptions", function()
 		frame:EnableMouse(true)
 		frame:RegisterForDrag("LeftButton", "RightButton")
 		frame:SetScript("OnDragStart", function(self)
-			if InCombatLockdown() then return end
+			if InCombatLockdown() then
+				return
+			end
 
 			self:StartMoving()
 		end)
@@ -382,7 +386,7 @@ S:AddCallback("Skin_BlizzardOptions", function()
 		S:HandleSliderFrame(MacOptionsFrameQualitySlider)
 
 		for i = 1, 8 do
-			S:HandleCheckBox(_G["MacOptionsFrameCheckButton"..i])
+			S:HandleCheckBox(_G["MacOptionsFrameCheckButton" .. i])
 		end
 
 		S:HandleButton(MacOptionsButtonCompress)
@@ -463,8 +467,20 @@ S:AddCallback("Skin_BlizzardOptions", function()
 	S:HandleButton(ChatConfigCombatSettingsFiltersCopyFilterButton)
 
 	ChatConfigCombatSettingsFiltersDeleteButton:Point("TOPRIGHT", ChatConfigCombatSettingsFilters, "BOTTOMRIGHT", 0, -1)
-	ChatConfigCombatSettingsFiltersAddFilterButton:Point("RIGHT", ChatConfigCombatSettingsFiltersDeleteButton, "LEFT", -1, 0)
-	ChatConfigCombatSettingsFiltersCopyFilterButton:Point("RIGHT", ChatConfigCombatSettingsFiltersAddFilterButton, "LEFT", -1, 0)
+	ChatConfigCombatSettingsFiltersAddFilterButton:Point(
+		"RIGHT",
+		ChatConfigCombatSettingsFiltersDeleteButton,
+		"LEFT",
+		-1,
+		0
+	)
+	ChatConfigCombatSettingsFiltersCopyFilterButton:Point(
+		"RIGHT",
+		ChatConfigCombatSettingsFiltersAddFilterButton,
+		"LEFT",
+		-1,
+		0
+	)
 
 	S:HandleNextPrevButton(ChatConfigMoveFilterUpButton)
 	ChatConfigMoveFilterUpButton:Size(26)
@@ -509,14 +525,14 @@ S:AddCallback("Skin_BlizzardOptions", function()
 		"CombatConfigSettingsShowQuickButton",
 		"CombatConfigSettingsSolo",
 		"CombatConfigSettingsParty",
-		"CombatConfigSettingsRaid"
+		"CombatConfigSettingsRaid",
 	}
 	for i = 1, #combatCheckboxes do
 		S:HandleCheckBox(_G[combatCheckboxes[i]])
 	end
 
 	for i = 1, 5 do
-		local tab = _G["CombatConfigTab"..i]
+		local tab = _G["CombatConfigTab" .. i]
 
 		tab:StripTextures()
 		tab:CreateBackdrop("Default", true)
@@ -543,11 +559,11 @@ S:AddCallback("Skin_BlizzardOptions", function()
 	hooksecurefunc("ChatConfig_CreateCheckboxes", function(frame, checkBoxTable, checkBoxTemplate)
 		frame:SetTemplate("Transparent")
 
-		local checkBoxNameString = frame:GetName().."CheckBox"
+		local checkBoxNameString = frame:GetName() .. "CheckBox"
 		local checkBoxName, checkbox
 
 		for index in ipairs(checkBoxTable) do
-			checkBoxName = checkBoxNameString..index
+			checkBoxName = checkBoxNameString .. index
 			checkbox = _G[checkBoxName]
 
 			if not checkbox.backdrop then
@@ -557,25 +573,28 @@ S:AddCallback("Skin_BlizzardOptions", function()
 				checkbox.backdrop:Point("BOTTOMRIGHT", -3, 1)
 				checkbox.backdrop:OffsetFrameLevel(1, checkbox:GetParent())
 
-				S:HandleCheckBox(_G[checkBoxName.."Check"])
+				S:HandleCheckBox(_G[checkBoxName .. "Check"])
 
-				if checkBoxTemplate == "ChatConfigCheckBoxWithSwatchTemplate" or checkBoxTemplate == "ChatConfigCheckBoxWithSwatchAndClassColorTemplate" then
+				if
+					checkBoxTemplate == "ChatConfigCheckBoxWithSwatchTemplate"
+					or checkBoxTemplate == "ChatConfigCheckBoxWithSwatchAndClassColorTemplate"
+				then
 					if checkBoxTemplate == "ChatConfigCheckBoxWithSwatchAndClassColorTemplate" then
-						S:HandleCheckBox(_G[checkBoxName.."ColorClasses"])
+						S:HandleCheckBox(_G[checkBoxName .. "ColorClasses"])
 					end
 
-					S:HandleColorSwatch(_G[checkBoxName.."ColorSwatch"])
+					S:HandleColorSwatch(_G[checkBoxName .. "ColorSwatch"])
 				end
 			end
 		end
 	end)
 
 	hooksecurefunc("ChatConfig_CreateTieredCheckboxes", function(frame, checkBoxTable)
-		local checkBoxNameString = frame:GetName().."CheckBox"
+		local checkBoxNameString = frame:GetName() .. "CheckBox"
 		local checkBoxName
 
 		for index, value in ipairs(checkBoxTable) do
-			checkBoxName = checkBoxNameString..index
+			checkBoxName = checkBoxNameString .. index
 
 			if _G[checkBoxName] then
 				S:HandleCheckBox(_G[checkBoxName])
@@ -584,7 +603,7 @@ S:AddCallback("Skin_BlizzardOptions", function()
 					local subCheckBox
 
 					for i in ipairs(value.subTypes) do
-						subCheckBox = _G[checkBoxName.."_"..i]
+						subCheckBox = _G[checkBoxName .. "_" .. i]
 
 						if subCheckBox then
 							S:HandleCheckBox(subCheckBox)
@@ -598,11 +617,11 @@ S:AddCallback("Skin_BlizzardOptions", function()
 	hooksecurefunc("ChatConfig_CreateColorSwatches", function(frame, swatchTable)
 		frame:SetTemplate("Transparent")
 
-		local nameString = frame:GetName().."Swatch"
+		local nameString = frame:GetName() .. "Swatch"
 		local swatch
 
 		for index in ipairs(swatchTable) do
-			swatch = _G[nameString..index]
+			swatch = _G[nameString .. index]
 
 			if not swatch.backdrop then
 				swatch:StripTextures()
@@ -611,7 +630,7 @@ S:AddCallback("Skin_BlizzardOptions", function()
 				swatch.backdrop:Point("BOTTOMRIGHT", -3, 1)
 				swatch.backdrop:OffsetFrameLevel(1, swatch:GetParent())
 
-				S:HandleColorSwatch(_G[nameString..index.."ColorSwatch"])
+				S:HandleColorSwatch(_G[nameString .. index .. "ColorSwatch"])
 			end
 		end
 	end)

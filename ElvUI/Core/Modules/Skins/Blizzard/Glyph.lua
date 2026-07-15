@@ -7,7 +7,9 @@ local unpack = unpack
 --WoW API / Variables
 
 S:AddCallbackForAddon("Blizzard_GlyphUI", "Skin_Blizzard_GlyphUI", function()
-	if not E.private.skins.blizzard.enable or not E.private.skins.blizzard.talent then return end
+	if not E.private.skins.blizzard.enable or not E.private.skins.blizzard.talent then
+		return
+	end
 
 	if not PlayerTalentFrame then
 		TalentFrame_LoadUI()
@@ -36,16 +38,16 @@ S:AddCallbackForAddon("Blizzard_GlyphUI", "Skin_Blizzard_GlyphUI", function()
 
 	local glyphBGScale = 1.0253968
 	local glyphPositions = {
-		{"CENTER", -1, 126},
-		{"CENTER", -1, -119},
-		{"TOPLEFT", 8, -62},
-		{"BOTTOMRIGHT", -10, 70},
-		{"TOPRIGHT", -8, -62},
-		{"BOTTOMLEFT", 7, 70}
+		{ "CENTER", -1, 126 },
+		{ "CENTER", -1, -119 },
+		{ "TOPLEFT", 8, -62 },
+		{ "BOTTOMRIGHT", -10, 70 },
+		{ "TOPRIGHT", -8, -62 },
+		{ "BOTTOMLEFT", 7, 70 },
 	}
 
 	for i = 1, 6 do
-		local frame = _G["GlyphFrameGlyph"..i]
+		local frame = _G["GlyphFrameGlyph" .. i]
 		frame:SetParent(GlyphFrameBackground.backdrop)
 		frame:OffsetFrameLevel(1, GlyphFrame)
 		frame:SetScale(glyphBGScale)
@@ -75,12 +77,18 @@ S:AddCallbackForAddon("Blizzard_GlyphUI", "Skin_Blizzard_GlyphUI", function()
 	do
 		local slotAnimations = {}
 		local TOPLEFT, TOP, TOPRIGHT, BOTTOMRIGHT, BOTTOM, BOTTOMLEFT = 3, 1, 5, 4, 2, 6
-		slotAnimations[TOPLEFT] = {["point"] = "CENTER", ["xStart"] = -13, ["xStop"] = -85, ["yStart"] = 17, ["yStop"] = 60}
-		slotAnimations[TOP] = {["point"] = "CENTER", ["xStart"] = -13, ["xStop"] = -13, ["yStart"] = 17, ["yStop"] = 100}
-		slotAnimations[TOPRIGHT] = {["point"] = "CENTER", ["xStart"] = -13, ["xStop"] = 59, ["yStart"] = 17, ["yStop"] = 60}
-		slotAnimations[BOTTOM] = {["point"] = "CENTER", ["xStart"] = -13, ["xStop"] = -13, ["yStart"] = 17, ["yStop"] = -64}
-		slotAnimations[BOTTOMLEFT] = {["point"] = "CENTER", ["xStart"] = -13, ["xStop"] = -87, ["yStart"] = 18, ["yStop"] = -27}
-		slotAnimations[BOTTOMRIGHT] = {["point"] = "CENTER", ["xStart"] = -13, ["xStop"] = 61, ["yStart"] = 18, ["yStop"] = -27}
+		slotAnimations[TOPLEFT] =
+			{ ["point"] = "CENTER", ["xStart"] = -13, ["xStop"] = -85, ["yStart"] = 17, ["yStop"] = 60 }
+		slotAnimations[TOP] =
+			{ ["point"] = "CENTER", ["xStart"] = -13, ["xStop"] = -13, ["yStart"] = 17, ["yStop"] = 100 }
+		slotAnimations[TOPRIGHT] =
+			{ ["point"] = "CENTER", ["xStart"] = -13, ["xStop"] = 59, ["yStart"] = 17, ["yStop"] = 60 }
+		slotAnimations[BOTTOM] =
+			{ ["point"] = "CENTER", ["xStart"] = -13, ["xStop"] = -13, ["yStart"] = 17, ["yStop"] = -64 }
+		slotAnimations[BOTTOMLEFT] =
+			{ ["point"] = "CENTER", ["xStart"] = -13, ["xStop"] = -87, ["yStart"] = 18, ["yStop"] = -27 }
+		slotAnimations[BOTTOMRIGHT] =
+			{ ["point"] = "CENTER", ["xStart"] = -13, ["xStop"] = 61, ["yStart"] = 18, ["yStop"] = -27 }
 
 		for _, animData in ipairs(slotAnimations) do
 			animData.xStart = animData.xStart + 3
@@ -90,11 +98,14 @@ S:AddCallbackForAddon("Blizzard_GlyphUI", "Skin_Blizzard_GlyphUI", function()
 		end
 
 		hooksecurefunc("GlyphFrame_StartSlotAnimation", function(slotID, duration, size)
-			local sparkle = _G["GlyphFrameSparkle"..slotID]
+			local sparkle = _G["GlyphFrameSparkle" .. slotID]
 			local animation = slotAnimations[slotID]
 
 			sparkle:SetPoint(animation.point, animation.xStart, animation.yStart)
-			sparkle.animGroup.translate:SetOffset(animation.xStop - animation.xStart, animation.yStop - animation.yStart)
+			sparkle.animGroup.translate:SetOffset(
+				animation.xStop - animation.xStart,
+				animation.yStop - animation.yStart
+			)
 		end)
 	end
 end)

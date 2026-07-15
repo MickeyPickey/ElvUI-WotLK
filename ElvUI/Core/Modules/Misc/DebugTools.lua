@@ -18,7 +18,7 @@ function D:ModifyErrorFrame()
 		-- in Blizzard_DebugTools.lua:430 and then cause a C stack overflow, this will prevent that
 		local index = ScriptErrorsFrame.index
 		if not index or not ScriptErrorsFrame.order[index] then
-			index = #(ScriptErrorsFrame.order)
+			index = #ScriptErrorsFrame.order
 		end
 
 		if index > 0 then
@@ -49,7 +49,7 @@ function D:ModifyErrorFrame()
 
 	-- Add a first button
 	local firstButton = CreateFrame("Button", nil, ScriptErrorsFrame, "UIPanelButtonTemplate")
-	firstButton:SetPoint("BOTTOM", -((BUTTON_WIDTH + BUTTON_WIDTH/2) + (BUTTON_SPACING * 4)), 8)
+	firstButton:SetPoint("BOTTOM", -((BUTTON_WIDTH + BUTTON_WIDTH / 2) + (BUTTON_SPACING * 4)), 8)
 	firstButton:SetText("First")
 	firstButton:SetHeight(BUTTON_HEIGHT)
 	firstButton:SetWidth(BUTTON_WIDTH)
@@ -66,7 +66,7 @@ function D:ModifyErrorFrame()
 	lastButton:SetWidth(BUTTON_WIDTH)
 	lastButton:SetText("Last")
 	lastButton:SetScript("OnClick", function()
-		ScriptErrorsFrame.index = #(ScriptErrorsFrame.order)
+		ScriptErrorsFrame.index = #ScriptErrorsFrame.order
 		ScriptErrorsFrame_Update()
 	end)
 	ScriptErrorsFrame.lastButton = lastButton
@@ -107,7 +107,9 @@ function D:ScriptErrorsFrame_UpdateButtons()
 end
 
 function D:ScriptErrorsFrame_OnError(_, keepHidden)
-	if keepHidden or D.MessagePrinted or not InCombatLockdown() or GetCVarBool("scriptErrors") ~= 1 then return end
+	if keepHidden or D.MessagePrinted or not InCombatLockdown() or GetCVarBool("scriptErrors") ~= 1 then
+		return
+	end
 
 	E:Print(L["|cFFE30000Lua error recieved. You can view the error message when you exit combat."])
 	D.MessagePrinted = true
@@ -123,8 +125,18 @@ function D:PLAYER_REGEN_DISABLED()
 end
 
 function D:TaintError(event, addonName, addonFunc)
-	if GetCVarBool("scriptErrors") ~= 1 or E.db.general.taintLog ~= true then return end
-	ScriptErrorsFrame_OnError(format(L["%s: %s tried to call the protected function '%s'."], event, addonName or "<name>", addonFunc or "<func>"), false)
+	if GetCVarBool("scriptErrors") ~= 1 or E.db.general.taintLog ~= true then
+		return
+	end
+	ScriptErrorsFrame_OnError(
+		format(
+			L["%s: %s tried to call the protected function '%s'."],
+			event,
+			addonName or "<name>",
+			addonFunc or "<func>"
+		),
+		false
+	)
 end
 
 function D:StaticPopup_Show(name)

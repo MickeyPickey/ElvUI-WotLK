@@ -1,5 +1,5 @@
 local E, L, V, P, G = unpack(ElvUI)
-local DT = E:GetModule('DataTexts')
+local DT = E:GetModule("DataTexts")
 
 local format = format
 local strjoin = strjoin
@@ -14,13 +14,13 @@ local CR_CRIT_MELEE_TOOLTIP = CR_CRIT_MELEE_TOOLTIP
 local CR_CRIT_MELEE = CR_CRIT_MELEE
 local CR_CRIT_RANGED = CR_CRIT_RANGED
 
-local displayString, db = ''
+local displayString, db = ""
 local meleeCrit, rangedCrit, ratingIndex = 0, 0
 
 local function OnEnter()
 	DT.tooltip:ClearLines()
-	DT.tooltip:AddLine(format('%s: %.2f%%', MELEE_CRIT_CHANCE, meleeCrit))
-	DT.tooltip:AddLine(' ')
+	DT.tooltip:AddLine(format("%s: %.2f%%", MELEE_CRIT_CHANCE, meleeCrit))
+	DT.tooltip:AddLine(" ")
 	DT.tooltip:AddLine(format(CR_CRIT_MELEE_TOOLTIP, GetCombatRating(ratingIndex), GetCombatRatingBonus(ratingIndex)))
 
 	DT.tooltip:Show()
@@ -31,7 +31,7 @@ local function OnEvent(self)
 	rangedCrit = GetRangedCritChance()
 
 	local critChance
-	if (rangedCrit > meleeCrit) then
+	if rangedCrit > meleeCrit then
 		critChance = rangedCrit
 		ratingIndex = CR_CRIT_RANGED
 	else
@@ -39,11 +39,10 @@ local function OnEvent(self)
 		ratingIndex = CR_CRIT_MELEE
 	end
 
-
 	if db.NoLabel then
 		self.text:SetFormattedText(displayString, critChance)
 	else
-		self.text:SetFormattedText(displayString, db.Label ~= '' and db.Label or CRIT_ABBR..': ', critChance)
+		self.text:SetFormattedText(displayString, db.Label ~= "" and db.Label or CRIT_ABBR .. ": ", critChance)
 	end
 end
 
@@ -52,9 +51,21 @@ local function ApplySettings(self, hex)
 		db = E.global.datatexts.settings[self.name]
 	end
 
-	displayString = strjoin('', db.NoLabel and '' or '%s', hex, '%.'..db.decimalLength..'f%%|r')
+	displayString = strjoin("", db.NoLabel and "" or "%s", hex, "%." .. db.decimalLength .. "f%%|r")
 
 	OnEvent(self)
 end
 
-DT:RegisterDatatext('Crit', L["Enhancements"], { 'UNIT_STATS', 'UNIT_AURA', 'PLAYER_DAMAGE_DONE_MODS'}, OnEvent, nil, nil, OnEnter, nil, MELEE_CRIT_CHANCE, nil, ApplySettings)
+DT:RegisterDatatext(
+	"Crit",
+	L["Enhancements"],
+	{ "UNIT_STATS", "UNIT_AURA", "PLAYER_DAMAGE_DONE_MODS" },
+	OnEvent,
+	nil,
+	nil,
+	OnEnter,
+	nil,
+	MELEE_CRIT_CHANCE,
+	nil,
+	ApplySettings
+)

@@ -29,7 +29,9 @@ end
 
 function NP:Update_Name(frame, triggered)
 	if not triggered then
-		if not self.db.units[frame.UnitType].name.enable then return end
+		if not self.db.units[frame.UnitType].name.enable then
+			return
+		end
 	end
 
 	local name = frame.Name
@@ -40,7 +42,14 @@ function NP:Update_Name(frame, triggered)
 		name:ClearAllPoints()
 		if self.db.units[frame.UnitType].health.enable or (self.db.alwaysShowTargetHealth and frame.isTarget) then
 			name:SetJustifyH("LEFT")
-			name:SetPoint(E.InversePoints[self.db.units[frame.UnitType].name.position], self.db.units[frame.UnitType].name.parent == "Nameplate" and frame or frame[self.db.units[frame.UnitType].name.parent], self.db.units[frame.UnitType].name.position, self.db.units[frame.UnitType].name.xOffset, self.db.units[frame.UnitType].name.yOffset)
+			name:SetPoint(
+				E.InversePoints[self.db.units[frame.UnitType].name.position],
+				self.db.units[frame.UnitType].name.parent == "Nameplate" and frame
+					or frame[self.db.units[frame.UnitType].name.parent],
+				self.db.units[frame.UnitType].name.position,
+				self.db.units[frame.UnitType].name.xOffset,
+				self.db.units[frame.UnitType].name.yOffset
+			)
 			name:SetParent(frame.Health)
 		else
 			name:SetJustifyH("CENTER")
@@ -68,7 +77,8 @@ function NP:Update_Name(frame, triggered)
 				r, g, b = db.reactions.neutral.r, db.reactions.neutral.g, db.reactions.neutral.b
 			elseif reactionType > 4 then
 				if frame.UnitType == "FRIENDLY_PLAYER" then
-					r, g, b = db.reactions.friendlyPlayer.r, db.reactions.friendlyPlayer.g, db.reactions.friendlyPlayer.b
+					r, g, b =
+						db.reactions.friendlyPlayer.r, db.reactions.friendlyPlayer.g, db.reactions.friendlyPlayer.b
 				else
 					r, g, b = db.reactions.good.r, db.reactions.good.g, db.reactions.good.b
 				end
@@ -93,7 +103,12 @@ function NP:Update_Name(frame, triggered)
 	if self.db.nameColoredGlow then
 		name.NameOnlyGlow:SetVertexColor(r - 0.1, g - 0.1, b - 0.1, 1)
 	else
-		name.NameOnlyGlow:SetVertexColor(self.db.colors.glowColor.r, self.db.colors.glowColor.g, self.db.colors.glowColor.b, self.db.colors.glowColor.a)
+		name.NameOnlyGlow:SetVertexColor(
+			self.db.colors.glowColor.r,
+			self.db.colors.glowColor.g,
+			self.db.colors.glowColor.b,
+			self.db.colors.glowColor.a
+		)
 	end
 end
 

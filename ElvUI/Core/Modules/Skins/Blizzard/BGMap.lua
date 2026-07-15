@@ -5,7 +5,9 @@ local S = E:GetModule("Skins")
 --WoW API / Variables
 
 S:AddCallbackForAddon("Blizzard_BattlefieldMinimap", "Skin_Blizzard_BattlefieldMinimap", function()
-	if not E.private.skins.blizzard.enable or not E.private.skins.blizzard.bgmap then return end
+	if not E.private.skins.blizzard.enable or not E.private.skins.blizzard.bgmap then
+		return
+	end
 
 	BattlefieldMinimapCorner:Kill()
 	BattlefieldMinimapBackground:Kill()
@@ -37,7 +39,9 @@ S:AddCallbackForAddon("Blizzard_BattlefieldMinimap", "Skin_Blizzard_BattlefieldM
 
 	BattlefieldMinimap:SetScript("OnMouseDown", function(_, btn)
 		if btn == "LeftButton" then
-			if BattlefieldMinimapOptions and BattlefieldMinimapOptions.locked then return end
+			if BattlefieldMinimapOptions and BattlefieldMinimapOptions.locked then
+				return
+			end
 
 			BattlefieldMinimapTab._moved = true
 			BattlefieldMinimapTab:StartMoving()

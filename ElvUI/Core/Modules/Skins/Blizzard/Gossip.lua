@@ -8,7 +8,9 @@ local find, gsub = string.find, string.gsub
 --WoW API / Variables
 
 S:AddCallback("Skin_Gossip", function()
-	if not E.private.skins.blizzard.enable or not E.private.skins.blizzard.gossip then return end
+	if not E.private.skins.blizzard.enable or not E.private.skins.blizzard.gossip then
+		return
+	end
 
 	-- Gossip
 	GossipFramePortrait:Kill()
@@ -29,7 +31,7 @@ S:AddCallback("Skin_Gossip", function()
 	S:HandleButton(GossipFrameGreetingGoodbyeButton)
 
 	for i = 1, NUMGOSSIPBUTTONS do
-		local button = _G["GossipTitleButton"..i]
+		local button = _G["GossipTitleButton" .. i]
 		S:HandleButtonHighlight(button)
 		-- GossipResize grows the button to fit multi-line text; the gradient's fixed size would leave part of it unhighlighted
 		button.highlightGradient:ClearAllPoints()
@@ -50,7 +52,7 @@ S:AddCallback("Skin_Gossip", function()
 
 	hooksecurefunc("GossipFrameUpdate", function()
 		for i = 1, GossipFrame.buttonIndex do
-			local button = _G["GossipTitleButton"..i]
+			local button = _G["GossipTitleButton" .. i]
 
 			if button:GetText() and find(button:GetText(), "|cff000000") then
 				button:SetText(gsub(button:GetText(), "|cff000000", "|cffFFFF00"))

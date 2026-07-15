@@ -1,0 +1,51 @@
+name: Format
+
+on:
+  push:
+    paths:
+      - '.github/workflows/format.yml'
+      - 'stylua.toml'
+      - '.styluaignore'
+      - '**.lua'
+  # No path filter: runs on every PR so it can serve as a required status check.
+  pull_request:
+  workflow_dispatch:
+
+# Only keep the newest run per ref; cancel superseded ones.
+concurrency:
+  group: format-${{ github.ref }}
+  cancel-in-progress: true
+
+# Least privilege: the check only reads the checkout.
+permissions:
+  contents: read
+
+jobs:
+  stylua:
+    name: stylua
+    runs-on: ubuntu-latest
+
+    env:
+      STYLUA_VERSION: 2.5.2
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+
+    - name: Cache StyLua
+      uses: actions/cache@v4
+      id: styluacache
+      with:
+        path: ~/.stylua
+        key: ${{ runner.os }}-stylua-${{ env.STYLUA_VERSION }}
+
+    - name: Install StyLua
+      if: steps.styluacache.outputs.cache-hit != 'true'
+      run: |
+        mkdir -p ~/.stylua
+        wget -qO /tmp/stylua.zip "https://github.com/JohnnyMorganz/StyLua/releases/download/v${STYLUA_VERSION}/stylua-linux-x86_64.zip"
+        unzip -o /tmp/stylua.zip -d ~/.stylua
+        chmod +x ~/.stylua/stylua
+
+    - name: Check formatting
+      run: ~/.stylua/stylua --check "$GITHUB_WORKSPACE"

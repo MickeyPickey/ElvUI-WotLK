@@ -30,18 +30,39 @@ local unpack, strsub = unpack, strsub
 	end)
 ]]
 
-E.AnimShake = {{-9,7,-7,12}, {-5,9,-9,5}, {-5,7,-7,5}, {-9,9,-9,9}, {-5,7,-7,5}, {-9,7,-9,5}}
-E.AnimShakeH = {-5,5,-2,5,-2,5}
-E.AnimMoveOut = function(out1) out1.parent:Hide() end
+E.AnimShake =
+	{ { -9, 7, -7, 12 }, { -5, 9, -9, 5 }, { -5, 7, -7, 5 }, { -9, 9, -9, 9 }, { -5, 7, -7, 5 }, { -9, 7, -9, 5 } }
+E.AnimShakeH = { -5, 5, -2, 5, -2, 5 }
+E.AnimMoveOut = function(out1)
+	out1.parent:Hide()
+end
 E.AnimElastic = {
-	function(anim) anim:Stop() anim.elastic[2]:Play() end,
-	function(anim) anim:Stop() if anim.loop then anim.elastic[1]:Play() end end,
-	function(anim) anim:Stop() anim.elastic[4]:Play() end,
-	function(anim) anim:Stop() if anim.loop then anim.elastic[3]:Play() end end
+	function(anim)
+		anim:Stop()
+		anim.elastic[2]:Play()
+	end,
+	function(anim)
+		anim:Stop()
+		if anim.loop then
+			anim.elastic[1]:Play()
+		end
+	end,
+	function(anim)
+		anim:Stop()
+		anim.elastic[4]:Play()
+	end,
+	function(anim)
+		anim:Stop()
+		if anim.loop then
+			anim.elastic[3]:Play()
+		end
+	end,
 }
 
 function E:FlashLoopFinished(requested)
-	if not requested then self:Play() end
+	if not requested then
+		self:Play()
+	end
 end
 
 function E:RandomAnimShake(index)
@@ -100,7 +121,7 @@ function E:SetUpAnimGroup(obj, animType, ...)
 
 		for i = 1, 4 do
 			local anim = elastic:CreateAnimation(i < 3 and "width" or "height")
-			anim:SetChange((i==1 and width*0.45) or (i==2 and width) or (i==3 and height*0.45) or height)
+			anim:SetChange((i == 1 and width * 0.45) or (i == 2 and width) or (i == 3 and height * 0.45) or height)
 			anim:SetEasing("inout-elastic")
 			anim:SetDuration(duration)
 			anim:SetScript("OnFinished", E.AnimElastic[i])
@@ -284,7 +305,9 @@ end
 
 function E:SlideIn(obj, customName)
 	local anim = obj[customName or "anim"]
-	if not anim then return end
+	if not anim then
+		return
+	end
 
 	anim.out1:Stop() -- out1 OnFinish will call Hide, see SlideOut
 	anim:Play()
@@ -293,7 +316,9 @@ end
 
 function E:SlideOut(obj, customName)
 	local anim = obj[customName or "anim"]
-	if not anim then return end
+	if not anim then
+		return
+	end
 
 	anim:Finish()
 	anim:Stop()
@@ -322,7 +347,9 @@ function E:UIFrameFade_OnUpdate(elapsed)
 				if info.mode == "IN" then
 					frame:SetAlpha((info.fadeTimer / info.timeToFade) * info.diffAlpha + info.startAlpha)
 				else
-					frame:SetAlpha(((info.timeToFade - info.fadeTimer) / info.timeToFade) * info.diffAlpha + info.endAlpha)
+					frame:SetAlpha(
+						((info.timeToFade - info.fadeTimer) / info.timeToFade) * info.diffAlpha + info.endAlpha
+					)
 				end
 			else
 				frame:SetAlpha(info.endAlpha)
@@ -338,7 +365,13 @@ function E:UIFrameFade_OnUpdate(elapsed)
 						if info.finishedArgs then
 							info.finishedFunc(unpack(info.finishedArgs))
 						else -- optional method
-							info.finishedFunc(info.finishedArg1, info.finishedArg2, info.finishedArg3, info.finishedArg4, info.finishedArg5)
+							info.finishedFunc(
+								info.finishedArg1,
+								info.finishedArg2,
+								info.finishedArg3,
+								info.finishedArg4,
+								info.finishedArg5
+							)
 						end
 
 						if not info.finishedFuncKeep then
@@ -357,20 +390,34 @@ end
 
 -- Generic fade function
 function E:UIFrameFade(frame, info)
-	if not frame then return end
+	if not frame then
+		return
+	end
 
 	if not info.mode then
 		info.mode = "IN"
 	end
 
 	if info.mode == "IN" then
-		if not info.startAlpha then info.startAlpha = 0 end
-		if not info.endAlpha then info.endAlpha = 1 end
-		if not info.diffAlpha then info.diffAlpha = info.endAlpha - info.startAlpha end
+		if not info.startAlpha then
+			info.startAlpha = 0
+		end
+		if not info.endAlpha then
+			info.endAlpha = 1
+		end
+		if not info.diffAlpha then
+			info.diffAlpha = info.endAlpha - info.startAlpha
+		end
 	else
-		if not info.startAlpha then info.startAlpha = 1 end
-		if not info.endAlpha then info.endAlpha = 0 end
-		if not info.diffAlpha then info.diffAlpha = info.startAlpha - info.endAlpha end
+		if not info.startAlpha then
+			info.startAlpha = 1
+		end
+		if not info.endAlpha then
+			info.endAlpha = 0
+		end
+		if not info.diffAlpha then
+			info.diffAlpha = info.startAlpha - info.endAlpha
+		end
 	end
 
 	frame.fadeInfo = info
@@ -386,7 +433,9 @@ end
 
 -- Convenience function to do a simple fade in
 function E:UIFrameFadeIn(frame, timeToFade, startAlpha, endAlpha)
-	if not frame then return end
+	if not frame then
+		return
+	end
 
 	if frame.FadeObject then
 		frame.FadeObject.fadeTimer = nil
@@ -405,7 +454,9 @@ end
 
 -- Convenience function to do a simple fade out
 function E:UIFrameFadeOut(frame, timeToFade, startAlpha, endAlpha)
-	if not frame then return end
+	if not frame then
+		return
+	end
 
 	if frame.FadeObject then
 		frame.FadeObject.fadeTimer = nil

@@ -17,7 +17,13 @@ end
 function UF:Configure_PVPIcon(frame)
 	local PvPIndicator = frame.PvPIndicator
 	PvPIndicator:ClearAllPoints()
-	PvPIndicator:Point(frame.db.pvpIcon.anchorPoint, frame.Health, frame.db.pvpIcon.anchorPoint, frame.db.pvpIcon.xOffset, frame.db.pvpIcon.yOffset)
+	PvPIndicator:Point(
+		frame.db.pvpIcon.anchorPoint,
+		frame.Health,
+		frame.db.pvpIcon.anchorPoint,
+		frame.db.pvpIcon.xOffset,
+		frame.db.pvpIcon.yOffset
+	)
 
 	local scale = frame.db.pvpIcon.scale or 1
 	PvPIndicator:Size(30 * scale)
@@ -30,7 +36,9 @@ function UF:Configure_PVPIcon(frame)
 end
 
 function UF:UpdateOverridePvP(event, unit)
-	if not unit or self.unit ~= unit then return end
+	if not unit or self.unit ~= unit then
+		return
+	end
 
 	local element = self.PvPIndicator
 

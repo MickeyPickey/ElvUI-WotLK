@@ -9,7 +9,9 @@ local match = string.match
 --WoW API / Variables
 
 S:AddCallback("Skin_Alerts", function()
-	if not E.private.skins.blizzard.enable or not E.private.skins.blizzard.alertframes then return end
+	if not E.private.skins.blizzard.enable or not E.private.skins.blizzard.alertframes then
+		return
+	end
 
 	S:RawHook("AchievementAlertFrame_GetAlertFrame", function()
 		local frame = S.hooks.AchievementAlertFrame_GetAlertFrame()
@@ -25,10 +27,10 @@ S:AddCallback("Skin_Alerts", function()
 
 			S:SetBackdropHitRect(frame)
 
-			_G[name.."Background"]:SetTexture(nil)
-			_G[name.."Unlocked"]:SetTextColor(1, 1, 1)
+			_G[name .. "Background"]:SetTexture(nil)
+			_G[name .. "Unlocked"]:SetTextColor(1, 1, 1)
 
-			local icon = _G[name.."Icon"]
+			local icon = _G[name .. "Icon"]
 			icon:DisableDrawLayer("BACKGROUND")
 			icon:DisableDrawLayer("OVERLAY")
 

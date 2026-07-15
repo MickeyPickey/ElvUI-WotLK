@@ -5,7 +5,9 @@ local S = E:GetModule("Skins")
 --WoW API / Variables
 
 S:AddCallback("Skin_Petition", function()
-	if not E.private.skins.blizzard.enable or not E.private.skins.blizzard.petition then return end
+	if not E.private.skins.blizzard.enable or not E.private.skins.blizzard.petition then
+		return
+	end
 
 	PetitionFrame:StripTextures(true)
 	PetitionFrame:CreateBackdrop("Transparent")
@@ -28,7 +30,7 @@ S:AddCallback("Skin_Petition", function()
 	PetitionFrameMemberTitle:SetTextColor(1, 1, 0)
 
 	for i = 1, 9 do
-		_G["PetitionFrameMemberName"..i]:SetTextColor(1, 1, 1)
+		_G["PetitionFrameMemberName" .. i]:SetTextColor(1, 1, 1)
 	end
 
 	PetitionFrameInstructions:SetTextColor(1, 1, 1)

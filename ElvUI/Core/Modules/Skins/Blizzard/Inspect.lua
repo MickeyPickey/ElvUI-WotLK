@@ -9,7 +9,9 @@ local GetInventoryItemID = GetInventoryItemID
 local GetItemInfo = GetItemInfo
 
 S:AddCallbackForAddon("Blizzard_InspectUI", "Skin_Blizzard_InspectUI", function()
-	if not E.private.skins.blizzard.enable or not E.private.skins.blizzard.inspect then return end
+	if not E.private.skins.blizzard.enable or not E.private.skins.blizzard.inspect then
+		return
+	end
 
 	InspectFrame:StripTextures(true)
 	InspectFrame:CreateBackdrop("Transparent")
@@ -52,12 +54,12 @@ S:AddCallbackForAddon("Blizzard_InspectUI", "Skin_Blizzard_InspectUI", function(
 		"Trinket1Slot",
 		"MainHandSlot",
 		"SecondaryHandSlot",
-		"RangedSlot"
+		"RangedSlot",
 	}
 
 	for _, slot in ipairs(slots) do
-		local icon = _G["Inspect"..slot.."IconTexture"]
-		local frame = _G["Inspect"..slot]
+		local icon = _G["Inspect" .. slot .. "IconTexture"]
+		local frame = _G["Inspect" .. slot]
 
 		frame:StripTextures()
 		frame:OffsetFrameLevel(2)
@@ -106,12 +108,12 @@ S:AddCallbackForAddon("Blizzard_InspectUI", "Skin_Blizzard_InspectUI", function(
 	InspectPVPFrame:StripTextures()
 
 	for i = 1, MAX_ARENA_TEAMS do
-		local frame = _G["InspectPVPTeam"..i]
+		local frame = _G["InspectPVPTeam" .. i]
 		frame:StripTextures()
 		frame:CreateBackdrop("Transparent")
 		frame.backdrop:Point("TOPLEFT", 9, -6)
 		frame.backdrop:Point("BOTTOMRIGHT", -24, -5)
-	--	_G["InspectPVPTeam"..i.."StandardBar"]:Kill()
+		--	_G["InspectPVPTeam"..i.."StandardBar"]:Kill()
 		S:SetBackdropHitRect(frame)
 	end
 
@@ -120,7 +122,7 @@ S:AddCallbackForAddon("Blizzard_InspectUI", "Skin_Blizzard_InspectUI", function(
 	S:HandleCloseButton(InspectTalentFrameCloseButton, InspectFrame.backdrop)
 
 	for i = 1, MAX_TALENT_TABS do
-		local headerTab = _G["InspectTalentFrameTab"..i]
+		local headerTab = _G["InspectTalentFrameTab" .. i]
 
 		headerTab:StripTextures()
 		headerTab:CreateBackdrop("Default", true)
@@ -136,11 +138,11 @@ S:AddCallbackForAddon("Blizzard_InspectUI", "Skin_Blizzard_InspectUI", function(
 	end
 
 	for i = 1, MAX_NUM_TALENTS do
-		local talent = _G["InspectTalentFrameTalent"..i]
+		local talent = _G["InspectTalentFrameTalent" .. i]
 
 		if talent then
-			local icon = _G["InspectTalentFrameTalent"..i.."IconTexture"]
-			local rank = _G["InspectTalentFrameTalent"..i.."Rank"]
+			local icon = _G["InspectTalentFrameTalent" .. i .. "IconTexture"]
+			local rank = _G["InspectTalentFrameTalent" .. i .. "Rank"]
 
 			talent:StripTextures()
 			talent:SetTemplate("Default")

@@ -31,11 +31,11 @@ function UF:Construct_PartyFrames()
 		self.originalParent = self:GetParent()
 
 		self.childType = "pet"
-		if self == _G[self.originalParent:GetName().."Target"] then
+		if self == _G[self.originalParent:GetName() .. "Target"] then
 			self.childType = "target"
 		end
 
-		self.unitframeType = "party"..self.childType
+		self.unitframeType = "party" .. self.childType
 	else
 		self.Health = UF:Construct_HealthBar(self, true, true, "RIGHT")
 
@@ -90,7 +90,17 @@ function UF:Update_PartyHeader(header, db)
 		headerHolder:ClearAllPoints()
 		headerHolder:Point("BOTTOMLEFT", E.UIParent, "BOTTOMLEFT", 4, 195)
 
-		E:CreateMover(headerHolder, headerHolder:GetName().."Mover", L["Party Frames"], nil, nil, nil, "ALL,PARTY,ARENA", nil, "unitframe,party,generalGroup")
+		E:CreateMover(
+			headerHolder,
+			headerHolder:GetName() .. "Mover",
+			L["Party Frames"],
+			nil,
+			nil,
+			nil,
+			"ALL,PARTY,ARENA",
+			nil,
+			"unitframe,party,generalGroup"
+		)
 		headerHolder.positioned = true
 
 		headerHolder:RegisterEvent("PLAYER_LOGIN")
@@ -158,7 +168,11 @@ function UF:Update_PartyFrames(frame, db)
 		frame.POWERBAR_OFFSET = frame.USE_POWERBAR_OFFSET and db.power.offset or 0
 
 		frame.POWERBAR_HEIGHT = not frame.USE_POWERBAR and 0 or db.power.height
-		frame.POWERBAR_WIDTH = frame.USE_MINI_POWERBAR and (frame.UNIT_WIDTH - (frame.BORDER*2))/2 or (frame.POWERBAR_DETACHED and db.power.detachedWidth or (frame.UNIT_WIDTH - ((frame.BORDER+frame.SPACING)*2)))
+		frame.POWERBAR_WIDTH = frame.USE_MINI_POWERBAR and (frame.UNIT_WIDTH - (frame.BORDER * 2)) / 2
+			or (
+				frame.POWERBAR_DETACHED and db.power.detachedWidth
+				or (frame.UNIT_WIDTH - ((frame.BORDER + frame.SPACING) * 2))
+			)
 
 		frame.USE_PORTRAIT = db.portrait and db.portrait.enable
 		frame.USE_PORTRAIT_OVERLAY = frame.USE_PORTRAIT and (db.portrait.overlay or frame.ORIENTATION == "MIDDLE")
@@ -207,14 +221,29 @@ function UF:Update_PartyFrames(frame, db)
 				RegisterUnitWatch(frame)
 				frame:Size(childDB.width, childDB.height)
 				frame:ClearAllPoints()
-				frame:Point(E.InversePoints[childDB.anchorPoint], frame.originalParent, childDB.anchorPoint, childDB.xOffset, childDB.yOffset)
+				frame:Point(
+					E.InversePoints[childDB.anchorPoint],
+					frame.originalParent,
+					childDB.anchorPoint,
+					childDB.xOffset,
+					childDB.yOffset
+				)
 			else
 				UnregisterUnitWatch(frame)
 				frame:SetParent(E.HiddenFrame)
 			end
 		else
 			if childDB.enable then
-				frame:SetAttribute("initial-anchor", format("%s,%s,%d,%d", E.InversePoints[childDB.anchorPoint], childDB.anchorPoint, childDB.xOffset, childDB.yOffset))
+				frame:SetAttribute(
+					"initial-anchor",
+					format(
+						"%s,%s,%d,%d",
+						E.InversePoints[childDB.anchorPoint],
+						childDB.anchorPoint,
+						childDB.xOffset,
+						childDB.yOffset
+					)
+				)
 				frame:SetAttribute("initial-width", frame.UNIT_WIDTH)
 				frame:SetAttribute("initial-height", frame.UNIT_HEIGHT)
 			end
@@ -284,4 +313,4 @@ function UF:Update_PartyFrames(frame, db)
 	frame:UpdateAllElements("ForceUpdate")
 end
 
-UF.headerstoload.party = {nil, "ELVUI_UNITPET, ELVUI_UNITTARGET"}
+UF.headerstoload.party = { nil, "ELVUI_UNITPET, ELVUI_UNITTARGET" }

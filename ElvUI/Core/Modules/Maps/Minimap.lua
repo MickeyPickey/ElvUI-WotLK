@@ -1,6 +1,6 @@
 local E, L, V, P, G = unpack(ElvUI)
-local M = E:GetModule('Minimap')
-local AB = E:GetModule('ActionBars')
+local M = E:GetModule("Minimap")
+local AB = E:GetModule("ActionBars")
 local LSM = E.Libs.LSM
 
 local _G = _G
@@ -37,36 +37,126 @@ local Minimap = _G.Minimap
 local IconParents = {}
 
 --Create the minimap micro menu
-local menuFrame = CreateFrame('Frame', 'MinimapRightClickMenu', E.UIParent, 'UIDropDownMenuTemplate')
+local menuFrame = CreateFrame("Frame", "MinimapRightClickMenu", E.UIParent, "UIDropDownMenuTemplate")
 local menuList = {
-	{ text = _G.CHARACTER_BUTTON, microOffset = 'CharacterMicroButton', func = function() _G.ToggleCharacter('PaperDollFrame') end },
-	{ text = _G.SPELLBOOK_ABILITIES_BUTTON, microOffset = 'SpellbookMicroButton', func = function() ToggleFrame(_G.SpellBookFrame) end },
-	{ text = _G.TIMEMANAGER_TITLE, func = _G.ToggleTimeManager, icon = [[Interface\ICONS\INV_Misc_PocketWatch_01]], cropIcon = 2 },
-	{ text = _G.CHAT_CHANNELS, func = function() _G.ToggleFriendsFrame(4) end, icon = [[Interface\ICONS\UI_Chat]], cropIcon = 1 },
-	{ text = _G.SOCIAL_BUTTON, func = function() _G.ToggleFriendsFrame(1) end, icon = [[Interface\FriendsFrame\PlusManz-PlusManz]], cropIcon = 10 },
-	{ text = _G.TALENTS_BUTTON, microOffset = 'TalentMicroButton', func = _G.ToggleTalentFrame },
-	{ text = _G.GUILD, microOffset = 'SocialsMicroButton', func = function() _G.ToggleFriendsFrame(3) end },
-	{ text = _G.ACHIEVEMENT_BUTTON, microOffset = 'AchievementMicroButton', func = _G.ToggleAchievementFrame, icon = E.Media.Textures.GoldCoins },
-	{ text = _G.LFG_TITLE, microOffset = 'LFDMicroButton', func = function() ToggleFrame(_G.LFDParentFrame) end },
-	{ text = L["Calendar"], func = function() _G.GameTimeFrame:Click() end, icon = [[Interface\Calendar\MeetingIcon]], cropIcon = 1 },
-	{ text = _G.BATTLEFIELD_MINIMAP, func = _G.ToggleBattlefieldMinimap, icon = [[Interface\ICONS\Inv_Misc_Map_01]], cropIcon = 1 },
-	{ text = _G.LOOKING_FOR_RAID, func = function() ToggleFrame(_G.LFRParentFrame) end, icon = [[Interface\LFGFrame\LFGIcon-Raid]], cropIcon = 1 },
-	{ text = _G.QUEST_LOG, microOffset = 'QuestLogMicroButton', func = function() ToggleFrame(_G.QuestLogFrame) end },
+	{
+		text = _G.CHARACTER_BUTTON,
+		microOffset = "CharacterMicroButton",
+		func = function()
+			_G.ToggleCharacter("PaperDollFrame")
+		end,
+	},
+	{
+		text = _G.SPELLBOOK_ABILITIES_BUTTON,
+		microOffset = "SpellbookMicroButton",
+		func = function()
+			ToggleFrame(_G.SpellBookFrame)
+		end,
+	},
+	{
+		text = _G.TIMEMANAGER_TITLE,
+		func = _G.ToggleTimeManager,
+		icon = [[Interface\ICONS\INV_Misc_PocketWatch_01]],
+		cropIcon = 2,
+	},
+	{
+		text = _G.CHAT_CHANNELS,
+		func = function()
+			_G.ToggleFriendsFrame(4)
+		end,
+		icon = [[Interface\ICONS\UI_Chat]],
+		cropIcon = 1,
+	},
+	{
+		text = _G.SOCIAL_BUTTON,
+		func = function()
+			_G.ToggleFriendsFrame(1)
+		end,
+		icon = [[Interface\FriendsFrame\PlusManz-PlusManz]],
+		cropIcon = 10,
+	},
+	{ text = _G.TALENTS_BUTTON, microOffset = "TalentMicroButton", func = _G.ToggleTalentFrame },
+	{
+		text = _G.GUILD,
+		microOffset = "SocialsMicroButton",
+		func = function()
+			_G.ToggleFriendsFrame(3)
+		end,
+	},
+	{
+		text = _G.ACHIEVEMENT_BUTTON,
+		microOffset = "AchievementMicroButton",
+		func = _G.ToggleAchievementFrame,
+		icon = E.Media.Textures.GoldCoins,
+	},
+	{
+		text = _G.LFG_TITLE,
+		microOffset = "LFDMicroButton",
+		func = function()
+			ToggleFrame(_G.LFDParentFrame)
+		end,
+	},
+	{
+		text = L["Calendar"],
+		func = function()
+			_G.GameTimeFrame:Click()
+		end,
+		icon = [[Interface\Calendar\MeetingIcon]],
+		cropIcon = 1,
+	},
+	{
+		text = _G.BATTLEFIELD_MINIMAP,
+		func = _G.ToggleBattlefieldMinimap,
+		icon = [[Interface\ICONS\Inv_Misc_Map_01]],
+		cropIcon = 1,
+	},
+	{
+		text = _G.LOOKING_FOR_RAID,
+		func = function()
+			ToggleFrame(_G.LFRParentFrame)
+		end,
+		icon = [[Interface\LFGFrame\LFGIcon-Raid]],
+		cropIcon = 1,
+	},
+	{
+		text = _G.QUEST_LOG,
+		microOffset = "QuestLogMicroButton",
+		func = function()
+			ToggleFrame(_G.QuestLogFrame)
+		end,
+	},
 }
 
 if E.mylevel >= _G.SHOW_PVP_LEVEL then
-	tinsert(menuList, { text = _G.PLAYER_V_PLAYER, microOffset = 'PVPMicroButton', func = function() _G.TogglePVPFrame() end })
+	tinsert(menuList, {
+		text = _G.PLAYER_V_PLAYER,
+		microOffset = "PVPMicroButton",
+		func = function()
+			_G.TogglePVPFrame()
+		end,
+	})
 end
 
-if _G.GetNumCompanions('MOUNT') > 0 or _G.GetNumCompanions('CRITTER') > 0 then
-	tinsert(menuList, { text = _G.MOUNTS..' & '.._G.COMPANIONS, func = function() _G.ToggleCharacter('PetPaperDollFrame') end, icon = [[Interface\ICONS\ability_mount_ridinghorse]], cropIcon = 2 })
+if _G.GetNumCompanions("MOUNT") > 0 or _G.GetNumCompanions("CRITTER") > 0 then
+	tinsert(menuList, {
+		text = _G.MOUNTS .. " & " .. _G.COMPANIONS,
+		func = function()
+			_G.ToggleCharacter("PetPaperDollFrame")
+		end,
+		icon = [[Interface\ICONS\ability_mount_ridinghorse]],
+		cropIcon = 2,
+	})
 end
 
-sort(menuList, function(a, b) if a and b and a.text and b.text then return a.text < b.text end end)
+sort(menuList, function(a, b)
+	if a and b and a.text and b.text then
+		return a.text < b.text
+	end
+end)
 
 tinsert(menuList, {
 	text = _G.MAINMENU_BUTTON,
-	microOffset = 'MainMenuMicroButton',
+	microOffset = "MainMenuMicroButton",
 	func = function()
 		if not _G.GameMenuFrame:IsShown() then
 			if _G.VideoOptionsFrame:IsShown() then
@@ -87,10 +177,19 @@ tinsert(menuList, {
 
 			MainMenuMicroButton_SetNormal()
 		end
-	end
+	end,
 })
 
-tinsert(menuList, { text = _G.HELP_BUTTON, microOffset = 'HelpMicroButton', bottom = true, func = function() _G.ToggleHelpFrame() end, icon = [[Interface\HelpFrame\OpenTicketIcon]], cropIcon = 8 })
+tinsert(menuList, {
+	text = _G.HELP_BUTTON,
+	microOffset = "HelpMicroButton",
+	bottom = true,
+	func = function()
+		_G.ToggleHelpFrame()
+	end,
+	icon = [[Interface\HelpFrame\OpenTicketIcon]],
+	cropIcon = 8,
+})
 
 M.RightClickMenu = menuFrame
 M.RightClickMenuList = menuList
@@ -101,7 +200,9 @@ end
 
 function M:HandleTrackingButton()
 	local tracking = _G.MiniMapTracking
-	if not tracking then return end
+	if not tracking then
+		return
+	end
 
 	M:SaveIconParent(tracking)
 
@@ -109,9 +210,9 @@ function M:HandleTrackingButton()
 
 	local hidden = not Minimap:IsShown()
 	if hidden or E.private.general.minimap.hideTracking then
-		tracking:Point('TOP', UIParent, 'BOTTOM') -- retail cant hide the parent otherwise the menu will error
+		tracking:Point("TOP", UIParent, "BOTTOM") -- retail cant hide the parent otherwise the menu will error
 	else
-		local scale, position, xOffset, yOffset = M:GetIconSettings('tracking')
+		local scale, position, xOffset, yOffset = M:GetIconSettings("tracking")
 
 		tracking:Point(position, Minimap, xOffset, yOffset)
 		M:SetScale(tracking, scale)
@@ -129,7 +230,7 @@ function M:HandleTrackingButton()
 		end
 
 		if _G.MiniMapTrackingIcon then
-			_G.MiniMapTrackingIcon:SetDrawLayer('ARTWORK')
+			_G.MiniMapTrackingIcon:SetDrawLayer("ARTWORK")
 			_G.MiniMapTrackingIcon:SetTexCoords()
 			_G.MiniMapTrackingIcon:SetInside()
 		end
@@ -137,25 +238,27 @@ function M:HandleTrackingButton()
 end
 
 function M:HideNonInstancePanels()
-	if InCombatLockdown() or not WorldMapFrame:IsShown() then return end
+	if InCombatLockdown() or not WorldMapFrame:IsShown() then
+		return
+	end
 
 	HideUIPanel(WorldMapFrame)
 end
 
 function M:ADDON_LOADED(event, addon)
-	if addon == 'Blizzard_TimeManager' then
+	if addon == "Blizzard_TimeManager" then
 		M:UnregisterEvent(event)
 		_G.TimeManagerClockButton:Kill()
 	end
 end
 
 function M:CreateMinimapTrackingDropdown()
-	local dropdown = CreateFrame('Frame', 'ElvUIMiniMapTrackingDropDown', UIParent, 'UIDropDownMenuTemplate')
+	local dropdown = CreateFrame("Frame", "ElvUIMiniMapTrackingDropDown", UIParent, "UIDropDownMenuTemplate")
 	dropdown:SetID(1)
 	dropdown:SetClampedToScreen(true)
 	dropdown:Hide()
 
-	_G.UIDropDownMenu_Initialize(dropdown, _G.MiniMapTrackingDropDown_Initialize, 'MENU')
+	_G.UIDropDownMenu_Initialize(dropdown, _G.MiniMapTrackingDropDown_Initialize, "MENU")
 	dropdown.noResize = true
 
 	return dropdown
@@ -184,7 +287,7 @@ function M:Minimap_OnLeave()
 end
 
 function M:Minimap_EnterLeave(minimap, show)
-	if M.db.locationText == 'MOUSEOVER' and M.db.clusterDisable then
+	if M.db.locationText == "MOUSEOVER" and M.db.clusterDisable then
 		minimap.location:SetShown(show)
 	end
 end
@@ -193,21 +296,21 @@ function M:Minimap_OnMouseDown(btn)
 	menuFrame:Hide()
 
 	local position = M.MapHolder.mover:GetPoint()
-	if btn == 'MiddleButton' or (btn == 'RightButton' and IsShiftKeyDown()) then
+	if btn == "MiddleButton" or (btn == "RightButton" and IsShiftKeyDown()) then
 		if not E:AlertCombat() then
-			EasyMenu(menuList, menuFrame, 'cursor', position:match('LEFT') and 0 or -160, 0, 'MENU')
+			EasyMenu(menuList, menuFrame, "cursor", position:match("LEFT") and 0 or -160, 0, "MENU")
 			menuFrame:Show()
 
-			PlaySound('UChatScrollButton')
+			PlaySound("UChatScrollButton")
 		end
-	elseif btn == 'RightButton' then
+	elseif btn == "RightButton" then
 		local button = _G.MiniMapTrackingButton
 		if button then
 			button:Click()
 
 			local menu = M.TrackingDropdown
 			if menu and E.private.general.minimap.hideTracking then
-				_G.ToggleDropDownMenu(1, nil, menu, 'cursor')
+				_G.ToggleDropDownMenu(1, nil, menu, "cursor")
 			end
 		end
 	else
@@ -228,17 +331,17 @@ end
 
 function M:GetLocTextColor()
 	local pvpType = GetZonePVPInfo()
-	if pvpType == 'arena' then
+	if pvpType == "arena" then
 		return 0.84, 0.03, 0.03
-	elseif pvpType == 'friendly' then
+	elseif pvpType == "friendly" then
 		return 0.05, 0.85, 0.03
-	elseif pvpType == 'contested' then
+	elseif pvpType == "contested" then
 		return 0.9, 0.85, 0.05
-	elseif pvpType == 'hostile' then
+	elseif pvpType == "hostile" then
 		return 0.84, 0.03, 0.03
-	elseif pvpType == 'sanctuary' then
+	elseif pvpType == "sanctuary" then
 		return 0.035, 0.58, 0.84
-	elseif pvpType == 'combat' then
+	elseif pvpType == "combat" then
 		return 0.84, 0.03, 0.03
 	else
 		return 0.9, 0.85, 0.05
@@ -246,7 +349,9 @@ function M:GetLocTextColor()
 end
 
 function M:Update_ZoneText()
-	if E.db.general.minimap.locationText == 'HIDE' then return end
+	if E.db.general.minimap.locationText == "HIDE" then
+		return
+	end
 
 	Minimap.location:SetText(utf8sub(GetMinimapZoneText(), 1, 46))
 	Minimap.location:SetTextColor(M:GetLocTextColor())
@@ -274,14 +379,17 @@ do
 		end
 	end
 
-	hooksecurefunc(Minimap, 'SetZoom', SetupZoomReset)
+	hooksecurefunc(Minimap, "SetZoom", SetupZoomReset)
 end
 
 function M:GetIconSettings(button)
 	local defaults = P.general.minimap.icons[button]
 	local profile = M.db.icons[button]
 
-	return profile.scale or defaults.scale, profile.position or defaults.position, profile.xOffset or defaults.xOffset, profile.yOffset or defaults.yOffset
+	return profile.scale or defaults.scale,
+		profile.position or defaults.position,
+		profile.xOffset or defaults.xOffset,
+		profile.yOffset or defaults.yOffset
 end
 
 function M:SaveIconParent(frame)
@@ -298,17 +406,19 @@ function M:SetIconParent(frame)
 end
 
 function M:HandleDifficulty(difficulty, cluster, hidden)
-	if not difficulty then return end
+	if not difficulty then
+		return
+	end
 
 	if cluster then
 		difficulty:ClearAllPoints()
-		difficulty:SetPoint('TOPRIGHT', MinimapCluster, 0, -25)
+		difficulty:SetPoint("TOPRIGHT", MinimapCluster, 0, -25)
 		M:SetIconParent(difficulty)
 		M:SetScale(difficulty, 1)
 	elseif hidden then
 		difficulty:SetParent(E.HiddenFrame)
 	else
-		local scale, position, xOffset, yOffset = M:GetIconSettings('difficulty')
+		local scale, position, xOffset, yOffset = M:GetIconSettings("difficulty")
 		difficulty:ClearAllPoints()
 		difficulty:Point(position, Minimap, xOffset, yOffset)
 		M:SetIconParent(difficulty)
@@ -324,14 +434,22 @@ function M:UpdateIcons()
 	local lfgFrame = _G.MiniMapLFGFrame
 
 	if not next(IconParents) then
-		if gameTime then M:SaveIconParent(gameTime) end
-		if mailFrame then M:SaveIconParent(mailFrame) end
-		if battlefieldFrame then M:SaveIconParent(battlefieldFrame) end
+		if gameTime then
+			M:SaveIconParent(gameTime)
+		end
+		if mailFrame then
+			M:SaveIconParent(mailFrame)
+		end
+		if battlefieldFrame then
+			M:SaveIconParent(battlefieldFrame)
+		end
 		if difficulty then
 			difficulty:SetParent(Minimap)
 			M:SaveIconParent(difficulty)
 		end
-		if lfgFrame then M:SaveIconParent(lfgFrame) end
+		if lfgFrame then
+			M:SaveIconParent(lfgFrame)
+		end
 	end
 
 	local noCluster = E.db.general.minimap.clusterDisable
@@ -340,11 +458,19 @@ function M:UpdateIcons()
 			E:EnableMover(M.ClusterHolder.mover.name)
 		end
 
-		if difficulty then M:HandleDifficulty(difficulty, true) end
+		if difficulty then
+			M:HandleDifficulty(difficulty, true)
+		end
 
-		if gameTime then M:SetIconParent(gameTime) end
-		if mailFrame then M:SetIconParent(mailFrame) end
-		if battlefieldFrame then M:SetIconParent(battlefieldFrame) end
+		if gameTime then
+			M:SetIconParent(gameTime)
+		end
+		if mailFrame then
+			M:SetIconParent(mailFrame)
+		end
+		if battlefieldFrame then
+			M:SetIconParent(battlefieldFrame)
+		end
 	else
 		if M.ClusterHolder then
 			E:DisableMover(M.ClusterHolder.mover.name)
@@ -357,7 +483,7 @@ function M:UpdateIcons()
 			if hidden or E.private.general.minimap.hideCalendar then
 				gameTime:SetParent(E.HiddenFrame)
 			else
-				local scale, position, xOffset, yOffset = M:GetIconSettings('calendar')
+				local scale, position, xOffset, yOffset = M:GetIconSettings("calendar")
 				gameTime:ClearAllPoints()
 				gameTime:Point(position, Minimap, xOffset, yOffset)
 				gameTime:SetParent(Minimap)
@@ -371,7 +497,7 @@ function M:UpdateIcons()
 			if hidden then
 				mailFrame:SetParent(E.HiddenFrame)
 			else
-				local scale, position, xOffset, yOffset = M:GetIconSettings('mail')
+				local scale, position, xOffset, yOffset = M:GetIconSettings("mail")
 				mailFrame:ClearAllPoints()
 				mailFrame:Point(position, Minimap, xOffset, yOffset)
 				M:SetIconParent(mailFrame)
@@ -383,16 +509,22 @@ function M:UpdateIcons()
 			if hidden then
 				battlefieldFrame:SetParent(E.HiddenFrame)
 			else
-				local scale, position, xOffset, yOffset = M:GetIconSettings('battlefield')
+				local scale, position, xOffset, yOffset = M:GetIconSettings("battlefield")
 				battlefieldFrame:ClearAllPoints()
 				battlefieldFrame:Point(position, Minimap, xOffset, yOffset)
 				M:SetIconParent(battlefieldFrame)
 				M:SetScale(battlefieldFrame, scale)
 			end
 
-			if _G.BattlegroundShine then _G.BattlegroundShine:Hide() end
-			if _G.MiniMapBattlefieldBorder then _G.MiniMapBattlefieldBorder:Hide() end
-			if _G.MiniMapBattlefieldIcon then _G.MiniMapBattlefieldIcon:SetTexCoords() end
+			if _G.BattlegroundShine then
+				_G.BattlegroundShine:Hide()
+			end
+			if _G.MiniMapBattlefieldBorder then
+				_G.MiniMapBattlefieldBorder:Hide()
+			end
+			if _G.MiniMapBattlefieldIcon then
+				_G.MiniMapBattlefieldIcon:SetTexCoords()
+			end
 		end
 
 		if difficulty then
@@ -403,7 +535,7 @@ function M:UpdateIcons()
 			if hidden then
 				lfgFrame:SetParent(E.HiddenFrame)
 			else
-				local scale, position, xOffset, yOffset = M:GetIconSettings('lfgEye')
+				local scale, position, xOffset, yOffset = M:GetIconSettings("lfgEye")
 				lfgFrame:ClearAllPoints()
 				lfgFrame:Point(position, Minimap, xOffset, yOffset)
 				M:SetIconParent(lfgFrame)
@@ -414,7 +546,9 @@ function M:UpdateIcons()
 end
 
 function M:UpdateSettings()
-	if not M.Initialized then return end
+	if not M.Initialized then
+		return
+	end
 
 	local noCluster = M.db.clusterDisable
 	E.MinimapSize = M.db.size or Minimap:GetWidth()
@@ -428,7 +562,7 @@ function M:UpdateSettings()
 	local mmOffset = E.PixelMode and 1 or 3
 	local mmScale = M.db.scale
 	Minimap:ClearAllPoints()
-	Minimap:Point('TOPRIGHT', holder, -mmOffset / mmScale, -mmOffset / mmScale)
+	Minimap:Point("TOPRIGHT", holder, -mmOffset / mmScale, -mmOffset / mmScale)
 	Minimap:Size(E.MinimapSize)
 
 	local mWidth, mHeight = Minimap:GetSize()
@@ -437,18 +571,19 @@ function M:UpdateSettings()
 	local HEIGHT, WIDTH = (mHeight * mmScale) + (panelSize - joinPanel), mWidth * mmScale
 	holder:SetSize(WIDTH + bWidth, HEIGHT + bHeight)
 
-	local locationFont, locaitonSize, locationOutline = LSM:Fetch('font', M.db.locationFont), M.db.locationFontSize, M.db.locationFontOutline
+	local locationFont, locaitonSize, locationOutline =
+		LSM:Fetch("font", M.db.locationFont), M.db.locationFontSize, M.db.locationFontOutline
 	if Minimap.location then
 		Minimap.location:Width(E.MinimapSize)
 		Minimap.location:FontTemplate(locationFont, locaitonSize, locationOutline)
-		Minimap.location:SetShown(M.db.locationText == 'SHOW' and noCluster)
+		Minimap.location:SetShown(M.db.locationText == "SHOW" and noCluster)
 	end
 
 	local classicBorder = _G.MinimapBorder
 	local compassBorder = _G.MinimapCompassTexture
 	if classicBorder then
 		classicBorder:ClearAllPoints()
-		classicBorder:SetPoint('TOPRIGHT', Minimap, 0, 0)
+		classicBorder:SetPoint("TOPRIGHT", Minimap, 0, 0)
 		classicBorder:SetTexCoord(0.165, 0.945, 0.125, 0.90)
 
 		if compassBorder then
@@ -499,7 +634,11 @@ function M:UpdateSettings()
 	_G.MinimapZoneText:FontTemplate(locationFont, locaitonSize, locationOutline)
 
 	if _G.TimeManagerClockTicker then
-		_G.TimeManagerClockTicker:FontTemplate(LSM:Fetch('font', E.db.general.minimap.timeFont), E.db.general.minimap.timeFontSize, E.db.general.minimap.timeFontOutline)
+		_G.TimeManagerClockTicker:FontTemplate(
+			LSM:Fetch("font", E.db.general.minimap.timeFont),
+			E.db.general.minimap.timeFontSize,
+			E.db.general.minimap.timeFontOutline
+		)
 	end
 
 	if noCluster then
@@ -507,12 +646,12 @@ function M:UpdateSettings()
 		if _G.TimeManagerClockButton then
 			_G.TimeManagerClockButton:Kill()
 		else
-			M:RegisterEvent('ADDON_LOADED')
+			M:RegisterEvent("ADDON_LOADED")
 		end
 	else
 		_G.MinimapZoneTextButton.Show = nil
 		_G.MinimapZoneTextButton:SetParent(MinimapCluster)
-		_G.MinimapZoneTextButton:RegisterEvent('UPDATE_BINDINGS')
+		_G.MinimapZoneTextButton:RegisterEvent("UPDATE_BINDINGS")
 		_G.MinimapZoneTextButton:Show()
 
 		if _G.TimeManagerClockButton then
@@ -520,7 +659,7 @@ function M:UpdateSettings()
 			_G.TimeManagerClockButton:SetParent(MinimapCluster)
 			_G.TimeManagerClockButton:Show()
 		else
-			M:RegisterEvent('ADDON_LOADED')
+			M:RegisterEvent("ADDON_LOADED")
 		end
 	end
 
@@ -539,7 +678,7 @@ local strataOrder = {
 }
 
 local function GetFrameChildren(frame)
-	return {frame:GetChildren()}
+	return { frame:GetChildren() }
 end
 
 -- Raising the Minimap to frame level 10 leaves addon buttons created before that
@@ -549,7 +688,7 @@ function M:RaiseMinimapButtons()
 	local mapStrata, mapLevel = Minimap:GetFrameStrata(), Minimap:GetFrameLevel()
 	local mapOrder = strataOrder[mapStrata] or 0
 
-	for _, frame in ipairs({Minimap, _G.MinimapBackdrop}) do
+	for _, frame in ipairs({ Minimap, _G.MinimapBackdrop }) do
 		-- addons like Questie parent thousands of pin frames to the Minimap; past
 		-- ~8000 children GetChildren() itself throws "Stack overflow", so guard it
 		local success, children = pcall(GetFrameChildren, frame)
@@ -558,7 +697,7 @@ function M:RaiseMinimapButtons()
 			for i = 1, #children do
 				local child = children[i]
 
-				if child:IsObjectType('Button') then
+				if child:IsObjectType("Button") then
 					local order = strataOrder[child:GetFrameStrata()] or 0
 
 					if order < mapOrder then
@@ -577,7 +716,7 @@ end
 -- reparenting/restrata-ing its parent eye (UpdateIcons/RaiseMinimapButtons)
 -- flattens that on this client, leaving the panel behind the Minimap.
 function M:LFDSearchStatus_OnShow()
-	self:SetFrameStrata('TOOLTIP')
+	self:SetFrameStrata("TOOLTIP")
 end
 
 function M:Minimap_PostDrag()
@@ -598,7 +737,7 @@ function M:ClusterPoint(_, anchor)
 
 	if anchor ~= frame then
 		MinimapCluster:ClearAllPoints()
-		MinimapCluster:Point('TOPRIGHT', frame, 0, noCluster and 0 or 1)
+		MinimapCluster:Point("TOPRIGHT", frame, 0, noCluster and 0 or 1)
 	end
 end
 
@@ -617,7 +756,7 @@ function M:SetMinimapMask(square)
 end
 
 function M:SetMinimapRotate()
-	E:SetCVar('rotateMinimap', M.db.rotate and 1 or 0)
+	E:SetCVar("rotateMinimap", M.db.rotate and 1 or 0)
 end
 
 function M:PLAYER_ENTERING_WORLD()
@@ -634,7 +773,7 @@ function M:PLAYER_ENTERING_WORLD()
 end
 
 function M:GetMinimapShape()
-	return (M.db.circle and 'ROUND') or 'SQUARE'
+	return (M.db.circle and "ROUND") or "SQUARE"
 end
 
 function M:SetGetMinimapShape()
@@ -660,7 +799,9 @@ function M:Initialize()
 		if menu.microOffset then
 			local left, right, top, bottom = AB:GetMicroCoords(menu.microOffset, true)
 			menu.tCoordLeft, menu.tCoordRight, menu.tCoordTop, menu.tCoordBottom = left, right, top, bottom
-			menu.icon = menu.microOffset == 'PVPMicroButton' and ((E.myfaction == 'Horde' and E.Media.Textures.PVPHorde) or E.Media.Textures.PVPAlliance) or E.Media.Textures.MicroBar
+			menu.icon = menu.microOffset == "PVPMicroButton"
+					and ((E.myfaction == "Horde" and E.Media.Textures.PVPHorde) or E.Media.Textures.PVPAlliance)
+				or E.Media.Textures.MicroBar
 			menu.microOffset = nil
 		elseif menu.cropIcon then
 			local left = 0.02 * menu.cropIcon
@@ -670,25 +811,25 @@ function M:Initialize()
 		end
 	end
 
-	menuFrame:SetTemplate('Transparent')
+	menuFrame:SetTemplate("Transparent")
 
-	local mapHolder = CreateFrame('Frame', 'ElvUI_MinimapHolder', Minimap)
-	mapHolder:Point('TOPRIGHT', E.UIParent, -3, -3)
+	local mapHolder = CreateFrame("Frame", "ElvUI_MinimapHolder", Minimap)
+	mapHolder:Point("TOPRIGHT", E.UIParent, -3, -3)
 	mapHolder:Size(Minimap:GetSize())
-	E:CreateMover(mapHolder, 'MinimapMover', L["Minimap"], nil, nil, M.Minimap_PostDrag, nil, nil, 'maps,minimap')
+	E:CreateMover(mapHolder, "MinimapMover", L["Minimap"], nil, nil, M.Minimap_PostDrag, nil, nil, "maps,minimap")
 	M.MapHolder = mapHolder
 	M:SetScale(mapHolder, 1)
 
-	local clusterHolder = CreateFrame('Frame', 'ElvUI_MinimapClusterHolder', MinimapCluster)
+	local clusterHolder = CreateFrame("Frame", "ElvUI_MinimapClusterHolder", MinimapCluster)
 	clusterHolder.savedWidth, clusterHolder.savedHeight = MinimapCluster:GetSize()
-	clusterHolder:Point('TOPRIGHT', E.UIParent, -3, -3)
+	clusterHolder:Point("TOPRIGHT", E.UIParent, -3, -3)
 	clusterHolder:SetSize(clusterHolder.savedWidth, clusterHolder.savedHeight)
 	clusterHolder:SetFrameLevel(10) -- over minimap mover
-	E:CreateMover(clusterHolder, 'MinimapClusterMover', L["Minimap Cluster"], nil, nil, nil, nil, nil, 'maps,minimap')
+	E:CreateMover(clusterHolder, "MinimapClusterMover", L["Minimap Cluster"], nil, nil, nil, nil, nil, "maps,minimap")
 	M.ClusterHolder = clusterHolder
 
-	local clusterBackdrop = CreateFrame('Frame', 'ElvUI_MinimapClusterBackdrop', MinimapCluster)
-	clusterBackdrop:Point('TOPRIGHT', 0, -1)
+	local clusterBackdrop = CreateFrame("Frame", "ElvUI_MinimapClusterBackdrop", MinimapCluster)
+	clusterBackdrop:Point("TOPRIGHT", 0, -1)
 	clusterBackdrop:SetTemplate()
 	M:SetScale(clusterBackdrop, 1)
 	M.ClusterBackdrop = clusterBackdrop
@@ -696,44 +837,44 @@ function M:Initialize()
 	M:ClusterPoint()
 	MinimapCluster:EnableMouse(false)
 	MinimapCluster:SetFrameLevel(20) -- set before minimap itself
-	hooksecurefunc(MinimapCluster, 'SetPoint', M.ClusterPoint)
-	hooksecurefunc(MinimapCluster, 'SetSize', M.ClusterSize)
+	hooksecurefunc(MinimapCluster, "SetPoint", M.ClusterPoint)
+	hooksecurefunc(MinimapCluster, "SetSize", M.ClusterSize)
 
 	Minimap:EnableMouseWheel(true)
 	Minimap:SetFrameLevel(10)
-	Minimap:SetFrameStrata('LOW')
+	Minimap:SetFrameStrata("LOW")
 	Minimap:CreateBackdrop()
 
 	if Minimap.backdrop then -- level to hybrid maps fixed values
 		Minimap.backdrop:SetFrameLevel(99)
-		Minimap.backdrop:SetFrameStrata('BACKGROUND')
+		Minimap.backdrop:SetFrameStrata("BACKGROUND")
 		M:SetScale(Minimap.backdrop, 1)
 	end
 
-	Minimap.location = Minimap:CreateFontString(nil, 'OVERLAY')
-	Minimap.location:Point('TOP', Minimap, 0, -2)
-	Minimap.location:SetJustifyH('CENTER')
-	Minimap.location:SetJustifyV('MIDDLE')
+	Minimap.location = Minimap:CreateFontString(nil, "OVERLAY")
+	Minimap.location:Point("TOP", Minimap, 0, -2)
+	Minimap.location:SetJustifyH("CENTER")
+	Minimap.location:SetJustifyV("MIDDLE")
 	Minimap.location:Hide()
 	M:SetMinimapMask(not M.db.circle)
 
-	M:RegisterEvent('PLAYER_ENTERING_WORLD')
-	M:RegisterEvent('ZONE_CHANGED_NEW_AREA', 'Update_ZoneText')
-	M:RegisterEvent('ZONE_CHANGED_INDOORS', 'Update_ZoneText')
-	M:RegisterEvent('ZONE_CHANGED', 'Update_ZoneText')
+	M:RegisterEvent("PLAYER_ENTERING_WORLD")
+	M:RegisterEvent("ZONE_CHANGED_NEW_AREA", "Update_ZoneText")
+	M:RegisterEvent("ZONE_CHANGED_INDOORS", "Update_ZoneText")
+	M:RegisterEvent("ZONE_CHANGED", "Update_ZoneText")
 
-	Minimap:SetScript('OnMouseWheel', M.Minimap_OnMouseWheel)
-	Minimap:SetScript('OnMouseDown', M.Minimap_OnMouseDown)
-	Minimap:SetScript('OnMouseUp', E.noop)
+	Minimap:SetScript("OnMouseWheel", M.Minimap_OnMouseWheel)
+	Minimap:SetScript("OnMouseDown", M.Minimap_OnMouseDown)
+	Minimap:SetScript("OnMouseUp", E.noop)
 
-	Minimap:HookScript('OnShow', M.Minimap_OnShow)
-	Minimap:HookScript('OnHide', M.Minimap_OnHide)
+	Minimap:HookScript("OnShow", M.Minimap_OnShow)
+	Minimap:HookScript("OnHide", M.Minimap_OnHide)
 
-	Minimap:HookScript('OnEnter', M.Minimap_OnEnter)
-	Minimap:HookScript('OnLeave', M.Minimap_OnLeave)
+	Minimap:HookScript("OnEnter", M.Minimap_OnEnter)
+	Minimap:HookScript("OnLeave", M.Minimap_OnLeave)
 
 	if _G.LFDSearchStatus then
-		_G.LFDSearchStatus:HookScript('OnShow', M.LFDSearchStatus_OnShow)
+		_G.LFDSearchStatus:HookScript("OnShow", M.LFDSearchStatus_OnShow)
 	end
 
 	local killFrames = {
@@ -748,7 +889,7 @@ function M:Initialize()
 		_G.MinimapZoomOut,
 	}
 
-	M:RegisterEvent('MINIMAP_UPDATE_TRACKING', M.MinimapTracking_UpdateTracking)
+	M:RegisterEvent("MINIMAP_UPDATE_TRACKING", M.MinimapTracking_UpdateTracking)
 
 	--Create the new minimap tracking dropdown frame and initialize it
 	M.TrackingDropdown = M:CreateMinimapTrackingDropdown()
@@ -761,7 +902,7 @@ function M:Initialize()
 		frame:Kill()
 	end
 
-	M:RegisterEvent('ADDON_LOADED')
+	M:RegisterEvent("ADDON_LOADED")
 	M:UpdateSettings()
 end
 

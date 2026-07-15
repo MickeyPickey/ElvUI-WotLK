@@ -23,7 +23,7 @@ local positionValues = {
 	LEFT = "RIGHT",
 	RIGHT = "LEFT",
 	TOPLEFT = "BOTTOM",
-	TOPRIGHT = "BOTTOM"
+	TOPRIGHT = "BOTTOM",
 }
 
 local positionValues2 = {
@@ -32,9 +32,8 @@ local positionValues2 = {
 	LEFT = "LEFT",
 	RIGHT = "RIGHT",
 	TOPLEFT = "TOP",
-	TOPRIGHT = "TOP"
+	TOPRIGHT = "TOP",
 }
-
 
 local RaidIconBit = {
 	["STAR"] = 0x00100000,
@@ -44,7 +43,7 @@ local RaidIconBit = {
 	["MOON"] = 0x01000000,
 	["SQUARE"] = 0x02000000,
 	["CROSS"] = 0x04000000,
-	["SKULL"] = 0x08000000
+	["SKULL"] = 0x08000000,
 }
 
 local ByRaidIcon = {}
@@ -88,7 +87,8 @@ function NP:UpdateTime(elapsed)
 		return
 	end
 
-	local value, id, nextUpdate, remainder = E:GetTimeInfo(self.timeLeft, self.threshold, self.hhmmThreshold, self.mmssThreshold)
+	local value, id, nextUpdate, remainder =
+		E:GetTimeInfo(self.timeLeft, self.threshold, self.hhmmThreshold, self.mmssThreshold)
 	self.nextUpdate = nextUpdate
 
 	local style = E.TimeFormats[id]
@@ -110,7 +110,8 @@ end
 local unstableAffliction = GetSpellInfo(30108)
 local vampiricTouch = GetSpellInfo(34914)
 function NP:SetAura(frame, guid, index, filter, isDebuff, visible)
-	local isAura, name, texture, count, debuffType, duration, expiration, caster, spellID, _ = LAI:GUIDAura(guid, index, filter)
+	local isAura, name, texture, count, debuffType, duration, expiration, caster, spellID, _ =
+		LAI:GUIDAura(guid, index, filter)
 
 	if frame.forceShow or frame.forceCreate then
 		spellID = 47540
@@ -130,12 +131,17 @@ function NP:SetAura(frame, guid, index, filter, isDebuff, visible)
 
 		local filterCheck = not frame.forceCreate
 		if not (frame.forceShow or frame.forceCreate) then
-			filterCheck = NP:AuraFilter(guid, button, name, texture, count, debuffType, duration, expiration, caster, spellID)
+			filterCheck =
+				NP:AuraFilter(guid, button, name, texture, count, debuffType, duration, expiration, caster, spellID)
 		end
 
 		if filterCheck then
-			if button.icon then button.icon:SetTexture(texture) end
-			if button.count then button.count:SetText(count > 1 and count) end
+			if button.icon then
+				button.icon:SetTexture(texture)
+			end
+			if button.count then
+				button.count:SetText(count > 1 and count)
+			end
 
 			if duration > 0 and expiration ~= 0 then
 				local timeLeft = expiration - GetTime()
@@ -147,8 +153,8 @@ function NP:SetAura(frame, guid, index, filter, isDebuff, visible)
 					button:SetValue(timeLeft)
 
 					button:SetScript("OnUpdate", NP.UpdateTime)
---				else
---					return HIDDEN
+					--				else
+					--					return HIDDEN
 				end
 			else
 				button.timeLeft = nil
@@ -163,7 +169,11 @@ function NP:SetAura(frame, guid, index, filter, isDebuff, visible)
 
 			if isDebuff then
 				local color = (debuffType and DebuffTypeColor[debuffType]) or DebuffTypeColor.none
-				if button.name and (button.name == unstableAffliction or button.name == vampiricTouch) and E.myclass ~= "WARLOCK" then
+				if
+					button.name
+					and (button.name == unstableAffliction or button.name == vampiricTouch)
+					and E.myclass ~= "WARLOCK"
+				then
 					self:StyleFrameColor(button, 0.05, 0.85, 0.94)
 				else
 					self:StyleFrameColor(button, color.r * 0.6, color.g * 0.6, color.b * 0.6)
@@ -191,7 +201,9 @@ function NP:Update_AurasPosition(frame, db)
 
 	for i = frame.anchoredIcons + 1, #frame do
 		local button = frame[i]
-		if not button then break end
+		if not button then
+			break
+		end
 
 		local col = (i - 1) % cols
 		local row = floor((i - 1) / cols)
@@ -258,7 +270,9 @@ function NP:UpdateElement_AuraIcons(frame, guid, filter, limit, isDebuff)
 end
 
 function NP:UpdateElement_Auras(frame)
-	if not frame.Health:IsShown() then return end
+	if not frame.Health:IsShown() then
+		return
+	end
 
 	local guid = frame.guid
 	if not guid then
@@ -290,7 +304,8 @@ function NP:UpdateElement_Auras(frame)
 	db = NP.db.units[frame.UnitType].debuffs
 	if db.enable then
 		local debuffs = frame.Debuffs
-		debuffs.visibleDebuffs = NP:UpdateElement_AuraIcons(debuffs, guid, debuffs.filter or "HARMFUL", db.perrow * db.numrows, true)
+		debuffs.visibleDebuffs =
+			NP:UpdateElement_AuraIcons(debuffs, guid, debuffs.filter or "HARMFUL", db.perrow * db.numrows, true)
 
 		if #debuffs > debuffs.anchoredIcons then
 			self:Update_AurasPosition(debuffs, db)
@@ -323,7 +338,7 @@ function NP:UpdateElement_AurasByGUID(guid, event)
 	local frame = self:SearchForFrame(guid, raidIcon)
 	if frame then
 		if frame.UnitType ~= "ENEMY_NPC" and not self.GUIDList[guid] then
-			self.GUIDList[guid] = {name = destName, unitType = frame.UnitType}
+			self.GUIDList[guid] = { name = destName, unitType = frame.UnitType }
 		end
 
 		self:UpdateElement_Auras(frame)
@@ -333,7 +348,7 @@ end
 function NP:Construct_AuraIcon(parent, index)
 	local db = NP.db.units[parent:GetParent().UnitType][parent.type]
 
-	local button = CreateFrame("StatusBar", "$parentButton"..index, parent)
+	local button = CreateFrame("StatusBar", "$parentButton" .. index, parent)
 	NP:StyleFrame(button, true)
 
 	button:SetStatusBarTexture(E.media.blankTex)
@@ -362,7 +377,9 @@ function NP:Construct_AuraIcon(parent, index)
 		button.isRegisteredCooldown = true
 		button.forceEnabled = true
 
-		if not E.RegisteredCooldowns.nameplates then E.RegisteredCooldowns.nameplates = {} end
+		if not E.RegisteredCooldowns.nameplates then
+			E.RegisteredCooldowns.nameplates = {}
+		end
 		tinsert(E.RegisteredCooldowns.nameplates, button)
 	end
 
@@ -387,11 +404,19 @@ function NP:Configure_Auras(frame, auraType)
 	auras:SetWidth((db.perrow * db.size + ((db.perrow - 1) * db.spacing)) * scale)
 	auras:SetHeight((db.numrows * db.size + ((db.numrows - 1) * db.spacing)) * scale)
 	auras:ClearAllPoints()
-	auras:SetPoint(positionValues[db.anchorPoint], db.attachTo == "BUFFS" and frame.Buffs or frame.Health, positionValues2[db.anchorPoint], db.xOffset, db.yOffset)
+	auras:SetPoint(
+		positionValues[db.anchorPoint],
+		db.attachTo == "BUFFS" and frame.Buffs or frame.Health,
+		positionValues2[db.anchorPoint],
+		db.xOffset,
+		db.yOffset
+	)
 end
 
 function NP:Configure_AurasScale(frame)
-	if not frame.UnitType then return end
+	if not frame.UnitType then
+		return
+	end
 
 	self:Configure_Auras(frame, "Buffs")
 	self:Configure_Auras(frame, "Debuffs")
@@ -408,7 +433,7 @@ function NP:Configure_AurasScale(frame)
 end
 
 function NP:ConstructElement_Auras(frame, auraType)
-	local auras = CreateFrame("Frame", "$parent"..auraType, frame)
+	local auras = CreateFrame("Frame", "$parent" .. auraType, frame)
 	auras:Show()
 	auras:SetSize(150, 27)
 	auras:SetPoint("TOP", 0, 22)
@@ -421,7 +446,9 @@ end
 function NP:CheckFilter(name, spellID, isPlayer, allowDuration, noDuration, ...)
 	for i = 1, select("#", ...) do
 		local filterName = select(i, ...)
-		if not filterName then return true end
+		if not filterName then
+			return true
+		end
 		if G.nameplates.specialFilters[filterName] or E.global.unitframe.aurafilters[filterName] then
 			local filter = E.global.unitframe.aurafilters[filterName]
 			if filter then
@@ -436,11 +463,11 @@ function NP:CheckFilter(name, spellID, isPlayer, allowDuration, noDuration, ...)
 				end
 			elseif filterName == "Personal" and isPlayer and allowDuration then
 				return true
-			elseif filterName == "nonPersonal" and (not isPlayer) and allowDuration then
+			elseif filterName == "nonPersonal" and not isPlayer and allowDuration then
 				return true
 			elseif filterName == "blockNoDuration" and noDuration then
 				return false
-			elseif filterName == "blockNonPersonal" and (not isPlayer) then
+			elseif filterName == "blockNonPersonal" and not isPlayer then
 				return false
 			end
 		end
@@ -451,7 +478,9 @@ function NP:AuraFilter(guid, button, name, texture, count, debuffType, duration,
 	local parent = button:GetParent()
 	local parentType = parent.type
 	local db = NP.db.units[parent:GetParent().UnitType][parentType]
-	if not db then return true end
+	if not db then
+		return true
+	end
 
 	local isPlayer = caster == E.myguid
 
@@ -466,11 +495,15 @@ function NP:AuraFilter(guid, button, name, texture, count, debuffType, duration,
 	button.spell = name
 	button.priority = 0
 
-	if not db.filters then return true end
+	if not db.filters then
+		return true
+	end
 
 	local priority = db.filters.priority
 	local noDuration = (not duration or duration == 0)
-	local allowDuration = noDuration or (duration and (duration > 0) and db.filters.maxDuration == 0 or duration <= db.filters.maxDuration) and (db.filters.minDuration == 0 or duration >= db.filters.minDuration)
+	local allowDuration = noDuration
+		or (duration and (duration > 0) and db.filters.maxDuration == 0 or duration <= db.filters.maxDuration)
+			and (db.filters.minDuration == 0 or duration >= db.filters.minDuration)
 	local filterCheck
 
 	if priority ~= "" then

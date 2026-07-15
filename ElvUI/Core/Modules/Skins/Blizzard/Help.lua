@@ -7,7 +7,9 @@ local select = select
 --WoW API / Variables
 
 S:AddCallback("Skin_Help", function()
-	if not E.private.skins.blizzard.enable or not E.private.skins.blizzard.help then return end
+	if not E.private.skins.blizzard.enable or not E.private.skins.blizzard.help then
+		return
+	end
 
 	HelpFrame:StripTextures()
 	HelpFrame:CreateBackdrop("Transparent")
@@ -41,11 +43,11 @@ S:AddCallback("Skin_Help", function()
 		"WelcomeGMTalk",
 		"WelcomeReportIssue",
 		"WelcomeStuck",
-		"WelcomeCancel"
+		"WelcomeCancel",
 	}
 
 	for i = 1, #helpFrameButtons do
-		S:HandleButton(_G["HelpFrame"..helpFrameButtons[i]])
+		S:HandleButton(_G["HelpFrame" .. helpFrameButtons[i]])
 	end
 
 	KnowledgeBaseFrameDivider:StripTextures()
@@ -61,9 +63,9 @@ S:AddCallback("Skin_Help", function()
 
 	for _, scrollBar in ipairs(scrollBars) do
 		S:HandleScrollBar(_G[scrollBar])
-		_G[scrollBar.."Top"]:Hide()
-		_G[scrollBar.."Middle"]:Hide()
-		_G[scrollBar.."Bottom"]:Hide()
+		_G[scrollBar .. "Top"]:Hide()
+		_G[scrollBar .. "Middle"]:Hide()
+		_G[scrollBar .. "Bottom"]:Hide()
 	end
 
 	HelpFrameViewResponseIssueScrollFrame:CreateBackdrop("Transparent")

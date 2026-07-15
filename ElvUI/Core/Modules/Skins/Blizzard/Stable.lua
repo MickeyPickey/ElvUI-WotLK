@@ -9,7 +9,9 @@ local HasPetUI = HasPetUI
 local UnitExists = UnitExists
 
 S:AddCallback("Skin_Stable", function()
-	if not E.private.skins.blizzard.enable or not E.private.skins.blizzard.stable then return end
+	if not E.private.skins.blizzard.enable or not E.private.skins.blizzard.stable then
+		return
+	end
 
 	PetStableFrame:StripTextures()
 	PetStableFramePortrait:Kill()
@@ -47,17 +49,17 @@ S:AddCallback("Skin_Stable", function()
 
 	local function UpdateSlot(self, r, g, b)
 		if g ~= 1 then
-			self:SetTexture(.8, .2, .2, .3)
+			self:SetTexture(0.8, 0.2, 0.2, 0.3)
 		else
 			self:SetTexture(0, 0, 0, 0)
 		end
 	end
 
 	for i = 1, NUM_PET_STABLE_SLOTS do
-		S:HandleItemButton(_G["PetStableStabledPet"..i], true)
-		_G["PetStableStabledPet"..i.."IconTexture"]:SetDrawLayer("OVERLAY")
+		S:HandleItemButton(_G["PetStableStabledPet" .. i], true)
+		_G["PetStableStabledPet" .. i .. "IconTexture"]:SetDrawLayer("OVERLAY")
 
-		local bg = _G["PetStableStabledPet"..i.."Background"]
+		local bg = _G["PetStableStabledPet" .. i .. "Background"]
 		bg:SetDrawLayer("BORDER")
 		bg:SetInside()
 		hooksecurefunc(bg, "SetVertexColor", UpdateSlot)
@@ -65,7 +67,9 @@ S:AddCallback("Skin_Stable", function()
 
 	hooksecurefunc("PetStable_Update", function()
 		local hasPetUI, isHunterPet = HasPetUI()
-		if hasPetUI and not isHunterPet and UnitExists("pet") then return end
+		if hasPetUI and not isHunterPet and UnitExists("pet") then
+			return
+		end
 
 		local happiness = GetPetHappiness()
 

@@ -13,7 +13,9 @@ local GetQuestLogTitle = GetQuestLogTitle
 local hooksecurefunc = hooksecurefunc
 
 S:AddCallback("Skin_WatchFrame", function()
-	if not E.private.skins.blizzard.enable or not E.private.skins.blizzard.watchframe then return end
+	if not E.private.skins.blizzard.enable or not E.private.skins.blizzard.watchframe then
+		return
+	end
 
 	-- WatchFrame Expand/Collapse Button
 	WatchFrameCollapseExpandButton:StripTextures()
@@ -60,12 +62,12 @@ S:AddCallback("Skin_WatchFrame", function()
 
 		-- WatchFrame Items
 		for i = 1, WATCHFRAME_NUM_ITEMS do
-			local button = _G["WatchFrameItem"..i]
+			local button = _G["WatchFrameItem" .. i]
 
 			if button and not button.isSkinned then
-				local icon = _G["WatchFrameItem"..i.."IconTexture"]
-				local normal = _G["WatchFrameItem"..i.."NormalTexture"]
-				local cooldown = _G["WatchFrameItem"..i.."Cooldown"]
+				local icon = _G["WatchFrameItem" .. i .. "IconTexture"]
+				local normal = _G["WatchFrameItem" .. i .. "NormalTexture"]
+				local cooldown = _G["WatchFrameItem" .. i .. "Cooldown"]
 
 				button:CreateBackdrop()
 				button.backdrop:SetAllPoints()

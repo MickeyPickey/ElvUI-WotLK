@@ -34,7 +34,9 @@ function UF:Construct_Threat(frame)
 end
 
 function UF:Configure_Threat(frame)
-	if not (frame.VARIABLES_SET and frame.ThreatIndicator) then return end
+	if not (frame.VARIABLES_SET and frame.ThreatIndicator) then
+		return
+	end
 
 	local threat = frame.ThreatIndicator
 	local db = frame.db
@@ -50,28 +52,89 @@ function UF:Configure_Threat(frame)
 			threat.glow:ClearAllPoints()
 			if frame.USE_POWERBAR_OFFSET then
 				if frame.ORIENTATION == "RIGHT" then
-					threat.glow:Point("TOPLEFT", frame.Health.backdrop, "TOPLEFT", -frame.SHADOW_SPACING - frame.SPACING - (frame.HAPPINESS_WIDTH or 0), frame.SHADOW_SPACING + frame.SPACING + (frame.USE_CLASSBAR and (frame.USE_MINI_CLASSBAR and 0 or frame.CLASSBAR_HEIGHT) or 0))
-					threat.glow:Point("BOTTOMRIGHT", frame.Health.backdrop, "BOTTOMRIGHT", frame.SHADOW_SPACING + frame.SPACING, -frame.SHADOW_SPACING - frame.SPACING)
+					threat.glow:Point(
+						"TOPLEFT",
+						frame.Health.backdrop,
+						"TOPLEFT",
+						-frame.SHADOW_SPACING - frame.SPACING - (frame.HAPPINESS_WIDTH or 0),
+						frame.SHADOW_SPACING
+							+ frame.SPACING
+							+ (frame.USE_CLASSBAR and (frame.USE_MINI_CLASSBAR and 0 or frame.CLASSBAR_HEIGHT) or 0)
+					)
+					threat.glow:Point(
+						"BOTTOMRIGHT",
+						frame.Health.backdrop,
+						"BOTTOMRIGHT",
+						frame.SHADOW_SPACING + frame.SPACING,
+						-frame.SHADOW_SPACING - frame.SPACING
+					)
 				else
-					threat.glow:Point("TOPLEFT", frame.Health.backdrop, "TOPLEFT", -frame.SHADOW_SPACING - frame.SPACING, frame.SHADOW_SPACING + frame.SPACING + (frame.USE_CLASSBAR and (frame.USE_MINI_CLASSBAR and 0 or frame.CLASSBAR_HEIGHT) or 0))
-					threat.glow:Point("BOTTOMRIGHT", frame.Health.backdrop, "BOTTOMRIGHT", frame.SHADOW_SPACING + frame.SPACING + (frame.HAPPINESS_WIDTH or 0), -frame.SHADOW_SPACING - frame.SPACING)
+					threat.glow:Point(
+						"TOPLEFT",
+						frame.Health.backdrop,
+						"TOPLEFT",
+						-frame.SHADOW_SPACING - frame.SPACING,
+						frame.SHADOW_SPACING
+							+ frame.SPACING
+							+ (frame.USE_CLASSBAR and (frame.USE_MINI_CLASSBAR and 0 or frame.CLASSBAR_HEIGHT) or 0)
+					)
+					threat.glow:Point(
+						"BOTTOMRIGHT",
+						frame.Health.backdrop,
+						"BOTTOMRIGHT",
+						frame.SHADOW_SPACING + frame.SPACING + (frame.HAPPINESS_WIDTH or 0),
+						-frame.SHADOW_SPACING - frame.SPACING
+					)
 				end
 
 				threat.powerGlow:ClearAllPoints()
-				threat.powerGlow:Point("TOPLEFT", frame.Power.backdrop, "TOPLEFT", -frame.SHADOW_SPACING - frame.SPACING, frame.SHADOW_SPACING + frame.SPACING)
-				threat.powerGlow:Point("BOTTOMRIGHT", frame.Power.backdrop, "BOTTOMRIGHT", frame.SHADOW_SPACING + frame.SPACING, -frame.SHADOW_SPACING - frame.SPACING)
+				threat.powerGlow:Point(
+					"TOPLEFT",
+					frame.Power.backdrop,
+					"TOPLEFT",
+					-frame.SHADOW_SPACING - frame.SPACING,
+					frame.SHADOW_SPACING + frame.SPACING
+				)
+				threat.powerGlow:Point(
+					"BOTTOMRIGHT",
+					frame.Power.backdrop,
+					"BOTTOMRIGHT",
+					frame.SHADOW_SPACING + frame.SPACING,
+					-frame.SHADOW_SPACING - frame.SPACING
+				)
 			else
-				threat.glow:Point("TOPLEFT", -frame.SHADOW_SPACING, frame.SHADOW_SPACING-(frame.USE_MINI_CLASSBAR and frame.CLASSBAR_YOFFSET or 0))
+				threat.glow:Point(
+					"TOPLEFT",
+					-frame.SHADOW_SPACING,
+					frame.SHADOW_SPACING - (frame.USE_MINI_CLASSBAR and frame.CLASSBAR_YOFFSET or 0)
+				)
 
 				if frame.USE_MINI_POWERBAR then
-					threat.glow:Point("BOTTOMLEFT", -frame.SHADOW_SPACING, -frame.SHADOW_SPACING + (frame.POWERBAR_HEIGHT/2))
-					threat.glow:Point("BOTTOMRIGHT", frame.SHADOW_SPACING, -frame.SHADOW_SPACING + (frame.POWERBAR_HEIGHT/2))
+					threat.glow:Point(
+						"BOTTOMLEFT",
+						-frame.SHADOW_SPACING,
+						-frame.SHADOW_SPACING + (frame.POWERBAR_HEIGHT / 2)
+					)
+					threat.glow:Point(
+						"BOTTOMRIGHT",
+						frame.SHADOW_SPACING,
+						-frame.SHADOW_SPACING + (frame.POWERBAR_HEIGHT / 2)
+					)
 				else
 					threat.glow:Point("BOTTOMLEFT", -frame.SHADOW_SPACING, -frame.SHADOW_SPACING)
 					threat.glow:Point("BOTTOMRIGHT", frame.SHADOW_SPACING, -frame.SHADOW_SPACING)
 				end
 			end
-		elseif db.threatStyle == "ICONTOPLEFT" or db.threatStyle == "ICONTOPRIGHT" or db.threatStyle == "ICONBOTTOMLEFT" or db.threatStyle == "ICONBOTTOMRIGHT" or db.threatStyle == "ICONTOP" or db.threatStyle == "ICONBOTTOM" or db.threatStyle == "ICONLEFT" or db.threatStyle == "ICONRIGHT" then
+		elseif
+			db.threatStyle == "ICONTOPLEFT"
+			or db.threatStyle == "ICONTOPRIGHT"
+			or db.threatStyle == "ICONBOTTOMLEFT"
+			or db.threatStyle == "ICONBOTTOMRIGHT"
+			or db.threatStyle == "ICONTOP"
+			or db.threatStyle == "ICONBOTTOM"
+			or db.threatStyle == "ICONLEFT"
+			or db.threatStyle == "ICONRIGHT"
+		then
 			threat:SetFrameStrata("LOW")
 			threat:SetFrameLevel(75) --Inset power uses 50, we want it to appear above that
 			local point = db.threatStyle
@@ -96,10 +159,14 @@ end
 function UF:UpdateThreat(unit, status, r, g, b)
 	local parent = self:GetParent()
 
-	if (parent.unit ~= unit) or not unit then return end
+	if (parent.unit ~= unit) or not unit then
+		return
+	end
 
 	local db = parent.db
-	if not db then return end
+	if not db then
+		return
+	end
 
 	if status and status > 1 then
 		if db.threatStyle == "GLOW" then

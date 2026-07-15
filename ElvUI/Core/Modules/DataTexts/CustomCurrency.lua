@@ -1,5 +1,5 @@
 local E, L, V, P, G = unpack(ElvUI)
-local DT = E:GetModule('DataTexts')
+local DT = E:GetModule("DataTexts")
 
 local _G = _G
 local pairs, strjoin = pairs, strjoin
@@ -7,7 +7,7 @@ local pairs, strjoin = pairs, strjoin
 local GetCurrencyListSize = GetCurrencyListSize
 local GetCurrencyListInfo = GetCurrencyListInfo
 
-local defaults = { showIcon = true, nameStyle = 'full', showMax = true, currencyTooltip = true }
+local defaults = { showIcon = true, nameStyle = "full", showMax = true, currencyTooltip = true }
 
 local function OnEvent(self)
 	local info = DT:CurrencyInfo(self.name)
@@ -15,15 +15,19 @@ local function OnEvent(self)
 	if info and currency then
 		local displayString
 
-		if currency.nameStyle ~= 'none' then
-			displayString = strjoin(': ', (currency.nameStyle == 'full' and currency.name) or E:AbbreviateString(currency.name), '%d')
+		if currency.nameStyle ~= "none" then
+			displayString = strjoin(
+				": ",
+				(currency.nameStyle == "full" and currency.name) or E:AbbreviateString(currency.name),
+				"%d"
+			)
 		end
 
 		if currency.showMax and (info.maxQuantity and info.maxQuantity > 0) then
-			displayString = strjoin(' ', displayString or '%d', '/', E:ShortValue(info.maxQuantity))
+			displayString = strjoin(" ", displayString or "%d", "/", E:ShortValue(info.maxQuantity))
 		end
 
-		self.text:SetFormattedText(displayString or '%d', info.quantity)
+		self.text:SetFormattedText(displayString or "%d", info.quantity)
 		self.icon:SetShown(currency.showIcon)
 		self.icon:SetTexture(info.iconFileID)
 
@@ -37,14 +41,16 @@ end
 
 local function OnEnter(self)
 	local tokenID = DT:GetTokenIDFromItemID(self.name)
-	if not tokenID then return end
+	if not tokenID then
+		return
+	end
 
 	DT.tooltip:ClearLines()
 	DT.tooltip:SetCurrencyToken(tokenID)
 	DT.tooltip:Show()
 end
 
-local currencyEvents = { 'CHAT_MSG_CURRENCY', 'CURRENCY_DISPLAY_UPDATE' }
+local currencyEvents = { "CHAT_MSG_CURRENCY", "CURRENCY_DISPLAY_UPDATE" }
 local function RegisterDT(currencyID, name, update)
 	local data = DT:RegisterDatatext(currencyID, _G.CURRENCY, currencyEvents, OnEvent, nil, nil, OnEnter, nil, name)
 	data.isCurrency = true
@@ -58,10 +64,14 @@ end
 
 function DT:RegisterCustomCurrencyDT(currencyID)
 	if currencyID then
-		if E.global.datatexts.customCurrencies[currencyID] then return end
+		if E.global.datatexts.customCurrencies[currencyID] then
+			return
+		end
 
 		local info, name = DT:CurrencyInfo(currencyID)
-		if not name then return end
+		if not name then
+			return
+		end
 
 		G.datatexts.customCurrencies[currencyID] = defaults
 		E.global.datatexts.customCurrencies[currencyID] = E:CopyTable({ name = info.name }, defaults)

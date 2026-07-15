@@ -24,15 +24,21 @@ end
 
 function E:Cooldown_BelowScale(cd)
 	if cd.parent then
-		if cd.parent.hideText then return true end
-		if cd.parent.skipScale then return end
+		if cd.parent.hideText then
+			return true
+		end
+		if cd.parent.skipScale then
+			return
+		end
 	end
 
 	return cd.fontScale and (cd.fontScale < MIN_SCALE)
 end
 
 function E:Cooldown_OnUpdate(elapsed)
-	if self.paused then return 0 end
+	if self.paused then
+		return 0
+	end
 
 	local forced = elapsed == -1
 	if forced then
@@ -63,8 +69,16 @@ function E:Cooldown_OnUpdate(elapsed)
 					self.nextUpdate = 1
 				end
 			else
-				local value, id, nextUpdate, remainder = E:GetTimeInfo(timeLeft, self.threshold, self.hhmmThreshold, self.mmssThreshold, self.modRate ~= 1 and self.modRate)
-				if not forced then self.nextUpdate = nextUpdate end
+				local value, id, nextUpdate, remainder = E:GetTimeInfo(
+					timeLeft,
+					self.threshold,
+					self.hhmmThreshold,
+					self.mmssThreshold,
+					self.modRate ~= 1 and self.modRate
+				)
+				if not forced then
+					self.nextUpdate = nextUpdate
+				end
 
 				local style, targetAura = E.TimeFormats[id], self.targetAura and 10 or 0
 				if style then
@@ -78,7 +92,9 @@ function E:Cooldown_OnUpdate(elapsed)
 				end
 
 				local color = not self.skipTextColor and self.timeColors[id + targetAura]
-				if color then self.text:SetTextColor(color.r, color.g, color.b) end
+				if color then
+					self.text:SetTextColor(color.r, color.g, color.b)
+				end
 			end
 		end
 	end
@@ -86,12 +102,16 @@ end
 
 function E:Cooldown_OnSizeChanged(cd, width, force)
 	-- the client can report an invalid width (0, negative or NaN) before the frame is properly sized
-	if width and (width <= 0 or width ~= width) then width = nil end
+	if width and (width <= 0 or width ~= width) then
+		width = nil
+	end
 
 	local scale = width and (floor(width + 0.5) / ICON_SIZE)
 
 	-- dont bother updating when the fontScale is the same, unless we are passing the force arg
-	if scale and (scale == cd.fontScale) and (force ~= true) then return end
+	if scale and (scale == cd.fontScale) and (force ~= true) then
+		return
+	end
 	cd.fontScale = scale
 
 	-- this is needed because of skipScale variable, we wont allow a font size under the minscale
@@ -222,7 +242,9 @@ end
 
 E.RegisteredCooldowns = {}
 function E:OnSetCooldown(start, duration, modRate)
-	if self.isHooked ~= 1 then return end
+	if self.isHooked ~= 1 then
+		return
+	end
 
 	if not self.forceDisabled and (start and duration) and (duration > MIN_DURATION) then
 		local timer = self.timer or E:CreateCooldownTimer(self)
@@ -319,7 +341,9 @@ end
 
 function E:UpdateCooldownOverride(module)
 	local cooldowns = (module and E.RegisteredCooldowns[module])
-	if not cooldowns or not next(cooldowns) then return end
+	if not cooldowns or not next(cooldowns) then
+		return
+	end
 
 	local blizzText
 	for _, parent in ipairs(cooldowns) do
@@ -346,7 +370,11 @@ function E:UpdateCooldownOverride(module)
 					-- parent.auraType defined in `A:UpdateHeader` and `A:CreateIcon`
 					local fontDB = parent.auraType and db[parent.auraType]
 					if fontDB and fontDB.timeFont then
-						cd.text:FontTemplate(LSM:Fetch("font", fontDB.timeFont), fontDB.timeFontSize, fontDB.timeFontOutline)
+						cd.text:FontTemplate(
+							LSM:Fetch("font", fontDB.timeFont),
+							fontDB.timeFontSize,
+							fontDB.timeFontOutline
+						)
 					end
 				end
 
@@ -368,37 +396,43 @@ function E:UpdateCooldownOverride(module)
 end
 
 do
-	local function RGB(db) return E:CopyTable({r = 1, g = 1, b = 1}, db) end
-	local function HEX(db) return E:RGBToHex(db.r, db.g, db.b) end
+	local function RGB(db)
+		return E:CopyTable({ r = 1, g = 1, b = 1 }, db)
+	end
+	local function HEX(db)
+		return E:RGBToHex(db.r, db.g, db.b)
+	end
 	local dummy9th = "|cFFffffff"
 
 	function E:GetCooldownColors(db)
-		if not db then db = E.db.cooldown end -- just incase someone calls this without a first arg use the global
+		if not db then
+			db = E.db.cooldown
+		end -- just incase someone calls this without a first arg use the global
 		local ab = E.db.actionbar.cooldown -- used only for target aura colors, they get pushed into the main table
 
 		return
-		--> time colors (0 - 9) <-- 7 is mod rate, which is different from text colors (as mod rate has no indicator)
-		RGB(db.daysColor),
-		RGB(db.hoursColor),
-		RGB(db.minutesColor),
-		RGB(db.secondsColor),
-		RGB(db.expiringColor),
-		RGB(db.mmssColor),
-		RGB(db.hhmmColor),
-		RGB(db.modRateColor),
-		RGB(ab.targetAuraColor),
-		RGB(ab.expiringAuraColor),
-		--> text colors (0 - 9) <--
-		HEX(db.daysIndicator),
-		HEX(db.hoursIndicator),
-		HEX(db.minutesIndicator),
-		HEX(db.secondsIndicator),
-		HEX(db.expireIndicator),
-		HEX(db.mmssColorIndicator),
-		HEX(db.hhmmColorIndicator),
-		HEX(ab.targetAuraIndicator),
-		HEX(ab.expiringAuraIndicator),
-		dummy9th -- this shouldn't happen but ya know :)
+			--> time colors (0 - 9) <-- 7 is mod rate, which is different from text colors (as mod rate has no indicator)
+			RGB(db.daysColor),
+			RGB(db.hoursColor),
+			RGB(db.minutesColor),
+			RGB(db.secondsColor),
+			RGB(db.expiringColor),
+			RGB(db.mmssColor),
+			RGB(db.hhmmColor),
+			RGB(db.modRateColor),
+			RGB(ab.targetAuraColor),
+			RGB(ab.expiringAuraColor),
+			--> text colors (0 - 9) <--
+			HEX(db.daysIndicator),
+			HEX(db.hoursIndicator),
+			HEX(db.minutesIndicator),
+			HEX(db.secondsIndicator),
+			HEX(db.expireIndicator),
+			HEX(db.mmssColorIndicator),
+			HEX(db.hhmmColorIndicator),
+			HEX(ab.targetAuraIndicator),
+			HEX(ab.expiringAuraIndicator),
+			dummy9th -- this shouldn't happen but ya know :)
 	end
 end
 
@@ -409,37 +443,42 @@ function E:UpdateCooldownSettings(module)
 	-- global is the main call from config, all is the core file calls
 	local isModule = module and (module ~= "global" and module ~= "all") and E.db[module] and E.db[module].cooldown
 	if isModule then
-		if not timeColors[module] then timeColors[module] = {} end
-		if not textColors[module] then textColors[module] = {} end
+		if not timeColors[module] then
+			timeColors[module] = {}
+		end
+		if not textColors[module] then
+			textColors[module] = {}
+		end
 		db, timeColors, textColors = E.db[module].cooldown, timeColors[module], textColors[module]
 	end
 
 	--> color for TIME that has X remaining <--
 	timeColors[0], -- daysColor
-	timeColors[1], -- hoursColor
-	timeColors[2], -- minutesColor
-	timeColors[3], -- secondsColor
-	timeColors[4], -- expiringColor
-	timeColors[5], -- mmssColor [MM:SS]
-	timeColors[6], -- hhmmColor [HH:MM]
-	timeColors[7], -- modRateColor
-	timeColors[8], -- targetAuraColor
-	timeColors[9], -- expiringAuraColor
-	--> color for TEXT that has X remaining <--
-	textColors[0], -- daysIndicator
-	textColors[1], -- hoursIndicator
-	textColors[2], -- minutesIndicator
-	textColors[3], -- secondsIndicator
-	textColors[4], -- expireIndicator
-	textColors[5], -- mmssColorIndicator
-	textColors[6], -- hhmmColorIndicator
-	textColors[7], -- targetAuraIndicator
-	textColors[8], -- expiringAuraIndicator
-	textColors[9], -- dummy9th
-	_ = E:GetCooldownColors(db)
+		timeColors[1], -- hoursColor
+		timeColors[2], -- minutesColor
+		timeColors[3], -- secondsColor
+		timeColors[4], -- expiringColor
+		timeColors[5], -- mmssColor [MM:SS]
+		timeColors[6], -- hhmmColor [HH:MM]
+		timeColors[7], -- modRateColor
+		timeColors[8], -- targetAuraColor
+		timeColors[9], -- expiringAuraColor
+		--> color for TEXT that has X remaining <--
+		textColors[0], -- daysIndicator
+		textColors[1], -- hoursIndicator
+		textColors[2], -- minutesIndicator
+		textColors[3], -- secondsIndicator
+		textColors[4], -- expireIndicator
+		textColors[5], -- mmssColorIndicator
+		textColors[6], -- hhmmColorIndicator
+		textColors[7], -- targetAuraIndicator
+		textColors[8], -- expiringAuraIndicator
+		textColors[9], -- dummy9th
+		_ =
+		E:GetCooldownColors(db)
 
-	if module == "actionbar" then	-- special population for target aura as they only have 2 colors (expiring or not)
-		for i = 10, 14 do			-- but have other states like days, mins, etc. so we need to move the colors properly
+	if module == "actionbar" then -- special population for target aura as they only have 2 colors (expiring or not)
+		for i = 10, 14 do -- but have other states like days, mins, etc. so we need to move the colors properly
 			local timec = E:CopyTable({}, timeColors[i == 14 and 9 or 8]) -- 14 is expiring otherwise use target aura color for all
 			local textc = textColors[i == 14 and 8 or 7] -- same deal
 
@@ -468,8 +507,8 @@ function E:UpdateCooldownSettings(module)
 		E:UpdateCooldownSettings("unitframe")
 		E:UpdateCooldownSettings("auras")
 
-		if IsAddOnLoaded('WeakAuras') then
-			E:UpdateCooldownSettings('WeakAuras')
+		if IsAddOnLoaded("WeakAuras") then
+			E:UpdateCooldownSettings("WeakAuras")
 		end
 	end
 end

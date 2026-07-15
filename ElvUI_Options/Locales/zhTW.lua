@@ -1,5 +1,5 @@
 -- Traditional Chinese localization file for zhTW.
-local L = ElvUI[1].Libs.ACL:NewLocale('ElvUI', 'zhTW')
+local L = ElvUI[1].Libs.ACL:NewLocale("ElvUI", "zhTW")
 
 L["ALT"] = true
 L["CTRL"] = true
@@ -27,7 +27,8 @@ L["TOOLTIP"] = true
 ----------------------------------
 
 L["BigWigs Spell Rename"] = true
-L["Allows BigWigs to rename specific encounter spells on your castbar to something better to understand.\nExample: 'Impaling Eruption' becomes 'Frontal' and 'Twilight Massacre' becomes 'Dash'."] = true
+L["Allows BigWigs to rename specific encounter spells on your castbar to something better to understand.\nExample: 'Impaling Eruption' becomes 'Frontal' and 'Twilight Massacre' becomes 'Dash'."] =
+	true
 L["Add Aura ID"] = true
 L["Remove Aura"] = true
 L["Select Aura"] = true
@@ -82,7 +83,8 @@ L["Additional Power"] = "額外能量"
 L["Additional spacing between each individual group."] = "各隊伍間的附加距離"
 L["Additive Blend"] = "覆蓋混合"
 L["AddOn Manager"] = "插件管理"
-L["Adds an arrow infront of the chat lines to copy the entire line."] = "添加一個箭頭於每條聊天記錄之前以便複製整行文字."
+L["Adds an arrow infront of the chat lines to copy the entire line."] =
+	"添加一個箭頭於每條聊天記錄之前以便複製整行文字."
 L["Adjust the height of your left chat panel."] = "調整左側聊天框的高度"
 L["Adjust the height of your right chat panel."] = "調整右側聊天框的高度"
 L["Adjust the scale of the minimap and also the pins. Eg: Quests, Resource nodes, Group members"] = true
@@ -98,9 +100,11 @@ L["Alive"] = true
 L["Alliance"] = "聯盟"
 L["Allied Races"] = "同盟種族"
 L["Allow Masque to handle the skinning of this element."] = "允許 Masque 來處理此元件的皮膚"
-L["Allow newly learned spells to be automatically placed on an empty actionbar slot."] = "允許自動將新習得的法術添加到空的快捷列格子"
+L["Allow newly learned spells to be automatically placed on an empty actionbar slot."] =
+	"允許自動將新習得的法術添加到空的快捷列格子"
 L["Allow Sharing"] = "允許分享"
-L["Allows you to tie a stack count to an aura when you add it to the list, which allows the trigger to act when an aura reaches X number of stacks."] = "允許你設置一個層數閾值, 當層數達到閾值時觸發動作."
+L["Allows you to tie a stack count to an aura when you add it to the list, which allows the trigger to act when an aura reaches X number of stacks."] =
+	"允許你設置一個層數閾值, 當層數達到閾值時觸發動作."
 L["Alpha channel is taken from the color option."] = "Alpha 通道值取自色彩選項."
 L["Alpha Fading"] = "淡入淡出"
 L["Alpha Key"] = "單位元 Alpha 通道混合"
@@ -117,12 +121,17 @@ L["Announce Interrupts"] = "斷法通告"
 L["Announce when you interrupt a spell to the specified chat channel."] = "在指定對話頻道通知斷法信息."
 L["Another Players Pet"] = true
 L["Any"] = "任意"
-L["Applies the font and font size settings throughout the entire user interface. Note: Some font size settings will be skipped due to them having a smaller font size by default."] = "把該字體設置應用到所有ElvUI設置中去,但是某些設置並不會被改變."
+L["Applies the font and font size settings throughout the entire user interface. Note: Some font size settings will be skipped due to them having a smaller font size by default."] =
+	"把該字體設置應用到所有ElvUI設置中去,但是某些設置並不會被改變."
 L["Apply Font To All"] = "應用字體到所有"
-L["Apply this filter if a buff has remaining time greater than this. Set to zero to disable."] = "當增益剩餘時間大於此值時使用此過濾器,設為0來停用"
-L["Apply this filter if a buff has remaining time less than this. Set to zero to disable."] = "當增益剩餘時間小於此值時使用此過濾器,設為0來停用"
-L["Apply this filter if a debuff has remaining time greater than this. Set to zero to disable."] = "當減益剩餘時間大於此值時使用此過濾器,設為0來停用"
-L["Apply this filter if a debuff has remaining time less than this. Set to zero to disable."] = "當減益剩餘時間小於此值時使用此過濾器,設為0來停用"
+L["Apply this filter if a buff has remaining time greater than this. Set to zero to disable."] =
+	"當增益剩餘時間大於此值時使用此過濾器,設為0來停用"
+L["Apply this filter if a buff has remaining time less than this. Set to zero to disable."] =
+	"當增益剩餘時間小於此值時使用此過濾器,設為0來停用"
+L["Apply this filter if a debuff has remaining time greater than this. Set to zero to disable."] =
+	"當減益剩餘時間大於此值時使用此過濾器,設為0來停用"
+L["Apply this filter if a debuff has remaining time less than this. Set to zero to disable."] =
+	"當減益剩餘時間小於此值時使用此過濾器,設為0來停用"
 L["Apply To All"] = "應用到所有"
 L["Archaeology Frame"] = "考古學框架"
 L["Are you sure you want to reset ActionBars settings?"] = "你確定你要重置快捷列的設定?"
@@ -145,12 +154,14 @@ L["Ascending"] = "升序"
 L["Assigned Icon"] = "指定圖示"
 L["Assist Frames"] = "助理框架"
 L["Assist"] = "助理框架"
-L["At what point should the text be displayed. Set to -1 to disable."] = "在何時顯示文本. 設定為 -1 禁用此功能."
+L["At what point should the text be displayed. Set to -1 to disable."] =
+	"在何時顯示文本. 設定為 -1 禁用此功能."
 L["Attach Text To"] = "文字附加到"
 L["Attach To"] = "附加到"
 L["Attempt to create URL links inside the chat."] = "對話視窗出現網址時建立連結."
 L["Attempt to support eyefinity/nvidia surround."] = "嘗試支援 Eyefinity/NVIDIA Surround."
-L["Attempts to center UI elements in a 16:9 format for ultrawide monitors"] = "嘗試在超寬螢幕中以 16:9 格式置中 UI 元素."
+L["Attempts to center UI elements in a 16:9 format for ultrawide monitors"] =
+	"嘗試在超寬螢幕中以 16:9 格式置中 UI 元素."
 L["Auction House"] = "拍賣場"
 L["AUCTIONS"] = "拍賣"
 L["Aura Filters"] = "光環過濾器"
@@ -167,8 +178,10 @@ L["Auto-Hide"] = "自動隱藏"
 L["Automatic"] = "自動"
 L["Automatically accept invites from guild/friends."] = "自動接受公會成員/朋友的組隊邀請."
 L["Automatically hide the objective frame during boss fights while you are running a key."] = true
-L["Automatically hide the objective frame during boss or arena fights."] = "在首領戰鬥或是競技場時自動隱藏目標追蹤框架."
-L["Automatically repair using the following method when visiting a merchant."] = "與商人對話時, 透過下列方式自動修復裝備."
+L["Automatically hide the objective frame during boss or arena fights."] =
+	"在首領戰鬥或是競技場時自動隱藏目標追蹤框架."
+L["Automatically repair using the following method when visiting a merchant."] =
+	"與商人對話時, 透過下列方式自動修復裝備."
 L["Automatically vendor gray items when visiting a vendor."] = "當訪問商人時自動出售灰色物品."
 L["Automation"] = "自動化"
 L["Available Tags"] = "可用標籤"
@@ -203,7 +216,8 @@ L["Bank %d"] = "銀行 %d"
 L["Bank Only"] = "僅銀行"
 L["BALANCE_ENERGY_LUNAR"] = "月能"
 L["BALANCE_ENERGY_SOLAR"] = "日能"
-L["Bar %s is used for stance or forms.\nYou will have to adjust paging to use this bar.\nAre you sure?"] = "快捷列 %s 已被用於姿態或是形態.\n你將必須修改快捷列的翻頁規則才能使用這個快捷列.\n你確定要這麽做麼?"
+L["Bar %s is used for stance or forms.\nYou will have to adjust paging to use this bar.\nAre you sure?"] =
+	"快捷列 %s 已被用於姿態或是形態.\n你將必須修改快捷列的翻頁規則才能使用這個快捷列.\n你確定要這麽做麼?"
 L["Bar %s is used for stance or forms.\nYou will have to adjust paging to use this bar.\nAre you sure?"] = true
 L["Bar Direction"] = "條排序方向"
 L["Bar Settings"] = "條設定"
@@ -278,10 +292,12 @@ L["Casted by Player Only"] = "僅玩家施放"
 L["Casting"] = "施法"
 L["Center"] = "置中"
 L["CHALLENGE_MODE"] = "挑戰模式"
-L["Change settings for the display of the location text that is on the minimap."] = "改變小地圖所在位置文字的顯示設定."
+L["Change settings for the display of the location text that is on the minimap."] =
+	"改變小地圖所在位置文字的顯示設定."
 L["Change the alpha level of the frame."] = "改變框架透明度."
 L["Change the scale of the Game Menu which shows up when you press ESC."] = true
-L["Change the width and controls how big of an area on the screen will accept clicks to target unit."] = "改變寬度以控制點擊屏幕上的多大區域才會點擊目標."
+L["Change the width and controls how big of an area on the screen will accept clicks to target unit."] =
+	"改變寬度以控制點擊屏幕上的多大區域才會點擊目標."
 L["Changelog"] = "更新記錄"
 L["Channel Alerts"] = "頻道警報"
 L["Channel Time Format"] = "通道法術時間格式"
@@ -302,16 +318,21 @@ L["CHAT_MSG_EMOTE"] = "表情指令"
 L["Check Focus Cast"] = true
 L["Check Mouseover Cast"] = true
 L["Check Self Cast"] = true
-L["Check these to only have the filter active in certain difficulties. If none are checked, it is active in all difficulties."] = "選中這些項目會使得過濾器只會在當前難度下啟用. 如果沒有選中任意一個, 將會在全部難度中啟用."
+L["Check these to only have the filter active in certain difficulties. If none are checked, it is active in all difficulties."] =
+	"選中這些項目會使得過濾器只會在當前難度下啟用. 如果沒有選中任意一個, 將會在全部難度中啟用."
 L["CheckBox Skin"] = "選框皮膚"
 L["CHI_POWER"] = "真氣"
 L["Choose Export Format"] = "選擇導出格式"
-L["Choose UIPARENT to prevent it from hiding with the unitframe."] = "使用 UIPARENT 來防止它隨單位框架隱藏."
+L["Choose UIPARENT to prevent it from hiding with the unitframe."] =
+	"使用 UIPARENT 來防止它隨單位框架隱藏."
 L["Choose What To Export"] = "選擇導出內容"
-L["Choose when you want the tooltip to show in combat. If a modifier is chosen, then you need to hold that down to show the tooltip."] = "如果你想在戰鬥中看到浮動提示請選中. 如果你已經選中了修飾鍵顯示, 那麼你需要按住來顯示浮動提示."
-L["Choose when you want the tooltip to show. If a modifier is chosen, then you need to hold that down to show the tooltip."] = "選擇何時顯示提示. 如果選擇了設置鍵, 你需要按住它來顯示提示."
+L["Choose when you want the tooltip to show in combat. If a modifier is chosen, then you need to hold that down to show the tooltip."] =
+	"如果你想在戰鬥中看到浮動提示請選中. 如果你已經選中了修飾鍵顯示, 那麼你需要按住來顯示浮動提示."
+L["Choose when you want the tooltip to show. If a modifier is chosen, then you need to hold that down to show the tooltip."] =
+	"選擇何時顯示提示. 如果選擇了設置鍵, 你需要按住它來顯示提示."
 L["Chromie Time Frame"] = true
-L["Clamp nameplates to the top of the screen when outside of view."] = "當姓名板在屏幕外面時將他們緊靠在屏幕上方."
+L["Clamp nameplates to the top of the screen when outside of view."] =
+	"當姓名板在屏幕外面時將他們緊靠在屏幕上方."
 L["Clamp Nameplates"] = "緊靠姓名板"
 L["Class Backdrop"] = "生命條背景職業色"
 L["Class Castbars"] = "施法條職業色"
@@ -353,10 +374,12 @@ L["Color Gradient"] = "顏色漸變"
 L["Color health by amount remaining."] = "按數值變化血量顏色."
 L["Color health by classcolor or reaction."] = "以職業色顯示生命."
 L["Color health by color selection."] = "以色彩選擇器顯示生命."
-L["Color Keybind Text when Out of Range, instead of the button."] = "在超出射程時給按鍵文字上色, 而不是整個技能圖示."
+L["Color Keybind Text when Out of Range, instead of the button."] =
+	"在超出射程時給按鍵文字上色, 而不是整個技能圖示."
 L["Color Keybind Text"] = "按鍵文字上色"
 L["Color of the actionbutton when not usable."] = "無法使用的技能快捷鍵顏色."
-L["Color of the actionbutton when out of power (Mana, Rage, Focus, Holy Power)."] = "施放能量 (法力、怒氣、集中值、聖能) 不足的技能快捷鍵顏色."
+L["Color of the actionbutton when out of power (Mana, Rage, Focus, Holy Power)."] =
+	"施放能量 (法力、怒氣、集中值、聖能) 不足的技能快捷鍵顏色."
 L["Color of the actionbutton when out of range."] = "超出施放範圍的技能快捷鍵顏色."
 L["Color of the actionbutton when usable."] = "可使用的技能快捷鍵顏色."
 L["Color of the Targets Aura time when expiring."] = true
@@ -369,7 +392,8 @@ L["Color score based on Blizzards API."] = "使用 Blizzard API 提供的信息�
 L["Color Score"] = "彩色分數"
 L["Color some texts use."] = "數值(非文字)使用的顏色"
 L["Color the health backdrop by class or reaction."] = "生命條背景色以職業色顯示."
-L["Color the unit healthbar if there is a debuff that can be dispelled by you."] = "如果單位目標的減益光環可被驅散, 加亮顯示其生命值."
+L["Color the unit healthbar if there is a debuff that can be dispelled by you."] =
+	"如果單位目標的減益光環可被驅散, 加亮顯示其生命值."
 L["Color tooltip border based on Item Quality."] = "根據物品品質上色提示边框"
 L["Color Turtle Buffs"] = "減傷類 Buff 的顏色"
 L["Color when at half of the Low Health Threshold"] = true
@@ -386,7 +410,8 @@ L["Coloring (Specific)"] = "著色（具體）"
 L["Coloring"] = "著色"
 L["Colorize Selected Text"] = "著色選取的文字"
 L["Colors the border according to the Quality of the Item."] = "將背包格子的邊緣根據物品品質上色"
-L["Colors the border according to the type of items assigned to the bag."] = "將背包格子的邊緣根據指定的背包分類上色"
+L["Colors the border according to the type of items assigned to the bag."] =
+	"將背包格子的邊緣根據指定的背包分類上色"
 L["Colors"] = "顏色"
 L["Combat Font"] = "戰鬥字體"
 L["Combat Icon"] = "戰鬥按鍵"
@@ -407,17 +432,22 @@ L["Content"] = true
 L["Contribution"] = "捐獻"
 L["Control enemy nameplates toggling on or off when in combat."] = "控制戰鬥中敵對姓名板的開啟和關閉"
 L["Control friendly nameplates toggling on or off when in combat."] = "控制戰鬥中友方姓名板的開啟和關閉"
-L["Controls how big of an area on the screen will accept clicks to target unit."] = "決定屏幕上一個多大的光環才允許通過點擊選定到目標框架上"
-L["Controls how many seconds of inactivity has to pass before chat is faded."] = "控制對話條閑置多少秒時淡出."
-L["Controls the amount of decimals used in values displayed on elements like NamePlates and UnitFrames."] = "控制在血條和單位框架等元件的小數位數"
+L["Controls how big of an area on the screen will accept clicks to target unit."] =
+	"決定屏幕上一個多大的光環才允許通過點擊選定到目標框架上"
+L["Controls how many seconds of inactivity has to pass before chat is faded."] =
+	"控制對話條閑置多少秒時淡出."
+L["Controls the amount of decimals used in values displayed on elements like NamePlates and UnitFrames."] =
+	"控制在血條和單位框架等元件的小數位數"
 L["Controls the speed at which smoothed bars will be updated."] = "控制平滑條更新的速度."
-L["Controls the text displayed. Tags are available in the Available Tags section of the config."] = "控制顯示的文字. 可用的標籤在設置中的「可用標籤」一節中列出."
+L["Controls the text displayed. Tags are available in the Available Tags section of the config."] =
+	"控制顯示的文字. 可用的標籤在設置中的「可用標籤」一節中列出."
 L["Cooldown Text"] = "冷卻文字"
 L["Cooldowns"] = "冷卻"
 L["Copy Chat Lines"] = "複製聊天記錄"
 L["Copy From"] = "複製自"
 L["Copy Primary Texture"] = "複製主要材質"
-L["Copy settings from %s. This will overwrite %s profile.\n\n Are you sure?"] = "從 %s 複製設定. 這將覆蓋配置文件 %s.\n\n 你確定要這麽做麼?"
+L["Copy settings from %s. This will overwrite %s profile.\n\n Are you sure?"] =
+	"從 %s 複製設定. 這將覆蓋配置文件 %s.\n\n 你確定要這麽做麼?"
 L["Copy settings from another unit."] = "從其他框架中複製設置"
 L["Copy settings from"] = "複製設置"
 L["Core |cff1784d1ElvUI|r options."] = "核心 |cff1784d1ElvUI|r 選項"
@@ -427,7 +457,8 @@ L["Covenant Preview"] = true
 L["Covenant Renown"] = true
 L["Covenant Sanctum"] = true
 L["Craft"] = true
-L["Create a filter, once created a filter can be set inside the buffs/debuffs section of each unit."] = "創建一個過濾器, 創建一次即可讓每個單位的 buff/debuff 都能使用."
+L["Create a filter, once created a filter can be set inside the buffs/debuffs section of each unit."] =
+	"創建一個過濾器, 創建一次即可讓每個單位的 buff/debuff 都能使用."
 L["Create Custom Text"] = "創建自訂文本"
 L["Create Filter"] = "創造過濾器"
 L["Creature Type"] = "生物類型"
@@ -482,7 +513,8 @@ L["DEATH_RECAP_TITLE"] = "死亡回顧"
 L["Debuff Highlighting"] = "減益光環加亮顯示"
 L["Debuffs on Buffs"] = true
 L["Debug Tools"] = "除錯工具"
-L["DEBUG_DESC"] = "Disable all addons (including Plugins) except ElvUI. During the same session, this can be clicked to reenable them."
+L["DEBUG_DESC"] =
+	"Disable all addons (including Plugins) except ElvUI. During the same session, this can be clicked to reenable them."
 L["Decimal Length"] = "小數位數"
 L["Decode Text"] = "解碼文字"
 L["Decode"] = true
@@ -493,7 +525,8 @@ L["DEFAULT"] = "預設值"
 L["Defines how the group is sorted."] = "定義群組的排序方式."
 L["Defines the sort order of the selected sort method."] = "定義所選排序方式的排序方向."
 L["Delay Alpha"] = true
-L["Delete a created filter, you cannot delete pre-existing filters, only custom ones."] = "刪除一個創造的過濾器, 你不能刪除內建的過濾器, 只能刪除你自已添加的."
+L["Delete a created filter, you cannot delete pre-existing filters, only custom ones."] =
+	"刪除一個創造的過濾器, 你不能刪除內建的過濾器, 只能刪除你自已添加的."
 L["Delete Filter"] = "刪除過濾器"
 L["Delete"] = "刪除"
 L["Desaturate Cooldowns"] = "冷卻時"
@@ -506,7 +539,8 @@ L["Descending"] = "降序"
 L["Detach From Frame"] = "從框架分離"
 L["Detached Width"] = "分離寬度"
 L["Development Version"] = "開發版"
-L["Direction the bag sorting will use to allocate the items."] = "整理背包物品時, 將依此排序方向排放物品."
+L["Direction the bag sorting will use to allocate the items."] =
+	"整理背包物品時, 將依此排序方向排放物品."
 L["Direction the bar moves on gains/losses"] = "條增加/減少時的方向"
 L["Direction the health bar moves when gaining/losing health."] = "生命條的增減方向."
 L["Disable Blizzard Skins"] = "停用內建插件外觀"
@@ -518,10 +552,14 @@ L["Disabled Blizzard"] = "停用暴雪框架"
 L["Disables the tutorial button found on some frames."] = "禁用部分框架上的教程按鍵"
 L["Disconnected"] = "離線"
 L["Disease Effect"] = "疾病效果"
-L["Display a healer icon over known healers inside battlegrounds or arenas."] = "戰場或競技場中, 為已確認為補職的玩家標上補職圖示."
-L["Display a panel across the bottom of the screen. This is for cosmetic only."] = "顯示跨越螢幕底部的面板,僅僅是用于裝飾."
-L["Display a panel across the top of the screen. This is for cosmetic only."] = "顯示跨越螢幕頂部的面板,僅僅是用于裝飾."
-L["Display a spark texture at the end of the castbar statusbar to help show the differance between castbar and backdrop."] = "在施法狀態條的末端顯示一個火花材質來區分施法條和背景條."
+L["Display a healer icon over known healers inside battlegrounds or arenas."] =
+	"戰場或競技場中, 為已確認為補職的玩家標上補職圖示."
+L["Display a panel across the bottom of the screen. This is for cosmetic only."] =
+	"顯示跨越螢幕底部的面板,僅僅是用于裝飾."
+L["Display a panel across the top of the screen. This is for cosmetic only."] =
+	"顯示跨越螢幕頂部的面板,僅僅是用于裝飾."
+L["Display a spark texture at the end of the castbar statusbar to help show the differance between castbar and backdrop."] =
+	"在施法狀態條的末端顯示一個火花材質來區分施法條和背景條."
 L["Display a tank icon over known tanks inside battlegrounds or arenas."] = true
 L["Display battleground messages in the middle of the screen."] = "屏幕中間顯示戰場信息"
 L["Display bind names on action buttons."] = "在快捷列按鍵上顯示快捷鍵名稱."
@@ -533,7 +571,8 @@ L["Display emotion icons in chat."] = "在對話中顯示表情圖示."
 L["Display Frames"] = "顯示框架"
 L["Display guild ranks if a unit is guilded."] = "當目標有公會時顯示其位階."
 L["Display how many of a certain item you have in your possession."] = "顯示當前物品在你身上的數量"
-L["Display icon on arena frame indicating the units talent specialization or the units faction if inside a battleground."] = "當處於競技場或戰場內, 在框架上顯示天賦圖示"
+L["Display icon on arena frame indicating the units talent specialization or the units faction if inside a battleground."] =
+	"當處於競技場或戰場內, 在框架上顯示天賦圖示"
 L["Display In Main Tooltip"] = "在浮動提示資訊顯示"
 L["Display Inspect Info"] = "顯示觀察資訊"
 L["Display Interrupt Source"] = "顯示打斷來源"
@@ -542,7 +581,8 @@ L["Display Item Level"] = "顯示物品等級"
 L["Display LFG Icons in group chat."] = "在隊伍聊天中顯示預組圖示"
 L["Display macro names on action buttons."] = "在快捷列按鍵上顯示巨集名稱."
 L["Display Mana"] = true
-L["Display messages from Guild and Whisper on AFK screen.\nThis chat can be dragged around (position will be saved)."] = "在暫離界面顯示公會和悄悄話的信息.\n此聊天可被拖拽 (位置將被保存)."
+L["Display messages from Guild and Whisper on AFK screen.\nThis chat can be dragged around (position will be saved)."] =
+	"在暫離界面顯示公會和悄悄話的信息.\n此聊天可被拖拽 (位置將被保存)."
 L["Display minimap panels below the minimap, used for datatexts."] = "顯示小地圖下方的資訊框."
 L["Display player titles."] = "顯示玩家稱號."
 L["Display Player"] = "顯示玩家"
@@ -552,21 +592,29 @@ L["Display Target's Aura Duration, when there is no CD displaying."] = true
 L["Display Text"] = "顯示文本"
 L["Display the castbar icon inside the castbar."] = "在施法條內顯示圖示"
 L["Display the current Mythic+ Dungeon Score."] = "顯示當前傳奇鑰石地城分數."
-L["Display the hyperlink tooltip while hovering over a hyperlink."] = "滑鼠懸停在超鏈接上時顯示鏈接提示框."
-L["Display the item level and current specialization of the unit on modifier press."] = "按住修改鍵時顯示物品等級和當前專精."
-L["Display the name of the unit on the chat bubble. This will not work if backdrop is disabled or when you are in an instance."] = "在聊天氣泡上顯示人物名稱. 當背景被停用或是在副本內時此功能無法運作"
+L["Display the hyperlink tooltip while hovering over a hyperlink."] =
+	"滑鼠懸停在超鏈接上時顯示鏈接提示框."
+L["Display the item level and current specialization of the unit on modifier press."] =
+	"按住修改鍵時顯示物品等級和當前專精."
+L["Display the name of the unit on the chat bubble. This will not work if backdrop is disabled or when you are in an instance."] =
+	"在聊天氣泡上顯示人物名稱. 當背景被停用或是在副本內時此功能無法運作"
 L["Display the target of current cast."] = true
-L["Display the unit name who interrupted a spell on the castbar. You should increase the Time to Hold to show properly."] = "在施法條上顯示誰打斷了法術. 你應該增加 停留時間 的值來正確的顯示"
+L["Display the unit name who interrupted a spell on the castbar. You should increase the Time to Hold to show properly."] =
+	"在施法條上顯示誰打斷了法術. 你應該增加 停留時間 的值來正確的顯示"
 L["Display the unit role in the tooltip."] = "在提示中顯示單位角色"
-L["Display tick marks on the castbar for channelled spells. This will adjust automatically for spells like Drain Soul and add additional ticks based on haste."] = "若為需引導的法術, 在施法條上顯示每跳週期傷害. 啟動此功能後, 針對吸取靈魂這類的法術, 將自動調整顯示每跳週期傷害, 並視加速等級增加額外的周期傷害."
+L["Display tick marks on the castbar for channelled spells. This will adjust automatically for spells like Drain Soul and add additional ticks based on haste."] =
+	"若為需引導的法術, 在施法條上顯示每跳週期傷害. 啟動此功能後, 針對吸取靈魂這類的法術, 將自動調整顯示每跳週期傷害, 並視加速等級增加額外的周期傷害."
 L["Display Types"] = "顯示類型"
 L["Displayed Currency"] = "顯示的金額"
-L["Displays a detailed report of every item sold when enabled."] = "當啟用時顯示一個有關於每個物品賣價的詳細報告"
+L["Displays a detailed report of every item sold when enabled."] =
+	"當啟用時顯示一個有關於每個物品賣價的詳細報告"
 L["Displays item info on center of item."] = "在物品的中心顯示物品資訊"
 L["Displays item level on equippable items."] = "在可裝備物品上顯示裝備等級"
 L["Displays item level on equippable items."] = "在可裝備物品上顯示裝備等級"
-L["Don't display auras that are longer than this duration (in seconds). Set to zero to disable."] = "不顯示高於此時間(單位: 秒)的光環. 設置為 0 以禁用"
-L["Don't display auras that are shorter than this duration (in seconds). Set to zero to disable."] = "不顯示低於此時間(單位: 秒)的光環. 設置為 0 以禁用"
+L["Don't display auras that are longer than this duration (in seconds). Set to zero to disable."] =
+	"不顯示高於此時間(單位: 秒)的光環. 設置為 0 以禁用"
+L["Don't display auras that are shorter than this duration (in seconds). Set to zero to disable."] =
+	"不顯示低於此時間(單位: 秒)的光環. 設置為 0 以禁用"
 L["Donations:"] = "捐款: "
 L["Down"] = "下"
 L["DRESSUP_FRAME"] = "試衣間"
@@ -579,7 +627,8 @@ L["Duration"] = "持續時間"
 L["Editbox History"] = "對話輸入框歷史"
 L["Editor Manager"] = true
 L["Elite Icon"] = "精英標誌"
-L["ELVUI_CREDITS"] = "我想透過這個特別方式, 向那些協助測試、編碼及透過捐款協助過我的人表達感謝, 請曾提供協助的朋友至論壇傳私訊給我, 我會將你的名字添加至此處."
+L["ELVUI_CREDITS"] =
+	"我想透過這個特別方式, 向那些協助測試、編碼及透過捐款協助過我的人表達感謝, 請曾提供協助的朋友至論壇傳私訊給我, 我會將你的名字添加至此處."
 L["Emote"] = "表情"
 L["Emotion Icons"] = "表情圖示"
 L["Empower Stages"] = "強化階段"
@@ -592,14 +641,17 @@ L["Enable"] = "啟用"
 L["Enable/Disable the all-in-one bag."] = "啟用/停用整合背包."
 L["Enable/Disable the loot frame."] = "啟用/停用拾取框架."
 L["Enable/Disable the loot roll frame."] = "啟用/停用擲骰框架."
-L["Enable/Disable the minimap. |cffFF3333Warning: This will prevent you from seeing the minimap datatexts.|r"] = "是否啟用小地圖. |cffFF3333警告: 關掉後你將看不到小地圖周圍的資訊文字.|r"
+L["Enable/Disable the minimap. |cffFF3333Warning: This will prevent you from seeing the minimap datatexts.|r"] =
+	"是否啟用小地圖. |cffFF3333警告: 關掉後你將看不到小地圖周圍的資訊文字.|r"
 L["Enable/Disable the on-screen zone text when you change zones."] = "啟用/停用區域變更時的螢幕中央訊息"
 L["Enable/Disable the World Map Enhancements."] = true
 L["Enabled"] = "啟用"
 L["Enables the ElvUI Raid Control panel."] = "啟用 ElvUI 團隊控制台"
 L["Enables the five-second-rule ticks for Mana classes and Energy ticks for Rogues and Druids."] = true
-L["Enabling this allows raid-wide sorting however you will not be able to distinguish between groups."] = "啟用後將可以在整個團隊內排序, 但你不再可以區分不同小隊"
-L["Enabling this inverts the grouping order when the raid is not full, this will reverse the direction it starts from."] = "啟用後翻轉未滿團隊的隊伍順序(起始方向)"
+L["Enabling this allows raid-wide sorting however you will not be able to distinguish between groups."] =
+	"啟用後將可以在整個團隊內排序, 但你不再可以區分不同小隊"
+L["Enabling this inverts the grouping order when the raid is not full, this will reverse the direction it starts from."] =
+	"啟用後翻轉未滿團隊的隊伍順序(起始方向)"
 L["Enabling this will check your health amount."] = "啟用這個將會檢查你的生命值"
 L["Enabling this will check your power amount."] = "啟用這個將會檢查你的能量值"
 L["Enchanting"] = "附魔"
@@ -633,7 +685,8 @@ L["Extra Buttons"] = "額外按键"
 L["Fade Chat Toggles"] = "聊天框淡入淡出開關"
 L["Fade Duration"] = "漸隱動畫時長"
 L["Fade Out Delay"] = "淡出延遲"
-L["Fade out the tooltip when it disappers, instant otherwise. Cursor anchored tooltips are unaffected."] = "當提示訊息消失時淡出而不是立即消失. 滑鼠錨點的提示訊息不受此選項影響."
+L["Fade out the tooltip when it disappers, instant otherwise. Cursor anchored tooltips are unaffected."] =
+	"當提示訊息消失時淡出而不是立即消失. 滑鼠錨點的提示訊息不受此選項影響."
 L["Fade Out"] = "漸隱"
 L["Fade Tabs No Backdrop"] = "隱藏拖出的聊天框"
 L["Fade the chat text when there is no activity."] = "未出現新訊息時, 隱藏對話框的文字."
@@ -641,9 +694,12 @@ L["Fade Threshold"] = "漸隱時間閾值"
 L["Fade Undocked Tabs"] = "隱藏分離的聊天框"
 L["Faded Charging Rune"] = "漸隱充能符文"
 L["Fader"] = "漸隱"
-L["Fades the buttons that toggle chat windows when that window has been toggled off."] = "在聊天視窗開關時淡出按鍵."
-L["Fades the text on chat tabs that are docked in a panel where the backdrop is disabled."] = "當你把一個聊天框拖出聊天背景框的時候會自動隱藏掉, 注意這個聊天框並沒有被刪除, 關閉該選項你可以重新找到它"
-L["Fades the text on chat tabs that are not docked at the left or right chat panel."] = "當你把一個聊天框設置為分離狀態時會自動隱藏掉, 注意這個聊天框並沒有被刪除, 關閉該選項你可以重新找到它"
+L["Fades the buttons that toggle chat windows when that window has been toggled off."] =
+	"在聊天視窗開關時淡出按鍵."
+L["Fades the text on chat tabs that are docked in a panel where the backdrop is disabled."] =
+	"當你把一個聊天框拖出聊天背景框的時候會自動隱藏掉, 注意這個聊天框並沒有被刪除, 關閉該選項你可以重新找到它"
+L["Fades the text on chat tabs that are not docked at the left or right chat panel."] =
+	"當你把一個聊天框設置為分離狀態時會自動隱藏掉, 注意這個聊天框並沒有被刪除, 關閉該選項你可以重新找到它"
 L["Fill"] = "填充"
 L["Filled"] = "全長"
 L["Filter Modifiers"] = "過濾器修飾键"
@@ -678,7 +734,8 @@ L["Force Reaction Color"] = "強制聲望顏色"
 L["Force the frames to show, they will act as if they are the player frame."] = "強制框架顯示."
 L["Forces Focus Glow to be disabled for these frames"] = "為這些框架強制禁用焦点发光"
 L["Forces Mouseover Glow to be disabled for these frames"] = "強制關閉這些框架的滑鼠指向發光"
-L["Forces reaction color instead of class color on units controlled by players."] = "對於玩家控制的角色強制使用聲望顏色而不是職業顏色"
+L["Forces reaction color instead of class color on units controlled by players."] =
+	"對於玩家控制的角色強制使用聲望顏色而不是職業顏色"
 L["Forces Target Glow to be disabled for these frames"] = "強制關閉這些框架的目標發光"
 L["Format"] = "格式"
 L["Frame Glow"] = "框架發光"
@@ -758,12 +815,14 @@ L["Health Color"] = "血量顏色"
 L["Health Threshold"] = "血量閾值"
 L["Health"] = "生命條"
 L["Height Multiplier"] = "高度倍數"
-L["Height of the objective tracker. Increase size to be able to see more objectives."] = "任務框架的高度.增加大小以看到更多目標"
+L["Height of the objective tracker. Increase size to be able to see more objectives."] =
+	"任務框架的高度.增加大小以看到更多目標"
 L["Height"] = "高"
 L["Help Frame"] = "幫助"
 L["Help"] = "幫助"
 L["Herbalism"] = "草藥學"
-L["Here you can add items that you want to be excluded from sorting. To remove an item just click on its name in the list."] = true
+L["Here you can add items that you want to be excluded from sorting. To remove an item just click on its name in the list."] =
+	true
 L["HH:MM Threshold"] = "HH:MM(時:分) 閾值"
 L["HH:MM"] = true
 L["Hide At Max Level"] = "在最高等級時隱藏"
@@ -793,7 +852,8 @@ L["Hide Voice Buttons"] = "隱藏語音按鍵"
 L["Hide When Empty"] = "空白時隱藏"
 L["Hide Zone Text"] = "隱藏區域文字"
 L["Hide"] = "隱藏"
-L["Hides the bling animation on buttons at the end of the global cooldown."] = "隱藏當公共冷卻時間結束時的閃光動畫"
+L["Hides the bling animation on buttons at the end of the global cooldown."] =
+	"隱藏當公共冷卻時間結束時的閃光動畫"
 L["Hides the yellow quest progress text and red error text at the top of the screen while in combat."] = true
 L["High"] = true
 L["Highlight Color Style"] = true
@@ -816,7 +876,8 @@ L["Hover"] = "滑鼠指向"
 L["How far away the portrait is from the camera."] = "人像和鏡頭間有多遠"
 L["How long the cutaway health will take to fade out."] = "生命值漸隱時間長度"
 L["How long the cutaway power will take to fade out."] = "能量值漸隱時間長度"
-L["How many seconds the castbar should stay visible after the cast failed or was interrupted."] = "在施法失敗或被打斷時施法條保持可見的秒數"
+L["How many seconds the castbar should stay visible after the cast failed or was interrupted."] =
+	"在施法失敗或被打斷時施法條保持可見的秒數"
 L["How much time before the cutaway health starts to fade."] = "開始生命值漸隱前的時間長度"
 L["How much time before the cutaway power starts to fade."] = "開始能量值漸隱前的時間長度"
 L["Hyperlink Hover"] = "超連結提示資訊"
@@ -835,71 +896,124 @@ L["Icon: TOPLEFT"] = "圖示: 頂部左側"
 L["Icon: TOPRIGHT"] = "圖示: 頂部右側"
 L["Icons and Text (Short)"] = "圖示與文字(簡短)"
 L["Icons and Text"] = "圖示與文字"
-L["If enabled then it checks if auras are missing instead of being present on the unit."] = "如果選中則將會檢查光環是否缺失而不是光環是否存在"
-L["If enabled then it will require all auras to activate the filter. Otherwise it will only require any one of the auras to activate it."] = "如果選中則要求滿足所有光環. 不啟用則只要求任一光環存在即可啟動."
-L["If enabled then it will require all cooldowns to activate the filter. Otherwise it will only require any one of the cooldowns to activate it."] = "如果選中則要求滿足所有冷卻. 否則只要求任一冷卻存在即可啟動."
+L["If enabled then it checks if auras are missing instead of being present on the unit."] =
+	"如果選中則將會檢查光環是否缺失而不是光環是否存在"
+L["If enabled then it will require all auras to activate the filter. Otherwise it will only require any one of the auras to activate it."] =
+	"如果選中則要求滿足所有光環. 不啟用則只要求任一光環存在即可啟動."
+L["If enabled then it will require all cooldowns to activate the filter. Otherwise it will only require any one of the cooldowns to activate it."] =
+	"如果選中則要求滿足所有冷卻. 否則只要求任一冷卻存在即可啟動."
 L["If enabled then the filter will activate if the unit is casting anything."] = true
 L["If enabled then the filter will activate if the unit is channeling anything."] = true
 L["If enabled then the filter will activate if the unit is not casting anything."] = true
 L["If enabled then the filter will activate if the unit is not channeling anything."] = true
-L["If enabled then the filter will only activate if the level of the unit is equal to or higher than this value."] = "如果選中則過濾器只會在單位等級大於等於該值的時候啟動."
-L["If enabled then the filter will only activate if the level of the unit is equal to or lower than this value."] = "如果選中則過濾器只會在單位等級小於等於該值的時候啟動."
-L["If enabled then the filter will only activate if the level of the unit matches this value."] = "如果選中則過濾器只會在單位等級符合該值的時候啟動"
-L["If enabled then the filter will only activate if the level of the unit matches your own."] = "如果選中則過濾器只會在單位等級符合你的等級的時候啟動"
-L["If enabled then the filter will only activate if the unit is casting interruptible spells."] = "如果選中則過濾器只會在單位施放可打斷技能的時候啟動"
-L["If enabled then the filter will only activate if the unit is casting not interruptible spells."] = "如果選中則過濾器只會在單位施放不可打斷技能的時候啟動"
-L["If enabled then the filter will only activate if the unit is not casting or channeling one of the selected spells."] = "如果選中則過濾器只會在單位未施放或引導任一勾選的技能時啟動."
-L["If enabled then the filter will only activate when the unit can be attacked by the active player."] = "如果選中則只會在單位可以被攻擊時啟動."
-L["If enabled then the filter will only activate when the unit can not be attacked by the active player."] = "如果選中則只會在單位無法被攻擊時啟動."
+L["If enabled then the filter will only activate if the level of the unit is equal to or higher than this value."] =
+	"如果選中則過濾器只會在單位等級大於等於該值的時候啟動."
+L["If enabled then the filter will only activate if the level of the unit is equal to or lower than this value."] =
+	"如果選中則過濾器只會在單位等級小於等於該值的時候啟動."
+L["If enabled then the filter will only activate if the level of the unit matches this value."] =
+	"如果選中則過濾器只會在單位等級符合該值的時候啟動"
+L["If enabled then the filter will only activate if the level of the unit matches your own."] =
+	"如果選中則過濾器只會在單位等級符合你的等級的時候啟動"
+L["If enabled then the filter will only activate if the unit is casting interruptible spells."] =
+	"如果選中則過濾器只會在單位施放可打斷技能的時候啟動"
+L["If enabled then the filter will only activate if the unit is casting not interruptible spells."] =
+	"如果選中則過濾器只會在單位施放不可打斷技能的時候啟動"
+L["If enabled then the filter will only activate if the unit is not casting or channeling one of the selected spells."] =
+	"如果選中則過濾器只會在單位未施放或引導任一勾選的技能時啟動."
+L["If enabled then the filter will only activate when the unit can be attacked by the active player."] =
+	"如果選中則只會在單位可以被攻擊時啟動."
+L["If enabled then the filter will only activate when the unit can not be attacked by the active player."] =
+	"如果選中則只會在單位無法被攻擊時啟動."
 L["If enabled then the filter will only activate when the unit has a stealable buff(s)."] = true
 L["If enabled then the filter will only activate when the unit has no stealable buff(s)."] = true
-L["If enabled then the filter will only activate when the unit is controlled by the player."] = "如果選中則只會在單位被玩家控制時啟動."
-L["If enabled then the filter will only activate when the unit is in a Vehicle."] = "如果選中則過濾器只會在單位在載具中的時候啟動."
-L["If enabled then the filter will only activate when the unit is in combat."] = "如果選中則過濾器只會在單位在戰鬥中的時候啟動."
+L["If enabled then the filter will only activate when the unit is controlled by the player."] =
+	"如果選中則只會在單位被玩家控制時啟動."
+L["If enabled then the filter will only activate when the unit is in a Vehicle."] =
+	"如果選中則過濾器只會在單位在載具中的時候啟動."
+L["If enabled then the filter will only activate when the unit is in combat."] =
+	"如果選中則過濾器只會在單位在戰鬥中的時候啟動."
 L["If enabled then the filter will only activate when the unit is in your Party."] = true
 L["If enabled then the filter will only activate when the unit is in your Raid."] = true
-L["If enabled then the filter will only activate when the unit is not controlled by the player."] = "如果選中則只會在單位未被玩家控制時啟動."
-L["If enabled then the filter will only activate when the unit is not in a Vehicle."] = "如果選中則過濾器只會在單位不在載具中的時候啟動."
+L["If enabled then the filter will only activate when the unit is not controlled by the player."] =
+	"如果選中則只會在單位未被玩家控制時啟動."
+L["If enabled then the filter will only activate when the unit is not in a Vehicle."] =
+	"如果選中則過濾器只會在單位不在載具中的時候啟動."
 L["If enabled then the filter will only activate when the unit is not in your Party."] = true
 L["If enabled then the filter will only activate when the unit is not in your Raid."] = true
-L["If enabled then the filter will only activate when the unit is not owned by the player."] = "如果選中則只會在單位不屬於玩家時啟動."
-L["If enabled then the filter will only activate when the unit is not pvp-flagged."] = "如果選中則只會在單位沒有PvP標記時啟動."
-L["If enabled then the filter will only activate when the unit is not tap denied."] = "如果選中則過濾器只會在單位未被其他玩家攻擊時候啟動."
-L["If enabled then the filter will only activate when the unit is not targeting you."] = "如果選中則過濾器只會在單位沒有選中你的時候啟動."
-L["If enabled then the filter will only activate when the unit is not the active player's pet."] = "如果選中則只會在單位不是寵物時啟動."
-L["If enabled then the filter will only activate when the unit is out of combat."] = "如果選中則過濾器只會在單位不在戰鬥中的時候啟動."
-L["If enabled then the filter will only activate when the unit is owned by the player."] = "如果選中則只會在單位屬於玩家時啟動."
-L["If enabled then the filter will only activate when the unit is pvp-flagged."] = "如果選中則只會在單位有 PvP 標記時啟動."
-L["If enabled then the filter will only activate when the unit is tap denied."] = "如果選中則過濾器只會在單位未被其他玩家攻擊時候啟動."
-L["If enabled then the filter will only activate when the unit is targeting you."] = "如果選中則過濾器只會在單位選中你的時候啟動"
-L["If enabled then the filter will only activate when the unit is the active player's pet."] = "如果選中則只會在單位是寵物時啟動."
-L["If enabled then the filter will only activate when you are focusing the unit."] = "如果選中則過濾器只會在你設其為專注目標時啟動"
-L["If enabled then the filter will only activate when you are in a Vehicle."] = "如果選中則過濾器只會在你在載具中的時候啟動."
-L["If enabled then the filter will only activate when you are in combat."] = "如果選中則過濾器只會在你在戰鬥中的時候啟動."
-L["If enabled then the filter will only activate when you are not focusing the unit."] = "如果選中則過濾器只會在你沒有設其為專注目標時啟動."
-L["If enabled then the filter will only activate when you are not in a Vehicle."] = "如果選中則過濾器只會在你不在載具中的時候啟動."
-L["If enabled then the filter will only activate when you are not targeting the unit."] = "如果選中則過濾器只會在你沒有選中單位的時候啟動."
-L["If enabled then the filter will only activate when you are out of combat."] = "如果選中則過濾器只會在你不在戰鬥中的時候啟動."
-L["If enabled then the filter will only activate when you are resting at an Inn."] = "如果選中則過濾器只會在你在休息區的時候啟動."
-L["If enabled then the filter will only activate when you are targeting the unit."] = "如果選中則過濾器只會在你選中單位的時候啟動."
+L["If enabled then the filter will only activate when the unit is not owned by the player."] =
+	"如果選中則只會在單位不屬於玩家時啟動."
+L["If enabled then the filter will only activate when the unit is not pvp-flagged."] =
+	"如果選中則只會在單位沒有PvP標記時啟動."
+L["If enabled then the filter will only activate when the unit is not tap denied."] =
+	"如果選中則過濾器只會在單位未被其他玩家攻擊時候啟動."
+L["If enabled then the filter will only activate when the unit is not targeting you."] =
+	"如果選中則過濾器只會在單位沒有選中你的時候啟動."
+L["If enabled then the filter will only activate when the unit is not the active player's pet."] =
+	"如果選中則只會在單位不是寵物時啟動."
+L["If enabled then the filter will only activate when the unit is out of combat."] =
+	"如果選中則過濾器只會在單位不在戰鬥中的時候啟動."
+L["If enabled then the filter will only activate when the unit is owned by the player."] =
+	"如果選中則只會在單位屬於玩家時啟動."
+L["If enabled then the filter will only activate when the unit is pvp-flagged."] =
+	"如果選中則只會在單位有 PvP 標記時啟動."
+L["If enabled then the filter will only activate when the unit is tap denied."] =
+	"如果選中則過濾器只會在單位未被其他玩家攻擊時候啟動."
+L["If enabled then the filter will only activate when the unit is targeting you."] =
+	"如果選中則過濾器只會在單位選中你的時候啟動"
+L["If enabled then the filter will only activate when the unit is the active player's pet."] =
+	"如果選中則只會在單位是寵物時啟動."
+L["If enabled then the filter will only activate when you are focusing the unit."] =
+	"如果選中則過濾器只會在你設其為專注目標時啟動"
+L["If enabled then the filter will only activate when you are in a Vehicle."] =
+	"如果選中則過濾器只會在你在載具中的時候啟動."
+L["If enabled then the filter will only activate when you are in combat."] =
+	"如果選中則過濾器只會在你在戰鬥中的時候啟動."
+L["If enabled then the filter will only activate when you are not focusing the unit."] =
+	"如果選中則過濾器只會在你沒有設其為專注目標時啟動."
+L["If enabled then the filter will only activate when you are not in a Vehicle."] =
+	"如果選中則過濾器只會在你不在載具中的時候啟動."
+L["If enabled then the filter will only activate when you are not targeting the unit."] =
+	"如果選中則過濾器只會在你沒有選中單位的時候啟動."
+L["If enabled then the filter will only activate when you are out of combat."] =
+	"如果選中則過濾器只會在你不在戰鬥中的時候啟動."
+L["If enabled then the filter will only activate when you are resting at an Inn."] =
+	"如果選中則過濾器只會在你在休息區的時候啟動."
+L["If enabled then the filter will only activate when you are targeting the unit."] =
+	"如果選中則過濾器只會在你選中單位的時候啟動."
 L["If enabled then the filter will only activate when you have a target."] = true
-L["If enabled, the style filter will only activate when you are in one of the instances specified in Instance ID."] = "如果選中則只會在指定 ID 的地下城時候啟動."
-L["If enabled, the style filter will only activate when you are in one of the maps specified in Map ID."] = "如果選中則只會在指定ID地圖時候啟動."
-L["If enabled, the style filter will only activate when you are in one of the subzones specified in Add Subzone Name."] = "如果選中則只會在指定子區域時候啟動."
-L["If enabled, the style filter will only activate when you are in one of the zones specified in Add Zone Name."] = "如果選中則只會在指定區域時候啟動."
-L["If enabled, then this currency will be displayed in the main Currencies datatext tooltip."] = "如果啟用, 則此通貨會顯示在資訊文字提示訊息中的主要通貨."
-L["If not set to 0 then override the size of the aura icon to this."] = "若設為 0, 光環圖示大小將不會變更為此值."
+L["If enabled, the style filter will only activate when you are in one of the instances specified in Instance ID."] =
+	"如果選中則只會在指定 ID 的地下城時候啟動."
+L["If enabled, the style filter will only activate when you are in one of the maps specified in Map ID."] =
+	"如果選中則只會在指定ID地圖時候啟動."
+L["If enabled, the style filter will only activate when you are in one of the subzones specified in Add Subzone Name."] =
+	"如果選中則只會在指定子區域時候啟動."
+L["If enabled, the style filter will only activate when you are in one of the zones specified in Add Zone Name."] =
+	"如果選中則只會在指定區域時候啟動."
+L["If enabled, then this currency will be displayed in the main Currencies datatext tooltip."] =
+	"如果啟用, 則此通貨會顯示在資訊文字提示訊息中的主要通貨."
+L["If not set to 0 then override the size of the aura icon to this."] =
+	"若設為 0, 光環圖示大小將不會變更為此值."
 L["If not set to true then the server time will be displayed instead."] = "若關閉此選項將顯示伺服器時間."
-L["If the aura is listed with a number then you need to use that to remove it from the list."] = "如果光環在列表之中有和一個數字同時設定, 你需要用它來將其移出列表"
-L["If this is enabled then the reaction check will use your reputation with the faction the unit belongs to."] = "如果開啟, 將會使用你在該單位陣營中的聲望來進行反應檢查."
-L["If this list is empty, and if Interruptible is checked, then the filter will activate on any type of cast that can be interrupted."] = "如果列表為空, 並且可打斷被選中, 那麼過濾器會在任何可被打斷的施法時啟動"
-L["If this threshold is used then the health of the unit needs to be higher than this value in order for the filter to activate. Set to 0 to disable."] = "如果這個閾值被設置則單位的血量需要比設定值更高才會將過濾器啟動. 設為 0 以禁用."
-L["If this threshold is used then the health of the unit needs to be lower than this value in order for the filter to activate. Set to 0 to disable."] = "如果這個閾值被設置則單位的血量需要比設定值更低才會將過濾器啟動. 設為 0 以禁用."
-L["If this threshold is used then the power of the unit needs to be higher than this value in order for the filter to activate. Set to 0 to disable."] = "如果這個閾值被設置則單位的能量需要比設定值更高才會將過濾器啟動. 設為 0 以禁用."
-L["If this threshold is used then the power of the unit needs to be lower than this value in order for the filter to activate. Set to 0 to disable."] = "如果這個閾值被設置則單位的能量需要比設定值更低才會將過濾器啟動. 設為 0 以禁用."
-L["If you have a lot of 3D Portraits active then it will likely have a big impact on your FPS. Disable some portraits if you experience FPS issues."] = "如果你同時激活了很多 3D 頭像, 可能會帶來顯著的幀數下降. 你可以通過禁用一部分頭像來解決這個問題."
-L["If you have any plugins supporting this feature installed you can find them in the selection dropdown to the right."] = "如果你安裝了任何支援此功能的插件, 你可以在右邊的下拉選單中找到它"
-L["If you unlock actionbars then trying to move a spell might instantly cast it if you cast spells on key press instead of key release."] = "如果你將快捷列解鎖後嘗試移動技能, 技能可能會馬上施放因為你使用按下施法而非釋放施法"
+L["If the aura is listed with a number then you need to use that to remove it from the list."] =
+	"如果光環在列表之中有和一個數字同時設定, 你需要用它來將其移出列表"
+L["If this is enabled then the reaction check will use your reputation with the faction the unit belongs to."] =
+	"如果開啟, 將會使用你在該單位陣營中的聲望來進行反應檢查."
+L["If this list is empty, and if Interruptible is checked, then the filter will activate on any type of cast that can be interrupted."] =
+	"如果列表為空, 並且可打斷被選中, 那麼過濾器會在任何可被打斷的施法時啟動"
+L["If this threshold is used then the health of the unit needs to be higher than this value in order for the filter to activate. Set to 0 to disable."] =
+	"如果這個閾值被設置則單位的血量需要比設定值更高才會將過濾器啟動. 設為 0 以禁用."
+L["If this threshold is used then the health of the unit needs to be lower than this value in order for the filter to activate. Set to 0 to disable."] =
+	"如果這個閾值被設置則單位的血量需要比設定值更低才會將過濾器啟動. 設為 0 以禁用."
+L["If this threshold is used then the power of the unit needs to be higher than this value in order for the filter to activate. Set to 0 to disable."] =
+	"如果這個閾值被設置則單位的能量需要比設定值更高才會將過濾器啟動. 設為 0 以禁用."
+L["If this threshold is used then the power of the unit needs to be lower than this value in order for the filter to activate. Set to 0 to disable."] =
+	"如果這個閾值被設置則單位的能量需要比設定值更低才會將過濾器啟動. 設為 0 以禁用."
+L["If you have a lot of 3D Portraits active then it will likely have a big impact on your FPS. Disable some portraits if you experience FPS issues."] =
+	"如果你同時激活了很多 3D 頭像, 可能會帶來顯著的幀數下降. 你可以通過禁用一部分頭像來解決這個問題."
+L["If you have any plugins supporting this feature installed you can find them in the selection dropdown to the right."] =
+	"如果你安裝了任何支援此功能的插件, 你可以在右邊的下拉選單中找到它"
+L["If you unlock actionbars then trying to move a spell might instantly cast it if you cast spells on key press instead of key release."] =
+	"如果你將快捷列解鎖後嘗試移動技能, 技能可能會馬上施放因為你使用按下施法而非釋放施法"
 L["Ignore mouse events."] = "忽略滑鼠事件."
 L["Ignored Items (Global)"] = true
 L["Ignored Items (Profile)"] = true
@@ -915,7 +1029,8 @@ L["In Raid"] = "在團隊副本中"
 L["In Vehicle"] = "在載具上"
 L["Inactivity Timer"] = "不活躍計時器"
 L["Index"] = "索引"
-L["Indicate whether buffs you cast yourself should be separated before or after."] = "將你自身施放的增益放於整體增益最前方或或最後方."
+L["Indicate whether buffs you cast yourself should be separated before or after."] =
+	"將你自身施放的增益放於整體增益最前方或或最後方."
 L["Indicator Expiring"] = true
 L["Indicator"] = true
 L["Individual Units"] = "獨立單位"
@@ -1022,7 +1137,8 @@ L["Limit the number of rows or columns."] = "最大行數或列數."
 L["Lines"] = "行數"
 L["Link to the latest development version."] = "最新開發版連結"
 L["Link to the latest PTR version."] = "最新 PTR 版本連結"
-L["List of words to color in chat if found in a message. If you wish to add multiple words you must separate the word with a comma. To search for your current name you can use %MYNAME%.\n\nExample:\n%MYNAME%, ElvUI, RBGs, Tank"] = "如果在對話信息中發現如下文字會自動上色該文字. 如果你需要添加多個詞必須用逗號分開. 如要搜尋角色名稱可使用%MYNAME %.\n\n例如:\n%MYNAME%, ElvUI, RBGs, Tank"
+L["List of words to color in chat if found in a message. If you wish to add multiple words you must separate the word with a comma. To search for your current name you can use %MYNAME%.\n\nExample:\n%MYNAME%, ElvUI, RBGs, Tank"] =
+	"如果在對話信息中發現如下文字會自動上色該文字. 如果你需要添加多個詞必須用逗號分開. 如要搜尋角色名稱可使用%MYNAME %.\n\n例如:\n%MYNAME%, ElvUI, RBGs, Tank"
 L["Load Distance"] = true
 L["Loadout Only"] = "僅配置"
 L["Local Time"] = "本地時間"
@@ -1030,7 +1146,8 @@ L["Location Text"] = "所在位置文字"
 L["Lock Distance Max"] = "最大鎖定距離"
 L["LOCK_ACTIONBAR_TEXT"] = "鎖定快捷列"
 L["Log Taints"] = "錯誤記錄"
-L["Log the main chat frames history. So when you reloadui or log in and out you see the history from your last session."] = "記錄對話歷史,當你重載,登錄和退出時會恢復你最後一次會話"
+L["Log the main chat frames history. So when you reloadui or log in and out you see the history from your last session."] =
+	"記錄對話歷史,當你重載,登錄和退出時會恢復你最後一次會話"
 L["Login Message"] = "登入資訊"
 L["Loot Roll"] = "擲骰"
 L["Losing Threat"] = "丟失仇恨"
@@ -1041,7 +1158,8 @@ L["Low Health Threshold"] = "低生命值閾值"
 L["Low Threat"] = "低仇恨"
 L["Low Threshold"] = "冷卻時間低閾值"
 L["Low"] = true
-L["Lower numbers mean a higher priority. Filters are processed in order from 1 to 100."] = "更低的數值意味著更高的優先順序. 過濾器將按照 1 至 100 的順序進行."
+L["Lower numbers mean a higher priority. Filters are processed in order from 1 to 100."] =
+	"更低的數值意味著更高的優先順序. 過濾器將按照 1 至 100 的順序進行."
 L["LUNAR_POWER"] = "星能"
 L["Macro Text"] = "巨集名稱"
 L["MACROS"] = "巨集設定"
@@ -1055,7 +1173,8 @@ L["Main Options"] = "主要選項"
 L["Main statusbar texture."] = "主狀態條材質"
 L["Major Factions"] = true
 L["Make textures transparent."] = "材質透明"
-L["Make the unitframe glow when it is below this percent of health."] = "當單位血量低於此百分比時使其框架發光."
+L["Make the unitframe glow when it is below this percent of health."] =
+	"當單位血量低於此百分比時使其框架發光."
 L["Make the world map smaller."] = "讓世界地圖更小."
 L["MANA"] = "法力"
 L["Map ID"] = "地圖 ID"
@@ -1063,7 +1182,8 @@ L["Map Opacity When Moving"] = "移動時地圖透明度"
 L["MAP_FADE_TEXT"] = "移動時淡化地圖"
 L["Maps"] = "地圖"
 L["Mark Quest Reward"] = "標註任務獎勵"
-L["Marks the most valuable quest reward with a gold coin."] = "使用金幣圖示標註任務獎勵中最有價值的物品."
+L["Marks the most valuable quest reward with a gold coin."] =
+	"使用金幣圖示標註任務獎勵中最有價值的物品."
 L["Masque Support"] = "Masque 支援"
 L["Masque"] = true
 L["Match if Item Name or ID is NOT in the list."] = "匹配不在列表中的物品名字或 ID."
@@ -1072,11 +1192,13 @@ L["Match Player Level"] = "符合玩家等級"
 L["Match this trigger if the spell is not known."] = "當法術未知時觸發此觸發器."
 L["Max Allowed Groups"] = "最大允許隊伍數"
 L["Max Alpha"] = "最大透明度"
-L["Max amount of overflow allowed to extend past the end of the health bar."] = "顯示在生命值條末端的治療吸收盾的最大量"
+L["Max amount of overflow allowed to extend past the end of the health bar."] =
+	"顯示在生命值條末端的治療吸收盾的最大量"
 L["Max Bars"] = "最多"
 L["Max Distance"] = "最大距離"
 L["Max Lines"] = "最多行數"
-L["Max Overflow is set to zero. Absorb Overflows will be hidden when using Overflow style.\nIf used together Max Overflow at zero and Overflow mode will act like Normal mode without the ending sliver of overflow."] = "最大治療吸收盾設置為零. 使用吸收盾樣式時治療吸收盾將被隱藏.\n如果最大治療吸收盾設置為零並使用吸收盾樣式, 將會像沒有治療吸收盾一樣顯示."
+L["Max Overflow is set to zero. Absorb Overflows will be hidden when using Overflow style.\nIf used together Max Overflow at zero and Overflow mode will act like Normal mode without the ending sliver of overflow."] =
+	"最大治療吸收盾設置為零. 使用吸收盾樣式時治療吸收盾將被隱藏.\n如果最大治療吸收盾設置為零並使用吸收盾樣式, 將會像沒有治療吸收盾一樣顯示."
 L["Max Overflow"] = "最大治療吸收盾"
 L["Max Wraps"] = "每行最大數"
 L["Maximum Duration"] = "最大持續時間"
@@ -1087,7 +1209,8 @@ L["Media"] = "材質"
 L["Merchant Frame"] = "商人"
 L["Method to sort by."] = "排序方式"
 L["Middle Click - Set Focus"] = "滑鼠中鍵 - 設置焦點"
-L["Middle clicking the unit frame will cause your focus to match the unit.\n|cffff3333Note:|r If Clique is enabled, this option only effects ElvUI frames if they are not blacklisted in Clique."] = "滑鼠中鍵點擊單位框架設置焦點.\n|cffff3333注意: |r如果已啟用 Clique, 此選項只有 ElvUI 單位框架設置焦點不在 Clique 黑名單中才會生效."
+L["Middle clicking the unit frame will cause your focus to match the unit.\n|cffff3333Note:|r If Clique is enabled, this option only effects ElvUI frames if they are not blacklisted in Clique."] =
+	"滑鼠中鍵點擊單位框架設置焦點.\n|cffff3333注意: |r如果已啟用 Clique, 此選項只有 ElvUI 單位框架設置焦點不在 Clique 黑名單中才會生效."
 L["Middle"] = "中間"
 L["Min Alpha"] = "最小透明度"
 L["Minimap Buttons"] = "小地圖按鍵"
@@ -1122,7 +1245,8 @@ L["Mouseover"] = "滑鼠滑過顯示"
 L["Movers"] = "移動器"
 L["Multi-Monitor Support"] = "多顯示器支援"
 L["Multiple Ranks"] = "多個等級"
-L["Multiply the backdrops height or width by this value. This is usefull if you wish to have more than one bar behind a backdrop."] = "根據此值增加背景的高度或寬度. 一般用來設定在一個背景框裡放置多條快捷列."
+L["Multiply the backdrops height or width by this value. This is usefull if you wish to have more than one bar behind a backdrop."] =
+	"根據此值增加背景的高度或寬度. 一般用來設定在一個背景框裡放置多條快捷列."
 L["Must be in group with the player if he isn't on the same server as you."] = true
 L["My Guild"] = true
 L["Mythic+ Best Run"] = "M+ 最佳成績"
@@ -1191,8 +1315,10 @@ L["Number Allowed"] = "允許數量"
 L["Number of DataTexts"] = "資訊文字數量"
 L["Number of Groups"] = "每隊單位數量"
 L["Number of messages you scroll for each step."] = "每次滾動的聊天資訊數目"
-L["Number of repeat characters while in combat before the chat editbox is automatically closed."] = "當你在戰鬥中按下技能鍵時,有可能你的輸入框還處於打開狀態,這個功能可以在你按下技能鍵並且在輸入框中輸入下列個數字符串卻沒有放出技能時幫你自動關閉輸入框"
-L["Number of time in seconds to scroll down to the bottom of the chat window if you are not scrolled down completely."] = "對話框滾動到底部所需要的滾動時間(秒)."
+L["Number of repeat characters while in combat before the chat editbox is automatically closed."] =
+	"當你在戰鬥中按下技能鍵時,有可能你的輸入框還處於打開狀態,這個功能可以在你按下技能鍵並且在輸入框中輸入下列個數字符串卻沒有放出技能時幫你自動關閉輸入框"
+L["Number of time in seconds to scroll down to the bottom of the chat window if you are not scrolled down completely."] =
+	"對話框滾動到底部所需要的滾動時間(秒)."
 L["Objective Frame Height"] = "任務框架高度"
 L["OBJECTIVES_TRACKER_LABEL"] = "目標"
 L["OBLITERUM_FORGE_TITLE"] = "滅形熔爐"
@@ -1202,7 +1328,8 @@ L["Off Tank Bad Transition"] = "非當前坦非正常過渡"
 L["Off Tank Good Transition"] = "非當前坦正常過渡"
 L["Off Tank"] = "非當前坦"
 L["Officer"] = "幹部"
-L["Offset of the powerbar to the healthbar, set to 0 to disable."] = "偏移能量條與生命條的位置, 設定為 0 禁用此功能."
+L["Offset of the powerbar to the healthbar, set to 0 to disable."] =
+	"偏移能量條與生命條的位置, 設定為 0 禁用此功能."
 L["Offset"] = "偏移"
 L["On Cooldown"] = "冷卻中"
 L["On Me"] = true
@@ -1216,7 +1343,8 @@ L["Only Match SpellID"] = "僅匹配法術 ID"
 L["Only show icons instead of specialization names"] = "僅顯示圖示而不是專精名稱"
 L["Only Used Slots"] = "僅使用槽位"
 L["OPACITY"] = "透明度"
-L["OPTION_TOOLTIP_ACTION_BUTTON_USE_KEY_DOWN"] = "快捷鍵按鍵設定會在按下按鍵時生效, 而不是在鬆開按鍵的時候."
+L["OPTION_TOOLTIP_ACTION_BUTTON_USE_KEY_DOWN"] =
+	"快捷鍵按鍵設定會在按下按鍵時生效, 而不是在鬆開按鍵的時候."
 L["OPTION_TOOLTIP_TIMESTAMPS"] = "選擇在對話訊息中時間標記的格式."
 L["Order Hall Command Bar"] = "職業大廳命令條"
 L["Orderhall"] = "職業大廳"
@@ -1290,22 +1418,27 @@ L["Plugin"] = "插件"
 L["Plugins"] = true
 L["Poison Effect"] = "毒性效果"
 L["Portrait"] = "頭像"
-L["Position of bonus quest reward frame relative to the objective tracker."] = "額外獎勵框架相對於任務框架的相對位置"
-L["Position of the Chat EditBox, if datatexts are disabled this will be forced to be above chat."] = "對話編輯框位置,如果底部的信息文字被禁用的話,將會強制顯示在對話框頂部."
-L["Position of the Maw Buffs list relative to the objective tracker."] = "托伽司增益列表位置將會自動隨任務列表位置變動."
+L["Position of bonus quest reward frame relative to the objective tracker."] =
+	"額外獎勵框架相對於任務框架的相對位置"
+L["Position of the Chat EditBox, if datatexts are disabled this will be forced to be above chat."] =
+	"對話編輯框位置,如果底部的信息文字被禁用的話,將會強制顯示在對話框頂部."
+L["Position of the Maw Buffs list relative to the objective tracker."] =
+	"托伽司增益列表位置將會自動隨任務列表位置變動."
 L["Position the Model horizontally."] = "水平放置模型"
 L["Position the Model vertically."] = "垂直放置模型"
 L["Position"] = "位置"
 L["Power Color"] = "能量顏色"
 L["Power Prediction Color"] = "能量預測顏色"
 L["Power Prediction"] = "能量預測"
-L["Power text will be hidden on NPC targets, in addition the name text will be repositioned to the power texts anchor point."] = "NPC 目標將隱藏能量值文字."
+L["Power text will be hidden on NPC targets, in addition the name text will be repositioned to the power texts anchor point."] =
+	"NPC 目標將隱藏能量值文字."
 L["Power Threshold"] = "能量閾值"
 L["Power"] = "能量"
 L["POWER_TYPE_ARCANE_CHARGES"] = "秘法充能"
 L["POWER_TYPE_ESSENCE"] = "龍能"
 L["Prefer Target Color"] = true
-L["Prevent the same messages from displaying in chat more than once within this set amount of seconds, set to zero to disable."] = "單位時間(秒) 內屏蔽重複對話信息, 設定為0 禁用此功能."
+L["Prevent the same messages from displaying in chat more than once within this set amount of seconds, set to zero to disable."] =
+	"單位時間(秒) 內屏蔽重複對話信息, 設定為0 禁用此功能."
 L["Primary Texture"] = "主要材質"
 L["Priority"] = "優先級"
 L["Private (Character Settings)"] = "個人(角色配置)"
@@ -1393,14 +1526,17 @@ L["Replace Font"] = "替換字體"
 L["Replace Name Font"] = "替換姓名字體"
 L["Replace Nameplate Fonts"] = "替換血條字體"
 L["Replace Text on Me"] = "替換自己的文字"
-L["Replaces the default Blizzard fonts on various panels and frames with the fonts chosen in the Media section of the ElvUI Options. NOTE: Any font that inherits from the fonts ElvUI usually replaces will be affected as well if you disable this. Enabled by default."] = "用ElvUI字體設置代替暴雪原有字體設置,如果禁用有可能導致你的UI出問題,默認開啟開選項."
+L["Replaces the default Blizzard fonts on various panels and frames with the fonts chosen in the Media section of the ElvUI Options. NOTE: Any font that inherits from the fonts ElvUI usually replaces will be affected as well if you disable this. Enabled by default."] =
+	"用ElvUI字體設置代替暴雪原有字體設置,如果禁用有可能導致你的UI出問題,默認開啟開選項."
 L["Replaces the font on Blizzard Nameplates."] = true
-L["Replaces the StatusBar texture setting on Unitframes and Nameplates with the primary texture."] = "使用主要材質來替換單位框架及血條的狀態條材質設定."
+L["Replaces the StatusBar texture setting on Unitframes and Nameplates with the primary texture."] =
+	"使用主要材質來替換單位框架及血條的狀態條材質設定."
 L["Reposition Window"] = "重置窗口位置"
 L["Reputation Alpha"] = "聲望透明度"
 L["Reputation"] = "聲望"
 L["Require All"] = "要求全部"
-L["Require holding the Alt key down to move cursor or cycle through messages in the editbox."] = "開啟該選項使你在查看聊天歷史記錄時需要按住Alt+上下鍵,如果關閉則直接按上下鍵即可"
+L["Require holding the Alt key down to move cursor or cycle through messages in the editbox."] =
+	"開啟該選項使你在查看聊天歷史記錄時需要按住Alt+上下鍵,如果關閉則直接按上下鍵即可"
 L["Require Target"] = true
 L["Reset Action Paging"] = "重置動作翻頁"
 L["Reset all frames to their original positions."] = true
@@ -1427,7 +1563,8 @@ L["Return filter to its default state."] = "返回過濾器至預設狀態"
 L["Reverse Bag Slots"] = "反向背包格子"
 L["Reverse Fill Direction"] = "翻轉填充方向"
 L["Reverse Fill"] = "反向填充"
-L["Reverse Toggle will enable Cooldown Text on this module when the global setting is disabled and disable them when the global setting is enabled."] = "反向開關將在全局設定為不開啟時開啟, 同樣的, 在全局設定為開啟時, 將會關閉."
+L["Reverse Toggle will enable Cooldown Text on this module when the global setting is disabled and disable them when the global setting is enabled."] =
+	"反向開關將在全局設定為不開啟時開啟, 同樣的, 在全局設定為開啟時, 將會關閉."
 L["Reverse Toggle"] = "反向開關"
 L["Reverse"] = "反向"
 L["REVERSE_NEW_LOOT_TEXT"] = "戰利品會放在最左邊的包包"
@@ -1492,17 +1629,21 @@ L["Separate"] = "光環分離"
 L["Set auras that are not from you to desaturated."] = "將非您施放的光環去色顯示."
 L["Set Settings to Default"] = "恢復默認設置"
 L["Set the alpha level of portrait when frame is overlayed."] = "當框體被遮擋時頭像的不透明度."
-L["Set the filter type. Blacklist will hide any auras in the list and show all others. Whitelist will show any auras in the filter and hide all others."] = "設置過濾器類型. 黑名單將隱藏列表內的任何光環而顯示其他. 白名單將顯示過濾器內的任何光環而隱藏其他所有光環."
+L["Set the filter type. Blacklist will hide any auras in the list and show all others. Whitelist will show any auras in the filter and hide all others."] =
+	"設置過濾器類型. 黑名單將隱藏列表內的任何光環而顯示其他. 白名單將顯示過濾器內的任何光環而隱藏其他所有光環."
 L["Set the font outline."] = "字體描邊設定."
-L["Set the font size for everything in UI. Note: This doesn't effect somethings that have their own separate options (UnitFrame Font, Datatext Font, ect..)"] = "設定介面上所有字體的尺寸, 但不包含本身有獨立設定的字體(如單位框架字體、資訊文字字體等...)"
+L["Set the font size for everything in UI. Note: This doesn't effect somethings that have their own separate options (UnitFrame Font, Datatext Font, ect..)"] =
+	"設定介面上所有字體的尺寸, 但不包含本身有獨立設定的字體(如單位框架字體、資訊文字字體等...)"
 L["Set the order that the group will sort."] = "設定組排序的順序."
 L["Set the orientation of the UnitFrame."] = "設置框架的方向"
-L["Set the priority order of the spell, please note that priorities are only used for the raid debuff module, not the standard buff/debuff module. If you want to disable set to zero."] = "設定該法術的優先順序. 請注意, 優先級只用於Raid Debuff模塊, 而不是標準的Buff/Debuff模塊. 設定為0 禁用此功能."
+L["Set the priority order of the spell, please note that priorities are only used for the raid debuff module, not the standard buff/debuff module. If you want to disable set to zero."] =
+	"設定該法術的優先順序. 請注意, 優先級只用於Raid Debuff模塊, 而不是標準的Buff/Debuff模塊. 設定為0 禁用此功能."
 L["Set the size of the individual auras."] = "設定每個光環的尺寸."
 L["Set the size of your bag buttons."] = "設定你的背包格子大小."
 L["Set the type of auras to show when a unit is a foe."] = "當單位是敵對時設定光環顯示的類型."
 L["Set the type of auras to show when a unit is friendly."] = "當單位是友好時設定光環顯示的類型."
-L["Set to either stack nameplates vertically or allow them to overlap."] = "設置將姓名板垂直排列或者允許重疊"
+L["Set to either stack nameplates vertically or allow them to overlap."] =
+	"設置將姓名板垂直排列或者允許重疊"
 L["Sets the font instance's horizontal text alignment style."] = "設定橫向字體的對齊方式."
 L["Setup on-screen display of information bars."] = "設置各種數據條"
 L["Share Current Profile"] = "分享當前的配置文件"
@@ -1516,7 +1657,8 @@ L["Shortcut to global filters."] = "全局過濾器快速鍵"
 L["Shorten the channel names in chat."] = "在對話視窗中隱藏頻道名稱."
 L["Should tooltip be anchored to mouse cursor"] = "提示錨定在滑鼠"
 L["Show All Tracking Options"] = "顯示所有追蹤選項"
-L["Show an incoming heal prediction bar on the unitframe. Also display a slightly different colored bar for incoming overheals."] = "在單位框架中顯示即將回复的的預測治療量, 過量治療則以不同顏色顯示. "
+L["Show an incoming heal prediction bar on the unitframe. Also display a slightly different colored bar for incoming overheals."] =
+	"在單位框架中顯示即將回复的的預測治療量, 過量治療則以不同顏色顯示. "
 L["Show Assigned Color"] = "顯示背包分類顏色"
 L["Show Aura From Other Players"] = "顯示其他玩家的光環"
 L["Show Auras"] = "顯示光環"
@@ -1546,16 +1688,20 @@ L["Show QuestXP"] = "顯示任務經驗"
 L["Show Special Bags Color"] = "顯示特殊種類背包的顏色"
 L["Show Subzone"] = "顯示子區域"
 L["Show Text"] = true
-L["Show the castbar icon desaturated if a spell is not interruptible."] = "在法術不可被打斷時顯示去色圖示。"
+L["Show the castbar icon desaturated if a spell is not interruptible."] =
+	"在法術不可被打斷時顯示去色圖示。"
 L["Show Title"] = "顯示稱號"
 L["Show When Not Active"] = "顯示當前無效的光環"
 L["Show With Target"] = "有目標時顯示"
 L["Show Zone"] = "顯示區域"
 L["Show"] = "顯示"
 L["Show/Hide Test Frame"] = "顯示/關閉測試框架"
-L["Shows a swipe animation when a spell is recharging but still has charges left."] = "當法術仍有可使用次數並在充能時顯示一個倒數動畫"
-L["Shows item level of each item, enchants, and gems on the character page."] = "在角色面板顯示每件裝備的等級, 附魔及寶石."
-L["Shows item level of each item, enchants, and gems when inspecting another player."] = "在觀察面板顯示每件裝備的等級, 附魔及寶石."
+L["Shows a swipe animation when a spell is recharging but still has charges left."] =
+	"當法術仍有可使用次數並在充能時顯示一個倒數動畫"
+L["Shows item level of each item, enchants, and gems on the character page."] =
+	"在角色面板顯示每件裝備的等級, 附魔及寶石."
+L["Shows item level of each item, enchants, and gems when inspecting another player."] =
+	"在觀察面板顯示每件裝備的等級, 附魔及寶石."
 L["Side Arrows"] = "側面箭頭"
 L["Size and Positions"] = "大小和位置"
 L["Size Offset"] = true
@@ -1645,7 +1791,8 @@ L["Target Info"] = "目標信息"
 L["Target Marker Icon"] = "目標標記圖示"
 L["Target On Mouse-Down"] = "滑鼠按下設為目標"
 L["Target Reticle"] = true
-L["Target units on mouse down rather than mouse up.\n|cffff3333Note:|r If Clique is enabled, this option only effects ElvUI frames if they are not blacklisted in Clique."] = "按下滑鼠時設為目標, 而不是鬆開滑鼠按鍵時.\n|cffff3333注意:|r 如果已啟用 Clique, 這個選項只有影響那些不在 Clique 裡黑名單的 ElvUI 框架."
+L["Target units on mouse down rather than mouse up.\n|cffff3333Note:|r If Clique is enabled, this option only effects ElvUI frames if they are not blacklisted in Clique."] =
+	"按下滑鼠時設為目標, 而不是鬆開滑鼠按鍵時.\n|cffff3333注意:|r 如果已啟用 Clique, 這個選項只有影響那些不在 Clique 裡黑名單的 ElvUI 框架."
 L["Target"] = "目標"
 L["Target/Low Health Indicator"] = "目標指示器"
 L["Targeted Glow"] = "目標發光"
@@ -1671,18 +1818,28 @@ L["Textured Icon"] = "圖示紋理"
 L["Textures"] = "材質"
 L["The amount of buttons to display per row."] = "每行所顯示的按鍵數量."
 L["The amount of buttons to display."] = "快捷列按鍵顯示數量."
-L["The button you must hold down in order to drag an ability to another action button."] = "需按住此按鍵, 才可將技能拖曳至另一快捷鈕中."
-L["The debuff needs to reach this amount of stacks before it is shown. Set to 0 to always show the debuff."] = "減益需要達到這個數量的層數才會顯示. 設為0來一直顯示它."
+L["The button you must hold down in order to drag an ability to another action button."] =
+	"需按住此按鍵, 才可將技能拖曳至另一快捷鈕中."
+L["The debuff needs to reach this amount of stacks before it is shown. Set to 0 to always show the debuff."] =
+	"減益需要達到這個數量的層數才會顯示. 設為0來一直顯示它."
 L["The direction that the bag frames be (Horizontal or Vertical)."] = "背包框架排序方向 (水平或垂直)."
-L["The direction that the bag frames will grow from the anchor."] = "新增的背包框架將從錨點依此方向增加."
-L["The direction the auras will grow and then the direction they will grow after they reach the wrap after limit."] = "光環增加的方向與到達每行最大數後換行增加的方向"
-L["The display format of the currency icons that get displayed below the main bag. (You have to be watching a currency for this to display)"] = "背包主框架下方的兌換通貨圖示顯示格式.需先設定監控特定兌換通貨, 才會顯示於背包框架."
-L["The display format of the money text that is shown at the top of the main bag."] = "在背包主框架上方的金幣顯示格式"
-L["The display format of the money text that is shown in the gold datatext and its tooltip."] = "在信息文字中顯示的金錢格式"
-L["The durability percent that the datatext will start flashing.  Set to -1 to disable"] = "開始閃光的耐久度百分比. 設定 -1 以停用"
+L["The direction that the bag frames will grow from the anchor."] =
+	"新增的背包框架將從錨點依此方向增加."
+L["The direction the auras will grow and then the direction they will grow after they reach the wrap after limit."] =
+	"光環增加的方向與到達每行最大數後換行增加的方向"
+L["The display format of the currency icons that get displayed below the main bag. (You have to be watching a currency for this to display)"] =
+	"背包主框架下方的兌換通貨圖示顯示格式.需先設定監控特定兌換通貨, 才會顯示於背包框架."
+L["The display format of the money text that is shown at the top of the main bag."] =
+	"在背包主框架上方的金幣顯示格式"
+L["The display format of the money text that is shown in the gold datatext and its tooltip."] =
+	"在信息文字中顯示的金錢格式"
+L["The durability percent that the datatext will start flashing.  Set to -1 to disable"] =
+	"開始閃光的耐久度百分比. 設定 -1 以停用"
 L["The first button anchors itself to this point on the bar."] = "快捷列第一個按鍵的所在位置."
-L["The font that appears on the text above players heads. |cffFF3333WARNING: This requires a game restart or re-log for this change to take effect.|r"] = "玩家頭頂姓名的字體. |cffFF3333警告: 你需要重新開啟遊戲或重新登錄才能使用此功能.|r"
-L["The font that combat text will use. |cffFF3333WARNING: This requires a game restart or re-log for this change to take effect.|r"] = "戰鬥資訊將使用此字體, |cffFF0000警告:需重啟遊戲或重新登入才可使此變更生效.|r"
+L["The font that appears on the text above players heads. |cffFF3333WARNING: This requires a game restart or re-log for this change to take effect.|r"] =
+	"玩家頭頂姓名的字體. |cffFF3333警告: 你需要重新開啟遊戲或重新登錄才能使用此功能.|r"
+L["The font that combat text will use. |cffFF3333WARNING: This requires a game restart or re-log for this change to take effect.|r"] =
+	"戰鬥資訊將使用此字體, |cffFF0000警告:需重啟遊戲或重新登入才可使此變更生效.|r"
 L["The font that the core of the UI will use."] = "核心UI 所使用的字體."
 L["The font that the unitframes will use."] = "單位框架字體."
 L["The frame is not shown unless you mouse over the frame."] = "僅於滑鼠移經快捷列時顯示框架."
@@ -1691,48 +1848,76 @@ L["The initial group will start near the center and grow out."] = "最初的隊�
 L["The minimum item level required for it to be shown."] = "顯示的最低物品等級"
 L["The name you have selected is already in use by another element."] = "你所選的名稱已經被另一組件佔用."
 L["The object you want to attach to."] = "你想依附的目標."
-L["The Portrait will overlay the Healthbar. This will be automatically happen if the Frame Orientation is set to Middle."] = "頭像將會覆蓋于生命條之上. 如果框架方向設為中的話, 這將會自動啟用."
+L["The Portrait will overlay the Healthbar. This will be automatically happen if the Frame Orientation is set to Middle."] =
+	"頭像將會覆蓋于生命條之上. 如果框架方向設為中的話, 這將會自動啟用."
 L["The size of the action buttons."] = "快捷列按鍵尺寸."
 L["The spacing between buttons."] = "兩個按鍵間的距離."
 L["The spacing between the backdrop and the buttons."] = "背景與按鍵之間的間隙."
 L["The texture that will be used mainly for statusbars."] = "此材質主用於狀態列上."
-L["The Thin Border Theme option will change the overall apperance of your UI. Using Thin Border Theme is a slight performance increase over the traditional layout."] = "細邊框主題會改變所有的外觀,使用細邊框主題會略微提升性能"
-L["The unit prefixes you want to use when values are shortened in ElvUI. This is mostly used on UnitFrames."] = "在ElvUI中數值單位的縮寫. 該選項主要應用在單位框架."
+L["The Thin Border Theme option will change the overall apperance of your UI. Using Thin Border Theme is a slight performance increase over the traditional layout."] =
+	"細邊框主題會改變所有的外觀,使用細邊框主題會略微提升性能"
+L["The unit prefixes you want to use when values are shortened in ElvUI. This is mostly used on UnitFrames."] =
+	"在ElvUI中數值單位的縮寫. 該選項主要應用在單位框架."
 L["The width of the action buttons."] = "快捷列按鍵寬度."
-L["These filters don't use a list of spells like the regular filters. Instead they use the WoW API and some code logic to determine if an aura should be allowed or blocked."] = "這些過濾器不像常規過濾器那樣使用一個法術列表, 而是使用魔獸API和部分代碼邏輯來決定光環顯示與否."
-L["These filters use a list of spells to determine if an aura should be allowed or blocked. The content of these filters can be modified in the Filters section of the config."] = "這些過濾器使用一個法術清單來決定光環顯示與否. 這些過濾器的內容可以在設置中的過濾器選項中更改."
+L["These filters don't use a list of spells like the regular filters. Instead they use the WoW API and some code logic to determine if an aura should be allowed or blocked."] =
+	"這些過濾器不像常規過濾器那樣使用一個法術列表, 而是使用魔獸API和部分代碼邏輯來決定光環顯示與否."
+L["These filters use a list of spells to determine if an aura should be allowed or blocked. The content of these filters can be modified in the Filters section of the config."] =
+	"這些過濾器使用一個法術清單來決定光環顯示與否. 這些過濾器的內容可以在設置中的過濾器選項中更改."
 L["Thin Borders"] = "細邊框"
-L["This allows you to create a new datatext which will track the currency with the supplied currency ID. The datatext can be added to a panel immediately after creation."] = "這允許你根據貨幣的ID來創建新的信息文字. 信息文字在創建後可以立即被添加到面板中."
+L["This allows you to create a new datatext which will track the currency with the supplied currency ID. The datatext can be added to a panel immediately after creation."] =
+	"這允許你根據貨幣的ID來創建新的信息文字. 信息文字在創建後可以立即被添加到面板中."
 L["This changes the size of the Aura Icon by this value."] = true
-L["This dictates the size of the icon when it is not attached to the castbar."] = "指定未吸附在施法條內時圖示的尺寸"
-L["This feature will allow you to transfer settings to other characters."] = "此功能將使你設置轉移給其他角色."
-L["This is for Customized Icons in your Interface/Icons folder."] = "取決於你是否在 Interface/Icons 資料夾中放置了自訂圖示."
-L["This list will display any textures Boss Mods have sent to the Boss Mod Auras element during the current session."] = true
-L["This opens the AuraBar Colors filter. These settings affect specific spells."] = "這將開啟光環條顏色設置. 這些設置會影響指定法術."
-L["This opens the UnitFrames Color settings. These settings affect all unitframes."] = "這將開啟單位框架顏色設置.這些設置會影響所有單位框架"
-L["This option allows the overlay to span the whole health, including the background."] = "這將允許覆蓋層在包括背景的整個生命條之上."
-L["This option controls the Blizzard setting for whether or not the Nameplates should be shown."] = "這個選項控制著暴雪設定中的姓名板顯示部分."
-L["This option will force hide Blizzard's cooldown text if it is enabled at [Interface > ActionBars > Show Numbers on Cooldown]."] = "如果你開啟了 [介面 > 快捷列 > 顯示冷卻時間], 這個選項將強制隱藏暴雪的冷卻文字."
-L["This section will allow you to copy settings to a select module from or to a different profile."] = "這個部分允許你複製到或是匯入其他的設定文件所選擇的部分的模組設定"
-L["This section will help reset specfic settings back to default."] = "這個部分會幫助你重置指定的模組設定回預設值"
+L["This dictates the size of the icon when it is not attached to the castbar."] =
+	"指定未吸附在施法條內時圖示的尺寸"
+L["This feature will allow you to transfer settings to other characters."] =
+	"此功能將使你設置轉移給其他角色."
+L["This is for Customized Icons in your Interface/Icons folder."] =
+	"取決於你是否在 Interface/Icons 資料夾中放置了自訂圖示."
+L["This list will display any textures Boss Mods have sent to the Boss Mod Auras element during the current session."] =
+	true
+L["This opens the AuraBar Colors filter. These settings affect specific spells."] =
+	"這將開啟光環條顏色設置. 這些設置會影響指定法術."
+L["This opens the UnitFrames Color settings. These settings affect all unitframes."] =
+	"這將開啟單位框架顏色設置.這些設置會影響所有單位框架"
+L["This option allows the overlay to span the whole health, including the background."] =
+	"這將允許覆蓋層在包括背景的整個生命條之上."
+L["This option controls the Blizzard setting for whether or not the Nameplates should be shown."] =
+	"這個選項控制著暴雪設定中的姓名板顯示部分."
+L["This option will force hide Blizzard's cooldown text if it is enabled at [Interface > ActionBars > Show Numbers on Cooldown]."] =
+	"如果你開啟了 [介面 > 快捷列 > 顯示冷卻時間], 這個選項將強制隱藏暴雪的冷卻文字."
+L["This section will allow you to copy settings to a select module from or to a different profile."] =
+	"這個部分允許你複製到或是匯入其他的設定文件所選擇的部分的模組設定"
+L["This section will help reset specfic settings back to default."] =
+	"這個部分會幫助你重置指定的模組設定回預設值"
 L["This selects the Chat Frame to use as the output of ElvUI messages."] = "選擇 ElvUI 訊息輸出的聊天視窗"
 L["This setting controls the size of text in item comparison tooltips."] = "設置對比框中的文字大小"
 L["This setting will be updated upon changing stances."] = "此設定將在切換姿態時更新"
-L["This texture will get used on objects like chat windows and dropdown menus."] = "主要用於對話視窗及下拉選單等物件的材質."
+L["This texture will get used on objects like chat windows and dropdown menus."] =
+	"主要用於對話視窗及下拉選單等物件的材質."
 L["This uses the IsPlayerSpell API which is only required sometimes."] = true
-L["This will allow you to toggle flashing of the time datatext when there are calendar invites."] = "開啟此選項將允許你開關時間資訊文字閃爍."
-L["This will join auras together which are normally separated. Example: Bolstering and Force of Nature."] = "這將會讓光環曡在一起, 通常情況下這些光環會隔開. 例如: 強化和自然之力."
+L["This will allow you to toggle flashing of the time datatext when there are calendar invites."] =
+	"開啟此選項將允許你開關時間資訊文字閃爍."
+L["This will join auras together which are normally separated. Example: Bolstering and Force of Nature."] =
+	"這將會讓光環曡在一起, 通常情況下這些光環會隔開. 例如: 強化和自然之力."
 L["This will override the global cooldown settings."] = "這將覆蓋全局的冷卻設定."
-L["This will pin the voice buttons to the chat's tab panel. Unchecking it will create a voice button panel with a mover."] = "這將固定語音按鍵到聊天標籤頁上. 取消勾選將創建一個有錨點的語音按鍵框架."
-L["This will reset the contents of this filter back to default. Any spell you have added to this filter will be removed."] = "這會重置這個過濾器到初始狀態. 你添加到這個過濾器的任何技能都會被刪除."
-L["This works like a macro, you can run different situations to get the actionbar to page differently.\n Example: '[combat] 2;'"] = true
-L["This works like a macro, you can run different situations to get the actionbar to show/hide differently.\n Example: '[combat] show;hide'"] = "這和巨集一樣工作, 能根據不同情況顯示/隱藏快捷列.\n例如: '[combat] show;hide'"
+L["This will pin the voice buttons to the chat's tab panel. Unchecking it will create a voice button panel with a mover."] =
+	"這將固定語音按鍵到聊天標籤頁上. 取消勾選將創建一個有錨點的語音按鍵框架."
+L["This will reset the contents of this filter back to default. Any spell you have added to this filter will be removed."] =
+	"這會重置這個過濾器到初始狀態. 你添加到這個過濾器的任何技能都會被刪除."
+L["This works like a macro, you can run different situations to get the actionbar to page differently.\n Example: '[combat] 2;'"] =
+	true
+L["This works like a macro, you can run different situations to get the actionbar to show/hide differently.\n Example: '[combat] show;hide'"] =
+	"這和巨集一樣工作, 能根據不同情況顯示/隱藏快捷列.\n例如: '[combat] show;hide'"
 L["Display Mode"] = "顯示模式"
 L["Threat"] = "仇恨"
-L["Threshold (in minutes) before text is shown in the HH:MM format. Set to -1 to never change to this format."] = "低於設定的閾值（單位：分）時, 將會採用 HH:MM 的格式. 設定為 -1 可禁用改格式"
-L["Threshold (in seconds) before text is shown in the MM:SS format. Set to -1 to never change to this format."] = "低於設定的閾值（單位：秒）時, 將會採用 MM:SS 的格式. 設定為 -1 可禁用改格式"
-L["Threshold before text turns red and is in decimal form. Set to -1 for it to never turn red"] = "冷卻時間低於此秒數後將變為紅色數字, 並以小數顯示, 設為 -1 時冷卻時間將不會變為紅色."
-L["Threshold before the icon will fade out and back in. Set to -1 to disable."] = "圖示會漸隱再出現的閾值. 設成 -1 來停用"
+L["Threshold (in minutes) before text is shown in the HH:MM format. Set to -1 to never change to this format."] =
+	"低於設定的閾值（單位：分）時, 將會採用 HH:MM 的格式. 設定為 -1 可禁用改格式"
+L["Threshold (in seconds) before text is shown in the MM:SS format. Set to -1 to never change to this format."] =
+	"低於設定的閾值（單位：秒）時, 將會採用 MM:SS 的格式. 設定為 -1 可禁用改格式"
+L["Threshold before text turns red and is in decimal form. Set to -1 for it to never turn red"] =
+	"冷卻時間低於此秒數後將變為紅色數字, 並以小數顯示, 設為 -1 時冷卻時間將不會變為紅色."
+L["Threshold before the icon will fade out and back in. Set to -1 to disable."] =
+	"圖示會漸隱再出現的閾值. 設成 -1 來停用"
 L["Threshold Colors"] = "閾值顏色"
 L["Ticket Tracker"] = "工單追蹤"
 L["Ticks"] = "週期傷害"
@@ -1745,7 +1930,8 @@ L["Time"] = "時間"
 L["TIMEMANAGER_TITLE"] = "時鐘"
 L["Timer Only"] = true
 L["TIMESTAMPS_LABEL"] = "對話時間標記"
-L["Title will only appear if Name Only is enabled or triggered in a Style Filter."] = "頭銜僅在僅姓名模式開啟或者觸發樣式過濾器的時候顯示."
+L["Title will only appear if Name Only is enabled or triggered in a Style Filter."] =
+	"頭銜僅在僅姓名模式開啟或者觸發樣式過濾器的時候顯示."
 L["Title"] = true
 L["Toggle 24-hour mode for the time datatext."] = "切換時間顯示為24小時制."
 L["Toggle Anchors"] = "解鎖元件定位"
@@ -1776,7 +1962,8 @@ L["TRADE"] = "交易"
 L["TRADESKILLS"] = "交易技能"
 L["Trainer Frame"] = "訓練師"
 L["TRANSMOGRIFY"] = "塑形"
-L["Transparency level when not in combat, no target exists, full health, not casting, and no focus target exists."] = "當非戰鬥, 沒有目標, 滿血, 未施法且沒有焦點目標存在時的透明度"
+L["Transparency level when not in combat, no target exists, full health, not casting, and no focus target exists."] =
+	"當非戰鬥, 沒有目標, 滿血, 未施法且沒有焦點目標存在時的透明度"
 L["Transparent"] = "透明"
 L["Triggers"] = "觸發器"
 L["Trivial"] = "低等級 (灰色)"
@@ -1811,7 +1998,8 @@ L["Usable"] = "可以使用"
 L["Use a more visible flash animation for Auto Attacks."] = "在自動攻擊按鍵上顯示更明顯的閃光動畫."
 L["Use Alt Key"] = "使用 Alt 鍵"
 L["Use Atlas Textures"] = "使用紋理貼圖"
-L["Use BattleTag instead of Real ID names in chat. Chat History will always use BattleTag."] = "在聊天中使用 BattleTag 而不是Real ID. 聊天記錄一直使用BattleTag."
+L["Use BattleTag instead of Real ID names in chat. Chat History will always use BattleTag."] =
+	"在聊天中使用 BattleTag 而不是Real ID. 聊天記錄一直使用BattleTag."
 L["Use Blizzard Cleanup"] = "使用暴雪整理"
 L["Use class color for the names of players when they are mentioned."] = "當玩家名字被提及時使用職業顏色"
 L["Use Class Color"] = "使用職業顏色"
@@ -1821,7 +2009,8 @@ L["Use Custom Level"] = "使用自訂層次"
 L["Use Custom Strata"] = "使用自訂層級"
 L["Use Dead Backdrop"] = "使用死亡背景"
 L["Use Default"] = "使用默認值"
-L["Use drag and drop to rearrange filter priority or right click to remove a filter."] = "使用拖拽的方式調整過濾器優先順序, 或者右鍵移除一個過濾器"
+L["Use drag and drop to rearrange filter priority or right click to remove a filter."] =
+	"使用拖拽的方式調整過濾器優先順序, 或者右鍵移除一個過濾器"
 L["Use Icons"] = true
 L["Use Indicator Color"] = "使用指示器顏色"
 L["Use Instance ID or Name"] = "使用副本ID或名字"
@@ -1830,10 +2019,12 @@ L["Use Modifier for Item Count"] = "按下修飾鍵來添加物品計數"
 L["Use Off Tank Color when another Tank has threat."] = true
 L["Use Portrait"] = "使用頭像"
 L["Use Real ID BattleTag"] = "使用 Real ID BattleTag"
-L["Use Shift+LeftClick to toggle between friendly or enemy or normal state. Normal state will allow the filter to be checked on all units. Friendly state is for friendly units only and enemy state is for enemy units."] = "使用 Shift + 左键 来切换友方狀態, 敵方狀態及正常狀態. 正常狀態將允許在所有單位上設為啟用的過濾器.友方狀態僅允許用於友方單位的過濾器, 敵方狀態僅允許用於敵方單位的過濾器."
+L["Use Shift+LeftClick to toggle between friendly or enemy or normal state. Normal state will allow the filter to be checked on all units. Friendly state is for friendly units only and enemy state is for enemy units."] =
+	"使用 Shift + 左键 来切换友方狀態, 敵方狀態及正常狀態. 正常狀態將允許在所有單位上設為啟用的過濾器.友方狀態僅允許用於友方單位的過濾器, 敵方狀態僅允許用於敵方單位的過濾器."
 L["Use Static Position"] = "固定位置"
 L["Use Subzone Names"] = "使用二級地區名字"
-L["Use the custom backdrop color instead of a multiple of the main color."] = "使用自訂的背景色而不是多種主色."
+L["Use the custom backdrop color instead of a multiple of the main color."] =
+	"使用自訂的背景色而不是多種主色."
 L["Use the profile specific filter Aura Indicator (Profile) instead of the global filter Aura Indicator."] = true
 L["Use thin borders on certain nameplate elements."] = "使用細邊框在特定的名條元素上."
 L["Use thin borders on certain unitframe elements."] = "使用細邊框在特定的單位框架元素上."
@@ -1861,23 +2052,32 @@ L["Weekly Rewards"] = true
 L["What point to anchor to the frame you set to attach to."] = "增益光環框架於其依附框架的依附位置."
 L["What to attach the anchor frame to."] = true
 L["Whats New"] = "新玩意"
-L["When disabled, the Chat Background color has to be set via Blizzards Chat Tabs Background setting."] = "當禁用時, 聊天背景顏色需要透過暴雪聊天標籤背景設置."
-L["When enabled it will only show spells that were added to the filter using a spell ID and not a name."] = "如果開啟將會忽略法術名只顯示用法術ID添加到過濾器的法術."
-L["When enabled the nameplate will stay visible in a locked position."] = "啟用後姓名板將在鎖定的位置持續可見"
-L["When in a raid group display if anyone in your raid is targeting the current tooltip unit."] = "顯示團隊中目標與你目前浮動提示目標相同的隊友."
-L["When opening the Chat Editbox to type a message having this option set means it will retain the last channel you spoke in. If this option is turned off opening the Chat Editbox should always default to the SAY channel."] = "打開此選項將會保存你的輸入框為上一次輸入的頻道, 關閉此選項輸入框將始終保持在說的頻道."
-L["When this is enabled, Low Health Threshold colors will not be displayed while targeted."] = "啟用後, 當目標被選中時低生命值閾值顏色將不會被顯示."
+L["When disabled, the Chat Background color has to be set via Blizzards Chat Tabs Background setting."] =
+	"當禁用時, 聊天背景顏色需要透過暴雪聊天標籤背景設置."
+L["When enabled it will only show spells that were added to the filter using a spell ID and not a name."] =
+	"如果開啟將會忽略法術名只顯示用法術ID添加到過濾器的法術."
+L["When enabled the nameplate will stay visible in a locked position."] =
+	"啟用後姓名板將在鎖定的位置持續可見"
+L["When in a raid group display if anyone in your raid is targeting the current tooltip unit."] =
+	"顯示團隊中目標與你目前浮動提示目標相同的隊友."
+L["When opening the Chat Editbox to type a message having this option set means it will retain the last channel you spoke in. If this option is turned off opening the Chat Editbox should always default to the SAY channel."] =
+	"打開此選項將會保存你的輸入框為上一次輸入的頻道, 關閉此選項輸入框將始終保持在說的頻道."
+L["When this is enabled, Low Health Threshold colors will not be displayed while targeted."] =
+	"啟用後, 當目標被選中時低生命值閾值顏色將不會被顯示."
 L["When true, the header includes the player when not in a raid."] = "若啟用, 隊伍中將顯示玩家."
-L["When using Static Position, this option also requires the target to be attackable."] = "如果你正在使用固定位置, 這個選項也同時要求目標是可以被攻擊的."
+L["When using Static Position, this option also requires the target to be attackable."] =
+	"如果你正在使用固定位置, 這個選項也同時要求目標是可以被攻擊的."
 L["When you go AFK display the AFK screen."] = "當你離開時顯示暫離界面"
 L["Whisper"] = "密語"
 L["Whitelist"] = "白名單"
 L["Width Multiplier"] = "寬度倍數"
 L["Width"] = "寬"
 L["Wiki:"] = true
-L["Will attempt to sell another item in set interval after previous one was sold."] = "將會嘗試使用設定的時間間格後販賣下一個物品"
+L["Will attempt to sell another item in set interval after previous one was sold."] =
+	"將會嘗試使用設定的時間間格後販賣下一個物品"
 L["Will display mana when main power is:"] = "當主要能量是法力時顯示:"
-L["Will show Buffs in the Debuff position when there are no Debuffs active, or vice versa."] = "如果沒有debuff則把buff顯示在debuff位置"
+L["Will show Buffs in the Debuff position when there are no Debuffs active, or vice versa."] =
+	"如果沒有debuff則把buff顯示在debuff位置"
 L["Word Wrap"] = "自動換行"
 L["World Latency"] = "世界延遲"
 L["World Map Coordinates"] = "世界地圖坐標"
@@ -1889,19 +2089,27 @@ L["XP Quest Percent"] = "經驗值任務百分比"
 L["Y-Offset"] = "Y 軸偏移"
 L["Yell"] = "大喊"
 L["You are about to reset paging. Are you sure?"] = true
-L["You are going to copy settings for |cffD3CF00\"%s\"|r from your current |cff4beb2c\"%s\"|r profile to |cff4beb2c\"%s\"|r profile. Are you sure?"] = "你將進行 |cffD3CF00\"%s\"|r 的設定拷貝, 從當前配置文件 |cff4beb2c\"%s\"|r 到配置文件 |cff4beb2c\"%s\"|r. 你確定麼?"
-L["You are going to copy settings for |cffD3CF00\"%s\"|r from |cff4beb2c\"%s\"|r profile to your current |cff4beb2c\"%s\"|r profile. Are you sure?"] = "你將進行 |cffD3CF00\"%s\"|r 的設定拷貝, 從配置文件 |cff4beb2c\"%s\"|r 到你當前配置文件 |cff4beb2c\"%s\"|r. 你確定麼?"
+L['You are going to copy settings for |cffD3CF00"%s"|r from your current |cff4beb2c"%s"|r profile to |cff4beb2c"%s"|r profile. Are you sure?'] =
+	'你將進行 |cffD3CF00"%s"|r 的設定拷貝, 從當前配置文件 |cff4beb2c"%s"|r 到配置文件 |cff4beb2c"%s"|r. 你確定麼?'
+L['You are going to copy settings for |cffD3CF00"%s"|r from |cff4beb2c"%s"|r profile to your current |cff4beb2c"%s"|r profile. Are you sure?'] =
+	'你將進行 |cffD3CF00"%s"|r 的設定拷貝, 從配置文件 |cff4beb2c"%s"|r 到你當前配置文件 |cff4beb2c"%s"|r. 你確定麼?'
 L["You cannot copy settings from the same unit."] = "你不能從相同的單位複制設定"
-L["You do not need to use Is Casting Anything or Is Channeling Anything for these spells to trigger."] = "你不需要為這些法術使用觸發器正在施法或正在引導."
+L["You do not need to use Is Casting Anything or Is Channeling Anything for these spells to trigger."] =
+	"你不需要為這些法術使用觸發器正在施法或正在引導."
 L["You must be targeting a player."] = "你必須以一名玩家為目標."
 L["Your Auras First"] = "自身光環優先"
 L["Zone Button"] = "區域按鍵"
 L["Zone Name"] = "地區名"
-L["|cffFF3333This does not work in Instances or Garrisons!|r"] = "|cffFF3333這個功能在副本或要塞中無法正常使用!|r"
-L["|cffFF3333This is for information. This will not change the tags in the UI.|r"] = "|cffFF3333注意: 這不會改變在介面上的標籤.|r"
-L["|cffFF3333Warning:|r Changing options in this section will apply to all Aura Indicator auras. To change only one Aura, please click \"Configure Auras\" and change that specific Auras settings. If \"Profile Specific\" is selected it will apply to that filter set."] = true
-L["|cffFF3333Warning:|r Click the arrow on the dropdown box to see a list of spells."] = "|cffFF3333警告:|r 點擊下拉選單中的箭頭來查看列表."
-L["|cffFF3333Warning:|r Enable and Number of Groups are managed by Smart Raid Filter. Disable Smart Raid Filter in (UnitFrames - General) to change these settings."] = "|cffFF3333警告:|r 框架的開啟/關閉以及小隊編號功能正在由智能團隊過濾進行管理. 可以在 (單位框架 - 一般設定) 中停用智能團隊過濾後手動修改這些設定."
+L["|cffFF3333This does not work in Instances or Garrisons!|r"] =
+	"|cffFF3333這個功能在副本或要塞中無法正常使用!|r"
+L["|cffFF3333This is for information. This will not change the tags in the UI.|r"] =
+	"|cffFF3333注意: 這不會改變在介面上的標籤.|r"
+L['|cffFF3333Warning:|r Changing options in this section will apply to all Aura Indicator auras. To change only one Aura, please click "Configure Auras" and change that specific Auras settings. If "Profile Specific" is selected it will apply to that filter set.'] =
+	true
+L["|cffFF3333Warning:|r Click the arrow on the dropdown box to see a list of spells."] =
+	"|cffFF3333警告:|r 點擊下拉選單中的箭頭來查看列表."
+L["|cffFF3333Warning:|r Enable and Number of Groups are managed by Smart Raid Filter. Disable Smart Raid Filter in (UnitFrames - General) to change these settings."] =
+	"|cffFF3333警告:|r 框架的開啟/關閉以及小隊編號功能正在由智能團隊過濾進行管理. 可以在 (單位框架 - 一般設定) 中停用智能團隊過濾後手動修改這些設定."
 
 -- done by using labelN
 L["FACTION_STANDING_LABEL1"] = "仇恨"
@@ -1957,14 +2165,17 @@ L["UNITFRAME_DESC"] = "修改單位框架設定."
 L["VISIBILITY_DESC"] = "為了顯示設定過的過濾器下面的巨集必須啟用."
 
 L[ [=[This works like a macro, you can run different situations to get the actionbar to page differently.
- Example: '[combat] 2;']=] ] = [=[此功能與巨集概念類似, 可根據不同情況切換至不同的快捷列設定.
+ Example: '[combat] 2;']=] ] =
+	[=[此功能與巨集概念類似, 可根據不同情況切換至不同的快捷列設定.
 例如：'[combat] 2;']=]
 
 L[ [=[This works like a macro, you can run different situations to get the actionbar to show/hide differently.
- Example: '[combat] show;hide']=] ] = [=[此功能與巨集概念類似, 可根據不同情境, 切換顯示/隱藏快捷列.
+ Example: '[combat] show;hide']=] ] =
+	[=[此功能與巨集概念類似, 可根據不同情境, 切換顯示/隱藏快捷列.
 例如：'[combat] show;hide']=]
 
-L["TEXTURE_EXAMPLE"] = [=[指定一個在魔獸世界資料夾之中的文件名. 將欲設置為面板背景的材質置於材質資料夾中.
+L["TEXTURE_EXAMPLE"] =
+	[=[指定一個在魔獸世界資料夾之中的文件名. 將欲設置為面板背景的材質置於材質資料夾中.
 
 請注意:
 - 影像尺寸建議為 256 x 128

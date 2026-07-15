@@ -1,5 +1,5 @@
 local E, L, V, P, G = unpack(ElvUI)
-local BL = E:GetModule('Blizzard')
+local BL = E:GetModule("Blizzard")
 
 local _G = _G
 local min = min
@@ -10,7 +10,7 @@ local hooksecurefunc = hooksecurefunc
 local function ObjectiveTracker_SetPoint(tracker, _, parent)
 	if parent ~= tracker.holder then
 		tracker:ClearAllPoints()
-		tracker:SetPoint('TOP', tracker.holder)
+		tracker:SetPoint("TOP", tracker.holder)
 	end
 end
 
@@ -26,17 +26,29 @@ end
 
 function BL:ObjectiveTracker_AutoHideOnHide()
 	local tracker = _G.WatchFrame
-	if not tracker or BL:ObjectiveTracker_IsCollapsed(tracker) then return end
+	if not tracker or BL:ObjectiveTracker_IsCollapsed(tracker) then
+		return
+	end
 
 	BL:ObjectiveTracker_Collapse(tracker)
 end
 
 function BL:ObjectiveTracker_Setup()
-	local holder = CreateFrame('Frame', 'ObjectiveFrameHolder', E.UIParent)
-	holder:Point('TOPRIGHT', E.UIParent, -135, -300)
+	local holder = CreateFrame("Frame", "ObjectiveFrameHolder", E.UIParent)
+	holder:Point("TOPRIGHT", E.UIParent, -135, -300)
 	holder:Size(130, 22)
 
-	E:CreateMover(holder, 'ObjectiveFrameMover', L["Objective Frame"], nil, nil, nil, nil, nil, 'general,blizzardImprovements')
+	E:CreateMover(
+		holder,
+		"ObjectiveFrameMover",
+		L["Objective Frame"],
+		nil,
+		nil,
+		nil,
+		nil,
+		nil,
+		"general,blizzardImprovements"
+	)
 	holder:SetAllPoints(_G.ObjectiveFrameMover)
 
 	-- prevent it from being moved by blizzard (the hook below will most likely do nothing now)
@@ -46,10 +58,10 @@ function BL:ObjectiveTracker_Setup()
 	tracker:SetDontSavePosition(true)
 	tracker:SetClampedToScreen(false)
 	tracker:ClearAllPoints()
-	tracker:SetPoint('TOP', holder)
+	tracker:SetPoint("TOP", holder)
 
 	tracker.holder = holder
-	hooksecurefunc(tracker, 'SetPoint', ObjectiveTracker_SetPoint)
+	hooksecurefunc(tracker, "SetPoint", ObjectiveTracker_SetPoint)
 
 	BL:ObjectiveTracker_AutoHide() -- supported but no boss frames, only works for arena
 	BL:ObjectiveTracker_SetHeight()

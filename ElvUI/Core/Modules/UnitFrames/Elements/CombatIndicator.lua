@@ -19,7 +19,9 @@ function UF:Construct_CombatIndicator(frame)
 end
 
 function UF:Configure_CombatIndicator(frame)
-	if not frame.VARIABLES_SET then return end
+	if not frame.VARIABLES_SET then
+		return
+	end
 	local Icon = frame.CombatIndicator
 	local db = frame.db.CombatIcon
 
@@ -43,7 +45,7 @@ function UF:Configure_CombatIndicator(frame)
 		Icon:SetTexCoord(0, 1, 0, 1)
 	else
 		Icon:SetTexture(CombatTextures.DEFAULT)
-		Icon:SetTexCoord(.5, 1, 0, .49)
+		Icon:SetTexCoord(0.5, 1, 0, 0.49)
 	end
 
 	if db.enable and not frame:IsElementEnabled("CombatIndicator") then

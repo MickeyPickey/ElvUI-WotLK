@@ -7,7 +7,9 @@ local select = select
 --WoW API / Variables
 
 S:AddCallback("Skin_ArenaRegistrar", function()
-	if not E.private.skins.blizzard.enable or not E.private.skins.blizzard.arenaregistrar then return end
+	if not E.private.skins.blizzard.enable or not E.private.skins.blizzard.arenaregistrar then
+		return
+	end
 
 	ArenaRegistrarFrame:StripTextures(true)
 	ArenaRegistrarFrame:CreateBackdrop("Transparent")
@@ -26,7 +28,7 @@ S:AddCallback("Skin_ArenaRegistrar", function()
 	ArenaRegistrarPurchaseText:SetTextColor(1, 1, 1)
 
 	for i = 1, 6 do
-		local button = _G["ArenaRegistrarButton"..i]
+		local button = _G["ArenaRegistrarButton" .. i]
 		S:HandleButtonHighlight(button)
 		select(3, button:GetRegions()):SetTextColor(1, 1, 1)
 	end
@@ -62,9 +64,9 @@ S:AddCallback("Skin_ArenaRegistrar", function()
 	PVPBannerFrameCustomizationFrame:StripTextures()
 
 	for i = 1, 2 do
-		_G["PVPBannerFrameCustomization"..i]:StripTextures()
-		S:HandleNextPrevButton(_G["PVPBannerFrameCustomization"..i.."LeftButton"])
-		S:HandleNextPrevButton(_G["PVPBannerFrameCustomization"..i.."RightButton"])
+		_G["PVPBannerFrameCustomization" .. i]:StripTextures()
+		S:HandleNextPrevButton(_G["PVPBannerFrameCustomization" .. i .. "LeftButton"])
+		S:HandleNextPrevButton(_G["PVPBannerFrameCustomization" .. i .. "RightButton"])
 	end
 
 	S:HandleButton(PVPColorPickerButton1)

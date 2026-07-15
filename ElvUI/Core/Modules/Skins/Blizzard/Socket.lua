@@ -8,7 +8,9 @@ local GetNumSockets = GetNumSockets
 local GetSocketTypes = GetSocketTypes
 
 S:AddCallbackForAddon("Blizzard_ItemSocketingUI", "Skin_Blizzard_ItemSocketingUI", function()
-	if not E.private.skins.blizzard.enable or not E.private.skins.blizzard.socket then return end
+	if not E.private.skins.blizzard.enable or not E.private.skins.blizzard.socket then
+		return
+	end
 
 	ITEM_SOCKETING_DESCRIPTION_MIN_WIDTH = 278
 
@@ -39,11 +41,11 @@ S:AddCallbackForAddon("Blizzard_ItemSocketingUI", "Skin_Blizzard_ItemSocketingUI
 	ItemSocketingSocketButton:Point("BOTTOMRIGHT", -10, 39)
 
 	for i = 1, MAX_NUM_SOCKETS do
-		local button = _G["ItemSocketingSocket"..i]
-		local bracket = _G["ItemSocketingSocket"..i.."BracketFrame"]
-		local bg = _G["ItemSocketingSocket"..i.."Background"]
-		local icon = _G["ItemSocketingSocket"..i.."IconTexture"]
-		local shine = _G["ItemSocketingSocket"..i.."Shine"]
+		local button = _G["ItemSocketingSocket" .. i]
+		local bracket = _G["ItemSocketingSocket" .. i .. "BracketFrame"]
+		local bg = _G["ItemSocketingSocket" .. i .. "Background"]
+		local icon = _G["ItemSocketingSocket" .. i .. "IconTexture"]
+		local shine = _G["ItemSocketingSocket" .. i .. "Shine"]
 
 		button:StripTextures()
 		button:StyleButton(false)
@@ -65,7 +67,7 @@ S:AddCallbackForAddon("Blizzard_ItemSocketingUI", "Skin_Blizzard_ItemSocketingUI
 		local numSockets = GetNumSockets()
 
 		for i = 1, numSockets do
-			local button = _G["ItemSocketingSocket"..i]
+			local button = _G["ItemSocketingSocket" .. i]
 			local color = GEM_TYPE_INFO[GetSocketTypes(i)]
 			button:SetBackdropColor(color.r, color.g, color.b, 0.15)
 			button:SetBackdropBorderColor(color.r, color.g, color.b)

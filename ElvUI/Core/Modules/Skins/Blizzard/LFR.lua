@@ -6,7 +6,9 @@ local _G = _G
 --WoW API / Variables
 
 S:AddCallback("Skin_LFR", function()
-	if not E.private.skins.blizzard.enable or not E.private.skins.blizzard.lfr then return end
+	if not E.private.skins.blizzard.enable or not E.private.skins.blizzard.lfr then
+		return
+	end
 
 	LFRParentFrame:StripTextures()
 	LFRParentFrame:CreateBackdrop("Transparent")
@@ -30,7 +32,7 @@ S:AddCallback("Skin_LFR", function()
 		LFRBrowseFrameSendMessageButton,
 		LFRBrowseFrameInviteButton,
 		LFRBrowseFrameRefreshButton,
-		LFRQueueFrameNoLFRWhileLFDLeaveQueueButton
+		LFRQueueFrameNoLFRWhileLFDLeaveQueueButton,
 	}
 	for i = 1, #buttons do
 		S:HandleButton(buttons[i], true)
@@ -55,21 +57,33 @@ S:AddCallback("Skin_LFR", function()
 	LFRQueueFrameSpecificListScrollFrame:StripTextures()
 
 	for i = 1, 7 do
-		local button = "LFRBrowseFrameColumnHeader"..i
-		_G[button.."Left"]:Kill()
-		_G[button.."Middle"]:Kill()
-		_G[button.."Right"]:Kill()
+		local button = "LFRBrowseFrameColumnHeader" .. i
+		_G[button .. "Left"]:Kill()
+		_G[button .. "Middle"]:Kill()
+		_G[button .. "Right"]:Kill()
 		_G[button]:StyleButton()
 	end
 
 	for i = 1, NUM_LFR_CHOICE_BUTTONS do
-		local button = _G["LFRQueueFrameSpecificListButton"..i]
+		local button = _G["LFRQueueFrameSpecificListButton" .. i]
 		S:HandleCheckBox(button.enableButton)
 		S:HandleCollapseExpandButton(button.expandOrCollapseButton, "+")
 	end
 
-	LFRQueueFrameSpecificListScrollFrameScrollBar:Point("TOPLEFT", LFRQueueFrameSpecificListScrollFrame, "TOPRIGHT", 5, -17)
-	LFRQueueFrameSpecificListScrollFrameScrollBar:Point("BOTTOMLEFT", LFRQueueFrameSpecificListScrollFrame, "BOTTOMRIGHT", 5, 17)
+	LFRQueueFrameSpecificListScrollFrameScrollBar:Point(
+		"TOPLEFT",
+		LFRQueueFrameSpecificListScrollFrame,
+		"TOPRIGHT",
+		5,
+		-17
+	)
+	LFRQueueFrameSpecificListScrollFrameScrollBar:Point(
+		"BOTTOMLEFT",
+		LFRQueueFrameSpecificListScrollFrame,
+		"BOTTOMRIGHT",
+		5,
+		17
+	)
 
 	LFRQueueFrameNoLFRWhileLFD:Size(325, 271)
 	LFRQueueFrameNoLFRWhileLFD:Point("BOTTOMRIGHT", -11, 41)

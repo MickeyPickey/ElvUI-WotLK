@@ -9,10 +9,10 @@ local Aura = E.Filters.Aura
 G.unitframe.aurafilters.CCDebuffs = {
 	type = "Whitelist",
 	spells = {
-	-- Death Knight
+		-- Death Knight
 		[47476] = List(2), -- Strangulate
 		[51209] = List(2), -- Hungering Cold
-	-- Druid
+		-- Druid
 		[99] = List(2), -- Demoralizing Roar
 		[339] = List(2), -- Entangling Roots
 		[2637] = List(2), -- Hibernate
@@ -21,7 +21,7 @@ G.unitframe.aurafilters.CCDebuffs = {
 		[22570] = List(2), -- Maim
 		[33786] = List(2), -- Cyclone
 		[45334] = List(2), -- Feral Charge Effect
-	-- Hunter
+		-- Hunter
 		[1513] = List(2), -- Scare Beast
 		[3355] = List(2), -- Freezing Trap Effect
 		[19386] = List(2), -- Wyvern Sting
@@ -35,7 +35,7 @@ G.unitframe.aurafilters.CCDebuffs = {
 		[56626] = List(2), -- Sting
 		[60210] = List(2), -- Freezing Arrow Effect
 		[64803] = List(2), -- Entrapment
-	-- Mage
+		-- Mage
 		[118] = List(2), -- Polymorph (Sheep)
 		[122] = List(2), -- Frost Nova
 		[18469] = List(2), -- Silenced - Improved Counterspell (Rank 1)
@@ -46,18 +46,18 @@ G.unitframe.aurafilters.CCDebuffs = {
 		[55080] = List(2), -- Shattered Barrier
 		[61305] = List(2), -- Polymorph (Black Cat)
 		[55021] = List(2), -- Silenced - Improved Counterspell (Rank 2)
-	-- Paladin
+		-- Paladin
 		[853] = List(2), -- Hammer of Justice
 		[10326] = List(2), -- Turn Evil
 		[20066] = List(2), -- Repentance
 		[31935] = List(2), -- Avenger's Shield
-	-- Priest
+		-- Priest
 		[605] = List(2), -- Mind Control
 		[8122] = List(2), -- Psychic Scream
 		[9484] = List(2), -- Shackle Undead
 		[15487] = List(2), -- Silence
 		[64044] = List(2), -- Psychic Horror
-	-- Rogue
+		-- Rogue
 		[408] = List(2), -- Kidney Shot
 		[1330] = List(2), -- Garrote - Silence
 		[1776] = List(2), -- Gouge
@@ -66,14 +66,14 @@ G.unitframe.aurafilters.CCDebuffs = {
 		[6770] = List(2), -- Sap
 		[18425] = List(2), -- Silenced - Improved Kick
 		[51722] = List(2), -- Dismantle
-	-- Shaman
+		-- Shaman
 		[3600] = List(2), -- Earthbind
 		[8056] = List(2), -- Frost Shock
 		[39796] = List(2), -- Stoneclaw Stun
 		[51514] = List(2), -- Hex
 		[63685] = List(2), -- Freeze
 		[64695] = List(2), -- Earthgrab
-	-- Warlock
+		-- Warlock
 		[710] = List(2), -- Banish
 		[5782] = List(2), -- Fear
 		[6358] = List(2), -- Seduction
@@ -81,70 +81,70 @@ G.unitframe.aurafilters.CCDebuffs = {
 		[17928] = List(2), -- Howl of Terror
 		[24259] = List(2), -- Spell Lock
 		[30283] = List(2), -- Shadowfury
-	-- Warrior
+		-- Warrior
 		[676] = List(2), -- Disarm
 		[7922] = List(2), -- Charge Stun
 		[18498] = List(2), -- Silenced - Gag Order
 		[20511] = List(2), -- Intimidating Shout
-	-- Racial
+		-- Racial
 		[25046] = List(2), -- Arcane Torrent
 		[20549] = List(2), -- War Stomp
-	-- The Lich King
+		-- The Lich King
 		[73787] = List(2), -- Necrotic Plague
-	}
+	},
 }
 
 G.unitframe.aurafilters.TurtleBuffs = {
 	type = "Whitelist",
 	spells = {
-	-- Mage
+		-- Mage
 		[45438] = List(5), -- Ice Block
-	-- Death Knight
+		-- Death Knight
 		[48707] = List(5), -- Anti-Magic Shell
 		[48792] = List(), -- Icebound Fortitude
 		[49039] = List(), -- Lichborne
 		[50461] = List(), -- Anti-Magic Zone
 		[55233] = List(), -- Vampiric Blood
-	-- Priest
+		-- Priest
 		[33206] = List(3), -- Pain Suppression
 		[47585] = List(5), -- Dispersion
 		[47788] = List(), -- Guardian Spirit
-	-- Warlock
+		-- Warlock
 
-	-- Druid
+		-- Druid
 		[22812] = List(2), -- Barkskin
 		[61336] = List(), -- Survival Instincts
-	-- Hunter
+		-- Hunter
 		[19263] = List(5), -- Deterrence
 		[53480] = List(), -- Roar of Sacrifice
-	-- Rogue
+		-- Rogue
 		[5277] = List(5), -- Evasion
 		[31224] = List(), -- Cloak of Shadows
 		[45182] = List(), -- Cheating Death
-	-- Shaman
+		-- Shaman
 		[30823] = List(), -- Shamanistic Rage
-	-- Paladin
+		-- Paladin
 		[498] = List(2), -- Divine Protection
 		[642] = List(5), -- Divine Shield
 		[1022] = List(5), -- Hand of Protection
 		[6940] = List(), -- Hand of Sacrifice
 		[31821] = List(3), -- Aura Mastery
-	-- Warrior
+		-- Warrior
 		[871] = List(3), -- Shield Wall
 		[55694] = List(), -- Enraged Regeneration
-	}
+	},
 }
 
 G.unitframe.aurafilters.PlayerBuffs = {
 	type = "Whitelist",
 	spells = {
-	-- Mage
+		-- Mage
 		[12042] = List(), -- Arcane Power
 		[12051] = List(), -- Evocation
 		[12472] = List(), -- Icy Veins
 		[32612] = List(), -- Invisibility
 		[45438] = List(), -- Ice Block
-	-- Death Knight
+		-- Death Knight
 		[48707] = List(), -- Anti-Magic Shell
 		[48792] = List(), -- Icebound Fortitude
 		[49016] = List(), -- Hysteria
@@ -153,33 +153,33 @@ G.unitframe.aurafilters.PlayerBuffs = {
 		[50461] = List(), -- Anti-Magic Zone
 		[51271] = List(), -- Unbreakable Armor
 		[55233] = List(), -- Vampiric Blood
-	-- Priest
+		-- Priest
 		[6346] = List(), -- Fear Ward
 		[10060] = List(), -- Power Infusion
 		[27827] = List(), -- Spirit of Redemption
 		[33206] = List(), -- Pain Suppression
 		[47585] = List(), -- Dispersion
 		[47788] = List(), -- Guardian Spirit
-	-- Warlock
+		-- Warlock
 
-	-- Druid
+		-- Druid
 		[1850] = List(), -- Dash
 		[22812] = List(), -- Barkskin
 		[52610] = List(), -- Savage Roar
-	-- Hunter
+		-- Hunter
 		[3045] = List(), -- Rapid Fire
 		[5384] = List(), -- Feign Death
 		[19263] = List(), -- Deterrence
 		[53480] = List(), -- Roar of Sacrifice (Cunning)
 		[54216] = List(), -- Master's Call
-	-- Rogue
+		-- Rogue
 		[2983] = List(), -- Sprint
 		[5277] = List(), -- Evasion
 		[11327] = List(), -- Vanish
 		[13750] = List(), -- Adrenaline Rush
 		[31224] = List(), -- Cloak of Shadows
 		[45182] = List(), -- Cheating Death
-	-- Shaman
+		-- Shaman
 		[2825] = List(), -- Bloodlust
 		[8178] = List(), -- Grounding Totem Effect
 		[16166] = List(), -- Elemental Mastery
@@ -188,7 +188,7 @@ G.unitframe.aurafilters.PlayerBuffs = {
 		[30823] = List(), -- Shamanistic Rage
 		[32182] = List(), -- Heroism
 		[58875] = List(), -- Spirit Walk
-	-- Paladin
+		-- Paladin
 		[498] = List(), -- Divine Protection
 		[1022] = List(), -- Hand of Protection
 		[1044] = List(), -- Hand of Freedom
@@ -198,7 +198,7 @@ G.unitframe.aurafilters.PlayerBuffs = {
 		[31850] = List(), -- Ardent Defender
 		[31884] = List(), -- Avenging Wrath
 		[53563] = List(), -- Beacon of Light
-	-- Warrior
+		-- Warrior
 		[871] = List(), -- Shield Wall
 		[1719] = List(), -- Recklessness
 		[3411] = List(), -- Intervene
@@ -207,12 +207,12 @@ G.unitframe.aurafilters.PlayerBuffs = {
 		[18499] = List(), -- Berserker Rage
 		[23920] = List(), -- Spell Reflection
 		[46924] = List(), -- Bladestorm
-	-- Racial
+		-- Racial
 		[20594] = List(), -- Stoneform
 		[59545] = List(), -- Gift of the Naaru
 		[20572] = List(), -- Blood Fury
 		[26297] = List(), -- Berserking
-	}
+	},
 }
 
 -- Buffs that really we dont need to see
@@ -238,16 +238,16 @@ G.unitframe.aurafilters.Blacklist = {
 		[67604] = List(), -- Powering Up
 		[69127] = List(), -- Chill of the Throne
 		[71041] = List(), -- Dungeon Deserter
-	-- Festergut
+		-- Festergut
 		[70852] = List(), -- Malleable Goo
 		[72144] = List(), -- Orange Blight Residue
 		[73034] = List(), -- Blighted Spores
-	-- Rotface
+		-- Rotface
 		[72145] = List(), -- Green Blight Residue
-	-- Professor Putricide
+		-- Professor Putricide
 		[72460] = List(), -- Choking Gas
 		[72511] = List(), -- Mutated Transformation
-	-- Blood Prince Council
+		-- Blood Prince Council
 		[71911] = List(), -- Shadow Resonance
 	},
 }
@@ -269,28 +269,28 @@ G.unitframe.aurafilters.Whitelist = {
 		[32182] = List(), -- Heroism
 		[47788] = List(), -- Guardian Spirit
 		[54428] = List(), -- Divine Plea
-	-- Turtling abilities
+		-- Turtling abilities
 		[871] = List(), -- Shield Wall
 		[19263] = List(), -- Deterrence
 		[22812] = List(), -- Barkskin
 		[31224] = List(), -- Cloak of Shadows
 		[33206] = List(), -- Pain Suppression
 		[48707] = List(), -- Anti-Magic Shell
-	-- Immunities
+		-- Immunities
 		[642] = List(), -- Divine Shield
 		[45438] = List(), -- Ice Block
-	-- Offensive
+		-- Offensive
 		[12292] = List(), -- Death Wish
 		[31884] = List(), -- Avenging Wrath
 		[34471] = List(), -- The Beast Within
-	}
+	},
 }
 
 -- RAID DEBUFFS: This should be pretty self explainitory
 G.unitframe.aurafilters.RaidDebuffs = {
 	type = "Whitelist",
 	spells = {
-	-- Naxxramas
+		-- Naxxramas
 		-- Anub'Rekhan
 		[54022] = List(), -- Locust Swarm
 		-- Grand Widow Faerlina
@@ -330,7 +330,7 @@ G.unitframe.aurafilters.RaidDebuffs = {
 		[27819] = List(), -- Detonate Mana
 		[27808] = List(), -- Frost Blast
 
-	-- Ulduar
+		-- Ulduar
 		-- Ignis the Furnace Master
 		[62717] = List(), -- Slag Pot
 
@@ -355,7 +355,7 @@ G.unitframe.aurafilters.RaidDebuffs = {
 		-- Algalon
 		[64412] = List(), -- Phase Punch
 
-	-- Trial of the Crusader
+		-- Trial of the Crusader
 		-- Beast of Northrend
 		-- Gormok the Impaler
 		[66331] = List(), -- Impale
@@ -381,7 +381,7 @@ G.unitframe.aurafilters.RaidDebuffs = {
 		[67574] = List(), -- Pursued by Anub'arak
 		[67847] = List(), -- Expose Weakness
 
-	-- Icecrown Citadel
+		-- Icecrown Citadel
 		-- Lord Marrowgar
 		[69065] = List(), -- Impaled
 
@@ -445,7 +445,7 @@ G.unitframe.aurafilters.RaidDebuffs = {
 		[69409] = List(), -- Soul Reaper
 		[69242] = List(), -- Soul Shriek
 
-	-- The Ruby Sanctum
+		-- The Ruby Sanctum
 		-- Trash
 		-- Baltharus the Warborn
 		[75887] = List(), -- Blazing Aura
@@ -462,12 +462,24 @@ G.unitframe.aurafilters.RaidDebuffs = {
 }
 
 --Spells that we want to show the duration backwards
-E.ReverseTimer = {
-
-}
+E.ReverseTimer = {}
 
 -- BuffWatch: List of personal spells to show on unitframes as icon
-local function ClassBuff(id, point, color, anyUnit, onlyShowMissing, style, displayText, decimalThreshold, textColor, textThreshold, xOffset, yOffset, sizeOverride)
+local function ClassBuff(
+	id,
+	point,
+	color,
+	anyUnit,
+	onlyShowMissing,
+	style,
+	displayText,
+	decimalThreshold,
+	textColor,
+	textThreshold,
+	xOffset,
+	yOffset,
+	sizeOverride
+)
 	local r, g, b = unpack(color)
 
 	local r2, g2, b2 = 1, 1, 1
@@ -479,64 +491,64 @@ local function ClassBuff(id, point, color, anyUnit, onlyShowMissing, style, disp
 		enabled = true,
 		id = id,
 		point = point,
-		color = {r = r, g = g, b = b},
+		color = { r = r, g = g, b = b },
 		anyUnit = anyUnit,
 		onlyShowMissing = onlyShowMissing,
 		style = style or "coloredIcon",
 		displayText = displayText or false,
 		decimalThreshold = decimalThreshold or 5,
-		textColor = {r = r2, g = g2, b = b2},
+		textColor = { r = r2, g = g2, b = b2 },
 		textThreshold = textThreshold or -1,
 		xOffset = xOffset or 0,
 		yOffset = yOffset or 0,
-		sizeOverride = sizeOverride or 0
+		sizeOverride = sizeOverride or 0,
 	}
 end
 
 G.unitframe.buffwatch = {
 	PRIEST = {
-		[6788] = ClassBuff(6788, "TOPLEFT", {1, 0, 0}, true),				-- Weakened Soul
-		[10060] = ClassBuff(10060, "RIGHT", {0.89, 0.09, 0.05}),			-- Power Infusion
-		[48066] = ClassBuff(48066, "BOTTOMRIGHT", {0.81, 0.85, 0.1}, true), -- Power Word: Shield
-		[48068] = ClassBuff(48068, "BOTTOMLEFT", {0.4, 0.7, 0.2}),			-- Renew
-		[48111] = ClassBuff(48111, "TOPRIGHT", {0.2, 0.7, 0.2}),			-- Prayer of Mending
+		[6788] = ClassBuff(6788, "TOPLEFT", { 1, 0, 0 }, true), -- Weakened Soul
+		[10060] = ClassBuff(10060, "RIGHT", { 0.89, 0.09, 0.05 }), -- Power Infusion
+		[48066] = ClassBuff(48066, "BOTTOMRIGHT", { 0.81, 0.85, 0.1 }, true), -- Power Word: Shield
+		[48068] = ClassBuff(48068, "BOTTOMLEFT", { 0.4, 0.7, 0.2 }), -- Renew
+		[48111] = ClassBuff(48111, "TOPRIGHT", { 0.2, 0.7, 0.2 }), -- Prayer of Mending
 	},
 	DRUID = {
-		[48441] = ClassBuff(48441, "TOPRIGHT", {0.8, 0.4, 0.8}),			-- Rejuvenation
-		[48443] = ClassBuff(48443, "BOTTOMLEFT", {0.2, 0.8, 0.2}),			-- Regrowth
-		[48451] = ClassBuff(48451, "TOPLEFT", {0.4, 0.8, 0.2}),				-- Lifebloom
-		[53251] = ClassBuff(53251, "BOTTOMRIGHT", {0.8, 0.4, 0}),			-- Wild Growth
+		[48441] = ClassBuff(48441, "TOPRIGHT", { 0.8, 0.4, 0.8 }), -- Rejuvenation
+		[48443] = ClassBuff(48443, "BOTTOMLEFT", { 0.2, 0.8, 0.2 }), -- Regrowth
+		[48451] = ClassBuff(48451, "TOPLEFT", { 0.4, 0.8, 0.2 }), -- Lifebloom
+		[53251] = ClassBuff(53251, "BOTTOMRIGHT", { 0.8, 0.4, 0 }), -- Wild Growth
 	},
 	PALADIN = {
-		[1038] = ClassBuff(1038, "BOTTOMRIGHT", {0.9, 0.78, 0}, true),		-- Hand of Salvation
-		[1044] = ClassBuff(1044, "BOTTOMRIGHT", {0.86, 0.45, 0}, true),		-- Hand of Freedom
-		[6940] = ClassBuff(6940, "BOTTOMRIGHT", {0.89, 0.09, 0.05}, true),	-- Hand of Sacrifice
-		[10278] = ClassBuff(10278, "BOTTOMRIGHT", {0.2, 0.2, 1}, true),		-- Hand of Protection
-		[53563] = ClassBuff(53563, "TOPLEFT", {0.7, 0.3, 0.7}),				-- Beacon of Light
-		[53601] = ClassBuff(53601, "TOPRIGHT", {0.4, 0.7, 0.2}),			-- Sacred Shield
+		[1038] = ClassBuff(1038, "BOTTOMRIGHT", { 0.9, 0.78, 0 }, true), -- Hand of Salvation
+		[1044] = ClassBuff(1044, "BOTTOMRIGHT", { 0.86, 0.45, 0 }, true), -- Hand of Freedom
+		[6940] = ClassBuff(6940, "BOTTOMRIGHT", { 0.89, 0.09, 0.05 }, true), -- Hand of Sacrifice
+		[10278] = ClassBuff(10278, "BOTTOMRIGHT", { 0.2, 0.2, 1 }, true), -- Hand of Protection
+		[53563] = ClassBuff(53563, "TOPLEFT", { 0.7, 0.3, 0.7 }), -- Beacon of Light
+		[53601] = ClassBuff(53601, "TOPRIGHT", { 0.4, 0.7, 0.2 }), -- Sacred Shield
 	},
 	SHAMAN = {
-		[16237] = ClassBuff(16237, "BOTTOMLEFT", {0.4, 0.7, 0.2}),			-- Ancestral Fortitude
-		[49284] = ClassBuff(49284, "TOPRIGHT", {0.2, 0.7, 0.2}),			-- Earth Shield
-		[52000] = ClassBuff(52000, "BOTTOMRIGHT", {0.7, 0.4, 0}),			-- Earthliving
-		[61301] = ClassBuff(61301, "TOPLEFT", {0.7, 0.3, 0.7}),				-- Riptide
+		[16237] = ClassBuff(16237, "BOTTOMLEFT", { 0.4, 0.7, 0.2 }), -- Ancestral Fortitude
+		[49284] = ClassBuff(49284, "TOPRIGHT", { 0.2, 0.7, 0.2 }), -- Earth Shield
+		[52000] = ClassBuff(52000, "BOTTOMRIGHT", { 0.7, 0.4, 0 }), -- Earthliving
+		[61301] = ClassBuff(61301, "TOPLEFT", { 0.7, 0.3, 0.7 }), -- Riptide
 	},
 	ROGUE = {
-		[57933] = ClassBuff(57933, "TOPRIGHT", {0.89, 0.09, 0.05}),			-- Tricks of the Trade
+		[57933] = ClassBuff(57933, "TOPRIGHT", { 0.89, 0.09, 0.05 }), -- Tricks of the Trade
 	},
 	MAGE = {
-		[54646] = ClassBuff(54646, "TOPRIGHT", {0.2, 0.2, 1}),				-- Focus Magic
+		[54646] = ClassBuff(54646, "TOPRIGHT", { 0.2, 0.2, 1 }), -- Focus Magic
 	},
 	WARRIOR = {
-		[3411] = ClassBuff(3411, "TOPRIGHT", {0.89, 0.09, 0.05}),			-- Intervene
-		[59665] = ClassBuff(59665, "TOPLEFT", {0.2, 0.2, 1}),				-- Vigilance
+		[3411] = ClassBuff(3411, "TOPRIGHT", { 0.89, 0.09, 0.05 }), -- Intervene
+		[59665] = ClassBuff(59665, "TOPLEFT", { 0.2, 0.2, 1 }), -- Vigilance
 	},
 	DEATHKNIGHT = {
-		[49016] = ClassBuff(49016, "TOPRIGHT", {0.89, 0.09, 0.05})			-- Hysteria
+		[49016] = ClassBuff(49016, "TOPRIGHT", { 0.89, 0.09, 0.05 }), -- Hysteria
 	},
 	PET = {
-		[1539] = ClassBuff(1539, "TOPLEFT", {0.81, 0.85, 0.1}, true),		-- Feed Pet
-		[48990] = ClassBuff(48990, "TOPRIGHT", {0.2, 0.8, 0.2}, true)		-- Mend Pet
+		[1539] = ClassBuff(1539, "TOPLEFT", { 0.81, 0.85, 0.1 }, true), -- Feed Pet
+		[48990] = ClassBuff(48990, "TOPRIGHT", { 0.2, 0.8, 0.2 }, true), -- Mend Pet
 	},
 	HUNTER = {},
 	WARLOCK = {},
@@ -544,46 +556,46 @@ G.unitframe.buffwatch = {
 
 -- Profile specific BuffIndicator
 P.unitframe.filters = {
-	buffwatch = {}
+	buffwatch = {},
 }
 
 -- Ticks
 -- Keyed by spell name: the 3.3.5 UnitChannelInfo API doesn't return a spell ID
 G.unitframe.ChannelTicks = {
 	-- Warlock
-	[GetSpellInfo(1120)] = 5,	-- Drain Soul
-	[GetSpellInfo(689)] = 5,	-- Drain Life
-	[GetSpellInfo(5138)] = 5,	-- Drain Mana
-	[GetSpellInfo(5740)] = 4,	-- Rain of Fire
-	[GetSpellInfo(755)] = 10,	-- Health Funnel
-	[GetSpellInfo(1949)] = 15,	-- Hellfire
+	[GetSpellInfo(1120)] = 5, -- Drain Soul
+	[GetSpellInfo(689)] = 5, -- Drain Life
+	[GetSpellInfo(5138)] = 5, -- Drain Mana
+	[GetSpellInfo(5740)] = 4, -- Rain of Fire
+	[GetSpellInfo(755)] = 10, -- Health Funnel
+	[GetSpellInfo(1949)] = 15, -- Hellfire
 	-- Druid
-	[GetSpellInfo(44203)] = 4,	-- Tranquility
+	[GetSpellInfo(44203)] = 4, -- Tranquility
 	[GetSpellInfo(16914)] = 10, -- Hurricane
 	-- Priest
-	[GetSpellInfo(15407)] = 3,	-- Mind Flay
-	[GetSpellInfo(48045)] = 5,	-- Mind Sear
-	[GetSpellInfo(47540)] = 3,	-- Penance
-	[GetSpellInfo(64843)] = 4,	-- Divine Hymn
-	[GetSpellInfo(64901)] = 4,	-- Hymn of Hope
+	[GetSpellInfo(15407)] = 3, -- Mind Flay
+	[GetSpellInfo(48045)] = 5, -- Mind Sear
+	[GetSpellInfo(47540)] = 3, -- Penance
+	[GetSpellInfo(64843)] = 4, -- Divine Hymn
+	[GetSpellInfo(64901)] = 4, -- Hymn of Hope
 	-- Mage
-	[GetSpellInfo(5143)] = 5,	-- Arcane Missiles
-	[GetSpellInfo(10)] = 8,	-- Blizzard
-	[GetSpellInfo(12051)] = 4,	-- Evocation
+	[GetSpellInfo(5143)] = 5, -- Arcane Missiles
+	[GetSpellInfo(10)] = 8, -- Blizzard
+	[GetSpellInfo(12051)] = 4, -- Evocation
 	-- Hunter
-	[GetSpellInfo(58434)] = 6,	-- Volley
+	[GetSpellInfo(58434)] = 6, -- Volley
 	-- Death Knight
-	[GetSpellInfo(42650)] = 8,	-- Army of the Dead
+	[GetSpellInfo(42650)] = 8, -- Army of the Dead
 }
 
 -- This should probably be the same as the whitelist filter + any personal class ones that may be important to watch
 G.unitframe.AuraBarColors = {
-	[2825] = {r = 0.98, g = 0.57, b = 0.10},		-- Bloodlust
-	[32182] = {r = 0.98, g = 0.57, b = 0.10},	-- Heroism
+	[2825] = { r = 0.98, g = 0.57, b = 0.10 }, -- Bloodlust
+	[32182] = { r = 0.98, g = 0.57, b = 0.10 }, -- Heroism
 }
 
 G.unitframe.DebuffHighlightColors = {
-	[25771] = {enable = false, style = "FILL", color = {r = 0.85, g = 0, b = 0, a = 0.85}}, -- Forbearance
+	[25771] = { enable = false, style = "FILL", color = { r = 0.85, g = 0, b = 0, a = 0.85 } }, -- Forbearance
 }
 
 G.unitframe.specialFilters = {

@@ -10,7 +10,9 @@ local IsActiveBattlefieldArena = IsActiveBattlefieldArena
 local RAID_CLASS_COLORS = RAID_CLASS_COLORS
 
 S:AddCallback("Skin_WorldStateScore", function()
-	if not E.private.skins.blizzard.enable or not E.private.skins.blizzard.bgscore then return end
+	if not E.private.skins.blizzard.enable or not E.private.skins.blizzard.bgscore then
+		return
+	end
 
 	WorldStateScoreFrame:StripTextures()
 	WorldStateScoreFrame:CreateBackdrop("Transparent")
@@ -34,13 +36,13 @@ S:AddCallback("Skin_WorldStateScore", function()
 	WorldStateScoreFrameName:StyleButton()
 	WorldStateScoreFrameClass:StyleButton()
 	WorldStateScoreFrameTeam:StyleButton()
---	WorldStateScoreFrameRatingChange:StyleButton()
+	--	WorldStateScoreFrameRatingChange:StyleButton()
 
 	S:HandleButton(WorldStateScoreFrameLeaveButton)
 
 	for i = 1, 3 do
-		S:HandleTab(_G["WorldStateScoreFrameTab"..i])
-		_G["WorldStateScoreFrameTab"..i.."Text"]:Point("CENTER", 0, 2)
+		S:HandleTab(_G["WorldStateScoreFrameTab" .. i])
+		_G["WorldStateScoreFrameTab" .. i .. "Text"]:Point("CENTER", 0, 2)
 	end
 
 	WorldStateScoreFrameTab2:Point("LEFT", WorldStateScoreFrameTab1, "RIGHT", -15, 0)
@@ -50,7 +52,7 @@ S:AddCallback("Skin_WorldStateScore", function()
 	WorldStateScoreScrollFrameScrollBar:Point("BOTTOMLEFT", WorldStateScoreScrollFrame, "BOTTOMRIGHT", 8, 38)
 
 	for i = 1, 5 do
-		_G["WorldStateScoreColumn"..i]:StyleButton()
+		_G["WorldStateScoreColumn" .. i]:StyleButton()
 	end
 
 	local myName = format("> %s <", E.myname)
@@ -91,9 +93,10 @@ S:AddCallback("Skin_WorldStateScore", function()
 					name = format("%s|cffffffff - |r%s%s|r", name, color, realm)
 				end
 
-				classTextColor = CUSTOM_CLASS_COLORS and CUSTOM_CLASS_COLORS[classToken] or RAID_CLASS_COLORS[classToken]
+				classTextColor = CUSTOM_CLASS_COLORS and CUSTOM_CLASS_COLORS[classToken]
+					or RAID_CLASS_COLORS[classToken]
 
-				nameText = _G["WorldStateScoreButton"..i.."NameText"]
+				nameText = _G["WorldStateScoreButton" .. i .. "NameText"]
 				nameText:SetText(name)
 				nameText:SetTextColor(classTextColor.r, classTextColor.g, classTextColor.b)
 			end

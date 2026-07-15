@@ -1,5 +1,5 @@
 local E, L, V, P, G = unpack(ElvUI)
-local AB = E:GetModule('ActionBars')
+local AB = E:GetModule("ActionBars")
 
 local _G = _G
 local next = next
@@ -15,36 +15,36 @@ local hooksecurefunc = hooksecurefunc
 
 AB.MICRO_CLASSIC = {}
 AB.MICRO_BUTTONS = {
-	'CharacterMicroButton',
-	'SpellbookMicroButton',
-	'TalentMicroButton',
-	'AchievementMicroButton',
-	'QuestLogMicroButton',
+	"CharacterMicroButton",
+	"SpellbookMicroButton",
+	"TalentMicroButton",
+	"AchievementMicroButton",
+	"QuestLogMicroButton",
 	"FriendsMicroButton",
-	'SocialsMicroButton',
-	'PVPMicroButton',
-	'LFDMicroButton',
-	'MainMenuMicroButton',
-	'HelpMicroButton'
+	"SocialsMicroButton",
+	"PVPMicroButton",
+	"LFDMicroButton",
+	"MainMenuMicroButton",
+	"HelpMicroButton",
 }
 
 do
 	local meep = 12.125
 	AB.MICRO_OFFSETS = {
-		CharacterMicroButton	= 0.07 / meep,
-		SpellbookMicroButton	= 1.05 / meep,
-		TalentMicroButton		= 2.04 / meep,
-		AchievementMicroButton	= 3.03 / meep,
-		QuestLogMicroButton		= 4.02 / meep,
-		FriendsMicroButton		= 5.01 / meep, -- Retail
-		SocialsMicroButton		= 5.01 / meep, -- Classic, use Guild button
-		LFDMicroButton			= 6.00 / meep, -- Retail
-		MainMenuMicroButton		= 10 / meep, -- flip these
-		HelpMicroButton			= 9 / meep, -- on classic
+		CharacterMicroButton = 0.07 / meep,
+		SpellbookMicroButton = 1.05 / meep,
+		TalentMicroButton = 2.04 / meep,
+		AchievementMicroButton = 3.03 / meep,
+		QuestLogMicroButton = 4.02 / meep,
+		FriendsMicroButton = 5.01 / meep, -- Retail
+		SocialsMicroButton = 5.01 / meep, -- Classic, use Guild button
+		LFDMicroButton = 6.00 / meep, -- Retail
+		MainMenuMicroButton = 10 / meep, -- flip these
+		HelpMicroButton = 9 / meep, -- on classic
 	}
 end
 
-local microBar = CreateFrame('Frame', 'ElvUI_MicroBar', E.UIParent)
+local microBar = CreateFrame("Frame", "ElvUI_MicroBar", E.UIParent)
 microBar:SetSize(100, 100)
 
 local function onLeaveBar()
@@ -56,7 +56,7 @@ local function onUpdate(self, elapsed)
 	if watcher > 0.1 then
 		if not self:IsMouseOver() then
 			self.IsMouseOvered = nil
-			self:SetScript('OnUpdate', nil)
+			self:SetScript("OnUpdate", nil)
 			onLeaveBar()
 		end
 		watcher = 0
@@ -68,7 +68,7 @@ end
 local function onEnter(button)
 	if AB.db.microbar.mouseover and not microBar.IsMouseOvered then
 		microBar.IsMouseOvered = true
-		microBar:SetScript('OnUpdate', onUpdate)
+		microBar:SetScript("OnUpdate", onUpdate)
 		E:UIFrameFadeIn(microBar, 0.2, microBar:GetAlpha(), AB.db.microbar.alpha)
 	end
 
@@ -84,7 +84,7 @@ local function onEnter(button)
 
 	-- bag keybind support from actionbar module
 	if E.private.actionbar.enable then
-		AB:BindUpdate(button, 'MICRO')
+		AB:BindUpdate(button, "MICRO")
 	end
 end
 
@@ -94,11 +94,10 @@ local function onLeave(button)
 	end
 end
 
-
 function AB:GetMicroCoords(name, icons, character)
 	local l, r, t, b = 0.17, 0.87, 0.5, 0.908
 
-	if name == 'PVPMicroButton' or (character and name == 'CharacterMicroButton') then
+	if name == "PVPMicroButton" or (character and name == "CharacterMicroButton") then
 		l, r, t, b = 0, 1, 0, 1
 	elseif icons then
 		local offset = AB.MICRO_OFFSETS[name]
@@ -145,7 +144,7 @@ function AB:HandleMicroTextures(button, name)
 			button:SetPushedTexture(E.Media.Textures.White8x8)
 
 			pushed = button.GetPushedTexture and button:GetPushedTexture()
-			pushed:SetDrawLayer('OVERLAY', 1)
+			pushed:SetDrawLayer("OVERLAY", 1)
 			pushed:SetAlpha(0.2)
 			pushed:SetInside()
 		end
@@ -156,8 +155,9 @@ function AB:HandleMicroTextures(button, name)
 		end
 	else
 		local icons = AB.db.microbar.useIcons
-		local character = name == 'CharacterMicroButton' and E.Media.Textures.Black8x8
-		local faction = name == 'PVPMicroButton' and ((E.myfaction == 'Horde' and E.Media.Textures.PVPHorde) or E.Media.Textures.PVPAlliance)
+		local character = name == "CharacterMicroButton" and E.Media.Textures.Black8x8
+		local faction = name == "PVPMicroButton"
+			and ((E.myfaction == "Horde" and E.Media.Textures.PVPHorde) or E.Media.Textures.PVPAlliance)
 		local texture = faction or (not character and AB.MICRO_OFFSETS[name] and E.Media.Textures.MicroBar)
 		local stock = not icons and AB.MICRO_CLASSIC[name] -- classic default icons from the game
 		local pushed = button.GetPushedTexture and button:GetPushedTexture()
@@ -173,8 +173,8 @@ function AB:HandleMicroTextures(button, name)
 		end
 
 		if character then
-			pushed:SetDrawLayer('OVERLAY', 1)
-			pushed:SetBlendMode('ADD')
+			pushed:SetDrawLayer("OVERLAY", 1)
+			pushed:SetBlendMode("ADD")
 			pushed:SetAlpha(0.25)
 		end
 
@@ -196,17 +196,17 @@ function AB:HandleMicroTextures(button, name)
 end
 
 function AB:HandleMicroButton(button, name)
-	assert(button, 'Invalid micro button name.')
+	assert(button, "Invalid micro button name.")
 
 	button:SetTemplate()
 	button:SetParent(microBar)
-	button:HookScript('OnEnter', onEnter)
-	button:HookScript('OnLeave', onLeave)
+	button:HookScript("OnEnter", onEnter)
+	button:HookScript("OnLeave", onLeave)
 	button:SetHitRectInsets(0, 0, 0, 0)
 
 	AB.MICRO_CLASSIC[name] = {
 		pushed = button:GetPushedTexture():GetTexture(),
-		normal = button:GetNormalTexture():GetTexture()
+		normal = button:GetNormalTexture():GetTexture(),
 	}
 
 	AB:UpdateMicroButtonTexture(name)
@@ -221,25 +221,25 @@ end
 function AB:UpdateMicroBarVisibility()
 	if InCombatLockdown() then
 		AB.NeedsUpdateMicroBarVisibility = true
-		AB:RegisterEvent('PLAYER_REGEN_ENABLED')
+		AB:RegisterEvent("PLAYER_REGEN_ENABLED")
 		return
 	end
 
-	local visibility = gsub(AB.db.microbar.visibility, '[\n\r]', '')
-	RegisterStateDriver(microBar.visibility, 'visibility', (AB.db.microbar.enabled and visibility) or 'hide')
+	local visibility = gsub(AB.db.microbar.visibility, "[\n\r]", "")
+	RegisterStateDriver(microBar.visibility, "visibility", (AB.db.microbar.enabled and visibility) or "hide")
 end
 
 local commandKeys = {
-	CharacterMicroButton = 'TOGGLECHARACTER0',
-	SpellbookMicroButton = 'TOGGLESPELLBOOK',
-	TalentMicroButton = 'TOGGLETALENTS',
-	AchievementMicroButton = 'TOGGLEACHIEVEMENT',
-	QuestLogMicroButton = 'TOGGLEQUESTLOG',
-	FriendsMicroButton = 'TOGGLEGUILDTAB',
-	LFDMicroButton = 'TOGGLEGROUPFINDER',
-	MainMenuMicroButton = 'TOGGLEGAMEMENU',
-	SocialsMicroButton = 'TOGGLESOCIAL',
-	WorldMapMicroButton = 'TOGGLEWORLDMAP',
+	CharacterMicroButton = "TOGGLECHARACTER0",
+	SpellbookMicroButton = "TOGGLESPELLBOOK",
+	TalentMicroButton = "TOGGLETALENTS",
+	AchievementMicroButton = "TOGGLEACHIEVEMENT",
+	QuestLogMicroButton = "TOGGLEQUESTLOG",
+	FriendsMicroButton = "TOGGLEGUILDTAB",
+	LFDMicroButton = "TOGGLEGROUPFINDER",
+	MainMenuMicroButton = "TOGGLEGAMEMENU",
+	SocialsMicroButton = "TOGGLESOCIAL",
+	WorldMapMicroButton = "TOGGLEWORLDMAP",
 	HelpMicroButton = nil, -- special
 }
 
@@ -299,7 +299,18 @@ function AB:UpdateMicroButtons()
 
 	microBar:SetAlpha((db.mouseover and not microBar.IsMouseOvered and 0) or db.alpha)
 
-	AB:HandleBackdropMultiplier(microBar, backdropSpacing, db.buttonSpacing, db.widthMult, db.heightMult, anchorUp, anchorLeft, horizontal, lastButton, anchorRowButton)
+	AB:HandleBackdropMultiplier(
+		microBar,
+		backdropSpacing,
+		db.buttonSpacing,
+		db.widthMult,
+		db.heightMult,
+		anchorUp,
+		anchorLeft,
+		horizontal,
+		lastButton,
+		anchorRowButton
+	)
 	AB:HandleBackdropMover(microBar, backdropSpacing)
 
 	if microBar.mover then
@@ -315,7 +326,9 @@ end
 
 function AB:UpdateMicroButtonTexture(name)
 	local button = _G[name]
-	if not button then return end
+	if not button then
+		return
+	end
 
 	AB:HandleMicroTextures(button, name)
 	AB:HandleMicroCoords(button, name)
@@ -332,26 +345,30 @@ function AB:HandleCharacterPortrait()
 end
 
 function AB:SetupMicroBar()
-	microBar:CreateBackdrop(AB.db.transparent and 'Transparent', nil, nil, nil, nil, nil, nil, nil, 0)
-	microBar:Point('TOPLEFT', E.UIParent, 'TOPLEFT', 4, -48)
+	microBar:CreateBackdrop(AB.db.transparent and "Transparent", nil, nil, nil, nil, nil, nil, nil, 0)
+	microBar:Point("TOPLEFT", E.UIParent, "TOPLEFT", 4, -48)
 	microBar:EnableMouse(false)
 
-	microBar.visibility = CreateFrame('Frame', nil, E.UIParent, 'SecureHandlerStateTemplate')
-	microBar.visibility:SetScript('OnShow', function() microBar:Show() end)
-	microBar.visibility:SetScript('OnHide', function() microBar:Hide() end)
+	microBar.visibility = CreateFrame("Frame", nil, E.UIParent, "SecureHandlerStateTemplate")
+	microBar.visibility:SetScript("OnShow", function()
+		microBar:Show()
+	end)
+	microBar.visibility:SetScript("OnHide", function()
+		microBar:Hide()
+	end)
 
 	for _, name in next, AB.MICRO_BUTTONS do
 		local button = _G[name]
 		AB:HandleMicroButton(button, name)
 
-		if name == 'MainMenuMicroButton' then
-			hooksecurefunc(button, 'SetHighlightTexture', function()
+		if name == "MainMenuMicroButton" then
+			hooksecurefunc(button, "SetHighlightTexture", function()
 				AB:UpdateMicroButtonTexture(name)
 			end)
 
-			if name == 'CharacterMicroButton' then
-				hooksecurefunc(button, 'SetPushed', AB.HandleCharacterPortrait)
-				hooksecurefunc(button, 'SetNormal', AB.HandleCharacterPortrait)
+			if name == "CharacterMicroButton" then
+				hooksecurefunc(button, "SetPushed", AB.HandleCharacterPortrait)
+				hooksecurefunc(button, "SetNormal", AB.HandleCharacterPortrait)
 			end
 		end
 	end
@@ -371,7 +388,7 @@ function AB:SetupMicroBar()
 		MenuPerformanceBar:Kill()
 	end
 
-	AB:SecureHook('UpdateMicroButtons')
+	AB:SecureHook("UpdateMicroButtons")
 
-	E:CreateMover(microBar, 'MicrobarMover', L["Micro Bar"], nil, nil, nil, 'ALL,ACTIONBARS', nil, 'actionbar,microbar')
+	E:CreateMover(microBar, "MicrobarMover", L["Micro Bar"], nil, nil, nil, "ALL,ACTIONBARS", nil, "actionbar,microbar")
 end

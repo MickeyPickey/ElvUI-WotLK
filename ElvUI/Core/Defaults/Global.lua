@@ -14,100 +14,121 @@ G.general = {
 	fadeMapDuration = 0.2,
 	WorldMapCoordinates = {
 		enable = true,
-		position = 'BOTTOMLEFT',
+		position = "BOTTOMLEFT",
 		xOffset = 0,
-		yOffset = 0
+		yOffset = 0,
 	},
 	AceGUI = {
 		width = 1024,
-		height = 768
+		height = 768,
 	},
-	disableTutorialButtons = true
+	disableTutorialButtons = true,
 }
 
 G.classtimer = {}
 
 G.chat = {
-	classColorMentionExcludedNames = {}
+	classColorMentionExcludedNames = {},
 }
 
 G.bags = {
-	ignoredItems = {}
+	ignoredItems = {},
 }
 
 G.datatexts = {
 	customPanels = {},
 	customCurrencies = {},
 	settings = {
-		Agility = { Label = '', NoLabel = false },
-		Armor = { Label = '', NoLabel = false },
-		['Attack Power'] = { Label = '', NoLabel = false },
-		Avoidance = { Label = '', NoLabel = false, decimalLength = 1 },
-		Bags = { textFormat = 'USED_TOTAL', Label = '', NoLabel = false },
-		CallToArms = { Label = '', NoLabel = false },
+		Agility = { Label = "", NoLabel = false },
+		Armor = { Label = "", NoLabel = false },
+		["Attack Power"] = { Label = "", NoLabel = false },
+		Avoidance = { Label = "", NoLabel = false, decimalLength = 1 },
+		Bags = { textFormat = "USED_TOTAL", Label = "", NoLabel = false },
+		CallToArms = { Label = "", NoLabel = false },
 		Combat = { TimeFull = true, NoLabel = false },
-		CombatIndicator = { OutOfCombat = '', InCombat = '', OutOfCombatColor = {r = 0, g = 0.8, b = 0}, InCombatColor = {r = 0.8, g = 0, b = 0} },
-		Currencies = { goldFormat = 'BLIZZARD', goldCoins = true, displayedCurrency = 'BACKPACK', displayStyle = 'ICON', tooltipData = {}, idEnable = {}, headers = true, maxCurrency = false },
-		Crit = { Label = '', NoLabel = false, decimalLength = 1 },
-		Durability = { Label = '', NoLabel = false, percThreshold = 30, goldFormat = 'BLIZZARD', goldCoins = true },
+		CombatIndicator = {
+			OutOfCombat = "",
+			InCombat = "",
+			OutOfCombatColor = { r = 0, g = 0.8, b = 0 },
+			InCombatColor = { r = 0.8, g = 0, b = 0 },
+		},
+		Currencies = {
+			goldFormat = "BLIZZARD",
+			goldCoins = true,
+			displayedCurrency = "BACKPACK",
+			displayStyle = "ICON",
+			tooltipData = {},
+			idEnable = {},
+			headers = true,
+			maxCurrency = false,
+		},
+		Crit = { Label = "", NoLabel = false, decimalLength = 1 },
+		Durability = { Label = "", NoLabel = false, percThreshold = 30, goldFormat = "BLIZZARD", goldCoins = true },
 		DualSpecialization = { NoLabel = false },
-		ElvUI = { Label = '' },
-		['Equipment Sets'] = { Label = '', NoLabel = false, NoIcon = false },
-		Experience = { textFormat = 'CUR' },
+		ElvUI = { Label = "" },
+		["Equipment Sets"] = { Label = "", NoLabel = false, NoIcon = false },
+		Experience = { textFormat = "CUR" },
 		Friends = {
-			Label = '', NoLabel = false,
+			Label = "",
+			NoLabel = false,
 			--status
 			hideAFK = false,
 			hideDND = false,
 		},
-		Gold = { goldFormat = 'BLIZZARD', goldCoins = true },
-		Guild = { Label = '', NoLabel = false },
-		Haste = { Label = '', NoLabel = false, decimalLength = 1 },
-		Hit = { Label = '', NoLabel = false, decimalLength = 1 },
-		Intellect = { Label = '', NoLabel = false},
-		['Item Level'] = { onlyEquipped = false, rarityColor = true },
-		Location = { showZone = true, showSubZone = true, showContinent = false, color = 'REACTION', customColor = {r = 1, g = 1, b = 1} },
-		Mastery = { Label = '', NoLabel = false, decimalLength = 1 },
-		MovementSpeed = { Label = '', NoLabel = false, decimalLength = 1 },
-		Reputation = { textFormat = 'CUR' },
-		['Talent Specialization'] = { iconSize = 16, iconOnly = false },
+		Gold = { goldFormat = "BLIZZARD", goldCoins = true },
+		Guild = { Label = "", NoLabel = false },
+		Haste = { Label = "", NoLabel = false, decimalLength = 1 },
+		Hit = { Label = "", NoLabel = false, decimalLength = 1 },
+		Intellect = { Label = "", NoLabel = false },
+		["Item Level"] = { onlyEquipped = false, rarityColor = true },
+		Location = {
+			showZone = true,
+			showSubZone = true,
+			showContinent = false,
+			color = "REACTION",
+			customColor = { r = 1, g = 1, b = 1 },
+		},
+		Mastery = { Label = "", NoLabel = false, decimalLength = 1 },
+		MovementSpeed = { Label = "", NoLabel = false, decimalLength = 1 },
+		Reputation = { textFormat = "CUR" },
+		["Talent Specialization"] = { iconSize = 16, iconOnly = false },
 		SpellPower = { school = 0 },
-		['Spell Crit Chance'] = { school = 0 },
-		Speed = { Label = '', NoLabel = false, decimalLength = 1 },
-		Stamina = { Label = '', NoLabel = false },
-		Strength = { Label = '', NoLabel = false },
-		System = { NoLabel = false, ShowOthers = true, latency = 'WORLD', showTooltip = true },
-		Time = { time24 = _G.GetCVar('portal') ~= 'en', localTime = true, flashInvite = true },
-		Versatility = { Label = '', NoLabel = false, decimalLength = 1 },
+		["Spell Crit Chance"] = { school = 0 },
+		Speed = { Label = "", NoLabel = false, decimalLength = 1 },
+		Stamina = { Label = "", NoLabel = false },
+		Strength = { Label = "", NoLabel = false },
+		System = { NoLabel = false, ShowOthers = true, latency = "WORLD", showTooltip = true },
+		Time = { time24 = _G.GetCVar("portal") ~= "en", localTime = true, flashInvite = true },
+		Versatility = { Label = "", NoLabel = false, decimalLength = 1 },
 		Dodge = { decimalLength = 1 },
 		Parry = { decimalLength = 1 },
 		Block = { decimalLength = 1 },
-		['Mana Regen'] = { Label = '', NoLabel = false, decimalLength = 1 },
-		HealPower = { Label = '', NoLabel = false },
-		['Spell Hit'] = { Label = '', NoLabel = false, decimalLength = 0 }
+		["Mana Regen"] = { Label = "", NoLabel = false, decimalLength = 1 },
+		HealPower = { Label = "", NoLabel = false },
+		["Spell Hit"] = { Label = "", NoLabel = false, decimalLength = 0 },
 	},
 	newPanelInfo = {
-		growth = 'HORIZONTAL',
+		growth = "HORIZONTAL",
 		width = 300,
 		height = 22,
-		frameStrata = 'LOW',
+		frameStrata = "LOW",
 		numPoints = 3,
 		frameLevel = 1,
 		backdrop = true,
 		panelTransparency = false,
 		mouseover = false,
 		border = true,
-		textJustify = 'CENTER',
-		visibility = '[vehicleui] hide;show',
-		tooltipAnchor = 'ANCHOR_TOPLEFT',
+		textJustify = "CENTER",
+		visibility = "[vehicleui] hide;show",
+		tooltipAnchor = "ANCHOR_TOPLEFT",
 		tooltipXOffset = -17,
 		tooltipYOffset = 4,
 		fonts = {
 			enable = false,
-			font = 'PT Sans Narrow',
+			font = "PT Sans Narrow",
 			fontSize = 12,
-			fontOutline = 'OUTLINE',
-		}
+			fontOutline = "OUTLINE",
+		},
 	},
 }
 
@@ -117,18 +138,18 @@ G.unitframe = {
 	aurafilters = {},
 	buffwatch = {},
 	raidDebuffIndicator = {
-		instanceFilter = 'RaidDebuffs',
-		otherFilter = 'CCDebuffs'
+		instanceFilter = "RaidDebuffs",
+		otherFilter = "CCDebuffs",
 	},
 	newCustomText = {
-		text_format = '',
+		text_format = "",
 		size = 10,
-		font = 'Homespun',
-		fontOutline = 'MONOCHROMEOUTLINE',
+		font = "Homespun",
+		fontOutline = "MONOCHROMEOUTLINE",
 		xOffset = 0,
 		yOffset = 0,
-		justifyH = 'CENTER',
-		attachTextTo = 'Health'
+		justifyH = "CENTER",
+		attachTextTo = "Health",
 	},
 	rangeCheck = {
 		PRIEST = {
@@ -273,10 +294,10 @@ G.unitframe = {
 			},
 			resSpells = {},
 			petSpells = {},
-		}
-	}
+		},
+	},
 }
 
 G.profileCopy = {
-	selected = 'Default'
+	selected = "Default",
 }

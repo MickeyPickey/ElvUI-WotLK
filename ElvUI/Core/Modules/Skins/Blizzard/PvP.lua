@@ -7,7 +7,9 @@ local _G = _G
 local CanQueueForWintergrasp = CanQueueForWintergrasp
 
 S:AddCallback("Skin_PvP", function()
-	if not E.private.skins.blizzard.enable or not E.private.skins.blizzard.pvp then return end
+	if not E.private.skins.blizzard.enable or not E.private.skins.blizzard.pvp then
+		return
+	end
 
 	PVPParentFrame:CreateBackdrop("Transparent")
 	PVPParentFrame.backdrop:Point("TOPLEFT", 11, -12)
@@ -26,7 +28,7 @@ S:AddCallback("Skin_PvP", function()
 	PVPFrame:StripTextures(true)
 
 	for i = 1, MAX_ARENA_TEAMS do
-		local pvpTeam = _G["PVPTeam"..i]
+		local pvpTeam = _G["PVPTeam" .. i]
 		pvpTeam:StripTextures()
 		pvpTeam:CreateBackdrop("Default")
 		pvpTeam.backdrop:Point("TOPLEFT", 9, -4)
@@ -36,7 +38,7 @@ S:AddCallback("Skin_PvP", function()
 		pvpTeam:HookScript("OnEnter", S.SetModifiedBackdrop)
 		pvpTeam:HookScript("OnLeave", S.SetOriginalBackdrop)
 
-		_G["PVPTeam"..i.."Highlight"]:Kill()
+		_G["PVPTeam" .. i .. "Highlight"]:Kill()
 	end
 
 	-- PVP Team Details
@@ -47,11 +49,11 @@ S:AddCallback("Skin_PvP", function()
 	S:HandleCloseButton(PVPTeamDetailsCloseButton, PVPTeamDetails)
 
 	for i = 1, 5 do
-		_G["PVPTeamDetailsFrameColumnHeader"..i]:StripTextures()
+		_G["PVPTeamDetailsFrameColumnHeader" .. i]:StripTextures()
 	end
 
 	for i = 1, MAX_ARENA_TEAM_MEMBERS do
-		S:HandleButtonHighlight(_G["PVPTeamDetailsButton"..i])
+		S:HandleButtonHighlight(_G["PVPTeamDetailsButton" .. i])
 	end
 
 	S:HandleButton(PVPTeamDetailsAddTeamMember)
@@ -74,19 +76,43 @@ S:AddCallback("Skin_PvP", function()
 	S:HandleButton(PVPBattlegroundFrameCancelButton)
 
 	for i = 1, 5 do
-		S:HandleButtonHighlight(_G["BattlegroundType"..i])
+		S:HandleButtonHighlight(_G["BattlegroundType" .. i])
 	end
 
 	PVPBattlegroundFrameInfoScrollFrameChildFrameDescription:SetTextColor(1, 1, 1)
 	PVPBattlegroundFrameInfoScrollFrameChildFrameRewardsInfo.description:SetTextColor(1, 1, 1)
 
-	PVPBattlegroundFrameTypeScrollFrameScrollBar:Point("TOPLEFT", PVPBattlegroundFrameTypeScrollFrame, "TOPRIGHT", 6, -19)
-	PVPBattlegroundFrameTypeScrollFrameScrollBar:Point("BOTTOMLEFT", PVPBattlegroundFrameTypeScrollFrame, "BOTTOMRIGHT", 6, 19)
+	PVPBattlegroundFrameTypeScrollFrameScrollBar:Point(
+		"TOPLEFT",
+		PVPBattlegroundFrameTypeScrollFrame,
+		"TOPRIGHT",
+		6,
+		-19
+	)
+	PVPBattlegroundFrameTypeScrollFrameScrollBar:Point(
+		"BOTTOMLEFT",
+		PVPBattlegroundFrameTypeScrollFrame,
+		"BOTTOMRIGHT",
+		6,
+		19
+	)
 
 	PVPBattlegroundFrameInfoScrollFrame:Point("BOTTOMLEFT", 19, 114)
 
-	PVPBattlegroundFrameInfoScrollFrameScrollBar:Point("TOPLEFT", PVPBattlegroundFrameInfoScrollFrame, "TOPRIGHT", 7, -24)
-	PVPBattlegroundFrameInfoScrollFrameScrollBar:Point("BOTTOMLEFT", PVPBattlegroundFrameInfoScrollFrame, "BOTTOMRIGHT", 7, 19)
+	PVPBattlegroundFrameInfoScrollFrameScrollBar:Point(
+		"TOPLEFT",
+		PVPBattlegroundFrameInfoScrollFrame,
+		"TOPRIGHT",
+		7,
+		-24
+	)
+	PVPBattlegroundFrameInfoScrollFrameScrollBar:Point(
+		"BOTTOMLEFT",
+		PVPBattlegroundFrameInfoScrollFrame,
+		"BOTTOMRIGHT",
+		7,
+		19
+	)
 
 	PVPBattlegroundFrameGroupJoinButton:Width(127)
 	PVPBattlegroundFrameCancelButton:Point("CENTER", PVPBattlegroundFrame, "TOPLEFT", 300, -416)
@@ -133,7 +159,7 @@ S:AddCallback("Skin_PvP", function()
 	S:HandleButton(BattlefieldFrameCancelButton)
 
 	for i = 1, BATTLEFIELD_ZONES_DISPLAYED do
-		S:HandleButtonHighlight(_G["BattlefieldZone"..i])
+		S:HandleButtonHighlight(_G["BattlefieldZone" .. i])
 	end
 
 	BattlefieldFrameNameHeader:Point("TOPLEFT", 73, -57)

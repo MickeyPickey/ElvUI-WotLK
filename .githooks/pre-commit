@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# Auto-format staged Lua files (excluding bundled libraries) before commit.
+set -euo pipefail
+
+files=$(git diff --cached --name-only --diff-filter=ACM -- '*.lua' \
+  | grep -vE '(^|/)(ElvUI_Libraries|Libraries)/' || true)
+[ -z "$files" ] && exit 0
+
+if ! command -v just >/dev/null 2>&1; then
+  echo "pre-commit: 'just' not found; skipping auto-format. Install just and run 'just setup'." >&2
+  exit 0
+fi
+
+# shellcheck disable=SC2086
+just fmt-files $files
+# shellcheck disable=SC2086
+git add -- $files

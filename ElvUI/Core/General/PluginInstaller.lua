@@ -53,7 +53,8 @@
 	StepTitleWidth				- Width of the steps frame on the right side
 	StepTitleButtonWidth		- Width of each step button in the steps frame
 	StepTitleTextJustification	- The justification of the text on each step button ("LEFT", "RIGHT", "CENTER"). Default: "CENTER"
---------------------------------------------------------------------]]--
+--------------------------------------------------------------------]]
+--
 
 local E, L, V, P, G = unpack(ElvUI)
 local PI = E:GetModule("PluginInstaller")
@@ -73,8 +74,8 @@ PI.Installs = {}
 local BUTTON_HEIGHT = 20
 local f
 
-local titleColor = {1, 1, 1}
-local titleSelectedColor = {.09, .52, .82}
+local titleColor = { 1, 1, 1 }
+local titleSelectedColor = { 0.09, 0.52, 0.82 }
 
 function PI:SetupReset()
 	f.Next:Disable()
@@ -135,9 +136,9 @@ function PI:SetPage(PageNum, PrevPage)
 		for i = 1, #f.side.Lines do
 			local line, color = f.side.Lines[i]
 			if i == f.CurrentPage then
-				color = f.StepTitlesColorSelected or {.09,.52,.82}
+				color = f.StepTitlesColorSelected or { 0.09, 0.52, 0.82 }
 			else
-				color = f.StepTitlesColor or {1,1,1}
+				color = f.StepTitlesColor or { 1, 1, 1 }
 			end
 
 			line.text:SetText(f.StepTitles[i])
@@ -219,7 +220,10 @@ function PI:Pending_OnEnter()
 	GameTooltip:AddLine(L["List of installations in queue:"], 1, 1, 1)
 	GameTooltip:AddLine(" ")
 	for i = 1, #PI.Installs do
-		GameTooltip:AddDoubleLine(format("%d. %s", i, (PI.Installs[i].Name or UNKNOWN)), i == 1 and format("|cff00FF00%s|r", L["In Progress"]) or format("|cffFF0000%s|r", L["Pending"]))
+		GameTooltip:AddDoubleLine(
+			format("%d. %s", i, (PI.Installs[i].Name or UNKNOWN)),
+			i == 1 and format("|cff00FF00%s|r", L["In Progress"]) or format("|cffFF0000%s|r", L["Pending"])
+		)
 	end
 	GameTooltip:Show()
 end
@@ -252,8 +256,13 @@ function PI:CreateFrame()
 	f.MoveFrame:SetMovable(true)
 	f.MoveFrame:EnableMouse(true)
 	f.MoveFrame:RegisterForDrag("LeftButton")
-	f.MoveFrame:SetScript("OnDragStart", function(frame) frame:StartMoving() frame:SetUserPlaced(false) end)
-	f.MoveFrame:SetScript("OnDragStop", function(frame) frame:StopMovingOrSizing() end)
+	f.MoveFrame:SetScript("OnDragStart", function(frame)
+		frame:StartMoving()
+		frame:SetUserPlaced(false)
+	end)
+	f.MoveFrame:SetScript("OnDragStop", function(frame)
+		frame:StopMovingOrSizing()
+	end)
 	f.MoveFrame:Size(450, 50)
 	f.MoveFrame:Point("TOP", f, "TOP")
 
@@ -288,7 +297,7 @@ function PI:CreateFrame()
 	f.Status.anim = CreateAnimationGroup(f.Status)
 	f.Status.anim.progress = f.Status.anim:CreateAnimation("Progress")
 	f.Status.anim.progress:SetEasing("Out")
-	f.Status.anim.progress:SetDuration(.3)
+	f.Status.anim.progress:SetDuration(0.3)
 
 	f.Status.text = f.Status:CreateFontString(nil, "OVERLAY")
 	f.Status.text:FontTemplate(nil, 14, "OUTLINE")
@@ -306,8 +315,16 @@ function PI:CreateFrame()
 	f.Option2:Point("BOTTOMLEFT", f, "BOTTOM", 4, 45)
 	f.Option2:SetText("")
 	f.Option2:Hide()
-	f.Option2:SetScript("OnShow", function() f.Option1:Width(110); f.Option1:ClearAllPoints(); f.Option1:Point("BOTTOMRIGHT", f, "BOTTOM", -4, 45) end)
-	f.Option2:SetScript("OnHide", function() f.Option1:Width(160); f.Option1:ClearAllPoints(); f.Option1:Point("BOTTOM", 0, 45) end)
+	f.Option2:SetScript("OnShow", function()
+		f.Option1:Width(110)
+		f.Option1:ClearAllPoints()
+		f.Option1:Point("BOTTOMRIGHT", f, "BOTTOM", -4, 45)
+	end)
+	f.Option2:SetScript("OnHide", function()
+		f.Option1:Width(160)
+		f.Option1:ClearAllPoints()
+		f.Option1:Point("BOTTOM", 0, 45)
+	end)
 	S:HandleButton(f.Option2)
 
 	f.Option3 = CreateFrame("Button", "PluginInstallOption3Button", f, "UIPanelButtonTemplate")
@@ -315,8 +332,22 @@ function PI:CreateFrame()
 	f.Option3:Point("LEFT", f.Option2, "RIGHT", 4, 0)
 	f.Option3:SetText("")
 	f.Option3:Hide()
-	f.Option3:SetScript("OnShow", function() f.Option1:SetWidth(100) f.Option1:ClearAllPoints() f.Option1:Point("RIGHT", f.Option2, "LEFT", -4, 0) f.Option2:SetWidth(100) f.Option2:ClearAllPoints() f.Option2:Point("BOTTOM", f, "BOTTOM", 0, 45) end)
-	f.Option3:SetScript("OnHide", function() f.Option1:SetWidth(160) f.Option1:ClearAllPoints() f.Option1:Point("BOTTOM", 0, 45) f.Option2:SetWidth(110) f.Option2:ClearAllPoints() f.Option2:Point("BOTTOMLEFT", f, "BOTTOM", 4, 45) end)
+	f.Option3:SetScript("OnShow", function()
+		f.Option1:SetWidth(100)
+		f.Option1:ClearAllPoints()
+		f.Option1:Point("RIGHT", f.Option2, "LEFT", -4, 0)
+		f.Option2:SetWidth(100)
+		f.Option2:ClearAllPoints()
+		f.Option2:Point("BOTTOM", f, "BOTTOM", 0, 45)
+	end)
+	f.Option3:SetScript("OnHide", function()
+		f.Option1:SetWidth(160)
+		f.Option1:ClearAllPoints()
+		f.Option1:Point("BOTTOM", 0, 45)
+		f.Option2:SetWidth(110)
+		f.Option2:ClearAllPoints()
+		f.Option2:Point("BOTTOMLEFT", f, "BOTTOM", 4, 45)
+	end)
 	S:HandleButton(f.Option3, true)
 
 	f.Option4 = CreateFrame("Button", "PluginInstallOption4Button", f, "UIPanelButtonTemplate")
@@ -333,7 +364,14 @@ function PI:CreateFrame()
 		f.Option2:ClearAllPoints()
 		f.Option2:Point("BOTTOMRIGHT", f, "BOTTOM", -4, 45)
 	end)
-	f.Option4:SetScript("OnHide", function() f.Option1:Width(160); f.Option1:ClearAllPoints(); f.Option1:Point("BOTTOM", 0, 45); f.Option2:Width(110); f.Option2:ClearAllPoints(); f.Option2:Point("BOTTOMLEFT", f, "BOTTOM", 4, 45) end)
+	f.Option4:SetScript("OnHide", function()
+		f.Option1:Width(160)
+		f.Option1:ClearAllPoints()
+		f.Option1:Point("BOTTOM", 0, 45)
+		f.Option2:Width(110)
+		f.Option2:ClearAllPoints()
+		f.Option2:Point("BOTTOMLEFT", f, "BOTTOM", 4, 45)
+	end)
 	S:HandleButton(f.Option4)
 
 	f.SubTitle = f:CreateFontString(nil, "OVERLAY")
@@ -425,7 +463,7 @@ function PI:Queue(addon)
 	end
 
 	if not addonIsQueued then
-		tinsert(PI.Installs, #(PI.Installs)+1, addon)
+		tinsert(PI.Installs, #PI.Installs + 1, addon)
 		PI:RunInstall()
 	end
 end
@@ -448,7 +486,9 @@ function PI:CloseInstall()
 end
 
 function PI:RunInstall()
-	if not E.private.install_complete then return end
+	if not E.private.install_complete then
+		return
+	end
 
 	local db = PI.Installs[1]
 	if db and not f:IsShown() and not (E.InstallFrame and E.InstallFrame:IsShown()) then
@@ -462,7 +502,7 @@ function PI:RunInstall()
 
 		f.Title:SetText(db.Title or L["ElvUI Plugin Installation"])
 		f.Status:SetMinMaxValues(0, f.MaxPage)
-		f.Status.text:SetText(f.CurrentPage.." / "..f.MaxPage)
+		f.Status.text:SetText(f.CurrentPage .. " / " .. f.MaxPage)
 
 		-- Logo
 		local LogoTop = db.tutorialImage or E.Media.Textures.LogoTop
@@ -508,7 +548,7 @@ function PI:RunInstall()
 		end
 
 		if db.StepTitles and #db.StepTitles == f.MaxPage then
-			f:Point("CENTER", E.UIParent, "CENTER", -((db.StepTitleWidth or 140)*0.5), 0)
+			f:Point("CENTER", E.UIParent, "CENTER", -((db.StepTitleWidth or 140) * 0.5), 0)
 			f.side:Width(db.StepTitleWidth or 140)
 			f.side:Show()
 

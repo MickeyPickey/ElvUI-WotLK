@@ -1,5 +1,5 @@
 -- Turkish localization file for trTR.
-local L = ElvUI[1].Libs.ACL:NewLocale('ElvUI', 'trTR')
+local L = ElvUI[1].Libs.ACL:NewLocale("ElvUI", "trTR")
 
 L["ALT"] = true
 L["CTRL"] = true
@@ -27,7 +27,8 @@ L["TOOLTIP"] = true
 ----------------------------------
 
 L["BigWigs Spell Rename"] = true
-L["Allows BigWigs to rename specific encounter spells on your castbar to something better to understand.\nExample: 'Impaling Eruption' becomes 'Frontal' and 'Twilight Massacre' becomes 'Dash'."] = true
+L["Allows BigWigs to rename specific encounter spells on your castbar to something better to understand.\nExample: 'Impaling Eruption' becomes 'Frontal' and 'Twilight Massacre' becomes 'Dash'."] =
+	true
 L["Add Aura ID"] = true
 L["Remove Aura"] = true
 L["Select Aura"] = true
@@ -82,7 +83,8 @@ L["Additional Power"] = "Ek Guc"
 L["Additional spacing between each individual group."] = "Her bir grup arasinda ek bosluk."
 L["Additive Blend"] = "Katki Karisimi"
 L["AddOn Manager"] = true --No need to translate
-L["Adds an arrow infront of the chat lines to copy the entire line."] = "Tum satiri kopyalamak icin sohbet satirlarinin onune bir ok ekler."
+L["Adds an arrow infront of the chat lines to copy the entire line."] =
+	"Tum satiri kopyalamak icin sohbet satirlarinin onune bir ok ekler."
 L["Adjust the height of your left chat panel."] = "Sol sohbet panelinizin yuksekligini ayarlayin."
 L["Adjust the height of your right chat panel."] = "Sag sohbet panelinizin yuksekligini ayarlayin."
 L["Adjust the scale of the minimap and also the pins. Eg: Quests, Resource nodes, Group members"] = true
@@ -98,9 +100,11 @@ L["Alive"] = true
 L["Alliance"] = "Alliance"
 L["Allied Races"] = "Ittifak Irklar"
 L["Allow Masque to handle the skinning of this element."] = "Masque'in bu elementin dis gorunusunu islemesine izin ver."
-L["Allow newly learned spells to be automatically placed on an empty actionbar slot."] = "Yeni ogrenilen buyulerin otomatik olarak bos bir eylem cubugu yuvasina yerlestirilmesine izin ver."
+L["Allow newly learned spells to be automatically placed on an empty actionbar slot."] =
+	"Yeni ogrenilen buyulerin otomatik olarak bos bir eylem cubugu yuvasina yerlestirilmesine izin ver."
 L["Allow Sharing"] = "Paylasmaya Izin Ver"
-L["Allows you to tie a stack count to an aura when you add it to the list, which allows the trigger to act when an aura reaches X number of stacks."] = "Listeye eklediginizde bir auraya yigin sayimi baglamaniza izin verir, bu da bir aura X yigin sayisina ulastiginda tetikleyicinin harekete gecmesine izin verir."
+L["Allows you to tie a stack count to an aura when you add it to the list, which allows the trigger to act when an aura reaches X number of stacks."] =
+	"Listeye eklediginizde bir auraya yigin sayimi baglamaniza izin verir, bu da bir aura X yigin sayisina ulastiginda tetikleyicinin harekete gecmesine izin verir."
 L["Alpha channel is taken from the color option."] = "Alfa kanali renk seceneginden alinmistir."
 L["Alpha Fading"] = "Alfa Solmasi"
 L["Alpha Key"] = "Alfa Anahtari"
@@ -114,28 +118,41 @@ L["Anchor Point"] = "Dayanak Noktasi"
 L["Anchor"] = "Capa"
 L["Anima Diversion"] = true
 L["Announce Interrupts"] = "Kesintileri Bildir"
-L["Announce when you interrupt a spell to the specified chat channel."] = "Belirtilen sohbet kanalina bir buyuyu boldugunuzde duyurun."
+L["Announce when you interrupt a spell to the specified chat channel."] =
+	"Belirtilen sohbet kanalina bir buyuyu boldugunuzde duyurun."
 L["Another Players Pet"] = true
 L["Any"] = "Hic"
-L["Applies the font and font size settings throughout the entire user interface. Note: Some font size settings will be skipped due to them having a smaller font size by default."] = "Yazi tipi ve yazi tipi boyutu ayarlarini tum kullanici arayuzune uygular. Not: Varsayilan olarak daha kucuk yazi tipi boyutuna sahip olduklari icin bazi yazi tipi boyutu ayarlari atlanacaktir."
+L["Applies the font and font size settings throughout the entire user interface. Note: Some font size settings will be skipped due to them having a smaller font size by default."] =
+	"Yazi tipi ve yazi tipi boyutu ayarlarini tum kullanici arayuzune uygular. Not: Varsayilan olarak daha kucuk yazi tipi boyutuna sahip olduklari icin bazi yazi tipi boyutu ayarlari atlanacaktir."
 L["Apply Font To All"] = "Yazi Tipini Tumune Uygula"
-L["Apply this filter if a buff has remaining time greater than this. Set to zero to disable."] = "Bir guclendirmenin bundan daha fazla kalan suresi varsa bu filtreyi uygulayin. Devre disi birakmak icin sifira ayarlayin."
-L["Apply this filter if a buff has remaining time less than this. Set to zero to disable."] = "Bir guclendirmenin bundan daha az kalan suresi varsa bu filtreyi uygulayin. Devre disi birakmak icin sifira ayarlayin."
-L["Apply this filter if a debuff has remaining time greater than this. Set to zero to disable."] = "Bir debuff'in bundan daha fazla kalan suresi varsa bu filtreyi uygulayin. Devre disi birakmak icin sifira ayarlayin."
-L["Apply this filter if a debuff has remaining time less than this. Set to zero to disable."] = "Bir debuff'in bundan daha az kalan suresi varsa bu filtreyi uygulayin. Devre disi birakmak icin sifira ayarlayin."
+L["Apply this filter if a buff has remaining time greater than this. Set to zero to disable."] =
+	"Bir guclendirmenin bundan daha fazla kalan suresi varsa bu filtreyi uygulayin. Devre disi birakmak icin sifira ayarlayin."
+L["Apply this filter if a buff has remaining time less than this. Set to zero to disable."] =
+	"Bir guclendirmenin bundan daha az kalan suresi varsa bu filtreyi uygulayin. Devre disi birakmak icin sifira ayarlayin."
+L["Apply this filter if a debuff has remaining time greater than this. Set to zero to disable."] =
+	"Bir debuff'in bundan daha fazla kalan suresi varsa bu filtreyi uygulayin. Devre disi birakmak icin sifira ayarlayin."
+L["Apply this filter if a debuff has remaining time less than this. Set to zero to disable."] =
+	"Bir debuff'in bundan daha az kalan suresi varsa bu filtreyi uygulayin. Devre disi birakmak icin sifira ayarlayin."
 L["Apply To All"] = "Hepsine Uygula"
 L["Archaeology Frame"] = "Arkeoloji Cercevesi"
-L["Are you sure you want to reset ActionBars settings?"] = "Eylem Dugmeleri ayarlarini sifirlamak istediginizden emin misiniz?"
+L["Are you sure you want to reset ActionBars settings?"] =
+	"Eylem Dugmeleri ayarlarini sifirlamak istediginizden emin misiniz?"
 L["Are you sure you want to reset Auras settings?"] = "Aura ayarlarini sifirlamak istediginizden emin misiniz?"
 L["Are you sure you want to reset Bags settings?"] = "canta ayarlarini sifirlamak istediginizden emin misiniz?"
 L["Are you sure you want to reset Chat settings?"] = "Sohbet ayarlarini sifirlamak istediginizden emin misiniz?"
-L["Are you sure you want to reset Cooldown settings?"] = "Soguma Sureleri ayarlarini sifirlamak istediginizden emin misiniz?"
-L["Are you sure you want to reset DataBars settings?"] = "Veri cubuklari ayarlarini sifirlamak istediginizden emin misiniz?"
-L["Are you sure you want to reset DataTexts settings?"] = "Veri Metinleri ayarlarini sifirlamak istediginizden emin misiniz?"
+L["Are you sure you want to reset Cooldown settings?"] =
+	"Soguma Sureleri ayarlarini sifirlamak istediginizden emin misiniz?"
+L["Are you sure you want to reset DataBars settings?"] =
+	"Veri cubuklari ayarlarini sifirlamak istediginizden emin misiniz?"
+L["Are you sure you want to reset DataTexts settings?"] =
+	"Veri Metinleri ayarlarini sifirlamak istediginizden emin misiniz?"
 L["Are you sure you want to reset General settings?"] = "Genel ayarlarini sifirlamak istediginizden emin misiniz?"
-L["Are you sure you want to reset NamePlates settings?"] = "Isim Levhalari ayarlarini sifirlamak istediginizden emin misiniz?"
-L["Are you sure you want to reset Tooltip settings?"] = "Ipucu cercevesi ayarlarini sifirlamak istediginizden emin misiniz?"
-L["Are you sure you want to reset UnitFrames settings?"] = "Birim cerceveleri ayarlarini sifirlamak istediginizden emin misiniz?"
+L["Are you sure you want to reset NamePlates settings?"] =
+	"Isim Levhalari ayarlarini sifirlamak istediginizden emin misiniz?"
+L["Are you sure you want to reset Tooltip settings?"] =
+	"Ipucu cercevesi ayarlarini sifirlamak istediginizden emin misiniz?"
+L["Are you sure you want to reset UnitFrames settings?"] =
+	"Birim cerceveleri ayarlarini sifirlamak istediginizden emin misiniz?"
 L["Arena Registrar"] = true
 L["Arrow Scale"] = "Ok Olcegi"
 L["Arrow Spacing"] = "Ok Araligi"
@@ -145,12 +162,14 @@ L["Ascending"] = "Artan"
 L["Assigned Icon"] = "Atanan Ikonu"
 L["Assist Frames"] = "Asist Cerceveleri"
 L["Assist"] = "Asist"
-L["At what point should the text be displayed. Set to -1 to disable."] = "Metnin hangi noktada Gosternmesi gerekiyor. Devre disi birakmak icin -1'e ayarlayin."
+L["At what point should the text be displayed. Set to -1 to disable."] =
+	"Metnin hangi noktada Gosternmesi gerekiyor. Devre disi birakmak icin -1'e ayarlayin."
 L["Attach Text To"] = "Metine Ilistir"
 L["Attach To"] = "Ilistir"
 L["Attempt to create URL links inside the chat."] = "Sohbet icinde URL baglantilari olusturmaya calisin."
 L["Attempt to support eyefinity/nvidia surround."] = "Eyefinity/nvidia surround'i desteklemeye calisin."
-L["Attempts to center UI elements in a 16:9 format for ultrawide monitors"] = "Ultra genis monitorler icin kullanici arabirimi ogelerini 16:9 biciminde ortalama girisimleri"
+L["Attempts to center UI elements in a 16:9 format for ultrawide monitors"] =
+	"Ultra genis monitorler icin kullanici arabirimi ogelerini 16:9 biciminde ortalama girisimleri"
 L["Auction House"] = "Muzayede evi"
 L["AUCTIONS"] = "Ihaleler"
 L["Aura Filters"] = "Aura Filtreleri"
@@ -165,11 +184,16 @@ L["Auto Track Reputation"] = "Itibari Oto-Takip Et"
 L["Auto-Close Pet Battle Log"] = "Otomatik Kapat Evcil Hayvan Savas Gunlugu"
 L["Auto-Hide"] = "Otomatik Gizleme"
 L["Automatic"] = "Otomatik"
-L["Automatically accept invites from guild/friends."] = "Loncadan/arkadaslardan gelen davetleri otomatik olarak kabul et."
-L["Automatically hide the objective frame during boss fights while you are running a key."] = "Bir anahtari calistirirken patron dovusleri sirasinda Amaclar Cercevesini otomatik olarak gizleyin."
-L["Automatically hide the objective frame during boss or arena fights."] = "Boss veya arena dovusleri sirasinda objektif cerceveyi otomatik olarak gizle."
-L["Automatically repair using the following method when visiting a merchant."] = "Bir saticiyi ziyaret ederken asagidaki yontemi kullanarak otomatik olarak onarin."
-L["Automatically vendor gray items when visiting a vendor."] = "Bir saticiyi ziyaret ederken gri ogeleri otomatik olarak sat."
+L["Automatically accept invites from guild/friends."] =
+	"Loncadan/arkadaslardan gelen davetleri otomatik olarak kabul et."
+L["Automatically hide the objective frame during boss fights while you are running a key."] =
+	"Bir anahtari calistirirken patron dovusleri sirasinda Amaclar Cercevesini otomatik olarak gizleyin."
+L["Automatically hide the objective frame during boss or arena fights."] =
+	"Boss veya arena dovusleri sirasinda objektif cerceveyi otomatik olarak gizle."
+L["Automatically repair using the following method when visiting a merchant."] =
+	"Bir saticiyi ziyaret ederken asagidaki yontemi kullanarak otomatik olarak onarin."
+L["Automatically vendor gray items when visiting a vendor."] =
+	"Bir saticiyi ziyaret ederken gri ogeleri otomatik olarak sat."
 L["Automation"] = "Otomasyon"
 L["Available Tags"] = "Kullanilabilir Etiketler"
 L["Azerite Essence"] = true
@@ -203,7 +227,8 @@ L["Bank %d"] = true --No need to translate
 L["Bank Only"] = "Sadece Banka"
 L["BALANCE_ENERGY_LUNAR"] = "Lunar Energy"
 L["BALANCE_ENERGY_SOLAR"] = "Solar Energy"
-L["Bar %s is used for stance or forms.\nYou will have to adjust paging to use this bar.\nAre you sure?"] = "%s cubugu durus veya formlar icin kullanilir.\nBu cubugu kullanmak icin sayfalamayi ayarlamaniz gerekecek.\nEmin misiniz?"
+L["Bar %s is used for stance or forms.\nYou will have to adjust paging to use this bar.\nAre you sure?"] =
+	"%s cubugu durus veya formlar icin kullanilir.\nBu cubugu kullanmak icin sayfalamayi ayarlamaniz gerekecek.\nEmin misiniz?"
 L["Bar %s is used for stance or forms.\nYou will have to adjust paging to use this bar.\nAre you sure?"] = true
 L["Bar Direction"] = "Cubuk Yonu"
 L["Bar Settings"] = "Cubuk Ayarlari"
@@ -278,10 +303,12 @@ L["Casted by Player Only"] = "Yalnizca Oyuncu Tarafindan Kullanildi"
 L["Casting"] = "Kullaniliyor"
 L["Center"] = "Merkez"
 L["CHALLENGE_MODE"] = "Meydan Okuma Modu"
-L["Change settings for the display of the location text that is on the minimap."] = "Mini haritadaki konum metninin goruntulenmesi icin ayarlari degistirin."
+L["Change settings for the display of the location text that is on the minimap."] =
+	"Mini haritadaki konum metninin goruntulenmesi icin ayarlari degistirin."
 L["Change the alpha level of the frame."] = "Cercevenin alfa seviyesini degistirin."
 L["Change the scale of the Game Menu which shows up when you press ESC."] = true
-L["Change the width and controls how big of an area on the screen will accept clicks to target unit."] = "Genisligi degistirin ve ekrandaki bir alanin ne kadar buyuk bir bolumunun hedef birime yapilan tiklamalari kabul edecegini kontrol edin."
+L["Change the width and controls how big of an area on the screen will accept clicks to target unit."] =
+	"Genisligi degistirin ve ekrandaki bir alanin ne kadar buyuk bir bolumunun hedef birime yapilan tiklamalari kabul edecegini kontrol edin."
 L["Changelog"] = "Degisiklik gunlugu"
 L["Channel Alerts"] = "Kanal Uyarilari"
 L["Channel Time Format"] = "Kanal Saat Bicimi"
@@ -302,16 +329,21 @@ L["CHAT_MSG_EMOTE"] = "Ifade"
 L["Check Focus Cast"] = true
 L["Check Mouseover Cast"] = true
 L["Check Self Cast"] = true
-L["Check these to only have the filter active in certain difficulties. If none are checked, it is active in all difficulties."] = "Filtrenin yalnizca belirli zorluklarda etkin olmasi icin bunlari isaretleyin. Hicbiri isaretlenmezse, tum zorluklarda etkindir."
+L["Check these to only have the filter active in certain difficulties. If none are checked, it is active in all difficulties."] =
+	"Filtrenin yalnizca belirli zorluklarda etkin olmasi icin bunlari isaretleyin. Hicbiri isaretlenmezse, tum zorluklarda etkindir."
 L["CheckBox Skin"] = "Onay Kutusu Gorunumu"
 L["CHI_POWER"] = "Chi"
 L["Choose Export Format"] = "Disa Aktarma Formatini Secin"
-L["Choose UIPARENT to prevent it from hiding with the unitframe."] = "Birim cerceveleri ile gizlenmesini onlemek icin UIPARENT'i secin."
+L["Choose UIPARENT to prevent it from hiding with the unitframe."] =
+	"Birim cerceveleri ile gizlenmesini onlemek icin UIPARENT'i secin."
 L["Choose What To Export"] = "Neyi Disa Aktaracaginizi Secin"
-L["Choose when you want the tooltip to show in combat. If a modifier is chosen, then you need to hold that down to show the tooltip."] = "Ipucu penceresinin savasta ne zaman gosterilmesini istediginizi secin. Bir degistirici secilirse, ipucu penceresini gostermek icin bunu basili tutmaniz gerekir."
-L["Choose when you want the tooltip to show. If a modifier is chosen, then you need to hold that down to show the tooltip."] = "Ipucu penceresinin ne zaman gosterilmesini istediginizi secin. Bir degistirici secilirse, ipucu penceresini gostermek icin bunu basili tutmaniz gerekir."
+L["Choose when you want the tooltip to show in combat. If a modifier is chosen, then you need to hold that down to show the tooltip."] =
+	"Ipucu penceresinin savasta ne zaman gosterilmesini istediginizi secin. Bir degistirici secilirse, ipucu penceresini gostermek icin bunu basili tutmaniz gerekir."
+L["Choose when you want the tooltip to show. If a modifier is chosen, then you need to hold that down to show the tooltip."] =
+	"Ipucu penceresinin ne zaman gosterilmesini istediginizi secin. Bir degistirici secilirse, ipucu penceresini gostermek icin bunu basili tutmaniz gerekir."
 L["Chromie Time Frame"] = true
-L["Clamp nameplates to the top of the screen when outside of view."] = "Gorus alaninin disindayken isim levhalarini ekranin ust kismina tutturun."
+L["Clamp nameplates to the top of the screen when outside of view."] =
+	"Gorus alaninin disindayken isim levhalarini ekranin ust kismina tutturun."
 L["Clamp Nameplates"] = "Isim Levhalarini Sikistir"
 L["Class Backdrop"] = "Sinif Arka Plani"
 L["Class Castbars"] = "Sinif Yetenek Cubugu"
@@ -336,7 +368,8 @@ L["Clickable Width / Width"] = "Tiklanabilir Genislik / Genislik"
 L["Cluster Backdrop"] = true
 L["Coding:"] = "Kodlama:"
 L["COLLECTIONS"] = "Koleksiyonlar"
-L["Color all buffs that reduce the unit's incoming damage."] = "Birimin, gelen hasarini azaltan tum guclendirmelerini renklendirin."
+L["Color all buffs that reduce the unit's incoming damage."] =
+	"Birimin, gelen hasarini azaltan tum guclendirmelerini renklendirin."
 L["Color aurabar debuffs by type."] = "Aura cubuklarinin turlerine gore zayiflatmalari renklendirin."
 L["Color Backdrop"] = "Renk Arka Plani"
 L["Color by Happiness"] = true
@@ -346,17 +379,20 @@ L["Color by Value"] = "Degere Gore Renk"
 L["Color castbar by the class of the unit's class."] = true
 L["Color castbar by the reaction of the unit to the player."] = true
 L["Color castbars by the class of player units."] = "Oyuncu birimlerinin sinifina gore yetenek cubugunu renklendirin."
-L["Color castbars by the reaction type of non-player units."] = "Oyuncu olmayan birimlerin tepki turune gore yetenek cubugunu renklendirin."
+L["Color castbars by the reaction type of non-player units."] =
+	"Oyuncu olmayan birimlerin tepki turune gore yetenek cubugunu renklendirin."
 L["Color Debuffs"] = "Zayiflatici Renkleri"
 L["Color Enchants"] = "Renk Vurgulamasi"
 L["Color Gradient"] = "Renk Gradyani"
 L["Color health by amount remaining."] = "Kalan miktara gore renk sagligi."
 L["Color health by classcolor or reaction."] = "Sinif rengine veya reaksiyona gore renk sagligi."
 L["Color health by color selection."] = "Renk secimine gore renk sagligi."
-L["Color Keybind Text when Out of Range, instead of the button."] = "Tus Atamasi Metni Menzil Disindayken Renk Dugmesi yerine."
+L["Color Keybind Text when Out of Range, instead of the button."] =
+	"Tus Atamasi Metni Menzil Disindayken Renk Dugmesi yerine."
 L["Color Keybind Text"] = "Renkli Tus Atamasi Metni"
 L["Color of the actionbutton when not usable."] = "Kullanilamaz oldugunda eylem dugmesinin rengi."
-L["Color of the actionbutton when out of power (Mana, Rage, Focus, Holy Power)."] = "Guc bittiginde eylem dugmesinin rengi (Mana, Rage, Focus, Holy Power)."
+L["Color of the actionbutton when out of power (Mana, Rage, Focus, Holy Power)."] =
+	"Guc bittiginde eylem dugmesinin rengi (Mana, Rage, Focus, Holy Power)."
 L["Color of the actionbutton when out of range."] = "Menzil disindayken eylem dugmesinin rengi."
 L["Color of the actionbutton when usable."] = "Kullanilabilir oldugunda eylem dugmesinin rengi."
 L["Color of the Targets Aura time when expiring."] = true
@@ -369,7 +405,8 @@ L["Color score based on Blizzards API."] = "Blizzards API'sine dayali renk puani
 L["Color Score"] = "Puan Rengi"
 L["Color some texts use."] = "Bazi metinleri renklendirin."
 L["Color the health backdrop by class or reaction."] = "Saglik zeminini sinifa veya reaksiyona gore renklendirin."
-L["Color the unit healthbar if there is a debuff that can be dispelled by you."] = "Sizin tarafinizdan yok edilebilecek bir zayiflatici varsa, birim saglik cubugunu renklendirin."
+L["Color the unit healthbar if there is a debuff that can be dispelled by you."] =
+	"Sizin tarafinizdan yok edilebilecek bir zayiflatici varsa, birim saglik cubugunu renklendirin."
 L["Color tooltip border based on Item Quality."] = "Oge Kalitesine dayali renk ipucu penceresi kenarligi."
 L["Color Turtle Buffs"] = "Kaplumbaga Guclendiricileri Rengi"
 L["Color when at half of the Low Health Threshold"] = true
@@ -379,14 +416,16 @@ L["Color when the text is in the days format."] = "Metin gun biciminde oldugunda
 L["Color when the text is in the hours format."] = "Metin saat biciminde oldugunda renklendirin."
 L["Color when the text is in the minutes format."] = "Metin dakika biciminde oldugunda renklendirin."
 L["Color when the text is in the seconds format."] = "Metin saniye biciminde oldugunda renklendirin."
-L["Color when the text is using a modified timer rate."] = "Metin degistirilmis bir zamanlayici hizi kullandiginda renklendirin."
+L["Color when the text is using a modified timer rate."] =
+	"Metin degistirilmis bir zamanlayici hizi kullandiginda renklendirin."
 L["COLOR"] = "Renk"
 L["Colored Icon"] = "Renklendirilmis Ikonu"
 L["Coloring (Specific)"] = "Renklendirme (Spesifik)"
 L["Coloring"] = "Renklendirme"
 L["Colorize Selected Text"] = "Secili Metni Renklendir"
 L["Colors the border according to the Quality of the Item."] = "Ogenin Kalitesine gore kenarlari renklendirir."
-L["Colors the border according to the type of items assigned to the bag."] = "cantaya atanan esyalarin turune gore sinirlarini renklendirir."
+L["Colors the border according to the type of items assigned to the bag."] =
+	"cantaya atanan esyalarin turune gore sinirlarini renklendirir."
 L["Colors"] = "Renkler"
 L["Combat Font"] = "Catisma Yazi Tipi"
 L["Combat Icon"] = "Catisma Ikonu"
@@ -405,19 +444,27 @@ L["Connected"] = true
 L["Conscious"] = true
 L["Content"] = true
 L["Contribution"] = "Katki"
-L["Control enemy nameplates toggling on or off when in combat."] = "Savastayken dusman isim levhalarini acilip kapanmasini kontrol edin."
-L["Control friendly nameplates toggling on or off when in combat."] = "Savastayken acilip kapanan dost isim levhalarini kontrol edin."
-L["Controls how big of an area on the screen will accept clicks to target unit."] = "Ekrandaki ne kadar buyuk bir alanin hedef birime yapilan tiklamalari kabul edecegini kontrol eder."
-L["Controls how many seconds of inactivity has to pass before chat is faded."] = "Sohbetin solmasi icin kac saniye hareketsizlik gecmesi gerektigini kontrol eder."
-L["Controls the amount of decimals used in values displayed on elements like NamePlates and UnitFrames."] = "Isim Levhalari ve Birim cerceveleri gibi ogelerde goruntulenen degerlerde kullanilan ondalik sayilarin miktarini kontrol eder."
-L["Controls the speed at which smoothed bars will be updated."] = "Puruzsuzlestirilmis cubuklarin guncellenme hizini kontrol eder."
-L["Controls the text displayed. Tags are available in the Available Tags section of the config."] = "Goruntulenen metni kontrol eder. Etiketler, yapilandirmanin Kullanilabilir Etiketler bolumunde bulunur."
+L["Control enemy nameplates toggling on or off when in combat."] =
+	"Savastayken dusman isim levhalarini acilip kapanmasini kontrol edin."
+L["Control friendly nameplates toggling on or off when in combat."] =
+	"Savastayken acilip kapanan dost isim levhalarini kontrol edin."
+L["Controls how big of an area on the screen will accept clicks to target unit."] =
+	"Ekrandaki ne kadar buyuk bir alanin hedef birime yapilan tiklamalari kabul edecegini kontrol eder."
+L["Controls how many seconds of inactivity has to pass before chat is faded."] =
+	"Sohbetin solmasi icin kac saniye hareketsizlik gecmesi gerektigini kontrol eder."
+L["Controls the amount of decimals used in values displayed on elements like NamePlates and UnitFrames."] =
+	"Isim Levhalari ve Birim cerceveleri gibi ogelerde goruntulenen degerlerde kullanilan ondalik sayilarin miktarini kontrol eder."
+L["Controls the speed at which smoothed bars will be updated."] =
+	"Puruzsuzlestirilmis cubuklarin guncellenme hizini kontrol eder."
+L["Controls the text displayed. Tags are available in the Available Tags section of the config."] =
+	"Goruntulenen metni kontrol eder. Etiketler, yapilandirmanin Kullanilabilir Etiketler bolumunde bulunur."
 L["Cooldown Text"] = "Soguma Suresi Metni"
 L["Cooldowns"] = "Soguma Suresi"
 L["Copy Chat Lines"] = "Sohbet Satirini Kopyala"
 L["Copy From"] = "Suradan Kopyala"
 L["Copy Primary Texture"] = "Birincil Dokuyu Kopyala"
-L["Copy settings from %s. This will overwrite %s profile.\n\n Are you sure?"] = "Ayarlari %s adresinden kopyaliyorsunuz. Bu, %s profilinin uzerine yazacaktir.\n\n Emin misiniz?"
+L["Copy settings from %s. This will overwrite %s profile.\n\n Are you sure?"] =
+	"Ayarlari %s adresinden kopyaliyorsunuz. Bu, %s profilinin uzerine yazacaktir.\n\n Emin misiniz?"
 L["Copy settings from another unit."] = "Baska bir birimden ayarlari kopyala."
 L["Copy settings from"] = "Ayarlari suradan kopyala"
 L["Core |cff1784d1ElvUI|r options."] = "cekirdek |cff1784d1ElvUI|r secenekleri."
@@ -427,7 +474,8 @@ L["Covenant Preview"] = true
 L["Covenant Renown"] = true
 L["Covenant Sanctum"] = true
 L["Craft"] = true
-L["Create a filter, once created a filter can be set inside the buffs/debuffs section of each unit."] = "Bir filtre olusturun, bir kez olusturulduktan sonra her birimin guclendirici/zayiflatici bolumunde bir filtre ayarlanabilir."
+L["Create a filter, once created a filter can be set inside the buffs/debuffs section of each unit."] =
+	"Bir filtre olusturun, bir kez olusturulduktan sonra her birimin guclendirici/zayiflatici bolumunde bir filtre ayarlanabilir."
 L["Create Custom Text"] = "Ozel Metin Olustur"
 L["Create Filter"] = "Filtre Olustur"
 L["Creature Type"] = "Yaratik Turu"
@@ -482,7 +530,8 @@ L["DEATH_RECAP_TITLE"] = "Olum Ozeti"
 L["Debuff Highlighting"] = "Zayiflatici Vurgulamasi"
 L["Debuffs on Buffs"] = true
 L["Debug Tools"] = "Hata Ayiklama Araclari"
-L["DEBUG_DESC"] = "Disable all addons (including Plugins) except ElvUI. During the same session, this can be clicked to reenable them."
+L["DEBUG_DESC"] =
+	"Disable all addons (including Plugins) except ElvUI. During the same session, this can be clicked to reenable them."
 L["Decimal Length"] = "Ondalik Uzunlugu"
 L["Decode Text"] = "Metnin Kodunu Coz"
 L["Decode"] = true
@@ -493,7 +542,8 @@ L["DEFAULT"] = "Varsayilan"
 L["Defines how the group is sorted."] = "Grubun nasil siralanacagini tanimlar."
 L["Defines the sort order of the selected sort method."] = "Secilen siralama yonteminin siralama duzenini tanimlar."
 L["Delay Alpha"] = true
-L["Delete a created filter, you cannot delete pre-existing filters, only custom ones."] = "Olusturulan bir filtreyi silin, onceden var olan filtreleri silemezsiniz, yalnizca ozel olanlari silebilirsiniz."
+L["Delete a created filter, you cannot delete pre-existing filters, only custom ones."] =
+	"Olusturulan bir filtreyi silin, onceden var olan filtreleri silemezsiniz, yalnizca ozel olanlari silebilirsiniz."
 L["Delete Filter"] = "Filtreyi Sil"
 L["Delete"] = "Sil"
 L["Desaturate Cooldowns"] = "Solgun Soguma Suresi"
@@ -506,34 +556,45 @@ L["Descending"] = "Azalan"
 L["Detach From Frame"] = "Kareyi Cerceveden Ayir"
 L["Detached Width"] = "Bagimsiz Genislik"
 L["Development Version"] = "Gelistirici Surumu"
-L["Direction the bag sorting will use to allocate the items."] = "canta siralamasinin ogeleri tahsis etmek icin kullanacagi yon."
+L["Direction the bag sorting will use to allocate the items."] =
+	"canta siralamasinin ogeleri tahsis etmek icin kullanacagi yon."
 L["Direction the bar moves on gains/losses"] = "cubugun kazanclar/kayiplar uzerinde hareket ettigi yon"
-L["Direction the health bar moves when gaining/losing health."] = "Saglik kazanirken/kaybederken saglik cubugunun yon degistirmesi."
+L["Direction the health bar moves when gaining/losing health."] =
+	"Saglik kazanirken/kaybederken saglik cubugunun yon degistirmesi."
 L["Disable Blizzard Skins"] = "Blizzard Kaplamalarini Devre Disi Birak"
 L["Disable Cluster"] = true
 L["Disable Sort"] = "Siralamayi Devre Disi Birak"
 L["Disable Tutorial Buttons"] = "Ogretici Dugmeleri Devre Disi Birak"
 L["Disabled Blizzard Frames"] = "Devre Disi Birakilmis Blizzard Cerceveleri"
 L["Disabled Blizzard"] = "Devre Disi Birakilmis Blizzard"
-L["Disables the tutorial button found on some frames."] = "Bazi karelerde bulunan ogretici dugmesini devre disi birakir."
+L["Disables the tutorial button found on some frames."] =
+	"Bazi karelerde bulunan ogretici dugmesini devre disi birakir."
 L["Disconnected"] = "Baglantisi Kesildi"
 L["Disease Effect"] = "Hastalik Etkisi"
-L["Display a healer icon over known healers inside battlegrounds or arenas."] = "Savas alanlarinda veya arenalarda bilinen iyilestiriciler uzerinde bir iyilestirici ikonu goster."
-L["Display a panel across the bottom of the screen. This is for cosmetic only."] = "Ekranin alt kisminda bir panel goruntuleyin. Bu yalnizca kozmetik icindir."
-L["Display a panel across the top of the screen. This is for cosmetic only."] = "Ekranin ust kisminda bir panel goruntuleyin. Bu yalnizca kozmetik icindir."
-L["Display a spark texture at the end of the castbar statusbar to help show the differance between castbar and backdrop."] = "Yetenek cubugu ve arka plan arasindaki farki gostermeye yardimci olmak icin, yetenek cubugunu durumuna gore sonunda bir kivilcim efekti goruntuleyin."
+L["Display a healer icon over known healers inside battlegrounds or arenas."] =
+	"Savas alanlarinda veya arenalarda bilinen iyilestiriciler uzerinde bir iyilestirici ikonu goster."
+L["Display a panel across the bottom of the screen. This is for cosmetic only."] =
+	"Ekranin alt kisminda bir panel goruntuleyin. Bu yalnizca kozmetik icindir."
+L["Display a panel across the top of the screen. This is for cosmetic only."] =
+	"Ekranin ust kisminda bir panel goruntuleyin. Bu yalnizca kozmetik icindir."
+L["Display a spark texture at the end of the castbar statusbar to help show the differance between castbar and backdrop."] =
+	"Yetenek cubugu ve arka plan arasindaki farki gostermeye yardimci olmak icin, yetenek cubugunu durumuna gore sonunda bir kivilcim efekti goruntuleyin."
 L["Display a tank icon over known tanks inside battlegrounds or arenas."] = true
 L["Display battleground messages in the middle of the screen."] = "Ekranin ortasinda savas alani mesajlarini goster."
 L["Display bind names on action buttons."] = "Eylem dugmelerinde baglama adlarini Goster."
 L["Display Character Info"] = "Karakter Bilgilerini Goster"
-L["Display cooldown text on anything with the cooldown spiral."] = "Bekleme suresi spirali olan her seyde bekleme suresi metnini goster."
+L["Display cooldown text on anything with the cooldown spiral."] =
+	"Bekleme suresi spirali olan her seyde bekleme suresi metnini goster."
 L["Display current mount the unit is riding."] = "Birimin surmekte oldugu mevcut binegi goruntuleyin."
-L["Display data panels below the chat, used for datatexts."] = "Veri metinleri icin kullanilan sohbetin altindaki veri panellerini goruntule."
+L["Display data panels below the chat, used for datatexts."] =
+	"Veri metinleri icin kullanilan sohbetin altindaki veri panellerini goruntule."
 L["Display emotion icons in chat."] = "Sohbette duygu ikonlarını goster."
 L["Display Frames"] = "Goruntu Cerceveleri"
 L["Display guild ranks if a unit is guilded."] = "Bir birim loncaliysa lonca derecelerini goster."
-L["Display how many of a certain item you have in your possession."] = "Sahip oldugunuz belirli bir esyadan kac tane oldugunu goster."
-L["Display icon on arena frame indicating the units talent specialization or the units faction if inside a battleground."] = "Arena cercevesinde birimlerin yetenek uzmanligini veya bir savas alani icindeyse birimler fraksiyonunu gosteren ikonu goster."
+L["Display how many of a certain item you have in your possession."] =
+	"Sahip oldugunuz belirli bir esyadan kac tane oldugunu goster."
+L["Display icon on arena frame indicating the units talent specialization or the units faction if inside a battleground."] =
+	"Arena cercevesinde birimlerin yetenek uzmanligini veya bir savas alani icindeyse birimler fraksiyonunu gosteren ikonu goster."
 L["Display In Main Tooltip"] = "Ana Arac Ipucunda Goster"
 L["Display Inspect Info"] = "Inceleme Bilgilerini Goster"
 L["Display Interrupt Source"] = "Bozuntuya Ugratan Kaynagi Goster"
@@ -542,8 +603,10 @@ L["Display Item Level"] = "Esya Seviyesini Goster"
 L["Display LFG Icons in group chat."] = "Grup sohbetinde LFG ikonlarını goster."
 L["Display macro names on action buttons."] = "Eylem dugmelerinde makro adlarini Goster."
 L["Display Mana"] = "Manayi Goster"
-L["Display messages from Guild and Whisper on AFK screen.\nThis chat can be dragged around (position will be saved)."] = "AFK ekraninda Guild ve Whisper'dan gelen mesajlari goster.\nBu sohbet suruklenebilir (konum kaydedilecek)."
-L["Display minimap panels below the minimap, used for datatexts."] = "Veri metinleri icin kullanilan mini haritanin altindaki mini harita panellerini goruntule."
+L["Display messages from Guild and Whisper on AFK screen.\nThis chat can be dragged around (position will be saved)."] =
+	"AFK ekraninda Guild ve Whisper'dan gelen mesajlari goster.\nBu sohbet suruklenebilir (konum kaydedilecek)."
+L["Display minimap panels below the minimap, used for datatexts."] =
+	"Veri metinleri icin kullanilan mini haritanin altindaki mini harita panellerini goruntule."
 L["Display player titles."] = "Oyuncu unvanlarini goster."
 L["Display Player"] = "Oyuncuyu Goster"
 L["Display Style"] = "Goruntu Stili"
@@ -552,21 +615,29 @@ L["Display Target's Aura Duration, when there is no CD displaying."] = true
 L["Display Text"] = "Metni Goster"
 L["Display the castbar icon inside the castbar."] = "Yetenek ikonunu yetenek cubugunda goster"
 L["Display the current Mythic+ Dungeon Score."] = "Mevcut Mitik+ Zindan skorunu goster."
-L["Display the hyperlink tooltip while hovering over a hyperlink."] = "Bir baglanti uzerinde gezinirken baglantida ipucu penceresini goruntuleyin."
-L["Display the item level and current specialization of the unit on modifier press."] = "Degistiriciye basildiginda birimin oge seviyesini ve mevcut uzmanligini goruntuleyin."
-L["Display the name of the unit on the chat bubble. This will not work if backdrop is disabled or when you are in an instance."] = "Birimin adini sohbet balonunda goruntuleyin. Arka plan devre disiysa veya bir ornekteyseniz bu calismaz."
+L["Display the hyperlink tooltip while hovering over a hyperlink."] =
+	"Bir baglanti uzerinde gezinirken baglantida ipucu penceresini goruntuleyin."
+L["Display the item level and current specialization of the unit on modifier press."] =
+	"Degistiriciye basildiginda birimin oge seviyesini ve mevcut uzmanligini goruntuleyin."
+L["Display the name of the unit on the chat bubble. This will not work if backdrop is disabled or when you are in an instance."] =
+	"Birimin adini sohbet balonunda goruntuleyin. Arka plan devre disiysa veya bir ornekteyseniz bu calismaz."
 L["Display the target of current cast."] = true
-L["Display the unit name who interrupted a spell on the castbar. You should increase the Time to Hold to show properly."] = "Yetenek cubugunda buyunun hedefindeki birimin adini goster. Duzgun gorunmesi icin Yetenek Kullanim Suresini artirmalisin."
+L["Display the unit name who interrupted a spell on the castbar. You should increase the Time to Hold to show properly."] =
+	"Yetenek cubugunda buyunun hedefindeki birimin adini goster. Duzgun gorunmesi icin Yetenek Kullanim Suresini artirmalisin."
 L["Display the unit role in the tooltip."] = "Birim rolunu ipucu penceresinde goster."
-L["Display tick marks on the castbar for channelled spells. This will adjust automatically for spells like Drain Soul and add additional ticks based on haste."] = "Periyodik buyuler icin tik isaretlerini goster. Bu, Drain Soul gibi buyuler icin otomatik olarak ayarlanacak ve Haste degerine gore ek tikler ekleyecektir."
+L["Display tick marks on the castbar for channelled spells. This will adjust automatically for spells like Drain Soul and add additional ticks based on haste."] =
+	"Periyodik buyuler icin tik isaretlerini goster. Bu, Drain Soul gibi buyuler icin otomatik olarak ayarlanacak ve Haste degerine gore ek tikler ekleyecektir."
 L["Display Types"] = "Goruntu Turleri"
 L["Displayed Currency"] = "Gosterilen Para Birimi"
-L["Displays a detailed report of every item sold when enabled."] = "Etkinlestirildiginde satilan her ogenin ayrintili bir raporunu gosterir."
+L["Displays a detailed report of every item sold when enabled."] =
+	"Etkinlestirildiginde satilan her ogenin ayrintili bir raporunu gosterir."
 L["Displays item info on center of item."] = "Oge bilgilerini ogenin ortasinda goruntuler."
 L["Displays item level on equippable items."] = "Kusanilabilir esyalarda esya seviyesini gosterir."
 L["Displays the gender of players."] = "Oyuncularin cinsiyetini gosterir."
-L["Don't display auras that are longer than this duration (in seconds). Set to zero to disable."] = "Bu sureden (saniye cinsinden) daha uzun auralar gosterme. Devre disi birakmak icin sifira ayarla."
-L["Don't display auras that are shorter than this duration (in seconds). Set to zero to disable."] = "Bu sureden (saniye cinsinden) daha kisa auralar gosterme. Devre disi birakmak icin sifira ayarla."
+L["Don't display auras that are longer than this duration (in seconds). Set to zero to disable."] =
+	"Bu sureden (saniye cinsinden) daha uzun auralar gosterme. Devre disi birakmak icin sifira ayarla."
+L["Don't display auras that are shorter than this duration (in seconds). Set to zero to disable."] =
+	"Bu sureden (saniye cinsinden) daha kisa auralar gosterme. Devre disi birakmak icin sifira ayarla."
 L["Donations:"] = "Bagislar:"
 L["Down"] = "Asagi"
 L["DRESSUP_FRAME"] = "Giyinme Odasi"
@@ -579,27 +650,33 @@ L["Duration"] = "Sure"
 L["Editbox History"] = "Duzenleme Kutusu Gecmisi"
 L["Editor Manager"] = true
 L["Elite Icon"] = "Elit Ikonu"
-L["ELVUI_CREDITS"] = "Bu eklentiyi test etme, kodlama ve bagis yoluyla bana yardimci olan kisilerle bu eklentiyi surdurmeme yardim ettikleri icin asagidaki kisilere ozel bir not vermek istiyorum. Bagislar icin lutfen not edin; Forumlarda bana mesaj atanlarin isimlerini paylasiyorum, isminiz eksikse ve isminizin eklenmesini istiyorsaniz lutfen mesaj atin."
+L["ELVUI_CREDITS"] =
+	"Bu eklentiyi test etme, kodlama ve bagis yoluyla bana yardimci olan kisilerle bu eklentiyi surdurmeme yardim ettikleri icin asagidaki kisilere ozel bir not vermek istiyorum. Bagislar icin lutfen not edin; Forumlarda bana mesaj atanlarin isimlerini paylasiyorum, isminiz eksikse ve isminizin eklenmesini istiyorsaniz lutfen mesaj atin."
 L["Emote"] = "Ifade"
 L["Emotion Icons"] = "Duygu Ikonları"
 L["Empower Stages"] = true
 L["Enable + Adjust Movers"] = "Etkinlestir + Tasiyicilari Ayarla"
 L["Enable a sound if you select a unit."] = "Bir birim secerseniz sesi etkinlestirin."
 L["Enable Blizzard Skins"] = "Blizzard Kaplamalarini Etkinlestir"
-L["Enable the use of separate size options for the right chat panel."] = "Sag sohbet paneli icin ayri boyut seceneklerinin kullanimini etkinlestirin."
-L["Enable to hear sound if you receive a resurrect."] = "Diriltme uyarisi aldiginizda uyari sesini duymak icin etkinlestirin."
+L["Enable the use of separate size options for the right chat panel."] =
+	"Sag sohbet paneli icin ayri boyut seceneklerinin kullanimini etkinlestirin."
+L["Enable to hear sound if you receive a resurrect."] =
+	"Diriltme uyarisi aldiginizda uyari sesini duymak icin etkinlestirin."
 L["Enable"] = "Etkin"
 L["Enable/Disable the all-in-one bag."] = "Hepsi bir arada cantayi etkinlestirin/devre disi birakin."
 L["Enable/Disable the loot frame."] = "Ganimet cercevesini etkinlestirin/devre disi birakin."
 L["Enable/Disable the loot roll frame."] = "Ganimet rulo cercevesini etkinlestirin/devre disi birakin."
-L["Enable/Disable the minimap. |cffFF3333Warning: This will prevent you from seeing the minimap datatexts.|r"] = "Mini haritayi etkinlestirin/devre disi birakin. |cffFF3333Uyari: Bu, mini harita veri metinlerini gormenizi engeller.|r"
+L["Enable/Disable the minimap. |cffFF3333Warning: This will prevent you from seeing the minimap datatexts.|r"] =
+	"Mini haritayi etkinlestirin/devre disi birakin. |cffFF3333Uyari: Bu, mini harita veri metinlerini gormenizi engeller.|r"
 L["Enable/Disable the on-screen zone text when you change zones."] = true
 L["Enable/Disable the World Map Enhancements."] = true
 L["Enabled"] = "Etkinlestirilmis"
 L["Enables the ElvUI Raid Control panel."] = "ElvUI Baskin Kontrol panelini etkinlestirir."
 L["Enables the five-second-rule ticks for Mana classes and Energy ticks for Rogues and Druids."] = true
-L["Enabling this allows raid-wide sorting however you will not be able to distinguish between groups."] = "Bunu etkinlestirmek, baskin genelinde siralamaya izin verir, ancak gruplar arasinda ayrim yapamazsiniz."
-L["Enabling this inverts the grouping order when the raid is not full, this will reverse the direction it starts from."] = "Bunu etkinlestirmek, baskin dolu olmadiginda gruplama sirasini tersine cevirir, bu, basladigi yonu tersine cevirir."
+L["Enabling this allows raid-wide sorting however you will not be able to distinguish between groups."] =
+	"Bunu etkinlestirmek, baskin genelinde siralamaya izin verir, ancak gruplar arasinda ayrim yapamazsiniz."
+L["Enabling this inverts the grouping order when the raid is not full, this will reverse the direction it starts from."] =
+	"Bunu etkinlestirmek, baskin dolu olmadiginda gruplama sirasini tersine cevirir, bu, basladigi yonu tersine cevirir."
 L["Enabling this will check your health amount."] = "Bunu etkinlestirmek, saglik miktarinizi kontrol edecektir."
 L["Enabling this will check your power amount."] = "Bunu etkinlestirmek, guc miktarinizi kontrol edecektir."
 L["Enchanting"] = "Vurgulayici"
@@ -615,7 +692,8 @@ L["Engineering"] = "Muhendislik"
 L["Enhanced PVP Messages"] = "Gelistirilmis PVP Mesajlari"
 L["Equipped Item"] = true
 L["Equipped"] = true
-L["Error decoding data. Import string may be corrupted!"] = "Veri kodu cozulurken hata olustu. Ice aktarma dizesi bozulmus olabilir!"
+L["Error decoding data. Import string may be corrupted!"] =
+	"Veri kodu cozulurken hata olustu. Ice aktarma dizesi bozulmus olabilir!"
 L["Error exporting profile!"] = "Profil disa aktarilirken hata olustu!"
 L["Quest Progress and Error Text"] = true
 L["Event Log"] = "Olay gunlugu"
@@ -641,9 +719,12 @@ L["Fade Threshold"] = "Kaybolma esigi"
 L["Fade Undocked Tabs"] = "Yerlestirilmemis Sekmelerin Kaybolmasi"
 L["Faded Charging Rune"] = true
 L["Fader"] = "Soldurma"
-L["Fades the buttons that toggle chat windows when that window has been toggled off."] = "Bu pencere kapatıldığında sohbet pencerelerini değiştiren düğmeleri soldurur."
-L["Fades the text on chat tabs that are docked in a panel where the backdrop is disabled."] = "Arka planın devre dışı bırakıldığı bir panele yerleştirilmiş sohbet sekmelerindeki metni soldurur."
-L["Fades the text on chat tabs that are not docked at the left or right chat panel."] = "Sol veya sağ sohbet paneline yerleştirilmemiş sohbet sekmelerindeki metni soldurur."
+L["Fades the buttons that toggle chat windows when that window has been toggled off."] =
+	"Bu pencere kapatıldığında sohbet pencerelerini değiştiren düğmeleri soldurur."
+L["Fades the text on chat tabs that are docked in a panel where the backdrop is disabled."] =
+	"Arka planın devre dışı bırakıldığı bir panele yerleştirilmiş sohbet sekmelerindeki metni soldurur."
+L["Fades the text on chat tabs that are not docked at the left or right chat panel."] =
+	"Sol veya sağ sohbet paneline yerleştirilmemiş sohbet sekmelerindeki metni soldurur."
 L["Fill"] = "Doldurmak"
 L["Filled"] = "Doldurulmus"
 L["Filter Modifiers"] = "Filtre Degistiricileri"
@@ -675,11 +756,16 @@ L["Force Hide Blizzard Text"] = "Blizzard Metinlerini Gizlemeye Zorla"
 L["Force Off"] = "Zorla Kapat"
 L["Force On"] = "Zorla Ac"
 L["Force Reaction Color"] = "Zorlama Reaksiyon Rengi"
-L["Force the frames to show, they will act as if they are the player frame."] = "Cerceveleri gostermeye zorla, sanki oyuncu cercevesiymis gibi davranacaklar."
-L["Forces Focus Glow to be disabled for these frames"] = "Odak pariltisini bu kareler icin devre disi birakilmaya zorlar"
-L["Forces Mouseover Glow to be disabled for these frames"] = "Bu, kareler icin imlec uzerinde iken pariltiyi devre disi birakmaya zorlar"
-L["Forces reaction color instead of class color on units controlled by players."] = "Oyuncular tarafindan kontrol edilen birimlerde sinif rengi yerine reaksiyon rengine zorlar."
-L["Forces Target Glow to be disabled for these frames"] = "Bu kareler icin Hedef pariltisini devre disi birakmaya zorlar"
+L["Force the frames to show, they will act as if they are the player frame."] =
+	"Cerceveleri gostermeye zorla, sanki oyuncu cercevesiymis gibi davranacaklar."
+L["Forces Focus Glow to be disabled for these frames"] =
+	"Odak pariltisini bu kareler icin devre disi birakilmaya zorlar"
+L["Forces Mouseover Glow to be disabled for these frames"] =
+	"Bu, kareler icin imlec uzerinde iken pariltiyi devre disi birakmaya zorlar"
+L["Forces reaction color instead of class color on units controlled by players."] =
+	"Oyuncular tarafindan kontrol edilen birimlerde sinif rengi yerine reaksiyon rengine zorlar."
+L["Forces Target Glow to be disabled for these frames"] =
+	"Bu kareler icin Hedef pariltisini devre disi birakmaya zorlar"
 L["Format"] = "Bicim"
 L["Frame Glow"] = "Cerceve Pariltisi"
 L["Frame Level"] = "Cerceve Seviyesi"
@@ -758,12 +844,14 @@ L["Health Color"] = "Saglik Rengi"
 L["Health Threshold"] = "Saglik Esigi"
 L["Health"] = "Saglik"
 L["Height Multiplier"] = "Yukseklik carpani"
-L["Height of the objective tracker. Increase size to be able to see more objectives."] = "Hedef izleyicinin yuksekligi. Daha fazla hedef gorebilmek icin boyutu artirin."
+L["Height of the objective tracker. Increase size to be able to see more objectives."] =
+	"Hedef izleyicinin yuksekligi. Daha fazla hedef gorebilmek icin boyutu artirin."
 L["Height"] = "Yukseklik"
 L["Help Frame"] = "Yardim Cercevesi"
 L["Help"] = "Yardim"
 L["Herbalism"] = "Bitkicilik"
-L["Here you can add items that you want to be excluded from sorting. To remove an item just click on its name in the list."] = true
+L["Here you can add items that you want to be excluded from sorting. To remove an item just click on its name in the list."] =
+	true
 L["HH:MM Threshold"] = "SS:DD Esigi"
 L["HH:MM"] = "SS:DD"
 L["Hide At Max Level"] = "Maksimum Seviyede Gizle"
@@ -771,7 +859,8 @@ L["Hide Below Max Level"] = "Maksimum Seviyenin Altinda Gizle"
 L["Hide Both"] = "Ikisini de Gizle"
 L["Hide by Application"] = "Uygulamayla Gizle"
 L["Hide by Status"] = "Duruma Gore Gizle"
-L["Hide Castbar text. Useful if your power height is very low or if you use power offset."] = "Yetenek cubugu metnini gizle. Guc yuksekliginiz cok dusukse veya guc ofseti kullaniyorsaniz kullanislidir."
+L["Hide Castbar text. Useful if your power height is very low or if you use power offset."] =
+	"Yetenek cubugu metnini gizle. Guc yuksekliginiz cok dusukse veya guc ofseti kullaniyorsaniz kullanislidir."
 L["Hide Channels"] = "Kanallari Gizle"
 L["Hide Chat Toggles"] = "Sohbet Gecislerini Gizle"
 L["Hide Copy Button"] = "Kopyala Dugmesini Gizle"
@@ -793,7 +882,8 @@ L["Hide Voice Buttons"] = "Ses Dugmelerini Gizle"
 L["Hide When Empty"] = "Bos Oldugunda Gizle"
 L["Hide Zone Text"] = true
 L["Hide"] = "GIZLE"
-L["Hides the bling animation on buttons at the end of the global cooldown."] = "Soguma suresinin bitimindeki parilti animasyonunu gizler."
+L["Hides the bling animation on buttons at the end of the global cooldown."] =
+	"Soguma suresinin bitimindeki parilti animasyonunu gizler."
 L["Hides the yellow quest progress text and red error text at the top of the screen while in combat."] = true
 L["High"] = true
 L["Highlight Color Style"] = true
@@ -816,8 +906,10 @@ L["Hover"] = "Vurgu"
 L["How far away the portrait is from the camera."] = "Portre kameradan ne kadar uzakta."
 L["How long the cutaway health will take to fade out."] = "Puruzsuz sagligin kaybolmasi ne kadar surer?"
 L["How long the cutaway power will take to fade out."] = "Puruzsuz gucun kaybolmasi ne kadar surer?"
-L["How many seconds the castbar should stay visible after the cast failed or was interrupted."] = "Kullanim basarisiz olduktan veya kesintiye ugradiktan sonra, Yetenek cubugu'nun kac saniye gorunur kalmasi gerekir."
-L["How much time before the cutaway health starts to fade."] = "Kaybolacak sagliginin solmaya baslamasina ne kadar zaman var."
+L["How many seconds the castbar should stay visible after the cast failed or was interrupted."] =
+	"Kullanim basarisiz olduktan veya kesintiye ugradiktan sonra, Yetenek cubugu'nun kac saniye gorunur kalmasi gerekir."
+L["How much time before the cutaway health starts to fade."] =
+	"Kaybolacak sagliginin solmaya baslamasina ne kadar zaman var."
 L["How much time before the cutaway power starts to fade."] = "Kaybolacak gucun kaybolmaya baslamasina ne kadar var?"
 L["Hyperlink Hover"] = "Baglantinin Ustunde Tutma"
 L["Icon Height"] = "Ikon Yuksekligi"
@@ -835,71 +927,125 @@ L["Icon: TOPLEFT"] = "Ikon: UST SOL"
 L["Icon: TOPRIGHT"] = "Ikon: UST ALT"
 L["Icons and Text (Short)"] = "Ikonlar ve Metin (Kisa)"
 L["Icons and Text"] = "Ikonlar ve Metin"
-L["If enabled then it checks if auras are missing instead of being present on the unit."] = "Etkinlestirilirse, unitede mevcut olmak yerine auralarin eksik olup olmadigini kontrol eder."
-L["If enabled then it will require all auras to activate the filter. Otherwise it will only require any one of the auras to activate it."] = "Etkinlestirilirse, filtreyi etkinlestirmek icin tum auralara ihtiyac duyacaktir. Aksi takdirde, onu etkinlestirmek icin yalnizca herhangi bir auraya ihtiyac duyacaktir."
-L["If enabled then it will require all cooldowns to activate the filter. Otherwise it will only require any one of the cooldowns to activate it."] = "Etkinlestirilirse, filtreyi etkinlestirmek icin tum bekleme surelerini gerektirecektir. Aksi takdirde, etkinlestirmek icin yalnizca herhangi bir bekleme suresini gerektirecektir."
+L["If enabled then it checks if auras are missing instead of being present on the unit."] =
+	"Etkinlestirilirse, unitede mevcut olmak yerine auralarin eksik olup olmadigini kontrol eder."
+L["If enabled then it will require all auras to activate the filter. Otherwise it will only require any one of the auras to activate it."] =
+	"Etkinlestirilirse, filtreyi etkinlestirmek icin tum auralara ihtiyac duyacaktir. Aksi takdirde, onu etkinlestirmek icin yalnizca herhangi bir auraya ihtiyac duyacaktir."
+L["If enabled then it will require all cooldowns to activate the filter. Otherwise it will only require any one of the cooldowns to activate it."] =
+	"Etkinlestirilirse, filtreyi etkinlestirmek icin tum bekleme surelerini gerektirecektir. Aksi takdirde, etkinlestirmek icin yalnizca herhangi bir bekleme suresini gerektirecektir."
 L["If enabled then the filter will activate if the unit is casting anything."] = true
 L["If enabled then the filter will activate if the unit is channeling anything."] = true
 L["If enabled then the filter will activate if the unit is not casting anything."] = true
 L["If enabled then the filter will activate if the unit is not channeling anything."] = true
-L["If enabled then the filter will only activate if the level of the unit is equal to or higher than this value."] = "Etkinlestirilirse, filtre yalnizca unitenin seviyesi bu degere esit veya daha yuksekse etkinlesir."
-L["If enabled then the filter will only activate if the level of the unit is equal to or lower than this value."] = "Etkinlestirilirse, filtre yalnizca unitenin seviyesi bu degere esit veya daha dusukse etkinlesir."
-L["If enabled then the filter will only activate if the level of the unit matches this value."] = "Etkinlestirilirse, filtre yalnizca unitenin seviyesi bu degerle eslesirse etkinlesir."
-L["If enabled then the filter will only activate if the level of the unit matches your own."] = "Etkinlestirilirse, filtre yalnizca unitenin seviyesi sizinkiyle eslesirse etkinlesir."
-L["If enabled then the filter will only activate if the unit is casting interruptible spells."] = "Etkinlestirilirse, filtre yalnizca birim kesilebilir buyuler yapiyorsa etkinlesir."
-L["If enabled then the filter will only activate if the unit is casting not interruptible spells."] = "Etkinlestirilirse, filtre yalnizca birim kesintiye ugramayan buyuler yapiyorsa etkinlesir."
-L["If enabled then the filter will only activate if the unit is not casting or channeling one of the selected spells."] = "Etkinlestirilirse, filtre yalnizca birim secilen buyulerden birini kullanmiyor veya kanalize etmiyorsa etkinlesir."
-L["If enabled then the filter will only activate when the unit can be attacked by the active player."] = "Etkinlestirilirse, filtre yalnizca birime aktif oyuncu tarafindan saldiriya ugradiginda etkinlesir."
-L["If enabled then the filter will only activate when the unit can not be attacked by the active player."] = "Etkinlestirilirse, filtre yalnizca birime aktif oyuncu tarafindan saldirilamazsa etkinlesir."
+L["If enabled then the filter will only activate if the level of the unit is equal to or higher than this value."] =
+	"Etkinlestirilirse, filtre yalnizca unitenin seviyesi bu degere esit veya daha yuksekse etkinlesir."
+L["If enabled then the filter will only activate if the level of the unit is equal to or lower than this value."] =
+	"Etkinlestirilirse, filtre yalnizca unitenin seviyesi bu degere esit veya daha dusukse etkinlesir."
+L["If enabled then the filter will only activate if the level of the unit matches this value."] =
+	"Etkinlestirilirse, filtre yalnizca unitenin seviyesi bu degerle eslesirse etkinlesir."
+L["If enabled then the filter will only activate if the level of the unit matches your own."] =
+	"Etkinlestirilirse, filtre yalnizca unitenin seviyesi sizinkiyle eslesirse etkinlesir."
+L["If enabled then the filter will only activate if the unit is casting interruptible spells."] =
+	"Etkinlestirilirse, filtre yalnizca birim kesilebilir buyuler yapiyorsa etkinlesir."
+L["If enabled then the filter will only activate if the unit is casting not interruptible spells."] =
+	"Etkinlestirilirse, filtre yalnizca birim kesintiye ugramayan buyuler yapiyorsa etkinlesir."
+L["If enabled then the filter will only activate if the unit is not casting or channeling one of the selected spells."] =
+	"Etkinlestirilirse, filtre yalnizca birim secilen buyulerden birini kullanmiyor veya kanalize etmiyorsa etkinlesir."
+L["If enabled then the filter will only activate when the unit can be attacked by the active player."] =
+	"Etkinlestirilirse, filtre yalnizca birime aktif oyuncu tarafindan saldiriya ugradiginda etkinlesir."
+L["If enabled then the filter will only activate when the unit can not be attacked by the active player."] =
+	"Etkinlestirilirse, filtre yalnizca birime aktif oyuncu tarafindan saldirilamazsa etkinlesir."
 L["If enabled then the filter will only activate when the unit has a stealable buff(s)."] = true
 L["If enabled then the filter will only activate when the unit has no stealable buff(s)."] = true
-L["If enabled then the filter will only activate when the unit is controlled by the player."] = "Etkinlestirilirse, filtre yalnizca unite oynatici tarafindan kontrol edildiginde etkinlesir."
-L["If enabled then the filter will only activate when the unit is in a Vehicle."] = "Etkinlestirilirse, filtre yalnizca unite bir Aractayken etkinlesir."
-L["If enabled then the filter will only activate when the unit is in combat."] = "Etkinlestirilirse, filtre yalnizca birim catismadayken etkinlesir."
+L["If enabled then the filter will only activate when the unit is controlled by the player."] =
+	"Etkinlestirilirse, filtre yalnizca unite oynatici tarafindan kontrol edildiginde etkinlesir."
+L["If enabled then the filter will only activate when the unit is in a Vehicle."] =
+	"Etkinlestirilirse, filtre yalnizca unite bir Aractayken etkinlesir."
+L["If enabled then the filter will only activate when the unit is in combat."] =
+	"Etkinlestirilirse, filtre yalnizca birim catismadayken etkinlesir."
 L["If enabled then the filter will only activate when the unit is in your Party."] = true
 L["If enabled then the filter will only activate when the unit is in your Raid."] = true
-L["If enabled then the filter will only activate when the unit is not controlled by the player."] = "Etkinlestirilirse, filtre yalnizca unite oynatici tarafindan kontrol edilmediginde etkinlesir."
-L["If enabled then the filter will only activate when the unit is not in a Vehicle."] = "Etkinlestirilirse, filtre yalnizca unite bir Aracta olmadiginda etkinlesir."
+L["If enabled then the filter will only activate when the unit is not controlled by the player."] =
+	"Etkinlestirilirse, filtre yalnizca unite oynatici tarafindan kontrol edilmediginde etkinlesir."
+L["If enabled then the filter will only activate when the unit is not in a Vehicle."] =
+	"Etkinlestirilirse, filtre yalnizca unite bir Aracta olmadiginda etkinlesir."
 L["If enabled then the filter will only activate when the unit is not in your Party."] = true
 L["If enabled then the filter will only activate when the unit is not in your Raid."] = true
-L["If enabled then the filter will only activate when the unit is not owned by the player."] = "Etkinlestirilirse, filtre yalnizca unite oyuncuya ait olmadiginda etkinlesir."
-L["If enabled then the filter will only activate when the unit is not pvp-flagged."] = "Etkinlestirilirse, filtre yalnizca unite pvp isaretli olmadiginda etkinlesir."
-L["If enabled then the filter will only activate when the unit is not tap denied."] = "Etkinlestirilirse, filtre yalnizca uniteye dokunma reddedilmediginde etkinlesir."
-L["If enabled then the filter will only activate when the unit is not targeting you."] = "Etkinlestirilirse, filtre yalnizca birim sizi hedeflemediginde etkinlesir."
-L["If enabled then the filter will only activate when the unit is not the active player's pet."] = "Etkinlestirilirse, filtre yalnizca birim aktif oyuncunun evcil hayvani olmadiginda etkinlesir."
-L["If enabled then the filter will only activate when the unit is out of combat."] = "Etkinlestirilirse, filtre yalnizca birim savas disindayken etkinlesir."
-L["If enabled then the filter will only activate when the unit is owned by the player."] = "Etkinlestirilirse, filtre yalnizca unite oyuncuya ait oldugunda etkinlesir."
-L["If enabled then the filter will only activate when the unit is pvp-flagged."] = "Etkinlestirilirse, filtre yalnizca unite pvp isaretli oldugunda etkinlesir."
-L["If enabled then the filter will only activate when the unit is tap denied."] = "Etkinlestirilirse, filtre yalnizca uniteye dokunma engellendiginde etkinlesir."
-L["If enabled then the filter will only activate when the unit is targeting you."] = "Etkinlestirilirse, filtre yalnizca birim sizi hedef aldiginda etkinlesir."
-L["If enabled then the filter will only activate when the unit is the active player's pet."] = "Etkinlestirilirse, filtre yalnizca birim aktif oyuncunun evcil hayvani oldugunda etkinlesir."
-L["If enabled then the filter will only activate when you are focusing the unit."] = "Etkinlestirilirse, filtre yalnizca uniteye odaklandiginizda etkinlesir."
-L["If enabled then the filter will only activate when you are in a Vehicle."] = "Etkinlestirilirse, filtre yalnizca bir Aractayken etkinlesir."
-L["If enabled then the filter will only activate when you are in combat."] = "Etkinlestirilirse, filtre yalnizca siz catismadayken etkinlesir."
-L["If enabled then the filter will only activate when you are not focusing the unit."] = "Etkinlestirilirse, filtre yalnizca uniteye odaklanmadiginiz zaman etkinlesir."
-L["If enabled then the filter will only activate when you are not in a Vehicle."] = "Etkinlestirilirse, filtre yalnizca bir Aracta olmadiginizda etkinlesir."
-L["If enabled then the filter will only activate when you are not targeting the unit."] = "Etkinlestirilirse, filtre yalnizca uniteyi hedeflemediginizde etkinlesir."
-L["If enabled then the filter will only activate when you are out of combat."] = "Etkinlestirilirse, filtre yalnizca catisma disinda oldugunuzda etkinlesir."
-L["If enabled then the filter will only activate when you are resting at an Inn."] = "Etkinlestirilirse, filtre yalnizca bir Han'da dinlenirken etkinlesir."
-L["If enabled then the filter will only activate when you are targeting the unit."] = "Etkinlestirilirse, filtre yalnizca birimi hedeflediginizde etkinlesir."
+L["If enabled then the filter will only activate when the unit is not owned by the player."] =
+	"Etkinlestirilirse, filtre yalnizca unite oyuncuya ait olmadiginda etkinlesir."
+L["If enabled then the filter will only activate when the unit is not pvp-flagged."] =
+	"Etkinlestirilirse, filtre yalnizca unite pvp isaretli olmadiginda etkinlesir."
+L["If enabled then the filter will only activate when the unit is not tap denied."] =
+	"Etkinlestirilirse, filtre yalnizca uniteye dokunma reddedilmediginde etkinlesir."
+L["If enabled then the filter will only activate when the unit is not targeting you."] =
+	"Etkinlestirilirse, filtre yalnizca birim sizi hedeflemediginde etkinlesir."
+L["If enabled then the filter will only activate when the unit is not the active player's pet."] =
+	"Etkinlestirilirse, filtre yalnizca birim aktif oyuncunun evcil hayvani olmadiginda etkinlesir."
+L["If enabled then the filter will only activate when the unit is out of combat."] =
+	"Etkinlestirilirse, filtre yalnizca birim savas disindayken etkinlesir."
+L["If enabled then the filter will only activate when the unit is owned by the player."] =
+	"Etkinlestirilirse, filtre yalnizca unite oyuncuya ait oldugunda etkinlesir."
+L["If enabled then the filter will only activate when the unit is pvp-flagged."] =
+	"Etkinlestirilirse, filtre yalnizca unite pvp isaretli oldugunda etkinlesir."
+L["If enabled then the filter will only activate when the unit is tap denied."] =
+	"Etkinlestirilirse, filtre yalnizca uniteye dokunma engellendiginde etkinlesir."
+L["If enabled then the filter will only activate when the unit is targeting you."] =
+	"Etkinlestirilirse, filtre yalnizca birim sizi hedef aldiginda etkinlesir."
+L["If enabled then the filter will only activate when the unit is the active player's pet."] =
+	"Etkinlestirilirse, filtre yalnizca birim aktif oyuncunun evcil hayvani oldugunda etkinlesir."
+L["If enabled then the filter will only activate when you are focusing the unit."] =
+	"Etkinlestirilirse, filtre yalnizca uniteye odaklandiginizda etkinlesir."
+L["If enabled then the filter will only activate when you are in a Vehicle."] =
+	"Etkinlestirilirse, filtre yalnizca bir Aractayken etkinlesir."
+L["If enabled then the filter will only activate when you are in combat."] =
+	"Etkinlestirilirse, filtre yalnizca siz catismadayken etkinlesir."
+L["If enabled then the filter will only activate when you are not focusing the unit."] =
+	"Etkinlestirilirse, filtre yalnizca uniteye odaklanmadiginiz zaman etkinlesir."
+L["If enabled then the filter will only activate when you are not in a Vehicle."] =
+	"Etkinlestirilirse, filtre yalnizca bir Aracta olmadiginizda etkinlesir."
+L["If enabled then the filter will only activate when you are not targeting the unit."] =
+	"Etkinlestirilirse, filtre yalnizca uniteyi hedeflemediginizde etkinlesir."
+L["If enabled then the filter will only activate when you are out of combat."] =
+	"Etkinlestirilirse, filtre yalnizca catisma disinda oldugunuzda etkinlesir."
+L["If enabled then the filter will only activate when you are resting at an Inn."] =
+	"Etkinlestirilirse, filtre yalnizca bir Han'da dinlenirken etkinlesir."
+L["If enabled then the filter will only activate when you are targeting the unit."] =
+	"Etkinlestirilirse, filtre yalnizca birimi hedeflediginizde etkinlesir."
 L["If enabled then the filter will only activate when you have a target."] = true
-L["If enabled, the style filter will only activate when you are in one of the instances specified in Instance ID."] = "Etkinlestirilirse, stil filtresi yalnizca ornek Kimligi'nde belirtilen orneklerden birinde oldugunuzda etkinlesir."
-L["If enabled, the style filter will only activate when you are in one of the maps specified in Map ID."] = "Etkinlestirilirse, stil filtresi yalnizca Harita Kimligi'nde belirtilen haritalardan birinde oldugunuzda etkinlesir."
-L["If enabled, the style filter will only activate when you are in one of the subzones specified in Add Subzone Name."] = "Etkinlestirilirse, stil filtresi yalnizca Alt Bolge Ismi Ekle'de belirtilen alt bolgelerden birinde oldugunuzda etkinlesir."
-L["If enabled, the style filter will only activate when you are in one of the zones specified in Add Zone Name."] = "Etkinlestirilirse, stil filtresi yalnizca Bolge Ismi Ekle'de belirtilen bolgelerden birinde oldugunuzda etkinlesir."
-L["If enabled, then this currency will be displayed in the main Currencies datatext tooltip."] = "Etkinlestirilirse, bu para birimi ana Para Birimleri veri metni ipucu penceresinde goruntulenecektir."
-L["If not set to 0 then override the size of the aura icon to this."] = "0'a ayarlanmadiysa, aura ikonunun boyutunu buna gore gecersiz kilin."
-L["If not set to true then the server time will be displayed instead."] = "Dogru olarak ayarlanmazsa, bunun yerine sunucu saati goruntulenecektir."
-L["If the aura is listed with a number then you need to use that to remove it from the list."] = "Eger aura bir numara ile listeleniyorsa, onu listeden cikarmak icin onu kullanmaniz gerekir."
-L["If this is enabled then the reaction check will use your reputation with the faction the unit belongs to."] = "Bu etkinlestirilirse, tepki kontrolu birimin ait oldugu fraksiyonla olan itibarinizi kullanir."
-L["If this list is empty, and if Interruptible is checked, then the filter will activate on any type of cast that can be interrupted."] = "Bu liste bossa ve Kesintili isaretliyse, filtre kesintiye ugrayabilecek her tur yayinda etkinlesir."
-L["If this threshold is used then the health of the unit needs to be higher than this value in order for the filter to activate. Set to 0 to disable."] = "Bu esik kullanilirsa, filtrenin etkinlesmesi icin unitenin sagliginin bu degerden yuksek olmasi gerekir. Devre disi birakmak icin 0'a ayarlayin."
-L["If this threshold is used then the health of the unit needs to be lower than this value in order for the filter to activate. Set to 0 to disable."] = "Bu esik kullanilirsa, filtrenin etkinlesmesi icin unitenin sagliginin bu degerden dusuk olmasi gerekir. Devre disi birakmak icin 0'a ayarlayin."
-L["If this threshold is used then the power of the unit needs to be higher than this value in order for the filter to activate. Set to 0 to disable."] = "Eger bu esik kullanilirsa, filtrenin etkinlesmesi icin unitenin gucunun bu degerden yuksek olmasi gerekir. Devre disi birakmak icin 0'a ayarlayin."
-L["If this threshold is used then the power of the unit needs to be lower than this value in order for the filter to activate. Set to 0 to disable."] = "Bu esik kullanilirsa, filtrenin etkinlesmesi icin unitenin gucunun bu degerden dusuk olmasi gerekir. Devre disi birakmak icin 0'a ayarlayin."
-L["If you have a lot of 3D Portraits active then it will likely have a big impact on your FPS. Disable some portraits if you experience FPS issues."] = "cok sayida etkin 3D Portreniz varsa, bunun FPS'niz uzerinde buyuk bir etkisi olacaktir. FPS sorunlari yasarsaniz bazi portreleri devre disi birakin."
-L["If you have any plugins supporting this feature installed you can find them in the selection dropdown to the right."] = "Bu ozelligi destekleyen herhangi bir eklentiniz varsa, bunlari sagdaki secim acilir menusunde bulabilirsiniz."
-L["If you unlock actionbars then trying to move a spell might instantly cast it if you cast spells on key press instead of key release."] = "Eylem cubuklarinin kilidini acarsaniz, bir buyuyu hareket ettirmeye calismak, tusu serbest birakmak yerine tusa basarak buyu yaparsaniz, buyuyu aninda yapabilir."
+L["If enabled, the style filter will only activate when you are in one of the instances specified in Instance ID."] =
+	"Etkinlestirilirse, stil filtresi yalnizca ornek Kimligi'nde belirtilen orneklerden birinde oldugunuzda etkinlesir."
+L["If enabled, the style filter will only activate when you are in one of the maps specified in Map ID."] =
+	"Etkinlestirilirse, stil filtresi yalnizca Harita Kimligi'nde belirtilen haritalardan birinde oldugunuzda etkinlesir."
+L["If enabled, the style filter will only activate when you are in one of the subzones specified in Add Subzone Name."] =
+	"Etkinlestirilirse, stil filtresi yalnizca Alt Bolge Ismi Ekle'de belirtilen alt bolgelerden birinde oldugunuzda etkinlesir."
+L["If enabled, the style filter will only activate when you are in one of the zones specified in Add Zone Name."] =
+	"Etkinlestirilirse, stil filtresi yalnizca Bolge Ismi Ekle'de belirtilen bolgelerden birinde oldugunuzda etkinlesir."
+L["If enabled, then this currency will be displayed in the main Currencies datatext tooltip."] =
+	"Etkinlestirilirse, bu para birimi ana Para Birimleri veri metni ipucu penceresinde goruntulenecektir."
+L["If not set to 0 then override the size of the aura icon to this."] =
+	"0'a ayarlanmadiysa, aura ikonunun boyutunu buna gore gecersiz kilin."
+L["If not set to true then the server time will be displayed instead."] =
+	"Dogru olarak ayarlanmazsa, bunun yerine sunucu saati goruntulenecektir."
+L["If the aura is listed with a number then you need to use that to remove it from the list."] =
+	"Eger aura bir numara ile listeleniyorsa, onu listeden cikarmak icin onu kullanmaniz gerekir."
+L["If this is enabled then the reaction check will use your reputation with the faction the unit belongs to."] =
+	"Bu etkinlestirilirse, tepki kontrolu birimin ait oldugu fraksiyonla olan itibarinizi kullanir."
+L["If this list is empty, and if Interruptible is checked, then the filter will activate on any type of cast that can be interrupted."] =
+	"Bu liste bossa ve Kesintili isaretliyse, filtre kesintiye ugrayabilecek her tur yayinda etkinlesir."
+L["If this threshold is used then the health of the unit needs to be higher than this value in order for the filter to activate. Set to 0 to disable."] =
+	"Bu esik kullanilirsa, filtrenin etkinlesmesi icin unitenin sagliginin bu degerden yuksek olmasi gerekir. Devre disi birakmak icin 0'a ayarlayin."
+L["If this threshold is used then the health of the unit needs to be lower than this value in order for the filter to activate. Set to 0 to disable."] =
+	"Bu esik kullanilirsa, filtrenin etkinlesmesi icin unitenin sagliginin bu degerden dusuk olmasi gerekir. Devre disi birakmak icin 0'a ayarlayin."
+L["If this threshold is used then the power of the unit needs to be higher than this value in order for the filter to activate. Set to 0 to disable."] =
+	"Eger bu esik kullanilirsa, filtrenin etkinlesmesi icin unitenin gucunun bu degerden yuksek olmasi gerekir. Devre disi birakmak icin 0'a ayarlayin."
+L["If this threshold is used then the power of the unit needs to be lower than this value in order for the filter to activate. Set to 0 to disable."] =
+	"Bu esik kullanilirsa, filtrenin etkinlesmesi icin unitenin gucunun bu degerden dusuk olmasi gerekir. Devre disi birakmak icin 0'a ayarlayin."
+L["If you have a lot of 3D Portraits active then it will likely have a big impact on your FPS. Disable some portraits if you experience FPS issues."] =
+	"cok sayida etkin 3D Portreniz varsa, bunun FPS'niz uzerinde buyuk bir etkisi olacaktir. FPS sorunlari yasarsaniz bazi portreleri devre disi birakin."
+L["If you have any plugins supporting this feature installed you can find them in the selection dropdown to the right."] =
+	"Bu ozelligi destekleyen herhangi bir eklentiniz varsa, bunlari sagdaki secim acilir menusunde bulabilirsiniz."
+L["If you unlock actionbars then trying to move a spell might instantly cast it if you cast spells on key press instead of key release."] =
+	"Eylem cubuklarinin kilidini acarsaniz, bir buyuyu hareket ettirmeye calismak, tusu serbest birakmak yerine tusa basarak buyu yaparsaniz, buyuyu aninda yapabilir."
 L["Ignore mouse events."] = "Fare olaylarini yoksay."
 L["Ignored Items (Global)"] = true
 L["Ignored Items (Profile)"] = true
@@ -915,7 +1061,8 @@ L["In Raid"] = "Baskin'da"
 L["In Vehicle"] = "Aracta"
 L["Inactivity Timer"] = "Hareketsizlik Zamanlayicisi"
 L["Index"] = "Indeks"
-L["Indicate whether buffs you cast yourself should be separated before or after."] = "Kendiniz yaptiginiz guclendirmelerin once mi sonra mi ayrilacagini belirtin."
+L["Indicate whether buffs you cast yourself should be separated before or after."] =
+	"Kendiniz yaptiginiz guclendirmelerin once mi sonra mi ayrilacagini belirtin."
 L["Indicator Expiring"] = true
 L["Indicator"] = true
 L["Individual Units"] = "Bireysel Birimler"
@@ -1023,7 +1170,8 @@ L["Limit the number of rows or columns."] = "Satir veya sutun sayisini sinirlayi
 L["Lines"] = "Cizgiler"
 L["Link to the latest development version."] = "En son gelistirme surumune baglanti."
 L["Link to the latest PTR version."] = "En son PTR surumune baglanti."
-L["List of words to color in chat if found in a message. If you wish to add multiple words you must separate the word with a comma. To search for your current name you can use %MYNAME%.\n\nExample:\n%MYNAME%, ElvUI, RBGs, Tank"] = "Bir mesajda bulunursa, sohbette renklendirilecek kelimelerin listesi. Birden fazla kelime eklemek istiyorsaniz, kelimeyi virgulle ayirmalisiniz. Mevcut adinizi aramak icin %MYNAME% kullanabilirsiniz.\n\nornek:\n %MYNAME%, ElvUI, RBG'ler, Tank"
+L["List of words to color in chat if found in a message. If you wish to add multiple words you must separate the word with a comma. To search for your current name you can use %MYNAME%.\n\nExample:\n%MYNAME%, ElvUI, RBGs, Tank"] =
+	"Bir mesajda bulunursa, sohbette renklendirilecek kelimelerin listesi. Birden fazla kelime eklemek istiyorsaniz, kelimeyi virgulle ayirmalisiniz. Mevcut adinizi aramak icin %MYNAME% kullanabilirsiniz.\n\nornek:\n %MYNAME%, ElvUI, RBG'ler, Tank"
 L["Load Distance"] = true
 L["Loadout Only"] = true
 L["Local Time"] = "Yerel zaman"
@@ -1031,7 +1179,8 @@ L["Location Text"] = "Konum Metni"
 L["Lock Distance Max"] = "Kilit Mesafesi Maks"
 L["LOCK_ACTIONBAR_TEXT"] = "Lock ActionBars"
 L["Log Taints"] = "Gunluk Izleri"
-L["Log the main chat frames history. So when you reloadui or log in and out you see the history from your last session."] = "Ana sohbet cerceveleri gecmisini gunluge kaydedin. Boylece, yeniden yuklediginizde veya oturum acip kapattiginizda, son oturumunuzun gecmisini gorursunuz."
+L["Log the main chat frames history. So when you reloadui or log in and out you see the history from your last session."] =
+	"Ana sohbet cerceveleri gecmisini gunluge kaydedin. Boylece, yeniden yuklediginizde veya oturum acip kapattiginizda, son oturumunuzun gecmisini gorursunuz."
 L["Login Message"] = "Giris Mesaji"
 L["Loot Roll"] = "Ganimet Rulosu"
 L["Losing Threat"] = "Hiddet Kaybetmek"
@@ -1042,7 +1191,8 @@ L["Low Health Threshold"] = "Dusuk Saglik Esigi"
 L["Low Threat"] = "Dusuk Hiddet"
 L["Low Threshold"] = "Dusuk Esik"
 L["Low"] = true
-L["Lower numbers mean a higher priority. Filters are processed in order from 1 to 100."] = "Dusuk sayilar daha yuksek oncelik anlamina gelir. Filtreler 1'den 100'e kadar sirayla islenir."
+L["Lower numbers mean a higher priority. Filters are processed in order from 1 to 100."] =
+	"Dusuk sayilar daha yuksek oncelik anlamina gelir. Filtreler 1'den 100'e kadar sirayla islenir."
 L["LUNAR_POWER"] = "Lunar Power"
 L["Macro Text"] = "Makro Metni"
 L["MACROS"] = "Makrolar"
@@ -1056,7 +1206,8 @@ L["Main Options"] = "Ana Secenekler"
 L["Main statusbar texture."] = "Ana durum cubugu dokusu."
 L["Major Factions"] = true
 L["Make textures transparent."] = "Dokulari seffaf hale getirin."
-L["Make the unitframe glow when it is below this percent of health."] = "Birim cercevesinin bu saglik yuzdesinin altina dustugunde parlamasini saglayin."
+L["Make the unitframe glow when it is below this percent of health."] =
+	"Birim cercevesinin bu saglik yuzdesinin altina dustugunde parlamasini saglayin."
 L["Make the world map smaller."] = "Dunya haritasini kucultun."
 L["MANA"] = "Mana"
 L["Map ID"] = "Harita kimligi"
@@ -1073,11 +1224,13 @@ L["Match Player Level"] = "Oyuncu Seviyesini Eslestir"
 L["Match this trigger if the spell is not known."] = true
 L["Max Allowed Groups"] = true
 L["Max Alpha"] = "Maksimum Alfa"
-L["Max amount of overflow allowed to extend past the end of the health bar."] = "Saglik cubugunun sonunu gecmesine izin verilen maksimum tasma miktari."
+L["Max amount of overflow allowed to extend past the end of the health bar."] =
+	"Saglik cubugunun sonunu gecmesine izin verilen maksimum tasma miktari."
 L["Max Bars"] = "Maks Cubuklari"
 L["Max Distance"] = "Maksimum uzaklik"
 L["Max Lines"] = "Maksimum Hatlar"
-L["Max Overflow is set to zero. Absorb Overflows will be hidden when using Overflow style.\nIf used together Max Overflow at zero and Overflow mode will act like Normal mode without the ending sliver of overflow."] = "Maks. Tasma sifira ayarlanmistir. Tasma stili kullanilirken Absorbe Tasmalar gizlenecektir.\nBirlikte kullanilirsa, Sifirda Maks Tasma ve Tasma modu, tasmanin bitis seridi olmadan Normal mod gibi davranir."
+L["Max Overflow is set to zero. Absorb Overflows will be hidden when using Overflow style.\nIf used together Max Overflow at zero and Overflow mode will act like Normal mode without the ending sliver of overflow."] =
+	"Maks. Tasma sifira ayarlanmistir. Tasma stili kullanilirken Absorbe Tasmalar gizlenecektir.\nBirlikte kullanilirsa, Sifirda Maks Tasma ve Tasma modu, tasmanin bitis seridi olmadan Normal mod gibi davranir."
 L["Max Overflow"] = "Maksimum Tasma"
 L["Max Wraps"] = "Maksimum Sarma"
 L["Maximum Duration"] = "Maksimum Sure"
@@ -1088,7 +1241,8 @@ L["Media"] = "Medya"
 L["Merchant Frame"] = "Tuccar Cercevesi"
 L["Method to sort by."] = "Siralama yontemi."
 L["Middle Click - Set Focus"] = "Orta Tiklama - Odagi Ayarla"
-L["Middle clicking the unit frame will cause your focus to match the unit.\n|cffff3333Note:|r If Clique is enabled, this option only effects ElvUI frames if they are not blacklisted in Clique."] = "Birim cercevesine orta tiklamak, odaginizin birim ile eslesmesine neden olur.\n|cffff3333Not:|r Clique etkinlestirilirse, bu secenek yalnizca ElvUI cercevelerini Clique'de kara listeye alinmamissa etkiler."
+L["Middle clicking the unit frame will cause your focus to match the unit.\n|cffff3333Note:|r If Clique is enabled, this option only effects ElvUI frames if they are not blacklisted in Clique."] =
+	"Birim cercevesine orta tiklamak, odaginizin birim ile eslesmesine neden olur.\n|cffff3333Not:|r Clique etkinlestirilirse, bu secenek yalnizca ElvUI cercevelerini Clique'de kara listeye alinmamissa etkiler."
 L["Middle"] = "Orta"
 L["Min Alpha"] = "Minimum Alfa"
 L["Minimap Buttons"] = "Mini Harita Dugmeleri"
@@ -1123,7 +1277,8 @@ L["Mouseover"] = "Fare Uzerine Geldiginde"
 L["Movers"] = "Tasiyici"
 L["Multi-Monitor Support"] = "Coklu Monitor Destegi"
 L["Multiple Ranks"] = "Coklu Rutbeler"
-L["Multiply the backdrops height or width by this value. This is usefull if you wish to have more than one bar behind a backdrop."] = "Arka planin yuksekligini veya genisligini bu degerle carpin. Bir fonun arkasinda birden fazla cubuk olmasini istiyorsaniz bu kullanislidir."
+L["Multiply the backdrops height or width by this value. This is usefull if you wish to have more than one bar behind a backdrop."] =
+	"Arka planin yuksekligini veya genisligini bu degerle carpin. Bir fonun arkasinda birden fazla cubuk olmasini istiyorsaniz bu kullanislidir."
 L["Must be in group with the player if he isn't on the same server as you."] = true
 L["My Guild"] = true
 L["Mythic+ Best Run"] = "Mitik+ En Iyi Kosu"
@@ -1192,8 +1347,10 @@ L["Number Allowed"] = "Izin verilen numara"
 L["Number of DataTexts"] = "Veri Metinlerinin Sayisi"
 L["Number of Groups"] = "Grup Sayisi"
 L["Number of messages you scroll for each step."] = "Her adim icin kaydirdiginiz mesaj sayisi."
-L["Number of repeat characters while in combat before the chat editbox is automatically closed."] = "Sohbet duzenleme kutusu otomatik olarak kapanmadan once savasta tekrarlanan karakter sayisi."
-L["Number of time in seconds to scroll down to the bottom of the chat window if you are not scrolled down completely."] = "Tamamen asagi kaydirmazsaniz, sohbet penceresinin en altina inmek icin gereken saniye cinsinden surenin sayisi."
+L["Number of repeat characters while in combat before the chat editbox is automatically closed."] =
+	"Sohbet duzenleme kutusu otomatik olarak kapanmadan once savasta tekrarlanan karakter sayisi."
+L["Number of time in seconds to scroll down to the bottom of the chat window if you are not scrolled down completely."] =
+	"Tamamen asagi kaydirmazsaniz, sohbet penceresinin en altina inmek icin gereken saniye cinsinden surenin sayisi."
 L["Objective Frame Height"] = "Hedef Cerceve Yuksekligi"
 L["OBJECTIVES_TRACKER_LABEL"] = "Amaclar"
 L["OBLITERUM_FORGE_TITLE"] = "Obliterum Ocagi"
@@ -1203,21 +1360,24 @@ L["Off Tank Bad Transition"] = "Destek Tank Tehdit Gecisi (Hiddet)"
 L["Off Tank Good Transition"] = "Destek Tank Guven Gecisi (Hiddet)"
 L["Off Tank"] = "Destek Tank"
 L["Officer"] = "Yetkili"
-L["Offset of the powerbar to the healthbar, set to 0 to disable."] = "Guc cubugunun saglik cubuguna kaymasi, devre disi birakmak icin 0'a ayarlayin."
+L["Offset of the powerbar to the healthbar, set to 0 to disable."] =
+	"Guc cubugunun saglik cubuguna kaymasi, devre disi birakmak icin 0'a ayarlayin."
 L["Offset"] = "Ofset"
 L["On Cooldown"] = "Soguma suresinde"
 L["On Me"] = true
 L["On Pet"] = true
 L["On screen positions for different elements."] = "Farkli ogeler icin ekran konumlari."
 L["Only Free Slots"] = "Yalnizca ucretsiz Slotlar"
-L["Only highlight the aura that originated from you and not others."] = "Baskalarindan degil, yalnizca sizden gelen aurayi vurgulayin."
+L["Only highlight the aura that originated from you and not others."] =
+	"Baskalarindan degil, yalnizca sizden gelen aurayi vurgulayin."
 L["Only load nameplates for units within this range."] = true
 L["Only Low"] = true
 L["Only Match SpellID"] = "Yalnizca SpellID'yi Eslestir"
 L["Only show icons instead of specialization names"] = true
 L["Only Used Slots"] = "Yalnizca Kullanilan Yuvalar"
 L["OPACITY"] = "Opaklik"
-L["OPTION_TOOLTIP_ACTION_BUTTON_USE_KEY_DOWN"] = "Eylem dugmesi tus baglantilari, tus yukari degil, tus basiliyken yanit verir."
+L["OPTION_TOOLTIP_ACTION_BUTTON_USE_KEY_DOWN"] =
+	"Eylem dugmesi tus baglantilari, tus yukari degil, tus basiliyken yanit verir."
 L["OPTION_TOOLTIP_TIMESTAMPS"] = "Sohbet mesajlari icin zaman damgasi bicimini secin."
 L["Order Hall Command Bar"] = "Emir Salonu Komut cubugu"
 L["Orderhall"] = "Emir Salonu"
@@ -1291,22 +1451,27 @@ L["Plugin"] = "Eklenti"
 L["Plugins"] = true
 L["Poison Effect"] = "Zehir Etkisi"
 L["Portrait"] = "Portre"
-L["Position of bonus quest reward frame relative to the objective tracker."] = "Hedef izleyiciye gore bonus arayisi odul cercevesinin konumu."
-L["Position of the Chat EditBox, if datatexts are disabled this will be forced to be above chat."] = "Sohbet Duzenleme Kutusunun konumu, eger veri metinleri devre disi birakilirsa, bu sohbetin ustunde olmaya zorlanir."
-L["Position of the Maw Buffs list relative to the objective tracker."] = "Maw Takviyeleri listesinin hedef izleyiciye gore konumu."
+L["Position of bonus quest reward frame relative to the objective tracker."] =
+	"Hedef izleyiciye gore bonus arayisi odul cercevesinin konumu."
+L["Position of the Chat EditBox, if datatexts are disabled this will be forced to be above chat."] =
+	"Sohbet Duzenleme Kutusunun konumu, eger veri metinleri devre disi birakilirsa, bu sohbetin ustunde olmaya zorlanir."
+L["Position of the Maw Buffs list relative to the objective tracker."] =
+	"Maw Takviyeleri listesinin hedef izleyiciye gore konumu."
 L["Position the Model horizontally."] = "Modeli yatay olarak konumlandirin."
 L["Position the Model vertically."] = "Modeli dikey olarak konumlandirin."
 L["Position"] = "Pozisyon"
 L["Power Color"] = "Guc Rengi"
 L["Power Prediction Color"] = "Guc Tahmini Rengi"
 L["Power Prediction"] = "Guc Tahmini"
-L["Power text will be hidden on NPC targets, in addition the name text will be repositioned to the power texts anchor point."] = "Guc metni, NPC hedeflerinde gizlenecek, ayrica isim metni, guc metinlerinin baglanti noktasina yeniden konumlandirilacak."
+L["Power text will be hidden on NPC targets, in addition the name text will be repositioned to the power texts anchor point."] =
+	"Guc metni, NPC hedeflerinde gizlenecek, ayrica isim metni, guc metinlerinin baglanti noktasina yeniden konumlandirilacak."
 L["Power Threshold"] = "Guc Esigi"
 L["Power"] = "Guc"
 L["POWER_TYPE_ARCANE_CHARGES"] = "Arcane Yukleri"
 L["POWER_TYPE_ESSENCE"] = true
 L["Prefer Target Color"] = true
-L["Prevent the same messages from displaying in chat more than once within this set amount of seconds, set to zero to disable."] = "Ayni mesajlarin, devre disi birakmak icin sifira ayarlanmis bu ayarlanan saniye miktari icinde sohbette birden fazla kez goruntulenmesini onleyin."
+L["Prevent the same messages from displaying in chat more than once within this set amount of seconds, set to zero to disable."] =
+	"Ayni mesajlarin, devre disi birakmak icin sifira ayarlanmis bu ayarlanan saniye miktari icinde sohbette birden fazla kez goruntulenmesini onleyin."
 L["Primary Texture"] = "Birincil Doku"
 L["Priority"] = "oncelik"
 L["Private (Character Settings)"] = "Ozel (Karakter Ayarlari)"
@@ -1394,14 +1559,17 @@ L["Replace Font"] = "Yazi Tipini Degistir"
 L["Replace Name Font"] = "Isim Yazi Tipi Degistir"
 L["Replace Nameplate Fonts"] = "Isim Levhalari Yazi Tiplerini Degistirin"
 L["Replace Text on Me"] = "uzerimdeki Metni Degistir"
-L["Replaces the default Blizzard fonts on various panels and frames with the fonts chosen in the Media section of the ElvUI Options. NOTE: Any font that inherits from the fonts ElvUI usually replaces will be affected as well if you disable this. Enabled by default."] = "cesitli panel ve cercevelerdeki varsayilan Blizzard yazi tiplerini, ElvUI Seceneklerinin Medya bolumunde secilen yazi tipleriyle degistirir. NOT: ElvUI'nin genellikle degistirdigi yazi tiplerinden miras kalan herhangi bir yazi tipi de, bunu devre disi birakirsaniz etkilenecektir. Varsayilan olarak etkindir. "
+L["Replaces the default Blizzard fonts on various panels and frames with the fonts chosen in the Media section of the ElvUI Options. NOTE: Any font that inherits from the fonts ElvUI usually replaces will be affected as well if you disable this. Enabled by default."] =
+	"cesitli panel ve cercevelerdeki varsayilan Blizzard yazi tiplerini, ElvUI Seceneklerinin Medya bolumunde secilen yazi tipleriyle degistirir. NOT: ElvUI'nin genellikle degistirdigi yazi tiplerinden miras kalan herhangi bir yazi tipi de, bunu devre disi birakirsaniz etkilenecektir. Varsayilan olarak etkindir. "
 L["Replaces the font on Blizzard Nameplates."] = true
-L["Replaces the StatusBar texture setting on Unitframes and Nameplates with the primary texture."] = "Birim cerceveleri ve Isim Levhalari Durum cubugu doku ayarini birincil doku ile degistirir."
+L["Replaces the StatusBar texture setting on Unitframes and Nameplates with the primary texture."] =
+	"Birim cerceveleri ve Isim Levhalari Durum cubugu doku ayarini birincil doku ile degistirir."
 L["Reposition Window"] = "Pencereyi Yeniden Konumlandir"
 L["Reputation Alpha"] = "Itibar Alfa"
 L["Reputation"] = "Itibar"
 L["Require All"] = "Tum Gereksinimler"
-L["Require holding the Alt key down to move cursor or cycle through messages in the editbox."] = "Imleci hareket ettirmek veya duzenleme kutusundaki mesajlar arasinda gecis yapmak icin Alt tusunu basili tutmayi gerektir."
+L["Require holding the Alt key down to move cursor or cycle through messages in the editbox."] =
+	"Imleci hareket ettirmek veya duzenleme kutusundaki mesajlar arasinda gecis yapmak icin Alt tusunu basili tutmayi gerektir."
 L["Require Target"] = true
 L["Reset Action Paging"] = "Eylem cagrisini Sifirla"
 L["Reset all frames to their original positions."] = true
@@ -1413,7 +1581,8 @@ L["Reset Filter - %s"] = true
 L["Reset filter priority to the default state."] = "Filtre onceligini varsayilan duruma sifirla."
 L["Reset Filter"] = "Filtreyi Sifirla"
 L["Reset History"] = "Gecmisi Sifirla"
-L["Reset Nameplate CVars to the ElvUI recommended defaults."] = "Isim Levhalari CVar'larini ElvUI tarafindan onerilen varsayilanlara sifirlayin."
+L["Reset Nameplate CVars to the ElvUI recommended defaults."] =
+	"Isim Levhalari CVar'larini ElvUI tarafindan onerilen varsayilanlara sifirlayin."
 L["Reset Priority"] = "Onceligi Sifirla"
 L["Reset the size and position of this frame."] = true
 L["Reset Zoom"] = "Yakinlastirmayi Sifirla"
@@ -1428,7 +1597,8 @@ L["Return filter to its default state."] = "Filtreyi varsayilan durumuna dondur.
 L["Reverse Bag Slots"] = "Ters canta Yuvalari"
 L["Reverse Fill Direction"] = "Ters Doldurma Yonu"
 L["Reverse Fill"] = "Ters Doldurma"
-L["Reverse Toggle will enable Cooldown Text on this module when the global setting is disabled and disable them when the global setting is enabled."] = "Ters Gecis, genel ayar devre disi birakildiginda bu modulde Soruma Suresi Metni'ni etkinlestirecek ve genel ayar etkinlestirildiginde bunlari devre disi birakacaktir."
+L["Reverse Toggle will enable Cooldown Text on this module when the global setting is disabled and disable them when the global setting is enabled."] =
+	"Ters Gecis, genel ayar devre disi birakildiginda bu modulde Soruma Suresi Metni'ni etkinlestirecek ve genel ayar etkinlestirildiginde bunlari devre disi birakacaktir."
 L["Reverse Toggle"] = "Ters Gecis"
 L["Reverse"] = "Tersi"
 L["REVERSE_NEW_LOOT_TEXT"] = "En Sol cantaya Yagma"
@@ -1492,19 +1662,27 @@ L["Separate Panel Sizes"] = "Ayri Panel Boyutlari"
 L["Separate"] = "Ayri"
 L["Set auras that are not from you to desaturated."] = "Sizden olmayan auralari doymamisliga ayarlayin."
 L["Set Settings to Default"] = "Ayarlari Varsayilan Yap"
-L["Set the alpha level of portrait when frame is overlayed."] = "Cerceve bindirildiginde portrenin alfa seviyesini ayarlayin."
-L["Set the filter type. Blacklist will hide any auras in the list and show all others. Whitelist will show any auras in the filter and hide all others."] = "Filtre turunu ayarlayin. Kara liste, listedeki tum auralari gizler ve digerlerini gosterir. Beyaz liste, filtredeki tum auralari gosterir ve digerlerini gizler."
+L["Set the alpha level of portrait when frame is overlayed."] =
+	"Cerceve bindirildiginde portrenin alfa seviyesini ayarlayin."
+L["Set the filter type. Blacklist will hide any auras in the list and show all others. Whitelist will show any auras in the filter and hide all others."] =
+	"Filtre turunu ayarlayin. Kara liste, listedeki tum auralari gizler ve digerlerini gosterir. Beyaz liste, filtredeki tum auralari gosterir ve digerlerini gizler."
 L["Set the font outline."] = "Yazi tipi anahattini ayarlayin."
-L["Set the font size for everything in UI. Note: This doesn't effect somethings that have their own separate options (UnitFrame Font, Datatext Font, ect..)"] = "Kullanici arayuzundeki her sey icin yazi tipi boyutunu ayarlayin. Not: Bu, kendi ayri secenekleri olan bazi seyleri etkilemez (Birim cerceveleri Yazi Tipi, Veri Metinleri Yazi Tipi, vb.)"
+L["Set the font size for everything in UI. Note: This doesn't effect somethings that have their own separate options (UnitFrame Font, Datatext Font, ect..)"] =
+	"Kullanici arayuzundeki her sey icin yazi tipi boyutunu ayarlayin. Not: Bu, kendi ayri secenekleri olan bazi seyleri etkilemez (Birim cerceveleri Yazi Tipi, Veri Metinleri Yazi Tipi, vb.)"
 L["Set the order that the group will sort."] = "Grup cercevelerinin siralanacagi sirayi belirleyin."
 L["Set the orientation of the UnitFrame."] = "Birim cercevelerinin yonunu ayarlayin."
-L["Set the priority order of the spell, please note that priorities are only used for the raid debuff module, not the standard buff/debuff module. If you want to disable set to zero."] = "Buyunun oncelik sirasini ayarlayin, lutfen onceliklerin standart guclendirici/zayiflatici modulu icin degil, yalnizca baskin zayiflatici modulu icin kullanildigini unutmayin. Seti sifira ayarlamak istiyorsaniz."
+L["Set the priority order of the spell, please note that priorities are only used for the raid debuff module, not the standard buff/debuff module. If you want to disable set to zero."] =
+	"Buyunun oncelik sirasini ayarlayin, lutfen onceliklerin standart guclendirici/zayiflatici modulu icin degil, yalnizca baskin zayiflatici modulu icin kullanildigini unutmayin. Seti sifira ayarlamak istiyorsaniz."
 L["Set the size of the individual auras."] = "Bireysel auralarin boyutunu ayarlayin."
 L["Set the size of your bag buttons."] = "cantanizin dugme boyutunu ayarlayin."
-L["Set the type of auras to show when a unit is a foe."] = "Bir birim dusman oldugunda gosterilecek aura turunu ayarlayin."
-L["Set the type of auras to show when a unit is friendly."] = "Bir birim dost oldugunda gosterilecek aura turunu ayarlayin."
-L["Set to either stack nameplates vertically or allow them to overlap."] = "Isim levhalarinin dikey olarak istiflemeye veya ust uste binmelerine izin verin."
-L["Sets the font instance's horizontal text alignment style."] = "Yazi tipi orneginin yatay metin hizalama stilini ayarlar."
+L["Set the type of auras to show when a unit is a foe."] =
+	"Bir birim dusman oldugunda gosterilecek aura turunu ayarlayin."
+L["Set the type of auras to show when a unit is friendly."] =
+	"Bir birim dost oldugunda gosterilecek aura turunu ayarlayin."
+L["Set to either stack nameplates vertically or allow them to overlap."] =
+	"Isim levhalarinin dikey olarak istiflemeye veya ust uste binmelerine izin verin."
+L["Sets the font instance's horizontal text alignment style."] =
+	"Yazi tipi orneginin yatay metin hizalama stilini ayarlar."
 L["Setup on-screen display of information bars."] = "Bilgi cubuklarinin ekran goruntusunu ayarlayin."
 L["Share Current Profile"] = "Mevcut Profili Paylas"
 L["Share Filters"] = "Filtreleri Paylas"
@@ -1517,7 +1695,8 @@ L["Shortcut to global filters."] = "Kuresel filtrelere kisayol."
 L["Shorten the channel names in chat."] = "Sohbette kanal adlarini kisaltin."
 L["Should tooltip be anchored to mouse cursor"] = "Ipucu penceresi fare imlecine sabitlenmeli mi"
 L["Show All Tracking Options"] = true
-L["Show an incoming heal prediction bar on the unitframe. Also display a slightly different colored bar for incoming overheals."] = "Alınacak tahmini iyilestirmeyi birim cercevesinde goster. Ayrica gelen iyilestirme tahmini icin farkli renk vurgusunda bir cubuk goster."
+L["Show an incoming heal prediction bar on the unitframe. Also display a slightly different colored bar for incoming overheals."] =
+	"Alınacak tahmini iyilestirmeyi birim cercevesinde goster. Ayrica gelen iyilestirme tahmini icin farkli renk vurgusunda bir cubuk goster."
 L["Show Assigned Color"] = "Atanan Rengi Goster"
 L["Show Aura From Other Players"] = "Diger Oyunculardan Aura Goster"
 L["Show Auras"] = "Auralari Goster"
@@ -1525,7 +1704,8 @@ L["Show Badge"] = "Rozeti Goster"
 L["Show Border"] = "Sinir Goster"
 L["Show Both"] = "Ikisinide Goster"
 L["Show Bubbles"] = "Kabarciklari Goster"
-L["Show clickable Quick Join messages inside of the chat."] = "Sohbetin icinde tiklanabilir Hizli Katilma mesajlarini goster."
+L["Show clickable Quick Join messages inside of the chat."] =
+	"Sohbetin icinde tiklanabilir Hizli Katilma mesajlarini goster."
 L["Show Coins"] = "Paralari Goster"
 L["Show Continent"] = true
 L["Show Count"] = "Sayiyi Goster"
@@ -1547,16 +1727,20 @@ L["Show QuestXP"] = "Gorev Deneyim Puanini Goster"
 L["Show Special Bags Color"] = "Ozel Canta Rengini Goster"
 L["Show Subzone"] = true
 L["Show Text"] = true
-L["Show the castbar icon desaturated if a spell is not interruptible."] = "Bir yetenek engellenemiyorsa, yetenek cubugu ikonunun doygunlugu azaltilmis olarak goster."
+L["Show the castbar icon desaturated if a spell is not interruptible."] =
+	"Bir yetenek engellenemiyorsa, yetenek cubugu ikonunun doygunlugu azaltilmis olarak goster."
 L["Show Title"] = "Basligi Goster"
 L["Show When Not Active"] = "Aktif Degilken Goster"
 L["Show With Target"] = "Hedef Ile Goster"
 L["Show Zone"] = true
 L["Show"] = "GOSTER"
 L["Show/Hide Test Frame"] = "Test Cercevesini Goster/Gizle"
-L["Shows a swipe animation when a spell is recharging but still has charges left."] = "Bir buyu yeniden sarj olurken, ancak hala sarjlari kaldiginda bir kaydirma animasyonu gosterir."
-L["Shows item level of each item, enchants, and gems on the character page."] = "Karakter sayfasindaki her ogenin, buyulerin ve mucevherlerin oge seviyesini gosterir."
-L["Shows item level of each item, enchants, and gems when inspecting another player."] = "Baska bir oyuncuyu incelerken her ogenin, buyulerin ve mucevherlerin oge seviyesini gosterir."
+L["Shows a swipe animation when a spell is recharging but still has charges left."] =
+	"Bir buyu yeniden sarj olurken, ancak hala sarjlari kaldiginda bir kaydirma animasyonu gosterir."
+L["Shows item level of each item, enchants, and gems on the character page."] =
+	"Karakter sayfasindaki her ogenin, buyulerin ve mucevherlerin oge seviyesini gosterir."
+L["Shows item level of each item, enchants, and gems when inspecting another player."] =
+	"Baska bir oyuncuyu incelerken her ogenin, buyulerin ve mucevherlerin oge seviyesini gosterir."
 L["Side Arrows"] = "Yan Oklar"
 L["Size and Positions"] = "Boyut ve Konumlar"
 L["Size Offset"] = true
@@ -1646,7 +1830,8 @@ L["Target Info"] = "Hedef Bilgisi"
 L["Target Marker Icon"] = "Hedef Isaretleyici Ikonu"
 L["Target On Mouse-Down"] = "Fare Asagi uzerinde Hedef"
 L["Target Reticle"] = true
-L["Target units on mouse down rather than mouse up.\n|cffff3333Note:|r If Clique is enabled, this option only effects ElvUI frames if they are not blacklisted in Clique."] = "Hedef birimleri fare yukari degil asagi konumdayken hedefleyin.\n|cffff3333Not:|r Clique etkinlestirilirse, bu secenek yalnizca ElvUI cercevelerini Clique'de kara listeye alinmamissa etkiler."
+L["Target units on mouse down rather than mouse up.\n|cffff3333Note:|r If Clique is enabled, this option only effects ElvUI frames if they are not blacklisted in Clique."] =
+	"Hedef birimleri fare yukari degil asagi konumdayken hedefleyin.\n|cffff3333Not:|r Clique etkinlestirilirse, bu secenek yalnizca ElvUI cercevelerini Clique'de kara listeye alinmamissa etkiler."
 L["Target"] = "Hedef"
 L["Target/Low Health Indicator"] = "Hedef/Dusuk Saglik Gostergesi"
 L["Targeted Glow"] = "Hedefte Parilti"
@@ -1672,68 +1857,110 @@ L["Textured Icon"] = "Dokulu Ikon"
 L["Textures"] = "Dokular"
 L["The amount of buttons to display per row."] = "Satir basina goruntulenecek dugme miktari."
 L["The amount of buttons to display."] = "Goruntulenecek dugme sayisi."
-L["The button you must hold down in order to drag an ability to another action button."] = "Bir yetenegi baska bir eylem dugmesine suruklemek icin basili tutmaniz gereken dugme."
-L["The debuff needs to reach this amount of stacks before it is shown. Set to 0 to always show the debuff."] = "Zayiflayicinin gosterilmeden once bu yigin miktarina ulasmasi gerekiyor. Zayiflaticiyi her zaman gostermek icin 0'a ayarlayin."
-L["The direction that the bag frames be (Horizontal or Vertical)."] = "Canta cercevelerinin oldugu yon (Yatay veya Dikey)."
+L["The button you must hold down in order to drag an ability to another action button."] =
+	"Bir yetenegi baska bir eylem dugmesine suruklemek icin basili tutmaniz gereken dugme."
+L["The debuff needs to reach this amount of stacks before it is shown. Set to 0 to always show the debuff."] =
+	"Zayiflayicinin gosterilmeden once bu yigin miktarina ulasmasi gerekiyor. Zayiflaticiyi her zaman gostermek icin 0'a ayarlayin."
+L["The direction that the bag frames be (Horizontal or Vertical)."] =
+	"Canta cercevelerinin oldugu yon (Yatay veya Dikey)."
 L["The direction that the bag frames will grow from the anchor."] = "Canta cercevelerinin capadan buyuyecegi yon."
-L["The direction the auras will grow and then the direction they will grow after they reach the wrap after limit."] = "Auralarin buyuyecegi yon ve sonra sinirdan sonra sargiya ulastiktan sonra buyuyecekleri yon."
-L["The display format of the currency icons that get displayed below the main bag. (You have to be watching a currency for this to display)"] = "Ana cantanin altinda goruntulenen para birimi ikonlarinin gosterim bicimi. (Bunun goruntulenmesi icin bir para birimini izliyor olmaniz gerekir)"
-L["The display format of the money text that is shown at the top of the main bag."] = "Ana cantanin ust kisminda gosterilen para metninin gosterim bicimi."
-L["The display format of the money text that is shown in the gold datatext and its tooltip."] = "Altin veri metninde ve ipucu penceresinde gosterilen para metninin goruntuleme bicimi."
-L["The durability percent that the datatext will start flashing.  Set to -1 to disable"] = "Veri metninin yanip sonmeye baslayacagi dayaniklilik yuzdesi. Devre disi birakmak icin -1 olarak ayarlayin"
+L["The direction the auras will grow and then the direction they will grow after they reach the wrap after limit."] =
+	"Auralarin buyuyecegi yon ve sonra sinirdan sonra sargiya ulastiktan sonra buyuyecekleri yon."
+L["The display format of the currency icons that get displayed below the main bag. (You have to be watching a currency for this to display)"] =
+	"Ana cantanin altinda goruntulenen para birimi ikonlarinin gosterim bicimi. (Bunun goruntulenmesi icin bir para birimini izliyor olmaniz gerekir)"
+L["The display format of the money text that is shown at the top of the main bag."] =
+	"Ana cantanin ust kisminda gosterilen para metninin gosterim bicimi."
+L["The display format of the money text that is shown in the gold datatext and its tooltip."] =
+	"Altin veri metninde ve ipucu penceresinde gosterilen para metninin goruntuleme bicimi."
+L["The durability percent that the datatext will start flashing.  Set to -1 to disable"] =
+	"Veri metninin yanip sonmeye baslayacagi dayaniklilik yuzdesi. Devre disi birakmak icin -1 olarak ayarlayin"
 L["The first button anchors itself to this point on the bar."] = "Ilk dugme, kendisini cubuktaki bu noktaya sabitler."
-L["The font that appears on the text above players heads. |cffFF3333WARNING: This requires a game restart or re-log for this change to take effect.|r"] = "Oyuncularin kafalarinin ustundeki metinde gorunen yazi tipi. |cffFF3333UYARI: Bu, degisikligin etkili olmasi icin oyunun yeniden baslatilmasi veya yeniden kaydedilmesi gerekir.|r"
-L["The font that combat text will use. |cffFF3333WARNING: This requires a game restart or re-log for this change to take effect.|r"] = "Metinle savasan yazi tipi kullanilacak. |cffFF3333UYARI: Bu, degisikligin etkili olmasi icin oyunun yeniden baslatilmasini veya yeniden oturum acilmasini gerektirir.|r"
+L["The font that appears on the text above players heads. |cffFF3333WARNING: This requires a game restart or re-log for this change to take effect.|r"] =
+	"Oyuncularin kafalarinin ustundeki metinde gorunen yazi tipi. |cffFF3333UYARI: Bu, degisikligin etkili olmasi icin oyunun yeniden baslatilmasi veya yeniden kaydedilmesi gerekir.|r"
+L["The font that combat text will use. |cffFF3333WARNING: This requires a game restart or re-log for this change to take effect.|r"] =
+	"Metinle savasan yazi tipi kullanilacak. |cffFF3333UYARI: Bu, degisikligin etkili olmasi icin oyunun yeniden baslatilmasini veya yeniden oturum acilmasini gerektirir.|r"
 L["The font that the core of the UI will use."] = "Kullanici arayuzunun cekirdeginin kullanacagi yazi tipi."
 L["The font that the unitframes will use."] = "Birim cercevelerin kullanacagi yazi tipi."
-L["The frame is not shown unless you mouse over the frame."] = "Cercevenin uzerine fareyle gelmediginiz surece cerceve gosterilmez."
+L["The frame is not shown unless you mouse over the frame."] =
+	"Cercevenin uzerine fareyle gelmediginiz surece cerceve gosterilmez."
 L["The height of the action buttons."] = "Eylem dugmelerinin yuksekligi."
 L["The initial group will start near the center and grow out."] = "Ilk grup merkeze yakin baslayacak ve buyuyecek."
 L["The minimum item level required for it to be shown."] = "Gosterilmesi icin gereken minimum oge seviyesi."
-L["The name you have selected is already in use by another element."] = "Sectiginiz isim zaten baska bir oge tarafindan kullaniliyor."
+L["The name you have selected is already in use by another element."] =
+	"Sectiginiz isim zaten baska bir oge tarafindan kullaniliyor."
 L["The object you want to attach to."] = "Eklemek istediginiz nesne."
-L["The Portrait will overlay the Healthbar. This will be automatically happen if the Frame Orientation is set to Middle."] = "Portre, Saglik cubugu'nu kaplayacak. cerceve Yonu Orta olarak ayarlanmissa bu otomatik olarak gerceklesecektir."
+L["The Portrait will overlay the Healthbar. This will be automatically happen if the Frame Orientation is set to Middle."] =
+	"Portre, Saglik cubugu'nu kaplayacak. cerceve Yonu Orta olarak ayarlanmissa bu otomatik olarak gerceklesecektir."
 L["The size of the action buttons."] = "Eylem dugmelerinin boyutu."
 L["The spacing between buttons."] = "Dugmeler arasindaki bosluk."
 L["The spacing between the backdrop and the buttons."] = "Arka plan ve dugmeler arasindaki bosluk."
 L["The texture that will be used mainly for statusbars."] = "Genel olarak durum cubuklari icin kullanilacak doku."
-L["The Thin Border Theme option will change the overall apperance of your UI. Using Thin Border Theme is a slight performance increase over the traditional layout."] = "Ince Kenarlik Temasi secenegi, kullanici arayuzunuzun genel gorunumunu degistirecektir. Ince Kenarlik Temasi'ni kullanmak, geleneksel duzene gore kucuk bir performans artisidir."
-L["The unit prefixes you want to use when values are shortened in ElvUI. This is mostly used on UnitFrames."] = "ElvUI'de degerler kisaltildiginda kullanmak istediginiz birim onekleri. Bu cogunlukla Birim cerceveleri'nde kullanilir."
+L["The Thin Border Theme option will change the overall apperance of your UI. Using Thin Border Theme is a slight performance increase over the traditional layout."] =
+	"Ince Kenarlik Temasi secenegi, kullanici arayuzunuzun genel gorunumunu degistirecektir. Ince Kenarlik Temasi'ni kullanmak, geleneksel duzene gore kucuk bir performans artisidir."
+L["The unit prefixes you want to use when values are shortened in ElvUI. This is mostly used on UnitFrames."] =
+	"ElvUI'de degerler kisaltildiginda kullanmak istediginiz birim onekleri. Bu cogunlukla Birim cerceveleri'nde kullanilir."
 L["The width of the action buttons."] = "Eylem dugmelerinin genisligi."
-L["These filters don't use a list of spells like the regular filters. Instead they use the WoW API and some code logic to determine if an aura should be allowed or blocked."] = "Bu filtreler, normal filtreler gibi bir buyu listesi kullanmaz. Bunun yerine, bir auraya izin verilip verilmeyecegini veya engellenip engellenmeyecegini belirlemek icin WoW API'sini ve bazi kod mantigini kullanirlar."
-L["These filters use a list of spells to determine if an aura should be allowed or blocked. The content of these filters can be modified in the Filters section of the config."] = "Bu filtreler, bir auraya izin verilmesi veya engellenmesi gerekip gerekmedigini belirlemek icin bir buyu listesi kullanir. Bu filtrelerin icerigi, yapilandirmanin Filtreler bolumunde degistirilebilir."
+L["These filters don't use a list of spells like the regular filters. Instead they use the WoW API and some code logic to determine if an aura should be allowed or blocked."] =
+	"Bu filtreler, normal filtreler gibi bir buyu listesi kullanmaz. Bunun yerine, bir auraya izin verilip verilmeyecegini veya engellenip engellenmeyecegini belirlemek icin WoW API'sini ve bazi kod mantigini kullanirlar."
+L["These filters use a list of spells to determine if an aura should be allowed or blocked. The content of these filters can be modified in the Filters section of the config."] =
+	"Bu filtreler, bir auraya izin verilmesi veya engellenmesi gerekip gerekmedigini belirlemek icin bir buyu listesi kullanir. Bu filtrelerin icerigi, yapilandirmanin Filtreler bolumunde degistirilebilir."
 L["Thin Borders"] = "Ince Sinirlar"
-L["This allows you to create a new datatext which will track the currency with the supplied currency ID. The datatext can be added to a panel immediately after creation."] = "Bu, saglanan para birimi kimligiyle para birimini izleyecek yeni bir veri metni olusturmaniza olanak tanir. Veri metni, olusturulduktan hemen sonra bir panele eklenebilir."
+L["This allows you to create a new datatext which will track the currency with the supplied currency ID. The datatext can be added to a panel immediately after creation."] =
+	"Bu, saglanan para birimi kimligiyle para birimini izleyecek yeni bir veri metni olusturmaniza olanak tanir. Veri metni, olusturulduktan hemen sonra bir panele eklenebilir."
 L["This changes the size of the Aura Icon by this value."] = true
-L["This dictates the size of the icon when it is not attached to the castbar."] = "Bu, yetenek cubuguna bagli olmadiginda ikonun boyutunu belirler."
-L["This feature will allow you to transfer settings to other characters."] = "Bu ozellik, ayarlari diger karakterlere aktarmaniza izin verecektir."
-L["This is for Customized Icons in your Interface/Icons folder."] = "Bu, Arayuz/Ikonlar klasorunuzdeki ozellestirilmis Ikonlar icindir."
-L["This list will display any textures Boss Mods have sent to the Boss Mod Auras element during the current session."] = true
-L["This opens the AuraBar Colors filter. These settings affect specific spells."] = "Bu, Aura cubuklari Renkleri filtresini acar. Bu ayarlar belirli buyuleri etkiler."
-L["This opens the UnitFrames Color settings. These settings affect all unitframes."] = "Bu, Birim cerceveleri Rekn ayarlarini acar. Bu ayarlar tum birim kareleri etkiler."
-L["This option allows the overlay to span the whole health, including the background."] = "Bu secenek, kaplamanin arka plan da dahil olmak uzere tum sagligi kapsamasina izin verir."
-L["This option controls the Blizzard setting for whether or not the Nameplates should be shown."] = "Bu secenek, Isim Levhalarinin gosterilip gosterilmeyecegine iliskin Blizzard ayarini kontrol eder."
-L["This option will force hide Blizzard's cooldown text if it is enabled at [Interface > ActionBars > Show Numbers on Cooldown]."] = "Bu secenek, [Arayuz > Eylem cubuklari > Bekleme Suresinde Numaralari Goster]'de etkinlestirilirse, Blizzard'in bekleme suresi metnini gizlemeye zorlar."
-L["This section will allow you to copy settings to a select module from or to a different profile."] = "Bu bolum, ayarlari secilen bir module veya farkli bir profilden kopyalamaniza izin verecektir."
-L["This section will help reset specfic settings back to default."] = "Bu bolum, belirli ayarlari varsayilana dondurmeye yardimci olacaktir."
-L["This selects the Chat Frame to use as the output of ElvUI messages."] = "Bu, ElvUI mesajlarinin ciktisi olarak kullanilacak Sohbet cercevesini secer."
-L["This setting controls the size of text in item comparison tooltips."] = "Bu ayar, oge karsilastirma sırasında ipucu penceresini metninin boyutunu kontrol eder."
+L["This dictates the size of the icon when it is not attached to the castbar."] =
+	"Bu, yetenek cubuguna bagli olmadiginda ikonun boyutunu belirler."
+L["This feature will allow you to transfer settings to other characters."] =
+	"Bu ozellik, ayarlari diger karakterlere aktarmaniza izin verecektir."
+L["This is for Customized Icons in your Interface/Icons folder."] =
+	"Bu, Arayuz/Ikonlar klasorunuzdeki ozellestirilmis Ikonlar icindir."
+L["This list will display any textures Boss Mods have sent to the Boss Mod Auras element during the current session."] =
+	true
+L["This opens the AuraBar Colors filter. These settings affect specific spells."] =
+	"Bu, Aura cubuklari Renkleri filtresini acar. Bu ayarlar belirli buyuleri etkiler."
+L["This opens the UnitFrames Color settings. These settings affect all unitframes."] =
+	"Bu, Birim cerceveleri Rekn ayarlarini acar. Bu ayarlar tum birim kareleri etkiler."
+L["This option allows the overlay to span the whole health, including the background."] =
+	"Bu secenek, kaplamanin arka plan da dahil olmak uzere tum sagligi kapsamasina izin verir."
+L["This option controls the Blizzard setting for whether or not the Nameplates should be shown."] =
+	"Bu secenek, Isim Levhalarinin gosterilip gosterilmeyecegine iliskin Blizzard ayarini kontrol eder."
+L["This option will force hide Blizzard's cooldown text if it is enabled at [Interface > ActionBars > Show Numbers on Cooldown]."] =
+	"Bu secenek, [Arayuz > Eylem cubuklari > Bekleme Suresinde Numaralari Goster]'de etkinlestirilirse, Blizzard'in bekleme suresi metnini gizlemeye zorlar."
+L["This section will allow you to copy settings to a select module from or to a different profile."] =
+	"Bu bolum, ayarlari secilen bir module veya farkli bir profilden kopyalamaniza izin verecektir."
+L["This section will help reset specfic settings back to default."] =
+	"Bu bolum, belirli ayarlari varsayilana dondurmeye yardimci olacaktir."
+L["This selects the Chat Frame to use as the output of ElvUI messages."] =
+	"Bu, ElvUI mesajlarinin ciktisi olarak kullanilacak Sohbet cercevesini secer."
+L["This setting controls the size of text in item comparison tooltips."] =
+	"Bu ayar, oge karsilastirma sırasında ipucu penceresini metninin boyutunu kontrol eder."
 L["This setting will be updated upon changing stances."] = "Bu ayar, duruslar degistirildiginde guncellenecektir."
-L["This texture will get used on objects like chat windows and dropdown menus."] = "Bu doku, sohbet pencereleri ve acilir menuler gibi nesnelerde kullanilacak."
+L["This texture will get used on objects like chat windows and dropdown menus."] =
+	"Bu doku, sohbet pencereleri ve acilir menuler gibi nesnelerde kullanilacak."
 L["This uses the IsPlayerSpell API which is only required sometimes."] = true
-L["This will allow you to toggle flashing of the time datatext when there are calendar invites."] = "Bu, takvim davetleri oldugunda zaman veri metninin yanip sonmesini degistirmenize olanak tanir."
-L["This will join auras together which are normally separated. Example: Bolstering and Force of Nature."] = "Bu, normalde ayri olan auralari birlestirir. ornek: Guclendirme ve Doganin Gucu."
+L["This will allow you to toggle flashing of the time datatext when there are calendar invites."] =
+	"Bu, takvim davetleri oldugunda zaman veri metninin yanip sonmesini degistirmenize olanak tanir."
+L["This will join auras together which are normally separated. Example: Bolstering and Force of Nature."] =
+	"Bu, normalde ayri olan auralari birlestirir. ornek: Guclendirme ve Doganin Gucu."
 L["This will override the global cooldown settings."] = "Bu, kuresel bekleme suresi ayarlarini gecersiz kilar."
-L["This will pin the voice buttons to the chat's tab panel. Unchecking it will create a voice button panel with a mover."] = "Bu, ses dugmelerini sohbetin sekme paneline sabitleyecek. Isaretin kaldirilmasi, tasiyicili bir ses dugmesi paneli olusturacaktir."
-L["This will reset the contents of this filter back to default. Any spell you have added to this filter will be removed."] = "Bu, bu filtrenin icerigini varsayilana sifirlayacaktir. Bu filtreye eklediginiz tum buyuler kaldirilacaktir."
-L["This works like a macro, you can run different situations to get the actionbar to page differently.\n Example: '[combat] 2;'"] = true
-L["This works like a macro, you can run different situations to get the actionbar to show/hide differently.\n Example: '[combat] show;hide'"] = "Bu bir makro gibi calisir, eylem cubugunun farkli sekilde gosterilmesini/gizlenmesini saglamak icin farkli durumlar calistirabilirsiniz.\n ornek: '[catisma] goster;gizle'"
+L["This will pin the voice buttons to the chat's tab panel. Unchecking it will create a voice button panel with a mover."] =
+	"Bu, ses dugmelerini sohbetin sekme paneline sabitleyecek. Isaretin kaldirilmasi, tasiyicili bir ses dugmesi paneli olusturacaktir."
+L["This will reset the contents of this filter back to default. Any spell you have added to this filter will be removed."] =
+	"Bu, bu filtrenin icerigini varsayilana sifirlayacaktir. Bu filtreye eklediginiz tum buyuler kaldirilacaktir."
+L["This works like a macro, you can run different situations to get the actionbar to page differently.\n Example: '[combat] 2;'"] =
+	true
+L["This works like a macro, you can run different situations to get the actionbar to show/hide differently.\n Example: '[combat] show;hide'"] =
+	"Bu bir makro gibi calisir, eylem cubugunun farkli sekilde gosterilmesini/gizlenmesini saglamak icin farkli durumlar calistirabilirsiniz.\n ornek: '[catisma] goster;gizle'"
 L["Display Mode"] = "Ekran Modu"
 L["Threat"] = "Hiddet"
-L["Threshold (in minutes) before text is shown in the HH:MM format. Set to -1 to never change to this format."] = "Metnin SS:DD biciminde gosterilmesinden onceki esik (dakika cinsinden). Bu bicimi hicbir zaman degistirmemek icin -1'e ayarlayin."
-L["Threshold (in seconds) before text is shown in the MM:SS format. Set to -1 to never change to this format."] = "Metin MM:SS biciminde gosterilmeden onceki esik (saniye cinsinden). Bu bicimi hicbir zaman degistirmemek icin -1'e ayarlayin."
-L["Threshold before text turns red and is in decimal form. Set to -1 for it to never turn red"] = "Metin oncesi esik kirmiziya doner ve ondalik bicimdedir. Asla kirmiziya donmemesi icin -1 olarak ayarlayin"
-L["Threshold before the icon will fade out and back in. Set to -1 to disable."] = "Ikon oncesi esik kaybolacak ve tekrar girecektir. Devre disi birakmak icin -1'e ayarlayin."
+L["Threshold (in minutes) before text is shown in the HH:MM format. Set to -1 to never change to this format."] =
+	"Metnin SS:DD biciminde gosterilmesinden onceki esik (dakika cinsinden). Bu bicimi hicbir zaman degistirmemek icin -1'e ayarlayin."
+L["Threshold (in seconds) before text is shown in the MM:SS format. Set to -1 to never change to this format."] =
+	"Metin MM:SS biciminde gosterilmeden onceki esik (saniye cinsinden). Bu bicimi hicbir zaman degistirmemek icin -1'e ayarlayin."
+L["Threshold before text turns red and is in decimal form. Set to -1 for it to never turn red"] =
+	"Metin oncesi esik kirmiziya doner ve ondalik bicimdedir. Asla kirmiziya donmemesi icin -1 olarak ayarlayin"
+L["Threshold before the icon will fade out and back in. Set to -1 to disable."] =
+	"Ikon oncesi esik kaybolacak ve tekrar girecektir. Devre disi birakmak icin -1'e ayarlayin."
 L["Threshold Colors"] = "Esik Renkleri"
 L["Ticket Tracker"] = "Bilet Takipcisi"
 L["Ticks"] = "Tikler"
@@ -1746,7 +1973,8 @@ L["Time"] = "Zaman"
 L["TIMEMANAGER_TITLE"] = "Saat"
 L["Timer Only"] = true
 L["TIMESTAMPS_LABEL"] = "Sohbet Zaman Damgalari"
-L["Title will only appear if Name Only is enabled or triggered in a Style Filter."] = "Baslik yalnizca Yalnizca Isim etkinlestirilirse veya bir Stil Filtresinde tetiklenirse gorunur."
+L["Title will only appear if Name Only is enabled or triggered in a Style Filter."] =
+	"Baslik yalnizca Yalnizca Isim etkinlestirilirse veya bir Stil Filtresinde tetiklenirse gorunur."
 L["Title"] = true
 L["Toggle 24-hour mode for the time datatext."] = "Saat veri metni icin 24 saat modunu degistir."
 L["Toggle Anchors"] = "capalari Degistir"
@@ -1777,7 +2005,8 @@ L["TRADE"] = "Ticaret"
 L["TRADESKILLS"] = "Ticaret Becerileri"
 L["Trainer Frame"] = "Egitmen Cercevesi"
 L["TRANSMOGRIFY"] = "Donusturme"
-L["Transparency level when not in combat, no target exists, full health, not casting, and no focus target exists."] = "Catismada olmadiginda seffaflik seviyesi, hedef yok, tam saglik, kullanim yok ve odak hedefi yok."
+L["Transparency level when not in combat, no target exists, full health, not casting, and no focus target exists."] =
+	"Catismada olmadiginda seffaflik seviyesi, hedef yok, tam saglik, kullanim yok ve odak hedefi yok."
 L["Transparent"] = "Seffaf"
 L["Triggers"] = "Tetikleyiciler"
 L["Trivial"] = "Onemsiz"
@@ -1804,17 +2033,21 @@ L["UNIT_NAMEPLATES_TYPES"] = "Isim Levhasi Hareket Tipi"
 L["Unitframe Thin Borders"] = "Birim Cercevesi Ince Kenarliklar"
 L["Unitframes Border"] = "Birim Cerceve Sinirlari"
 L["UnitFrames"] = "Birim Cerceveleri"
-L["Unlock various elements of the UI to be repositioned."] = "Yeniden konumlandirilacak kullanici arayuzunun cesitli ogelerinin kilidini acin."
+L["Unlock various elements of the UI to be repositioned."] =
+	"Yeniden konumlandirilacak kullanici arayuzunun cesitli ogelerinin kilidini acin."
 L["Up"] = "Yukari"
 L["Upgrade Icon"] = "Yukseltme Ikonu"
 L["URL Links"] = "URL Baglantilari"
 L["Usable"] = "Kullanilabilir"
-L["Use a more visible flash animation for Auto Attacks."] = "Otomatik Saldirilar icin daha gorunur bir flas animasyonu kullanin."
+L["Use a more visible flash animation for Auto Attacks."] =
+	"Otomatik Saldirilar icin daha gorunur bir flas animasyonu kullanin."
 L["Use Alt Key"] = "Alt Tusunu Kullan"
 L["Use Atlas Textures"] = "Atlas Dokularini Kullan"
-L["Use BattleTag instead of Real ID names in chat. Chat History will always use BattleTag."] = "Sohbette Gercek Kimlik adlari yerine BattleTag kullanin. Sohbet Gecmisi her zaman BattleTag'i kullanir."
+L["Use BattleTag instead of Real ID names in chat. Chat History will always use BattleTag."] =
+	"Sohbette Gercek Kimlik adlari yerine BattleTag kullanin. Sohbet Gecmisi her zaman BattleTag'i kullanir."
 L["Use Blizzard Cleanup"] = "Blizzard Temizleme'yi kullanin"
-L["Use class color for the names of players when they are mentioned."] = "Oyunculardan bahsedildiginde isimleri icin sinif rengini kullanin."
+L["Use class color for the names of players when they are mentioned."] =
+	"Oyunculardan bahsedildiginde isimleri icin sinif rengini kullanin."
 L["Use Class Color"] = "Sinif Rengini Kullan"
 L["Use coin icons instead of colored text."] = "Renkli metinler yerine bozuk para ikonları kullanin."
 L["Use Custom Backdrop"] = "Ozel Arka Plan Kullan"
@@ -1822,7 +2055,8 @@ L["Use Custom Level"] = "Ozel Duzey Kullan"
 L["Use Custom Strata"] = "Ozel Katmanlari Kullan"
 L["Use Dead Backdrop"] = "Olu Arka Plani Kullan"
 L["Use Default"] = "Varsayilani Kullan"
-L["Use drag and drop to rearrange filter priority or right click to remove a filter."] = "Filtre onceligini yeniden duzenlemek icin surukle ve birak ozelligini kullanin veya bir filtreyi kaldirmak icin sag tiklayin."
+L["Use drag and drop to rearrange filter priority or right click to remove a filter."] =
+	"Filtre onceligini yeniden duzenlemek icin surukle ve birak ozelligini kullanin veya bir filtreyi kaldirmak icin sag tiklayin."
 L["Use Icons"] = true
 L["Use Indicator Color"] = "Gosterge Rengini Kullan"
 L["Use Instance ID or Name"] = "Ornek Kimligini veya Ismini Kullan"
@@ -1831,14 +2065,17 @@ L["Use Modifier for Item Count"] = "Oge Sayisi icin Degistiriciyi Kullan"
 L["Use Off Tank Color when another Tank has threat."] = true
 L["Use Portrait"] = "Portreyi Kullan"
 L["Use Real ID BattleTag"] = "Gercek Kimlik BattleTag Kullan"
-L["Use Shift+LeftClick to toggle between friendly or enemy or normal state. Normal state will allow the filter to be checked on all units. Friendly state is for friendly units only and enemy state is for enemy units."] = "Dost veya dusman veya normal durum arasinda gecis yapmak icin Shift+Sol Tiklamayi kullanin. Normal durum, filtrenin tum birimlerde kontrol edilmesini saglar. Dostluk durumu yalnizca dost birimler icindir ve dusman durumu dusman birimleri icindir."
+L["Use Shift+LeftClick to toggle between friendly or enemy or normal state. Normal state will allow the filter to be checked on all units. Friendly state is for friendly units only and enemy state is for enemy units."] =
+	"Dost veya dusman veya normal durum arasinda gecis yapmak icin Shift+Sol Tiklamayi kullanin. Normal durum, filtrenin tum birimlerde kontrol edilmesini saglar. Dostluk durumu yalnizca dost birimler icindir ve dusman durumu dusman birimleri icindir."
 L["Use Static Position"] = "Statik Konumu Kullan"
 L["Use Subzone Names"] = "Alt Bolge Isimlerini Kullan"
-L["Use the custom backdrop color instead of a multiple of the main color."] = "Ana rengin bir kati yerine ozel zemin rengini kullanin."
+L["Use the custom backdrop color instead of a multiple of the main color."] =
+	"Ana rengin bir kati yerine ozel zemin rengini kullanin."
 L["Use the profile specific filter Aura Indicator (Profile) instead of the global filter Aura Indicator."] = true
 L["Use thin borders on certain nameplate elements."] = "Belirli isim levhasi ogelerinde ince kenarliklar kullanin."
 L["Use thin borders on certain unitframe elements."] = "Belirli birim cerceve ogelerinde ince kenarliklar kullanin."
-L["Use this backdrop color for units that are dead or ghosts."] = "olu veya hayalet olan birimler icin bu zemin rengini kullanin."
+L["Use this backdrop color for units that are dead or ghosts."] =
+	"olu veya hayalet olan birimler icin bu zemin rengini kullanin."
 L["Use Threat Color"] = "Hiddet Rengini Kullan"
 L["Use Value Color"] = true
 L["Use Zone Names"] = "Bolge Isimlerini Kullan"
@@ -1859,26 +2096,37 @@ L["Visibility"] = "Gorunurluk"
 L["VOID_STORAGE"] = "Bosluk Depolama"
 L["WeakAuras"] = true
 L["Weekly Rewards"] = true
-L["What point to anchor to the frame you set to attach to."] = "Eklemeyi ayarladiginiz cerceveye hangi noktayi tutturacaksiniz?"
+L["What point to anchor to the frame you set to attach to."] =
+	"Eklemeyi ayarladiginiz cerceveye hangi noktayi tutturacaksiniz?"
 L["What to attach the anchor frame to."] = true
 L["Whats New"] = "Ne var ne yok"
-L["When disabled, the Chat Background color has to be set via Blizzards Chat Tabs Background setting."] = "Devre disi birakildiginda, Sohbet Arka Plani rengi, Blizzards Sohbet Sekmeleri Arka Plani ayari araciligiyla ayarlanmalidir."
-L["When enabled it will only show spells that were added to the filter using a spell ID and not a name."] = "Etkinlestirildiginde, filtreye bir isim degil, yalnizca bir buyu kimligi kullanilarak eklenen buyuleri gosterecek."
-L["When enabled the nameplate will stay visible in a locked position."] = "Etkinlestirildiginde, isim Levhasi kilitli bir konumda gorunur kalacaktir."
-L["When in a raid group display if anyone in your raid is targeting the current tooltip unit."] = "Bir baskin grubundayken, baskininizdaki herhangi biri mevcut birimini hedef aliyorsa ipucu penceresini goster."
-L["When opening the Chat Editbox to type a message having this option set means it will retain the last channel you spoke in. If this option is turned off opening the Chat Editbox should always default to the SAY channel."] = "Bu secenek ayarli bir mesaj yazmak icin Sohbet Duzenleme Kutusu acildiginda, konustugunuz son kanali koruyacagi anlamina gelir. Bu secenek kapatilirsa, Sohbet Duzenleme Kutusunun acilmasi her zaman varsayilan olarak SAY kanalina ayarlanmalidir."
-L["When this is enabled, Low Health Threshold colors will not be displayed while targeted."] = "Bu etkinlestirildiginde, Dusuk Saglik Esigi renkleri hedeflenirken goruntulenmez."
-L["When true, the header includes the player when not in a raid."] = "Dogru oldugunda, baslik, bir baskinda olmadiginda oyuncuyu icerir."
-L["When using Static Position, this option also requires the target to be attackable."] = "Statik Konum kullanirken, bu secenek ayrica hedefin saldiriya acik olmasini gerektirir."
+L["When disabled, the Chat Background color has to be set via Blizzards Chat Tabs Background setting."] =
+	"Devre disi birakildiginda, Sohbet Arka Plani rengi, Blizzards Sohbet Sekmeleri Arka Plani ayari araciligiyla ayarlanmalidir."
+L["When enabled it will only show spells that were added to the filter using a spell ID and not a name."] =
+	"Etkinlestirildiginde, filtreye bir isim degil, yalnizca bir buyu kimligi kullanilarak eklenen buyuleri gosterecek."
+L["When enabled the nameplate will stay visible in a locked position."] =
+	"Etkinlestirildiginde, isim Levhasi kilitli bir konumda gorunur kalacaktir."
+L["When in a raid group display if anyone in your raid is targeting the current tooltip unit."] =
+	"Bir baskin grubundayken, baskininizdaki herhangi biri mevcut birimini hedef aliyorsa ipucu penceresini goster."
+L["When opening the Chat Editbox to type a message having this option set means it will retain the last channel you spoke in. If this option is turned off opening the Chat Editbox should always default to the SAY channel."] =
+	"Bu secenek ayarli bir mesaj yazmak icin Sohbet Duzenleme Kutusu acildiginda, konustugunuz son kanali koruyacagi anlamina gelir. Bu secenek kapatilirsa, Sohbet Duzenleme Kutusunun acilmasi her zaman varsayilan olarak SAY kanalina ayarlanmalidir."
+L["When this is enabled, Low Health Threshold colors will not be displayed while targeted."] =
+	"Bu etkinlestirildiginde, Dusuk Saglik Esigi renkleri hedeflenirken goruntulenmez."
+L["When true, the header includes the player when not in a raid."] =
+	"Dogru oldugunda, baslik, bir baskinda olmadiginda oyuncuyu icerir."
+L["When using Static Position, this option also requires the target to be attackable."] =
+	"Statik Konum kullanirken, bu secenek ayrica hedefin saldiriya acik olmasini gerektirir."
 L["When you go AFK display the AFK screen."] = "KBD Olmadigin Zaman KBD Ekranini Goruntuleyin."
 L["Whisper"] = "Fisilti"
 L["Whitelist"] = "Beyaz liste"
 L["Width Multiplier"] = "Genislik carpani"
 L["Width"] = "Genislik"
 L["Wiki:"] = true
-L["Will attempt to sell another item in set interval after previous one was sold."] = "Bir onceki urun satildiktan sonra belirlenen aralikta baska bir urun satmaya calisir."
+L["Will attempt to sell another item in set interval after previous one was sold."] =
+	"Bir onceki urun satildiktan sonra belirlenen aralikta baska bir urun satmaya calisir."
 L["Will display mana when main power is:"] = "Ana guc, secili olan dolduktan sonra manayı gosterecek:"
-L["Will show Buffs in the Debuff position when there are no Debuffs active, or vice versa."] = "Etkin Zayiflaticilar olmadiginda Takviyeler, Zayiflatici konumunda veya tam tersi olarak gosterilecektir."
+L["Will show Buffs in the Debuff position when there are no Debuffs active, or vice versa."] =
+	"Etkin Zayiflaticilar olmadiginda Takviyeler, Zayiflatici konumunda veya tam tersi olarak gosterilecektir."
 L["Word Wrap"] = "Kelime Sarma"
 L["World Latency"] = "Dunya Gecikme"
 L["World Map Coordinates"] = "Dunya Haritasi Koordinatlari"
@@ -1890,19 +2138,27 @@ L["XP Quest Percent"] = "Gorev Deneyim Puani Yuzdesi"
 L["Y-Offset"] = "Y-Ofseti"
 L["Yell"] = "Bagir"
 L["You are about to reset paging. Are you sure?"] = true
-L["You are going to copy settings for |cffD3CF00\"%s\"|r from your current |cff4beb2c\"%s\"|r profile to |cff4beb2c\"%s\"|r profile. Are you sure?"] = "Mevcut |cff4beb2c\"%s\"|r profilinizden |cffD3CF00\"%s\"|r icin ayarlari |cff4beb2c\"%s\"|r profiline kopyalayacaksiniz. Emin misiniz?"
-L["You are going to copy settings for |cffD3CF00\"%s\"|r from |cff4beb2c\"%s\"|r profile to your current |cff4beb2c\"%s\"|r profile. Are you sure?"] = "|cffD3CF00\"%s\"|r icin ayarlari |cff4beb2c\"%s\"|r profilinden mevcut |cff4beb2c\"%s\"|r profilinize kopyalayacaksiniz. Emin misiniz?"
+L['You are going to copy settings for |cffD3CF00"%s"|r from your current |cff4beb2c"%s"|r profile to |cff4beb2c"%s"|r profile. Are you sure?'] =
+	'Mevcut |cff4beb2c"%s"|r profilinizden |cffD3CF00"%s"|r icin ayarlari |cff4beb2c"%s"|r profiline kopyalayacaksiniz. Emin misiniz?'
+L['You are going to copy settings for |cffD3CF00"%s"|r from |cff4beb2c"%s"|r profile to your current |cff4beb2c"%s"|r profile. Are you sure?'] =
+	'|cffD3CF00"%s"|r icin ayarlari |cff4beb2c"%s"|r profilinden mevcut |cff4beb2c"%s"|r profilinize kopyalayacaksiniz. Emin misiniz?'
 L["You cannot copy settings from the same unit."] = "Ayni birimden ayarlari kopyalayamazsiniz."
-L["You do not need to use Is Casting Anything or Is Channeling Anything for these spells to trigger."] = "Bu buyulerin tetiklenmesi icin Herhangi Bir sey Yayinliyor veya Herhangi Bir sey Yonlendiriyor kullanmaniza gerek yok."
+L["You do not need to use Is Casting Anything or Is Channeling Anything for these spells to trigger."] =
+	"Bu buyulerin tetiklenmesi icin Herhangi Bir sey Yayinliyor veya Herhangi Bir sey Yonlendiriyor kullanmaniza gerek yok."
 L["You must be targeting a player."] = "Bir oyuncuyu hedef aliyor olmalisin."
 L["Your Auras First"] = "Once Sizin Auralariniz"
 L["Zone Button"] = "Bolge Dugmesi"
 L["Zone Name"] = "Bolge Ismi"
-L["|cffFF3333This does not work in Instances or Garrisons!|r"] = "|cffFF3333Bu, orneklerde veya Garnizonlarda calismaz!|r"
-L["|cffFF3333This is for information. This will not change the tags in the UI.|r"] = "|cffFF3333Bu bilgi amaclidir. Bu, kullanici arayuzundeki etiketleri degistirmez.|r"
-L["|cffFF3333Warning:|r Changing options in this section will apply to all Aura Indicator auras. To change only one Aura, please click \"Configure Auras\" and change that specific Auras settings. If \"Profile Specific\" is selected it will apply to that filter set."] = "|cffFF3333Uyari:|r Bu bolumdeki degistirme secenekleri tum Aura Gostergesi auralari icin gecerli olacaktir. Yalnizca bir Aura'yi degistirmek icin lutfen \"Auralari Yapilandir\"a tiklayin ve belirli Aura ayarlarini degistirin. \"Profile ozel\" seciliyse bu filtre seti icin gecerli olacaktir."
-L["|cffFF3333Warning:|r Click the arrow on the dropdown box to see a list of spells."] = "|cffFF3333Uyari:|r Buyulerin listesini gormek icin acilir kutudaki oka tiklayin."
-L["|cffFF3333Warning:|r Enable and Number of Groups are managed by Smart Raid Filter. Disable Smart Raid Filter in (UnitFrames - General) to change these settings."] = "|cffFF3333Uyari:|r Etkinlestir ve Grup Sayisi Akilli Baskin Filtresi tarafindan yonetilir. Bu ayarlari degistirmek icin (Birim cerceveler - Genel) icinde Akilli Baskin Filtresini devre disi birakin."
+L["|cffFF3333This does not work in Instances or Garrisons!|r"] =
+	"|cffFF3333Bu, orneklerde veya Garnizonlarda calismaz!|r"
+L["|cffFF3333This is for information. This will not change the tags in the UI.|r"] =
+	"|cffFF3333Bu bilgi amaclidir. Bu, kullanici arayuzundeki etiketleri degistirmez.|r"
+L['|cffFF3333Warning:|r Changing options in this section will apply to all Aura Indicator auras. To change only one Aura, please click "Configure Auras" and change that specific Auras settings. If "Profile Specific" is selected it will apply to that filter set.'] =
+	'|cffFF3333Uyari:|r Bu bolumdeki degistirme secenekleri tum Aura Gostergesi auralari icin gecerli olacaktir. Yalnizca bir Aura\'yi degistirmek icin lutfen "Auralari Yapilandir"a tiklayin ve belirli Aura ayarlarini degistirin. "Profile ozel" seciliyse bu filtre seti icin gecerli olacaktir.'
+L["|cffFF3333Warning:|r Click the arrow on the dropdown box to see a list of spells."] =
+	"|cffFF3333Uyari:|r Buyulerin listesini gormek icin acilir kutudaki oka tiklayin."
+L["|cffFF3333Warning:|r Enable and Number of Groups are managed by Smart Raid Filter. Disable Smart Raid Filter in (UnitFrames - General) to change these settings."] =
+	"|cffFF3333Uyari:|r Etkinlestir ve Grup Sayisi Akilli Baskin Filtresi tarafindan yonetilir. Bu ayarlari degistirmek icin (Birim cerceveler - Genel) icinde Akilli Baskin Filtresini devre disi birakin."
 
 -- done by using labelN
 L["FACTION_STANDING_LABEL1"] = "Nefret"
@@ -1955,8 +2211,10 @@ L["SKINS_DESC"] = "Dis Gorunum ayarlarini yapin."
 L["TOGGLESKIN_DESC"] = "Bu dis gorunumu Etkinlestir/Devre Disi Birak."
 L["TOOLTIP_DESC"] = "Ipucu penceresi icin kurulum secenekleri."
 L["UNITFRAME_DESC"] = "Birim cerceve ayarlarini degistirin."
-L["VISIBILITY_DESC"] = "Grubun gosterilebilmesi icin, onceden ayarlanmis herhangi bir filtreye ek olarak asagidaki makro dogru olmalidir."
-L["TEXTURE_EXAMPLE"] = [=[Specify a filename located inside the World of Warcraft directory. Textures folder that you wish to have set as a panel background.
+L["VISIBILITY_DESC"] =
+	"Grubun gosterilebilmesi icin, onceden ayarlanmis herhangi bir filtreye ek olarak asagidaki makro dogru olmalidir."
+L["TEXTURE_EXAMPLE"] =
+	[=[Specify a filename located inside the World of Warcraft directory. Textures folder that you wish to have set as a panel background.
 
 Please Note:
 -The image size recommended is 256x128
@@ -1968,26 +2226,33 @@ Example: Interface\AddOns\ElvUI\Core\Media\Textures\Copy
 Or for most users it would be easier to simply put a tga file into your WoW folder, then type the name of the file here.]=]
 
 ----------  FilterHelp  ----------
-L["*Whitelists:|r ^Boss, Mount, MyPet, OtherPet, Personal, nonPersonal, CastByUnit, notCastByUnit, Dispellable (includes steal-able), notDispellable, CastByNPC, CastByPlayers, BlizzardNameplate|r"] = true
-L["*Blacklists:|r ^blockMount, blockNonPersonal, blockCastByPlayers, blockNoDuration, blockDispellable, blockNotDispellable | A blacklist filter is only effective against filters that come after it in the priority list. It will not block anything from the filters before it.|r"] = true
-L["^A blacklist filter is only effective against filters that come after it in the priority list. It will not block anything from the filters before it."] = true
+L["*Whitelists:|r ^Boss, Mount, MyPet, OtherPet, Personal, nonPersonal, CastByUnit, notCastByUnit, Dispellable (includes steal-able), notDispellable, CastByNPC, CastByPlayers, BlizzardNameplate|r"] =
+	true
+L["*Blacklists:|r ^blockMount, blockNonPersonal, blockCastByPlayers, blockNoDuration, blockDispellable, blockNotDispellable | A blacklist filter is only effective against filters that come after it in the priority list. It will not block anything from the filters before it.|r"] =
+	true
+L["^A blacklist filter is only effective against filters that come after it in the priority list. It will not block anything from the filters before it."] =
+	true
 L["*Boss:|r ^Auras (debuffs only?) cast by a boss unit.|r"] = true
 L["*Mount:|r ^Auras which are classified as mounts.|r"] = true
 L["*Personal:|r ^Auras cast by yourself.|r"] = true
 L["*nonPersonal:|r ^Auras cast by anyone other than yourself.|r"] = true
-L["*CastByUnit:|r ^Auras cast by the unit of the unitframe or nameplate (so on target frame it only shows auras cast by the target unit).|r"] = true
+L["*CastByUnit:|r ^Auras cast by the unit of the unitframe or nameplate (so on target frame it only shows auras cast by the target unit).|r"] =
+	true
 L["*notCastByUnit:|r ^Auras cast by anyone other than the unit of the unitframe or nameplate.|r"] = true
 L["*Dispellable:|r ^Auras you can either dispel or spellsteal.|r"] = true
 L["*CastByNPC:|r ^Auras cast by any NPC.|r"] = true
 L["*CastByPlayers:|r ^Auras cast by any player-controlled unit (so no NPCs).|r"] = true
-L["*blockCastByPlayers:|r ^Blocks any aura that is cast by player-controlled units (so will only show auras cast by NPCs).|r"] = true
+L["*blockCastByPlayers:|r ^Blocks any aura that is cast by player-controlled units (so will only show auras cast by NPCs).|r"] =
+	true
 L["*blockNoDuration:|r ^Blocks any aura without a duration.|r"] = true
 L["*blockNonPersonal:|r ^Blocks any aura that is not cast by yourself.|r"] = true
 L["*Show Everything:|r ^Set 'Max Duration' to 0 & Leave Priority List Empty or (1) Personal | (2) nonPersonal"] = true
 L["*Block Blacklisted Auras, Show Everything Else:|r ^(1) Blacklist| (2) Personal | (3) nonPersonal"] = true
 L["*Block Auras Without Duration, Show Everything Else:|r ^(1) blockNoDuration | (2) Personal | (3) nonPersonal"] = true
-L["*Block Auras Without Duration, Block Blacklisted Auras, Show Everything Else:|r ^(1) blockNoDuration | (2) Blacklist | (3) Personal | (4) nonPersonal"] = true
+L["*Block Auras Without Duration, Block Blacklisted Auras, Show Everything Else:|r ^(1) blockNoDuration | (2) Blacklist | (3) Personal | (4) nonPersonal"] =
+	true
 L["*Block Everything, Except Your Own Auras:|r ^(1) Personal"] = true
 L["*Block Everything, Except Whitelisted Auras:|r ^(1) Whitelist"] = true
-L["*Block Everything, Except Whitelisted Auras That Are Cast By Yourself:|r ^(1) blockNonPersonal | (2) Whitelist"] = true
+L["*Block Everything, Except Whitelisted Auras That Are Cast By Yourself:|r ^(1) blockNonPersonal | (2) Whitelist"] =
+	true
 ----------------------------------

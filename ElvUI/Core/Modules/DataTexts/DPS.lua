@@ -1,12 +1,12 @@
 local E, L, V, P, G = unpack(ElvUI)
-local DT = E:GetModule('DataTexts')
+local DT = E:GetModule("DataTexts")
 
 local time, max, strjoin = time, max, strjoin
 local UnitGUID = UnitGUID
 
 local lastSegment, petGUID = 0
 local timeStamp, combatTime, DMGTotal, lastDMGAmount = 0, 0, 0, 0
-local displayString = ''
+local displayString = ""
 local events = {
 	SWING_DAMAGE = true,
 	RANGE_DAMAGE = true,
@@ -14,7 +14,7 @@ local events = {
 	SPELL_PERIODIC_DAMAGE = true,
 	DAMAGE_SHIELD = true,
 	DAMAGE_SPLIT = true,
-	SPELL_EXTRA_ATTACKS = true
+	SPELL_EXTRA_ATTACKS = true,
 }
 
 local function Reset()
@@ -32,26 +32,30 @@ local function GetDPS(self)
 end
 
 local function OnEvent(self, event, ...)
-	if event == 'UNIT_PET' then
-		petGUID = UnitGUID('pet')
-	elseif event == 'PLAYER_REGEN_DISABLED' or event == 'PLAYER_LEAVE_COMBAT' then
+	if event == "UNIT_PET" then
+		petGUID = UnitGUID("pet")
+	elseif event == "PLAYER_REGEN_DISABLED" or event == "PLAYER_LEAVE_COMBAT" then
 		local now = time()
 		if now - lastSegment > 20 then --time since the last segment
 			Reset()
 		end
 		lastSegment = now
-	elseif event == 'COMBAT_LOG_EVENT_UNFILTERED' then
+	elseif event == "COMBAT_LOG_EVENT_UNFILTERED" then
 		local timestamp, Event, sourceGUID, _, _, _, _, _, arg9, _, _, arg12 = ...
-		if not events[Event] then return end
+		if not events[Event] then
+			return
+		end
 
 		-- only use events from the player
 		local overKill
 
 		if sourceGUID == E.myguid or sourceGUID == petGUID then
-			if timeStamp == 0 then timeStamp = timestamp end
+			if timeStamp == 0 then
+				timeStamp = timestamp
+			end
 			lastSegment = timeStamp
 			combatTime = timestamp - timeStamp
-			if Event == 'SWING_DAMAGE' then
+			if Event == "SWING_DAMAGE" then
 				lastDMGAmount = arg9
 			else
 				lastDMGAmount = arg12
@@ -69,7 +73,19 @@ local function OnClick(self)
 end
 
 local function ApplySettings(_, hex)
-	displayString = strjoin('', '%s: ', hex, '%s')
+	displayString = strjoin("", "%s: ", hex, "%s")
 end
 
-DT:RegisterDatatext('DPS', nil, { 'UNIT_PET', 'COMBAT_LOG_EVENT_UNFILTERED', 'PLAYER_LEAVE_COMBAT', 'PLAYER_REGEN_DISABLED' }, OnEvent, nil, OnClick, nil, nil, L["DPS"], nil, ApplySettings)
+DT:RegisterDatatext(
+	"DPS",
+	nil,
+	{ "UNIT_PET", "COMBAT_LOG_EVENT_UNFILTERED", "PLAYER_LEAVE_COMBAT", "PLAYER_REGEN_DISABLED" },
+	OnEvent,
+	nil,
+	OnClick,
+	nil,
+	nil,
+	L["DPS"],
+	nil,
+	ApplySettings
+)

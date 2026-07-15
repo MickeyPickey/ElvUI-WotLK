@@ -20,7 +20,7 @@ end
 local roleIconTextures = {
 	TANK = E.Media.Textures.Tank,
 	HEALER = E.Media.Textures.Healer,
-	DAMAGER = E.Media.Textures.DPS
+	DAMAGER = E.Media.Textures.DPS,
 }
 
 function UF:UpdateRoleIcon(event)
@@ -43,15 +43,18 @@ function UF:UpdateRoleIcon(event)
 		role = rnd == 1 and "TANK" or (rnd == 2 and "HEALER" or (rnd == 3 and "DAMAGER"))
 	end
 
---	local shouldHide = ((event == "PLAYER_REGEN_DISABLED" and db.combatHide and true) or false)
+	--	local shouldHide = ((event == "PLAYER_REGEN_DISABLED" and db.combatHide and true) or false)
 
-	if (self.isForced or UnitIsConnected(self.unit)) and ((role == "DAMAGER" and db.damager) or (role == "HEALER" and db.healer) or (role == "TANK" and db.tank)) then
+	if
+		(self.isForced or UnitIsConnected(self.unit))
+		and ((role == "DAMAGER" and db.damager) or (role == "HEALER" and db.healer) or (role == "TANK" and db.tank))
+	then
 		lfdrole:SetTexture(roleIconTextures[role])
---		if not shouldHide then
-			lfdrole:Show()
---		else
---			lfdrole:Hide()
---		end
+		--		if not shouldHide then
+		lfdrole:Show()
+	--		else
+	--			lfdrole:Hide()
+	--		end
 	else
 		lfdrole:Hide()
 	end

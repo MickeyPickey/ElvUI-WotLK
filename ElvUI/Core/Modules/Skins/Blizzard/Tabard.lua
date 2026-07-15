@@ -5,7 +5,9 @@ local S = E:GetModule("Skins")
 --WoW API / Variables
 
 S:AddCallback("Skin_Tabard", function()
-	if not E.private.skins.blizzard.enable or not E.private.skins.blizzard.tabard then return end
+	if not E.private.skins.blizzard.enable or not E.private.skins.blizzard.tabard then
+		return
+	end
 
 	TabardFrame:StripTextures()
 	TabardFrame:CreateBackdrop("Transparent")
@@ -33,9 +35,9 @@ S:AddCallback("Skin_Tabard", function()
 	TabardFrameCustomizationFrame:StripTextures()
 
 	for i = 1, 5 do
-		_G["TabardFrameCustomization"..i]:StripTextures()
-		S:HandleNextPrevButton(_G["TabardFrameCustomization"..i.."LeftButton"])
-		S:HandleNextPrevButton(_G["TabardFrameCustomization"..i.."RightButton"])
+		_G["TabardFrameCustomization" .. i]:StripTextures()
+		S:HandleNextPrevButton(_G["TabardFrameCustomization" .. i .. "LeftButton"])
+		S:HandleNextPrevButton(_G["TabardFrameCustomization" .. i .. "RightButton"])
 	end
 
 	TabardModel:Point("BOTTOM", -20, 114)
@@ -43,8 +45,8 @@ S:AddCallback("Skin_Tabard", function()
 	TabardCharacterModelRotateLeftButton:Point("BOTTOMLEFT", 2, 3)
 	TabardCharacterModelRotateRightButton:Point("TOPLEFT", TabardCharacterModelRotateLeftButton, "TOPRIGHT", 3, 0)
 
---	TabardCharacterModelRotateLeftButton.SetPoint = E.noop
---	TabardCharacterModelRotateRightButton.SetPoint = E.noop
+	--	TabardCharacterModelRotateLeftButton.SetPoint = E.noop
+	--	TabardCharacterModelRotateRightButton.SetPoint = E.noop
 
 	TabardFrameEmblemTopRight:Point("TOPRIGHT", TabardFrameOuterFrameTopRight, "TOPRIGHT", 24, 6)
 

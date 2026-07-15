@@ -1,5 +1,5 @@
 local E, L, V, P, G = unpack(ElvUI)
-local DB = E:GetModule('DataBars')
+local DB = E:GetModule("DataBars")
 
 local _G = _G
 local format = string.format
@@ -34,17 +34,20 @@ function DB:ReputationBar_Update()
 	local bar = DB.StatusBars.Reputation
 	DB:SetVisibility(bar)
 
-	if not bar.db.enable or bar:ShouldHide() then return end
+	if not bar.db.enable or bar:ShouldHide() then
+		return
+	end
 
 	local data = E:GetWatchedFactionInfo()
-	local name, reaction, currentReactionThreshold, nextReactionThreshold, currentStanding = data.name, data.reaction, data.currentReactionThreshold, data.nextReactionThreshold, data.currentStanding
-	local displayString, textFormat = '', DB.db.reputation.textFormat
+	local name, reaction, currentReactionThreshold, nextReactionThreshold, currentStanding =
+		data.name, data.reaction, data.currentReactionThreshold, data.nextReactionThreshold, data.currentStanding
+	local displayString, textFormat = "", DB.db.reputation.textFormat
 
 	if reaction == 0 then
 		reaction = 1
 	end
 
-	local standing = _G['FACTION_STANDING_LABEL'..reaction] or UNKNOWN
+	local standing = _G["FACTION_STANDING_LABEL" .. reaction] or UNKNOWN
 
 	local customColors = DB.db.colors.useCustomFactionColors
 	local color = customColors and DB.db.colors.factionColors[reaction] or _G.FACTION_BAR_COLORS[reaction]
@@ -52,27 +55,39 @@ function DB:ReputationBar_Update()
 	local total = nextReactionThreshold == huge and 1 or nextReactionThreshold -- we need to correct the min/max of friendship factions to display the bar at 100%
 
 	bar:SetStatusBarColor(color.r or 1, color.g or 1, color.b or 1, alpha or 1)
-	bar:SetMinMaxValues((nextReactionThreshold == huge or currentReactionThreshold == nextReactionThreshold) and 0 or currentReactionThreshold, total) -- we force min to 0 because the min will match max when a rep is maxed and cause the bar to be 0%
+	bar:SetMinMaxValues(
+		(nextReactionThreshold == huge or currentReactionThreshold == nextReactionThreshold) and 0
+			or currentReactionThreshold,
+		total
+	) -- we force min to 0 because the min will match max when a rep is maxed and cause the bar to be 0%
 	bar:SetValue(currentStanding)
 
 	if name then
 		local current, maximum, percent, capped = GetValues(currentStanding, currentReactionThreshold, total)
-		if capped and textFormat ~= 'NONE' then -- show only name and standing on exalted
-			displayString = format('%s: [%s]', name, standing)
-		elseif textFormat == 'PERCENT' then
-			displayString = format('%s: %d%% [%s]', name, percent, standing)
-		elseif textFormat == 'CURMAX' then
-			displayString = format('%s: %s - %s [%s]', name, E:ShortValue(current), E:ShortValue(maximum), standing)
-		elseif textFormat == 'CURPERC' then
-			displayString = format('%s: %s - %d%% [%s]', name, E:ShortValue(current), percent, standing)
-		elseif textFormat == 'CUR' then
-			displayString = format('%s: %s [%s]', name, E:ShortValue(current), standing)
-		elseif textFormat == 'REM' then
-			displayString = format('%s: %s [%s]', name, E:ShortValue(maximum - current), standing)
-		elseif textFormat == 'CURREM' then
-			displayString = format('%s: %s - %s [%s]', name, E:ShortValue(current), E:ShortValue(maximum - current), standing)
-		elseif textFormat == 'CURPERCREM' then
-			displayString = format('%s: %s - %d%% (%s) [%s]', name, E:ShortValue(current), percent, E:ShortValue(maximum - current), standing)
+		if capped and textFormat ~= "NONE" then -- show only name and standing on exalted
+			displayString = format("%s: [%s]", name, standing)
+		elseif textFormat == "PERCENT" then
+			displayString = format("%s: %d%% [%s]", name, percent, standing)
+		elseif textFormat == "CURMAX" then
+			displayString = format("%s: %s - %s [%s]", name, E:ShortValue(current), E:ShortValue(maximum), standing)
+		elseif textFormat == "CURPERC" then
+			displayString = format("%s: %s - %d%% [%s]", name, E:ShortValue(current), percent, standing)
+		elseif textFormat == "CUR" then
+			displayString = format("%s: %s [%s]", name, E:ShortValue(current), standing)
+		elseif textFormat == "REM" then
+			displayString = format("%s: %s [%s]", name, E:ShortValue(maximum - current), standing)
+		elseif textFormat == "CURREM" then
+			displayString =
+				format("%s: %s - %s [%s]", name, E:ShortValue(current), E:ShortValue(maximum - current), standing)
+		elseif textFormat == "CURPERCREM" then
+			displayString = format(
+				"%s: %s - %d%% (%s) [%s]",
+				name,
+				E:ShortValue(current),
+				percent,
+				E:ShortValue(maximum - current),
+				standing
+			)
 		end
 	end
 
@@ -85,18 +100,25 @@ function DB:ReputationBar_OnEnter()
 	end
 
 	local data = E:GetWatchedFactionInfo()
-	local name, reaction, currentReactionThreshold, nextReactionThreshold, currentStanding = data.name, data.reaction, data.currentReactionThreshold, data.nextReactionThreshold, data.currentStanding
-	local standing = _G['FACTION_STANDING_LABEL'..reaction] or UNKNOWN
+	local name, reaction, currentReactionThreshold, nextReactionThreshold, currentStanding =
+		data.name, data.reaction, data.currentReactionThreshold, data.nextReactionThreshold, data.currentStanding
+	local standing = _G["FACTION_STANDING_LABEL" .. reaction] or UNKNOWN
 
 	if name then
 		GameTooltip:ClearLines()
-		GameTooltip:SetOwner(self, 'ANCHOR_CURSOR')
+		GameTooltip:SetOwner(self, "ANCHOR_CURSOR")
 		GameTooltip:AddLine(name)
-		GameTooltip:AddLine(' ')
-		GameTooltip:AddDoubleLine(STANDING..':', standing, 1, 1, 1)
+		GameTooltip:AddLine(" ")
+		GameTooltip:AddDoubleLine(STANDING .. ":", standing, 1, 1, 1)
 
 		if (reaction ~= MAX_REPUTATION_REACTION) and nextReactionThreshold ~= huge then
-			GameTooltip:AddDoubleLine(REPUTATION..':', format('%d / %d (%d%%)', GetValues(currentStanding, currentReactionThreshold, nextReactionThreshold)), 1, 1, 1)
+			GameTooltip:AddDoubleLine(
+				REPUTATION .. ":",
+				format("%d / %d (%d%%)", GetValues(currentStanding, currentReactionThreshold, nextReactionThreshold)),
+				1,
+				1,
+				1
+			)
 		end
 
 		GameTooltip:Show()
@@ -104,9 +126,11 @@ function DB:ReputationBar_OnEnter()
 end
 
 function DB:ReputationBar_OnClick()
-	if E:AlertCombat() then return end
+	if E:AlertCombat() then
+		return
+	end
 
-	ToggleCharacter('ReputationFrame')
+	ToggleCharacter("ReputationFrame")
 end
 
 function DB:ReputationBar_Toggle()
@@ -116,22 +140,29 @@ function DB:ReputationBar_Toggle()
 	if bar.db.enable then
 		E:EnableMover(bar.holder.mover.name)
 
-		DB:RegisterEvent('UPDATE_FACTION', 'ReputationBar_Update')
-		DB:RegisterEvent('COMBAT_TEXT_UPDATE', 'ReputationBar_Update')
-		DB:RegisterEvent('QUEST_FINISHED', 'ReputationBar_Update')
+		DB:RegisterEvent("UPDATE_FACTION", "ReputationBar_Update")
+		DB:RegisterEvent("COMBAT_TEXT_UPDATE", "ReputationBar_Update")
+		DB:RegisterEvent("QUEST_FINISHED", "ReputationBar_Update")
 
 		DB:ReputationBar_Update()
 	else
 		E:DisableMover(bar.holder.mover.name)
 
-		DB:UnregisterEvent('UPDATE_FACTION')
-		DB:UnregisterEvent('COMBAT_TEXT_UPDATE')
-		DB:UnregisterEvent('QUEST_FINISHED')
+		DB:UnregisterEvent("UPDATE_FACTION")
+		DB:UnregisterEvent("COMBAT_TEXT_UPDATE")
+		DB:UnregisterEvent("QUEST_FINISHED")
 	end
 end
 
 function DB:ReputationBar()
-	local Reputation = DB:CreateBar('ElvUI_ReputationBar', 'Reputation', DB.ReputationBar_Update, DB.ReputationBar_OnEnter, DB.ReputationBar_OnClick, {'TOPRIGHT', E.UIParent, 'TOPRIGHT', -3, -264})
+	local Reputation = DB:CreateBar(
+		"ElvUI_ReputationBar",
+		"Reputation",
+		DB.ReputationBar_Update,
+		DB.ReputationBar_OnEnter,
+		DB.ReputationBar_OnClick,
+		{ "TOPRIGHT", E.UIParent, "TOPRIGHT", -3, -264 }
+	)
 	DB:CreateBarBubbles(Reputation)
 
 	Reputation.ShouldHide = function()
@@ -143,7 +174,17 @@ function DB:ReputationBar()
 		end
 	end
 
-	E:CreateMover(Reputation.holder, 'ReputationBarMover', L["Reputation Bar"], nil, nil, nil, nil, nil, 'databars,reputation')
+	E:CreateMover(
+		Reputation.holder,
+		"ReputationBarMover",
+		L["Reputation Bar"],
+		nil,
+		nil,
+		nil,
+		nil,
+		nil,
+		"databars,reputation"
+	)
 
 	DB:ReputationBar_Toggle()
 end

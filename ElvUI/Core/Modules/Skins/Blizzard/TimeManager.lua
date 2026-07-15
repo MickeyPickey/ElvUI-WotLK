@@ -5,7 +5,9 @@ local S = E:GetModule("Skins")
 --WoW API / Variables
 
 S:AddCallbackForAddon("Blizzard_TimeManager", "Skin_Blizzard_TimeManager", function()
-	if not E.private.skins.blizzard.enable or not E.private.skins.blizzard.timemanager then return end
+	if not E.private.skins.blizzard.enable or not E.private.skins.blizzard.timemanager then
+		return
+	end
 
 	TimeManagerFrame:StripTextures()
 	TimeManagerFrame:SetTemplate("Transparent")

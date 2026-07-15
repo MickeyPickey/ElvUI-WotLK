@@ -27,12 +27,15 @@ function UF:Construct_Happiness(frame)
 end
 
 function UF:Configure_Happiness(frame)
-	if not frame.VARIABLES_SET then return end
+	if not frame.VARIABLES_SET then
+		return
+	end
 
 	local HappinessIndicator = frame.HappinessIndicator
 	local db = frame.db
 
-	frame.HAPPINESS_WIDTH = HappinessIndicator and frame.HAPPINESS_SHOWN and (db.happiness.width + (frame.BORDER*3)) or 0
+	frame.HAPPINESS_WIDTH = HappinessIndicator and frame.HAPPINESS_SHOWN and (db.happiness.width + (frame.BORDER * 3))
+		or 0
 
 	if db.happiness.enable then
 		if not frame:IsElementEnabled("HappinessIndicator") then
@@ -40,21 +43,75 @@ function UF:Configure_Happiness(frame)
 		end
 
 		HappinessIndicator.backdrop:ClearAllPoints()
-		if db.power.enable and not frame.USE_MINI_POWERBAR and not frame.USE_INSET_POWERBAR and not frame.POWERBAR_DETACHED and not frame.USE_POWERBAR_OFFSET then
+		if
+			db.power.enable
+			and not frame.USE_MINI_POWERBAR
+			and not frame.USE_INSET_POWERBAR
+			and not frame.POWERBAR_DETACHED
+			and not frame.USE_POWERBAR_OFFSET
+		then
 			if frame.ORIENTATION == "RIGHT" then
-				HappinessIndicator.backdrop:Point("BOTTOMRIGHT", frame.Power, "BOTTOMLEFT", -frame.BORDER + (frame.BORDER - frame.SPACING*3), -frame.BORDER)
-				HappinessIndicator.backdrop:Point("TOPLEFT", frame.Health, "TOPLEFT", -frame.HAPPINESS_WIDTH, frame.BORDER)
+				HappinessIndicator.backdrop:Point(
+					"BOTTOMRIGHT",
+					frame.Power,
+					"BOTTOMLEFT",
+					-frame.BORDER + (frame.BORDER - frame.SPACING * 3),
+					-frame.BORDER
+				)
+				HappinessIndicator.backdrop:Point(
+					"TOPLEFT",
+					frame.Health,
+					"TOPLEFT",
+					-frame.HAPPINESS_WIDTH,
+					frame.BORDER
+				)
 			else
-				HappinessIndicator.backdrop:Point("BOTTOMLEFT", frame.Power, "BOTTOMRIGHT", frame.BORDER + (-frame.BORDER + frame.SPACING*3), -frame.BORDER)
-				HappinessIndicator.backdrop:Point("TOPRIGHT", frame.Health, "TOPRIGHT", frame.HAPPINESS_WIDTH, frame.BORDER)
+				HappinessIndicator.backdrop:Point(
+					"BOTTOMLEFT",
+					frame.Power,
+					"BOTTOMRIGHT",
+					frame.BORDER + (-frame.BORDER + frame.SPACING * 3),
+					-frame.BORDER
+				)
+				HappinessIndicator.backdrop:Point(
+					"TOPRIGHT",
+					frame.Health,
+					"TOPRIGHT",
+					frame.HAPPINESS_WIDTH,
+					frame.BORDER
+				)
 			end
 		else
 			if frame.ORIENTATION == "RIGHT" then
-				HappinessIndicator.backdrop:Point("BOTTOMRIGHT", frame.Health, "BOTTOMLEFT", -frame.BORDER + (frame.BORDER - frame.SPACING*3), -frame.BORDER)
-				HappinessIndicator.backdrop:Point("TOPLEFT", frame.Health, "TOPLEFT", -frame.HAPPINESS_WIDTH, frame.BORDER)
+				HappinessIndicator.backdrop:Point(
+					"BOTTOMRIGHT",
+					frame.Health,
+					"BOTTOMLEFT",
+					-frame.BORDER + (frame.BORDER - frame.SPACING * 3),
+					-frame.BORDER
+				)
+				HappinessIndicator.backdrop:Point(
+					"TOPLEFT",
+					frame.Health,
+					"TOPLEFT",
+					-frame.HAPPINESS_WIDTH,
+					frame.BORDER
+				)
 			else
-				HappinessIndicator.backdrop:Point("BOTTOMLEFT", frame.Health, "BOTTOMRIGHT", frame.BORDER + (-frame.BORDER + frame.SPACING*3), -frame.BORDER)
-				HappinessIndicator.backdrop:Point("TOPRIGHT", frame.Health, "TOPRIGHT", frame.HAPPINESS_WIDTH, frame.BORDER)
+				HappinessIndicator.backdrop:Point(
+					"BOTTOMLEFT",
+					frame.Health,
+					"BOTTOMRIGHT",
+					frame.BORDER + (-frame.BORDER + frame.SPACING * 3),
+					-frame.BORDER
+				)
+				HappinessIndicator.backdrop:Point(
+					"TOPRIGHT",
+					frame.Health,
+					"TOPRIGHT",
+					frame.HAPPINESS_WIDTH,
+					frame.BORDER
+				)
 			end
 		end
 	elseif frame:IsElementEnabled("HappinessIndicator") then
@@ -63,10 +120,14 @@ function UF:Configure_Happiness(frame)
 end
 
 function UF:HappinessOverride(event, unit)
-	if not unit or self.unit ~= unit then return end
+	if not unit or self.unit ~= unit then
+		return
+	end
 
 	local db = self.db
-	if not db then return end
+	if not db then
+		return
+	end
 
 	local element = self.HappinessIndicator
 
