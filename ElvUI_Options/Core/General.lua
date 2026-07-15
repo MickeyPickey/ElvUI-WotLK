@@ -646,6 +646,7 @@ Cosmetic.customGlowGroup.args.startAnimation = ACH:Toggle(
 		return E.db.general.customGlow.style ~= "Proc Glow"
 	end
 )
+Cosmetic.customGlowGroup.args.frameLevel = ACH:Range(L["Frame Level"], nil, 6, { min = 0, max = 128, step = 1 })
 Cosmetic.customGlowGroup.args.spacer1 = ACH:Spacer(10, "full", function()
 	return E.db.general.customGlow.style == "Action Button Glow"
 end)
