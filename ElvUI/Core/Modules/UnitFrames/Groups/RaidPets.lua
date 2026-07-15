@@ -45,7 +45,10 @@ function UF:Construct_RaidpetFrames()
 	return self
 end
 
---I don't know if this function is needed or not? But the error I pm'ed you about was because of the missing OnEvent so I just added it.
+--OnEvent handler for the header holder, wired up in Update_RaidpetHeader; mirrors
+--RaidSmartVisibility minus the group-count handling, which the pet header doesn't have:
+--with smartRaidFilter on, force-show the header in raid instances, otherwise defer to
+--the visibility state driver
 function UF:RaidPetsSmartVisibility(event)
 	if not self.db or (self.db and not self.db.enable) or (UF.db and not UF.db.smartRaidFilter) or self.isForced then
 		return
