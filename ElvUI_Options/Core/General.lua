@@ -91,6 +91,7 @@ GenGen.locale = ACH:Select(
 		ptBR = "Português",
 		ruRU = "Русский",
 		trTR = "Turkce",
+		ukUA = "Українська",
 		zhCN = "简体中文",
 		zhTW = "正體中文",
 		koKR = "한국어",
