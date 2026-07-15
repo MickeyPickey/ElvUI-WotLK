@@ -237,13 +237,9 @@ function E:UpdateBlizzardFonts()
 		E:SetFont(_G.QuestFont, NORMAL, (blizz and 18) or unscale or big) -- Quest rewards title, Rewards
 		E:SetFont(_G.SystemFont_Huge1, NORMAL, (blizz and 20) or unscale or large) -- Raid Warning, Boss emote frame too
 		E:SetFont(_G.SystemFont_Shadow_Huge1, NORMAL, (blizz and 20) or unscale or large, outline)
-		E:SetFont(_G.PVPArenaTextString, NORMAL, (blizz and 22) or unscale or large, outline)
-		E:SetFont(_G.PVPInfoTextString, NORMAL, (blizz and 22) or unscale or large, outline)
 		E:SetFont(_G.SystemFont_OutlineThick_Huge2, NORMAL, (blizz and 22) or unscale or large, thick)
-		E:SetFont(_G.SubZoneTextString, NORMAL, (blizz and 24) or unscale or huge, outline)
 		E:SetFont(_G.BossEmoteNormalHuge, NORMAL, (blizz and 25) or unscale or mega, "SHADOW") -- Talent Title
 		E:SetFont(_G.SystemFont_Shadow_Huge3, NORMAL, (blizz and 25) or unscale or mega, "SHADOW") -- FlightMap
-		E:SetFont(_G.ZoneTextString, NORMAL, (blizz and 25) or unscale or mega, outline)
 		E:SetFont(_G.SubZoneTextFont, NORMAL, (blizz and 26) or unscale or mega, outline) -- WorldMap, SubZone
 		E:SetFont(_G.WorldMapTextFont, NORMAL, (blizz and 32) or unscale or massive, outline) -- WorldMap, MainZone
 		E:SetFont(_G.SystemFont_OutlineThick_Huge4, NORMAL, (blizz and 26) or unscale or mega, thick)
