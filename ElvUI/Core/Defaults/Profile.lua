@@ -126,6 +126,7 @@ P.general = {
 		speed = 0.3,
 		lines = 8,
 		size = 1,
+		frameLevel = 8,
 	},
 	minimap = {
 		size = 175,

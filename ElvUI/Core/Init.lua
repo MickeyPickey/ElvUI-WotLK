@@ -162,7 +162,7 @@ do -- expand LibCustomGlow for button handling
 	function LCG.ShowOverlayGlow(button, custom)
 		local db = custom or E.db.general.customGlow
 		local glow = LCG.startList[db.style]
-		if glow then -- TODO: frameLevel isnt actually used yet
+		if glow then
 			local color = db.useColor and ((custom and custom.color) or E.media.customGlowColor)
 
 			if db.style == "Proc Glow" then -- this uses an options table
@@ -178,8 +178,8 @@ do -- expand LibCustomGlow for button handling
 
 				if pixel or cast then
 					arg3, arg4 = db.lines, db.speed
-				else
-					arg3 = db.speed
+				else -- Action Button Glow: ButtonGlow_Start(r, color, frequency, frameLevel)
+					arg3, arg4 = db.speed, db.frameLevel
 				end
 				if pixel then
 					arg6, arg11 = db.size, db.frameLevel
