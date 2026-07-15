@@ -117,10 +117,7 @@ end
 -- so `func` is the commit callback native consumers (WeakAuras, etc) rely on;
 -- our AceGUI widget assigns both `swatchFunc` and `func`
 local function CommitFunc(frame)
-	local func = frame.func or frame.swatchFunc
-	if func ~= E.noop then
-		return func
-	end
+	return frame.func or frame.swatchFunc
 end
 
 local function QueueCommit(func)
@@ -190,8 +187,6 @@ function BL:EnhanceColorPicker()
 	if E.OtherAddons.ColorPickerPlus then
 		return
 	end
-
-	ColorPickerFrame.swatchFunc = E.noop -- REMOVE THIS LATER IF WE CAN? errors on Footer.OkayButton
 
 	local Header = ColorPickerFrame.Header or _G.ColorPickerFrameHeader
 	Header:StripTextures()
