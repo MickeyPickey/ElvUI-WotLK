@@ -4283,6 +4283,48 @@ E.Options.args.nameplates = {
 								},
 							},
 						},
+						visibility = {
+							order = 53,
+							type = "group",
+							childGroups = "tabs",
+							name = L["Visibility"],
+							args = {
+								friendly = {
+									order = 1,
+									type = "multiselect",
+									name = L["Friendly"],
+									get = function(info, key)
+										return E.db.nameplates.visibility.friendly[key]
+									end,
+									set = function(info, key, value)
+										E.db.nameplates.visibility.friendly[key] = value
+										NP:ConfigureAll()
+									end,
+									values = {
+										totems = L["Totems"],
+										pets = L["Pets"],
+										guardians = L["Guardians"],
+									},
+								},
+								enemy = {
+									order = 2,
+									type = "multiselect",
+									name = L["Enemy"],
+									get = function(info, key)
+										return E.db.nameplates.visibility.enemy[key]
+									end,
+									set = function(info, key, value)
+										E.db.nameplates.visibility.enemy[key] = value
+										NP:ConfigureAll()
+									end,
+									values = {
+										totems = L["Totems"],
+										pets = L["Pets"],
+										guardians = L["Guardians"],
+									},
+								},
+							},
+						},
 					},
 				},
 				colorsGroup = {
