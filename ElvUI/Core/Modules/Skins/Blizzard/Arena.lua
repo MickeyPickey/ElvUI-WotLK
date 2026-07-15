@@ -5,7 +5,9 @@ local S = E:GetModule("Skins")
 --WoW API / Variables
 
 S:AddCallback("Skin_Arena", function()
-	if not E.private.skins.blizzard.enable or not E.private.skins.blizzard.arena then return end
+	if not E.private.skins.blizzard.enable or not E.private.skins.blizzard.arena then
+		return
+	end
 
 	ArenaFrame:StripTextures()
 
@@ -23,7 +25,7 @@ S:AddCallback("Skin_Arena", function()
 	S:HandleButton(ArenaFrameCancelButton)
 
 	for i = 1, MAX_ARENA_BATTLES do
-		S:HandleButtonHighlight(_G["ArenaZone"..i])
+		S:HandleButtonHighlight(_G["ArenaZone" .. i])
 	end
 
 	ArenaFrameZoneDescription:SetTextColor(1, 1, 1)

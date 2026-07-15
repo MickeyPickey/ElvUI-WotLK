@@ -4,7 +4,9 @@ local setmetatable, getmetatable = setmetatable, getmetatable
 --WoW API / Variables
 
 local function table_copy(t, deep, seen)
-	if type(t) ~= "table" then return nil end
+	if type(t) ~= "table" then
+		return nil
+	end
 
 	if not seen then
 		seen = {}

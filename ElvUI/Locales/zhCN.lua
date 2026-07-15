@@ -1,6 +1,6 @@
 -- Simplified Chinese localization file for zhCN.
 local E = unpack(ElvUI)
-local L = E.Libs.ACL:NewLocale('ElvUI', 'zhCN')
+local L = E.Libs.ACL:NewLocale("ElvUI", "zhCN")
 
 L["Restrict Pings"] = "限制延迟"
 L["Player"] = "玩家"
@@ -9,22 +9,34 @@ L["Medium"] = "中"
 L["Large"] = "大"
 L["Countdown"] = "倒计时"
 L["Reset"] = "重置"
-L["ELVUI_DESC"] = ("*ElvUI|r |cFFffffff是一套功能完整, 可用来替换WoW原始界面的套件|r"):gsub('*', E.InfoColor)
+L["ELVUI_DESC"] = ("*ElvUI|r |cFFffffff是一套功能完整, 可用来替换WoW原始界面的套件|r"):gsub(
+	"*",
+	E.InfoColor
+)
 L["UPDATE_REQUEST"] = "您的安装似乎有些问题。请重新安装 ElvUI。"
 L[" |cff00ff00bound to |r"] = " |cff00ff00绑定到 |r"
-L["%s frame has a conflicting anchor point. Forcing the Buffs to be attached to the main unitframe."] = "%s 框架有一个冲突的锚点。强制将增益附加到主单元框架上。"
-L["%s is attempting to share the Private Profile (%s) with you. Would you like to accept the request?"] = "%s 试图与你分享个人配置文件（%s）。你是否接受？"
-L["%s is attempting to share the Global Profile with you. Would you like to accept the request?"] = "%s 试图与你分享全局配置文件（%s）。你是否接受？"
-L["%s is attempting to share the Profile (%s) with you. Would you like to accept the request?"] = "%s 试图与你分享配置文件（%s）。你是否接受？"
+L["%s frame has a conflicting anchor point. Forcing the Buffs to be attached to the main unitframe."] =
+	"%s 框架有一个冲突的锚点。强制将增益附加到主单元框架上。"
+L["%s is attempting to share the Private Profile (%s) with you. Would you like to accept the request?"] =
+	"%s 试图与你分享个人配置文件（%s）。你是否接受？"
+L["%s is attempting to share the Global Profile with you. Would you like to accept the request?"] =
+	"%s 试图与你分享全局配置文件（%s）。你是否接受？"
+L["%s is attempting to share the Profile (%s) with you. Would you like to accept the request?"] =
+	"%s 试图与你分享配置文件（%s）。你是否接受？"
 L["(Ctrl & Shift Click) Toggle CPU Profiling"] = "（Ctrl 和 Shift + 单击）切换 CPU 分析"
 L["(Hold Shift) Memory Usage"] = "（按住Shift）内存占用"
 L["(Shift Click) Collect Garbage"] = "（Shift + 点击）回收垃圾"
-L["A raid marker feature is available by pressing Escape -> Keybinds. Scroll to the bottom -> ElvUI -> Raid Marker."] = "按 Escape -> 按键设置 可以使用团队标记功能。滚动到底部 -> ElvUI -> 团队标记。"
-L["A setting you have changed will change an option for this character only. This setting that you have changed will be uneffected by changing user profiles. Changing this setting requires that you reload your User Interface."] = "你所做的改动只会影响到使用这个插件的本角色, 你需要重新加载界面才能使改动生效."
+L["A raid marker feature is available by pressing Escape -> Keybinds. Scroll to the bottom -> ElvUI -> Raid Marker."] =
+	"按 Escape -> 按键设置 可以使用团队标记功能。滚动到底部 -> ElvUI -> 团队标记。"
+L["A setting you have changed will change an option for this character only. This setting that you have changed will be uneffected by changing user profiles. Changing this setting requires that you reload your User Interface."] =
+	"你所做的改动只会影响到使用这个插件的本角色, 你需要重新加载界面才能使改动生效."
 L["ABOVE_THREAT_FORMAT"] = "%s: %.0f%% [%.0f%% 以上 |cff%02x%02x%02x%s|r]"
-L["Accepting this will reset the UnitFrame settings for %s. Are you sure?"] = "接受这个将重置%s的单位框架。你确定吗？"
-L["Accepting this will reset your Filter Priority lists for all auras on NamePlates. Are you sure?"] = "接受这个将重置姓名板中所有光环的过滤器优先级。你确定吗？"
-L["Accepting this will reset your Filter Priority lists for all auras on UnitFrames. Are you sure?"] = "接受这个将重置单位框架中所有光环的过滤器优先级。你确定吗？"
+L["Accepting this will reset the UnitFrame settings for %s. Are you sure?"] =
+	"接受这个将重置%s的单位框架。你确定吗？"
+L["Accepting this will reset your Filter Priority lists for all auras on NamePlates. Are you sure?"] =
+	"接受这个将重置姓名板中所有光环的过滤器优先级。你确定吗？"
+L["Accepting this will reset your Filter Priority lists for all auras on UnitFrames. Are you sure?"] =
+	"接受这个将重置单位框架中所有光环的过滤器优先级。你确定吗？"
 L["Active Output Audio Device"] = "有源输出音频设备"
 L["Addon Compartment"] = "插件抽屉"
 L["AddOn Memory:"] = "插件内存："
@@ -38,10 +50,13 @@ L["Alternative Power"] = "特殊能量条"
 L["Ammo/Shard Counter"] = "弹药/碎片计数器"
 L["AP:"] = "神器能量："
 L["Archeology Progress Bar"] = "考古进度条"
-L["Are you sure you want to apply this font to all ElvUI elements?"] = "确定要对所有 ElvUI 元素使用这个字体？"
+L["Are you sure you want to apply this font to all ElvUI elements?"] =
+	"确定要对所有 ElvUI 元素使用这个字体？"
 L["Are you sure you want to disband the group?"] = "确定要解散队伍吗？"
-L["Are you sure you want to reset all the settings on this profile?"] = "确定需要重置这个配置文件中的所有设置？"
-L["Are you sure you want to reset every mover back to it's default position?"] = "确定需要重置所有框架至默认位置？"
+L["Are you sure you want to reset all the settings on this profile?"] =
+	"确定需要重置这个配置文件中的所有设置？"
+L["Are you sure you want to reset every mover back to it's default position?"] =
+	"确定需要重置所有框架至默认位置？"
 L["Arena Frames"] = "竞技场框架"
 L["Arena"] = "竞技场"
 L["Aura Bars"] = "光环条"
@@ -61,11 +76,15 @@ L["Bank (Grow Up)"] = "银行（向上增长）"
 L["Bank"] = "银行"
 L["Bar "] = "动作条 "
 L["Bars"] = "条"
-L["Battleground datatexts temporarily hidden, to show type /bgstats"] = "战场数据文本暂时隐藏，需要显示请输入 /bgstats"
-L["Battleground datatexts will now show again if you are inside a battleground."] = "当你处于战场时战场信息将再次显示."
+L["Battleground datatexts temporarily hidden, to show type /bgstats"] =
+	"战场数据文本暂时隐藏，需要显示请输入 /bgstats"
+L["Battleground datatexts will now show again if you are inside a battleground."] =
+	"当你处于战场时战场信息将再次显示."
 L["BelowMinimapWidget"] = "小地图下方小工具"
 L["Binding"] = "绑定"
-L["BINDINGS_HELP"] = ("将鼠标悬停在任何 *动作条|r, *微型系统菜单|r, *宏命令|r, 或者 *法术书|r 按钮上以绑定它. 这也适用于 *背包|r 中的物品. 按 ^ESC|r 键用以 ^清除|r 当前绑定."):gsub('*', E.InfoColor):gsub('%^', E.InfoColor2)
+L["BINDINGS_HELP"] = ("将鼠标悬停在任何 *动作条|r, *微型系统菜单|r, *宏命令|r, 或者 *法术书|r 按钮上以绑定它. 这也适用于 *背包|r 中的物品. 按 ^ESC|r 键用以 ^清除|r 当前绑定.")
+	:gsub("*", E.InfoColor)
+	:gsub("%^", E.InfoColor2)
 L["Binds Discarded"] = "取消绑定"
 L["Binds Saved"] = "保存绑定"
 L["Blizzard Widgets"] = "暴雪小工具"
@@ -86,7 +105,8 @@ L["Can't Roll"] = "无法需求此装备"
 L["Character: "] = "角色："
 L["Chat Set"] = "聊天设置"
 L["Chat"] = "聊天框"
-L["Choose a theme layout you wish to use for your initial setup."] = "为你的个人设置选择一个你喜欢的皮肤主题."
+L["Choose a theme layout you wish to use for your initial setup."] =
+	"为你的个人设置选择一个你喜欢的皮肤主题."
 L["Class Bar"] = "职业特有条"
 L["Classic"] = "经典"
 L["Combat Indicator"] = "战斗指示器"
@@ -101,7 +121,7 @@ L["Current Difficulties:"] = "当前难度："
 L["Current Level:"] = "当前等级："
 L["CVars Set"] = "参数（CVars）设置"
 L["CVars"] = "参数（CVars）"
-L["Daily Reset"]="日常重置："
+L["Daily Reset"] = "日常重置："
 L["Dark"] = "黑暗"
 L["Data From: %s"] = "数据来源：%s"
 L["Dead"] = "死亡"
@@ -121,17 +141,22 @@ L["Disband Group"] = "解散队伍"
 L["Discard"] = "取消"
 L["Discord"] = true --No need to translate
 L["DND"] = "忙碌"
-L["Do you swear not to post in technical support about something not working without first disabling the addon/module combination first?"] = "你承诺在你没有先禁用其他插件试试之前不会到技术支持询问某些功能失效吗？"
-L["Don't forget to backup your WTF folder, all your profiles and settings are in there."] = "不要忘记备份您的 WTF 文件夹，您的所有配置文件和设置都在其中。"
+L["Do you swear not to post in technical support about something not working without first disabling the addon/module combination first?"] =
+	"你承诺在你没有先禁用其他插件试试之前不会到技术支持询问某些功能失效吗？"
+L["Don't forget to backup your WTF folder, all your profiles and settings are in there."] =
+	"不要忘记备份您的 WTF 文件夹，您的所有配置文件和设置都在其中。"
 L["Download"] = "下载"
 L["DPS"] = "伤害输出"
 L["Durability Frame"] = "耐久度框架"
 L["Earned:"] = "赚取："
 L["Elite"] = "精英"
-L["ElvUI has a dual spec feature which allows you to load different profiles based on your current spec on the fly. You can enable it in the profiles tab."] = "ElvUI 具有双重规格功能，可让您根据当前规格即时加载不同的配置文件。您可以在配置文件选项卡中启用它。"
+L["ElvUI has a dual spec feature which allows you to load different profiles based on your current spec on the fly. You can enable it in the profiles tab."] =
+	"ElvUI 具有双重规格功能，可让您根据当前规格即时加载不同的配置文件。您可以在配置文件选项卡中启用它。"
 L["ElvUI Installation"] = "安装 ElvUI"
-L["ElvUI is five or more revisions out of date. You can download the newest version from tukui.org."] = "ElvUI 已过期5个或者更多的版本。你可以在tukui.org下载到最新的版本。"
-L["ElvUI is out of date. You can download the newest version from tukui.org."] = "ElvUI 已过期。你可以在tukui.org下载到最新的版本。"
+L["ElvUI is five or more revisions out of date. You can download the newest version from tukui.org."] =
+	"ElvUI 已过期5个或者更多的版本。你可以在tukui.org下载到最新的版本。"
+L["ElvUI is out of date. You can download the newest version from tukui.org."] =
+	"ElvUI 已过期。你可以在tukui.org下载到最新的版本。"
 L["ElvUI Plugin Installation"] = "ElvUI 插件安装"
 L["Status"] = "信息"
 L["ElvUI Version:"] = "ElvUI 版本："
@@ -139,7 +164,8 @@ L["Error resetting UnitFrame."] = "重置单位框架出现错误."
 L["EventToastWidget"] = "事件通知"
 L["Experience Bar"] = "经验条"
 L["Experience"] = "经验/声望条"
-L["Download complete from %s, would you like to apply changes now?"] = "从 %s 下载已完成，你要立即应用更改吗？"
+L["Download complete from %s, would you like to apply changes now?"] =
+	"从 %s 下载已完成，你要立即应用更改吗？"
 L["Finished"] = "完成"
 L["Fishy Loot"] = "贪婪"
 L["Focus Aura Bars"] = "焦点目标光环条"
@@ -148,7 +174,8 @@ L["Focus Frame"] = "焦点框架"
 L["FocusTarget Frame"] = "焦点目标框架"
 L["Frame"] = "框架"
 L["Friends List"] = "好友列表"
-L["From time to time you should compare your ElvUI version against the most recent version on our website."] = "您应时常将您的 ElvUI 版本与我们网站上的最新版本进行比较。"
+L["From time to time you should compare your ElvUI version against the most recent version on our website."] =
+	"您应时常将您的 ElvUI 版本与我们网站上的最新版本进行比较。"
 L["G"] = "公会"
 L["Ghost"] = "鬼魂"
 L["GM Ticket Frame"] = "GM对话框"
@@ -173,9 +200,12 @@ L["HPS"] = "治疗输出"
 L["I Swear"] = "我承诺"
 L["I"] = "副本"
 L["Icons Only"] = "图标"
-L["If you accidentally removed a default chat tab you can always re-run the chat part of the ElvUI installer."] = "如果您不小心删除了默认聊天选项卡，您可以随时重新运行 ElvUI 安装程序的聊天部分。"
-L["If you are experiencing issues with ElvUI try disabling all your addons except ElvUI first."] = "如果您在使用 ElvUI 时遇到问题，请先尝试禁用除 ElvUI 之外的所有插件。"
-L["If you have an icon or aurabar that you don't want to display simply hold down shift and right click the icon for it to disapear."] = "如果你不希望显示某个光环图标或者光环条，只需要按住shift并右键点击它."
+L["If you accidentally removed a default chat tab you can always re-run the chat part of the ElvUI installer."] =
+	"如果您不小心删除了默认聊天选项卡，您可以随时重新运行 ElvUI 安装程序的聊天部分。"
+L["If you are experiencing issues with ElvUI try disabling all your addons except ElvUI first."] =
+	"如果您在使用 ElvUI 时遇到问题，请先尝试禁用除 ElvUI 之外的所有插件。"
+L["If you have an icon or aurabar that you don't want to display simply hold down shift and right click the icon for it to disapear."] =
+	"如果你不希望显示某个光环图标或者光环条，只需要按住shift并右键点击它."
 L["IL"] = "副本领袖"
 L["Importance: |cFF33FF33Low|r"] = "重要性：|cFF33FF33低|r"
 L["Importance: |cffD3CF00Medium|r"] = "重要性：|cffD3CF00中|r"
@@ -188,7 +218,8 @@ L["Installation Complete"] = "安装完成"
 L["Interrupted %s's |cff71d5ff|Hspell:%d:0|h[%s]|h|r!"] = "已打断 %s 的 |cff71d5ff|Hspell:%d:0|h[%s]|h|r!"
 L["Invalid Target"] = "无效的目标"
 L["is looking for members"] = "正在寻找队友"
-L["It appears one of your AddOns have disabled the AddOn Blizzard_CompactRaidFrames. This can cause errors and other issues. The AddOn will now be re-enabled."] = "看起来你使用的一个插件使得 Blizzard_CompactRaidFrames 插件被禁用了。这会产生错误与问题。此插件现在会被重新启用"
+L["It appears one of your AddOns have disabled the AddOn Blizzard_CompactRaidFrames. This can cause errors and other issues. The AddOn will now be re-enabled."] =
+	"看起来你使用的一个插件使得 Blizzard_CompactRaidFrames 插件被禁用了。这会产生错误与问题。此插件现在会被重新启用"
 L["Item level: %.2f"] = "物品等级：%.2f"
 L["Item Level:"] = "物品等级："
 L["joined a group"] = "加入队伍"
@@ -223,11 +254,15 @@ L["List of installations in queue:"] = "即将安装的列表："
 L["Loadouts"] = "配置"
 L["Location"] = "位置"
 L["Lock"] = "锁定"
-L["LOGIN_MSG"] = ("欢迎使用*ElvUI|r 版本*%s|r，输入*/ec|r 访问游戏内配置菜单。如果您需要技术支持，您可以访问我们的 https://tukui.org 或加入我们的 Discord：https://discord.tukui.org"):gsub('*', E.InfoColor)
-L["LOGIN_MSG_HELP"] = ("请使用 */ehelp|r 获取可用的 *ElvUI|r 命令列表。"):gsub('*', E.InfoColor)
+L["LOGIN_MSG"] = ("欢迎使用*ElvUI|r 版本*%s|r，输入*/ec|r 访问游戏内配置菜单。如果您需要技术支持，您可以访问我们的 https://tukui.org 或加入我们的 Discord：https://discord.tukui.org"):gsub(
+	"*",
+	E.InfoColor
+)
+L["LOGIN_MSG_HELP"] = ("请使用 */ehelp|r 获取可用的 *ElvUI|r 命令列表。"):gsub("*", E.InfoColor)
 L["Loot / Alert Frames"] = "拾取/提醒框"
 L["Loot Frame"] = "拾取框架"
-L["Lord! It's a miracle! The download up and vanished like a fart in the wind! Try Again!"] = "天啊! 太奇葩了! 下载消失了! 就像在风中放了一个屁... 再试一次吧!"
+L["Lord! It's a miracle! The download up and vanished like a fart in the wind! Try Again!"] =
+	"天啊! 太奇葩了! 下载消失了! 就像在风中放了一个屁... 再试一次吧!"
 L["Loss Control Icon"] = "失去控制图标"
 L["lvl"] = "等级"
 L["MA Frames"] = "主助理框"
@@ -244,8 +279,10 @@ L["MT Frames"] = "主坦克框"
 L["Mythic+ Best Run:"] = "史诗钥石最佳成绩："
 L["Mythic+ Score:"] = "史诗钥石分数："
 L["Naval Mission(s) Report:"] = "海军任务报告："
-L["Need help? Join our Discord: https://discord.tukui.org"] = "需要帮助？加入我们的 Discord：https://discord.tukui.org"
-L["New Profile will create a fresh profile for this character."] = "新配置文件将为该角色创建一个全新的配置。"
+L["Need help? Join our Discord: https://discord.tukui.org"] =
+	"需要帮助？加入我们的 Discord：https://discord.tukui.org"
+L["New Profile will create a fresh profile for this character."] =
+	"新配置文件将为该角色创建一个全新的配置。"
 L["New Profile"] = "新配置"
 L["No bindings set."] = "无绑定设置"
 L["No gray items to sell."] = "无灰色物品可出售。"
@@ -256,9 +293,11 @@ L["Nudge"] = "微调"
 L["O"] = "官员"
 L["Objective Frame"] = "任务框架"
 L["Offline"] = "离线"
-L["Oh lord, you have got ElvUI and Tukui both enabled at the same time. Select an addon to disable."] = "你不能同时使用 Elvui 和 Tukui，请选择一个禁用."
+L["Oh lord, you have got ElvUI and Tukui both enabled at the same time. Select an addon to disable."] =
+	"你不能同时使用 Elvui 和 Tukui，请选择一个禁用."
 L["One or more of the changes you have made require a ReloadUI."] = "已变更一或多个设置，需重载界面."
-L["One or more of the changes you have made will effect all characters using this addon. You will have to reload the user interface to see the changes you have made."] = "你所做的改动可能会影响到使用这个插件的所有角色，你需要重新加载界面才能使改动生效。"
+L["One or more of the changes you have made will effect all characters using this addon. You will have to reload the user interface to see the changes you have made."] =
+	"你所做的改动可能会影响到使用这个插件的所有角色，你需要重新加载界面才能使改动生效。"
 L["Output Audio Device"] = "输出音频设备"
 L["P"] = "队伍"
 L["Paragon"] = "巅峰"
@@ -278,15 +317,19 @@ L["Player Castbar"] = "玩家施法条"
 L["Player Debuffs"] = "玩家减益"
 L["Player Frame"] = "玩家框架"
 L["Player NamePlate"] = "玩家姓名板"
-L["Please click the button below so you can setup variables and ReloadUI."] = "请按下方按钮设置变量并重载界面。"
+L["Please click the button below so you can setup variables and ReloadUI."] =
+	"请按下方按钮设置变量并重载界面。"
 L["Please click the button below to setup your CVars."] = "请按下方按钮设置参数（CVars）."
-L["Please click the button below to setup your Profile Settings."] = "请单击下面的按钮来设置您的个人配置文件设置。"
+L["Please click the button below to setup your Profile Settings."] =
+	"请单击下面的按钮来设置您的个人配置文件设置。"
 L["Please press the continue button to go onto the next step."] = "请按继续按钮到下一步"
 L["PowerBarWidget"] = "能量条"
 L["Private Auras"] = "个人光环"
 L["Private Raid Warning"] = "个人团队警告"
-L["Profile download complete from %s, but the profile %s already exists. Change the name or else it will overwrite the existing profile."] = "配置文件从 %s 下载完成, 但是配置文件 %s 已存在. 请更改名称, 否则它会覆盖你的现有配置文件."
-L["Profile download complete from %s, would you like to load the profile %s now?"] = "配置文件从 %s 下载完成, 你是否加载配置文件 %s？"
+L["Profile download complete from %s, but the profile %s already exists. Change the name or else it will overwrite the existing profile."] =
+	"配置文件从 %s 下载完成, 但是配置文件 %s 已存在. 请更改名称, 否则它会覆盖你的现有配置文件."
+L["Profile download complete from %s, would you like to load the profile %s now?"] =
+	"配置文件从 %s 下载完成, 你是否加载配置文件 %s？"
 L["Profile request sent. Waiting for response from player."] = "已发送文件请求. 等待对方响应."
 L["Profile Settings Setup"] = "配置文件设置"
 L["Profit:"] = "利润："
@@ -320,7 +363,8 @@ L["Save"] = "储存"
 L["Saved Dungeon(s)"] = "已有进度的地下城"
 L["Saved Raid(s)"] = "已有进度的副本"
 L["says"] = "说"
-L["Select the type of aura system you want to use with ElvUI's unitframes. Set to Aura Bars to use both aura bars and icons, set to Icons Only to only see icons."] = "选择你想使用的光环系统类型. 选择光环条及图标将会同时显示光环条及图标，选择图标将只会显示图标."
+L["Select the type of aura system you want to use with ElvUI's unitframes. Set to Aura Bars to use both aura bars and icons, set to Icons Only to only see icons."] =
+	"选择你想使用的光环系统类型. 选择光环条及图标将会同时显示光环条及图标，选择图标将只会显示图标."
 L["Select Volume Stream"] = "选择音频流"
 L["Server: "] = "服务器："
 L["Session:"] = "本次登录："
@@ -357,22 +401,34 @@ L["Targeted By:"] = "同目标的有："
 L["TargetTarget Frame"] = "目标的目标框架"
 L["TargetTargetTarget Frame"] = "目标的目标的目标框架"
 L["Temporary Move"] = "移动背包"
-L["The chat windows function the same as Blizzard standard chat windows, you can right click the tabs and drag them around, rename, etc. Please click the button below to setup your chat windows."] = "对话窗口与 WOW 原始对话窗口的操作方式相同，你可以拖拉、移动分页或重新命名分页。请按下方按钮以设置对话窗口。"
-L["The in-game configuration menu can be accessed by typing the /ec command. Press the button below if you wish to skip the installation process."] = "可以通过输入 /ec 命令访问游戏内配置菜单。如果您想跳过安装过程，请按下面的按钮。"
-L["The profile you tried to import already exists. Choose a new name or accept to overwrite the existing profile."] = "你尝试导入的配置文件已经存在。请选择一个新的名称或者确认覆盖存在的配置文件。"
-L["The spell '%s' has been added to the '%s' unitframe aura filter."] = "法术\"%s\"已经被添加到单位框架的光环过滤器中."
+L["The chat windows function the same as Blizzard standard chat windows, you can right click the tabs and drag them around, rename, etc. Please click the button below to setup your chat windows."] =
+	"对话窗口与 WOW 原始对话窗口的操作方式相同，你可以拖拉、移动分页或重新命名分页。请按下方按钮以设置对话窗口。"
+L["The in-game configuration menu can be accessed by typing the /ec command. Press the button below if you wish to skip the installation process."] =
+	"可以通过输入 /ec 命令访问游戏内配置菜单。如果您想跳过安装过程，请按下面的按钮。"
+L["The profile you tried to import already exists. Choose a new name or accept to overwrite the existing profile."] =
+	"你尝试导入的配置文件已经存在。请选择一个新的名称或者确认覆盖存在的配置文件。"
+L["The spell '%s' has been added to the '%s' unitframe aura filter."] =
+	'法术"%s"已经被添加到单位框架的光环过滤器中.'
 L["Theme Set"] = "主题设置"
 L["Theme Setup"] = "主题安装"
-L["This install process will help you learn some of the features in ElvUI has to offer and also prepare your user interface for usage."] = "此安装程序有助你了解 ElvUI 部份功能，并可协助你预先设置 UI。"
-L["This part of the installation process sets up your chat windows names, positions and colors."] = "此安装步骤将会设置聊天框的名称、位置和颜色。"
-L["This part of the installation process sets up your World of Warcraft default options it is recommended you should do this step for everything to behave properly."] = "此安装步骤将会设置魔兽世界默认选项，建议你执行此步骤，以确保功能均可正常运作。"
-L["This setting caused a conflicting anchor point, where '%s' would be attached to itself. Please check your anchor points. Setting '%s' to be attached to '%s'."] = "这个设置引起一个互相矛盾的锚点, '%s' 被依附于他自身. 请检查你的锚点设置. 设置 '%s' 依附到 '%s'."
-L["This will change the layout of your unitframes and actionbars."] = "这将会改变你单位框架和动作条的构架。"
+L["This install process will help you learn some of the features in ElvUI has to offer and also prepare your user interface for usage."] =
+	"此安装程序有助你了解 ElvUI 部份功能，并可协助你预先设置 UI。"
+L["This part of the installation process sets up your chat windows names, positions and colors."] =
+	"此安装步骤将会设置聊天框的名称、位置和颜色。"
+L["This part of the installation process sets up your World of Warcraft default options it is recommended you should do this step for everything to behave properly."] =
+	"此安装步骤将会设置魔兽世界默认选项，建议你执行此步骤，以确保功能均可正常运作。"
+L["This setting caused a conflicting anchor point, where '%s' would be attached to itself. Please check your anchor points. Setting '%s' to be attached to '%s'."] =
+	"这个设置引起一个互相矛盾的锚点, '%s' 被依附于他自身. 请检查你的锚点设置. 设置 '%s' 依附到 '%s'."
+L["This will change the layout of your unitframes and actionbars."] =
+	"这将会改变你单位框架和动作条的构架。"
 L["Threat Bar"] = "仇恨条"
 L["Time Alert Frame"] = "时间警报框架"
-L["To list all available ElvUI commands, type in chat /ehelp"] = "要列出所有可用的 ElvUI 命令，请在聊天框输入 /ehelp"
-L["To quickly move around certain elements of the UI, type /emove"] = "要快速移动UI的某些元素，请输入 /emove"
-L["To setup chat colors, chat channels and chat font size, right-click the chat tab name."] = "要设置聊天颜色、聊天频道和聊天字体尺寸，请右键单击聊天选项卡名称。"
+L["To list all available ElvUI commands, type in chat /ehelp"] =
+	"要列出所有可用的 ElvUI 命令，请在聊天框输入 /ehelp"
+L["To quickly move around certain elements of the UI, type /emove"] =
+	"要快速移动UI的某些元素，请输入 /emove"
+L["To setup chat colors, chat channels and chat font size, right-click the chat tab name."] =
+	"要设置聊天颜色、聊天频道和聊天字体尺寸，请右键单击聊天选项卡名称。"
 L["Toggle Bags"] = "背包开关"
 L["Toggle Chat Frame"] = "开关聊天框架"
 L["Toggle Configuration"] = "设置开关"
@@ -404,34 +460,47 @@ L["World Protocol:"] = "世界协议："
 L["WoW Token:"] = "时光徽章："
 L["XP:"] = "经验："
 L["yells"] = "大喊"
-L["You are now finished with the installation process. If you are in need of technical support please join our Discord."] = "现在，安装过程已经完成。如果您需要技术支持，请加入我们的Discord。"
-L["You are using CPU Profiling. This causes decreased performance. Do you want to disable it or continue?"] = "你正在追踪CPU使用记录. 这将导致性能低下. 你想禁用它还是继续？"
-L["You can access the copy chat and chat menu functions by left/right clicking on the icon in the top right corner of the chat panel."] = "通过左/右键单击聊天室面板右上角的图标，可以访问复制聊天室和聊天室菜单功能。"
-L["You can access the microbar by using middle mouse button on the minimap. You can also enable the MicroBar in the actionbar settings."] = "您可以在小地图上使用鼠标中键访问微型系统菜单。您还可以在动作条设置中启用微型系统菜单"
-L["You can always change fonts and colors of any element of ElvUI from the in-game configuration."] = "你可以在游戏内的设置中更改 ElvUI 的字体、颜色等设置."
+L["You are now finished with the installation process. If you are in need of technical support please join our Discord."] =
+	"现在，安装过程已经完成。如果您需要技术支持，请加入我们的Discord。"
+L["You are using CPU Profiling. This causes decreased performance. Do you want to disable it or continue?"] =
+	"你正在追踪CPU使用记录. 这将导致性能低下. 你想禁用它还是继续？"
+L["You can access the copy chat and chat menu functions by left/right clicking on the icon in the top right corner of the chat panel."] =
+	"通过左/右键单击聊天室面板右上角的图标，可以访问复制聊天室和聊天室菜单功能。"
+L["You can access the microbar by using middle mouse button on the minimap. You can also enable the MicroBar in the actionbar settings."] =
+	"您可以在小地图上使用鼠标中键访问微型系统菜单。您还可以在动作条设置中启用微型系统菜单"
+L["You can always change fonts and colors of any element of ElvUI from the in-game configuration."] =
+	"你可以在游戏内的设置中更改 ElvUI 的字体、颜色等设置."
 L["You can enter the keybind mode by typing /kb"] = "您可以通过输入 /kb 进入按键绑定模式"
-L["You can now choose what layout you wish to use based on your combat role."] = "你现在可以根据你的战斗角色选择合适的布局。"
-L["You can quickly change your displayed DataTexts by mousing over them while holding ALT."] = "按住ALT键的同时将鼠标悬停在数据文本上，可以快速更改显示的数据文本。"
-L["You can see someones average item level inside the tooltip by holding shift and mousing over them."] = "按住shift键并将鼠标悬停在鼠标提示中，您可以查看他的平均物品等级。"
+L["You can now choose what layout you wish to use based on your combat role."] =
+	"你现在可以根据你的战斗角色选择合适的布局。"
+L["You can quickly change your displayed DataTexts by mousing over them while holding ALT."] =
+	"按住ALT键的同时将鼠标悬停在数据文本上，可以快速更改显示的数据文本。"
+L["You can see someones average item level inside the tooltip by holding shift and mousing over them."] =
+	"按住shift键并将鼠标悬停在鼠标提示中，您可以查看他的平均物品等级。"
 L["You don't have enough money to repair."] = "没有足够的资金来修理."
 L["You don't have permission to mark targets."] = "你没有标记目标的权限"
-L["You have imported settings which may require a UI reload to take effect. Reload now?"] = "你导入的设置可能需要重载界面才能生效。确认重载？"
+L["You have imported settings which may require a UI reload to take effect. Reload now?"] =
+	"你导入的设置可能需要重载界面才能生效。确认重载？"
 L["You must be at a vendor."] = "你必需以商人为目标."
 L["You must purchase a bank slot first!"] = "你必需购买一个银行背包栏位"
 L["Your items have been repaired for: "] = "装备已修复："
 L["Your items have been repaired using guild bank funds for: "] = "物品已使用公会银行资金修复："
 L["Your profile was successfully recieved by the player."] = "你的配置文件已被其他玩家成功接收."
 L["Zone Ability"] = "区域技能"
-L["|cFFE30000Lua error recieved. You can view the error message when you exit combat."] = "|cFFE30000LUA错误已接收, 你可以在脱离战斗后检查.|r"
+L["|cFFE30000Lua error recieved. You can view the error message when you exit combat."] =
+	"|cFFE30000LUA错误已接收, 你可以在脱离战斗后检查.|r"
 L["|cffFFFFFFControl + Left Click:|r Change Loadout"] = "|cffFFFFFFCtrl + 左键点击：|r 更改配置"
 L["|cffFFFFFFLeft Click:|r Change Talent Specialization"] = "|cffFFFFFF左键点击：|r 更改当前专精"
 L["|cFFffffffLeft Click:|r Select Volume Stream"] = "|cFFffffff左键点击：|r 选择音频流"
 L["|cFFffffffMiddle Click:|r Toggle Mute Master Stream"] = "|cFFffffff中键点击：|r 切换主音量静音"
 L["|cffFFFFFFRight Click:|r Change Loot Specialization"] = "|cffFFFFFF右键点击：|r 更改专精拾取"
 L["|cFFffffffRight Click:|r Toggle Volume Stream"] = "|cFFffffff右键点击：|r 切换音频流"
-L["|cFFffffffShift + Left Click:|r Open System Audio Panel"] = "|cFFffffffShift + 左键点击：|r 打开系统音频面板"
-L["|cffFFFFFFShift + Left Click:|r Show Talent Specialization UI"] = "|cffFFFFFFShift + 左键点击：|r 显示专精天赋框架"
-L["|cFFffffffShift + Right Click:|r Select Output Audio Device"] = "|cFFffffffShift + 右键点击：|r 选择输出音频设备"
+L["|cFFffffffShift + Left Click:|r Open System Audio Panel"] =
+	"|cFFffffffShift + 左键点击：|r 打开系统音频面板"
+L["|cffFFFFFFShift + Left Click:|r Show Talent Specialization UI"] =
+	"|cffFFFFFFShift + 左键点击：|r 显示专精天赋框架"
+L["|cFFffffffShift + Right Click:|r Select Output Audio Device"] =
+	"|cFFffffffShift + 右键点击：|r 选择输出音频设备"
 
 ----------------------------------
 L["DESC_MOVERCONFIG"] = [=[解除框架移动锁定。现在可以移动它们，移好后请点击「锁定」。
@@ -455,4 +524,4 @@ L["EHELP_COMMANDS"] = ([=[这里列出了重要的 *ElvUI|r 命令：
   注意：*/edebug|r ^off|r 将重新启用从使用 */edebug|r ^on|r 之前的会话中禁用的插件。
  */guildlist|r ^minPlayers|r  -  Dumps the sorted list of guilds from the finder.
  */guildapply|r ^"message"|r  -  Applies to the top 5 new guilds with an optional message.
-]=]):gsub('*', E.InfoColor):gsub('%^', E.InfoColor2)
+]=]):gsub("*", E.InfoColor):gsub("%^", E.InfoColor2)

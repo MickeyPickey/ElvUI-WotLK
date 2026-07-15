@@ -18,7 +18,9 @@ local RAID_CLASS_COLORS = RAID_CLASS_COLORS
 local WHOS_TO_DISPLAY = WHOS_TO_DISPLAY
 
 S:AddCallback("Skin_Friends", function()
-	if not E.private.skins.blizzard.enable or not E.private.skins.blizzard.friends then return end
+	if not E.private.skins.blizzard.enable or not E.private.skins.blizzard.friends then
+		return
+	end
 
 	-- Friends Frame
 	FriendsFrame:StripTextures(true)
@@ -36,7 +38,7 @@ S:AddCallback("Skin_Friends", function()
 	S:HandleEditBox(FriendsFrameBroadcastInput)
 
 	for i = 1, 2 do
-		local tab = _G["FriendsTabHeaderTab"..i]
+		local tab = _G["FriendsTabHeaderTab" .. i]
 		tab:StripTextures()
 		tab:CreateBackdrop("Default", true)
 		tab.backdrop:Point("TOPLEFT", 3, -7)
@@ -47,7 +49,7 @@ S:AddCallback("Skin_Friends", function()
 	end
 
 	for i = 1, 5 do
-		S:HandleTab(_G["FriendsFrameTab"..i])
+		S:HandleTab(_G["FriendsFrameTab" .. i])
 	end
 
 	FriendsFrameStatusDropDown:Point("TOPLEFT", FriendsListFrame, "TOPLEFT", 0, -37)
@@ -64,9 +66,9 @@ S:AddCallback("Skin_Friends", function()
 
 	-- Friends List Frame
 	for i = 1, FRIENDS_FRIENDS_TO_DISPLAY do
-		_G["FriendsFrameFriendsScrollFrameButton"..i.."SummonButton"]:StyleButton()
-		_G["FriendsFrameFriendsScrollFrameButton"..i.."SummonButtonIcon"]:SetTexCoords()
-		_G["FriendsFrameFriendsScrollFrameButton"..i.."SummonButtonNormalTexture"]:SetAlpha(0)
+		_G["FriendsFrameFriendsScrollFrameButton" .. i .. "SummonButton"]:StyleButton()
+		_G["FriendsFrameFriendsScrollFrameButton" .. i .. "SummonButtonIcon"]:SetTexCoords()
+		_G["FriendsFrameFriendsScrollFrameButton" .. i .. "SummonButtonNormalTexture"]:SetAlpha(0)
 	end
 
 	S:HandleScrollBar(FriendsFrameFriendsScrollFrameScrollBar)
@@ -93,7 +95,7 @@ S:AddCallback("Skin_Friends", function()
 	S:HandleButton(FriendsFrameUnsquelchButton, true)
 
 	for i = 1, IGNORES_TO_DISPLAY do
-		S:HandleButtonHighlight(_G["FriendsFrameIgnoreButton"..i])
+		S:HandleButtonHighlight(_G["FriendsFrameIgnoreButton" .. i])
 	end
 
 	FriendsFrameIgnoreButton1:Point("TOPLEFT", FriendsFrame, "TOPLEFT", 22, -95)
@@ -115,16 +117,16 @@ S:AddCallback("Skin_Friends", function()
 	S:SetBackdropHitRect(WhoFrameDropDown)
 
 	for i = 1, 4 do
-		local header = _G["WhoFrameColumnHeader"..i]
+		local header = _G["WhoFrameColumnHeader" .. i]
 		header:StripTextures()
 		header:StyleButton()
 	end
 
 	for i = 1, WHOS_TO_DISPLAY do
-		local button = _G["WhoFrameButton"..i]
-		local level = _G["WhoFrameButton"..i.."Level"]
-		local name = _G["WhoFrameButton"..i.."Name"]
-		local class = _G["WhoFrameButton"..i.."Class"]
+		local button = _G["WhoFrameButton" .. i]
+		local level = _G["WhoFrameButton" .. i .. "Level"]
+		local name = _G["WhoFrameButton" .. i .. "Name"]
+		local class = _G["WhoFrameButton" .. i .. "Class"]
 
 		button.icon = button:CreateTexture("$parentIcon", "ARTWORK")
 		button.icon:Size(15)
@@ -189,7 +191,9 @@ S:AddCallback("Skin_Friends", function()
 
 	hooksecurefunc("WhoList_Update", function()
 		local numWhos = GetNumWhoResults()
-		if numWhos == 0 then return end
+		if numWhos == 0 then
+			return
+		end
 
 		numWhos = numWhos > WHOS_TO_DISPLAY and WHOS_TO_DISPLAY or numWhos
 
@@ -197,11 +201,12 @@ S:AddCallback("Skin_Friends", function()
 		local button, buttonText, classTextColor, levelTextColor
 
 		for i = 1, numWhos do
-			button = _G["WhoFrameButton"..i]
+			button = _G["WhoFrameButton" .. i]
 			_, _, level, _, _, _, classFileName = GetWhoInfo(button.whoIndex)
 
 			if classFileName then
-				classTextColor = CUSTOM_CLASS_COLORS and CUSTOM_CLASS_COLORS[classFileName] or RAID_CLASS_COLORS[classFileName]
+				classTextColor = CUSTOM_CLASS_COLORS and CUSTOM_CLASS_COLORS[classFileName]
+					or RAID_CLASS_COLORS[classFileName]
 				button.icon:Show()
 				button.icon:SetTexCoord(E:GetClassCoords(classFileName))
 			else
@@ -211,11 +216,11 @@ S:AddCallback("Skin_Friends", function()
 
 			levelTextColor = GetQuestDifficultyColor(level)
 
-			buttonText = _G["WhoFrameButton"..i.."Name"]
+			buttonText = _G["WhoFrameButton" .. i .. "Name"]
 			buttonText:SetTextColor(classTextColor.r, classTextColor.g, classTextColor.b)
-			buttonText = _G["WhoFrameButton"..i.."Level"]
+			buttonText = _G["WhoFrameButton" .. i .. "Level"]
 			buttonText:SetTextColor(levelTextColor.r, levelTextColor.g, levelTextColor.b)
-			buttonText = _G["WhoFrameButton"..i.."Class"]
+			buttonText = _G["WhoFrameButton" .. i .. "Class"]
 			buttonText:SetTextColor(1.0, 1.0, 1.0)
 		end
 	end)
@@ -236,12 +241,12 @@ S:AddCallback("Skin_Friends", function()
 	S:HandleButton(GuildFrameControlButton)
 
 	for i = 1, GUILDMEMBERS_TO_DISPLAY do
-		local button = _G["GuildFrameButton"..i]
-		local level = _G["GuildFrameButton"..i.."Level"]
-		local name = _G["GuildFrameButton"..i.."Name"]
-		local class = _G["GuildFrameButton"..i.."Class"]
-		local statusButton = _G["GuildFrameGuildStatusButton"..i]
-		local statusName = _G["GuildFrameGuildStatusButton"..i.."Name"]
+		local button = _G["GuildFrameButton" .. i]
+		local level = _G["GuildFrameButton" .. i .. "Level"]
+		local name = _G["GuildFrameButton" .. i .. "Name"]
+		local class = _G["GuildFrameButton" .. i .. "Class"]
+		local statusButton = _G["GuildFrameGuildStatusButton" .. i]
+		local statusName = _G["GuildFrameGuildStatusButton" .. i .. "Name"]
 
 		button.icon = button:CreateTexture("$parentIcon", "ARTWORK")
 		button.icon:Size(15)
@@ -268,11 +273,11 @@ S:AddCallback("Skin_Friends", function()
 	end
 
 	for i = 1, 4 do
-		local header = _G["GuildFrameColumnHeader"..i]
+		local header = _G["GuildFrameColumnHeader" .. i]
 		header:StripTextures()
 		header:StyleButton()
 
-		header = _G["GuildFrameGuildStatusColumnHeader"..i]
+		header = _G["GuildFrameGuildStatusColumnHeader" .. i]
 		header:StripTextures()
 		header:StyleButton()
 	end
@@ -325,15 +330,16 @@ S:AddCallback("Skin_Friends", function()
 			local level, buttonText, levelTextColor
 
 			for i = 1, GUILDMEMBERS_TO_DISPLAY do
-				button = _G["GuildFrameButton"..i]
+				button = _G["GuildFrameButton" .. i]
 				_, _, _, level, _, _, _, _, online, _, classFileName = GetGuildRosterInfo(button.guildIndex)
 				if classFileName then
 					if online then
-						classTextColor = CUSTOM_CLASS_COLORS and CUSTOM_CLASS_COLORS[classFileName] or RAID_CLASS_COLORS[classFileName]
+						classTextColor = CUSTOM_CLASS_COLORS and CUSTOM_CLASS_COLORS[classFileName]
+							or RAID_CLASS_COLORS[classFileName]
 						levelTextColor = GetQuestDifficultyColor(level)
-						buttonText = _G["GuildFrameButton"..i.."Name"]
+						buttonText = _G["GuildFrameButton" .. i .. "Name"]
 						buttonText:SetTextColor(classTextColor.r, classTextColor.g, classTextColor.b)
-						buttonText = _G["GuildFrameButton"..i.."Level"]
+						buttonText = _G["GuildFrameButton" .. i .. "Level"]
 						buttonText:SetTextColor(levelTextColor.r, levelTextColor.g, levelTextColor.b)
 					end
 					button.icon:SetTexCoord(E:GetClassCoords(classFileName))
@@ -341,32 +347,40 @@ S:AddCallback("Skin_Friends", function()
 			end
 		else
 			for i = 1, GUILDMEMBERS_TO_DISPLAY do
-				button = _G["GuildFrameGuildStatusButton"..i]
+				button = _G["GuildFrameGuildStatusButton" .. i]
 				_, _, _, _, _, _, _, _, online, _, classFileName = GetGuildRosterInfo(button.guildIndex)
 				if classFileName then
 					if online then
-						classTextColor = CUSTOM_CLASS_COLORS and CUSTOM_CLASS_COLORS[classFileName] or RAID_CLASS_COLORS[classFileName]
-						_G["GuildFrameGuildStatusButton"..i.."Name"]:SetTextColor(classTextColor.r, classTextColor.g, classTextColor.b)
-						_G["GuildFrameGuildStatusButton"..i.."Online"]:SetTextColor(1.0, 1.0, 1.0)
+						classTextColor = CUSTOM_CLASS_COLORS and CUSTOM_CLASS_COLORS[classFileName]
+							or RAID_CLASS_COLORS[classFileName]
+						_G["GuildFrameGuildStatusButton" .. i .. "Name"]:SetTextColor(
+							classTextColor.r,
+							classTextColor.g,
+							classTextColor.b
+						)
+						_G["GuildFrameGuildStatusButton" .. i .. "Online"]:SetTextColor(1.0, 1.0, 1.0)
 					end
 				end
 			end
 		end
 	end)
 
-	GuildControlPopupFrame:SetScript("OnShow", function(self) -- fix error in case frame opened before GUILD_ROSTER_UPDATE event; fix taint; adjust UIPanel spacing
-		if not self.rank then
-			self.rank = GuildControlGetRankName(1)
-			UIDropDownMenu_SetSelectedID(GuildControlPopupFrameDropDown, 1)
-			UIDropDownMenu_SetText(GuildControlPopupFrameDropDown, self.rank)
+	GuildControlPopupFrame:SetScript(
+		"OnShow",
+		function(self) -- fix error in case frame opened before GUILD_ROSTER_UPDATE event; fix taint; adjust UIPanel spacing
+			if not self.rank then
+				self.rank = GuildControlGetRankName(1)
+				UIDropDownMenu_SetSelectedID(GuildControlPopupFrameDropDown, 1)
+				UIDropDownMenu_SetText(GuildControlPopupFrameDropDown, self.rank)
+			end
+
+			FriendsFrame.guildControlShow = 1
+			GuildControlPopupAcceptButton:Disable()
+			GuildControlPopupframe_Update()
+
+			S:SetUIPanelWindowInfo(FriendsFrame, "width", nil, floor(self.backdrop:GetWidth() + 0.5) - 1)
 		end
-
-		FriendsFrame.guildControlShow = 1
-		GuildControlPopupAcceptButton:Disable()
-		GuildControlPopupframe_Update()
-
-		S:SetUIPanelWindowInfo(FriendsFrame, "width", nil, floor(self.backdrop:GetWidth() + 0.5) - 1)
-	end)
+	)
 
 	GuildControlPopupFrame:SetScript("OnHide", function(self)
 		FriendsFrame.guildControlShow = 0
@@ -498,7 +512,7 @@ S:AddCallback("Skin_Friends", function()
 	S:HandleCheckBox(GuildControlTabPermissionsUpdateText)
 
 	for i = 1, 17 do
-		local checkbox = _G["GuildControlPopupFrameCheckbox"..i]
+		local checkbox = _G["GuildControlPopupFrameCheckbox" .. i]
 		if checkbox then
 			S:HandleCheckBox(checkbox)
 		end
@@ -509,7 +523,7 @@ S:AddCallback("Skin_Friends", function()
 	GuildControlWithdrawGoldEditBox.backdrop:Point("BOTTOMRIGHT", 0, 5)
 
 	for i = 1, MAX_GUILDBANK_TABS do
-		local tab = _G["GuildBankTabPermissionsTab"..i]
+		local tab = _G["GuildBankTabPermissionsTab" .. i]
 
 		tab:StripTextures()
 		tab:CreateBackdrop("Default")
@@ -547,8 +561,8 @@ S:AddCallback("Skin_Friends", function()
 	S:HandleCheckBox(ChannelFrameAutoJoinBattleground)
 
 	for i = 1, MAX_DISPLAY_CHANNEL_BUTTONS do
-		local button = _G["ChannelButton"..i]
-		local text = _G["ChannelButton"..i.."Text"]
+		local button = _G["ChannelButton" .. i]
+		local text = _G["ChannelButton" .. i .. "Text"]
 
 		button:StripTextures()
 		S:HandleButtonHighlight(button)
@@ -558,11 +572,11 @@ S:AddCallback("Skin_Friends", function()
 			text:SetFontObject("GameTooltipTextSmall")
 		end
 
-		_G["ChannelButton"..i.."Collapsed"]:SetTextColor(1, 1, 1)
+		_G["ChannelButton" .. i .. "Collapsed"]:SetTextColor(1, 1, 1)
 	end
 
 	for i = 1, 22 do
-		S:HandleButtonHighlight(_G["ChannelMemberButton"..i])
+		S:HandleButtonHighlight(_G["ChannelMemberButton" .. i])
 	end
 
 	ChannelListScrollFrame:StripTextures()
@@ -605,7 +619,7 @@ S:AddCallback("Skin_Friends", function()
 		end
 
 		for i = 1, MAX_CHANNEL_BUTTONS do
-			_G["ChannelButton"..i]:Width(buttonWidth)
+			_G["ChannelButton" .. i]:Width(buttonWidth)
 		end
 	end)
 
@@ -688,7 +702,7 @@ S:AddCallback("Skin_Friends", function()
 			self:Point("TOPLEFT", RaidFrame, "TOPRIGHT", -33, -12)
 		end
 
-		PlaySound('UChatScrollButton')
+		PlaySound("UChatScrollButton")
 	end)
 
 	RaidInfoScrollFrameScrollBar:SetScript("OnShow", function(self)

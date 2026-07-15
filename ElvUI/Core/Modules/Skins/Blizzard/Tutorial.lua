@@ -5,7 +5,9 @@ local S = E:GetModule("Skins")
 --WoW API / Variables
 
 S:AddCallback("Skin_Tutorial", function()
-	if not E.private.skins.blizzard.enable or not E.private.skins.blizzard.tutorial then return end
+	if not E.private.skins.blizzard.enable or not E.private.skins.blizzard.tutorial then
+		return
+	end
 
 	TutorialFrameAlertButton:StripTextures()
 	TutorialFrameAlertButton:CreateBackdrop("Default", true)
@@ -18,8 +20,8 @@ S:AddCallback("Skin_Tutorial", function()
 	TutorialFrameAlertButtonIcon:SetTexCoords()
 
 	TutorialFrameBackground:Hide()
---	TutorialFrameTop:Hide()
---	TutorialFrameBottom:Hide()
+	--	TutorialFrameTop:Hide()
+	--	TutorialFrameBottom:Hide()
 	TutorialFrame:DisableDrawLayer("BORDER")
 
 	TutorialFrame:CreateBackdrop("Transparent")

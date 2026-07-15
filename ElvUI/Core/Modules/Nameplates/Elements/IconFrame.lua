@@ -6,7 +6,9 @@ local NP = E:GetModule("NamePlates")
 
 function NP:Update_IconFrame(frame)
 	local db = self.db.units[frame.UnitType].iconFrame
-	if not db then return end
+	if not db then
+		return
+	end
 
 	if db.enable or (frame.IconOnlyChanged or frame.IconChanged) then
 		local totem, unit, icon = self.Totems[frame.UnitName], self.UniqueUnits[frame.UnitName]
@@ -31,7 +33,9 @@ end
 
 function NP:Configure_IconFrame(frame, triggered)
 	local db = self.db.units[frame.UnitType].iconFrame
-	if not db then return end
+	if not db then
+		return
+	end
 
 	if db.enable or (frame.IconOnlyChanged or frame.IconChanged) then
 		frame.IconFrame:SetSize(db.size, db.size)
@@ -40,7 +44,13 @@ function NP:Configure_IconFrame(frame, triggered)
 		if triggered then
 			frame.IconFrame:SetPoint("TOP", frame)
 		else
-			frame.IconFrame:SetPoint(E.InversePoints[db.position], db.parent == "Nameplate" and frame or frame[db.parent], db.position, db.xOffset, db.yOffset)
+			frame.IconFrame:SetPoint(
+				E.InversePoints[db.position],
+				db.parent == "Nameplate" and frame or frame[db.parent],
+				db.position,
+				db.xOffset,
+				db.yOffset
+			)
 		end
 	else
 		frame.IconFrame:Hide()

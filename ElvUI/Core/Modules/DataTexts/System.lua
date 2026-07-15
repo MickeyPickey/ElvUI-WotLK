@@ -1,5 +1,5 @@
 local E, L, V, P, G = unpack(ElvUI)
-local DT = E:GetModule('DataTexts')
+local DT = E:GetModule("DataTexts")
 
 local collectgarbage = collectgarbage
 local tremove, tinsert, sort, wipe, type = tremove, tinsert, sort, wipe, type
@@ -22,27 +22,27 @@ local UpdateAddOnCPUUsage = UpdateAddOnCPUUsage
 local UpdateAddOnMemoryUsage = UpdateAddOnMemoryUsage
 
 local statusColors = {
-	'|cff0CD809',
-	'|cffE8DA0F',
-	'|cffFF9000',
-	'|cffD80909'
+	"|cff0CD809",
+	"|cffE8DA0F",
+	"|cffFF9000",
+	"|cffD80909",
 }
 
 local enteredFrame, db = false
-local homeLatencyString = '%d ms'
-local kiloByteString = '%d kb'
-local megaByteString = '%.2f mb'
-local profilingString = '%s%s|r |cffffffff/|r %s%s|r'
-local cpuProfiling = GetCVar('scriptProfile') == '1'
+local homeLatencyString = "%d ms"
+local kiloByteString = "%d kb"
+local megaByteString = "%.2f mb"
+local profilingString = "%s%s|r |cffffffff/|r %s%s|r"
+local cpuProfiling = GetCVar("scriptProfile") == "1"
 
 local CombineAddOns = {
-	['DBM-Core'] = '^<DBM>',
-	['DataStore'] = '^DataStore',
-	['Altoholic'] = '^Altoholic',
-	['AtlasLoot'] = '^AtlasLoot',
-	['Details'] = '^Details!',
-	['RaiderIO'] = '^RaiderIO',
-	['BigWigs'] = '^BigWigs',
+	["DBM-Core"] = "^<DBM>",
+	["DataStore"] = "^DataStore",
+	["Altoholic"] = "^Altoholic",
+	["AtlasLoot"] = "^AtlasLoot",
+	["Details"] = "^Details!",
+	["RaiderIO"] = "^RaiderIO",
+	["BigWigs"] = "^BigWigs",
 }
 
 local function formatMem(memory)
@@ -66,14 +66,16 @@ DT.SystemInfo = infoTable
 
 local function BuildAddonList()
 	local addOnCount = GetNumAddOns()
-	if addOnCount == #infoTable then return end
+	if addOnCount == #infoTable then
+		return
+	end
 
 	wipe(infoTable)
 
 	for i = 1, addOnCount do
 		local name, title, _, _, loadable, reason = GetAddOnInfo(i)
 		if loadable then
-			tinsert(infoTable, {name = name, index = i, title = title})
+			tinsert(infoTable, { name = name, index = i, title = title })
 		end
 	end
 end
@@ -81,25 +83,39 @@ end
 local function OnClick()
 	local shiftDown, ctrlDown = IsShiftKeyDown(), IsControlKeyDown()
 	if shiftDown and ctrlDown then
-		E:SetCVar('scriptProfile', GetCVar('scriptProfile'))
+		E:SetCVar("scriptProfile", GetCVar("scriptProfile"))
 		ReloadUI()
 	elseif shiftDown and not ctrlDown then
-		collectgarbage('collect')
+		collectgarbage("collect")
 		ResetCPUUsage()
 	end
 end
 
 local function displayData(data, totalMEM, totalCPU)
-	if not data then return end
+	if not data then
+		return
+	end
 
 	local name, mem, cpu = data.title, data.mem, data.cpu
 	if cpu then
 		local memRed, cpuRed = mem / totalMEM, cpu / totalCPU
-		local memGreen, cpuGreen = (1 - memRed) + .5, (1 - cpuRed) + .5
-		DT.tooltip:AddDoubleLine(name, format(profilingString, E:RGBToHex(memRed, memGreen, 0), formatMem(mem), E:RGBToHex(cpuRed, cpuGreen, 0), format(homeLatencyString, cpu)), 1, 1, 1)
+		local memGreen, cpuGreen = (1 - memRed) + 0.5, (1 - cpuRed) + 0.5
+		DT.tooltip:AddDoubleLine(
+			name,
+			format(
+				profilingString,
+				E:RGBToHex(memRed, memGreen, 0),
+				formatMem(mem),
+				E:RGBToHex(cpuRed, cpuGreen, 0),
+				format(homeLatencyString, cpu)
+			),
+			1,
+			1,
+			1
+		)
 	else
 		local red = mem / totalMEM
-		local green = (1 - red) + .5
+		local green = (1 - red) + 0.5
 		DT.tooltip:AddDoubleLine(name, formatMem(mem), 1, 1, 1, red or 1, green or 1, 0)
 	end
 end
@@ -110,7 +126,9 @@ end
 
 local infoDisplay = {}
 local function OnEnter(_, slow)
-	if not db.showTooltip then return end
+	if not db.showTooltip then
+		return
+	end
 	local isShiftDown = IsShiftKeyDown()
 
 	DT.tooltip:ClearLines()
@@ -118,14 +136,23 @@ local function OnEnter(_, slow)
 
 	local fps = E.FPS
 	if isShiftDown and fps.rate then
-		DT.tooltip:AddDoubleLine(L["FPS Average:"], format('%d', fps.average), .69, .31, .31, .84, .75, .65)
-		DT.tooltip:AddDoubleLine(L["FPS Lowest:"], format('%d', fps.low), .69, .31, .31, .84, .75, .65)
-		DT.tooltip:AddDoubleLine(L["FPS Highest:"], format('%d', fps.high), .69, .31, .31, .84, .75, .65)
-		DT.tooltip:AddLine(' ')
+		DT.tooltip:AddDoubleLine(L["FPS Average:"], format("%d", fps.average), 0.69, 0.31, 0.31, 0.84, 0.75, 0.65)
+		DT.tooltip:AddDoubleLine(L["FPS Lowest:"], format("%d", fps.low), 0.69, 0.31, 0.31, 0.84, 0.75, 0.65)
+		DT.tooltip:AddDoubleLine(L["FPS Highest:"], format("%d", fps.high), 0.69, 0.31, 0.31, 0.84, 0.75, 0.65)
+		DT.tooltip:AddLine(" ")
 	end
 
 	local _, _, worldPing = GetNetStats()
-	DT.tooltip:AddDoubleLine(L["World Latency:"], format(homeLatencyString, worldPing), .69, .31, .31, .84, .75, .65)
+	DT.tooltip:AddDoubleLine(
+		L["World Latency:"],
+		format(homeLatencyString, worldPing),
+		0.69,
+		0.31,
+		0.31,
+		0.84,
+		0.75,
+		0.65
+	)
 
 	if slow == 1 or not slow then
 		UpdateAddOnMemoryUsage()
@@ -158,27 +185,36 @@ local function OnEnter(_, slow)
 			count = count + 1
 			infoDisplay[count] = data
 
-			if data.name == 'ElvUI' or data.name == 'ElvUI_Options' or data.name == 'ElvUI_Libraries' then
+			if data.name == "ElvUI" or data.name == "ElvUI_Options" or data.name == "ElvUI_Libraries" then
 				infoTable[data.name] = data
 			end
 		end
 	end
 
 	if isShiftDown then
-		DT.tooltip:AddDoubleLine(L["AddOn Memory:"], formatMem(totalMEM), .69, .31, .31, .84, .75, .65)
+		DT.tooltip:AddDoubleLine(L["AddOn Memory:"], formatMem(totalMEM), 0.69, 0.31, 0.31, 0.84, 0.75, 0.65)
 
 		if cpuProfiling then
-			DT.tooltip:AddDoubleLine(L["Total CPU:"], format(homeLatencyString, totalCPU), .69, .31, .31, .84, .75, .65)
+			DT.tooltip:AddDoubleLine(
+				L["Total CPU:"],
+				format(homeLatencyString, totalCPU),
+				0.69,
+				0.31,
+				0.31,
+				0.84,
+				0.75,
+				0.65
+			)
 		end
 	end
 
-	DT.tooltip:AddLine(' ')
+	DT.tooltip:AddLine(" ")
 
 	if not db.ShowOthers then
 		displayData(infoTable.ElvUI, totalMEM, totalCPU)
 		displayData(infoTable.ElvUI_Options, totalMEM, totalCPU)
 		displayData(infoTable.ElvUI_Libraries, totalMEM, totalCPU)
-		DT.tooltip:AddLine(' ')
+		DT.tooltip:AddLine(" ")
 	else
 		for addon, searchString in pairs(CombineAddOns) do
 			local addonIndex, memoryUsage, cpuUsage = 0, 0, 0
@@ -192,7 +228,7 @@ local function OnEnter(_, slow)
 			end
 
 			for k, data in pairs(infoDisplay) do
-				if type(data) == 'table' then
+				if type(data) == "table" then
 					local name, mem, cpu = data.title, data.mem, data.cpu
 					local stripName = E:StripString(data.title)
 					if name and (strmatch(stripName, searchString) or data.name == addon) then
@@ -213,8 +249,12 @@ local function OnEnter(_, slow)
 				local mem = memoryUsage > 0 and memoryUsage
 				local cpu = cpuUsage > 0 and cpuUsage
 
-				if mem then data.mem = mem end
-				if cpu then data.cpu = cpu end
+				if mem then
+					data.mem = mem
+				end
+				if cpu then
+					data.cpu = cpu
+				end
 				if mem or cpu then
 					data.sort = (showByCPU and cpu) or mem
 				end
@@ -223,7 +263,7 @@ local function OnEnter(_, slow)
 
 		for i = count, 1, -1 do
 			local data = infoDisplay[i]
-			if type(data) == 'boolean' then
+			if type(data) == "boolean" then
 				tremove(infoDisplay, i)
 			end
 		end
@@ -234,7 +274,7 @@ local function OnEnter(_, slow)
 			displayData(infoDisplay[i], totalMEM, totalCPU)
 		end
 
-		DT.tooltip:AddLine(' ')
+		DT.tooltip:AddLine(" ")
 		if showByCPU then
 			DT.tooltip:AddLine(L["(Hold Shift) Memory Usage"])
 		end
@@ -250,18 +290,20 @@ local function OnLeave()
 end
 
 local function OnEvent(self, event)
-	if event == 'MODIFIER_STATE_CHANGED' then
+	if event == "MODIFIER_STATE_CHANGED" then
 		OnEnter(self)
 	else
 		local addOnCount = GetNumAddOns()
-		if addOnCount == #infoTable then return end
+		if addOnCount == #infoTable then
+			return
+		end
 
 		wipe(infoTable)
 
 		for i = 1, addOnCount do
 			local name, title, _, _, loadable, reason = GetAddOnInfo(i)
-			if loadable or reason == 'DEMAND_LOADED' then
-				tinsert(infoTable, {name = name, index = i, title = title})
+			if loadable or reason == "DEMAND_LOADED" then
+				tinsert(infoTable, { name = name, index = i, title = title })
 			end
 		end
 	end
@@ -277,9 +319,17 @@ local function OnUpdate(self, elapsed)
 		local _, _, worldPing = GetNetStats()
 		local fps = E.FPS.rate or 0
 
-		self.text:SetFormattedText(db.NoLabel and '%s%d|r | %s%d|r' or 'FPS: %s%d|r MS: %s%d|r', statusColor(fps), fps, statusColor(nil, worldPing), worldPing)
+		self.text:SetFormattedText(
+			db.NoLabel and "%s%d|r | %s%d|r" or "FPS: %s%d|r MS: %s%d|r",
+			statusColor(fps),
+			fps,
+			statusColor(nil, worldPing),
+			worldPing
+		)
 
-		if not enteredFrame then return end
+		if not enteredFrame then
+			return
+		end
 
 		if not enteredFrame then
 			return
@@ -303,4 +353,16 @@ local function ApplySettings(self)
 	end
 end
 
-DT:RegisterDatatext('System', nil, 'MODIFIER_STATE_CHANGED', OnEvent, OnUpdate, OnClick, OnEnter, OnLeave, L["System"], nil, ApplySettings)
+DT:RegisterDatatext(
+	"System",
+	nil,
+	"MODIFIER_STATE_CHANGED",
+	OnEvent,
+	OnUpdate,
+	OnClick,
+	OnEnter,
+	OnLeave,
+	L["System"],
+	nil,
+	ApplySettings
+)

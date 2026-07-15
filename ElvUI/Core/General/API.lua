@@ -3,14 +3,15 @@
 ------------------------------------------------------------------------
 
 local E, L, V, P, G = unpack(ElvUI)
-local TT = E:GetModule('Tooltip')
+local TT = E:GetModule("Tooltip")
 local ElvUF = E.oUF
 local LC = E.Libs.Compat
 
 local _G = _G
 local type, pairs, unpack = type, pairs, unpack
 local wipe, max, next, tinsert, date, time = wipe, max, next, tinsert, date, time
-local format, gsub, strlen, strmatch, tonumber, tostring = string.format, string.gsub, strlen, strmatch, tonumber, tostring
+local format, gsub, strlen, strmatch, tonumber, tostring =
+	string.format, string.gsub, strlen, strmatch, tonumber, tostring
 local hooksecurefunc = hooksecurefunc
 
 local CopyTable = CopyTable
@@ -78,93 +79,93 @@ E.GroupUnitsByRole = {
 	TANK = {},
 	HEALER = {},
 	DAMAGER = {},
-	NONE = {}
+	NONE = {},
 }
 
 E.SpecInfoBySpecClass = {} -- ['Protection Warrior'] = specInfo (table)
 E.SpecInfoBySpecID = {} -- [250] = specInfo (table)
 
 E.SpecByClass = {
-	DEATHKNIGHT	= { 250, 251, 252 },
-	DRUID		= { 102, 103, 104, 105 },
-	HUNTER		= { 253, 254, 255 },
-	MAGE		= { 62, 63, 64 },
-	PALADIN		= { 65, 66, 70 },
-	PRIEST		= { 256, 257, 258 },
-	ROGUE		= { 259, 260, 261 },
-	SHAMAN		= { 262, 263, 264 },
-	WARLOCK		= { 265, 266, 267 },
-	WARRIOR		= { 71, 72, 73 },
+	DEATHKNIGHT = { 250, 251, 252 },
+	DRUID = { 102, 103, 104, 105 },
+	HUNTER = { 253, 254, 255 },
+	MAGE = { 62, 63, 64 },
+	PALADIN = { 65, 66, 70 },
+	PRIEST = { 256, 257, 258 },
+	ROGUE = { 259, 260, 261 },
+	SHAMAN = { 262, 263, 264 },
+	WARLOCK = { 265, 266, 267 },
+	WARRIOR = { 71, 72, 73 },
 }
 
 E.ClassName = { -- english locale
-	DEATHKNIGHT	= 'Death Knight',
-	DRUID		= 'Druid',
-	HUNTER		= 'Hunter',
-	MAGE		= 'Mage',
-	PALADIN		= 'Paladin',
-	PRIEST		= 'Priest',
-	ROGUE		= 'Rogue',
-	SHAMAN		= 'Shaman',
-	WARLOCK		= 'Warlock',
-	WARRIOR		= 'Warrior',
+	DEATHKNIGHT = "Death Knight",
+	DRUID = "Druid",
+	HUNTER = "Hunter",
+	MAGE = "Mage",
+	PALADIN = "Paladin",
+	PRIEST = "Priest",
+	ROGUE = "Rogue",
+	SHAMAN = "Shaman",
+	WARLOCK = "Warlock",
+	WARRIOR = "Warrior",
 }
 
 E.SpecName = { -- english locale
 	-- Death Knight
-	[250]	= 'Blood',
-	[251]	= 'Frost',
-	[252]	= 'Unholy',
+	[250] = "Blood",
+	[251] = "Frost",
+	[252] = "Unholy",
 	-- Druids
-	[102]	= 'Balance',
-	[103]	= 'Feral',
-	[104]	= 'Guardian',
-	[105]	= 'Restoration',
+	[102] = "Balance",
+	[103] = "Feral",
+	[104] = "Guardian",
+	[105] = "Restoration",
 	-- Hunter
-	[253]	= 'Beast Mastery',
-	[254]	= 'Marksmanship',
-	[255]	= 'Survival',
+	[253] = "Beast Mastery",
+	[254] = "Marksmanship",
+	[255] = "Survival",
 	-- Mage
-	[62]	= 'Arcane',
-	[63]	= 'Fire',
-	[64]	= 'Frost',
+	[62] = "Arcane",
+	[63] = "Fire",
+	[64] = "Frost",
 	-- Paladin
-	[65]	= 'Holy',
-	[66]	= 'Protection',
-	[70]	= 'Retribution',
+	[65] = "Holy",
+	[66] = "Protection",
+	[70] = "Retribution",
 	-- Priest
-	[256]	= 'Discipline',
-	[257]	= 'Holy',
-	[258]	= 'Shadow',
+	[256] = "Discipline",
+	[257] = "Holy",
+	[258] = "Shadow",
 	-- Rogue
-	[259]	= 'Assasination',
-	[260]	= 'Combat',
-	[261]	= 'Sublety',
+	[259] = "Assasination",
+	[260] = "Combat",
+	[261] = "Sublety",
 	-- Shaman
-	[262]	= 'Elemental',
-	[263]	= 'Enhancement',
-	[264]	= 'Restoration',
+	[262] = "Elemental",
+	[263] = "Enhancement",
+	[264] = "Restoration",
 	-- Walock
-	[265]	= 'Affliction',
-	[266]	= 'Demonology',
-	[267]	= 'Destruction',
+	[265] = "Affliction",
+	[266] = "Demonology",
+	[267] = "Destruction",
 	-- Warrior
-	[71]	= 'Arms',
-	[72]	= 'Fury',
-	[73]	= 'Protection',
+	[71] = "Arms",
+	[72] = "Fury",
+	[73] = "Protection",
 }
 
 function E:RemoveExtraSpaces(str)
-	return gsub(str, '     +', '    ')	--Replace all instances of 5+ spaces with only 4 spaces.
+	return gsub(str, "     +", "    ") --Replace all instances of 5+ spaces with only 4 spaces.
 end
 
 function E:GetCurrencyIDFromLink(link)
-	return link and tonumber(strmatch(link, 'currency:(%d+)'))
+	return link and tonumber(strmatch(link, "currency:(%d+)"))
 end
 
 function E:GetDateTime(localTime, unix)
 	if not localTime then -- try to properly handle realm time
-		local dateTable = date('*t', time())
+		local dateTable = date("*t", time())
 
 		local hours, minutes = GetGameTime() -- realm time since it doesnt match ServerTimeLocal
 		dateTable.hour = hours
@@ -178,23 +179,31 @@ function E:GetDateTime(localTime, unix)
 	elseif unix then
 		return time()
 	else
-		return date('*t', time())
+		return date("*t", time())
 	end
 end
 
 function E:ClassColor(class, usePriestColor)
-	if not class then return end
-
-	local color = (_G.CUSTOM_CLASS_COLORS and _G.CUSTOM_CLASS_COLORS[class]) or _G.RAID_CLASS_COLORS[class]
-	if type(color) ~= 'table' then return end
-
-	if not color.colorStr then
-		color.colorStr = E:RGBToHex(color.r, color.g, color.b, 'ff')
-	elseif strlen(color.colorStr) == 6 then
-		color.colorStr = 'ff'..color.colorStr
+	if not class then
+		return
 	end
 
-	if usePriestColor and class == 'PRIEST' and tonumber(color.colorStr, 16) > tonumber(E.PriestColors.colorStr, 16) then
+	local color = (_G.CUSTOM_CLASS_COLORS and _G.CUSTOM_CLASS_COLORS[class]) or _G.RAID_CLASS_COLORS[class]
+	if type(color) ~= "table" then
+		return
+	end
+
+	if not color.colorStr then
+		color.colorStr = E:RGBToHex(color.r, color.g, color.b, "ff")
+	elseif strlen(color.colorStr) == 6 then
+		color.colorStr = "ff" .. color.colorStr
+	end
+
+	if
+		usePriestColor
+		and class == "PRIEST"
+		and tonumber(color.colorStr, 16) > tonumber(E.PriestColors.colorStr, 16)
+	then
 		return E.PriestColors
 	else
 		return color
@@ -220,12 +229,12 @@ end
 
 function E:InverseClassColor(class, usePriestColor, forceCap)
 	local color = E:CopyTable({}, E:ClassColor(class, usePriestColor))
-	local capColor = class == 'PRIEST' or forceCap
+	local capColor = class == "PRIEST" or forceCap
 
-	color.r = capColor and max(1-color.r,0.35) or (1-color.r)
-	color.g = capColor and max(1-color.g,0.35) or (1-color.g)
-	color.b = capColor and max(1-color.b,0.35) or (1-color.b)
-	color.colorStr = E:RGBToHex(color.r, color.g, color.b, 'ff')
+	color.r = capColor and max(1 - color.r, 0.35) or (1 - color.r)
+	color.g = capColor and max(1 - color.g, 0.35) or (1 - color.g)
+	color.b = capColor and max(1 - color.b, 0.35) or (1 - color.b)
+	color.colorStr = E:RGBToHex(color.r, color.g, color.b, "ff")
 
 	return color
 end
@@ -233,18 +242,18 @@ end
 -- taken from https://gitlab.com/Tsoukie/classicapi/-/blob/main/!!!ClassicAPI/Util/C_CreatureInfo.lua
 local classData
 local function GetClassInfo(classID)
-		classData = {
-			[1] = 'WARRIOR',
-			[2] = 'PALADIN',
-			[3] = 'HUNTER',
-			[4] = 'ROGUE',
-			[5] = 'PRIEST',
-			[6] = 'DEATHKNIGHT',
-			[7] = 'SHAMAN',
-			[8] = 'MAGE',
-			[9] = 'WARLOCK',
-			[11] = 'DRUID',
-		}
+	classData = {
+		[1] = "WARRIOR",
+		[2] = "PALADIN",
+		[3] = "HUNTER",
+		[4] = "ROGUE",
+		[5] = "PRIEST",
+		[6] = "DEATHKNIGHT",
+		[7] = "SHAMAN",
+		[8] = "MAGE",
+		[9] = "WARLOCK",
+		[11] = "DRUID",
+	}
 
 	local classInfo = classData[classID]
 
@@ -252,7 +261,7 @@ local function GetClassInfo(classID)
 		classInfo = {
 			className = _G.LOCALIZED_CLASS_NAMES_MALE[classInfo],
 			classFile = classInfo,
-			classID = classID
+			classID = classID,
 		}
 		classData[classID] = classInfo
 	end
@@ -286,23 +295,29 @@ do -- other non-english locales require this
 	local classMale = _G.LOCALIZED_CLASS_NAMES_MALE
 	local classFemale = _G.LOCALIZED_CLASS_NAMES_FEMALE
 
-	for k, v in pairs(classMale) do E.UnlocalizedClasses[v] = k end
-	for k, v in pairs(classFemale) do E.UnlocalizedClasses[v] = k end
+	for k, v in pairs(classMale) do
+		E.UnlocalizedClasses[v] = k
+	end
+	for k, v in pairs(classFemale) do
+		E.UnlocalizedClasses[v] = k
+	end
 
 	function E:UnlocalizedClassName(className)
 		return E.UnlocalizedClasses[className]
 	end
 
 	function E:LocalizedClassName(className, unit)
-		local gender = (type(unit) == 'number' and unit) or (not unit and E.mygender) or UnitSex(unit)
+		local gender = (type(unit) == "number" and unit) or (not unit and E.mygender) or UnitSex(unit)
 		return (gender == 3 and classFemale[className]) or classMale[className]
 	end
 end
 
 function E:GetUnitSpecInfo(unit)
-	if not UnitIsPlayer(unit) then return end
+	if not UnitIsPlayer(unit) then
+		return
+	end
 
-	E.ScanTooltip:SetOwner(WorldFrame, 'ANCHOR_NONE')
+	E.ScanTooltip:SetOwner(WorldFrame, "ANCHOR_NONE")
 	E.ScanTooltip:SetUnit(unit)
 
 	local _, specLine = TT:GetLevelLine(E.ScanTooltip, 1, true)
@@ -329,7 +344,7 @@ function E:PopulateSpecInfo()
 					className = info.className,
 					classMale = classMale,
 					classFemale = classFemale,
-					englishName = E.SpecName[id]
+					englishName = E.SpecName[id],
 				}
 
 				E.SpecInfoBySpecID[id] = data
@@ -343,7 +358,7 @@ function E:PopulateSpecInfo()
 							data.icon = icon
 							data.role = role
 
-							local specClass = name..' '..info.className
+							local specClass = name .. " " .. info.className
 							E.SpecInfoBySpecClass[specClass] = data
 						else
 							local copy = E:CopyTable({}, data)
@@ -356,7 +371,7 @@ function E:PopulateSpecInfo()
 							copy.className = localized
 
 							if localized then
-								local specClassLocalized = name..' '..localized
+								local specClassLocalized = name .. " " .. localized
 								E.SpecInfoBySpecClass[specClassLocalized] = copy
 							end
 						end
@@ -378,7 +393,7 @@ do
 		end
 
 		for i = 1, 10 do
-			local tex = _G['ElvUI_ScanTooltipTexture'..i]
+			local tex = _G["ElvUI_ScanTooltipTexture" .. i]
 			local texture = tex and tex:IsShown() and tex:GetTexture()
 			if texture then
 				tt.gems[i] = texture
@@ -392,8 +407,11 @@ end
 do
 	function E:GetSpellInfo(spellID)
 		local info = {}
-		info.name, _, info.iconID, info.castTime, info.minRange, info.maxRange, info.spellID, info.originalIconID = spellID and GetSpellInfo(spellID)
-		if not info then return end
+		info.name, _, info.iconID, info.castTime, info.minRange, info.maxRange, info.spellID, info.originalIconID = spellID
+			and GetSpellInfo(spellID)
+		if not info then
+			return
+		end
 
 		return info
 	end
@@ -401,7 +419,9 @@ end
 
 do -- Spell renaming provided by BigWigs
 	function E:GetSpellRename(spellID)
-		if not spellID then return end
+		if not spellID then
+			return
+		end
 
 		local API = _G.BigWigsAPI
 		local GetRename = API and API.GetSpellRename
@@ -411,7 +431,9 @@ do -- Spell renaming provided by BigWigs
 	end
 
 	function E:SetSpellRename(spellID, text)
-		if not spellID then return end
+		if not spellID then
+			return
+		end
 
 		local API = _G.BigWigsAPI
 		local SetRename = API and API.SetSpellRename
@@ -431,9 +453,9 @@ do
 
 		if not name then
 			return
-		elseif key == 'name' and value == name then
+		elseif key == "name" and value == name then
 			return ...
-		elseif key == 'spellID' and value == spellID then
+		elseif key == "spellID" and value == spellID then
 			return ...
 		else
 			index = index + 1
@@ -442,11 +464,11 @@ do
 	end
 
 	function E:GetAuraByID(unit, spellID, filter)
-		return FindAura('spellID', spellID, unit, 1, filter, E:GetAuraData(unit, 1, filter))
+		return FindAura("spellID", spellID, unit, 1, filter, E:GetAuraData(unit, 1, filter))
 	end
 
 	function E:GetAuraByName(unit, name, filter)
-		return FindAura('name', name, unit, 1, filter, E:GetAuraData(unit, 1, filter))
+		return FindAura("name", name, unit, 1, filter, E:GetAuraData(unit, 1, filter))
 	end
 end
 
@@ -483,14 +505,14 @@ function E:GetThreatStatusColor(status, nothreat)
 		if status == -1 then -- how or why?
 			return 1, 1, 1, 1
 		else
-			return .7, .7, .7, 1
+			return 0.7, 0.7, 0.7, 1
 		end
 	end
 end
 
 function E:GetPlayerRole()
-	local tank, healer, damage = UnitGroupRolesAssigned('player')
-	local role = (tank and 'TANK') or (healer and 'HEALER') or (damage and 'DAMAGER') or NONE
+	local tank, healer, damage = UnitGroupRolesAssigned("player")
+	local role = (tank and "TANK") or (healer and "HEALER") or (damage and "DAMAGER") or NONE
 
 	return (role ~= NONE and role) or E.myspecRole or NONE
 end
@@ -499,7 +521,8 @@ function E:CheckRole()
 	E.myspec = GetSpecialization()
 
 	if E.myspec then
-		E.myspecID, E.myspecName, E.myspecDesc, E.myspecIcon, E.myspecBackground, E.myspecRole = GetSpecializationInfo(E.myspec)
+		E.myspecID, E.myspecName, E.myspecDesc, E.myspecIcon, E.myspecBackground, E.myspecRole =
+			GetSpecializationInfo(E.myspec)
 	end
 
 	E.myrole = E:GetPlayerRole()
@@ -509,18 +532,22 @@ function E:GetDifficultyText(isRaid)
 	local dungID = GetDungeonDifficulty()
 	local raidID = GetRaidDifficulty()
 
-    local id = isRaid and raidID or dungID
+	local id = isRaid and raidID or dungID
 	local diffID = isRaid and (id > 2 and 2 or 1) or id
-    local playerDiff = _G['PLAYER_DIFFICULTY'..diffID]
-    local diffSize = gsub(_G[(isRaid and 'RAID_DIFFICULTY' or 'DUNGEON_DIFFICULTY')..id], '%D+', '')
-    local difficulty = format('%s %s', playerDiff, diffSize)
+	local playerDiff = _G["PLAYER_DIFFICULTY" .. diffID]
+	local diffSize = gsub(_G[(isRaid and "RAID_DIFFICULTY" or "DUNGEON_DIFFICULTY") .. id], "%D+", "")
+	local difficulty = format("%s %s", playerDiff, diffSize)
 
-    return difficulty
+	return difficulty
 end
 
 function E:IsDispellableByMe(debuffType)
-	if not E.DispelClasses[E.myclass] then return end
-	if E.DispelClasses[E.myclass][debuffType] then return true end
+	if not E.DispelClasses[E.myclass] then
+		return
+	end
+	if E.DispelClasses[E.myclass][debuffType] then
+		return true
+	end
 end
 
 function E:UpdateDispelColor(debuffType, r, g, b)
@@ -578,8 +605,8 @@ do
 			RegisterCallback = E.CustomClassColorRegister,
 			UnregisterCallback = E.CustomClassColorUnregister,
 			NotifyChanges = E.CustomClassColorNotify,
-			GetClassToken = E.CustomClassColorClassToken
-		}
+			GetClassToken = E.CustomClassColorClassToken,
+		},
 	}
 
 	function E:SetupCustomClassColors()
@@ -595,7 +622,7 @@ do
 		local color = colors and colors[classTag]
 		if color then
 			color.r, color.g, color.b = r, g, b
-			color.colorStr = E:RGBToHex(r, g, b, 'ff')
+			color.colorStr = E:RGBToHex(r, g, b, "ff")
 		end
 
 		if classTag == E.myclass then
@@ -611,7 +638,9 @@ do
 	end
 
 	function E:UpdateCustomClassColors()
-		if not E.private.general.classColors then return end
+		if not E.private.general.classColors then
+			return
+		end
 
 		local custom = _G.CUSTOM_CLASS_COLORS or E:SetupCustomClassColors()
 		local colors, changed = E.db.general.classColors
@@ -620,7 +649,7 @@ do
 			local color, r, g, b = custom[classTag], db.r, db.g, db.b
 			if color and (color.r ~= r or color.g ~= g or color.b ~= b) then
 				color.r, color.g, color.b = r, g, b
-				color.colorStr = E:RGBToHex(r, g, b, 'ff')
+				color.colorStr = E:RGBToHex(r, g, b, "ff")
 
 				if classTag == E.myclass then
 					E.myClassColor = E:ClassColor(E.myclass, true)
@@ -638,31 +667,33 @@ do
 	local Masque = E.Libs.Masque
 	local MasqueGroupState = {}
 	local MasqueGroupToTableElement = {
-		['ActionBars'] = {'actionbar', 'actionbars'},
-		['Pet Bar'] = {'actionbar', 'petBar'},
-		['Stance Bar'] = {'actionbar', 'stanceBar'},
-		['Buffs'] = {'auras', 'buffs'},
-		['Debuffs'] = {'auras', 'debuffs'},
+		["ActionBars"] = { "actionbar", "actionbars" },
+		["Pet Bar"] = { "actionbar", "petBar" },
+		["Stance Bar"] = { "actionbar", "stanceBar" },
+		["Buffs"] = { "auras", "buffs" },
+		["Debuffs"] = { "auras", "debuffs" },
 	}
 
 	function E:MasqueCallback(Group, _, _, _, _, Disabled)
-		if not E.private then return end
+		if not E.private then
+			return
+		end
 		local element = MasqueGroupToTableElement[Group]
 		if element then
 			if Disabled then
-				if E.private[element[1]].masque[element[2]] and MasqueGroupState[Group] == 'enabled' then
+				if E.private[element[1]].masque[element[2]] and MasqueGroupState[Group] == "enabled" then
 					E.private[element[1]].masque[element[2]] = false
-					E:StaticPopup_Show('CONFIG_RL')
+					E:StaticPopup_Show("CONFIG_RL")
 				end
-				MasqueGroupState[Group] = 'disabled'
+				MasqueGroupState[Group] = "disabled"
 			else
-				MasqueGroupState[Group] = 'enabled'
+				MasqueGroupState[Group] = "enabled"
 			end
 		end
 	end
 
 	if Masque then
-		Masque:Register('ElvUI', E.MasqueCallback)
+		Masque:Register("ElvUI", E.MasqueCallback)
 	end
 end
 
@@ -673,9 +704,9 @@ do
 		local greatestDiff, lastModule, mod, usage, calls, diff = 0
 
 		for name, oldUsage in pairs(CPU_USAGE) do
-			newName, newFunc = strmatch(name, '^([^:]+):(.+)$')
+			newName, newFunc = strmatch(name, "^([^:]+):(.+)$")
 			if not newFunc then
-				E:Print('CPU_USAGE:', name, newFunc)
+				E:Print("CPU_USAGE:", name, newFunc)
 			else
 				if newName ~= lastModule then
 					mod = E:GetModule(newName, true) or E
@@ -684,7 +715,15 @@ do
 				usage, calls = GetFunctionCPUUsage(mod[newFunc], true)
 				diff = usage - oldUsage
 				if showall and (calls > minCalls) then
-					E:Print('Name('..name..') Calls('..calls..') Diff('..(diff > 0 and format('%.3f', diff) or 0)..')')
+					E:Print(
+						"Name("
+							.. name
+							.. ") Calls("
+							.. calls
+							.. ") Diff("
+							.. (diff > 0 and format("%.3f", diff) or 0)
+							.. ")"
+					)
 				end
 				if (diff > greatestDiff) and calls > minCalls then
 					greatestName, greatestUsage, greatestCalls, greatestDiff = name, usage, calls, diff
@@ -693,33 +732,42 @@ do
 		end
 
 		if greatestName then
-			E:Print(greatestName..' had the CPU usage of: '..(greatestUsage > 0 and format('%.3f', greatestUsage) or 0)..'ms. And has been called '..greatestCalls..' times.')
+			E:Print(
+				greatestName
+					.. " had the CPU usage of: "
+					.. (greatestUsage > 0 and format("%.3f", greatestUsage) or 0)
+					.. "ms. And has been called "
+					.. greatestCalls
+					.. " times."
+			)
 		else
-			E:Print('CPU Usage: No CPU Usage differences found.')
+			E:Print("CPU Usage: No CPU Usage differences found.")
 		end
 
 		wipe(CPU_USAGE)
 	end
 
 	function E:GetTopCPUFunc(msg)
-		if not GetCVarBool('scriptProfile') then
-			E:Print('For `/cpuusage` to work, you need to enable script profiling via: `/console scriptProfile 1` then reload. Disable after testing by setting it back to 0.')
+		if not GetCVarBool("scriptProfile") then
+			E:Print(
+				"For `/cpuusage` to work, you need to enable script profiling via: `/console scriptProfile 1` then reload. Disable after testing by setting it back to 0."
+			)
 			return
 		end
 
-		local module, showall, delay, minCalls = strmatch(msg, '^(%S+)%s*(%S*)%s*(%S*)%s*(.*)$')
-		local checkCore, mod = (not module or module == '') and 'E'
+		local module, showall, delay, minCalls = strmatch(msg, "^(%S+)%s*(%S*)%s*(%S*)%s*(.*)$")
+		local checkCore, mod = (not module or module == "") and "E"
 
-		showall = (showall == 'true' and true) or false
-		delay = (delay == 'nil' and nil) or tonumber(delay) or 5
-		minCalls = (minCalls == 'nil' and nil) or tonumber(minCalls) or 15
+		showall = (showall == "true" and true) or false
+		delay = (delay == "nil" and nil) or tonumber(delay) or 5
+		minCalls = (minCalls == "nil" and nil) or tonumber(minCalls) or 15
 
 		wipe(CPU_USAGE)
-		if module == 'all' then
+		if module == "all" then
 			for moduName, modu in pairs(self.modules) do
 				for funcName, func in pairs(modu) do
-					if (funcName ~= 'GetModule') and (type(func) == 'function') then
-						CPU_USAGE[moduName..':'..funcName] = GetFunctionCPUUsage(func, true)
+					if (funcName ~= "GetModule") and (type(func) == "function") then
+						CPU_USAGE[moduName .. ":" .. funcName] = GetFunctionCPUUsage(func, true)
 					end
 				end
 			end
@@ -727,27 +775,37 @@ do
 			if not checkCore then
 				mod = self:GetModule(module, true)
 				if not mod then
-					self:Print(module..' not found, falling back to checking core.')
-					mod, checkCore = self, 'E'
+					self:Print(module .. " not found, falling back to checking core.")
+					mod, checkCore = self, "E"
 				end
 			else
 				mod = self
 			end
 			for name, func in pairs(mod) do
-				if (name ~= 'GetModule') and type(func) == 'function' then
-					CPU_USAGE[(checkCore or module)..':'..name] = GetFunctionCPUUsage(func, true)
+				if (name ~= "GetModule") and type(func) == "function" then
+					CPU_USAGE[(checkCore or module) .. ":" .. name] = GetFunctionCPUUsage(func, true)
 				end
 			end
 		end
 
 		self:Delay(delay, CompareCPUDiff, showall, minCalls)
-		self:Print('Calculating CPU Usage differences (module: '..(checkCore or module)..', showall: '..tostring(showall)..', minCalls: '..tostring(minCalls)..', delay: '..tostring(delay)..')')
+		self:Print(
+			"Calculating CPU Usage differences (module: "
+				.. (checkCore or module)
+				.. ", showall: "
+				.. tostring(showall)
+				.. ", minCalls: "
+				.. tostring(minCalls)
+				.. ", delay: "
+				.. tostring(delay)
+				.. ")"
+		)
 	end
 end
 
 function E:RegisterObjectForVehicleLock(object, originalParent)
 	if not object or not originalParent then
-		E:Print('Error. Usage: RegisterObjectForVehicleLock(object, originalParent)')
+		E:Print("Error. Usage: RegisterObjectForVehicleLock(object, originalParent)")
 		return
 	end
 
@@ -755,12 +813,12 @@ function E:RegisterObjectForVehicleLock(object, originalParent)
 	--Entering/Exiting vehicles will often happen in combat.
 	--For this reason we cannot allow protected objects.
 	if object.IsProtected and object:IsProtected() then
-		E:Print('Error. Object is protected and cannot be changed in combat.')
+		E:Print("Error. Object is protected and cannot be changed in combat.")
 		return
 	end
 
 	--Check if we are already in a vehicles
-	if UnitHasVehicleUI('player') then
+	if UnitHasVehicleUI("player") then
 		object:SetParent(E.HiddenFrame)
 	end
 
@@ -770,13 +828,15 @@ end
 
 function E:UnregisterObjectForVehicleLock(object)
 	if not object then
-		E:Print('Error. Usage: UnregisterObjectForVehicleLock(object)')
+		E:Print("Error. Usage: UnregisterObjectForVehicleLock(object)")
 		return
 	end
 
 	object = _G[object] or object
 	--Check if object was registered to begin with
-	if not E.VehicleLocks[object] then return end
+	if not E.VehicleLocks[object] then
+		return
+	end
 
 	--Change parent of object back to original parent
 	local originalParent = E.VehicleLocks[object]
@@ -789,14 +849,18 @@ function E:UnregisterObjectForVehicleLock(object)
 end
 
 function E:EnterVehicleHideFrames(_, unit)
-	if unit ~= 'player' then return end
+	if unit ~= "player" then
+		return
+	end
 	for object in pairs(E.VehicleLocks) do
 		object:SetParent(E.HiddenFrame)
 	end
 end
 
 function E:ExitVehicleShowFrames(_, unit)
-	if unit ~= 'player' then return end
+	if unit ~= "player" then
+		return
+	end
 	for object, originalParent in pairs(E.VehicleLocks) do
 		object:SetParent(originalParent)
 	end
@@ -809,7 +873,8 @@ end
 do
 	local watchedInfo = {}
 	function E:GetWatchedFactionInfo()
-		watchedInfo.name, watchedInfo.reaction, watchedInfo.currentReactionThreshold, watchedInfo.nextReactionThreshold, watchedInfo.currentStanding = GetWatchedFactionInfo()
+		watchedInfo.name, watchedInfo.reaction, watchedInfo.currentReactionThreshold, watchedInfo.nextReactionThreshold, watchedInfo.currentStanding =
+			GetWatchedFactionInfo()
 		return watchedInfo
 	end
 end
@@ -829,12 +894,12 @@ function E:PLAYER_ENTERING_WORLD()
 	end
 
 	if E.db.general.lockCameraDistanceMax then
-		E:SetCVar('cameraDistanceMax', E.db.general.cameraDistanceMax)
+		E:SetCVar("cameraDistanceMax", E.db.general.cameraDistanceMax)
 	end
 
 	local _, instanceType = GetInstanceInfo()
-	if instanceType == 'pvp' then
-		E.BGTimer = E:ScheduleRepeatingTimer('RequestBGInfo', 5)
+	if instanceType == "pvp" then
+		E.BGTimer = E:ScheduleRepeatingTimer("RequestBGInfo", 5)
 		E:RequestBGInfo()
 	elseif E.BGTimer then
 		E:CancelTimer(E.BGTimer)
@@ -858,10 +923,10 @@ do
 	function E:PLAYER_REGEN_DISABLED()
 		local wasShown
 
-		if IsAddOnLoaded('ElvUI_Options') then
+		if IsAddOnLoaded("ElvUI_Options") then
 			local ACD = E.Libs.AceConfigDialog
 			if ACD and ACD.OpenFrames and ACD.OpenFrames.ElvUI then
-				ACD:Close('ElvUI')
+				ACD:Close("ElvUI")
 				wasShown = true
 			end
 		end
@@ -883,7 +948,9 @@ do
 
 	function E:AlertCombat()
 		local combat = InCombatLockdown()
-		if combat then NoCombat() end
+		if combat then
+			NoCombat()
+		end
 		return combat
 	end
 end
@@ -896,15 +963,15 @@ function E:GetUnitBattlefieldFaction(unit)
 	local englishFaction, localizedFaction = UnitFactionGroup(unit)
 
 	-- this might be a rated BG or wargame and if so the player's faction might be altered
-	if unit == 'player' then
+	if unit == "player" then
 		if UnitInBattleground(unit) then
 			englishFaction = PLAYER_FACTION_GROUP[GetBattlefieldArenaFaction()]
-			localizedFaction = (englishFaction == 'Alliance' and FACTION_ALLIANCE) or FACTION_HORDE
+			localizedFaction = (englishFaction == "Alliance" and FACTION_ALLIANCE) or FACTION_HORDE
 		else
-			if englishFaction == 'Alliance' then
-				englishFaction, localizedFaction = 'Horde', FACTION_HORDE
+			if englishFaction == "Alliance" then
+				englishFaction, localizedFaction = "Horde", FACTION_HORDE
 			else
-				englishFaction, localizedFaction = 'Alliance', FACTION_ALLIANCE
+				englishFaction, localizedFaction = "Alliance", FACTION_ALLIANCE
 			end
 		end
 	end
@@ -920,15 +987,15 @@ local gameMenuFrameIsShown = false
 function E:PositionGameMenuButton()
 	local button = GameMenuFrame.ElvUI
 	if button then
-		button:SetFormattedText('%sElvUI|r', E.media.hexvaluecolor)
+		button:SetFormattedText("%sElvUI|r", E.media.hexvaluecolor)
 
 		local _, relTo, _, _, offY = GameMenuButtonLogout:GetPoint()
 		if relTo ~= button then
 			button:ClearAllPoints()
-			button:Point('TOPLEFT', relTo, 'BOTTOMLEFT', 0, -1)
+			button:Point("TOPLEFT", relTo, "BOTTOMLEFT", 0, -1)
 
 			GameMenuButtonLogout:ClearAllPoints()
-			GameMenuButtonLogout:Point('TOPLEFT', button, 'BOTTOMLEFT', 0, offY)
+			GameMenuButtonLogout:Point("TOPLEFT", button, "BOTTOMLEFT", 0, offY)
 		end
 
 		if not gameMenuFrameIsShown then
@@ -951,34 +1018,38 @@ function E:ScaleGameMenu()
 end
 
 function E:SetupGameMenu()
-	if GameMenuFrame.ElvUI then return end
+	if GameMenuFrame.ElvUI then
+		return
+	end
 
-	local button = CreateFrame('Button', 'ElvUI_GameMenuButton', GameMenuFrame, 'GameMenuButtonTemplate')
-	button:SetScript('OnClick', E.ClickGameMenu)
+	local button = CreateFrame("Button", "ElvUI_GameMenuButton", GameMenuFrame, "GameMenuButtonTemplate")
+	button:SetScript("OnClick", E.ClickGameMenu)
 	GameMenuFrame.ElvUI = button
 
 	E:ScaleGameMenu()
 
 	button:Size(GameMenuButtonLogout:GetSize())
-	button:Point('TOPLEFT', GameMenuButtonLogout, 'BOTTOMLEFT', 0, -1)
-	hooksecurefunc(GameMenuFrame, 'Show', E.PositionGameMenuButton)
+	button:Point("TOPLEFT", GameMenuButtonLogout, "BOTTOMLEFT", 0, -1)
+	hooksecurefunc(GameMenuFrame, "Show", E.PositionGameMenuButton)
 end
 
 function E:CompatibleTooltip(tt) -- knock off compatibility
-	if tt.GetTooltipData then return end -- real support exists
+	if tt.GetTooltipData then
+		return
+	end -- real support exists
 
 	local info = { name = tt:GetName(), lines = {} }
-	info.leftTextName = info.name .. 'TextLeft'
-	info.rightTextName = info.name .. 'TextRight'
+	info.leftTextName = info.name .. "TextLeft"
+	info.rightTextName = info.name .. "TextRight"
 
 	tt.GetTooltipData = function()
 		wipe(info.lines)
 
 		for i = 1, tt:NumLines() do
-			local left = _G[info.leftTextName..i]
+			local left = _G[info.leftTextName .. i]
 			local leftText = left and left:GetText() or nil
 
-			local right = _G[info.rightTextName..i]
+			local right = _G[info.rightTextName .. i]
 			local rightText = right and right:GetText() or nil
 
 			tinsert(info.lines, i, { lineIndex = i, leftText = leftText, rightText = rightText })
@@ -990,11 +1061,13 @@ end
 
 function E:GetClassCoords(classFile, crop, get)
 	local t = _G.CLASS_ICON_TCOORDS[classFile]
-	if not t then return 0, 1, 0, 1 end
+	if not t then
+		return 0, 1, 0, 1
+	end
 
 	if get then
 		return t
-	elseif type(crop) == 'number' then
+	elseif type(crop) == "number" then
 		return t[1] + crop, t[2] - crop, t[3] + crop, t[4] - crop
 	elseif crop then
 		return t[1] + 0.022, t[2] - 0.025, t[3] + 0.022, t[4] - 0.025
@@ -1004,7 +1077,9 @@ function E:GetClassCoords(classFile, crop, get)
 end
 
 function E:CropRatio(width, height, mult)
-	if not mult then mult = 0.5 end
+	if not mult then
+		mult = 0.5
+	end
 
 	local left, right, top, bottom = E:GetTexCoords()
 
@@ -1023,7 +1098,7 @@ function E:CropRatio(width, height, mult)
 end
 
 function E:ScanTooltip_UnitInfo(unit)
-	E.ScanTooltip:SetOwner(UIParent, 'ANCHOR_NONE')
+	E.ScanTooltip:SetOwner(UIParent, "ANCHOR_NONE")
 	E.ScanTooltip:SetUnit(unit)
 	E.ScanTooltip:Show()
 
@@ -1031,7 +1106,7 @@ function E:ScanTooltip_UnitInfo(unit)
 end
 
 function E:ScanTooltip_InventoryInfo(unit, slot)
-	E.ScanTooltip:SetOwner(UIParent, 'ANCHOR_NONE')
+	E.ScanTooltip:SetOwner(UIParent, "ANCHOR_NONE")
 	E.ScanTooltip:SetInventoryItem(unit, slot)
 	E.ScanTooltip:Show()
 
@@ -1039,7 +1114,7 @@ function E:ScanTooltip_InventoryInfo(unit, slot)
 end
 
 function E:ScanTooltip_HyperlinkInfo(link)
-	E.ScanTooltip:SetOwner(UIParent, 'ANCHOR_NONE')
+	E.ScanTooltip:SetOwner(UIParent, "ANCHOR_NONE")
 	E.ScanTooltip:SetHyperlink(link)
 	E.ScanTooltip:Show()
 
@@ -1047,7 +1122,7 @@ function E:ScanTooltip_HyperlinkInfo(link)
 end
 
 function E:ScanTooltip_BagItemInfo(bagID, slotID)
-	E.ScanTooltip:SetOwner(UIParent, 'ANCHOR_NONE')
+	E.ScanTooltip:SetOwner(UIParent, "ANCHOR_NONE")
 	E.ScanTooltip:SetBagItem(bagID, slotID)
 	E.ScanTooltip:Show()
 
@@ -1063,7 +1138,9 @@ function E:UnitTankedByGroup(unit)
 end
 
 function E:GetThreatSituation(unit, feedbackUnit)
-	if not unit or not E:UnitExists(unit) then return end
+	if not unit or not E:UnitExists(unit) then
+		return
+	end
 
 	if feedbackUnit and feedbackUnit ~= unit and E:UnitExists(feedbackUnit) then
 		return UnitThreatSituation(feedbackUnit, unit)
@@ -1083,11 +1160,12 @@ function E:PARTY_MEMBERS_CHANGED()
 	end
 
 	if E.IsInGroup then
-		local group = isInGroup and 'party'
+		local group = isInGroup and "party"
 		for i = 1, GetNumSubgroupMembers() do
-			local unit = group..i
+			local unit = group .. i
 			local guid = UnitGUID(unit)
-			local role = guid and ((GetPartyAssignment('MAINTANK', unit) and 'TANK' or 'NONE') or UnitGroupRolesAssigned(unit))
+			local role = guid
+				and ((GetPartyAssignment("MAINTANK", unit) and "TANK" or "NONE") or UnitGroupRolesAssigned(unit))
 			if role then
 				E.GroupRoles[guid] = role
 				E.GroupUnitsByRole[role][guid] = unit
@@ -1107,11 +1185,12 @@ function E:RAID_ROSTER_UPDATE()
 	end
 
 	if E.IsInGroup then
-		local group = isInRaid and 'raid'
+		local group = isInRaid and "raid"
 		for i = 1, GetNumGroupMembers() do
-			local unit = group..i
+			local unit = group .. i
 			local guid = UnitGUID(unit)
-			local role = guid and ((GetPartyAssignment('MAINTANK', unit) and 'TANK' or 'NONE') or UnitGroupRolesAssigned(unit))
+			local role = guid
+				and ((GetPartyAssignment("MAINTANK", unit) and "TANK" or "NONE") or UnitGroupRolesAssigned(unit))
 			if role then
 				E.GroupRoles[guid] = role
 				E.GroupUnitsByRole[role][guid] = unit
@@ -1121,13 +1200,13 @@ function E:RAID_ROSTER_UPDATE()
 end
 
 function E:LoadAPI()
-	E:RegisterEvent('PARTY_MEMBERS_CHANGED')
-	E:RegisterEvent('RAID_ROSTER_UPDATE')
-	E:RegisterEvent('PLAYER_LEVEL_UP')
-	E:RegisterEvent('PLAYER_ENTERING_WORLD')
-	E:RegisterEvent('PLAYER_REGEN_ENABLED')
-	E:RegisterEvent('PLAYER_REGEN_DISABLED')
-	E:RegisterEvent('UI_SCALE_CHANGED', 'PixelScaleChanged')
+	E:RegisterEvent("PARTY_MEMBERS_CHANGED")
+	E:RegisterEvent("RAID_ROSTER_UPDATE")
+	E:RegisterEvent("PLAYER_LEVEL_UP")
+	E:RegisterEvent("PLAYER_ENTERING_WORLD")
+	E:RegisterEvent("PLAYER_REGEN_ENABLED")
+	E:RegisterEvent("PLAYER_REGEN_DISABLED")
+	E:RegisterEvent("UI_SCALE_CHANGED", "PixelScaleChanged")
 
 	E:PARTY_MEMBERS_CHANGED()
 	E:RAID_ROSTER_UPDATE()
@@ -1145,13 +1224,13 @@ function E:LoadAPI()
 	E.ScanTooltip.GetInventoryInfo = E.ScanTooltip_InventoryInfo
 	E.ScanTooltip.GetBagItemInfo = E.ScanTooltip_BagItemInfo
 
-	E:RegisterEvent('SPELL_UPDATE_USABLE', 'CheckRole')
-	E:RegisterEvent('ACTIVE_TALENT_GROUP_CHANGED', 'CheckRole')
-	E:RegisterEvent('PLAYER_TALENT_UPDATE', 'CheckRole')
-	E:RegisterEvent('CHARACTER_POINTS_CHANGED', 'CheckRole')
-	E:RegisterEvent('UNIT_INVENTORY_CHANGED', 'CheckRole')
-	E:RegisterEvent('UPDATE_BONUS_ACTIONBAR', 'CheckRole')
+	E:RegisterEvent("SPELL_UPDATE_USABLE", "CheckRole")
+	E:RegisterEvent("ACTIVE_TALENT_GROUP_CHANGED", "CheckRole")
+	E:RegisterEvent("PLAYER_TALENT_UPDATE", "CheckRole")
+	E:RegisterEvent("CHARACTER_POINTS_CHANGED", "CheckRole")
+	E:RegisterEvent("UNIT_INVENTORY_CHANGED", "CheckRole")
+	E:RegisterEvent("UPDATE_BONUS_ACTIONBAR", "CheckRole")
 
-	E:RegisterEvent('UNIT_ENTERED_VEHICLE', 'EnterVehicleHideFrames')
-	E:RegisterEvent('UNIT_EXITED_VEHICLE', 'ExitVehicleShowFrames')
+	E:RegisterEvent("UNIT_ENTERED_VEHICLE", "EnterVehicleHideFrames")
+	E:RegisterEvent("UNIT_EXITED_VEHICLE", "ExitVehicleShowFrames")
 end

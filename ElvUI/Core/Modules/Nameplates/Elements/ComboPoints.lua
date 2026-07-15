@@ -9,8 +9,12 @@ local GetComboPoints = GetComboPoints
 local MAX_COMBO_POINTS = MAX_COMBO_POINTS
 
 function NP:Update_CPoints(frame)
-	if frame.UnitType == "FRIENDLY_PLAYER" or frame.UnitType == "FRIENDLY_NPC" then return end
-	if not self.db.units.TARGET.comboPoints.enable then return end
+	if frame.UnitType == "FRIENDLY_PLAYER" or frame.UnitType == "FRIENDLY_NPC" then
+		return
+	end
+	if not self.db.units.TARGET.comboPoints.enable then
+		return
+	end
 
 	local numPoints
 	if frame.isTarget then
@@ -33,9 +37,13 @@ function NP:Update_CPoints(frame)
 end
 
 function NP:Configure_CPointsScale(frame, scale, noPlayAnimation)
-	if frame.UnitType == "FRIENDLY_PLAYER" or frame.UnitType == "FRIENDLY_NPC" then return end
+	if frame.UnitType == "FRIENDLY_PLAYER" or frame.UnitType == "FRIENDLY_NPC" then
+		return
+	end
 	local db = self.db.units.TARGET.comboPoints
-	if not db.enable then return end
+	if not db.enable then
+		return
+	end
 
 	if noPlayAnimation then
 		frame.CPoints:SetWidth(((db.width * 5) + (db.spacing * 4)) * scale)
@@ -52,12 +60,17 @@ function NP:Configure_CPointsScale(frame, scale, noPlayAnimation)
 end
 
 function NP:Configure_CPoints(frame, configuring)
-	if frame.UnitType == "FRIENDLY_PLAYER" or frame.UnitType == "FRIENDLY_NPC" then return end
+	if frame.UnitType == "FRIENDLY_PLAYER" or frame.UnitType == "FRIENDLY_NPC" then
+		return
+	end
 	local db = self.db.units.TARGET.comboPoints
-	if not db.enable then return end
+	if not db.enable then
+		return
+	end
 
 	local comboBar = frame.CPoints
-	local healthShown = self.db.units[frame.UnitType].health.enable or (frame.isTarget and self.db.alwaysShowTargetHealth)
+	local healthShown = self.db.units[frame.UnitType].health.enable
+		or (frame.isTarget and self.db.alwaysShowTargetHealth)
 
 	comboBar:ClearAllPoints()
 	if healthShown then
@@ -111,7 +124,7 @@ function NP:Construct_CPoints(parent)
 	comboBar:SetScript("OnSizeChanged", CPoints_OnSizeChanged)
 
 	for i = 1, MAX_COMBO_POINTS do
-		comboBar[i] = CreateFrame("Frame", "$parentComboPoint"..i, comboBar)
+		comboBar[i] = CreateFrame("Frame", "$parentComboPoint" .. i, comboBar)
 		self:StyleFrame(comboBar[i])
 	end
 

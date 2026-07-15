@@ -22,25 +22,25 @@ function UF:Construct_AuraWatch(frame)
 end
 
 local counterOffsets = {
-	["TOPLEFT"] = {6, 1},
-	["TOPRIGHT"] = {-6, 1},
-	["BOTTOMLEFT"] = {6, 1},
-	["BOTTOMRIGHT"] = {-6, 1},
-	["LEFT"] = {6, 1},
-	["RIGHT"] = {-6, 1},
-	["TOP"] = {0, 0},
-	["BOTTOM"] = {0, 0}
+	["TOPLEFT"] = { 6, 1 },
+	["TOPRIGHT"] = { -6, 1 },
+	["BOTTOMLEFT"] = { 6, 1 },
+	["BOTTOMRIGHT"] = { -6, 1 },
+	["LEFT"] = { 6, 1 },
+	["RIGHT"] = { -6, 1 },
+	["TOP"] = { 0, 0 },
+	["BOTTOM"] = { 0, 0 },
 }
 
 local textCounterOffsets = {
-	["TOPLEFT"] = {"LEFT", "RIGHT", -2, 0},
-	["TOPRIGHT"] = {"RIGHT", "LEFT", 2, 0},
-	["BOTTOMLEFT"] = {"LEFT", "RIGHT", -2, 0},
-	["BOTTOMRIGHT"] = {"RIGHT", "LEFT", 2, 0},
-	["LEFT"] = {"LEFT", "RIGHT", -2, 0},
-	["RIGHT"] = {"RIGHT", "LEFT", 2, 0},
-	["TOP"] = {"RIGHT", "LEFT", 2, 0},
-	["BOTTOM"] = {"RIGHT", "LEFT", 2, 0}
+	["TOPLEFT"] = { "LEFT", "RIGHT", -2, 0 },
+	["TOPRIGHT"] = { "RIGHT", "LEFT", 2, 0 },
+	["BOTTOMLEFT"] = { "LEFT", "RIGHT", -2, 0 },
+	["BOTTOMRIGHT"] = { "RIGHT", "LEFT", 2, 0 },
+	["LEFT"] = { "LEFT", "RIGHT", -2, 0 },
+	["RIGHT"] = { "RIGHT", "LEFT", 2, 0 },
+	["TOP"] = { "RIGHT", "LEFT", 2, 0 },
+	["BOTTOM"] = { "RIGHT", "LEFT", 2, 0 },
 }
 
 function UF:UpdateAuraWatchFromHeader(group, petOverride)
@@ -80,7 +80,8 @@ function UF:UpdateAuraWatch(frame, petOverride, db)
 			tinsert(buffs, value)
 		end
 	else
-		local buffWatch = not db.profileSpecific and (E.global.unitframe.buffwatch[E.myclass] or {}) or (E.db.unitframe.filters.buffwatch or {})
+		local buffWatch = not db.profileSpecific and (E.global.unitframe.buffwatch[E.myclass] or {})
+			or (E.db.unitframe.filters.buffwatch or {})
 		for _, value in pairs(buffWatch) do
 			tinsert(buffs, value)
 		end
@@ -127,15 +128,25 @@ function UF:UpdateAuraWatch(frame, petOverride, db)
 				icon.textThreshold = buffs[i].textThreshold or -1
 				icon.displayText = buffs[i].displayText
 				icon.decimalThreshold = buffs[i].decimalThreshold
-				icon.size = (buffs[i].sizeOverride ~= nil and buffs[i].sizeOverride > 0 and buffs[i].sizeOverride or db.size)
+				icon.size = (
+					buffs[i].sizeOverride ~= nil and buffs[i].sizeOverride > 0 and buffs[i].sizeOverride or db.size
+				)
 
 				icon:Width(icon.size)
 				icon:Height(icon.size)
 				--Protect against missing .point value
-				if not buffs[i].point then buffs[i].point = "TOPLEFT" end
+				if not buffs[i].point then
+					buffs[i].point = "TOPLEFT"
+				end
 
 				icon:ClearAllPoints()
-				icon:Point(buffs[i].point or "TOPLEFT", frame.Health, buffs[i].point or "TOPLEFT", buffs[i].xOffset, buffs[i].yOffset)
+				icon:Point(
+					buffs[i].point or "TOPLEFT",
+					frame.Health,
+					buffs[i].point or "TOPLEFT",
+					buffs[i].xOffset,
+					buffs[i].yOffset
+				)
 
 				if not icon.icon then
 					icon.icon = icon:CreateTexture(nil, "BORDER")

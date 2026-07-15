@@ -16,14 +16,20 @@ function UF:Configure_ReadyCheckIcon(frame)
 	local ReadyCheckIndicator = frame.ReadyCheckIndicator
 	local db = frame.db
 
-	if (db.readycheckIcon.enable) then
+	if db.readycheckIcon.enable then
 		if not frame:IsElementEnabled("ReadyCheckIndicator") then
 			frame:EnableElement("ReadyCheckIndicator")
 		end
 
 		local attachPoint = self:GetObjectAnchorPoint(frame, db.readycheckIcon.attachTo)
 		ReadyCheckIndicator:ClearAllPoints()
-		ReadyCheckIndicator:Point(db.readycheckIcon.position, attachPoint, db.readycheckIcon.position, db.readycheckIcon.xOffset, db.readycheckIcon.yOffset)
+		ReadyCheckIndicator:Point(
+			db.readycheckIcon.position,
+			attachPoint,
+			db.readycheckIcon.position,
+			db.readycheckIcon.xOffset,
+			db.readycheckIcon.yOffset
+		)
 		ReadyCheckIndicator:Size(db.readycheckIcon.size)
 	else
 		frame:DisableElement("ReadyCheckIndicator")

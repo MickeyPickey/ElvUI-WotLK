@@ -10,7 +10,9 @@ local PlaySound = PlaySound
 local hooksecurefunc = hooksecurefunc
 
 S:AddCallbackForAddon("Blizzard_AuctionUI", "Skin_Blizzard_AuctionUI", function()
-	if not E.private.skins.blizzard.enable or not E.private.skins.blizzard.auctionhouse then return end
+	if not E.private.skins.blizzard.enable or not E.private.skins.blizzard.auctionhouse then
+		return
+	end
 
 	AuctionFrame:StripTextures(true)
 	AuctionFrame:CreateBackdrop("Transparent")
@@ -40,11 +42,11 @@ S:AddCallbackForAddon("Blizzard_AuctionUI", "Skin_Blizzard_AuctionUI", function(
 		AuctionsCancelAuctionButton,
 		AuctionsStackSizeMaxButton,
 		AuctionsNumStacksMaxButton,
-		AuctionsCloseButton
+		AuctionsCloseButton,
 	}
 	local checkBoxes = {
 		IsUsableCheckButton,
-		ShowOnPlayerCheckButton
+		ShowOnPlayerCheckButton,
 	}
 	local editBoxes = {
 		BrowseName,
@@ -63,7 +65,7 @@ S:AddCallbackForAddon("Blizzard_AuctionUI", "Skin_Blizzard_AuctionUI", function(
 		StartPriceCopper,
 		BuyoutPriceGold,
 		BuyoutPriceSilver,
-		BuyoutPriceCopper
+		BuyoutPriceCopper,
 	}
 	local sortTabs = {
 		BrowseQualitySort,
@@ -80,7 +82,7 @@ S:AddCallbackForAddon("Blizzard_AuctionUI", "Skin_Blizzard_AuctionUI", function(
 		AuctionsQualitySort,
 		AuctionsDurationSort,
 		AuctionsHighBidderSort,
-		AuctionsBidSort
+		AuctionsBidSort,
 	}
 
 	for _, button in ipairs(buttons) do
@@ -100,7 +102,7 @@ S:AddCallbackForAddon("Blizzard_AuctionUI", "Skin_Blizzard_AuctionUI", function(
 	end
 
 	for i = 1, AuctionFrame.numTabs do
-		local tab = _G["AuctionFrameTab"..i]
+		local tab = _G["AuctionFrameTab" .. i]
 
 		S:HandleTab(tab)
 
@@ -108,12 +110,12 @@ S:AddCallbackForAddon("Blizzard_AuctionUI", "Skin_Blizzard_AuctionUI", function(
 			tab:Point("TOPLEFT", AuctionFrame, "BOTTOMLEFT", 12, 25)
 			tab.SetPoint = E.noop
 		else
-			tab:Point("TOPLEFT", _G["AuctionFrameTab"..(i - 1)], "TOPRIGHT", -15, 0)
+			tab:Point("TOPLEFT", _G["AuctionFrameTab" .. (i - 1)], "TOPRIGHT", -15, 0)
 		end
 	end
 
 	for i = 1, NUM_FILTERS_TO_DISPLAY do
-		local tab = _G["AuctionFilterButton"..i]
+		local tab = _G["AuctionFilterButton" .. i]
 		tab:StripTextures()
 
 		local highlight = tab:GetHighlightTexture()
@@ -123,9 +125,9 @@ S:AddCallbackForAddon("Blizzard_AuctionUI", "Skin_Blizzard_AuctionUI", function(
 	end
 
 	local frames = {
-		["Browse"] = 8,		-- NUM_BROWSE_TO_DISPLAY
-		["Auctions"] = 9,	-- NUM_AUCTIONS_TO_DISPLAY
-		["Bid"] = 9			-- NUM_BIDS_TO_DISPLAY
+		["Browse"] = 8, -- NUM_BROWSE_TO_DISPLAY
+		["Auctions"] = 9, -- NUM_AUCTIONS_TO_DISPLAY
+		["Bid"] = 9, -- NUM_BIDS_TO_DISPLAY
 	}
 	local function itemNameSetVertexColor(self, r, g, b)
 		self.parent.highlight:SetVertexColor(r, g, b, 0.35)
@@ -136,11 +138,11 @@ S:AddCallbackForAddon("Blizzard_AuctionUI", "Skin_Blizzard_AuctionUI", function(
 	end
 	for frameName, numButtons in pairs(frames) do
 		for i = 1, numButtons do
-			local button = _G[frameName.."Button"..i]
-			local name = _G[frameName.."Button"..i.."Name"]
-			local itemButton = _G[frameName.."Button"..i.."Item"]
-			local itemTexture = _G[frameName.."Button"..i.."ItemIconTexture"]
-			local highlight = _G[frameName.."Button"..i.."Highlight"]
+			local button = _G[frameName .. "Button" .. i]
+			local name = _G[frameName .. "Button" .. i .. "Name"]
+			local itemButton = _G[frameName .. "Button" .. i .. "Item"]
+			local itemTexture = _G[frameName .. "Button" .. i .. "ItemIconTexture"]
+			local highlight = _G[frameName .. "Button" .. i .. "Highlight"]
 
 			button:StripTextures()
 
@@ -266,7 +268,7 @@ S:AddCallbackForAddon("Blizzard_AuctionUI", "Skin_Blizzard_AuctionUI", function(
 			AuctionFrameBrowse.LeftBackground:Point("BOTTOMRIGHT", -574, 60)
 
 			for i = 1, NUM_FILTERS_TO_DISPLAY do
-				_G["AuctionFilterButton"..i]:Width(157)
+				_G["AuctionFilterButton" .. i]:Width(157)
 			end
 		end
 	end)
@@ -275,7 +277,7 @@ S:AddCallbackForAddon("Blizzard_AuctionUI", "Skin_Blizzard_AuctionUI", function(
 		local scrollShown = BrowseScrollFrame:IsShown()
 
 		for i = 1, NUM_BROWSE_TO_DISPLAY do
-			_G["BrowseButton"..i]:Width(scrollShown and 608 or 629)
+			_G["BrowseButton" .. i]:Width(scrollShown and 608 or 629)
 		end
 
 		BrowseCurrentBidSort:Width(scrollShown and 188 or 209)
@@ -311,7 +313,7 @@ S:AddCallbackForAddon("Blizzard_AuctionUI", "Skin_Blizzard_AuctionUI", function(
 		local scrollShown = BidScrollFrame:IsShown()
 
 		for i = 1, NUM_BIDS_TO_DISPLAY do
-			_G["BidButton"..i]:Width(scrollShown and 776 or 797)
+			_G["BidButton" .. i]:Width(scrollShown and 776 or 797)
 		end
 
 		BidBidSort:Width(scrollShown and 158 or 179)
@@ -397,7 +399,7 @@ S:AddCallbackForAddon("Blizzard_AuctionUI", "Skin_Blizzard_AuctionUI", function(
 		local scrollShown = AuctionsScrollFrame:IsShown()
 
 		for i = 1, NUM_AUCTIONS_TO_DISPLAY do
-			_G["AuctionsButton"..i]:Width(scrollShown and 580 or 601)
+			_G["AuctionsButton" .. i]:Width(scrollShown and 580 or 601)
 		end
 
 		AuctionsBidSort:Width(scrollShown and 203 or 224)
@@ -449,7 +451,7 @@ S:AddCallbackForAddon("Blizzard_AuctionUI", "Skin_Blizzard_AuctionUI", function(
 	AuctionProgressFrame:StripTextures()
 	AuctionProgressFrame:SetTemplate("Transparent")
 
-	S:HandleStatusBar(AuctionProgressBar, {1, 0.7, 0})
+	S:HandleStatusBar(AuctionProgressBar, { 1, 0.7, 0 })
 	AuctionProgressBar:Size(190, 18)
 	AuctionProgressBar:Point("CENTER", 5, 0)
 
@@ -483,6 +485,6 @@ S:AddCallbackForAddon("Blizzard_AuctionUI", "Skin_Blizzard_AuctionUI", function(
 		BrowseDropDownName:Point("BOTTOMLEFT", BrowseDropDown, "TOPLEFT", 20, -3)
 
 		BidDurationSort:Width(79)
-	--	BidBidSort:Width(168)
+		--	BidBidSort:Width(168)
 	end
 end)

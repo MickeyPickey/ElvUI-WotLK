@@ -38,7 +38,17 @@ function UF:Construct_BossFrames(frame)
 	frame.customTexts = {}
 
 	BossHeader:Point("BOTTOMRIGHT", E.UIParent, "RIGHT", -105, -165)
-	E:CreateMover(BossHeader, BossHeader:GetName().."Mover", L["Boss Frames"], nil, nil, nil, "ALL,PARTY,RAID", nil, "unitframe,boss,generalGroup")
+	E:CreateMover(
+		BossHeader,
+		BossHeader:GetName() .. "Mover",
+		L["Boss Frames"],
+		nil,
+		nil,
+		nil,
+		"ALL,PARTY,RAID",
+		nil,
+		"unitframe,boss,generalGroup"
+	)
 	frame.mover = BossHeader.mover
 
 	frame.unitframeType = "boss"
@@ -60,7 +70,11 @@ function UF:Update_BossFrames(frame, db)
 		frame.POWERBAR_OFFSET = frame.USE_POWERBAR_OFFSET and db.power.offset or 0
 
 		frame.POWERBAR_HEIGHT = not frame.USE_POWERBAR and 0 or db.power.height
-		frame.POWERBAR_WIDTH = frame.USE_MINI_POWERBAR and (frame.UNIT_WIDTH - (frame.BORDER*2))/2 or (frame.POWERBAR_DETACHED and db.power.detachedWidth or (frame.UNIT_WIDTH - ((frame.BORDER+frame.SPACING)*2)))
+		frame.POWERBAR_WIDTH = frame.USE_MINI_POWERBAR and (frame.UNIT_WIDTH - (frame.BORDER * 2)) / 2
+			or (
+				frame.POWERBAR_DETACHED and db.power.detachedWidth
+				or (frame.UNIT_WIDTH - ((frame.BORDER + frame.SPACING) * 2))
+			)
 
 		frame.USE_PORTRAIT = db.portrait and db.portrait.enable
 		frame.USE_PORTRAIT_OVERLAY = frame.USE_PORTRAIT and (db.portrait.overlay or frame.ORIENTATION == "MIDDLE")
@@ -125,25 +139,25 @@ function UF:Update_BossFrames(frame, db)
 		end
 	else
 		if db.growthDirection == "UP" then
-			frame:Point("BOTTOMRIGHT", _G["ElvUF_Boss"..frame.index-1], "TOPRIGHT", 0, db.spacing)
+			frame:Point("BOTTOMRIGHT", _G["ElvUF_Boss" .. frame.index - 1], "TOPRIGHT", 0, db.spacing)
 		elseif db.growthDirection == "RIGHT" then
-			frame:Point("LEFT", _G["ElvUF_Boss"..frame.index-1], "RIGHT", db.spacing, 0)
+			frame:Point("LEFT", _G["ElvUF_Boss" .. frame.index - 1], "RIGHT", db.spacing, 0)
 		elseif db.growthDirection == "LEFT" then
-			frame:Point("RIGHT", _G["ElvUF_Boss"..frame.index-1], "LEFT", -db.spacing, 0)
+			frame:Point("RIGHT", _G["ElvUF_Boss" .. frame.index - 1], "LEFT", -db.spacing, 0)
 		else --Down
-			frame:Point("TOPRIGHT", _G["ElvUF_Boss"..frame.index-1], "BOTTOMRIGHT", 0, -db.spacing)
+			frame:Point("TOPRIGHT", _G["ElvUF_Boss" .. frame.index - 1], "BOTTOMRIGHT", 0, -db.spacing)
 		end
 	end
 
 	if db.growthDirection == "UP" or db.growthDirection == "DOWN" then
 		BossHeader:Width(frame.UNIT_WIDTH)
-		BossHeader:Height(frame.UNIT_HEIGHT + ((frame.UNIT_HEIGHT + db.spacing) * (MAX_BOSS_FRAMES -1)))
+		BossHeader:Height(frame.UNIT_HEIGHT + ((frame.UNIT_HEIGHT + db.spacing) * (MAX_BOSS_FRAMES - 1)))
 	elseif db.growthDirection == "LEFT" or db.growthDirection == "RIGHT" then
-		BossHeader:Width(frame.UNIT_WIDTH + ((frame.UNIT_WIDTH + db.spacing) * (MAX_BOSS_FRAMES -1)))
+		BossHeader:Width(frame.UNIT_WIDTH + ((frame.UNIT_WIDTH + db.spacing) * (MAX_BOSS_FRAMES - 1)))
 		BossHeader:Height(frame.UNIT_HEIGHT)
 	end
 
 	frame:UpdateAllElements("ForceUpdate")
 end
 
-UF.unitgroupstoload.boss = {MAX_BOSS_FRAMES}
+UF.unitgroupstoload.boss = { MAX_BOSS_FRAMES }

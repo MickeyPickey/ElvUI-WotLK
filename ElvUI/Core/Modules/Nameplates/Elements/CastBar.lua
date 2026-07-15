@@ -46,11 +46,22 @@ function NP:Update_CastBarOnUpdate(elapsed)
 				if self.channelTimeFormat == "CURRENT" then
 					self.Time:SetFormattedText("%.1f |cffaf5050%.2f|r", abs(self.value - self.max), self.delay)
 				elseif self.channelTimeFormat == "CURRENTMAX" then
-					self.Time:SetFormattedText("%.1f / %.2f |cffaf5050%.2f|r", abs(self.value - self.max), self.max, self.delay)
+					self.Time:SetFormattedText(
+						"%.1f / %.2f |cffaf5050%.2f|r",
+						abs(self.value - self.max),
+						self.max,
+						self.delay
+					)
 				elseif self.channelTimeFormat == "REMAINING" then
 					self.Time:SetFormattedText("%.1f |cffaf5050%.2f|r", self.value, self.delay)
 				elseif self.channelTimeFormat == "REMAININGMAX" then
-					self.Time:SetFormattedText("%.1f / %.2f |cffaf5050%.2f|r", self.value, self.max, self.max, self.delay)
+					self.Time:SetFormattedText(
+						"%.1f / %.2f |cffaf5050%.2f|r",
+						self.value,
+						self.max,
+						self.max,
+						self.delay
+					)
 				end
 			else
 				if self.castTimeFormat == "CURRENT" then
@@ -60,7 +71,13 @@ function NP:Update_CastBarOnUpdate(elapsed)
 				elseif self.castTimeFormat == "REMAINING" then
 					self.Time:SetFormattedText("%.1f |cffaf5050%s %.2f|r", abs(self.value - self.max), "+", self.delay)
 				elseif self.castTimeFormat == "REMAININGMAX" then
-					self.Time:SetFormattedText("%.1f / %.2f |cffaf5050%s %.2f|r", abs(self.value - self.max), self.max, "+", self.delay)
+					self.Time:SetFormattedText(
+						"%.1f / %.2f |cffaf5050%s %.2f|r",
+						abs(self.value - self.max),
+						self.max,
+						"+",
+						self.delay
+					)
 				end
 			end
 		else
@@ -112,8 +129,12 @@ function NP:Update_CastBar(frame, event, unit)
 		castBar:Hide()
 	end
 
-	if self.db.units[frame.UnitType].castbar.enable ~= true then return end
-	if not frame.Health:IsShown() then return end
+	if self.db.units[frame.UnitType].castbar.enable ~= true then
+		return
+	end
+	if not frame.Health:IsShown() then
+		return
+	end
 
 	if event == "UNIT_SPELLCAST_START" or event == "UNIT_SPELLCAST_CHANNEL_START" then
 		local name, _, _, texture, startTime, endTime, _, _, notInterruptible = UnitCastingInfo(unit)
@@ -216,13 +237,25 @@ function NP:Update_CastBar(frame, event, unit)
 
 	if not castBar.notInterruptible then
 		if castBar.interrupted then
-			castBar:SetStatusBarColor(self.db.colors.castInterruptedColor.r, self.db.colors.castInterruptedColor.g, self.db.colors.castInterruptedColor.b)
+			castBar:SetStatusBarColor(
+				self.db.colors.castInterruptedColor.r,
+				self.db.colors.castInterruptedColor.g,
+				self.db.colors.castInterruptedColor.b
+			)
 		else
-			castBar:SetStatusBarColor(self.db.colors.castColor.r, self.db.colors.castColor.g, self.db.colors.castColor.b)
+			castBar:SetStatusBarColor(
+				self.db.colors.castColor.r,
+				self.db.colors.castColor.g,
+				self.db.colors.castColor.b
+			)
 		end
 		castBar.Icon.texture:SetDesaturated(false)
 	else
-		castBar:SetStatusBarColor(self.db.colors.castNoInterruptColor.r, self.db.colors.castNoInterruptColor.g, self.db.colors.castNoInterruptColor.b)
+		castBar:SetStatusBarColor(
+			self.db.colors.castNoInterruptColor.r,
+			self.db.colors.castNoInterruptColor.g,
+			self.db.colors.castNoInterruptColor.b
+		)
 
 		if self.db.colors.castbarDesaturate then
 			castBar.Icon.texture:SetDesaturated(true)
@@ -233,9 +266,13 @@ function NP:Update_CastBar(frame, event, unit)
 end
 
 function NP:Configure_CastBarScale(frame, scale, noPlayAnimation)
-	if frame.currentScale == scale then return end
+	if frame.currentScale == scale then
+		return
+	end
 	local db = self.db.units[frame.UnitType].castbar
-	if not db.enable then return end
+	if not db.enable then
+		return
+	end
 
 	local castBar = frame.CastBar
 
@@ -266,7 +303,13 @@ function NP:Configure_CastBar(frame, configuring)
 
 	if db.showIcon then
 		castBar.Icon:ClearAllPoints()
-		castBar.Icon:SetPoint(db.iconPosition == "RIGHT" and "BOTTOMLEFT" or "BOTTOMRIGHT", castBar, db.iconPosition == "RIGHT" and "BOTTOMRIGHT" or "BOTTOMLEFT", db.iconOffsetX, db.iconOffsetY)
+		castBar.Icon:SetPoint(
+			db.iconPosition == "RIGHT" and "BOTTOMLEFT" or "BOTTOMRIGHT",
+			castBar,
+			db.iconPosition == "RIGHT" and "BOTTOMRIGHT" or "BOTTOMLEFT",
+			db.iconOffsetX,
+			db.iconOffsetY
+		)
 		castBar.Icon:Show()
 	else
 		castBar.Icon:Hide()

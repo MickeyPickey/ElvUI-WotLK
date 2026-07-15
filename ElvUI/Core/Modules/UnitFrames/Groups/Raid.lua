@@ -63,7 +63,9 @@ function UF:RaidSmartVisibility(event)
 		return
 	end
 
-	if event == "PLAYER_REGEN_ENABLED" then self:UnregisterEvent("PLAYER_REGEN_ENABLED") end
+	if event == "PLAYER_REGEN_ENABLED" then
+		self:UnregisterEvent("PLAYER_REGEN_ENABLED")
+	end
 
 	if not InCombatLockdown() then
 		self.isInstanceForced = nil
@@ -80,7 +82,7 @@ function UF:RaidSmartVisibility(event)
 				self:Show()
 				self.isInstanceForced = true
 				self.blockVisibilityChanges = false
-				if ElvUF_Raid.numGroups ~= E:Round(maxPlayers/5) and event then
+				if ElvUF_Raid.numGroups ~= E:Round(maxPlayers / 5) and event then
 					UF:CreateAndUpdateHeaderGroup("raid")
 				end
 			else
@@ -110,7 +112,17 @@ function UF:Update_RaidHeader(header, db)
 		headerHolder:ClearAllPoints()
 		headerHolder:Point("BOTTOMLEFT", E.UIParent, "BOTTOMLEFT", 4, 195)
 
-		E:CreateMover(headerHolder, headerHolder:GetName().."Mover", L["Raid Frames"], nil, nil, nil, "ALL,RAID", nil, "unitframe,raid,generalGroup")
+		E:CreateMover(
+			headerHolder,
+			headerHolder:GetName() .. "Mover",
+			L["Raid Frames"],
+			nil,
+			nil,
+			nil,
+			"ALL,RAID",
+			nil,
+			"unitframe,raid,generalGroup"
+		)
 
 		headerHolder:RegisterEvent("PLAYER_LOGIN")
 		headerHolder:RegisterEvent("ZONE_CHANGED_NEW_AREA")
@@ -155,7 +167,11 @@ function UF:Update_RaidFrames(frame, db)
 		frame.POWERBAR_OFFSET = frame.USE_POWERBAR_OFFSET and db.power.offset or 0
 
 		frame.POWERBAR_HEIGHT = not frame.USE_POWERBAR and 0 or db.power.height
-		frame.POWERBAR_WIDTH = frame.USE_MINI_POWERBAR and (frame.UNIT_WIDTH - (frame.BORDER*2))/2 or (frame.POWERBAR_DETACHED and db.power.detachedWidth or (frame.UNIT_WIDTH - ((frame.BORDER+frame.SPACING)*2)))
+		frame.POWERBAR_WIDTH = frame.USE_MINI_POWERBAR and (frame.UNIT_WIDTH - (frame.BORDER * 2)) / 2
+			or (
+				frame.POWERBAR_DETACHED and db.power.detachedWidth
+				or (frame.UNIT_WIDTH - ((frame.BORDER + frame.SPACING) * 2))
+			)
 
 		frame.USE_PORTRAIT = db.portrait and db.portrait.enable
 		frame.USE_PORTRAIT_OVERLAY = frame.USE_PORTRAIT and (db.portrait.overlay or frame.ORIENTATION == "MIDDLE")

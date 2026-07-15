@@ -10,13 +10,26 @@ E.Filters.List = function(priority)
 	return {
 		enable = true,
 		priority = priority or 0,
-		stackThreshold = 0
+		stackThreshold = 0,
 	}
 end
 
-E.Filters.Aura = function(auraID, includeIDs, point, color, anyUnit, onlyShowMissing, displayText, textThreshold, xOffset, yOffset)
+E.Filters.Aura = function(
+	auraID,
+	includeIDs,
+	point,
+	color,
+	anyUnit,
+	onlyShowMissing,
+	displayText,
+	textThreshold,
+	xOffset,
+	yOffset
+)
 	local r, g, b = 1, 1, 1
-	if color then r, g, b = unpack(color) end
+	if color then
+		r, g, b = unpack(color)
+	end
 
 	if includeIDs then
 		local included = E.Filters.Included
@@ -29,7 +42,7 @@ E.Filters.Aura = function(auraID, includeIDs, point, color, anyUnit, onlyShowMis
 		id = auraID,
 		includeIDs = includeIDs,
 		enabled = true,
-		point = point or 'TOPLEFT',
+		point = point or "TOPLEFT",
 		color = { r = r, g = g, b = b },
 		anyUnit = anyUnit or false,
 		onlyShowMissing = onlyShowMissing or false,
@@ -37,14 +50,14 @@ E.Filters.Aura = function(auraID, includeIDs, point, color, anyUnit, onlyShowMis
 		textThreshold = textThreshold or -1,
 		xOffset = xOffset or 0,
 		yOffset = yOffset or 0,
-		style = 'coloredIcon',
+		style = "coloredIcon",
 		sizeOffset = 0,
-		cooldownAnchor = 'CENTER',
+		cooldownAnchor = "CENTER",
 		cooldownX = 1,
 		cooldownY = 1,
-		countAnchor = 'BOTTOMRIGHT',
+		countAnchor = "BOTTOMRIGHT",
 		countX = 1,
-		countY = 1
+		countY = 1,
 	}
 end
 

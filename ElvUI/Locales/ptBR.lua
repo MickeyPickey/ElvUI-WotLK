@@ -1,6 +1,6 @@
 -- Portuguese localization file for ptBR.
 local E = unpack(ElvUI)
-local L = E.Libs.ACL:NewLocale('ElvUI', 'ptBR')
+local L = E.Libs.ACL:NewLocale("ElvUI", "ptBR")
 
 L["Restrict Pings"] = "Restringir Pings"
 L["Player"] = true
@@ -9,22 +9,34 @@ L["Medium"] = "Médio"
 L["Large"] = "Grande"
 L["Countdown"] = "Iniciar"
 L["Reset"] = "Reiniciar"
-L["ELVUI_DESC"] = ("*ElvUI|r |cFFffffffé um Addon de substituição completa da interface original do World of Warcraft.|r"):gsub('*', E.InfoColor)
+L["ELVUI_DESC"] = ("*ElvUI|r |cFFffffffé um Addon de substituição completa da interface original do World of Warcraft.|r"):gsub(
+	"*",
+	E.InfoColor
+)
 L["UPDATE_REQUEST"] = "Parece haver um problema com sua instalação. Por favor reinstale o ElvUI."
 L[" |cff00ff00bound to |r"] = " |cff00ff00vinculado a |r"
-L["%s frame has a conflicting anchor point. Forcing the Buffs to be attached to the main unitframe."] = "O quadro %s está conflitando com outro ponto de fixação. Forçando os Bônus a serem anexados ao Quadro de Unidade principal."
-L["%s is attempting to share the Private Profile (%s) with you. Would you like to accept the request?"] = "%s está tentando compartilhar o Perfil Privado (%s) com você. Gostaria de aceitar o pedido?"
-L["%s is attempting to share the Global Profile with you. Would you like to accept the request?"] = "%s está tentando compartilhar o Perfil Global com você. Gostaria de aceitar o pedido?"
-L["%s is attempting to share the Profile (%s) with you. Would you like to accept the request?"] = "%s está tentando compartilhar o Perfil (%s) com você. Gostaria de aceitar o pedido?"
+L["%s frame has a conflicting anchor point. Forcing the Buffs to be attached to the main unitframe."] =
+	"O quadro %s está conflitando com outro ponto de fixação. Forçando os Bônus a serem anexados ao Quadro de Unidade principal."
+L["%s is attempting to share the Private Profile (%s) with you. Would you like to accept the request?"] =
+	"%s está tentando compartilhar o Perfil Privado (%s) com você. Gostaria de aceitar o pedido?"
+L["%s is attempting to share the Global Profile with you. Would you like to accept the request?"] =
+	"%s está tentando compartilhar o Perfil Global com você. Gostaria de aceitar o pedido?"
+L["%s is attempting to share the Profile (%s) with you. Would you like to accept the request?"] =
+	"%s está tentando compartilhar o Perfil (%s) com você. Gostaria de aceitar o pedido?"
 L["(Ctrl & Shift Click) Toggle CPU Profiling"] = "(Ctrl & Shift Clique) Alternar Medição de Desempenho da CPU"
 L["(Hold Shift) Memory Usage"] = "(Segurar Shift) Memória em Uso"
 L["(Shift Click) Collect Garbage"] = "(Clique Shift) Coletar lixo"
-L["A raid marker feature is available by pressing Escape -> Keybinds. Scroll to the bottom -> ElvUI -> Raid Marker."] = "Um recurso de marcação de raíde está disponível em Esc -> Atalhos do Teclado. Role o texto para baixo -> ElvUI -> Raid Marker."
-L["A setting you have changed will change an option for this character only. This setting that you have changed will be uneffected by changing user profiles. Changing this setting requires that you reload your User Interface."] = "A definição que você alterou afetará apenas este personagem. Esta definição que você alterou não será afetada por mudanças de perfil. Alterar esta difinição requer que você recarregue a sua interface."
+L["A raid marker feature is available by pressing Escape -> Keybinds. Scroll to the bottom -> ElvUI -> Raid Marker."] =
+	"Um recurso de marcação de raíde está disponível em Esc -> Atalhos do Teclado. Role o texto para baixo -> ElvUI -> Raid Marker."
+L["A setting you have changed will change an option for this character only. This setting that you have changed will be uneffected by changing user profiles. Changing this setting requires that you reload your User Interface."] =
+	"A definição que você alterou afetará apenas este personagem. Esta definição que você alterou não será afetada por mudanças de perfil. Alterar esta difinição requer que você recarregue a sua interface."
 L["ABOVE_THREAT_FORMAT"] = "%s: %.0f%% [%.0f%% acima de |cff%02x%02x%02x%s|r]"
-L["Accepting this will reset the UnitFrame settings for %s. Are you sure?"] = "Aceitar isso irá resetar suas configurações de Quadro de Unidade para %s. Você tem certeza?"
-L["Accepting this will reset your Filter Priority lists for all auras on NamePlates. Are you sure?"] = "Aceitar isso irá resetar sua lista de Prioridade de Filtros para todas as auras nas Placas de Identificação. Você tem certeza?"
-L["Accepting this will reset your Filter Priority lists for all auras on UnitFrames. Are you sure?"] = "Aceitar isso irá resetar sua lista de Prioridade de Filtros para todas as auras nos Quadros de Unidades. Você tem certeza?"
+L["Accepting this will reset the UnitFrame settings for %s. Are you sure?"] =
+	"Aceitar isso irá resetar suas configurações de Quadro de Unidade para %s. Você tem certeza?"
+L["Accepting this will reset your Filter Priority lists for all auras on NamePlates. Are you sure?"] =
+	"Aceitar isso irá resetar sua lista de Prioridade de Filtros para todas as auras nas Placas de Identificação. Você tem certeza?"
+L["Accepting this will reset your Filter Priority lists for all auras on UnitFrames. Are you sure?"] =
+	"Aceitar isso irá resetar sua lista de Prioridade de Filtros para todas as auras nos Quadros de Unidades. Você tem certeza?"
 L["Active Output Audio Device"] = "Dispositivo de Saída de Aúdio Ativo"
 L["AddOn Memory:"] = "Memória do AddOn:"
 L["Adjust the UI Scale to fit your screen."] = "Adjuste a escala da interface para caber na sua tela."
@@ -37,10 +49,13 @@ L["Alternative Power"] = "Poder Alternativo"
 L["Ammo/Shard Counter"] = "Contador de Munição/Fragmento"
 L["AP:"] = "PA:"
 L["Archeology Progress Bar"] = "Barra de Progressão de Arqueologia"
-L["Are you sure you want to apply this font to all ElvUI elements?"] = "Tem certeza que quer aplicar essa fonte para todos os elementos do ElvUI?"
+L["Are you sure you want to apply this font to all ElvUI elements?"] =
+	"Tem certeza que quer aplicar essa fonte para todos os elementos do ElvUI?"
 L["Are you sure you want to disband the group?"] = "Tem a certeza de que quer dissolver o grupo?"
-L["Are you sure you want to reset all the settings on this profile?"] = "Tem certeza que quer redefinir todas as configurações desse perfil?"
-L["Are you sure you want to reset every mover back to it's default position?"] = "Tem a certeza de que deseja restaurar todos os movedores de volta para a sua posição padrão?"
+L["Are you sure you want to reset all the settings on this profile?"] =
+	"Tem certeza que quer redefinir todas as configurações desse perfil?"
+L["Are you sure you want to reset every mover back to it's default position?"] =
+	"Tem a certeza de que deseja restaurar todos os movedores de volta para a sua posição padrão?"
 L["Arena Frames"] = "Quadros de Arenas"
 L["Arena"] = true
 L["Aura Bars"] = "Barras de Auras"
@@ -60,11 +75,15 @@ L["Bank (Grow Up)"] = "Banco (crescer para cima)"
 L["Bank"] = "Banco"
 L["Bar "] = "Barra "
 L["Bars"] = "Barras"
-L["Battleground datatexts temporarily hidden, to show type /bgstats"] = "Textos Informativos de Campo de Batalha estão temporariamente escondidos, para mostrar digite /bgstats"
-L["Battleground datatexts will now show again if you are inside a battleground."] = "Os Textos Informativos irão agora ser mostrados se estiver dentro de um Campo de Batalha."
+L["Battleground datatexts temporarily hidden, to show type /bgstats"] =
+	"Textos Informativos de Campo de Batalha estão temporariamente escondidos, para mostrar digite /bgstats"
+L["Battleground datatexts will now show again if you are inside a battleground."] =
+	"Os Textos Informativos irão agora ser mostrados se estiver dentro de um Campo de Batalha."
 L["BelowMinimapWidget"] = true
 L["Binding"] = "Ligações"
-L["BINDINGS_HELP"] = ("Hover your mouse over any *action|r, *micro|r, *macro|r, or *spellbook|r button to bind it. This also works for items in your *bag|r. Press the ^ESC|r key to ^clear|r the current bindings."):gsub('*', E.InfoColor):gsub('%^', E.InfoColor2)
+L["BINDINGS_HELP"] = ("Hover your mouse over any *action|r, *micro|r, *macro|r, or *spellbook|r button to bind it. This also works for items in your *bag|r. Press the ^ESC|r key to ^clear|r the current bindings.")
+	:gsub("*", E.InfoColor)
+	:gsub("%^", E.InfoColor2)
 L["Binds Discarded"] = "Ligações Descartadas"
 L["Binds Saved"] = "Ligações Salvas"
 L["Blizzard Widgets"] = "Widgets da Blizzard"
@@ -85,7 +104,8 @@ L["Can't Roll"] = "Não pode rolar"
 L["Character: "] = "Personagem: "
 L["Chat Set"] = "Bate-Papo configurado"
 L["Chat"] = "Bate-papo"
-L["Choose a theme layout you wish to use for your initial setup."] = "Escolha o tema de layout que deseje usar inicialmente."
+L["Choose a theme layout you wish to use for your initial setup."] =
+	"Escolha o tema de layout que deseje usar inicialmente."
 L["Class Bar"] = "Barra da Classe"
 L["Classic"] = "Clássico"
 L["Combat Indicator"] = "Indicador de Combate"
@@ -116,17 +136,22 @@ L["Disband Group"] = "Dissolver Grupo"
 L["Discard"] = "Descartar"
 L["Discord"] = true
 L["DND"] = "NP"
-L["Do you swear not to post in technical support about something not working without first disabling the addon/module combination first?"] = "Você jura não postar no suporte técnico sobre alguma coisa não funcionando sem antes desabilitar a combinação de addon/módulo primeiro?"
-L["Don't forget to backup your WTF folder, all your profiles and settings are in there."] = "Não se esqueça de fazer um backup da sua pasta WTF, todos os perfis e configurações estão lá."
+L["Do you swear not to post in technical support about something not working without first disabling the addon/module combination first?"] =
+	"Você jura não postar no suporte técnico sobre alguma coisa não funcionando sem antes desabilitar a combinação de addon/módulo primeiro?"
+L["Don't forget to backup your WTF folder, all your profiles and settings are in there."] =
+	"Não se esqueça de fazer um backup da sua pasta WTF, todos os perfis e configurações estão lá."
 L["Download"] = "Download"
 L["DPS"] = "DPS"
 L["Durability Frame"] = "Quadro de Durabilidade"
 L["Earned:"] = "Ganho:"
 L["Elite"] = true
-L["ElvUI has a dual spec feature which allows you to load different profiles based on your current spec on the fly. You can enable it in the profiles tab."] = "ElvUI tem um recurso de especialização dupla que permite que você carrege diferentes perfis baseando-se na spec atual. Você pode habilitar isto na aba de perfis."
+L["ElvUI has a dual spec feature which allows you to load different profiles based on your current spec on the fly. You can enable it in the profiles tab."] =
+	"ElvUI tem um recurso de especialização dupla que permite que você carrege diferentes perfis baseando-se na spec atual. Você pode habilitar isto na aba de perfis."
 L["ElvUI Installation"] = "Instalação do ElvUI"
-L["ElvUI is five or more revisions out of date. You can download the newest version from tukui.org."] = "ElvUI está rodando com cinco ou mais revisões desatualizadas. Você pode baixar a mais nova versão em tukui.org."
-L["ElvUI is out of date. You can download the newest version from tukui.org."] = "ElvUI está desatualizado. Você pode baixar a mais nova versão em tukui.org."
+L["ElvUI is five or more revisions out of date. You can download the newest version from tukui.org."] =
+	"ElvUI está rodando com cinco ou mais revisões desatualizadas. Você pode baixar a mais nova versão em tukui.org."
+L["ElvUI is out of date. You can download the newest version from tukui.org."] =
+	"ElvUI está desatualizado. Você pode baixar a mais nova versão em tukui.org."
 L["ElvUI Plugin Installation"] = "Instalação de Plugin para ElvUI"
 L["Status"] = "Status"
 L["ElvUI Version:"] = "Versão do ElvUI:"
@@ -134,7 +159,8 @@ L["Error resetting UnitFrame."] = "Erro ao resetar o Quadro de Unidade"
 L["EventToastWidget"] = "Widget de Mensagem de Evento"
 L["Experience Bar"] = "Barra de Experiência"
 L["Experience"] = "Experiência"
-L["Download complete from %s, would you like to apply changes now?"] = "Download completo de %s, gostaria de aplicar as alterações agora?"
+L["Download complete from %s, would you like to apply changes now?"] =
+	"Download completo de %s, gostaria de aplicar as alterações agora?"
 L["Finished"] = "Terminado"
 L["Fishy Loot"] = "Saque de Peixes"
 L["Focus Aura Bars"] = "Barras de Aura do Foco"
@@ -143,7 +169,8 @@ L["Focus Frame"] = "Quadro do Foco"
 L["FocusTarget Frame"] = "Quadro do Alvo do Foco"
 L["Frame"] = "Quadro"
 L["Friends List"] = "Lista de Amigos"
-L["From time to time you should compare your ElvUI version against the most recent version on our website."] = "De vez em quando você deve comparar sua versão do ElvUI com a disponível no nosso website."
+L["From time to time you should compare your ElvUI version against the most recent version on our website."] =
+	"De vez em quando você deve comparar sua versão do ElvUI com a disponível no nosso website."
 L["G"] = "G"
 L["Ghost"] = "Fantasma"
 L["GM Ticket Frame"] = "Quadro de Consulta com GM"
@@ -168,9 +195,12 @@ L["HPS"] = "PVS"
 L["I Swear"] = "Eu Juro"
 L["I"] = true
 L["Icons Only"] = "Apenas Ícones"
-L["If you accidentally removed a default chat tab you can always re-run the chat part of the ElvUI installer."] = "Se você removeu acidentalmente uma aba padrão do Bate-papo você sempre pode rodar a parte de Bate-papo do instalador do ElvUI."
-L["If you are experiencing issues with ElvUI try disabling all your addons except ElvUI first."] = "Se você estiver enfrentando problemas com o ElvUI tente desabilitar todos os seus addons exceto o ElvUI."
-L["If you have an icon or aurabar that you don't want to display simply hold down shift and right click the icon for it to disapear."] = "Se você tiver um Ícone ou Barra de Auras que você não quer mostrar, segure Shift e clique com o botão direito para ela desaparecer."
+L["If you accidentally removed a default chat tab you can always re-run the chat part of the ElvUI installer."] =
+	"Se você removeu acidentalmente uma aba padrão do Bate-papo você sempre pode rodar a parte de Bate-papo do instalador do ElvUI."
+L["If you are experiencing issues with ElvUI try disabling all your addons except ElvUI first."] =
+	"Se você estiver enfrentando problemas com o ElvUI tente desabilitar todos os seus addons exceto o ElvUI."
+L["If you have an icon or aurabar that you don't want to display simply hold down shift and right click the icon for it to disapear."] =
+	"Se você tiver um Ícone ou Barra de Auras que você não quer mostrar, segure Shift e clique com o botão direito para ela desaparecer."
 L["IL"] = "IL"
 L["Importance: |cFF33FF33Low|r"] = "Importância: |cFF33FF33Baixa|r"
 L["Importance: |cffD3CF00Medium|r"] = "Importância: |cffD3CF00Média|r"
@@ -182,7 +212,8 @@ L["Installation Complete"] = "Instalação Completa"
 L["Interrupted %s's |cff71d5ff|Hspell:%d:0|h[%s]|h|r!"] = "Interrompeu a |cff71d5ff|Hspell:%d:0|h[%s]|h|r de %s!"
 L["Invalid Target"] = "Alvo inválido"
 L["is looking for members"] = "está procurando membros"
-L["It appears one of your AddOns have disabled the AddOn Blizzard_CompactRaidFrames. This can cause errors and other issues. The AddOn will now be re-enabled."] = "Parece que um dos seus AddOns desabilitou o Addon Blizzard_CompactRaidFrames. Isto pode causar erros e outros problemas. O AddOn será agora reabilitado"
+L["It appears one of your AddOns have disabled the AddOn Blizzard_CompactRaidFrames. This can cause errors and other issues. The AddOn will now be re-enabled."] =
+	"Parece que um dos seus AddOns desabilitou o Addon Blizzard_CompactRaidFrames. Isto pode causar erros e outros problemas. O AddOn será agora reabilitado"
 L["Item level: %.2f"] = "Nível do Item: %.2f"
 L["Item Level:"] = "Nível de Item:"
 L["joined a group"] = "entrou em um grupo"
@@ -217,11 +248,15 @@ L["List of installations in queue:"] = "Lista de instalações na fila:"
 L["Loadouts"] = "Configuração de Especialização"
 L["Location"] = "Localização"
 L["Lock"] = "Travar"
-L["LOGIN_MSG"] = ("Bem-vindo ao *ElvUI|r versão *%s|r, digite */ec|r para acessar as configurações dentro do jogo. Se você precisa de suporte técnico nos contate em https://tukui.org ou se entre no Discord: https://discord.tukui.org"):gsub('*', E.InfoColor)
-L["LOGIN_MSG_HELP"] = ("Por favor use */ehelp|r para ver a lista de comandos do *ElvUI|r."):gsub('*', E.InfoColor)
+L["LOGIN_MSG"] = ("Bem-vindo ao *ElvUI|r versão *%s|r, digite */ec|r para acessar as configurações dentro do jogo. Se você precisa de suporte técnico nos contate em https://tukui.org ou se entre no Discord: https://discord.tukui.org"):gsub(
+	"*",
+	E.InfoColor
+)
+L["LOGIN_MSG_HELP"] = ("Por favor use */ehelp|r para ver a lista de comandos do *ElvUI|r."):gsub("*", E.InfoColor)
 L["Loot / Alert Frames"] = "Quadro de Saque / Alerta"
 L["Loot Frame"] = "Quadro de Saque"
-L["Lord! It's a miracle! The download up and vanished like a fart in the wind! Try Again!"] = "Senhor! É um milagre! O Download sumiu como um peido no vento! Tente novamente!"
+L["Lord! It's a miracle! The download up and vanished like a fart in the wind! Try Again!"] =
+	"Senhor! É um milagre! O Download sumiu como um peido no vento! Tente novamente!"
 L["Loss Control Icon"] = "Ícone de Perda de Controle"
 L["lvl"] = "nvl"
 L["MA Frames"] = "Quadro do Assistente Principal"
@@ -238,8 +273,10 @@ L["MT Frames"] = "Quadro do Tank Principal"
 L["Mythic+ Best Run:"] = "Melhor corrida de Nível Mítico"
 L["Mythic+ Score:"] = "Pontuação de Nível Mítico"
 L["Naval Mission(s) Report:"] = "Relatório das Missões Navais:"
-L["Need help? Join our Discord: https://discord.tukui.org"] = "Precisa de ajuda? Junte-se ao nosso Discord: https://discord.tukui.org"
-L["New Profile will create a fresh profile for this character."] = "Novo Perfil irá criar um perfil limpo para este personagem."
+L["Need help? Join our Discord: https://discord.tukui.org"] =
+	"Precisa de ajuda? Junte-se ao nosso Discord: https://discord.tukui.org"
+L["New Profile will create a fresh profile for this character."] =
+	"Novo Perfil irá criar um perfil limpo para este personagem."
 L["New Profile"] = "Novo Perfil"
 L["No bindings set."] = "Sem atalhos definidos"
 L["No gray items to sell."] = true
@@ -250,9 +287,12 @@ L["Nudge"] = "Ajuste fino"
 L["O"] = "O"
 L["Objective Frame"] = "Quadro de objetivos"
 L["Offline"] = "Desconectado"
-L["Oh lord, you have got ElvUI and Tukui both enabled at the same time. Select an addon to disable."] = "Oh senhor, você está com os addons ElvUI e Tuki ativos ao mesmo tempo. Selecione um para desativar."
-L["One or more of the changes you have made require a ReloadUI."] = "Uma ou mais das alterações que fez requerem que recarregue a IU."
-L["One or more of the changes you have made will effect all characters using this addon. You will have to reload the user interface to see the changes you have made."] = "Uma ou mais das alterações que fez afetará todos os personagens que usam este addon. Você terá que recarregar a interface para ver as alterações que fez."
+L["Oh lord, you have got ElvUI and Tukui both enabled at the same time. Select an addon to disable."] =
+	"Oh senhor, você está com os addons ElvUI e Tuki ativos ao mesmo tempo. Selecione um para desativar."
+L["One or more of the changes you have made require a ReloadUI."] =
+	"Uma ou mais das alterações que fez requerem que recarregue a IU."
+L["One or more of the changes you have made will effect all characters using this addon. You will have to reload the user interface to see the changes you have made."] =
+	"Uma ou mais das alterações que fez afetará todos os personagens que usam este addon. Você terá que recarregar a interface para ver as alterações que fez."
 L["Output Audio Device"] = "Dispositivo de Saída de Aúdio"
 L["P"] = "P"
 L["Paragon"] = "Paragão"
@@ -272,14 +312,21 @@ L["Player Castbar"] = "Barra de lançamento do Jogador"
 L["Player Debuffs"] = "Penalidades do Jogador"
 L["Player Frame"] = "Quadro do Jogador"
 L["Player NamePlate"] = "Placa de Identificação do Jogador"
-L["Please click the button below so you can setup variables and ReloadUI."] = "Por favor, clique no botão abaixo para que possa configurar as variáveis e Recarregar a IU."
-L["Please click the button below to setup your CVars."] = "Por favor, clique no botão abaixo para configurar as suas CVars."
-L["Please click the button below to setup your Profile Settings."] = "Por favor, clique no botão abaixo para configurar seu Perfil."
-L["Please press the continue button to go onto the next step."] = "Por favor, pressione o botão Continuar para passar à próxima etapa."
+L["Please click the button below so you can setup variables and ReloadUI."] =
+	"Por favor, clique no botão abaixo para que possa configurar as variáveis e Recarregar a IU."
+L["Please click the button below to setup your CVars."] =
+	"Por favor, clique no botão abaixo para configurar as suas CVars."
+L["Please click the button below to setup your Profile Settings."] =
+	"Por favor, clique no botão abaixo para configurar seu Perfil."
+L["Please press the continue button to go onto the next step."] =
+	"Por favor, pressione o botão Continuar para passar à próxima etapa."
 L["PowerBarWidget"] = "Widget de Poder"
-L["Profile download complete from %s, but the profile %s already exists. Change the name or else it will overwrite the existing profile."] = "Download do perfil de %s completado, mas o perfil %s já existe. Altere o nome ou ele irá sobrescrever o perfil existente."
-L["Profile download complete from %s, would you like to load the profile %s now?"] = "Download do perfil de %s completado, gostaria de carregar o perfil %s agora?"
-L["Profile request sent. Waiting for response from player."] = "Pedido de perfil enviado. Aguardando a resposta do jogador."
+L["Profile download complete from %s, but the profile %s already exists. Change the name or else it will overwrite the existing profile."] =
+	"Download do perfil de %s completado, mas o perfil %s já existe. Altere o nome ou ele irá sobrescrever o perfil existente."
+L["Profile download complete from %s, would you like to load the profile %s now?"] =
+	"Download do perfil de %s completado, gostaria de carregar o perfil %s agora?"
+L["Profile request sent. Waiting for response from player."] =
+	"Pedido de perfil enviado. Aguardando a resposta do jogador."
 L["Profile Settings Setup"] = "Configuração de Perfil"
 L["Profit:"] = "Lucro:"
 L["Purchase Bags"] = "Comprar Bolsas"
@@ -311,7 +358,8 @@ L["Save"] = "Salvar"
 L["Saved Dungeon(s)"] = "Masmorra(s) salva(s)"
 L["Saved Raid(s)"] = "Raide(s) Salva(s)"
 L["says"] = "diz"
-L["Select the type of aura system you want to use with ElvUI's unitframes. Set to Aura Bars to use both aura bars and icons, set to Icons Only to only see icons."] = "Selecione o tipo de auras que você quer usar com os quadros de unidade do ElvUI. Selecione Barra de Aura % Ícones para usar os dois ou Ícones para ver apenas os ícones."
+L["Select the type of aura system you want to use with ElvUI's unitframes. Set to Aura Bars to use both aura bars and icons, set to Icons Only to only see icons."] =
+	"Selecione o tipo de auras que você quer usar com os quadros de unidade do ElvUI. Selecione Barra de Aura % Ícones para usar os dois ou Ícones para ver apenas os ícones."
 L["Select Volume Stream"] = "Selecione o Volume do Canal"
 L["Server: "] = "Servidor: "
 L["Session:"] = "Sessão:"
@@ -348,22 +396,34 @@ L["Targeted By:"] = "Sendo Alvo de:"
 L["TargetTarget Frame"] = "Quadro do Alvo do Alvo"
 L["TargetTargetTarget Frame"] = "Quadro do Alvo do Alvo do Alvo"
 L["Temporary Move"] = "Mover Temporariamente"
-L["The chat windows function the same as Blizzard standard chat windows, you can right click the tabs and drag them around, rename, etc. Please click the button below to setup your chat windows."] = "As janelas de bate-papo funcionam da mesma forma das da Blizzard, você pode usar o botão direito nas guias para os arrastar, mudar o nome, etc. Por favor clique no botão abaixo para configurar as suas janelas de bate-papo"
-L["The in-game configuration menu can be accessed by typing the /ec command. Press the button below if you wish to skip the installation process."] = "O menu de configuração pode ser acessado digitando o comando /ec. Pressione o botão abaixo se você deseja pular o processo de instalação."
-L["The profile you tried to import already exists. Choose a new name or accept to overwrite the existing profile."] = "O perfil que você tentou importar já existe. Escolha um novo nome ou aceite sobrescrever o perfil existente."
-L["The spell '%s' has been added to the '%s' unitframe aura filter."] = "O feitiço '%s' foi adicionado ao filtro '%s' das auras de unidades."
+L["The chat windows function the same as Blizzard standard chat windows, you can right click the tabs and drag them around, rename, etc. Please click the button below to setup your chat windows."] =
+	"As janelas de bate-papo funcionam da mesma forma das da Blizzard, você pode usar o botão direito nas guias para os arrastar, mudar o nome, etc. Por favor clique no botão abaixo para configurar as suas janelas de bate-papo"
+L["The in-game configuration menu can be accessed by typing the /ec command. Press the button below if you wish to skip the installation process."] =
+	"O menu de configuração pode ser acessado digitando o comando /ec. Pressione o botão abaixo se você deseja pular o processo de instalação."
+L["The profile you tried to import already exists. Choose a new name or accept to overwrite the existing profile."] =
+	"O perfil que você tentou importar já existe. Escolha um novo nome ou aceite sobrescrever o perfil existente."
+L["The spell '%s' has been added to the '%s' unitframe aura filter."] =
+	"O feitiço '%s' foi adicionado ao filtro '%s' das auras de unidades."
 L["Theme Set"] = "Tema configurado"
 L["Theme Setup"] = "Configuração do Tema"
-L["This install process will help you learn some of the features in ElvUI has to offer and also prepare your user interface for usage."] = "Este processo de instalação vai mostrar-lhe algumas das opções que o ElvUI tem para oferecer e também vai preparar a sua interface para ser usada."
-L["This part of the installation process sets up your chat windows names, positions and colors."] = "Esta parte da instalação é para definir os nomes, posições e cores das suas janelas de bate-papo."
-L["This part of the installation process sets up your World of Warcraft default options it is recommended you should do this step for everything to behave properly."] = "Esta parte da instalação serve para definir as suas opcões padrão do WoW, é recomendado fazer isto para que tudo funcione corretamente."
-L["This setting caused a conflicting anchor point, where '%s' would be attached to itself. Please check your anchor points. Setting '%s' to be attached to '%s'."] = "Essa configuração causou um conflito com o ponto de fixação, onde '%s' iria ser anexado com ele mesmo. Por favor cheque seus pontos de fixações. Configuração '%s' a ser anexada a '%s'."
-L["This will change the layout of your unitframes and actionbars."] = "Isso irá mudar a disposição dos seus Quadros de Unidades e Barras de Ações"
+L["This install process will help you learn some of the features in ElvUI has to offer and also prepare your user interface for usage."] =
+	"Este processo de instalação vai mostrar-lhe algumas das opções que o ElvUI tem para oferecer e também vai preparar a sua interface para ser usada."
+L["This part of the installation process sets up your chat windows names, positions and colors."] =
+	"Esta parte da instalação é para definir os nomes, posições e cores das suas janelas de bate-papo."
+L["This part of the installation process sets up your World of Warcraft default options it is recommended you should do this step for everything to behave properly."] =
+	"Esta parte da instalação serve para definir as suas opcões padrão do WoW, é recomendado fazer isto para que tudo funcione corretamente."
+L["This setting caused a conflicting anchor point, where '%s' would be attached to itself. Please check your anchor points. Setting '%s' to be attached to '%s'."] =
+	"Essa configuração causou um conflito com o ponto de fixação, onde '%s' iria ser anexado com ele mesmo. Por favor cheque seus pontos de fixações. Configuração '%s' a ser anexada a '%s'."
+L["This will change the layout of your unitframes and actionbars."] =
+	"Isso irá mudar a disposição dos seus Quadros de Unidades e Barras de Ações"
 L["Threat Bar"] = "Barra de Ameaça"
 L["Time Alert Frame"] = "Quadro de Alerta de Tempo"
-L["To list all available ElvUI commands, type in chat /ehelp"] = "Para listar todos os comandos do ElvUI, digite /ehelp no chat"
-L["To quickly move around certain elements of the UI, type /emove"] = "Para mover certos elementos da IU rapidamente, digite /emove"
-L["To setup chat colors, chat channels and chat font size, right-click the chat tab name."] = "Para configurar cores, canais e tamanho de fonte do bate-papo, clique com o botão direito no nome da aba do bate-papo."
+L["To list all available ElvUI commands, type in chat /ehelp"] =
+	"Para listar todos os comandos do ElvUI, digite /ehelp no chat"
+L["To quickly move around certain elements of the UI, type /emove"] =
+	"Para mover certos elementos da IU rapidamente, digite /emove"
+L["To setup chat colors, chat channels and chat font size, right-click the chat tab name."] =
+	"Para configurar cores, canais e tamanho de fonte do bate-papo, clique com o botão direito no nome da aba do bate-papo."
 L["Toggle Bags"] = "Mostrar/Ocultar Bolsas"
 L["Toggle Chat Frame"] = "Mostrar/Ocultar Bate-papo"
 L["Toggle Configuration"] = "Mostrar/Ocultar Modo de Configuração"
@@ -394,34 +454,53 @@ L["World Protocol:"] = "Procoloco do Mundo:"
 L["WoW Token:"] = "Ficha do WoW"
 L["XP:"] = "XP:"
 L["yells"] = "grita"
-L["You are now finished with the installation process. If you are in need of technical support please join our Discord."] = "Você terminou com o processo de instalação. Se você precisa de ajuda técnica por favor junte-se ao nosso Discord."
-L["You are using CPU Profiling. This causes decreased performance. Do you want to disable it or continue?"] = "Você está usando o modo de Medição de Desempenho da CPU. Isto pode causar queda na perfomance. Deseja desabilitá-lo ou continuar?"
-L["You can access the copy chat and chat menu functions by left/right clicking on the icon in the top right corner of the chat panel."] = "Você pode acessar funcções de cópia do bate-papo e menu quando você cliqua com o botão direito/esquerdo no ícone no canto superior direito do paínel de bate-papo"
-L["You can access the microbar by using middle mouse button on the minimap. You can also enable the MicroBar in the actionbar settings."] = "Você pode acessar a microbarra utilizando o botão do meio do mouse no minimapa. Você também pode habilitar a MicroBarra nas configurações de barras de ação"
-L["You can always change fonts and colors of any element of ElvUI from the in-game configuration."] = "Você sempre pode mudar as fontes e cores de quaisquer elementos do ElvUI através do painel de configuração."
-L["You can enter the keybind mode by typing /kb"] = "Você sempre pode entrar no modo de vínculo de teclas digitando /kb"
-L["You can now choose what layout you wish to use based on your combat role."] = "Pode agora escolher o layout que pretende usar baseado no seu papel no grupo."
-L["You can quickly change your displayed DataTexts by mousing over them while holding ALT."] = "Você pode mudar rapidamente os Textos Informativos quando você passa o mouse por cima deles enquanto segura ALT."
-L["You can see someones average item level inside the tooltip by holding shift and mousing over them."] = "Você pode ver o nível de item médio de alguém dentro da Dica se você segurar shift e passar o mouse por cima deles"
+L["You are now finished with the installation process. If you are in need of technical support please join our Discord."] =
+	"Você terminou com o processo de instalação. Se você precisa de ajuda técnica por favor junte-se ao nosso Discord."
+L["You are using CPU Profiling. This causes decreased performance. Do you want to disable it or continue?"] =
+	"Você está usando o modo de Medição de Desempenho da CPU. Isto pode causar queda na perfomance. Deseja desabilitá-lo ou continuar?"
+L["You can access the copy chat and chat menu functions by left/right clicking on the icon in the top right corner of the chat panel."] =
+	"Você pode acessar funcções de cópia do bate-papo e menu quando você cliqua com o botão direito/esquerdo no ícone no canto superior direito do paínel de bate-papo"
+L["You can access the microbar by using middle mouse button on the minimap. You can also enable the MicroBar in the actionbar settings."] =
+	"Você pode acessar a microbarra utilizando o botão do meio do mouse no minimapa. Você também pode habilitar a MicroBarra nas configurações de barras de ação"
+L["You can always change fonts and colors of any element of ElvUI from the in-game configuration."] =
+	"Você sempre pode mudar as fontes e cores de quaisquer elementos do ElvUI através do painel de configuração."
+L["You can enter the keybind mode by typing /kb"] =
+	"Você sempre pode entrar no modo de vínculo de teclas digitando /kb"
+L["You can now choose what layout you wish to use based on your combat role."] =
+	"Pode agora escolher o layout que pretende usar baseado no seu papel no grupo."
+L["You can quickly change your displayed DataTexts by mousing over them while holding ALT."] =
+	"Você pode mudar rapidamente os Textos Informativos quando você passa o mouse por cima deles enquanto segura ALT."
+L["You can see someones average item level inside the tooltip by holding shift and mousing over them."] =
+	"Você pode ver o nível de item médio de alguém dentro da Dica se você segurar shift e passar o mouse por cima deles"
 L["You don't have enough money to repair."] = "Você não tem dinheiro suficiente para reparar."
 L["You don't have permission to mark targets."] = "Você não tem permissão para marcar alvos."
-L["You have imported settings which may require a UI reload to take effect. Reload now?"] = "Você importou configurações que podem requerer um reload na sua interface para surgir efeito. Dar reload agora?"
+L["You have imported settings which may require a UI reload to take effect. Reload now?"] =
+	"Você importou configurações que podem requerer um reload na sua interface para surgir efeito. Dar reload agora?"
 L["You must be at a vendor."] = "Você tem que estar num vendedor."
 L["You must purchase a bank slot first!"] = "Você deve comprar um espaço no banco primeiro!"
 L["Your items have been repaired for: "] = "Seus itens foram reparadas por: "
-L["Your items have been repaired using guild bank funds for: "] = "Seus itens foram reparados usando fundos do banco da guilda por: "
+L["Your items have been repaired using guild bank funds for: "] =
+	"Seus itens foram reparados usando fundos do banco da guilda por: "
 L["Your profile was successfully recieved by the player."] = "Seu perfil foi recebido com sucesso pelo jogador."
 L["Zone Ability"] = "Habilidade da Zona"
-L["|cFFE30000Lua error recieved. You can view the error message when you exit combat."] = "|cFFE30000Erro de Lua recebido. Você pode ver a mensagem de erro quando sair de combate."
-L["|cffFFFFFFControl + Left Click:|r Change Loadout"] = "|cffFFFFFFControl + Clique Esquerdo:|r Mudar Configuração de Especialização"
-L["|cffFFFFFFLeft Click:|r Change Talent Specialization"] = "|cffFFFFFFClique Esquerdo:|r Alterar Especialização de Talento"
+L["|cFFE30000Lua error recieved. You can view the error message when you exit combat."] =
+	"|cFFE30000Erro de Lua recebido. Você pode ver a mensagem de erro quando sair de combate."
+L["|cffFFFFFFControl + Left Click:|r Change Loadout"] =
+	"|cffFFFFFFControl + Clique Esquerdo:|r Mudar Configuração de Especialização"
+L["|cffFFFFFFLeft Click:|r Change Talent Specialization"] =
+	"|cffFFFFFFClique Esquerdo:|r Alterar Especialização de Talento"
 L["|cFFffffffLeft Click:|r Select Volume Stream"] = "|cFFffffffClique Esquerdo:|r Selecionar Volume de Canal"
-L["|cFFffffffMiddle Click:|r Toggle Mute Master Stream"] = "|cFFffffffClique do Meio:|r Alternar o Mute do Canal Principal"
-L["|cffFFFFFFRight Click:|r Change Loot Specialization"] = "|cffFFFFFFClique Direito:|r Alterar a Especialização de Saque"
+L["|cFFffffffMiddle Click:|r Toggle Mute Master Stream"] =
+	"|cFFffffffClique do Meio:|r Alternar o Mute do Canal Principal"
+L["|cffFFFFFFRight Click:|r Change Loot Specialization"] =
+	"|cffFFFFFFClique Direito:|r Alterar a Especialização de Saque"
 L["|cFFffffffRight Click:|r Toggle Volume Stream"] = "|cFFffffffClique Direito:|r Alternar Volume do Canal"
-L["|cFFffffffShift + Left Click:|r Open System Audio Panel"] = "|cFFffffffShift + Clique Esquerdo|r Abrir Painel de Aúdio do Sistema"
-L["|cffFFFFFFShift + Left Click:|r Show Talent Specialization UI"] = "|cffFFFFFFShift + Clique Esquerdo:|r Mostrar interface de especialização de talentos"
-L["|cFFffffffShift + Right Click:|r Select Output Audio Device"] = "|cFFffffffShift + Clique Direito:|r Selecionar o Dispositivo de Saída de Aúdio"
+L["|cFFffffffShift + Left Click:|r Open System Audio Panel"] =
+	"|cFFffffffShift + Clique Esquerdo|r Abrir Painel de Aúdio do Sistema"
+L["|cffFFFFFFShift + Left Click:|r Show Talent Specialization UI"] =
+	"|cffFFFFFFShift + Clique Esquerdo:|r Mostrar interface de especialização de talentos"
+L["|cFFffffffShift + Right Click:|r Select Output Audio Device"] =
+	"|cFFffffffShift + Clique Direito:|r Selecionar o Dispositivo de Saída de Aúdio"
 
 ----------------------------------
 L["DESC_MOVERCONFIG"] = [=[Movedores destravados. Mova-os agora e clique Travar quando acabar.
@@ -445,4 +524,4 @@ L["EHELP_COMMANDS"] = ([=[Aqui está a lista de todos os comandos importantes do
   NOTA: */edebug|r ^off|r irá reabilitar os addons desabilitados por ter usar */edebug|r ^on|r nesta sessão.
  */guildlist|r ^minPlayers|r  -  Dumps the sorted list of guilds from the finder.
  */guildapply|r ^"message"|r  -  Applies to the top 5 new guilds with an optional message.
-]=]):gsub('*', E.InfoColor):gsub('%^', E.InfoColor2)
+]=]):gsub("*", E.InfoColor):gsub("%^", E.InfoColor2)

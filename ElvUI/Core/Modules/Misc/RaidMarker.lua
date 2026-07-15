@@ -19,10 +19,15 @@ local UIErrorsFrame = UIErrorsFrame
 local ButtonIsDown
 
 function M:RaidMarkCanMark()
-	if not self.RaidMarkFrame then return false end
+	if not self.RaidMarkFrame then
+		return false
+	end
 
 	if GetNumPartyMembers() > 0 then
-		if UnitIsPartyLeader("player") or (UnitInRaid("player") and UnitIsRaidOfficer("player") and not UnitIsPartyLeader("player")) then
+		if
+			UnitIsPartyLeader("player")
+			or (UnitInRaid("player") and UnitIsRaidOfficer("player") and not UnitIsPartyLeader("player"))
+		then
 			return true
 		else
 			UIErrorsFrame:AddMessage(L["You don't have permission to mark targets."], 1.0, 0.1, 0.1, 1.0)
@@ -34,7 +39,9 @@ function M:RaidMarkCanMark()
 end
 
 function M:RaidMarkShowIcons()
-	if not UnitExists("target") or UnitIsDead("target") then return end
+	if not UnitExists("target") or UnitIsDead("target") then
+		return
+	end
 
 	local x, y = GetCursorPosition()
 	local scale = E.UIParent:GetEffectiveScale()
@@ -69,7 +76,7 @@ function M:RaidMarkButton_OnLeave()
 end
 
 function M:RaidMarkButton_OnClick(button)
-	PlaySound('UChatScrollButton')
+	PlaySound("UChatScrollButton")
 	SetRaidTarget("target", (button ~= "RightButton") and self:GetID() or 0)
 	self:GetParent():Hide()
 end
@@ -82,14 +89,14 @@ function M:LoadRaidMarker()
 	marker:Size(100)
 
 	for i = 1, 8 do
-		local button = CreateFrame("Button", "RaidMarkIconButton"..i, marker)
+		local button = CreateFrame("Button", "RaidMarkIconButton" .. i, marker)
 		button:Size(40)
 		button:SetID(i)
-		button.Texture = button:CreateTexture(button:GetName().."NormalTexture", "ARTWORK")
+		button.Texture = button:CreateTexture(button:GetName() .. "NormalTexture", "ARTWORK")
 		button.Texture:SetTexture([[Interface\TargetingFrame\UI-RaidTargetingIcons]])
 		button.Texture:SetAllPoints()
 		SetRaidTargetIconTexture(button.Texture, i)
-		button:RegisterForClicks("LeftbuttonUp","RightbuttonUp")
+		button:RegisterForClicks("LeftbuttonUp", "RightbuttonUp")
 		button:SetScript("OnClick", M.RaidMarkButton_OnClick)
 		button:SetScript("OnEnter", M.RaidMarkButton_OnEnter)
 		button:SetScript("OnLeave", M.RaidMarkButton_OnLeave)

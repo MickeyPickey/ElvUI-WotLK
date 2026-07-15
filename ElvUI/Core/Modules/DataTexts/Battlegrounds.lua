@@ -1,5 +1,5 @@
 local E, L, V, P, G = unpack(ElvUI)
-local DT = E:GetModule('DataTexts')
+local DT = E:GetModule("DataTexts")
 
 local _G = _G
 local sort = sort
@@ -13,23 +13,23 @@ local GetBattlefieldScore = GetBattlefieldScore
 
 local GetNumBattlefieldStats = GetNumBattlefieldStats()
 
-local displayString = ''
+local displayString = ""
 local data = { killingBlows = 0, honorableKills = 0, healingDone = 0, deaths = 0, damageDone = 0, honorGained = 0 }
 
 local function GetBattleStats(name)
-	if name == 'PvP: Kills' then
+	if name == "PvP: Kills" then
 		return _G.KILLING_BLOWS, data.killingBlows
-	elseif name == 'PvP: Honorable Kills' then
+	elseif name == "PvP: Honorable Kills" then
 		return _G.HONORABLE_KILLS, data.honorableKills
-	elseif name == 'PvP: Heals' then
+	elseif name == "PvP: Heals" then
 		return _G.SHOW_COMBAT_HEALING, data.healingDone
-	elseif name == 'PvP: Deaths' then
+	elseif name == "PvP: Deaths" then
 		return _G.DEATHS, data.deaths
-	elseif name == 'PvP: Damage Done' then
+	elseif name == "PvP: Damage Done" then
 		return _G.DAMAGE, data.damageDone
-	elseif name == 'PvP: Honor Gained' then
+	elseif name == "PvP: Honor Gained" then
 		return _G.HONOR, data.honorGained
-	elseif name == 'PvP: Objectives' then
+	elseif name == "PvP: Objectives" then
 		return _G.OBJECTIVES_LABEL
 	end
 end
@@ -39,7 +39,8 @@ function DT:UPDATE_BATTLEFIELD_SCORE()
 
 	for i = 1, GetNumBattlefieldScores() do
 		local name, _
-		name, data.killingBlows, data.honorableKills, data.deaths, data.honorGained, _, _, _, _, _, data.damageDone, data.healingDone = GetBattlefieldScore(i)
+		name, data.killingBlows, data.honorableKills, data.deaths, data.honorGained, _, _, _, _, _, data.damageDone, data.healingDone =
+			GetBattlefieldScore(i)
 
 		if name == E.myname then
 			data.myIndex = i
@@ -55,7 +56,7 @@ end
 function DT:HoverBattleStats() -- Objectives OnEnter -- Idea is to store this in a table and probably rotate it on the text field.
 	DT.tooltip:ClearLines()
 
-	if data.myIndex and DT.ShowingBattleStats == 'pvp' then
+	if data.myIndex and DT.ShowingBattleStats == "pvp" then
 		local columns = GetNumBattlefieldStats()
 		if columns then
 			sort(columns, columnSort)
@@ -63,7 +64,7 @@ function DT:HoverBattleStats() -- Objectives OnEnter -- Idea is to store this in
 			-- Add extra statistics to watch based on what BG you are in.
 			for i, stat in ipairs(columns) do
 				if stat.name then
-					DT.tooltip:AddDoubleLine(stat.name, GetBattlefieldStatData(data.myIndex, i), 1,1,1)
+					DT.tooltip:AddDoubleLine(stat.name, GetBattlefieldStatData(data.myIndex, i), 1, 1, 1)
 				end
 			end
 
@@ -93,7 +94,7 @@ local function OnUpdate(self, elapsed)
 		if value then
 			self.text:SetFormattedText(displayString, locale, E:ShortValue(tonumber(value) or 0))
 		else
-			self.text:SetFormattedText('%s', locale)
+			self.text:SetFormattedText("%s", locale)
 		end
 
 		self.needsUpdate = false
@@ -106,15 +107,65 @@ local function OnEvent(self)
 end
 
 local function ValueColorUpdate(_, hex)
-	displayString = strjoin('', '%s: ', hex, '%s|r')
+	displayString = strjoin("", "%s: ", hex, "%s|r")
 end
 
 E.valueColorUpdateFuncs.Battlegrounds = ValueColorUpdate
 
-DT:RegisterDatatext('PvP: Kills', 'Battlegrounds', { 'UPDATE_BATTLEFIELD_SCORE' }, OnEvent, OnUpdate, DT.ToggleBattleStats)
-DT:RegisterDatatext('PvP: Honorable Kills', 'Battlegrounds', { 'UPDATE_BATTLEFIELD_SCORE' }, OnEvent, OnUpdate, DT.ToggleBattleStats)
-DT:RegisterDatatext('PvP: Heals', 'Battlegrounds', { 'UPDATE_BATTLEFIELD_SCORE' }, OnEvent, OnUpdate, DT.ToggleBattleStats)
-DT:RegisterDatatext('PvP: Deaths', 'Battlegrounds', { 'UPDATE_BATTLEFIELD_SCORE' }, OnEvent, OnUpdate, DT.ToggleBattleStats)
-DT:RegisterDatatext('PvP: Damage Done', 'Battlegrounds', { 'UPDATE_BATTLEFIELD_SCORE' }, OnEvent, OnUpdate, DT.ToggleBattleStats)
-DT:RegisterDatatext('PvP: Honor Gained', 'Battlegrounds', { 'UPDATE_BATTLEFIELD_SCORE' }, OnEvent, OnUpdate, DT.ToggleBattleStats)
-DT:RegisterDatatext('PvP: Objectives', 'Battlegrounds', { 'UPDATE_BATTLEFIELD_SCORE' }, OnEvent, OnUpdate, DT.ToggleBattleStats, DT.HoverBattleStats)
+DT:RegisterDatatext(
+	"PvP: Kills",
+	"Battlegrounds",
+	{ "UPDATE_BATTLEFIELD_SCORE" },
+	OnEvent,
+	OnUpdate,
+	DT.ToggleBattleStats
+)
+DT:RegisterDatatext(
+	"PvP: Honorable Kills",
+	"Battlegrounds",
+	{ "UPDATE_BATTLEFIELD_SCORE" },
+	OnEvent,
+	OnUpdate,
+	DT.ToggleBattleStats
+)
+DT:RegisterDatatext(
+	"PvP: Heals",
+	"Battlegrounds",
+	{ "UPDATE_BATTLEFIELD_SCORE" },
+	OnEvent,
+	OnUpdate,
+	DT.ToggleBattleStats
+)
+DT:RegisterDatatext(
+	"PvP: Deaths",
+	"Battlegrounds",
+	{ "UPDATE_BATTLEFIELD_SCORE" },
+	OnEvent,
+	OnUpdate,
+	DT.ToggleBattleStats
+)
+DT:RegisterDatatext(
+	"PvP: Damage Done",
+	"Battlegrounds",
+	{ "UPDATE_BATTLEFIELD_SCORE" },
+	OnEvent,
+	OnUpdate,
+	DT.ToggleBattleStats
+)
+DT:RegisterDatatext(
+	"PvP: Honor Gained",
+	"Battlegrounds",
+	{ "UPDATE_BATTLEFIELD_SCORE" },
+	OnEvent,
+	OnUpdate,
+	DT.ToggleBattleStats
+)
+DT:RegisterDatatext(
+	"PvP: Objectives",
+	"Battlegrounds",
+	{ "UPDATE_BATTLEFIELD_SCORE" },
+	OnEvent,
+	OnUpdate,
+	DT.ToggleBattleStats,
+	DT.HoverBattleStats
+)

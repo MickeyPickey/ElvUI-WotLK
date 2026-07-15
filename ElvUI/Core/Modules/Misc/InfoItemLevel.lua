@@ -1,5 +1,5 @@
 local E, L, V, P, G = unpack(ElvUI)
-local M = E:GetModule('Misc')
+local M = E:GetModule("Misc")
 local LSM = E.Libs.LSM
 local LC = E.Libs.Compat
 
@@ -14,24 +14,24 @@ local CreateFrame = CreateFrame
 local GetItemLevelColor = LC.GetItemLevelColor
 
 local InspectItems = {
-    'HeadSlot',
-    'NeckSlot',
-    'ShoulderSlot',
-	'',
-    'ChestSlot',
-    'WaistSlot',
-    'LegsSlot',
-    'FeetSlot',
-    'WristSlot',
-    'HandsSlot',
-    'Finger0Slot',
-    'Finger1Slot',
-    'Trinket0Slot',
-    'Trinket1Slot',
-    'BackSlot',
-	'MainHandSlot', -- 16
-	'SecondaryHandSlot', -- 17
-	'RangedSlot' -- 18
+	"HeadSlot",
+	"NeckSlot",
+	"ShoulderSlot",
+	"",
+	"ChestSlot",
+	"WaistSlot",
+	"LegsSlot",
+	"FeetSlot",
+	"WristSlot",
+	"HandsSlot",
+	"Finger0Slot",
+	"Finger1Slot",
+	"Trinket0Slot",
+	"Trinket1Slot",
+	"BackSlot",
+	"MainHandSlot", -- 16
+	"SecondaryHandSlot", -- 17
+	"RangedSlot", -- 18
 }
 
 local numInspectItems = #InspectItems
@@ -42,13 +42,13 @@ local whileOpenEvents = {
 
 function M:CreateInspectTexture(slot, x, y)
 	local texture = slot:CreateTexture()
-	texture:Point('BOTTOM', x, y)
+	texture:Point("BOTTOM", x, y)
 	texture:SetTexCoords()
 	texture:Size(14)
 
-	local backdrop = CreateFrame('Frame', nil, slot)
+	local backdrop = CreateFrame("Frame", nil, slot)
 	backdrop:SetTemplate(nil, nil, true)
-	backdrop:SetBackdropColor(0,0,0,0)
+	backdrop:SetBackdropColor(0, 0, 0, 0)
 	backdrop:SetOutside(texture)
 	backdrop:Hide()
 
@@ -56,23 +56,27 @@ function M:CreateInspectTexture(slot, x, y)
 end
 
 function M:GetInspectPoints(id)
-	if not id then return end
+	if not id then
+		return
+	end
 
 	if id <= 5 or (id == 9 or id == 15) then
-		return 40, 3, 18, 'BOTTOMLEFT' -- Left side
+		return 40, 3, 18, "BOTTOMLEFT" -- Left side
 	elseif (id >= 6 and id <= 8) or (id >= 10 and id <= 14) then
-		return -40, 3, 18, 'BOTTOMRIGHT' -- Right side
+		return -40, 3, 18, "BOTTOMRIGHT" -- Right side
 	else
-		return 0, 46, 60, 'BOTTOM'
+		return 0, 46, 60, "BOTTOM"
 	end
 end
 
 function M:UpdateInspectInfo(event, arg1)
 	local frame = _G.InspectFrame
-	if not frame then return end
+	if not frame then
+		return
+	end
 
-	if event == 'UNIT_MODEL_CHANGED' or event == 'FAKE_INSPECT_UPDATE' then
-		if arg1 == 'target' and frame:IsShown() then
+	if event == "UNIT_MODEL_CHANGED" or event == "FAKE_INSPECT_UPDATE" then
+		if arg1 == "target" and frame:IsShown() then
 			arg1 = UnitGUID(arg1)
 		else
 			return
@@ -84,14 +88,16 @@ function M:UpdateInspectInfo(event, arg1)
 	end
 
 	if arg1 then -- model changed but no guid???
-		M.InspectTimer = E:ScheduleTimer(M.UpdatePageInfo, 0.2, M, frame, 'Inspect', arg1)
+		M.InspectTimer = E:ScheduleTimer(M.UpdatePageInfo, 0.2, M, frame, "Inspect", arg1)
 	end
 end
 
 function M:UpdateCharacterInfo(event)
-	if not (E.db.general.itemLevel.displayCharacterInfo and _G.CharacterFrame:IsShown()) then return end
+	if not (E.db.general.itemLevel.displayCharacterInfo and _G.CharacterFrame:IsShown()) then
+		return
+	end
 
-	M:UpdatePageInfo(_G.CharacterFrame, 'Character', nil, event)
+	M:UpdatePageInfo(_G.CharacterFrame, "Character", nil, event)
 end
 
 function M:UpdateSocketDisplay(item, hide)
@@ -104,41 +110,47 @@ function M:UpdateSocketDisplay(item, hide)
 end
 
 function M:ClearPageInfo(frame, which)
-	if not (frame and frame.ItemLevelText) then return end
-	frame.ItemLevelText:SetText('')
+	if not (frame and frame.ItemLevelText) then
+		return
+	end
+	frame.ItemLevelText:SetText("")
 
 	for i = 1, numInspectItems do
-		local slot = i ~= 4 and _G[which..InspectItems[i]]
+		local slot = i ~= 4 and _G[which .. InspectItems[i]]
 		if slot then
-			slot.enchantText:SetText('')
-			slot.iLvlText:SetText('')
+			slot.enchantText:SetText("")
+			slot.iLvlText:SetText("")
 
 			M:UpdateSocketDisplay(slot)
 
 			for y = 1, 10 do
-				slot['textureSlot'..y]:SetTexture()
-				slot['textureSlotBackdrop'..y]:Hide()
+				slot["textureSlot" .. y]:SetTexture()
+				slot["textureSlotBackdrop" .. y]:Hide()
 			end
 		end
 	end
 end
 
 function M:CheckStatsItemLevel()
-	return not E:IsAddOnEnabled('DejaCharacterStats')
+	return not E:IsAddOnEnabled("DejaCharacterStats")
 end
 
 function M:ToggleItemLevelInfo(setupCharacterPage, config)
-	if not IsAddOnLoaded('ElvUI_Enhanced') then return end
-	if not E.private.enhanced.character.enable then return end
+	if not IsAddOnLoaded("ElvUI_Enhanced") then
+		return
+	end
+	if not E.private.enhanced.character.enable then
+		return
+	end
 
 	if setupCharacterPage then
-		M:CreateSlotStrings(_G.CharacterFrame, 'Character')
+		M:CreateSlotStrings(_G.CharacterFrame, "Character")
 	end
 
 	if E.db.general.itemLevel.displayCharacterInfo then
-		M:RegisterEvent('PLAYER_EQUIPMENT_CHANGED', 'UpdateCharacterInfo')
-		M:RegisterEvent('UPDATE_INVENTORY_DURABILITY', 'UpdateCharacterInfo')
-		M:RegisterEvent('PLAYER_AVG_ITEM_LEVEL_UPDATE', 'UpdateCharacterInfo')
+		M:RegisterEvent("PLAYER_EQUIPMENT_CHANGED", "UpdateCharacterInfo")
+		M:RegisterEvent("UPDATE_INVENTORY_DURABILITY", "UpdateCharacterInfo")
+		M:RegisterEvent("PLAYER_AVG_ITEM_LEVEL_UPDATE", "UpdateCharacterInfo")
 
 		if M:CheckStatsItemLevel() then
 			_G.CharacterAttributesFrame:Hide()
@@ -146,41 +158,41 @@ function M:ToggleItemLevelInfo(setupCharacterPage, config)
 		end
 
 		if not _G.CharacterFrame.CharacterInfoHooked then
-			_G.CharacterFrame:HookScript('OnShow', M.UpdateCharacterInfo)
+			_G.CharacterFrame:HookScript("OnShow", M.UpdateCharacterInfo)
 			_G.CharacterFrame.CharacterInfoHooked = true
 		end
 
 		if not setupCharacterPage then
 			if config then
-				M:UpdateSlotPoints('Character')
+				M:UpdateSlotPoints("Character")
 			end
 
 			M:UpdateCharacterInfo()
 		end
 	else
-		M:UnregisterEvent('PLAYER_EQUIPMENT_CHANGED')
-		M:UnregisterEvent('UPDATE_INVENTORY_DURABILITY')
-		M:UnregisterEvent('PLAYER_AVG_ITEM_LEVEL_UPDATE')
+		M:UnregisterEvent("PLAYER_EQUIPMENT_CHANGED")
+		M:UnregisterEvent("UPDATE_INVENTORY_DURABILITY")
+		M:UnregisterEvent("PLAYER_AVG_ITEM_LEVEL_UPDATE")
 
 		if M:CheckStatsItemLevel() then
 			_G.CharacterAttributesFrame:Show()
 			_G.CharacterResistanceFrame:Show()
 		end
 
-		M:ClearPageInfo(_G.CharacterFrame, 'Character')
+		M:ClearPageInfo(_G.CharacterFrame, "Character")
 	end
 
 	if E.db.general.itemLevel.displayInspectInfo then
-		M:RegisterEvent('INSPECT_READY', 'UpdateInspectInfo')
-		M:RegisterEvent('UNIT_MODEL_CHANGED', 'UpdateInspectInfo')
+		M:RegisterEvent("INSPECT_READY", "UpdateInspectInfo")
+		M:RegisterEvent("UNIT_MODEL_CHANGED", "UpdateInspectInfo")
 
 		if config then
-			M:UpdateSlotPoints('Inspect', true)
+			M:UpdateSlotPoints("Inspect", true)
 		end
 	else
-		M:UnregisterEvent('INSPECT_READY')
-		M:UnregisterEvent('UNIT_MODEL_CHANGED')
-		M:ClearPageInfo(_G.InspectFrame, 'Inspect')
+		M:UnregisterEvent("INSPECT_READY")
+		M:UnregisterEvent("UNIT_MODEL_CHANGED")
+		M:ClearPageInfo(_G.InspectFrame, "Inspect")
 	end
 end
 
@@ -205,8 +217,8 @@ function M:UpdatePageStrings(i, iLevelDB, slot, slotInfo, which) -- `which` is u
 
 	local gemStep, showGems = 1, E.db.general.itemLevel.showGems
 	for x = 1, 10 do
-		local texture = slot['textureSlot'..x]
-		local backdrop = slot['textureSlotBackdrop'..x]
+		local texture = slot["textureSlot" .. x]
+		local backdrop = slot["textureSlotBackdrop" .. x]
 
 		local gem = showGems and slotInfo.gems and slotInfo.gems[gemStep]
 		if gem then
@@ -223,7 +235,7 @@ function M:UpdatePageStrings(i, iLevelDB, slot, slotInfo, which) -- `which` is u
 end
 
 function M:UpdateAverageString(frame, which, iLevelDB)
-	local charPage, avgItemLevel, avgTotal = which == 'Character'
+	local charPage, avgItemLevel, avgTotal = which == "Character"
 
 	if charPage then
 		avgTotal, avgItemLevel = E:GetPlayerItemLevel() -- rounded average, rounded equipped
@@ -231,7 +243,7 @@ function M:UpdateAverageString(frame, which, iLevelDB)
 		avgItemLevel = E:CalculateAverageItemLevel(iLevelDB, frame.unit)
 	end
 
-	if avgItemLevel and (not charPage or not E:IsAddOnEnabled('DejaCharacterStats')) then
+	if avgItemLevel and (not charPage or not E:IsAddOnEnabled("DejaCharacterStats")) then
 		if charPage then
 			frame.ItemLevelText:SetText(avgTotal)
 
@@ -242,14 +254,14 @@ function M:UpdateAverageString(frame, which, iLevelDB)
 			frame.ItemLevelText:SetText(avgItemLevel)
 		end
 	else
-		frame.ItemLevelText:SetText('')
+		frame.ItemLevelText:SetText("")
 	end
 
 	-- we have to wait to do this on inspect so handle it in here
 	if not E.db.general.itemLevel.itemLevelRarity then
 		for i = 1, numInspectItems do
 			local ilvl = i ~= 4 and iLevelDB[i]
-			local inspectItem = ilvl and _G[which..InspectItems[i]]
+			local inspectItem = ilvl and _G[which .. InspectItems[i]]
 			if inspectItem then
 				local r, g, b = E:ColorizeItemLevel(ilvl - (avgTotal or avgItemLevel or 0))
 				inspectItem.iLvlText:SetTextColor(r, g, b)
@@ -260,11 +272,15 @@ end
 
 function M:TryGearAgain(frame, which, i, deepScan, iLevelDB, inspectItem)
 	E:Delay(0.05, function()
-		if which == 'Inspect' and (not frame or not frame.unit) then return end
+		if which == "Inspect" and (not frame or not frame.unit) then
+			return
+		end
 
-		local unit = (which == 'Character' and 'player') or frame.unit
+		local unit = (which == "Character" and "player") or frame.unit
 		local slotInfo = E:GetGearSlotInfo(unit, i, deepScan)
-		if slotInfo == 'tooSoon' then return end
+		if slotInfo == "tooSoon" then
+			return
+		end
 
 		M:UpdatePageStrings(i, iLevelDB, inspectItem, slotInfo, which)
 	end)
@@ -273,23 +289,34 @@ end
 do
 	local iLevelDB = {}
 	function M:UpdatePageInfo(frame, which, guid, event)
-		if which == 'Inspect' then M.InspectTimer = nil end -- clear inspect timer
-		if not (which and frame and frame.ItemLevelText) then return end
-		if which == 'Inspect' and (not frame or not frame.unit or (guid and frame:IsShown() and UnitGUID(frame.unit) ~= guid)) then return end
+		if which == "Inspect" then
+			M.InspectTimer = nil
+		end -- clear inspect timer
+		if not (which and frame and frame.ItemLevelText) then
+			return
+		end
+		if
+			which == "Inspect"
+			and (not frame or not frame.unit or (guid and frame:IsShown() and UnitGUID(frame.unit) ~= guid))
+		then
+			return
+		end
 
 		wipe(iLevelDB)
 
 		local waitForItems
 		for i = 1, numInspectItems do
-			local inspectItem = i ~= 4 and _G[which..InspectItems[i]]
+			local inspectItem = i ~= 4 and _G[which .. InspectItems[i]]
 			if inspectItem then
-				inspectItem.enchantText:SetText('')
-				inspectItem.iLvlText:SetText('')
+				inspectItem.enchantText:SetText("")
+				inspectItem.iLvlText:SetText("")
 
-				local unit = (which == 'Character' and 'player') or frame.unit
+				local unit = (which == "Character" and "player") or frame.unit
 				local slotInfo = E:GetGearSlotInfo(unit, i, true)
-				if slotInfo == 'tooSoon' then
-					if not waitForItems then waitForItems = true end
+				if slotInfo == "tooSoon" then
+					if not waitForItems then
+						waitForItems = true
+					end
 					M:TryGearAgain(frame, which, i, true, iLevelDB, inspectItem)
 				else
 					M:UpdatePageStrings(i, iLevelDB, inspectItem, slotInfo, which)
@@ -297,7 +324,7 @@ do
 			end
 		end
 
-		if event and event == 'PLAYER_EQUIPMENT_CHANGED' then
+		if event and event == "PLAYER_EQUIPMENT_CHANGED" then
 			return
 		end
 
@@ -310,48 +337,50 @@ do
 end
 
 function M:CreateSlotStrings(frame, which)
-	if not (frame and which) then return end
-
-	if which == 'Inspect' then
-		frame.ItemLevelText = _G.InspectPaperDollFrame:CreateFontString(nil, 'OVERLAY')
-		frame.ItemLevelText:Point('BOTTOMLEFT', 20, 84)
-	else
-		frame.ItemLevelText = _G.PaperDollFrame:CreateFontString(nil, 'OVERLAY')
-		frame.ItemLevelText:Point('BOTTOMLEFT', _G.PaperDollFrame, 16, 84)
+	if not (frame and which) then
+		return
 	end
 
-	local totalLevelFont = LSM:Fetch('font', E.db.general.itemLevel.totalLevelFont)
+	if which == "Inspect" then
+		frame.ItemLevelText = _G.InspectPaperDollFrame:CreateFontString(nil, "OVERLAY")
+		frame.ItemLevelText:Point("BOTTOMLEFT", 20, 84)
+	else
+		frame.ItemLevelText = _G.PaperDollFrame:CreateFontString(nil, "OVERLAY")
+		frame.ItemLevelText:Point("BOTTOMLEFT", _G.PaperDollFrame, 16, 84)
+	end
+
+	local totalLevelFont = LSM:Fetch("font", E.db.general.itemLevel.totalLevelFont)
 	local totalLevelFontSize = E.db.general.itemLevel.totalLevelFontSize or 12
-	local totalLevelFontOutline = E.db.general.itemLevel.totalLevelFontOutline or 'OUTLINE'
+	local totalLevelFontOutline = E.db.general.itemLevel.totalLevelFontOutline or "OUTLINE"
 	frame.ItemLevelText:FontTemplate(totalLevelFont, totalLevelFontSize, totalLevelFontOutline)
 
 	M:UpdateSlotPoints(which)
 end
 
 function M:UpdateSlotPoints(which, config)
-	local itemLevelFont = LSM:Fetch('font', E.db.general.itemLevel.itemLevelFont)
+	local itemLevelFont = LSM:Fetch("font", E.db.general.itemLevel.itemLevelFont)
 	local itemLevelFontSize = E.db.general.itemLevel.itemLevelFontSize or 12
-	local itemLevelFontOutline = E.db.general.itemLevel.itemLevelFontOutline or 'OUTLINE'
+	local itemLevelFontOutline = E.db.general.itemLevel.itemLevelFontOutline or "OUTLINE"
 	local showItemLevel = E.db.general.itemLevel.showItemLevel
 
-	if config and which == 'Inspect' and UnitExists('target') then
-		M:UpdateInspectInfo('FAKE_INSPECT_UPDATE', 'target') -- fake update when inspect is already shown
+	if config and which == "Inspect" and UnitExists("target") then
+		M:UpdateInspectInfo("FAKE_INSPECT_UPDATE", "target") -- fake update when inspect is already shown
 	end
 
 	for i, s in pairs(InspectItems) do
-		local slot = i ~= 4 and _G[which..s]
+		local slot = i ~= 4 and _G[which .. s]
 		if slot then
 			local x, y, z, justify = M:GetInspectPoints(i)
 			if not slot.iLvlText then
-				slot.iLvlText = slot:CreateFontString(nil, 'OVERLAY')
+				slot.iLvlText = slot:CreateFontString(nil, "OVERLAY")
 			end
 
 			slot.iLvlText:FontTemplate(itemLevelFont, itemLevelFontSize, itemLevelFontOutline)
 			slot.iLvlText:ClearAllPoints()
-			slot.iLvlText:Point('BOTTOM', slot, x, y)
+			slot.iLvlText:Point("BOTTOM", slot, x, y)
 
 			if not slot.enchantText then
-				slot.enchantText = slot:CreateFontString(nil, 'OVERLAY')
+				slot.enchantText = slot:CreateFontString(nil, "OVERLAY")
 			end
 
 			slot.enchantText:FontTemplate(itemLevelFont, itemLevelFontSize, itemLevelFontOutline)
@@ -359,25 +388,26 @@ function M:UpdateSlotPoints(which, config)
 
 			local itemLeft, itemRight = i == 16, i == 17
 			if itemLeft or itemRight then
-				slot.enchantText:Point(itemLeft and 'BOTTOMRIGHT' or 'BOTTOMLEFT', slot, itemLeft and -40 or 40, 3)
+				slot.enchantText:Point(itemLeft and "BOTTOMRIGHT" or "BOTTOMLEFT", slot, itemLeft and -40 or 40, 3)
 			elseif i == 17 then
-				slot.enchantText:Point('TOP', slot, 'BOTTOM', 0, 3)
+				slot.enchantText:Point("TOP", slot, "BOTTOM", 0, 3)
 			else
-				slot.enchantText:Point(justify, slot, x + (justify == 'BOTTOMLEFT' and 5 or -5), z)
+				slot.enchantText:Point(justify, slot, x + (justify == "BOTTOMLEFT" and 5 or -5), z)
 			end
 
 			local weapon = i == 16 or i == 17 or i == 18
 			for u = 1, 10 do
 				local offset = (showItemLevel and 8 or 0) + ((u - (showItemLevel and 0 or 1)) * 16)
-				local newX = (weapon and 0) or ((justify == 'BOTTOMLEFT' or itemRight) and x+offset) or x-offset
-				local newY = (weapon and offset+40) or y
+				local newX = (weapon and 0) or ((justify == "BOTTOMLEFT" or itemRight) and x + offset) or x - offset
+				local newY = (weapon and offset + 40) or y
 
-				local texSlot = slot['textureSlot'..u]
+				local texSlot = slot["textureSlot" .. u]
 				if texSlot then
 					texSlot:ClearAllPoints()
-					texSlot:Point('BOTTOM', newX, newY)
+					texSlot:Point("BOTTOM", newX, newY)
 				else
-					slot['textureSlot'..u], slot['textureSlotBackdrop'..u] = M:CreateInspectTexture(slot, newX, newY)
+					slot["textureSlot" .. u], slot["textureSlotBackdrop" .. u] =
+						M:CreateInspectTexture(slot, newX, newY)
 				end
 			end
 		end
@@ -387,24 +417,24 @@ end
 function M:SetupInspectPageInfo()
 	local frame = _G.InspectFrame
 	if frame and not frame.ItemLevelText then
-		M:CreateSlotStrings(frame, 'Inspect')
+		M:CreateSlotStrings(frame, "Inspect")
 	end
 end
 
 function M:UpdateInspectPageFonts(which)
-	local totalLevelFont = LSM:Fetch('font', E.db.general.itemLevel.totalLevelFont)
+	local totalLevelFont = LSM:Fetch("font", E.db.general.itemLevel.totalLevelFont)
 	local totalLevelFontSize = E.db.general.itemLevel.totalLevelFontSize or 12
-	local totalLevelFontOutline = E.db.general.itemLevel.totalLevelFontOutline or 'OUTLINE'
-	local frame = (which == 'Character' and _G.CharacterFrame) or _G.InspectFrame
+	local totalLevelFontOutline = E.db.general.itemLevel.totalLevelFontOutline or "OUTLINE"
+	local frame = (which == "Character" and _G.CharacterFrame) or _G.InspectFrame
 	if frame and frame.ItemLevelText then
 		frame.ItemLevelText:FontTemplate(totalLevelFont, totalLevelFontSize, totalLevelFontOutline)
 	end
 
-	local itemLevelFont = LSM:Fetch('font', E.db.general.itemLevel.itemLevelFont)
+	local itemLevelFont = LSM:Fetch("font", E.db.general.itemLevel.itemLevelFont)
 	local itemLevelFontSize = E.db.general.itemLevel.itemLevelFontSize or 12
-	local itemLevelFontOutline = E.db.general.itemLevel.itemLevelFontOutline or 'OUTLINE'
+	local itemLevelFontOutline = E.db.general.itemLevel.itemLevelFontOutline or "OUTLINE"
 	for i, s in pairs(InspectItems) do
-		local slot = i ~= 4 and _G[which..s]
+		local slot = i ~= 4 and _G[which .. s]
 		if slot then
 			slot.iLvlText:FontTemplate(itemLevelFont, itemLevelFontSize, itemLevelFontOutline)
 			slot.enchantText:FontTemplate(itemLevelFont, itemLevelFontSize, itemLevelFontOutline)

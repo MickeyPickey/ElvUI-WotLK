@@ -41,7 +41,7 @@ function UF:Construct_PowerBar(frame, bg, text, textPos)
 	power.colorTapping = false
 	power:CreateBackdrop("Default", nil, nil, self.thinBorders, true)
 
-	local clipFrame = CreateFrame('Frame', nil, power)
+	local clipFrame = CreateFrame("Frame", nil, power)
 	clipFrame:SetAllPoints()
 	clipFrame:EnableMouse(false)
 	clipFrame.__frame = frame
@@ -51,7 +51,9 @@ function UF:Construct_PowerBar(frame, bg, text, textPos)
 end
 
 function UF:Configure_Power(frame)
-	if not frame.VARIABLES_SET then return end
+	if not frame.VARIABLES_SET then
+		return
+	end
 	local db = frame.db
 	local power = frame.Power
 	power.origParent = frame
@@ -92,11 +94,15 @@ function UF:Configure_Power(frame)
 		local heightChanged = false
 		if (not self.thinBorders and not E.PixelMode) and frame.POWERBAR_HEIGHT < 7 then --A height of 7 means 6px for borders and just 1px for the actual power statusbar
 			frame.POWERBAR_HEIGHT = 7
-			if db.power then db.power.height = 7 end
+			if db.power then
+				db.power.height = 7
+			end
 			heightChanged = true
 		elseif (self.thinBorders or E.PixelMode) and frame.POWERBAR_HEIGHT < 3 then --A height of 3 means 2px for borders and just 1px for the actual power statusbar
 			frame.POWERBAR_HEIGHT = 3
-			if db.power then db.power.height = 3 end
+			if db.power then
+				db.power.height = 3
+			end
 			heightChanged = true
 		end
 		if heightChanged then
@@ -108,24 +114,56 @@ function UF:Configure_Power(frame)
 		--Position
 		power:ClearAllPoints()
 		if frame.POWERBAR_DETACHED then
-			power:Width(frame.POWERBAR_WIDTH - ((frame.BORDER + frame.SPACING)*2))
-			power:Height(frame.POWERBAR_HEIGHT - ((frame.BORDER + frame.SPACING)*2))
+			power:Width(frame.POWERBAR_WIDTH - ((frame.BORDER + frame.SPACING) * 2))
+			power:Height(frame.POWERBAR_HEIGHT - ((frame.BORDER + frame.SPACING) * 2))
 			if not power.Holder or (power.Holder and not power.Holder.mover) then
 				power.Holder = CreateFrame("Frame", nil, power)
 				power.Holder:Size(frame.POWERBAR_WIDTH, frame.POWERBAR_HEIGHT)
 				power.Holder:Point("BOTTOM", frame, "BOTTOM", 0, -20)
 				power:ClearAllPoints()
-				power:Point("BOTTOMLEFT", power.Holder, "BOTTOMLEFT", frame.BORDER+frame.SPACING, frame.BORDER+frame.SPACING)
+				power:Point(
+					"BOTTOMLEFT",
+					power.Holder,
+					"BOTTOMLEFT",
+					frame.BORDER + frame.SPACING,
+					frame.BORDER + frame.SPACING
+				)
 				--Currently only Player and Target can detach power bars, so doing it this way is okay for now
 				if frame.unitframeType and frame.unitframeType == "player" then
-					E:CreateMover(power.Holder, "PlayerPowerBarMover", L["Player Powerbar"], nil, nil, nil, "ALL,SOLO", nil, "unitframe,player,power")
+					E:CreateMover(
+						power.Holder,
+						"PlayerPowerBarMover",
+						L["Player Powerbar"],
+						nil,
+						nil,
+						nil,
+						"ALL,SOLO",
+						nil,
+						"unitframe,player,power"
+					)
 				elseif frame.unitframeType and frame.unitframeType == "target" then
-					E:CreateMover(power.Holder, "TargetPowerBarMover", L["Target Powerbar"], nil, nil, nil, "ALL,SOLO", nil, "unitframe,target,power")
+					E:CreateMover(
+						power.Holder,
+						"TargetPowerBarMover",
+						L["Target Powerbar"],
+						nil,
+						nil,
+						nil,
+						"ALL,SOLO",
+						nil,
+						"unitframe,target,power"
+					)
 				end
 			else
 				power.Holder:Size(frame.POWERBAR_WIDTH, frame.POWERBAR_HEIGHT)
 				power:ClearAllPoints()
-				power:Point("BOTTOMLEFT", power.Holder, "BOTTOMLEFT", frame.BORDER+frame.SPACING, frame.BORDER+frame.SPACING)
+				power:Point(
+					"BOTTOMLEFT",
+					power.Holder,
+					"BOTTOMLEFT",
+					frame.BORDER + frame.SPACING,
+					frame.BORDER + frame.SPACING
+				)
 				power.Holder.mover:SetScale(1)
 				power.Holder.mover:SetAlpha(1)
 			end
@@ -133,33 +171,87 @@ function UF:Configure_Power(frame)
 			power:SetFrameLevel(50) --RaisedElementParent uses 100, we want lower value to allow certain icons and texts to appear above power
 		elseif frame.USE_POWERBAR_OFFSET then
 			if frame.ORIENTATION == "LEFT" then
-				power:Point("TOPRIGHT", frame.Health, "TOPRIGHT", frame.POWERBAR_OFFSET + (frame.HAPPINESS_WIDTH or 0), -frame.POWERBAR_OFFSET)
+				power:Point(
+					"TOPRIGHT",
+					frame.Health,
+					"TOPRIGHT",
+					frame.POWERBAR_OFFSET + (frame.HAPPINESS_WIDTH or 0),
+					-frame.POWERBAR_OFFSET
+				)
 				power:Point("BOTTOMLEFT", frame.Health, "BOTTOMLEFT", frame.POWERBAR_OFFSET, -frame.POWERBAR_OFFSET)
 			elseif frame.ORIENTATION == "MIDDLE" then
-				power:Point("TOPLEFT", frame, "TOPLEFT", frame.BORDER + frame.SPACING, -frame.POWERBAR_OFFSET - frame.CLASSBAR_YOFFSET)
+				power:Point(
+					"TOPLEFT",
+					frame,
+					"TOPLEFT",
+					frame.BORDER + frame.SPACING,
+					-frame.POWERBAR_OFFSET - frame.CLASSBAR_YOFFSET
+				)
 				power:Point("BOTTOMRIGHT", frame, "BOTTOMRIGHT", -frame.BORDER - frame.SPACING, frame.BORDER)
 			else
-				power:Point("TOPLEFT", frame.Health, "TOPLEFT", -frame.POWERBAR_OFFSET - (frame.HAPPINESS_WIDTH or 0), -frame.POWERBAR_OFFSET)
+				power:Point(
+					"TOPLEFT",
+					frame.Health,
+					"TOPLEFT",
+					-frame.POWERBAR_OFFSET - (frame.HAPPINESS_WIDTH or 0),
+					-frame.POWERBAR_OFFSET
+				)
 				power:Point("BOTTOMRIGHT", frame.Health, "BOTTOMRIGHT", -frame.POWERBAR_OFFSET, -frame.POWERBAR_OFFSET)
 			end
 			power:OffsetFrameLevel(-5, frame.Health) --Health uses 10
 		elseif frame.USE_INSET_POWERBAR then
 			power:Height(frame.POWERBAR_HEIGHT - (frame.BORDER + frame.SPACING) * 2)
-			power:Point("BOTTOMLEFT", frame.Health, "BOTTOMLEFT", frame.BORDER + frame.BORDER * 2, frame.BORDER + frame.BORDER * 2)
-			power:Point("BOTTOMRIGHT", frame.Health, "BOTTOMRIGHT", -(frame.BORDER + frame.BORDER * 2), frame.BORDER + frame.BORDER * 2)
+			power:Point(
+				"BOTTOMLEFT",
+				frame.Health,
+				"BOTTOMLEFT",
+				frame.BORDER + frame.BORDER * 2,
+				frame.BORDER + frame.BORDER * 2
+			)
+			power:Point(
+				"BOTTOMRIGHT",
+				frame.Health,
+				"BOTTOMRIGHT",
+				-(frame.BORDER + frame.BORDER * 2),
+				frame.BORDER + frame.BORDER * 2
+			)
 			power:SetFrameLevel(50)
 		elseif frame.USE_MINI_POWERBAR then
 			power:Height(frame.POWERBAR_HEIGHT - (frame.BORDER + frame.SPACING) * 2)
 
 			if frame.ORIENTATION == "LEFT" then
 				power:Width(frame.POWERBAR_WIDTH - frame.BORDER * 2)
-				power:Point("RIGHT", frame, "BOTTOMRIGHT", -(frame.BORDER * 2 + 4) - (frame.HAPPINESS_WIDTH or 0), (frame.POWERBAR_HEIGHT - frame.BORDER) / 2)
+				power:Point(
+					"RIGHT",
+					frame,
+					"BOTTOMRIGHT",
+					-(frame.BORDER * 2 + 4) - (frame.HAPPINESS_WIDTH or 0),
+					(frame.POWERBAR_HEIGHT - frame.BORDER) / 2
+				)
 			elseif frame.ORIENTATION == "RIGHT" then
-				power:Width(frame.POWERBAR_WIDTH - frame.BORDER*2)
-				power:Point("LEFT", frame, "BOTTOMLEFT", frame.BORDER * 2 + 4 + (frame.HAPPINESS_WIDTH or 0), (frame.POWERBAR_HEIGHT - frame.BORDER) / 2)
+				power:Width(frame.POWERBAR_WIDTH - frame.BORDER * 2)
+				power:Point(
+					"LEFT",
+					frame,
+					"BOTTOMLEFT",
+					frame.BORDER * 2 + 4 + (frame.HAPPINESS_WIDTH or 0),
+					(frame.POWERBAR_HEIGHT - frame.BORDER) / 2
+				)
 			else
-				power:Point("LEFT", frame, "BOTTOMLEFT", frame.BORDER * 2 + 4, ((frame.POWERBAR_HEIGHT-frame.BORDER)/2))
-				power:Point("RIGHT", frame, "BOTTOMRIGHT", -(frame.BORDER * 2 + 4) - (frame.HAPPINESS_WIDTH or 0), (frame.POWERBAR_HEIGHT - frame.BORDER) / 2)
+				power:Point(
+					"LEFT",
+					frame,
+					"BOTTOMLEFT",
+					frame.BORDER * 2 + 4,
+					((frame.POWERBAR_HEIGHT - frame.BORDER) / 2)
+				)
+				power:Point(
+					"RIGHT",
+					frame,
+					"BOTTOMRIGHT",
+					-(frame.BORDER * 2 + 4) - (frame.HAPPINESS_WIDTH or 0),
+					(frame.POWERBAR_HEIGHT - frame.BORDER) / 2
+				)
 			end
 
 			power:SetFrameLevel(50)
@@ -206,7 +298,7 @@ function UF:Configure_Power(frame)
 	UF:ToggleTransparentStatusBar(UF.db.colors.transparentPower, power, power.BG, nil, UF.db.colors.invertPower)
 end
 
-local tokens = {[0] = "MANA", "RAGE", "FOCUS", "ENERGY", "RUNIC_POWER"}
+local tokens = { [0] = "MANA", "RAGE", "FOCUS", "ENERGY", "RUNIC_POWER" }
 function UF:PostUpdatePowerColor()
 	local parent = self.origParent or self:GetParent()
 

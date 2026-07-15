@@ -7,7 +7,9 @@ local unpack = unpack
 --WoW API / Variables
 
 S:AddCallbackForAddon("Blizzard_TalentUI", "Skin_Blizzard_TalentUI", function()
-	if not E.private.skins.blizzard.enable or not E.private.skins.blizzard.talent then return end
+	if not E.private.skins.blizzard.enable or not E.private.skins.blizzard.talent then
+		return
+	end
 
 	PlayerTalentFrame:StripTextures(true)
 	PlayerTalentFrame:CreateBackdrop("Transparent")
@@ -66,9 +68,9 @@ S:AddCallbackForAddon("Blizzard_TalentUI", "Skin_Blizzard_TalentUI", function()
 	S:HandleScrollBar(PlayerTalentFrameScrollFrameScrollBar)
 
 	for i = 1, MAX_NUM_TALENTS do
-		local talent = _G["PlayerTalentFrameTalent"..i]
-		local icon = _G["PlayerTalentFrameTalent"..i.."IconTexture"]
-		local rank = _G["PlayerTalentFrameTalent"..i.."Rank"]
+		local talent = _G["PlayerTalentFrameTalent" .. i]
+		local icon = _G["PlayerTalentFrameTalent" .. i .. "IconTexture"]
+		local rank = _G["PlayerTalentFrameTalent" .. i .. "Rank"]
 
 		if talent then
 			talent:StripTextures()
@@ -84,11 +86,11 @@ S:AddCallbackForAddon("Blizzard_TalentUI", "Skin_Blizzard_TalentUI", function()
 	end
 
 	for i = 1, 4 do
-		S:HandleTab(_G["PlayerTalentFrameTab"..i])
+		S:HandleTab(_G["PlayerTalentFrameTab" .. i])
 	end
 
 	for i = 1, MAX_TALENT_TABS do
-		local tab = _G["PlayerSpecTab"..i]
+		local tab = _G["PlayerSpecTab" .. i]
 		tab:GetRegions():Hide()
 
 		tab:SetTemplate("Default")

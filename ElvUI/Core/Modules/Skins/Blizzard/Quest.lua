@@ -21,7 +21,9 @@ local MAX_NUM_ITEMS = MAX_NUM_ITEMS
 local MAX_REPUTATIONS = MAX_REPUTATIONS
 
 S:AddCallback("Skin_Quest", function()
-	if not E.private.skins.blizzard.enable or not E.private.skins.blizzard.quest then return end
+	if not E.private.skins.blizzard.enable or not E.private.skins.blizzard.quest then
+		return
+	end
 
 	QuestLogFrame:StripTextures()
 	QuestLogFrame:CreateBackdrop("Transparent")
@@ -218,7 +220,7 @@ S:AddCallback("Skin_Quest", function()
 
 	QuestFrameGreetingPanel:HookScript("OnShow", function()
 		for i = 1, MAX_NUM_QUESTS do
-			local button = _G["QuestTitleButton"..i]
+			local button = _G["QuestTitleButton" .. i]
 
 			if button:GetFontString() then
 				local text = button:GetText()
@@ -237,13 +239,13 @@ S:AddCallback("Skin_Quest", function()
 
 	local items = {
 		["QuestInfoItem"] = MAX_NUM_ITEMS,
-		["QuestProgressItem"] = MAX_REQUIRED_ITEMS
+		["QuestProgressItem"] = MAX_REQUIRED_ITEMS,
 	}
 	for frame, numItems in pairs(items) do
 		for i = 1, numItems do
-			local item = _G[frame..i]
-			local icon = _G[frame..i.."IconTexture"]
-			local count = _G[frame..i.."Count"]
+			local item = _G[frame .. i]
+			local icon = _G[frame .. i .. "IconTexture"]
+			local count = _G[frame .. i .. "Count"]
 
 			item:StripTextures()
 			item:SetTemplate("Default")
@@ -295,8 +297,8 @@ S:AddCallback("Skin_Quest", function()
 		local item, name, link
 
 		for i = 1, MAX_REQUIRED_ITEMS do
-			item = _G["QuestProgressItem"..i]
-			name = _G["QuestProgressItem"..i.."Name"]
+			item = _G["QuestProgressItem" .. i]
+			name = _G["QuestProgressItem" .. i .. "Name"]
 			link = item.type and GetQuestItemLink(item.type, item:GetID())
 
 			questQualityColors(item, name, link)
@@ -306,14 +308,18 @@ S:AddCallback("Skin_Quest", function()
 	hooksecurefunc("QuestInfoItem_OnClick", function(frame)
 		if frame.type == "choice" then
 			frame:SetBackdropBorderColor(1, 0.80, 0.10)
-			_G[frame:GetName()..'Name']:SetTextColor(1, 0.80, 0.10)
+			_G[frame:GetName() .. "Name"]:SetTextColor(1, 0.80, 0.10)
 
 			for i = 1, MAX_NUM_ITEMS do
-				local item = _G["QuestInfoItem"..i]
+				local item = _G["QuestInfoItem" .. i]
 
 				if item ~= frame then
-					local name = _G["QuestInfoItem"..i.."Name"]
-					local link = item.type and (_G.QuestInfoFrame.questLog and GetQuestLogItemLink or GetQuestItemLink)(item.type, item:GetID())
+					local name = _G["QuestInfoItem" .. i .. "Name"]
+					local link = item.type
+						and (_G.QuestInfoFrame.questLog and GetQuestLogItemLink or GetQuestItemLink)(
+							item.type,
+							item:GetID()
+						)
 
 					questQualityColors(item, name, link)
 				end
@@ -331,7 +337,7 @@ S:AddCallback("Skin_Quest", function()
 
 			if objType ~= "spell" then
 				numVisibleObjectives = numVisibleObjectives + 1
-				objective = _G["QuestInfoObjective"..numVisibleObjectives]
+				objective = _G["QuestInfoObjective" .. numVisibleObjectives]
 
 				if finished then
 					objective:SetTextColor(1, 0.80, 0.10)
@@ -363,7 +369,7 @@ S:AddCallback("Skin_Quest", function()
 		QuestInfoReputationText:SetTextColor(1, 1, 1)
 
 		for i = 1, MAX_REPUTATIONS do
-			_G["QuestInfoReputation"..i.."Faction"]:SetTextColor(1, 1, 1)
+			_G["QuestInfoReputation" .. i .. "Faction"]:SetTextColor(1, 1, 1)
 		end
 
 		local requiredMoney = GetQuestLogRequiredMoney()
@@ -381,9 +387,10 @@ S:AddCallback("Skin_Quest", function()
 		local item, name, link
 
 		for i = 1, MAX_NUM_ITEMS do
-			item = _G["QuestInfoItem"..i]
-			name = _G["QuestInfoItem"..i.."Name"]
-			link = item.type and (QuestInfoFrame.questLog and GetQuestLogItemLink or GetQuestItemLink)(item.type, item:GetID())
+			item = _G["QuestInfoItem" .. i]
+			name = _G["QuestInfoItem" .. i .. "Name"]
+			link = item.type
+				and (QuestInfoFrame.questLog and GetQuestLogItemLink or GetQuestItemLink)(item.type, item:GetID())
 
 			questQualityColors(item, name, link)
 		end
@@ -393,9 +400,10 @@ S:AddCallback("Skin_Quest", function()
 		local item, name, link
 
 		for i = 1, MAX_NUM_ITEMS do
-			item = _G["QuestInfoItem"..i]
-			name = _G["QuestInfoItem"..i.."Name"]
-			link = item.type and (QuestInfoFrame.questLog and GetQuestLogItemLink or GetQuestItemLink)(item.type, item:GetID())
+			item = _G["QuestInfoItem" .. i]
+			name = _G["QuestInfoItem" .. i .. "Name"]
+			link = item.type
+				and (QuestInfoFrame.questLog and GetQuestLogItemLink or GetQuestItemLink)(item.type, item:GetID())
 
 			questQualityColors(item, name, link)
 		end

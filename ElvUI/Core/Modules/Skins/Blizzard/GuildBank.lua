@@ -10,7 +10,9 @@ local GetGuildBankItemLink = GetGuildBankItemLink
 local hooksecurefunc = hooksecurefunc
 
 S:AddCallbackForAddon("Blizzard_GuildBankUI", "Skin_Blizzard_GuildBankUI", function()
-	if not (E.private.skins.blizzard.enable and E.private.skins.blizzard.gbank) then return end
+	if not (E.private.skins.blizzard.enable and E.private.skins.blizzard.gbank) then
+		return
+	end
 
 	local GuildBankFrame = GuildBankFrame
 	GuildBankFrame:Width(639)
@@ -48,20 +50,20 @@ S:AddCallbackForAddon("Blizzard_GuildBankUI", "Skin_Blizzard_GuildBankUI", funct
 	S:HandleScrollBar(GuildBankTransactionsScrollFrameScrollBar)
 
 	for i = 1, 4 do
-		local tab = _G['GuildBankFrameTab'..i]
+		local tab = _G["GuildBankFrameTab" .. i]
 
 		S:HandleTab(tab)
 
 		if i == 1 then
 			tab:ClearAllPoints()
-			tab:Point('BOTTOMLEFT', GuildBankFrame, 'BOTTOMLEFT', -2, -26)
+			tab:Point("BOTTOMLEFT", GuildBankFrame, "BOTTOMLEFT", -2, -26)
 		end
 	end
 
 	for i = 1, MAX_GUILDBANK_TABS do
-		local tab = _G["GuildBankTab"..i]
-		local button = _G["GuildBankTab"..i.."Button"]
-		local texture = _G["GuildBankTab"..i.."ButtonIconTexture"]
+		local tab = _G["GuildBankTab" .. i]
+		local button = _G["GuildBankTab" .. i .. "Button"]
+		local texture = _G["GuildBankTab" .. i .. "ButtonIconTexture"]
 
 		tab:StripTextures(true)
 
@@ -78,15 +80,15 @@ S:AddCallbackForAddon("Blizzard_GuildBankUI", "Skin_Blizzard_GuildBankUI", funct
 	end
 
 	for i = 1, NUM_GUILDBANK_COLUMNS do
-		local column = _G["GuildBankColumn"..i]
+		local column = _G["GuildBankColumn" .. i]
 		column:StripTextures()
 
 		for x = 1, NUM_SLOTS_PER_GUILDBANK_GROUP do
-			local button = _G["GuildBankColumn"..i.."Button"..x]
-			local icon = _G["GuildBankColumn"..i.."Button"..x.."IconTexture"]
+			local button = _G["GuildBankColumn" .. i .. "Button" .. x]
+			local icon = _G["GuildBankColumn" .. i .. "Button" .. x .. "IconTexture"]
 			button:StripTextures()
 			button:StyleButton()
-			button:SetTemplate('Transparent')
+			button:SetTemplate("Transparent")
 
 			icon:SetInside()
 			icon:SetTexCoords()
@@ -112,7 +114,13 @@ S:AddCallbackForAddon("Blizzard_GuildBankUI", "Skin_Blizzard_GuildBankUI", funct
 	GuildBankTransactionsScrollFrame:Point("TOPRIGHT", GuildBankFrame, "TOPRIGHT", -29, -64)
 
 	GuildBankTransactionsScrollFrameScrollBar:Point("TOPLEFT", GuildBankTransactionsScrollFrame, "TOPRIGHT", 3, -19)
-	GuildBankTransactionsScrollFrameScrollBar:Point("BOTTOMLEFT", GuildBankTransactionsScrollFrame, "BOTTOMRIGHT", 3, 19)
+	GuildBankTransactionsScrollFrameScrollBar:Point(
+		"BOTTOMLEFT",
+		GuildBankTransactionsScrollFrame,
+		"BOTTOMRIGHT",
+		3,
+		19
+	)
 
 	-- Info tab
 	GuildBankInfo:Point("TOPLEFT", 26, -72)

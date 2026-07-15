@@ -7,7 +7,9 @@ local LSM = E.Libs.LSM
 
 function NP:Update_HealthOnValueChanged()
 	local frame = self:GetParent().UnitFrame
-	if not frame.UnitType then return end -- Bugs
+	if not frame.UnitType then
+		return
+	end -- Bugs
 
 	NP:Update_Health(frame)
 	NP:Update_HealthColor(frame)
@@ -16,7 +18,9 @@ function NP:Update_HealthOnValueChanged()
 end
 
 function NP:Update_HealthColor(frame)
-	if not frame.Health:IsShown() then return end
+	if not frame.Health:IsShown() then
+		return
+	end
 
 	local r, g, b
 	local scale = 1
@@ -24,7 +28,13 @@ function NP:Update_HealthColor(frame)
 	local class = frame.UnitClass
 	local classColor = CUSTOM_CLASS_COLORS and CUSTOM_CLASS_COLORS[class] or RAID_CLASS_COLORS[class]
 	local useClassColor = NP.db.units[frame.UnitType].health.useClassColor
-	if classColor and ((frame.UnitType == "FRIENDLY_PLAYER" and useClassColor) or (frame.UnitType == "ENEMY_PLAYER" and useClassColor)) then
+	if
+		classColor
+		and (
+			(frame.UnitType == "FRIENDLY_PLAYER" and useClassColor)
+			or (frame.UnitType == "ENEMY_PLAYER" and useClassColor)
+		)
+	then
 		r, g, b = classColor.r, classColor.g, classColor.b
 	else
 		local db = self.db.colors
@@ -69,7 +79,8 @@ function NP:Update_HealthColor(frame)
 				r, g, b = db.reactions.neutral.r, db.reactions.neutral.g, db.reactions.neutral.b
 			elseif reactionType and reactionType > 4 then
 				if frame.UnitType == "FRIENDLY_PLAYER" then
-					r, g, b = db.reactions.friendlyPlayer.r, db.reactions.friendlyPlayer.g, db.reactions.friendlyPlayer.b
+					r, g, b =
+						db.reactions.friendlyPlayer.r, db.reactions.friendlyPlayer.g, db.reactions.friendlyPlayer.b
 				else
 					r, g, b = db.reactions.good.r, db.reactions.good.g, db.reactions.good.b
 				end
@@ -106,7 +117,9 @@ function NP:Update_HealthColor(frame)
 end
 
 function NP:Update_Health(frame)
-	if not frame.Health:IsShown() then return end
+	if not frame.Health:IsShown() then
+		return
+	end
 
 	local health = frame.oldHealthBar:GetValue()
 	local _, maxHealth = frame.oldHealthBar:GetMinMaxValues()
@@ -122,7 +135,9 @@ function NP:Update_Health(frame)
 	frame.FlashTexture:Point("TOPRIGHT", frame.Health:GetStatusBarTexture(), "TOPRIGHT") --idk why this fixes this
 
 	if self.db.units[frame.UnitType].health.text.enable then
-		frame.Health.Text:SetText(E:GetFormattedText(self.db.units[frame.UnitType].health.text.format, health, maxHealth, nil, true))
+		frame.Health.Text:SetText(
+			E:GetFormattedText(self.db.units[frame.UnitType].health.text.format, health, maxHealth, nil, true)
+		)
 	end
 end
 
@@ -176,7 +191,13 @@ function NP:Configure_HealthBar(frame, configuring)
 
 		if db.text.enable then
 			healthBar.Text:ClearAllPoints()
-			healthBar.Text:Point(E.InversePoints[db.text.position], db.text.parent == "Nameplate" and frame or frame[db.text.parent], db.text.position, db.text.xOffset, db.text.yOffset)
+			healthBar.Text:Point(
+				E.InversePoints[db.text.position],
+				db.text.parent == "Nameplate" and frame or frame[db.text.parent],
+				db.text.position,
+				db.text.xOffset,
+				db.text.yOffset
+			)
 			healthBar.Text:FontTemplate(LSM:Fetch("font", db.text.font), db.text.fontSize, db.text.fontOutline)
 			healthBar.Text:Show()
 		else

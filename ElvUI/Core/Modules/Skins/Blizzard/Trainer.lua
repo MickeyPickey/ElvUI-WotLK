@@ -8,7 +8,9 @@ local unpack = unpack
 local hooksecurefunc = hooksecurefunc
 
 S:AddCallbackForAddon("Blizzard_TrainerUI", "Skin_Blizzard_TrainerUI", function()
-	if not E.private.skins.blizzard.enable or not E.private.skins.blizzard.trainer then return end
+	if not E.private.skins.blizzard.enable or not E.private.skins.blizzard.trainer then
+		return
+	end
 
 	ClassTrainerFrame:StripTextures(true)
 	ClassTrainerFrame:CreateBackdrop("Transparent")
@@ -43,8 +45,8 @@ S:AddCallbackForAddon("Blizzard_TrainerUI", "Skin_Blizzard_TrainerUI", function(
 	S:HandleCollapseExpandButton(ClassTrainerCollapseAllButton, "+", nil, nil, 1)
 
 	for i = 1, CLASS_TRAINER_SKILLS_DISPLAYED do
-		local skillButton = _G["ClassTrainerSkill"..i]
-		local highlight = _G["ClassTrainerSkill"..i.."Highlight"]
+		local skillButton = _G["ClassTrainerSkill" .. i]
+		local highlight = _G["ClassTrainerSkill" .. i .. "Highlight"]
 
 		S:HandleCollapseExpandButton(skillButton, "+", nil, nil, 1)
 

@@ -6,7 +6,9 @@ local S = E:GetModule("Skins")
 local IsShiftKeyDown = IsShiftKeyDown
 
 S:AddCallbackForAddon("Blizzard_GMChatUI", "Skin_Blizzard_GMChatUI", function()
-	if not E.private.skins.blizzard.enable or not E.private.skins.blizzard.gmchat then return end
+	if not E.private.skins.blizzard.enable or not E.private.skins.blizzard.gmchat then
+		return
+	end
 
 	GMChatFrame:StripTextures()
 	GMChatFrame:CreateBackdrop("Transparent")
@@ -81,7 +83,9 @@ S:AddCallbackForAddon("Blizzard_GMChatUI", "Skin_Blizzard_GMChatUI", function()
 end)
 
 S:AddCallbackForAddon("Blizzard_GMSurveyUI", "Skin_Blizzard_GMSurveyUI", function()
-	if not E.private.skins.blizzard.enable or not E.private.skins.blizzard.gmchat then return end
+	if not E.private.skins.blizzard.enable or not E.private.skins.blizzard.gmchat then
+		return
+	end
 
 	GMSurveyFrame:StripTextures()
 	GMSurveyFrame:CreateBackdrop("Transparent")
@@ -101,7 +105,7 @@ S:AddCallbackForAddon("Blizzard_GMSurveyUI", "Skin_Blizzard_GMSurveyUI", functio
 	S:HandleButton(GMSurveySubmitButton)
 
 	for i = 1, 7 do
-		local frame = _G["GMSurveyQuestion"..i]
+		local frame = _G["GMSurveyQuestion" .. i]
 		frame:StripTextures()
 		frame:SetTemplate("Transparent")
 	end

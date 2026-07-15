@@ -5,10 +5,14 @@ local S = E:GetModule("Skins")
 --WoW API / Variables
 
 S:AddCallback("Skin_MirrorTimers", function()
-	if not E.private.skins.blizzard.enable or not E.private.skins.blizzard.mirrorTimers then return end
+	if not E.private.skins.blizzard.enable or not E.private.skins.blizzard.mirrorTimers then
+		return
+	end
 
 	local function MirrorTimer_OnUpdate(frame, elapsed)
-		if frame.paused then return end
+		if frame.paused then
+			return
+		end
 
 		if frame.timeSinceUpdate <= 0 then
 			local text = frame.label:GetText()
@@ -26,9 +30,9 @@ S:AddCallback("Skin_MirrorTimers", function()
 	end
 
 	for i = 1, MIRRORTIMER_NUMTIMERS do
-		local mirrorTimer = _G["MirrorTimer"..i]
-		local statusBar = _G["MirrorTimer"..i.."StatusBar"]
-		local text = _G["MirrorTimer"..i.."Text"]
+		local mirrorTimer = _G["MirrorTimer" .. i]
+		local statusBar = _G["MirrorTimer" .. i .. "StatusBar"]
+		local text = _G["MirrorTimer" .. i .. "Text"]
 
 		mirrorTimer:StripTextures()
 		mirrorTimer:Size(222, 18)
@@ -49,6 +53,6 @@ S:AddCallback("Skin_MirrorTimers", function()
 		mirrorTimer.timeSinceUpdate = 0
 		mirrorTimer:HookScript("OnUpdate", MirrorTimer_OnUpdate)
 
-		E:CreateMover(mirrorTimer, "MirrorTimer"..i.."Mover", L["MirrorTimer"]..i, nil, nil, nil, "ALL,SOLO")
+		E:CreateMover(mirrorTimer, "MirrorTimer" .. i .. "Mover", L["MirrorTimer"] .. i, nil, nil, nil, "ALL,SOLO")
 	end
 end)

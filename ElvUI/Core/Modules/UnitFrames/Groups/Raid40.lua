@@ -81,7 +81,7 @@ function UF:Raid40SmartVisibility(event)
 				self.blockVisibilityChanges = false
 				self:Show()
 
-				if ElvUF_Raid40.numGroups ~= E:Round(maxPlayers/5) and event then
+				if ElvUF_Raid40.numGroups ~= E:Round(maxPlayers / 5) and event then
 					UF:CreateAndUpdateHeaderGroup("raid40")
 				end
 			else
@@ -112,7 +112,17 @@ function UF:Update_Raid40Header(header, db)
 		headerHolder:ClearAllPoints()
 		headerHolder:Point("BOTTOMLEFT", E.UIParent, "BOTTOMLEFT", 4, 195)
 
-		E:CreateMover(headerHolder, headerHolder:GetName().."Mover", L["Raid-40 Frames"], nil, nil, nil, "ALL,RAID", nil, "unitframe,raid40,generalGroup")
+		E:CreateMover(
+			headerHolder,
+			headerHolder:GetName() .. "Mover",
+			L["Raid-40 Frames"],
+			nil,
+			nil,
+			nil,
+			"ALL,RAID",
+			nil,
+			"unitframe,raid40,generalGroup"
+		)
 
 		headerHolder:RegisterEvent("PLAYER_LOGIN")
 		headerHolder:RegisterEvent("ZONE_CHANGED_NEW_AREA")
@@ -157,7 +167,11 @@ function UF:Update_Raid40Frames(frame, db)
 		frame.POWERBAR_OFFSET = frame.USE_POWERBAR_OFFSET and db.power.offset or 0
 
 		frame.POWERBAR_HEIGHT = not frame.USE_POWERBAR and 0 or db.power.height
-		frame.POWERBAR_WIDTH = frame.USE_MINI_POWERBAR and (frame.UNIT_WIDTH - (frame.BORDER*2))/2 or (frame.POWERBAR_DETACHED and db.power.detachedWidth or (frame.UNIT_WIDTH - ((frame.BORDER+frame.SPACING)*2)))
+		frame.POWERBAR_WIDTH = frame.USE_MINI_POWERBAR and (frame.UNIT_WIDTH - (frame.BORDER * 2)) / 2
+			or (
+				frame.POWERBAR_DETACHED and db.power.detachedWidth
+				or (frame.UNIT_WIDTH - ((frame.BORDER + frame.SPACING) * 2))
+			)
 
 		frame.USE_PORTRAIT = db.portrait and db.portrait.enable
 		frame.USE_PORTRAIT_OVERLAY = frame.USE_PORTRAIT and (db.portrait.overlay or frame.ORIENTATION == "MIDDLE")

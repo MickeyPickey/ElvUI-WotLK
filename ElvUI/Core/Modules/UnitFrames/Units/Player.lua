@@ -55,7 +55,17 @@ function UF:Construct_PlayerFrame(frame)
 
 	frame.customTexts = {}
 	frame:Point("BOTTOM", E.UIParent, "BOTTOM", -342, 139)
-	E:CreateMover(frame, frame:GetName().."Mover", L["Player Frame"], nil, nil, nil, "ALL,SOLO", nil, "unitframe,player,generalGroup")
+	E:CreateMover(
+		frame,
+		frame:GetName() .. "Mover",
+		L["Player Frame"],
+		nil,
+		nil,
+		nil,
+		"ALL,SOLO",
+		nil,
+		"unitframe,player,generalGroup"
+	)
 
 	frame.unitframeType = "player"
 end
@@ -77,7 +87,11 @@ function UF:Update_PlayerFrame(frame, db)
 		frame.POWERBAR_OFFSET = frame.USE_POWERBAR_OFFSET and db.power.offset or 0
 
 		frame.POWERBAR_HEIGHT = not frame.USE_POWERBAR and 0 or db.power.height
-		frame.POWERBAR_WIDTH = frame.USE_MINI_POWERBAR and (frame.UNIT_WIDTH - (frame.BORDER*2))/2 or (frame.POWERBAR_DETACHED and db.power.detachedWidth or (frame.UNIT_WIDTH - ((frame.BORDER+frame.SPACING)*2)))
+		frame.POWERBAR_WIDTH = frame.USE_MINI_POWERBAR and (frame.UNIT_WIDTH - (frame.BORDER * 2)) / 2
+			or (
+				frame.POWERBAR_DETACHED and db.power.detachedWidth
+				or (frame.UNIT_WIDTH - ((frame.BORDER + frame.SPACING) * 2))
+			)
 
 		frame.USE_PORTRAIT = db.portrait and db.portrait.enable
 		frame.USE_PORTRAIT_OVERLAY = frame.USE_PORTRAIT and (db.portrait.overlay or frame.ORIENTATION == "MIDDLE")
@@ -90,9 +104,16 @@ function UF:Update_PlayerFrame(frame, db)
 		frame.CLASSBAR_DETACHED = db.classbar.detachFromFrame
 		frame.USE_MINI_CLASSBAR = db.classbar.fill == "spaced" and frame.USE_CLASSBAR
 		frame.CLASSBAR_HEIGHT = frame.USE_CLASSBAR and db.classbar.height or 0
-		frame.CLASSBAR_WIDTH = frame.UNIT_WIDTH - ((frame.BORDER+frame.SPACING)*2) - frame.PORTRAIT_WIDTH -(frame.ORIENTATION == "MIDDLE" and (frame.POWERBAR_OFFSET*2) or frame.POWERBAR_OFFSET)
+		frame.CLASSBAR_WIDTH = frame.UNIT_WIDTH
+			- ((frame.BORDER + frame.SPACING) * 2)
+			- frame.PORTRAIT_WIDTH
+			- (frame.ORIENTATION == "MIDDLE" and (frame.POWERBAR_OFFSET * 2) or frame.POWERBAR_OFFSET)
 		--If formula for frame.CLASSBAR_YOFFSET changes, then remember to update it in classbars.lua too
-		frame.CLASSBAR_YOFFSET = (not frame.USE_CLASSBAR or not frame.CLASSBAR_SHOWN or frame.CLASSBAR_DETACHED) and 0 or (frame.USE_MINI_CLASSBAR and (frame.SPACING+(frame.CLASSBAR_HEIGHT/2)) or (frame.CLASSBAR_HEIGHT - (frame.BORDER-frame.SPACING)))
+		frame.CLASSBAR_YOFFSET = (not frame.USE_CLASSBAR or not frame.CLASSBAR_SHOWN or frame.CLASSBAR_DETACHED) and 0
+			or (
+				frame.USE_MINI_CLASSBAR and (frame.SPACING + (frame.CLASSBAR_HEIGHT / 2))
+				or (frame.CLASSBAR_HEIGHT - (frame.BORDER - frame.SPACING))
+			)
 
 		frame.USE_INFO_PANEL = not frame.USE_MINI_POWERBAR and not frame.USE_POWERBAR_OFFSET and db.infoPanel.enable
 		frame.INFO_PANEL_HEIGHT = frame.USE_INFO_PANEL and db.infoPanel.height or 0
@@ -106,7 +127,7 @@ function UF:Update_PlayerFrame(frame, db)
 	frame.Portrait = frame.Portrait or (db.portrait.style == "2D" and frame.Portrait2D or frame.Portrait3D)
 	frame:RegisterForClicks(self.db.targetOnMouseDown and "AnyDown" or "AnyUp")
 	frame:Size(frame.UNIT_WIDTH, frame.UNIT_HEIGHT)
-	_G[frame:GetName().."Mover"]:Size(frame:GetSize())
+	_G[frame:GetName() .. "Mover"]:Size(frame:GetSize())
 
 	UF:Configure_InfoPanel(frame)
 
@@ -146,12 +167,14 @@ function UF:Update_PlayerFrame(frame, db)
 	frame:DisableElement("Castbar")
 	UF:Configure_Castbar(frame)
 
-	if (not db.enable and not E.private.unitframe.disabledBlizzardFrames.player) then
+	if not db.enable and not E.private.unitframe.disabledBlizzardFrames.player then
 		CastingBarFrame_OnLoad(CastingBarFrame, "player", true, false)
 		CastingBarFrame_SetUnit(CastingBarFrame, "player", true, false)
 		PetCastingBarFrame_OnLoad(PetCastingBarFrame)
 		CastingBarFrame_SetUnit(PetCastingBarFrame, "pet", false, false)
-	elseif not db.enable and E.private.unitframe.disabledBlizzardFrames.player or (db.enable and not db.castbar.enable) then
+	elseif
+		not db.enable and E.private.unitframe.disabledBlizzardFrames.player or (db.enable and not db.castbar.enable)
+	then
 		CastingBarFrame_SetUnit(CastingBarFrame, nil)
 		CastingBarFrame_SetUnit(PetCastingBarFrame, nil)
 	end
@@ -187,7 +210,7 @@ function UF:Update_PlayerFrame(frame, db)
 	--CustomTexts
 	UF:Configure_CustomTexts(frame)
 
-	E:SetMoverSnapOffset(frame:GetName().."Mover", -(12 + db.castbar.height))
+	E:SetMoverSnapOffset(frame:GetName() .. "Mover", -(12 + db.castbar.height))
 	frame:UpdateAllElements("ForceUpdate")
 end
 
@@ -205,6 +228,8 @@ local f = CreateFrame("Frame")
 f:RegisterEvent("PLAYER_ENTERING_WORLD")
 f:SetScript("OnEvent", function(self, event)
 	self:UnregisterEvent(event)
-	if not E.db.unitframe.units.player.enable then return end
+	if not E.db.unitframe.units.player.enable then
+		return
+	end
 	UpdateClassBar()
 end)

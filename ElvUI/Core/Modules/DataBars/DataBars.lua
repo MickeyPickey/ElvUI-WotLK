@@ -25,7 +25,7 @@ function DB:OnLeave()
 end
 
 function DB:CreateBar(name, key, updateFunc, onEnter, onClick, points)
-	local holder = CreateFrame("Frame", name.."Holder", E.UIParent)
+	local holder = CreateFrame("Frame", name .. "Holder", E.UIParent)
 	holder:SetTemplate(DB.db.transparent and "Transparent")
 	holder:SetScript("OnEnter", onEnter)
 	holder:SetScript("OnLeave", DB.OnLeave)
@@ -57,7 +57,9 @@ function DB:CreateBar(name, key, updateFunc, onEnter, onClick, points)
 end
 
 function DB:CreateBarBubbles(bar)
-	if bar.bubbles then return end
+	if bar.bubbles then
+		return
+	end
 
 	bar.bubbles = {}
 
@@ -68,7 +70,9 @@ function DB:CreateBarBubbles(bar)
 end
 
 function DB:UpdateBarBubbles(bar)
-	if not bar.bubbles then return end
+	if not bar.bubbles then
+		return
+	end
 
 	local width, height = bar.db.width, bar.db.height
 	local vertical = bar:GetOrientation() ~= "HORIZONTAL"
@@ -125,7 +129,7 @@ function DB:UpdateAll()
 		local orientation = bar:GetOrientation()
 		local rotatesTexture = bar:GetRotatesTexture()
 
-		for _, child in ipairs({bar.holder:GetChildren()}) do
+		for _, child in ipairs({ bar.holder:GetChildren() }) do
 			if child:IsObjectType("StatusBar") then
 				SetStatusBarTexture(child, texture)
 				child:SetOrientation(orientation)
@@ -145,8 +149,8 @@ function DB:SetVisibility(bar)
 		bar.holder:SetShown(bar.showBar)
 	elseif bar.db.enable then
 		local hideBar = (bar == DB.StatusBars.Threat or bar.db.hideInCombat) and UnitAffectingCombat("player")
-		or (bar.db.hideOutsidePvP and (select(2, GetInstanceInfo()) ~= "pvp"))
-		or (bar.ShouldHide and bar:ShouldHide())
+			or (bar.db.hideOutsidePvP and (select(2, GetInstanceInfo()) ~= "pvp"))
+			or (bar.ShouldHide and bar:ShouldHide())
 
 		bar:SetShown(not hideBar)
 		bar.holder:SetShown(not hideBar)

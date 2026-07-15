@@ -38,13 +38,13 @@ local RAID_CLASS_COLORS = RAID_CLASS_COLORS
 
 local lastChildern, numChildren, hasTarget = 0, 0
 local OVERLAY = [=[Interface\TargetingFrame\UI-TargetingFrame-Flash]=]
-local FSPAT = "%s*"..(gsub(gsub(_G.FOREIGN_SERVER_LABEL, "^%s", ""), "[%*()]", "%%%1")).."$"
+local FSPAT = "%s*" .. (gsub(gsub(_G.FOREIGN_SERVER_LABEL, "^%s", ""), "[%*()]", "%%%1")) .. "$"
 
 local RaidIconCoordinate = {
-	[0] = {[0] = "STAR", [0.25] = "MOON"},
-	[0.25] = {[0] = "CIRCLE", [0.25] = "SQUARE"},
-	[0.5] = {[0] = "DIAMOND", [0.25] = "CROSS"},
-	[0.75] = {[0] = "TRIANGLE", [0.25] = "SKULL"}
+	[0] = { [0] = "STAR", [0.25] = "MOON" },
+	[0.25] = { [0] = "CIRCLE", [0.25] = "SQUARE" },
+	[0.5] = { [0] = "DIAMOND", [0.25] = "CROSS" },
+	[0.75] = { [0] = "TRIANGLE", [0.25] = "SKULL" },
 }
 
 NP.CreatedPlates = {}
@@ -93,7 +93,7 @@ end
 function NP:GetPlateFrameLevel(frame)
 	local plateLevel
 	if frame.plateID then
-		plateLevel = 10 + frame.plateID*NP.levelStep
+		plateLevel = 10 + frame.plateID * NP.levelStep
 	end
 	return plateLevel
 end
@@ -107,15 +107,15 @@ function NP:SetPlateFrameLevel(frame, level, isTarget)
 			--level method: (10*(40*2)) max 800 + max 80 (40*2) = max 880
 			--highest possible should be level 880 and we add 1 to all so 881
 			local leveledCount = NP.CollectedFrameLevelCount or 1
-			level = (frame.FrameLevelChanged*(40*NP.levelStep)) + (leveledCount*NP.levelStep)
+			level = (frame.FrameLevelChanged * (40 * NP.levelStep)) + (leveledCount * NP.levelStep)
 		end
 
-		frame:SetFrameLevel(level+1)
---		frame.Glow:OffsetFrameLevel(-1, frame)
+		frame:SetFrameLevel(level + 1)
+		--		frame.Glow:OffsetFrameLevel(-1, frame)
 		frame.Shadow:OffsetFrameLevel(-1, frame)
 		frame.TargetBorder:OffsetFrameLevel(-1, frame)
-		frame.Buffs:SetFrameLevel(level+1)
-		frame.Debuffs:SetFrameLevel(level+1)
+		frame.Buffs:SetFrameLevel(level + 1)
+		frame.Debuffs:SetFrameLevel(level + 1)
 	end
 end
 
@@ -134,7 +134,9 @@ function NP:StyleFrame(parent, noBackdrop, point)
 	point = point or parent
 	local noscalemult = E.mult * E.uiscale
 
-	if point.bordertop then return end
+	if point.bordertop then
+		return
+	end
 
 	if not noBackdrop then
 		point.backdrop = parent:CreateTexture(nil, "BACKGROUND")
@@ -168,8 +170,8 @@ function NP:StyleFrame(parent, noBackdrop, point)
 		point.borderright:SetTexture(unpack(E.media.bordercolor))
 	else
 		point.bordertop = parent:CreateTexture(nil, "OVERLAY")
-		point.bordertop:SetPoint("TOPLEFT", point, "TOPLEFT", -noscalemult, noscalemult*2)
-		point.bordertop:SetPoint("TOPRIGHT", point, "TOPRIGHT", noscalemult, noscalemult*2)
+		point.bordertop:SetPoint("TOPLEFT", point, "TOPLEFT", -noscalemult, noscalemult * 2)
+		point.bordertop:SetPoint("TOPRIGHT", point, "TOPRIGHT", noscalemult, noscalemult * 2)
 		point.bordertop:SetHeight(noscalemult)
 		point.bordertop:SetTexture(unpack(E.media.bordercolor))
 
@@ -180,20 +182,26 @@ function NP:StyleFrame(parent, noBackdrop, point)
 		point.bordertop.backdrop:SetTexture(0, 0, 0)
 
 		point.borderbottom = parent:CreateTexture(nil, "OVERLAY")
-		point.borderbottom:SetPoint("BOTTOMLEFT", point, "BOTTOMLEFT", -noscalemult, -noscalemult*2)
-		point.borderbottom:SetPoint("BOTTOMRIGHT", point, "BOTTOMRIGHT", noscalemult, -noscalemult*2)
+		point.borderbottom:SetPoint("BOTTOMLEFT", point, "BOTTOMLEFT", -noscalemult, -noscalemult * 2)
+		point.borderbottom:SetPoint("BOTTOMRIGHT", point, "BOTTOMRIGHT", noscalemult, -noscalemult * 2)
 		point.borderbottom:SetHeight(noscalemult)
 		point.borderbottom:SetTexture(unpack(E.media.bordercolor))
 
 		point.borderbottom.backdrop = parent:CreateTexture()
 		point.borderbottom.backdrop:SetPoint("BOTTOMLEFT", point.borderbottom, "BOTTOMLEFT", noscalemult, -noscalemult)
-		point.borderbottom.backdrop:SetPoint("BOTTOMRIGHT", point.borderbottom, "BOTTOMRIGHT", -noscalemult, -noscalemult)
+		point.borderbottom.backdrop:SetPoint(
+			"BOTTOMRIGHT",
+			point.borderbottom,
+			"BOTTOMRIGHT",
+			-noscalemult,
+			-noscalemult
+		)
 		point.borderbottom.backdrop:SetHeight(noscalemult * 3)
 		point.borderbottom.backdrop:SetTexture(0, 0, 0)
 
 		point.borderleft = parent:CreateTexture(nil, "OVERLAY")
-		point.borderleft:SetPoint("TOPLEFT", point, "TOPLEFT", -noscalemult*2, noscalemult*2)
-		point.borderleft:SetPoint("BOTTOMLEFT", point, "BOTTOMLEFT", noscalemult*2, -noscalemult*2)
+		point.borderleft:SetPoint("TOPLEFT", point, "TOPLEFT", -noscalemult * 2, noscalemult * 2)
+		point.borderleft:SetPoint("BOTTOMLEFT", point, "BOTTOMLEFT", noscalemult * 2, -noscalemult * 2)
 		point.borderleft:SetWidth(noscalemult)
 		point.borderleft:SetTexture(unpack(E.media.bordercolor))
 
@@ -204,8 +212,8 @@ function NP:StyleFrame(parent, noBackdrop, point)
 		point.borderleft.backdrop:SetTexture(0, 0, 0)
 
 		point.borderright = parent:CreateTexture(nil, "OVERLAY")
-		point.borderright:SetPoint("TOPRIGHT", point, "TOPRIGHT", noscalemult*2, noscalemult*2)
-		point.borderright:SetPoint("BOTTOMRIGHT", point, "BOTTOMRIGHT", -noscalemult*2, -noscalemult*2)
+		point.borderright:SetPoint("TOPRIGHT", point, "TOPRIGHT", noscalemult * 2, noscalemult * 2)
+		point.borderright:SetPoint("BOTTOMRIGHT", point, "BOTTOMRIGHT", -noscalemult * 2, -noscalemult * 2)
 		point.borderright:SetWidth(noscalemult)
 		point.borderright:SetTexture(unpack(E.media.bordercolor))
 
@@ -259,7 +267,7 @@ function NP:UnitClass(frame, unitType)
 		end
 	elseif unitType == "ENEMY_PLAYER" then
 		local _, g = frame.oldHealthBar:GetStatusBarColor()
-		return grenColorToClass[floor(g*100 + 0.5) / 100]
+		return grenColorToClass[floor(g * 100 + 0.5) / 100]
 	end
 end
 
@@ -273,7 +281,9 @@ function NP:UnitDetailedThreatSituation(frame)
 		local r, g, b = frame.Threat:GetVertexColor()
 		if r > 0 then
 			if g > 0 then
-				if b > 0 then return 1 end
+				if b > 0 then
+					return 1
+				end
 				return 2
 			end
 			return 3
@@ -282,7 +292,9 @@ function NP:UnitDetailedThreatSituation(frame)
 end
 
 function NP:UnitLevel(frame)
-	local level, boss = frame.oldLevel:IsObjectType("FontString") and tonumber(frame.oldLevel:GetText()) or false, frame.BossIcon:IsShown()
+	local level, boss =
+		frame.oldLevel:IsObjectType("FontString") and tonumber(frame.oldLevel:GetText()) or false,
+		frame.BossIcon:IsShown()
 	if boss or not level then
 		return "??", 0.9, 0, 0
 	else
@@ -489,7 +501,9 @@ function NP:UpdateAllFrame(frame, isConfig, dontHideHighlight)
 end
 
 function NP:ConfigureAll()
-	if not E.private.nameplates.enable then return end
+	if not E.private.nameplates.enable then
+		return
+	end
 
 	NP:StyleFilterConfigure()
 	NP:ForEachPlate("UpdateAllFrame", true, true)
@@ -575,7 +589,8 @@ local plateID = 0
 function NP:OnCreated(frame)
 	plateID = plateID + 1
 	local Health, CastBar = frame:GetChildren()
-	local Threat, Border, CastBarBorder, CastBarShield, CastBarIcon, Highlight, Name, Level, BossIcon, RaidIcon, EliteIcon = frame:GetRegions()
+	local Threat, Border, CastBarBorder, CastBarShield, CastBarIcon, Highlight, Name, Level, BossIcon, RaidIcon, EliteIcon =
+		frame:GetRegions()
 
 	local unitFrame = CreateFrame("Frame", format("ElvUI_NamePlate%d", plateID), frame)
 	frame.UnitFrame = unitFrame
@@ -639,14 +654,20 @@ function NP:OnCreated(frame)
 end
 
 function NP:OnEvent(event, unit, ...)
-	if not unit and not self.unit then return end
-	if self.unit ~= unit then return end
+	if not unit and not self.unit then
+		return
+	end
+	if self.unit ~= unit then
+		return
+	end
 
 	NP:Update_CastBar(self, event, unit, ...)
 end
 
 function NP:RegisterEvents(frame)
-	if not frame.unit then return end
+	if not frame.unit then
+		return
+	end
 
 	if NP.db.units[frame.UnitType].health.enable or (frame.isTarget and NP.db.alwaysShowTargetHealth) then
 		if NP.db.units[frame.UnitType].castbar.enable then
@@ -845,7 +866,12 @@ local function findNewPlate(...)
 	for i = lastChildern + 1, numChildren do
 		local frame = select(i, ...)
 		local region = frame:GetRegions()
-		if region and region:IsObjectType("Texture") and region:GetTexture() == OVERLAY and not NP.CreatedPlates[frame] then
+		if
+			region
+			and region:IsObjectType("Texture")
+			and region:GetTexture() == OVERLAY
+			and not NP.CreatedPlates[frame]
+		then
 			NP:OnCreated(frame)
 		end
 	end
@@ -903,7 +929,9 @@ function NP:SearchNameplateByGUID(guid)
 end
 
 function NP:SearchNameplateByName(sourceName)
-	if not sourceName then return end
+	if not sourceName then
+		return
+	end
 	local SearchFor = split("-", sourceName)
 	for frame in pairs(NP.VisiblePlates) do
 		if frame.UnitName == SearchFor and RAID_CLASS_COLORS[frame.UnitClass] then
@@ -923,9 +951,15 @@ end
 
 function NP:SearchForFrame(guid, raidIcon, name)
 	local frame
-	if guid then frame = NP:SearchNameplateByGUID(guid) end
-	if (not frame) and name then frame = NP:SearchNameplateByName(name) end
-	if (not frame) and raidIcon then frame = NP:SearchNameplateByIconName(raidIcon) end
+	if guid then
+		frame = NP:SearchNameplateByGUID(guid)
+	end
+	if (not frame) and name then
+		frame = NP:SearchNameplateByName(name)
+	end
+	if (not frame) and raidIcon then
+		frame = NP:SearchNameplateByIconName(raidIcon)
+	end
 
 	return frame
 end
@@ -961,7 +995,9 @@ function NP:ResetSettings(unit)
 end
 
 function NP:CopySettings(from, to)
-	if from == to then return end
+	if from == to then
+		return
+	end
 
 	CopySettings(NP.db.units[from], NP.db.units[to])
 end
@@ -976,7 +1012,7 @@ function NP:PLAYER_ENTERING_WORLD()
 		NP:UnregisterEvent("UPDATE_BATTLEFIELD_SCORE")
 		if NP.CheckHealerTimer then
 			NP:CancelTimer(NP.CheckHealerTimer)
-			NP.CheckHealerTimer = nil;
+			NP.CheckHealerTimer = nil
 		end
 	end
 end
@@ -993,7 +1029,7 @@ function NP:UPDATE_MOUSEOVER_UNIT()
 		for frame in pairs(NP.VisiblePlates) do
 			if frame.UnitName == name and frame.UnitType == unitType then
 				if not NP.GUIDList[guid] then
-					NP.GUIDList[guid] = {name = name, unitType = frame.UnitType}
+					NP.GUIDList[guid] = { name = name, unitType = frame.UnitType }
 					NP.OnShow(frame:GetParent(), nil, true)
 					break
 				end
@@ -1013,7 +1049,7 @@ function NP:PLAYER_FOCUS_CHANGED()
 		NP.NameByUnit.focus = name
 
 		if not NP.GUIDList[guid] then
-			NP.GUIDList[guid] = {name = name, unitType = NP:GetUnitTypeFromUnit("focus")}
+			NP.GUIDList[guid] = { name = name, unitType = NP:GetUnitTypeFromUnit("focus") }
 		end
 
 		unitName = name
@@ -1035,30 +1071,30 @@ function NP:PLAYER_FOCUS_CHANGED()
 end
 
 function NP:SetCVars()
-	E:SetCVar('ShowClassColorInNameplate', 1)
-	E:SetCVar('showVKeyCastbar', 0)
-	E:SetCVar('nameplateAllowOverlap', NP.db.motionType == 'STACKED' and 0 or 1)
+	E:SetCVar("ShowClassColorInNameplate", 1)
+	E:SetCVar("showVKeyCastbar", 0)
+	E:SetCVar("nameplateAllowOverlap", NP.db.motionType == "STACKED" and 0 or 1)
 
 	-- the order of these is important !!
-	E:SetCVar('nameplateShowEnemyGuardians', NP.db.visibility.enemy.guardians and 1 or 0)
-	E:SetCVar('nameplateShowEnemyPets', NP.db.visibility.enemy.pets and 1 or 0)
-	E:SetCVar('nameplateShowEnemyTotems', NP.db.visibility.enemy.totems and 1 or 0)
-	E:SetCVar('nameplateShowFriendlyGuardians', NP.db.visibility.friendly.guardians and 1 or 0)
-	E:SetCVar('nameplateShowFriendlyPets', NP.db.visibility.friendly.pets and 1 or 0)
-	E:SetCVar('nameplateShowFriendlyTotems', NP.db.visibility.friendly.totems and 1 or 0)
+	E:SetCVar("nameplateShowEnemyGuardians", NP.db.visibility.enemy.guardians and 1 or 0)
+	E:SetCVar("nameplateShowEnemyPets", NP.db.visibility.enemy.pets and 1 or 0)
+	E:SetCVar("nameplateShowEnemyTotems", NP.db.visibility.enemy.totems and 1 or 0)
+	E:SetCVar("nameplateShowFriendlyGuardians", NP.db.visibility.friendly.guardians and 1 or 0)
+	E:SetCVar("nameplateShowFriendlyPets", NP.db.visibility.friendly.pets and 1 or 0)
+	E:SetCVar("nameplateShowFriendlyTotems", NP.db.visibility.friendly.totems and 1 or 0)
 end
 
 function NP:PLAYER_REGEN_DISABLED()
-	if NP.db.showFriendlyCombat == 'TOGGLE_ON' then
-		E:SetCVar('nameplateShowFriends', 1)
-	elseif NP.db.showFriendlyCombat == 'TOGGLE_OFF' then
-		E:SetCVar('nameplateShowFriends', 0)
+	if NP.db.showFriendlyCombat == "TOGGLE_ON" then
+		E:SetCVar("nameplateShowFriends", 1)
+	elseif NP.db.showFriendlyCombat == "TOGGLE_OFF" then
+		E:SetCVar("nameplateShowFriends", 0)
 	end
 
-	if NP.db.showEnemyCombat == 'TOGGLE_ON' then
-		E:SetCVar('nameplateShowEnemies', 1)
-	elseif NP.db.showEnemyCombat == 'TOGGLE_OFF' then
-		E:SetCVar('nameplateShowEnemies', 0)
+	if NP.db.showEnemyCombat == "TOGGLE_ON" then
+		E:SetCVar("nameplateShowEnemies", 1)
+	elseif NP.db.showEnemyCombat == "TOGGLE_OFF" then
+		E:SetCVar("nameplateShowEnemies", 0)
 	end
 
 	NP:ForEachVisiblePlate("StyleFilterUpdate", "PLAYER_REGEN_DISABLED")
@@ -1071,16 +1107,16 @@ function NP:PLAYER_REGEN_ENABLED()
 		end
 	end
 
-	if NP.db.showFriendlyCombat == 'TOGGLE_ON' then
-		E:SetCVar('nameplateShowFriends', 0)
-	elseif NP.db.showFriendlyCombat == 'TOGGLE_OFF' then
-		E:SetCVar('nameplateShowFriends', 1)
+	if NP.db.showFriendlyCombat == "TOGGLE_ON" then
+		E:SetCVar("nameplateShowFriends", 0)
+	elseif NP.db.showFriendlyCombat == "TOGGLE_OFF" then
+		E:SetCVar("nameplateShowFriends", 1)
 	end
 
-	if NP.db.showEnemyCombat == 'TOGGLE_ON' then
-		E:SetCVar('nameplateShowEnemies', 0)
-	elseif NP.db.showEnemyCombat == 'TOGGLE_OFF' then
-		E:SetCVar('nameplateShowEnemies', 1)
+	if NP.db.showEnemyCombat == "TOGGLE_ON" then
+		E:SetCVar("nameplateShowEnemies", 0)
+	elseif NP.db.showEnemyCombat == "TOGGLE_OFF" then
+		E:SetCVar("nameplateShowEnemies", 1)
 	end
 
 	NP:ForEachVisiblePlate("StyleFilterUpdate", "PLAYER_REGEN_ENABLED")
@@ -1093,27 +1129,37 @@ function NP:UNIT_COMBO_POINTS(_, unit)
 end
 
 function NP:UNIT_HEALTH(_, unit)
-	if unit ~= "player" then return end
+	if unit ~= "player" then
+		return
+	end
 	NP:ForEachVisiblePlate("StyleFilterUpdate", "UNIT_HEALTH")
 end
 
 function NP:UNIT_MANA(_, unit)
-	if unit ~= "player" then return end
+	if unit ~= "player" then
+		return
+	end
 	NP:ForEachVisiblePlate("StyleFilterUpdate", "UNIT_MANA")
 end
 
 function NP:UNIT_ENERGY(_, unit)
-	if unit ~= "player" then return end
+	if unit ~= "player" then
+		return
+	end
 	NP:ForEachVisiblePlate("StyleFilterUpdate", "UNIT_ENERGY")
 end
 
 function NP:UNIT_FOCUS(_, unit)
-	if unit ~= "player" then return end
+	if unit ~= "player" then
+		return
+	end
 	NP:ForEachVisiblePlate("StyleFilterUpdate", "UNIT_FOCUS")
 end
 
 function NP:UNIT_RAGE(_, unit)
-	if unit ~= "player" then return end
+	if unit ~= "player" then
+		return
+	end
 	NP:ForEachVisiblePlate("StyleFilterUpdate", "UNIT_RAGE")
 end
 
@@ -1137,11 +1183,11 @@ function NP:CacheArenaUnits()
 	twipe(NP.ENEMY_NPC)
 
 	for i = 1, 5 do
-		if UnitExists("arena"..i) then
+		if UnitExists("arena" .. i) then
 			local unit = format("arena%d", i)
 			NP.ENEMY_PLAYER[UnitName(unit)] = unit
 		end
-		if UnitExists("arenapet"..i) then
+		if UnitExists("arenapet" .. i) then
 			local unit = format("arenapet%d", i)
 			NP.ENEMY_NPC[UnitName(unit)] = unit
 		end
@@ -1153,14 +1199,14 @@ function NP:CacheGroupUnits()
 
 	if GetNumRaidMembers() > 0 then
 		for i = 1, 40 do
-			if UnitExists("raid"..i) then
+			if UnitExists("raid" .. i) then
 				local unit = format("raid%d", i)
 				NP.FRIENDLY_PLAYER[UnitName(unit)] = unit
 			end
 		end
 	elseif GetNumPartyMembers() > 0 then
 		for i = 1, 5 do
-			if UnitExists("party"..i) then
+			if UnitExists("party" .. i) then
 				local unit = format("party%d", i)
 				NP.FRIENDLY_PLAYER[UnitName(unit)] = unit
 			end
@@ -1173,21 +1219,21 @@ function NP:CacheGroupPetUnits()
 	twipe(NP.ENEMY_NPC)
 
 	for i = 1, 5 do
-		if UnitExists("arenapet"..i) then
+		if UnitExists("arenapet" .. i) then
 			local unit = format("arenapet%d", i)
 			NP.ENEMY_NPC[UnitName(unit)] = unit
 		end
 	end
 	if GetNumRaidMembers() > 0 then
 		for i = 1, 40 do
-			if UnitExists("raidpet"..i) then
+			if UnitExists("raidpet" .. i) then
 				local unit = format("raidpet%d", i)
 				NP.FRIENDLY_NPC[UnitName(unit)] = unit
 			end
 		end
 	elseif GetNumPartyMembers() > 0 then
 		for i = 1, 5 do
-			if UnitExists("partypet"..i) then
+			if UnitExists("partypet" .. i) then
 				local unit = format("partypet%d", i)
 				NP.FRIENDLY_NPC[UnitName(unit)] = unit
 			end
@@ -1232,11 +1278,12 @@ function NP:TogleTestFrame(unitType)
 end
 
 function NP:Initialize()
-	if not E.private.nameplates.enable then return end
+	if not E.private.nameplates.enable then
+		return
+	end
 	NP.Initialized = true
 
 	NP.db = E.db.nameplates
-
 
 	--Add metatable to all our StyleFilters so they can grab default values if missing
 	NP:StyleFilterInitialize()
@@ -1254,9 +1301,13 @@ function NP:Initialize()
 	ElvNP_Test:Point("BOTTOM", UIParent, "BOTTOM", 0, 250)
 	ElvNP_Test:SetMovable(true)
 	ElvNP_Test:RegisterForDrag("LeftButton", "RightButton")
-	ElvNP_Test:SetScript("OnDragStart", function() ElvNP_Test:StartMoving() end)
-	ElvNP_Test:SetScript("OnDragStop", function() ElvNP_Test:StopMovingOrSizing() end)
-	ElvNP_Test.frameType = 'PLAYER'
+	ElvNP_Test:SetScript("OnDragStart", function()
+		ElvNP_Test:StartMoving()
+	end)
+	ElvNP_Test:SetScript("OnDragStop", function()
+		ElvNP_Test:StopMovingOrSizing()
+	end)
+	ElvNP_Test.frameType = "PLAYER"
 
 	CreateFrame("StatusBar", nil, ElvNP_Test)
 	CreateFrame("StatusBar", nil, ElvNP_Test)

@@ -12,7 +12,7 @@ local GetCombatRating = GetCombatRating
 local GetCombatRatingBonus = GetCombatRatingBonus
 local GetArmorPenetration = GetArmorPenetration
 
-local displayString = ''
+local displayString = ""
 local APRating, APBonusRating, APPercent = 0, 0, 0
 
 local function OnEvent(self)
@@ -20,20 +20,32 @@ local function OnEvent(self)
 	APBonusRating = GetCombatRatingBonus(CR_ARMOR_PENETRATION)
 	APPercent = GetArmorPenetration()
 
-	self.text:SetFormattedText(displayString, 'Armor Penetration', APRating + APBonusRating)
+	self.text:SetFormattedText(displayString, "Armor Penetration", APRating + APBonusRating)
 end
 
 local function OnEnter()
 	DT.tooltip:ClearLines()
 
-	DT.tooltip:AddLine(format(ITEM_MOD_ARMOR_PENETRATION_RATING_SHORT, format('%d', APRating)))
-	DT.tooltip:AddLine(format(ITEM_MOD_ARMOR_PENETRATION_RATING, format('%d', APPercent)))
+	DT.tooltip:AddLine(format(ITEM_MOD_ARMOR_PENETRATION_RATING_SHORT, format("%d", APRating)))
+	DT.tooltip:AddLine(format(ITEM_MOD_ARMOR_PENETRATION_RATING, format("%d", APPercent)))
 
 	DT.tooltip:Show()
 end
 
 local function ApplySettings(_, hex)
-	displayString = strjoin('', '%s: ', hex, '%s|r')
+	displayString = strjoin("", "%s: ", hex, "%s|r")
 end
 
-DT:RegisterDatatext('Armor Penetration', L["Enhancements"], { 'COMBAT_RATING_UPDATE' }, OnEvent, nil, nil, OnEnter, nil, nil, nil, ApplySettings)
+DT:RegisterDatatext(
+	"Armor Penetration",
+	L["Enhancements"],
+	{ "COMBAT_RATING_UPDATE" },
+	OnEvent,
+	nil,
+	nil,
+	OnEnter,
+	nil,
+	nil,
+	nil,
+	ApplySettings
+)

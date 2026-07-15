@@ -27,7 +27,9 @@ function UF:Construct_Portrait(frame, type)
 end
 
 function UF:Configure_Portrait(frame, dontHide)
-	if not frame.VARIABLES_SET then return end
+	if not frame.VARIABLES_SET then
+		return
+	end
 	local db = frame.db
 
 	if frame.Portrait and not dontHide then
@@ -89,20 +91,68 @@ function UF:Configure_Portrait(frame, dontHide)
 			end
 
 			if frame.ORIENTATION == "LEFT" then
-				portrait.backdrop:Point("TOPLEFT", frame, "TOPLEFT", frame.SPACING, frame.USE_MINI_CLASSBAR and -(frame.CLASSBAR_YOFFSET+frame.SPACING) or -frame.SPACING)
+				portrait.backdrop:Point(
+					"TOPLEFT",
+					frame,
+					"TOPLEFT",
+					frame.SPACING,
+					frame.USE_MINI_CLASSBAR and -(frame.CLASSBAR_YOFFSET + frame.SPACING) or -frame.SPACING
+				)
 
-				if frame.USE_MINI_POWERBAR or frame.USE_POWERBAR_OFFSET or not frame.USE_POWERBAR or frame.USE_INSET_POWERBAR or frame.POWERBAR_DETACHED then
-					portrait.backdrop:Point("BOTTOMRIGHT", frame.Health.backdrop, "BOTTOMLEFT", frame.BORDER - frame.SPACING*3, 0)
+				if
+					frame.USE_MINI_POWERBAR
+					or frame.USE_POWERBAR_OFFSET
+					or not frame.USE_POWERBAR
+					or frame.USE_INSET_POWERBAR
+					or frame.POWERBAR_DETACHED
+				then
+					portrait.backdrop:Point(
+						"BOTTOMRIGHT",
+						frame.Health.backdrop,
+						"BOTTOMLEFT",
+						frame.BORDER - frame.SPACING * 3,
+						0
+					)
 				else
-					portrait.backdrop:Point("BOTTOMRIGHT", frame.Power.backdrop, "BOTTOMLEFT", frame.BORDER - frame.SPACING*3, 0)
+					portrait.backdrop:Point(
+						"BOTTOMRIGHT",
+						frame.Power.backdrop,
+						"BOTTOMLEFT",
+						frame.BORDER - frame.SPACING * 3,
+						0
+					)
 				end
 			elseif frame.ORIENTATION == "RIGHT" then
-				portrait.backdrop:Point("TOPRIGHT", frame, "TOPRIGHT", -frame.SPACING, frame.USE_MINI_CLASSBAR and -(frame.CLASSBAR_YOFFSET+frame.SPACING) or -frame.SPACING)
+				portrait.backdrop:Point(
+					"TOPRIGHT",
+					frame,
+					"TOPRIGHT",
+					-frame.SPACING,
+					frame.USE_MINI_CLASSBAR and -(frame.CLASSBAR_YOFFSET + frame.SPACING) or -frame.SPACING
+				)
 
-				if frame.USE_MINI_POWERBAR or frame.USE_POWERBAR_OFFSET or not frame.USE_POWERBAR or frame.USE_INSET_POWERBAR or frame.POWERBAR_DETACHED then
-					portrait.backdrop:Point("BOTTOMLEFT", frame.Health.backdrop, "BOTTOMRIGHT", -frame.BORDER + frame.SPACING*3, 0)
+				if
+					frame.USE_MINI_POWERBAR
+					or frame.USE_POWERBAR_OFFSET
+					or not frame.USE_POWERBAR
+					or frame.USE_INSET_POWERBAR
+					or frame.POWERBAR_DETACHED
+				then
+					portrait.backdrop:Point(
+						"BOTTOMLEFT",
+						frame.Health.backdrop,
+						"BOTTOMRIGHT",
+						-frame.BORDER + frame.SPACING * 3,
+						0
+					)
 				else
-					portrait.backdrop:Point("BOTTOMLEFT", frame.Power.backdrop, "BOTTOMRIGHT", -frame.BORDER + frame.SPACING*3, 0)
+					portrait.backdrop:Point(
+						"BOTTOMLEFT",
+						frame.Power.backdrop,
+						"BOTTOMRIGHT",
+						-frame.BORDER + frame.SPACING * 3,
+						0
+					)
 				end
 			end
 
@@ -119,7 +169,9 @@ end
 
 function UF:PortraitUpdate()
 	local db = self:GetParent().db
-	if not db then return end
+	if not db then
+		return
+	end
 
 	local portrait = db.portrait
 	if portrait.enable and self:GetParent().USE_PORTRAIT_OVERLAY then

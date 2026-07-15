@@ -18,13 +18,17 @@ local GetInventoryItemID = GetInventoryItemID
 local BANK_CONTAINER = BANK_CONTAINER
 
 S:AddCallback("Skin_Bags", function()
-	if E.private.bags.enable then return end
-	if not E.private.skins.blizzard.enable or not E.private.skins.blizzard.bags then return end
+	if E.private.bags.enable then
+		return
+	end
+	if not E.private.skins.blizzard.enable or not E.private.skins.blizzard.bags then
+		return
+	end
 
 	-- ContainerFrame
 	for i = 1, NUM_CONTAINER_FRAMES do
-		local frame = _G["ContainerFrame"..i]
-		local closeButton = _G["ContainerFrame"..i.."CloseButton"]
+		local frame = _G["ContainerFrame" .. i]
+		local closeButton = _G["ContainerFrame" .. i .. "CloseButton"]
 
 		frame:StripTextures(true)
 		frame:CreateBackdrop("Transparent")
@@ -39,10 +43,10 @@ S:AddCallback("Skin_Bags", function()
 		S:HandleCloseButton(closeButton, frame.backdrop)
 
 		for j = 1, MAX_CONTAINER_ITEMS do
-			local item = _G["ContainerFrame"..i.."Item"..j]
-			local icon = _G["ContainerFrame"..i.."Item"..j.."IconTexture"]
-			local questIcon = _G["ContainerFrame"..i.."Item"..j.."IconQuestTexture"]
-			local cooldown = _G["ContainerFrame"..i.."Item"..j.."Cooldown"]
+			local item = _G["ContainerFrame" .. i .. "Item" .. j]
+			local icon = _G["ContainerFrame" .. i .. "Item" .. j .. "IconTexture"]
+			local questIcon = _G["ContainerFrame" .. i .. "Item" .. j .. "IconQuestTexture"]
+			local cooldown = _G["ContainerFrame" .. i .. "Item" .. j .. "Cooldown"]
 
 			item:SetNormalTexture(nil)
 			item:SetTemplate("Default", true)
@@ -64,7 +68,7 @@ S:AddCallback("Skin_Bags", function()
 	BackpackTokenFrame:StripTextures()
 
 	for i = 1, MAX_WATCHED_TOKENS do
-		local token = _G["BackpackTokenFrameToken"..i]
+		local token = _G["BackpackTokenFrameToken" .. i]
 
 		token:CreateBackdrop("Default")
 		token.backdrop:SetOutside(token.icon)
@@ -76,7 +80,7 @@ S:AddCallback("Skin_Bags", function()
 
 	local function setBagIcon(frame, texture)
 		if not frame.BagIcon then
-			local portraitButton = _G[frame:GetName().."PortraitButton"]
+			local portraitButton = _G[frame:GetName() .. "PortraitButton"]
 
 			portraitButton:CreateBackdrop()
 			portraitButton:Size(32)
@@ -94,7 +98,7 @@ S:AddCallback("Skin_Bags", function()
 
 	local bagIconCache = {
 		[-2] = [[Interface\ContainerFrame\KeyRing-Bag-Icon]],
-		[0] = [[Interface\Buttons\Button-Backpack-Up]]
+		[0] = [[Interface\Buttons\Button-Backpack-Up]],
 	}
 
 	hooksecurefunc("ContainerFrame_GenerateFrame", function(frame)
@@ -120,8 +124,8 @@ S:AddCallback("Skin_Bags", function()
 		local item, questIcon, link
 
 		for i = 1, frame.size do
-			item = _G[frameName.."Item"..i]
-			questIcon = _G[frameName.."Item"..i.."IconQuestTexture"]
+			item = _G[frameName .. "Item" .. i]
+			questIcon = _G[frameName .. "Item" .. i .. "IconQuestTexture"]
 			link = GetContainerItemLink(id, item:GetID())
 
 			questIcon:Hide()
@@ -171,10 +175,10 @@ S:AddCallback("Skin_Bags", function()
 	BankFrameItem1:Point("TOPLEFT", 39, -73)
 
 	for i = 1, NUM_BANKGENERIC_SLOTS do
-		local button = _G["BankFrameItem"..i]
-		local icon = _G["BankFrameItem"..i.."IconTexture"]
-		local quest = _G["BankFrameItem"..i.."IconQuestTexture"]
-		local cooldown = _G["BankFrameItem"..i.."Cooldown"]
+		local button = _G["BankFrameItem" .. i]
+		local icon = _G["BankFrameItem" .. i .. "IconTexture"]
+		local quest = _G["BankFrameItem" .. i .. "IconQuestTexture"]
+		local cooldown = _G["BankFrameItem" .. i .. "Cooldown"]
 
 		button:SetNormalTexture(nil)
 		button:SetTemplate("Default", true)
@@ -198,9 +202,9 @@ S:AddCallback("Skin_Bags", function()
 	BankFrame.itemBackdrop:OffsetFrameLevel(nil, BankFrame)
 
 	for i = 1, NUM_BANKBAGSLOTS do
-		local button = _G["BankFrameBag"..i]
-		local icon = _G["BankFrameBag"..i.."IconTexture"]
-		local highlight = _G["BankFrameBag"..i.."HighlightFrameTexture"]
+		local button = _G["BankFrameBag" .. i]
+		local icon = _G["BankFrameBag" .. i .. "IconTexture"]
+		local highlight = _G["BankFrameBag" .. i .. "HighlightFrameTexture"]
 
 		button:SetNormalTexture(nil)
 		button:SetTemplate("Default", true)
@@ -243,7 +247,7 @@ S:AddCallback("Skin_Bags", function()
 			end
 		else
 			local link = GetContainerItemLink(BANK_CONTAINER, id)
-			local questTexture = _G[button:GetName().."IconQuestTexture"]
+			local questTexture = _G[button:GetName() .. "IconQuestTexture"]
 
 			if questTexture then
 				questTexture:Hide()

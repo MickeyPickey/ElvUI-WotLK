@@ -13,13 +13,19 @@ local GetTradeSkillReagentItemLink = GetTradeSkillReagentItemLink
 local hooksecurefunc = hooksecurefunc
 
 S:AddCallbackForAddon("Blizzard_TradeSkillUI", "Skin_Blizzard_TradeSkillUI", function()
-	if not E.private.skins.blizzard.enable or not E.private.skins.blizzard.tradeskill then return end
+	if not E.private.skins.blizzard.enable or not E.private.skins.blizzard.tradeskill then
+		return
+	end
 
 	local SKILLS_DISPLAYED = 21
 	TRADE_SKILLS_DISPLAYED = SKILLS_DISPLAYED
 
 	for i = 9, SKILLS_DISPLAYED do
-		CreateFrame("Button", "TradeSkillSkill"..i, TradeSkillFrame, "TradeSkillSkillButtonTemplate"):SetPoint("TOPLEFT", _G["TradeSkillSkill"..i - 1], "BOTTOMLEFT")
+		CreateFrame("Button", "TradeSkillSkill" .. i, TradeSkillFrame, "TradeSkillSkillButtonTemplate"):SetPoint(
+			"TOPLEFT",
+			_G["TradeSkillSkill" .. i - 1],
+			"BOTTOMLEFT"
+		)
 	end
 
 	TradeSkillFrame:StripTextures(true)
@@ -54,8 +60,8 @@ S:AddCallbackForAddon("Blizzard_TradeSkillUI", "Skin_Blizzard_TradeSkillUI", fun
 	S:HandleCollapseExpandButton(TradeSkillCollapseAllButton, "+")
 
 	for i = 1, SKILLS_DISPLAYED do
-		local skillButton = _G["TradeSkillSkill"..i]
-		local skillButtonHighlight = _G["TradeSkillSkill"..i.."Highlight"]
+		local skillButton = _G["TradeSkillSkill" .. i]
+		local skillButtonHighlight = _G["TradeSkillSkill" .. i .. "Highlight"]
 
 		S:HandleCollapseExpandButton(skillButton, "+", nil, nil, 1)
 
@@ -77,11 +83,11 @@ S:AddCallbackForAddon("Blizzard_TradeSkillUI", "Skin_Blizzard_TradeSkillUI", fun
 	TradeSkillRequirementLabel:SetTextColor(1, 0.80, 0.10)
 
 	for i = 1, MAX_TRADE_SKILL_REAGENTS do
-		local reagent = _G["TradeSkillReagent"..i]
-		local icon = _G["TradeSkillReagent"..i.."IconTexture"]
-		local count = _G["TradeSkillReagent"..i.."Count"]
-		local name = _G["TradeSkillReagent"..i.."Name"]
-		local nameFrame = _G["TradeSkillReagent"..i.."NameFrame"]
+		local reagent = _G["TradeSkillReagent" .. i]
+		local icon = _G["TradeSkillReagent" .. i .. "IconTexture"]
+		local count = _G["TradeSkillReagent" .. i .. "Count"]
+		local name = _G["TradeSkillReagent" .. i .. "Name"]
+		local nameFrame = _G["TradeSkillReagent" .. i .. "NameFrame"]
 
 		reagent:SetTemplate("Default")
 		reagent:StyleButton(nil, true)
@@ -206,12 +212,12 @@ S:AddCallbackForAddon("Blizzard_TradeSkillUI", "Skin_Blizzard_TradeSkillUI", fun
 			local reagentLink = GetTradeSkillReagentItemLink(id, i)
 
 			if reagentLink then
-				local reagent = _G["TradeSkillReagent"..i]
-				local icon = _G["TradeSkillReagent"..i.."IconTexture"]
+				local reagent = _G["TradeSkillReagent" .. i]
+				local icon = _G["TradeSkillReagent" .. i .. "IconTexture"]
 				local quality = select(3, GetItemInfo(reagentLink))
 
 				if quality and quality > 1 then
-					local name = _G["TradeSkillReagent"..i.."Name"]
+					local name = _G["TradeSkillReagent" .. i .. "Name"]
 					r, g, b = E:GetItemQualityColor(quality)
 
 					icon.backdrop:SetBackdropBorderColor(r, g, b)

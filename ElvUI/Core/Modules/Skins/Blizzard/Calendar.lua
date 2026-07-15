@@ -10,7 +10,9 @@ local hooksecurefunc = hooksecurefunc
 local CLASS_SORT_ORDER = CLASS_SORT_ORDER
 
 S:AddCallbackForAddon("Blizzard_Calendar", "Skin_Blizzard_Calendar", function()
-	if not E.private.skins.blizzard.enable or not E.private.skins.blizzard.calendar then return end
+	if not E.private.skins.blizzard.enable or not E.private.skins.blizzard.calendar then
+		return
+	end
 
 	CalendarFrame:StripTextures()
 	CalendarFrame:CreateBackdrop("Transparent")
@@ -84,7 +86,7 @@ S:AddCallbackForAddon("Blizzard_Calendar", "Skin_Blizzard_Calendar", function()
 	CalendarInviteStatusContextMenu.SetBackdropBorderColor = E.noop
 
 	for i = 1, 7 do
-		_G["CalendarContextMenuButton"..i]:StyleButton()
+		_G["CalendarContextMenuButton" .. i]:StyleButton()
 	end
 
 	local eventTextureSetTexCoord = function(self, left, right, top, bottom)
@@ -96,9 +98,9 @@ S:AddCallbackForAddon("Blizzard_Calendar", "Skin_Blizzard_Calendar", function()
 	end
 
 	for i = 1, 42 do
-		local button = _G["CalendarDayButton"..i]
-		local eventTexture = _G["CalendarDayButton"..i.."EventTexture"]
-		local overlayFrame = _G["CalendarDayButton"..i.."OverlayFrame"]
+		local button = _G["CalendarDayButton" .. i]
+		local eventTexture = _G["CalendarDayButton" .. i .. "EventTexture"]
+		local overlayFrame = _G["CalendarDayButton" .. i .. "OverlayFrame"]
 
 		button:OffsetFrameLevel(1)
 		button:Size(91 - E.Border)
@@ -114,7 +116,7 @@ S:AddCallbackForAddon("Blizzard_Calendar", "Skin_Blizzard_Calendar", function()
 		hooksecurefunc(eventTexture, "SetTexCoord", eventTextureSetTexCoord)
 
 		for j = 1, 4 do
-			local eventButton = _G["CalendarDayButton"..i.."EventButton"..j]
+			local eventButton = _G["CalendarDayButton" .. i .. "EventButton" .. j]
 			eventButton:StripTextures()
 			eventButton:StyleButton()
 		end
@@ -122,9 +124,9 @@ S:AddCallbackForAddon("Blizzard_Calendar", "Skin_Blizzard_Calendar", function()
 		if i == 1 then
 			button:SetPoint("TOPLEFT", CalendarWeekday1Background, "BOTTOMLEFT", 0, 0)
 		elseif fmod(i, 7) == 1 then
-			button:SetPoint("TOPLEFT", _G["CalendarDayButton"..(i - 7)], "BOTTOMLEFT", 0, -E.Border)
+			button:SetPoint("TOPLEFT", _G["CalendarDayButton" .. (i - 7)], "BOTTOMLEFT", 0, -E.Border)
 		else
-			button:SetPoint("TOPLEFT", _G["CalendarDayButton"..(i - 1)], "TOPRIGHT", E.Border, 0)
+			button:SetPoint("TOPLEFT", _G["CalendarDayButton" .. (i - 1)], "TOPRIGHT", E.Border, 0)
 		end
 	end
 
@@ -134,7 +136,9 @@ S:AddCallbackForAddon("Blizzard_Calendar", "Skin_Blizzard_Calendar", function()
 	CalendarTodayFrame:SetBackdropBorderColor(unpack(E.media.rgbvaluecolor))
 	local value = E.db.general.valuecolor
 	CalendarTodayFrame:SetBackdropColor(value.r, value.g, value.b, 0.5)
-	CalendarTodayFrame:HookScript("OnUpdate", function(self) self:SetAlpha(CalendarTodayTextureGlow:GetAlpha()) end)
+	CalendarTodayFrame:HookScript("OnUpdate", function(self)
+		self:SetAlpha(CalendarTodayTextureGlow:GetAlpha())
+	end)
 	CalendarTodayFrame:CreateShadow()
 	CalendarTodayFrame.shadow:SetBackdropBorderColor(unpack(E.media.rgbvaluecolor))
 
@@ -202,7 +206,7 @@ S:AddCallbackForAddon("Blizzard_Calendar", "Skin_Blizzard_Calendar", function()
 
 	CalendarClassButtonContainer:HookScript("OnShow", function()
 		for i, class in ipairs(CLASS_SORT_ORDER) do
-			local button = _G["CalendarClassButton"..i]
+			local button = _G["CalendarClassButton" .. i]
 			button:StripTextures()
 			button:CreateBackdrop("Default")
 			button:Size(23)
@@ -236,7 +240,7 @@ S:AddCallbackForAddon("Blizzard_Calendar", "Skin_Blizzard_Calendar", function()
 	S:HandleButton(CalendarCreateEventRaidInviteButton, true)
 
 	for i = 1, 16 do
-		_G["CalendarTexturePickerScrollFrameButton"..i]:StyleButton()
+		_G["CalendarTexturePickerScrollFrameButton" .. i]:StyleButton()
 	end
 
 	CalendarTexturePickerScrollFrame:CreateBackdrop("Transparent")
@@ -341,11 +345,35 @@ S:AddCallbackForAddon("Blizzard_Calendar", "Skin_Blizzard_Calendar", function()
 	CalendarViewEventDescriptionContainer:Size(294, 68)
 	CalendarViewEventDescriptionContainer:Point("TOPLEFT", 13, -94)
 
-	CalendarViewEventDescriptionScrollFrameScrollBar:Point("TOPLEFT", CalendarViewEventDescriptionScrollFrame, "TOPRIGHT", 4, -15)
-	CalendarViewEventDescriptionScrollFrameScrollBar:Point("BOTTOMLEFT", CalendarViewEventDescriptionScrollFrame, "BOTTOMRIGHT", 4, 15)
+	CalendarViewEventDescriptionScrollFrameScrollBar:Point(
+		"TOPLEFT",
+		CalendarViewEventDescriptionScrollFrame,
+		"TOPRIGHT",
+		4,
+		-15
+	)
+	CalendarViewEventDescriptionScrollFrameScrollBar:Point(
+		"BOTTOMLEFT",
+		CalendarViewEventDescriptionScrollFrame,
+		"BOTTOMRIGHT",
+		4,
+		15
+	)
 
-	CalendarViewEventInviteListScrollFrameScrollBar:Point("TOPLEFT", CalendarViewEventInviteListScrollFrame, "TOPRIGHT", 7, -16)
-	CalendarViewEventInviteListScrollFrameScrollBar:Point("BOTTOMLEFT", CalendarViewEventInviteListScrollFrame, "BOTTOMRIGHT", 7, 16)
+	CalendarViewEventInviteListScrollFrameScrollBar:Point(
+		"TOPLEFT",
+		CalendarViewEventInviteListScrollFrame,
+		"TOPRIGHT",
+		7,
+		-16
+	)
+	CalendarViewEventInviteListScrollFrameScrollBar:Point(
+		"BOTTOMLEFT",
+		CalendarViewEventInviteListScrollFrame,
+		"BOTTOMRIGHT",
+		7,
+		16
+	)
 
 	CalendarViewEventIcon:Point("TOPLEFT", 14, -26)
 
@@ -373,11 +401,35 @@ S:AddCallbackForAddon("Blizzard_Calendar", "Skin_Blizzard_Calendar", function()
 	S:HandleScrollBar(CalendarCreateEventDescriptionScrollFrameScrollBar)
 	S:HandleScrollBar(CalendarCreateEventInviteListScrollFrameScrollBar)
 
-	CalendarCreateEventDescriptionScrollFrameScrollBar:Point("TOPLEFT", CalendarCreateEventDescriptionScrollFrame, "TOPRIGHT", 4, -15)
-	CalendarCreateEventDescriptionScrollFrameScrollBar:Point("BOTTOMLEFT", CalendarCreateEventDescriptionScrollFrame, "BOTTOMRIGHT", 4, 15)
+	CalendarCreateEventDescriptionScrollFrameScrollBar:Point(
+		"TOPLEFT",
+		CalendarCreateEventDescriptionScrollFrame,
+		"TOPRIGHT",
+		4,
+		-15
+	)
+	CalendarCreateEventDescriptionScrollFrameScrollBar:Point(
+		"BOTTOMLEFT",
+		CalendarCreateEventDescriptionScrollFrame,
+		"BOTTOMRIGHT",
+		4,
+		15
+	)
 
-	CalendarCreateEventInviteListScrollFrameScrollBar:Point("TOPLEFT", CalendarCreateEventInviteListScrollFrame, "TOPRIGHT", 7, -16)
-	CalendarCreateEventInviteListScrollFrameScrollBar:Point("BOTTOMLEFT", CalendarCreateEventInviteListScrollFrame, "BOTTOMRIGHT", 7, 16)
+	CalendarCreateEventInviteListScrollFrameScrollBar:Point(
+		"TOPLEFT",
+		CalendarCreateEventInviteListScrollFrame,
+		"TOPRIGHT",
+		7,
+		-16
+	)
+	CalendarCreateEventInviteListScrollFrameScrollBar:Point(
+		"BOTTOMLEFT",
+		CalendarCreateEventInviteListScrollFrame,
+		"BOTTOMRIGHT",
+		7,
+		16
+	)
 
 	if CalendarCreateEventInviteListScrollFrame.buttons then
 		for _, button in ipairs(CalendarCreateEventInviteListScrollFrame.buttons) do

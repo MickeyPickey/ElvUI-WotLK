@@ -47,8 +47,12 @@ end
 
 --I don't know if this function is needed or not? But the error I pm'ed you about was because of the missing OnEvent so I just added it.
 function UF:RaidPetsSmartVisibility(event)
-	if not self.db or (self.db and not self.db.enable) or (UF.db and not UF.db.smartRaidFilter) or self.isForced then return end
-	if event == "PLAYER_REGEN_ENABLED" then self:UnregisterEvent("PLAYER_REGEN_ENABLED") end
+	if not self.db or (self.db and not self.db.enable) or (UF.db and not UF.db.smartRaidFilter) or self.isForced then
+		return
+	end
+	if event == "PLAYER_REGEN_ENABLED" then
+		self:UnregisterEvent("PLAYER_REGEN_ENABLED")
+	end
 
 	if not InCombatLockdown() then
 		local _, instanceType = GetInstanceInfo()
@@ -74,7 +78,17 @@ function UF:Update_RaidpetHeader(header, db)
 		headerHolder:ClearAllPoints()
 		headerHolder:Point("BOTTOMLEFT", E.UIParent, "BOTTOMLEFT", 4, 574)
 
-		E:CreateMover(headerHolder, headerHolder:GetName().."Mover", L["Raid Pet Frames"], nil, nil, nil, "ALL,RAID10,RAID25,RAID40", nil, "unitframe,raidpet,generalGroup")
+		E:CreateMover(
+			headerHolder,
+			headerHolder:GetName() .. "Mover",
+			L["Raid Pet Frames"],
+			nil,
+			nil,
+			nil,
+			"ALL,RAID10,RAID25,RAID40",
+			nil,
+			"unitframe,raidpet,generalGroup"
+		)
 		headerHolder.positioned = true
 
 		headerHolder:RegisterEvent("PLAYER_LOGIN")
@@ -182,4 +196,4 @@ function UF:Update_RaidpetFrames(frame, db)
 end
 
 --Added an additional argument at the end, specifying the header Template we want to use
-UF.headerstoload.raidpet = {nil, nil, "SecureGroupPetHeaderTemplate"}
+UF.headerstoload.raidpet = { nil, nil, "SecureGroupPetHeaderTemplate" }

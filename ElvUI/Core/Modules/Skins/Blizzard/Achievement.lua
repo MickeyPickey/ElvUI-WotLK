@@ -16,9 +16,11 @@ local achievementSaturate = function(self)
 	self:SetBackdropBorderColor(unpack(E.media.bordercolor))
 end
 local function skinAchievement(achievement, biggerIcon)
-	if achievement.isSkinned then return end
+	if achievement.isSkinned then
+		return
+	end
 
-	_G[achievement:GetName().."Background"]:Kill()
+	_G[achievement:GetName() .. "Background"]:Kill()
 	achievement:StripTextures()
 	achievement:SetTemplate("Default", true)
 	achievement.icon:SetTemplate()
@@ -41,7 +43,7 @@ local function skinAchievement(achievement, biggerIcon)
 	end
 
 	if achievement.description then
-		achievement.description:SetTextColor(.6, .6, .6)
+		achievement.description:SetTextColor(0.6, 0.6, 0.6)
 		achievement.description.SetTextColor = E.noop
 	end
 
@@ -63,7 +65,9 @@ local function skinAchievement(achievement, biggerIcon)
 end
 
 S:AddCallback("Skin_AchievementUI_HybridScrollButton", function()
-	if not E.private.skins.blizzard.enable or not E.private.skins.blizzard.achievement then return end
+	if not E.private.skins.blizzard.enable or not E.private.skins.blizzard.achievement then
+		return
+	end
 
 	hooksecurefunc("HybridScrollFrame_CreateButtons", function(frame, template)
 		if template == "AchievementCategoryTemplate" then
@@ -86,7 +90,7 @@ S:AddCallback("Skin_AchievementUI_HybridScrollButton", function()
 		elseif template == "StatTemplate" then
 			for _, stats in ipairs(frame.buttons) do
 				if not stats.isSkinned then
-				--	stats:StripTextures(true)
+					--	stats:StripTextures(true)
 					stats:StyleButton()
 					stats.isSkinned = true
 				end
@@ -96,11 +100,13 @@ S:AddCallback("Skin_AchievementUI_HybridScrollButton", function()
 end)
 
 S:AddCallbackForAddon("Blizzard_AchievementUI", "Skin_Blizzard_AchievementUI", function()
-	if not E.private.skins.blizzard.enable or not E.private.skins.blizzard.achievement then return end
+	if not E.private.skins.blizzard.enable or not E.private.skins.blizzard.achievement then
+		return
+	end
 
 	local frames = {
 		"AchievementFrame",
-	--	"AchievementFrameCategories",
+		--	"AchievementFrameCategories",
 		"AchievementFrameSummary",
 		"AchievementFrameSummaryCategoriesHeader",
 		"AchievementFrameSummaryAchievementsHeader",
@@ -109,7 +115,7 @@ S:AddCallbackForAddon("Blizzard_AchievementUI", "Skin_Blizzard_AchievementUI", f
 		"AchievementFrameComparison",
 		"AchievementFrameComparisonHeader",
 		"AchievementFrameComparisonSummaryPlayer",
-		"AchievementFrameComparisonSummaryFriend"
+		"AchievementFrameComparisonSummaryFriend",
 	}
 
 	for _, frame in ipairs(frames) do
@@ -120,7 +126,7 @@ S:AddCallbackForAddon("Blizzard_AchievementUI", "Skin_Blizzard_AchievementUI", f
 		"AchievementFrameStats",
 		"AchievementFrameSummary",
 		"AchievementFrameAchievements",
-		"AchievementFrameComparison"
+		"AchievementFrameComparison",
 	}
 
 	for _, frame in ipairs(nonameFrames) do
@@ -183,8 +189,20 @@ S:AddCallbackForAddon("Blizzard_AchievementUI", "Skin_Blizzard_AchievementUI", f
 	AchievementFrameCategories:Point("TOPLEFT", 8, -35)
 	AchievementFrameCategories:Point("BOTTOMLEFT", 21, 8)
 
-	AchievementFrameCategoriesContainerScrollBar:Point("TOPLEFT", AchievementFrameCategoriesContainer, "TOPRIGHT", 3, -14)
-	AchievementFrameCategoriesContainerScrollBar:Point("BOTTOMLEFT", AchievementFrameCategoriesContainer, "BOTTOMRIGHT", 3, 14)
+	AchievementFrameCategoriesContainerScrollBar:Point(
+		"TOPLEFT",
+		AchievementFrameCategoriesContainer,
+		"TOPRIGHT",
+		3,
+		-14
+	)
+	AchievementFrameCategoriesContainerScrollBar:Point(
+		"BOTTOMLEFT",
+		AchievementFrameCategoriesContainer,
+		"BOTTOMRIGHT",
+		3,
+		14
+	)
 
 	AchievementFrameSummaryAchievements:Point("TOPLEFT", 5, -10)
 	AchievementFrameSummaryAchievements:Point("TOPRIGHT", -5, -30)
@@ -194,8 +212,20 @@ S:AddCallbackForAddon("Blizzard_AchievementUI", "Skin_Blizzard_AchievementUI", f
 	AchievementFrameAchievementsContainer:Point("TOPLEFT", 2, -2)
 	AchievementFrameAchievementsContainer:Point("BOTTOMRIGHT", -2, 4)
 
-	AchievementFrameAchievementsContainerScrollBar:Point("TOPLEFT", AchievementFrameAchievementsContainer, "TOPRIGHT", 5, -17)
-	AchievementFrameAchievementsContainerScrollBar:Point("BOTTOMLEFT", AchievementFrameAchievementsContainer, "BOTTOMRIGHT", 5, 15)
+	AchievementFrameAchievementsContainerScrollBar:Point(
+		"TOPLEFT",
+		AchievementFrameAchievementsContainer,
+		"TOPRIGHT",
+		5,
+		-17
+	)
+	AchievementFrameAchievementsContainerScrollBar:Point(
+		"BOTTOMLEFT",
+		AchievementFrameAchievementsContainer,
+		"BOTTOMRIGHT",
+		5,
+		15
+	)
 
 	AchievementFrameStats:SetTemplate("Transparent")
 
@@ -214,12 +244,30 @@ S:AddCallbackForAddon("Blizzard_AchievementUI", "Skin_Blizzard_AchievementUI", f
 	AchievementFrameComparisonContainer:Point("TOPLEFT", AchievementFrameComparisonSummary, "BOTTOMLEFT", 0, -3)
 
 	AchievementFrameComparisonContainerScrollBar:Point("TOPLEFT", AchievementFrameComparisonSummary, "TOPRIGHT", 9, -17)
-	AchievementFrameComparisonContainerScrollBar:Point("BOTTOMLEFT", AchievementFrameComparisonContainer, "BOTTOMRIGHT", 9, 14)
+	AchievementFrameComparisonContainerScrollBar:Point(
+		"BOTTOMLEFT",
+		AchievementFrameComparisonContainer,
+		"BOTTOMRIGHT",
+		9,
+		14
+	)
 
 	AchievementFrameComparisonStatsContainer:Point("TOPLEFT", 5, -3)
 
-	AchievementFrameComparisonStatsContainerScrollBar:Point("TOPLEFT", AchievementFrameComparisonStatsContainer, "TOPRIGHT", 3, -16)
-	AchievementFrameComparisonStatsContainerScrollBar:Point("BOTTOMLEFT", AchievementFrameComparisonStatsContainer, "BOTTOMRIGHT", 3, 14)
+	AchievementFrameComparisonStatsContainerScrollBar:Point(
+		"TOPLEFT",
+		AchievementFrameComparisonStatsContainer,
+		"TOPRIGHT",
+		3,
+		-16
+	)
+	AchievementFrameComparisonStatsContainerScrollBar:Point(
+		"BOTTOMLEFT",
+		AchievementFrameComparisonStatsContainer,
+		"BOTTOMRIGHT",
+		3,
+		14
+	)
 
 	AchievementFrameAchievementsContainerScrollBar.Show = function(self)
 		AchievementFrameAchievements:SetWidth(500)
@@ -253,7 +301,7 @@ S:AddCallbackForAddon("Blizzard_AchievementUI", "Skin_Blizzard_AchievementUI", f
 		getmetatable(self).__index.Hide(self)
 	end
 
---[[
+	--[[
 	AchievementFrameComparisonContainerScrollBar.Show = function(self)
 		AchievementFrameComparison:SetWidth(626)
 		AchievementFrameComparisonSummaryPlayer:SetWidth(498)
@@ -275,7 +323,7 @@ S:AddCallbackForAddon("Blizzard_AchievementUI", "Skin_Blizzard_AchievementUI", f
 		getmetatable(self).__index.Hide(self)
 	end
 
---[[
+	--[[
 	AchievementFrameComparisonStatsContainerScrollBar.Show = function(self)
 		AchievementFrameComparison:SetWidth(626)
 		for _, button in ipairs(AchievementFrameComparisonStatsContainer.buttons) do
@@ -334,7 +382,7 @@ S:AddCallbackForAddon("Blizzard_AchievementUI", "Skin_Blizzard_AchievementUI", f
 	end
 
 	for i = 1, 2 do
-		local tab = _G["AchievementFrameTab"..i]
+		local tab = _G["AchievementFrameTab" .. i]
 		S:HandleTab(tab)
 		tab.text:SetPoint("CENTER", 0, 2)
 		tab.text.SetPoint = E.noop
@@ -343,7 +391,7 @@ S:AddCallbackForAddon("Blizzard_AchievementUI", "Skin_Blizzard_AchievementUI", f
 	AchievementFrameTab1:Point("BOTTOMLEFT", AchievementFrame, "BOTTOMLEFT", 0, -30)
 	AchievementFrameTab2:Point("LEFT", AchievementFrameTab1, "RIGHT", -15, 0)
 
-	local sbcR, sbcG, sbcB = 4/255, 179/255, 30/255
+	local sbcR, sbcG, sbcB = 4 / 255, 179 / 255, 30 / 255
 
 	local function skinStatusBar(bar)
 		bar:StripTextures()
@@ -353,9 +401,9 @@ S:AddCallbackForAddon("Blizzard_AchievementUI", "Skin_Blizzard_AchievementUI", f
 		E:RegisterStatusBar(bar)
 
 		local barName = bar:GetName()
-		local title = _G[barName.."Title"]
-		local label = _G[barName.."Label"]
-		local text = _G[barName.."Text"]
+		local title = _G[barName .. "Title"]
+		local label = _G[barName .. "Label"]
+		local text = _G[barName .. "Text"]
 
 		if title then
 			title:Point("LEFT", 4, 0)
@@ -377,10 +425,10 @@ S:AddCallbackForAddon("Blizzard_AchievementUI", "Skin_Blizzard_AchievementUI", f
 	AchievementFrameComparisonSummaryFriendStatusBar.text:SetPoint("CENTER")
 
 	for i = 1, 8 do
-		local frame = _G["AchievementFrameSummaryCategoriesCategory"..i]
-		local button = _G["AchievementFrameSummaryCategoriesCategory"..i.."Button"]
-		local highlight = _G["AchievementFrameSummaryCategoriesCategory"..i.."ButtonHighlight"]
-		local middle = _G["AchievementFrameSummaryCategoriesCategory"..i.."ButtonHighlightMiddle"]
+		local frame = _G["AchievementFrameSummaryCategoriesCategory" .. i]
+		local button = _G["AchievementFrameSummaryCategoriesCategory" .. i .. "Button"]
+		local highlight = _G["AchievementFrameSummaryCategoriesCategory" .. i .. "ButtonHighlight"]
+		local middle = _G["AchievementFrameSummaryCategoriesCategory" .. i .. "ButtonHighlightMiddle"]
 
 		skinStatusBar(frame)
 		button:StripTextures()
@@ -391,31 +439,31 @@ S:AddCallbackForAddon("Blizzard_AchievementUI", "Skin_Blizzard_AchievementUI", f
 	end
 
 	for i = 1, 20 do
-		_G["AchievementFrameStatsContainerButton"..i]:StyleButton()
-		_G["AchievementFrameStatsContainerButton"..i.."BG"]:SetTexture(1, 1, 1, 0.2)
-		_G["AchievementFrameStatsContainerButton"..i.."HeaderLeft"]:Kill()
-		_G["AchievementFrameStatsContainerButton"..i.."HeaderRight"]:Kill()
-		_G["AchievementFrameStatsContainerButton"..i.."HeaderMiddle"]:Kill()
+		_G["AchievementFrameStatsContainerButton" .. i]:StyleButton()
+		_G["AchievementFrameStatsContainerButton" .. i .. "BG"]:SetTexture(1, 1, 1, 0.2)
+		_G["AchievementFrameStatsContainerButton" .. i .. "HeaderLeft"]:Kill()
+		_G["AchievementFrameStatsContainerButton" .. i .. "HeaderRight"]:Kill()
+		_G["AchievementFrameStatsContainerButton" .. i .. "HeaderMiddle"]:Kill()
 
-		local frame = _G["AchievementFrameComparisonStatsContainerButton"..i]
+		local frame = _G["AchievementFrameComparisonStatsContainerButton" .. i]
 		frame:StripTextures()
 		frame:StyleButton()
-		_G["AchievementFrameComparisonStatsContainerButton"..i.."BG"]:SetTexture(1, 1, 1, 0.2)
-		_G["AchievementFrameComparisonStatsContainerButton"..i.."HeaderLeft"]:Kill()
-		_G["AchievementFrameComparisonStatsContainerButton"..i.."HeaderRight"]:Kill()
-		_G["AchievementFrameComparisonStatsContainerButton"..i.."HeaderMiddle"]:Kill()
+		_G["AchievementFrameComparisonStatsContainerButton" .. i .. "BG"]:SetTexture(1, 1, 1, 0.2)
+		_G["AchievementFrameComparisonStatsContainerButton" .. i .. "HeaderLeft"]:Kill()
+		_G["AchievementFrameComparisonStatsContainerButton" .. i .. "HeaderRight"]:Kill()
+		_G["AchievementFrameComparisonStatsContainerButton" .. i .. "HeaderMiddle"]:Kill()
 	end
 
 	hooksecurefunc("AchievementFrameSummary_UpdateAchievements", function()
 		local frame, prevFrame
 
 		for i = 1, ACHIEVEMENTUI_MAX_SUMMARY_ACHIEVEMENTS do
-			frame = _G["AchievementFrameSummaryAchievement"..i]
+			frame = _G["AchievementFrameSummaryAchievement" .. i]
 
 			skinAchievement(frame)
 
 			if i ~= 1 then
-				prevFrame = _G["AchievementFrameSummaryAchievement"..(i-1)]
+				prevFrame = _G["AchievementFrameSummaryAchievement" .. (i - 1)]
 				frame:Point("TOPLEFT", prevFrame, "BOTTOMLEFT", 0, -1)
 				frame:Point("TOPRIGHT", prevFrame, "BOTTOMRIGHT", 0, 1)
 			end
@@ -425,7 +473,7 @@ S:AddCallbackForAddon("Blizzard_AchievementUI", "Skin_Blizzard_AchievementUI", f
 	end)
 
 	hooksecurefunc("AchievementButton_GetProgressBar", function(index)
-		local frame = _G["AchievementFrameProgressBar"..index]
+		local frame = _G["AchievementFrameProgressBar" .. index]
 
 		if frame and not frame.skinned then
 			frame:StripTextures()
@@ -440,7 +488,7 @@ S:AddCallbackForAddon("Blizzard_AchievementUI", "Skin_Blizzard_AchievementUI", f
 			frame.text:SetJustifyH("CENTER")
 
 			if index > 1 then
-				frame:Point("TOP", _G["AchievementFrameProgressBar"..index-1], "BOTTOM", 0, -5)
+				frame:Point("TOP", _G["AchievementFrameProgressBar" .. index - 1], "BOTTOM", 0, -5)
 				frame.SetPoint = E.noop
 			end
 
@@ -474,7 +522,7 @@ S:AddCallbackForAddon("Blizzard_AchievementUI", "Skin_Blizzard_AchievementUI", f
 					metaCriteria.label:SetTextColor(0, 1, 0, 1)
 				else
 					metaCriteria.label:SetShadowOffset(1, -1)
-					metaCriteria.label:SetTextColor(.6, .6, .6, 1)
+					metaCriteria.label:SetTextColor(0.6, 0.6, 0.6, 1)
 				end
 			elseif criteriaType ~= 1 then
 				textStrings = textStrings + 1
@@ -487,7 +535,7 @@ S:AddCallbackForAddon("Blizzard_AchievementUI", "Skin_Blizzard_AchievementUI", f
 					criteria.name:SetTextColor(0, 1, 0, 1)
 					criteria.name:SetShadowOffset(1, -1)
 				else
-					criteria.name:SetTextColor(.6, .6, .6, 1)
+					criteria.name:SetTextColor(0.6, 0.6, 0.6, 1)
 					criteria.name:SetShadowOffset(1, -1)
 				end
 			end
@@ -498,13 +546,13 @@ S:AddCallbackForAddon("Blizzard_AchievementUI", "Skin_Blizzard_AchievementUI", f
 		local mini
 
 		for i = 1, 12 do
-			mini = _G["AchievementFrameMiniAchievement"..i]
+			mini = _G["AchievementFrameMiniAchievement" .. i]
 
 			if mini and not mini.isSkinned then
-				local icon = _G["AchievementFrameMiniAchievement"..i.."Icon"]
-				local points = _G["AchievementFrameMiniAchievement"..i.."Points"]
-				local border = _G["AchievementFrameMiniAchievement"..i.."Border"]
-				local shield = _G["AchievementFrameMiniAchievement"..i.."Shield"]
+				local icon = _G["AchievementFrameMiniAchievement" .. i .. "Icon"]
+				local points = _G["AchievementFrameMiniAchievement" .. i .. "Points"]
+				local border = _G["AchievementFrameMiniAchievement" .. i .. "Border"]
+				local shield = _G["AchievementFrameMiniAchievement" .. i .. "Shield"]
 
 				mini:SetTemplate()
 				mini:SetBackdropColor(0, 0, 0, 0)
@@ -515,7 +563,7 @@ S:AddCallbackForAddon("Blizzard_AchievementUI", "Skin_Blizzard_AchievementUI", f
 				elseif i == 7 then
 					mini:Point("TOPLEFT", AchievementFrameMiniAchievement1, "BOTTOMLEFT", 0, -20)
 				else
-					mini:Point("TOPLEFT", _G["AchievementFrameMiniAchievement"..i - 1], "TOPRIGHT", 10, 0)
+					mini:Point("TOPLEFT", _G["AchievementFrameMiniAchievement" .. i - 1], "TOPRIGHT", 10, 0)
 				end
 				mini.SetPoint = E.noop
 

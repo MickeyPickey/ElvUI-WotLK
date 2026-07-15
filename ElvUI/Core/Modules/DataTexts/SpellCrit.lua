@@ -1,5 +1,5 @@
 local E, L, V, P, G = unpack(ElvUI)
-local DT = E:GetModule('DataTexts')
+local DT = E:GetModule("DataTexts")
 
 local _G = _G
 local min = min
@@ -9,7 +9,7 @@ local GetSpellCritChance = GetSpellCritChance
 local MAX_SPELL_SCHOOLS = MAX_SPELL_SCHOOLS or 7
 local CRIT_ABBR = CRIT_ABBR
 
-local displayString, db = ''
+local displayString, db = ""
 
 local function OnEvent(self)
 	local minCrit
@@ -33,8 +33,8 @@ local function OnEnter()
 
 	for i = 2, MAX_SPELL_SCHOOLS do
 		local crit = GetSpellCritChance(i) or 0
-		DT.tooltip:AddDoubleLine(_G['DAMAGE_SCHOOL'..i], crit)
-		DT.tooltip:AddTexture(icon..i)
+		DT.tooltip:AddDoubleLine(_G["DAMAGE_SCHOOL" .. i], crit)
+		DT.tooltip:AddTexture(icon .. i)
 	end
 
 	DT.tooltip:Show()
@@ -45,7 +45,19 @@ local function ApplySettings(self, hex)
 		db = E.global.datatexts.settings[self.name]
 	end
 
-	displayString = strjoin('', '%s: ', hex, '%.2f%%|r')
+	displayString = strjoin("", "%s: ", hex, "%.2f%%|r")
 end
 
-DT:RegisterDatatext('Spell Crit Chance', L["Enhancements"], { 'UNIT_STATS', 'UNIT_AURA', 'PLAYER_DAMAGE_DONE_MODS' }, OnEvent, nil, nil, OnEnter, nil, nil, nil, ApplySettings)
+DT:RegisterDatatext(
+	"Spell Crit Chance",
+	L["Enhancements"],
+	{ "UNIT_STATS", "UNIT_AURA", "PLAYER_DAMAGE_DONE_MODS" },
+	OnEvent,
+	nil,
+	nil,
+	OnEnter,
+	nil,
+	nil,
+	nil,
+	ApplySettings
+)

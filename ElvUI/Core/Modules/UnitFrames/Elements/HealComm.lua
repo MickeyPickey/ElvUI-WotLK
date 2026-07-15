@@ -59,7 +59,7 @@ function UF:Construct_HealComm(frame)
 		maxOverflow = 1,
 		health = health,
 		parent = parent,
-		frame = frame
+		frame = frame,
 	}
 
 	UF:SetAlpha_HealComm(healPrediction)

@@ -6,7 +6,9 @@ local LSM = E.Libs.LSM
 --WoW API / Variables
 
 function NP:Update_Level(frame)
-	if not self.db.units[frame.UnitType].level.enable then return end
+	if not self.db.units[frame.UnitType].level.enable then
+		return
+	end
 
 	local levelText, r, g, b = self:UnitLevel(frame)
 
@@ -15,7 +17,14 @@ function NP:Update_Level(frame)
 
 	if frame.Health:IsShown() then
 		level:SetJustifyH("RIGHT")
-		level:SetPoint(E.InversePoints[self.db.units[frame.UnitType].level.position], self.db.units[frame.UnitType].level.parent == "Nameplate" and frame or frame[self.db.units[frame.UnitType].level.parent], self.db.units[frame.UnitType].level.position, self.db.units[frame.UnitType].level.xOffset, self.db.units[frame.UnitType].level.yOffset)
+		level:SetPoint(
+			E.InversePoints[self.db.units[frame.UnitType].level.position],
+			self.db.units[frame.UnitType].level.parent == "Nameplate" and frame
+				or frame[self.db.units[frame.UnitType].level.parent],
+			self.db.units[frame.UnitType].level.position,
+			self.db.units[frame.UnitType].level.xOffset,
+			self.db.units[frame.UnitType].level.yOffset
+		)
 		level:SetParent(frame.Health)
 		level:SetText(levelText)
 	else

@@ -1,5 +1,5 @@
 local E, L, V, P, G = unpack(ElvUI)
-local A = E:GetModule('Auras')
+local A = E:GetModule("Auras")
 local LSM = E.Libs.LSM
 local ElvUF = E.oUF
 
@@ -22,20 +22,20 @@ local CreateFrame = CreateFrame
 local GetTime = GetTime
 
 local Masque = E.Masque or E.Libs.LBF
-local MasqueGroupBuffs = Masque and Masque:Group('ElvUI', 'Buffs')
-local MasqueGroupDebuffs = Masque and Masque:Group('ElvUI', 'Debuffs')
+local MasqueGroupBuffs = Masque and Masque:Group("ElvUI", "Buffs")
+local MasqueGroupDebuffs = Masque and Masque:Group("ElvUI", "Debuffs")
 
 local DebuffColors = DebuffTypeColor
 
 local DIRECTION_TO_POINT = {
-	DOWN_RIGHT = 'TOPLEFT',
-	DOWN_LEFT = 'TOPRIGHT',
-	UP_RIGHT = 'BOTTOMLEFT',
-	UP_LEFT = 'BOTTOMRIGHT',
-	RIGHT_DOWN = 'TOPLEFT',
-	RIGHT_UP = 'BOTTOMLEFT',
-	LEFT_DOWN = 'TOPRIGHT',
-	LEFT_UP = 'BOTTOMRIGHT',
+	DOWN_RIGHT = "TOPLEFT",
+	DOWN_LEFT = "TOPRIGHT",
+	UP_RIGHT = "BOTTOMLEFT",
+	UP_LEFT = "BOTTOMRIGHT",
+	RIGHT_DOWN = "TOPLEFT",
+	RIGHT_UP = "BOTTOMLEFT",
+	LEFT_DOWN = "TOPRIGHT",
+	LEFT_UP = "BOTTOMRIGHT",
 }
 
 local DIRECTION_TO_HORIZONTAL_SPACING_MULTIPLIER = {
@@ -102,7 +102,7 @@ function A:UpdateButton(button)
 	if button.statusBar and button.statusBar:IsShown() then
 		local r, g, b
 		if db.barColorGradient then
-			r, g, b = ElvUF:ColorGradient(button.timeLeft, button.duration or 0, .8, 0, 0, .8, .8, 0, 0, .8, 0)
+			r, g, b = ElvUF:ColorGradient(button.timeLeft, button.duration or 0, 0.8, 0, 0, 0.8, 0.8, 0, 0, 0.8, 0)
 		else
 			r, g, b = db.barColor.r, db.barColor.g, db.barColor.b
 		end
@@ -126,54 +126,56 @@ function A:CreateIcon(button)
 
 	button.header = header
 	button.filter = header.filter
-	button.auraType = (header.filter == 'HELPFUL' and 'buffs') or 'debuffs'
+	button.auraType = (header.filter == "HELPFUL" and "buffs") or "debuffs"
 
 	button.name = button:GetName()
-	button.enchantIndex = tonumber(strmatch(button.name or '', 'TempEnchant(%d)$'))
+	button.enchantIndex = tonumber(strmatch(button.name or "", "TempEnchant(%d)$"))
 	if button.enchantIndex then
-		header['enchant' .. button.enchantIndex] = button
+		header["enchant" .. button.enchantIndex] = button
 		header.enchantButtons[button.enchantIndex] = button
 	else
 		button.instant = true
 	end
 
-	button.texture = button:CreateTexture(nil, 'ARTWORK')
+	button.texture = button:CreateTexture(nil, "ARTWORK")
 	button.texture:SetInside()
 
-	button.count = button:CreateFontString(nil, 'OVERLAY')
+	button.count = button:CreateFontString(nil, "OVERLAY")
 	button.count:FontTemplate()
 
-	button.text = button:CreateFontString(nil, 'OVERLAY')
+	button.text = button:CreateFontString(nil, "OVERLAY")
 	button.text:FontTemplate()
 
-	button.highlight = button:CreateTexture(nil, 'HIGHLIGHT')
-	button.highlight:SetTexture(1, 1, 1, .45)
+	button.highlight = button:CreateTexture(nil, "HIGHLIGHT")
+	button.highlight:SetTexture(1, 1, 1, 0.45)
 	button.highlight:SetInside()
 
-	button.statusBar = CreateFrame('StatusBar', nil, button)
+	button.statusBar = CreateFrame("StatusBar", nil, button)
 	button.statusBar:OffsetFrameLevel(nil, button)
 	button.statusBar:SetFrameStrata(button:GetFrameStrata())
 	button.statusBar:SetMinMaxValues(0, 1)
 	button.statusBar:SetValue(0)
 	button.statusBar:CreateBackdrop()
 
-	button:RegisterForClicks('RightButtonUp')
+	button:RegisterForClicks("RightButtonUp")
 
-	button:SetScript('OnUpdate', A.Button_OnUpdate)
-	button:SetScript('OnClick', A.Button_OnClick)
-	button:SetScript('OnEnter', A.Button_OnEnter)
-	button:SetScript('OnLeave', A.Button_OnLeave)
-	button:SetScript('OnHide', A.Button_OnHide)
-	button:SetScript('OnShow', A.Button_OnShow)
+	button:SetScript("OnUpdate", A.Button_OnUpdate)
+	button:SetScript("OnClick", A.Button_OnClick)
+	button:SetScript("OnEnter", A.Button_OnEnter)
+	button:SetScript("OnLeave", A.Button_OnLeave)
+	button:SetScript("OnHide", A.Button_OnHide)
+	button:SetScript("OnShow", A.Button_OnShow)
 
 	-- support cooldown override
 	if not button.isRegisteredCooldown then
-		button.CooldownOverride = 'auras'
+		button.CooldownOverride = "auras"
 		button.isRegisteredCooldown = true
 		button.forceEnabled = true
 		button.showSeconds = true
 
-		if not E.RegisteredCooldowns.auras then E.RegisteredCooldowns.auras = {} end
+		if not E.RegisteredCooldowns.auras then
+			E.RegisteredCooldowns.auras = {}
+		end
 		tinsert(E.RegisteredCooldowns.auras, button)
 	end
 
@@ -213,30 +215,36 @@ function A:UpdateIcon(button, update)
 
 	if button.count then
 		button.count:ClearAllPoints()
-		button.count:Point('BOTTOMRIGHT', db.countXOffset, db.countYOffset)
-		button.count:FontTemplate(LSM:Fetch('font', db.countFont), db.countFontSize, db.countFontOutline)
+		button.count:Point("BOTTOMRIGHT", db.countXOffset, db.countYOffset)
+		button.count:FontTemplate(LSM:Fetch("font", db.countFont), db.countFontSize, db.countFontOutline)
 	end
 
 	if button.text then
 		button.text:ClearAllPoints()
-		button.text:Point('TOP', button, 'BOTTOM', db.timeXOffset, db.timeYOffset)
-		button.text:FontTemplate(LSM:Fetch('font', db.timeFont), db.timeFontSize, db.timeFontOutline)
+		button.text:Point("TOP", button, "BOTTOM", db.timeXOffset, db.timeYOffset)
+		button.text:FontTemplate(LSM:Fetch("font", db.timeFont), db.timeFontSize, db.timeFontOutline)
 	end
 
 	if button.statusBar then
 		E:SetSmoothing(button.statusBar, db.smoothbars)
 
 		local pos, iconSize = db.barPosition, db.size - (E.Border * 2)
-		local onTop, onBottom, onLeft = pos == 'TOP', pos == 'BOTTOM', pos == 'LEFT'
+		local onTop, onBottom, onLeft = pos == "TOP", pos == "BOTTOM", pos == "LEFT"
 		local barSpacing = db.barSpacing + (E.PixelMode and 1 or 3)
 		local barSize = db.barSize + (E.PixelMode and 0 or 2)
 		local isHorizontal = onTop or onBottom
 
 		button.statusBar:ClearAllPoints()
 		button.statusBar:Size(isHorizontal and iconSize or barSize, isHorizontal and barSize or iconSize)
-		button.statusBar:Point(E.InversePoints[pos], button, pos, isHorizontal and 0 or (onLeft and -barSpacing or barSpacing), not isHorizontal and 0 or (onTop and barSpacing or -barSpacing))
-		button.statusBar:SetStatusBarTexture(LSM:Fetch('statusbar', db.barTexture))
-		button.statusBar:SetOrientation(isHorizontal and 'HORIZONTAL' or 'VERTICAL')
+		button.statusBar:Point(
+			E.InversePoints[pos],
+			button,
+			pos,
+			isHorizontal and 0 or (onLeft and -barSpacing or barSpacing),
+			not isHorizontal and 0 or (onTop and barSpacing or -barSpacing)
+		)
+		button.statusBar:SetStatusBarTexture(LSM:Fetch("statusbar", db.barTexture))
+		button.statusBar:SetOrientation(isHorizontal and "HORIZONTAL" or "VERTICAL")
 		button.statusBar:SetRotatesTexture(not isHorizontal)
 	end
 end
@@ -266,7 +274,7 @@ function A:ClearAuraTime(button, expired)
 	button.modRate = nil
 	button.timeLeft = nil
 
-	button.text:SetText('')
+	button.text:SetText("")
 
 	E:StopFlash(button, 1)
 
@@ -276,7 +284,7 @@ function A:ClearAuraTime(button, expired)
 
 		local db = A.db[button.auraType]
 		if db.barColorGradient then -- value 1 is just green
-			button.statusBar:SetStatusBarColor(0, .8, 0)
+			button.statusBar:SetStatusBarColor(0, 0.8, 0)
 		else
 			button.statusBar:SetStatusBarColor(db.barColor.r, db.barColor.g, db.barColor.b)
 		end
@@ -284,20 +292,23 @@ function A:ClearAuraTime(button, expired)
 end
 
 function A:UpdateAura(button, index)
-	local name, _, icon, count, dispelType, duration, expiration, caster = UnitAura('player', index, button.filter)
-	if not name then return end
+	local name, _, icon, count, dispelType, duration, expiration, caster = UnitAura("player", index, button.filter)
+	if not name then
+		return
+	end
 
 	local db = A.db[button.auraType]
 	button:Show()
 	button.text:SetShown(db.showDuration)
 	button.statusBar:SetShown((db.barShow and duration > 0) or (db.barShow and db.barNoDuration and duration == 0))
-	button.count:SetText(not count or count <= 1 and '' or count)
+	button.count:SetText(not count or count <= 1 and "" or count)
 	button.texture:SetTexture(icon)
 	button.auraIndex = index
 
-	local dtype = dispelType or 'none'
+	local dtype = dispelType or "none"
 	if button.debuffType ~= dtype then
-		local color = (button.filter == 'HARMFUL' and A.db.colorDebuffs and DebuffColors[dtype]) or E.db.general.bordercolor
+		local color = (button.filter == "HARMFUL" and A.db.colorDebuffs and DebuffColors[dtype])
+			or E.db.general.bordercolor
 		button:SetBackdropBorderColor(color.r, color.g, color.b)
 		button.statusBar.backdrop:SetBackdropBorderColor(color.r, color.g, color.b)
 		button.debuffType = dtype
@@ -316,16 +327,20 @@ function A:UpdateTempEnchant(button, index, expiration)
 	button.statusBar:SetShown((db.barShow and expiration) or (db.barShow and db.barNoDuration and not expiration))
 
 	if expiration then
-		button.texture:SetTexture(GetInventoryItemTexture('player', index))
+		button.texture:SetTexture(GetInventoryItemTexture("player", index))
 
-		local quality = A.db.colorEnchants and GetInventoryItemQuality('player', index)
+		local quality = A.db.colorEnchants and GetInventoryItemQuality("player", index)
 		local r, g, b = E:GetItemQualityColor(quality and quality > 1 and quality)
 
 		button:SetBackdropBorderColor(r, g, b)
 		button.statusBar.backdrop:SetBackdropBorderColor(r, g, b)
 
 		local remaining = (expiration * 0.001) or 0
-		A:SetAuraTime(button, remaining + GetTime(), (remaining <= 3600 and remaining > 1800) and 3600 or (remaining <= 1800 and remaining > 600) and 1800 or 600)
+		A:SetAuraTime(
+			button,
+			remaining + GetTime(),
+			(remaining <= 3600 and remaining > 1800) and 3600 or (remaining <= 1800 and remaining > 600) and 1800 or 600
+		)
 	else
 		A:ClearAuraTime(button)
 	end
@@ -337,9 +352,9 @@ end
 
 function A:SetTooltip(button)
 	if button.auraIndex then
-		GameTooltip:SetUnitAura('player', button.auraIndex, button.filter)
+		GameTooltip:SetUnitAura("player", button.auraIndex, button.filter)
 	elseif button.enchantIndex then
-		GameTooltip:SetInventoryItem('player', enchantableSlots[button.enchantIndex])
+		GameTooltip:SetInventoryItem("player", enchantableSlots[button.enchantIndex])
 	end
 end
 
@@ -349,10 +364,15 @@ end
 
 function A:Button_OnEnter()
 	local db = A.db[self.auraType]
-	GameTooltip:SetOwner(self, db.tooltipAnchorType or 'ANCHOR_BOTTOMLEFT', db.tooltipAnchorX or -5, db.tooltipAnchorY or-5)
+	GameTooltip:SetOwner(
+		self,
+		db.tooltipAnchorType or "ANCHOR_BOTTOMLEFT",
+		db.tooltipAnchorX or -5,
+		db.tooltipAnchorY or -5
+	)
 
 	-- Immediately set the tooltip instead of waiting for next frame
-    A:SetTooltip(self)
+	A:SetTooltip(self)
 
 	self.elapsed = 1 -- let the tooltip update next frame
 end
@@ -361,7 +381,7 @@ function A:Button_OnClick()
 	if self.enchantIndex then
 		CancelItemTempEnchantment(self.enchantIndex)
 	elseif self.auraIndex then
-		CancelUnitBuff('player', self.auraIndex, self.filter)
+		CancelUnitBuff("player", self.auraIndex, self.filter)
 	end
 end
 
@@ -412,14 +432,14 @@ function A:Button_OnUpdate(elapsed)
 end
 
 function A:Header_OnEvent(event, unit, ...)
-	if event == 'PLAYER_ENTERING_WORLD' then
+	if event == "PLAYER_ENTERING_WORLD" then
 		A:UpdateAllAuras(self)
 	-- elseif event == 'COMBAT_LOG_EVENT_UNFILTERED' and unit == 'player' and self.filter == 'HELPFUL' then
 	-- 	local subevent, sourceGUID = ...
 	-- 	if subevent == 'ENCHANT_APPLIED' and sourceGUID == E.myguid then
 	-- 		A:UpdateAllAuras(self)
 	-- 	end
-	elseif (event == 'UNIT_AURA' or event == 'UNIT_INVENTORY_CHANGED') and unit == 'player' then
+	elseif (event == "UNIT_AURA" or event == "UNIT_INVENTORY_CHANGED") and unit == "player" then
 		if self.MasqueGroup then
 			A:UpdateMasque(self)
 		end
@@ -438,18 +458,22 @@ function A:UpdateMasque(header)
 end
 
 function A:UpdateAllAuras(header)
-    if not header or not header.buttons then return end
-    if not A.db or not A.db[header.auraType] then return end
+	if not header or not header.buttons then
+		return
+	end
+	if not A.db or not A.db[header.auraType] then
+		return
+	end
 
-    for i = 1, #header.buttons do
-        header.buttons[i].auraIndex = nil
-        header.buttons[i].enchantIndex = nil
-    end
+	for i = 1, #header.buttons do
+		header.buttons[i].auraIndex = nil
+		header.buttons[i].enchantIndex = nil
+	end
 
 	local buttonIndex = 1
 
 	-- Handle weapon enchants for buffs
-	if header.filter == 'HELPFUL' then
+	if header.filter == "HELPFUL" then
 		local hasMainHandEnchant, mainHandExpiration, _, hasOffHandEnchant, offHandExpiration = GetWeaponEnchantInfo()
 
 		if hasMainHandEnchant and header.buttons[buttonIndex] then
@@ -472,8 +496,10 @@ function A:UpdateAllAuras(header)
 	-- Scan all auras
 	local index = 1
 	while buttonIndex <= #header.buttons do
-		local name = UnitAura('player', index, header.filter)
-		if not name then break end
+		local name = UnitAura("player", index, header.filter)
+		if not name then
+			break
+		end
 
 		local button = header.buttons[buttonIndex]
 		if button then
@@ -496,8 +522,12 @@ function A:UpdateAllAuras(header)
 end
 
 function A:PositionButtons(header)
-	if not header or not header.buttons then return end
-	if not header.auraType or not A.db or not A.db[header.auraType] then return end
+	if not header or not header.buttons then
+		return
+	end
+	if not header.auraType or not A.db or not A.db[header.auraType] then
+		return
+	end
 
 	local db = A.db[header.auraType]
 	local width, height = db.size, (db.keepSizeRatio and db.size) or db.height
@@ -535,7 +565,9 @@ function A:PositionButtons(header)
 end
 
 function A:UpdateHeader(header)
-	if not E.private.auras.enable then return end
+	if not E.private.auras.enable then
+		return
+	end
 
 	local db = A.db[header.auraType]
 	local width, height = db.size, (db.keepSizeRatio and db.size) or db.height
@@ -546,7 +578,7 @@ function A:UpdateHeader(header)
 	local maxButtons = 32
 	local iconsPerRow = db.wrapAfter
 
-	local numRows = math.ceil(maxButtons / iconsPerRow)  -- Calculate rows needed
+	local numRows = math.ceil(maxButtons / iconsPerRow) -- Calculate rows needed
 
 	-- Calculate and set header size based on growth direction
 	local headerWidth, headerHeight
@@ -581,9 +613,10 @@ function A:UpdateHeader(header)
 end
 
 function A:CreateAuraHeader(filter)
-	local name, auraType = filter == 'HELPFUL' and 'ElvUIPlayerBuffs' or 'ElvUIPlayerDebuffs', filter == 'HELPFUL' and 'buffs' or 'debuffs'
+	local name, auraType =
+		filter == "HELPFUL" and "ElvUIPlayerBuffs" or "ElvUIPlayerDebuffs", filter == "HELPFUL" and "buffs" or "debuffs"
 
-	local header = CreateFrame('Frame', name, E.UIParent)
+	local header = CreateFrame("Frame", name, E.UIParent)
 	header:SetClampedToScreen(true)
 	header:SetSize(200, 200)
 	header:Show()
@@ -602,7 +635,7 @@ function A:CreateAuraHeader(filter)
 	-- Only create buttons if they don't exist
 	if #header.buttons == 0 then
 		for i = 1, numButtons do
-			local button = CreateFrame('Button', name .. 'Button' .. i, header)
+			local button = CreateFrame("Button", name .. "Button" .. i, header)
 			button:SetID(i)
 			button:Hide()
 			A:CreateIcon(button)
@@ -611,18 +644,18 @@ function A:CreateAuraHeader(filter)
 	end
 
 	-- Register events
-	header:RegisterEvent('UNIT_AURA')
-	header:RegisterEvent('UNIT_INVENTORY_CHANGED')
-	header:RegisterEvent('PLAYER_ENTERING_WORLD')
+	header:RegisterEvent("UNIT_AURA")
+	header:RegisterEvent("UNIT_INVENTORY_CHANGED")
+	header:RegisterEvent("PLAYER_ENTERING_WORLD")
 
 	-- NEW: Register for COMBAT_LOG_EVENT_UNFILTERED for enchant detection
-	if filter == 'HELPFUL' then
-		header:RegisterEvent('COMBAT_LOG_EVENT_UNFILTERED')
+	if filter == "HELPFUL" then
+		header:RegisterEvent("COMBAT_LOG_EVENT_UNFILTERED")
 	end
 
-	header:HookScript('OnEvent', A.Header_OnEvent)
+	header:HookScript("OnEvent", A.Header_OnEvent)
 
-	if filter == 'HELPFUL' then
+	if filter == "HELPFUL" then
 		if MasqueGroupBuffs and E.private.auras.masque.buffs then
 			header.MasqueGroup = MasqueGroupBuffs
 		end
@@ -645,32 +678,34 @@ function A:Initialize()
 		end
 	end
 
-	if not E.private.auras.enable then return end
+	if not E.private.auras.enable then
+		return
+	end
 
 	A.Initialized = true
 	A.db = E.db.auras
-	E.myguid = E.myguid or UnitGUID('player') -- Ensure we have the player's GUID
+	E.myguid = E.myguid or UnitGUID("player") -- Ensure we have the player's GUID
 
 	local xoffset = -(6 + E.Border)
 
 	if E.private.auras.buffsHeader then
-		A.BuffFrame = A:CreateAuraHeader('HELPFUL')
+		A.BuffFrame = A:CreateAuraHeader("HELPFUL")
 		A:UpdateHeader(A.BuffFrame)
 
 		A.BuffFrame:ClearAllPoints()
-		A.BuffFrame:Point('TOPRIGHT', _G.ElvUI_MinimapHolder or _G.Minimap, 'TOPLEFT', xoffset, -E.Spacing)
+		A.BuffFrame:Point("TOPRIGHT", _G.ElvUI_MinimapHolder or _G.Minimap, "TOPLEFT", xoffset, -E.Spacing)
 
-		E:CreateMover(A.BuffFrame, 'BuffsMover', L["Player Buffs"], nil, nil, nil, nil, nil, 'auras,buffs')
+		E:CreateMover(A.BuffFrame, "BuffsMover", L["Player Buffs"], nil, nil, nil, nil, nil, "auras,buffs")
 	end
 
 	if E.private.auras.debuffsHeader then
-		A.DebuffFrame = A:CreateAuraHeader('HARMFUL')
+		A.DebuffFrame = A:CreateAuraHeader("HARMFUL")
 		A:UpdateHeader(A.DebuffFrame)
 
 		A.DebuffFrame:ClearAllPoints()
-		A.DebuffFrame:Point('BOTTOMRIGHT', _G.ElvUI_MinimapHolder or _G.Minimap, 'BOTTOMLEFT', xoffset, E.Spacing)
+		A.DebuffFrame:Point("BOTTOMRIGHT", _G.ElvUI_MinimapHolder or _G.Minimap, "BOTTOMLEFT", xoffset, E.Spacing)
 
-		E:CreateMover(A.DebuffFrame, 'DebuffsMover', L["Player Debuffs"], nil, nil, nil, nil, nil, 'auras,debuffs')
+		E:CreateMover(A.DebuffFrame, "DebuffsMover", L["Player Debuffs"], nil, nil, nil, nil, nil, "auras,debuffs")
 	end
 end
 

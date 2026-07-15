@@ -61,7 +61,17 @@ function UF:Update_TankHeader(header, db)
 	if not header.positioned then
 		header:ClearAllPoints()
 		header:Point("TOPLEFT", E.UIParent, "TOPLEFT", 4, -186)
-		E:CreateMover(header, header:GetName().."Mover", L["MT Frames"], nil, nil, nil, "ALL,RAID", nil, "unitframe,tank,generalGroup")
+		E:CreateMover(
+			header,
+			header:GetName() .. "Mover",
+			L["MT Frames"],
+			nil,
+			nil,
+			nil,
+			"ALL,RAID",
+			nil,
+			"unitframe,tank,generalGroup"
+		)
 		header.mover.positionOverride = "TOPLEFT"
 		header:SetAttribute("minHeight", header.dirtyHeight)
 		header:SetAttribute("minWidth", header.dirtyWidth)
@@ -126,14 +136,29 @@ function UF:Update_TankFrames(frame, db)
 				RegisterUnitWatch(frame)
 				frame:Size(childDB.width, childDB.height)
 				frame:ClearAllPoints()
-				frame:Point(E.InversePoints[childDB.anchorPoint], frame.originalParent, childDB.anchorPoint, childDB.xOffset, childDB.yOffset)
+				frame:Point(
+					E.InversePoints[childDB.anchorPoint],
+					frame.originalParent,
+					childDB.anchorPoint,
+					childDB.xOffset,
+					childDB.yOffset
+				)
 			else
 				UnregisterUnitWatch(frame)
 				frame:SetParent(E.HiddenFrame)
 			end
 		else
 			if childDB.enable then
-				frame:SetAttribute("initial-anchor", format("%s,%s,%d,%d", E.InversePoints[childDB.anchorPoint], childDB.anchorPoint, childDB.xOffset, childDB.yOffset))
+				frame:SetAttribute(
+					"initial-anchor",
+					format(
+						"%s,%s,%d,%d",
+						E.InversePoints[childDB.anchorPoint],
+						childDB.anchorPoint,
+						childDB.xOffset,
+						childDB.yOffset
+					)
+				)
 				frame:SetAttribute("initial-width", frame.UNIT_WIDTH)
 				frame:SetAttribute("initial-height", frame.UNIT_HEIGHT)
 			end
@@ -183,4 +208,4 @@ function UF:Update_TankFrames(frame, db)
 	frame:UpdateAllElements("ForceUpdate")
 end
 
-UF.headerstoload.tank = {"MAINTANK", "ELVUI_UNITTARGET"}
+UF.headerstoload.tank = { "MAINTANK", "ELVUI_UNITTARGET" }

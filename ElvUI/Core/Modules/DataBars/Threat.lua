@@ -18,7 +18,7 @@ local UnitClass = UnitClass
 local UnitName = UnitName
 local UNKNOWN = UNKNOWN
 
-local tankStatus = {[0] = 3, 2, 1, 0}
+local tankStatus = { [0] = 3, 2, 1, 0 }
 
 function DB:ThreatBar_GetLargestThreatOnList(percent)
 	local largestValue, largestUnit = 0, nil
@@ -33,15 +33,17 @@ function DB:ThreatBar_GetLargestThreatOnList(percent)
 end
 
 function DB:ThreatBar_GetColor(unit)
-	local unitReaction = UnitReaction(unit, 'player')
+	local unitReaction = UnitReaction(unit, "player")
 	local _, unitClass = UnitClass(unit)
 	if UnitIsPlayer(unit) then
 		local class = E:ClassColor(unitClass)
-		if not class then return 194, 194, 194 end
-		return class.r*255, class.g*255, class.b*255
+		if not class then
+			return 194, 194, 194
+		end
+		return class.r * 255, class.g * 255, class.b * 255
 	elseif unitReaction then
 		local reaction = ElvUF.colors.reaction[unitReaction]
-		return reaction.r*255, reaction.g*255, reaction.b*255
+		return reaction.r * 255, reaction.g * 255, reaction.b * 255
 	else
 		return 194, 194, 194
 	end
@@ -49,26 +51,26 @@ end
 
 function DB:ThreatBar_Update()
 	local bar = DB.StatusBars.Threat
-	local petExists = UnitExists('pet')
+	local petExists = UnitExists("pet")
 	bar.showBar = false
 
-	if UnitAffectingCombat('player') and (petExists or E.IsInGroup) then
-		local _, status, percent = UnitDetailedThreatSituation('player', 'target')
+	if UnitAffectingCombat("player") and (petExists or E.IsInGroup) then
+		local _, status, percent = UnitDetailedThreatSituation("player", "target")
 
 		if percent then
-			local name, isTank = UnitName('target') or UNKNOWN, E.myrole == 'TANK'
+			local name, isTank = UnitName("target") or UNKNOWN, E.myrole == "TANK"
 			bar.showBar = true
 
 			local leadPercent, largestUnit
 			if percent == 100 then
 				if petExists then
-					_, _, bar.list.pet = UnitDetailedThreatSituation('pet', 'target')
+					_, _, bar.list.pet = UnitDetailedThreatSituation("pet", "target")
 				end
 
 				for guid, role in next, E.GroupRoles do
 					local unit = E.GroupUnitsByRole[role][guid]
-					if unit and not UnitIsUnit(unit, 'player') then
-						_, _, bar.list[unit] = UnitDetailedThreatSituation(unit, 'target')
+					if unit and not UnitIsUnit(unit, "player") then
+						_, _, bar.list[unit] = UnitDetailedThreatSituation(unit, "target")
 					end
 				end
 
@@ -77,10 +79,19 @@ function DB:ThreatBar_Update()
 
 			if largestUnit and leadPercent > 0 then
 				local r, g, b = DB:ThreatBar_GetColor(largestUnit)
-				bar.text:SetFormattedText(L["ABOVE_THREAT_FORMAT"], name, percent, leadPercent, r, g, b, UnitName(largestUnit) or UNKNOWN)
+				bar.text:SetFormattedText(
+					L["ABOVE_THREAT_FORMAT"],
+					name,
+					percent,
+					leadPercent,
+					r,
+					g,
+					b,
+					UnitName(largestUnit) or UNKNOWN
+				)
 				bar:SetValue(isTank and leadPercent or percent)
 			else
-				bar.text:SetFormattedText('%s: %.0f%%', name, percent)
+				bar.text:SetFormattedText("%s: %.0f%%", name, percent)
 				bar:SetValue(percent)
 			end
 
@@ -107,32 +118,39 @@ function DB:ThreatBar_Toggle()
 	if bar.db.enable then
 		E:EnableMover(bar.holder.mover.name)
 
-		DB:RegisterEvent('PLAYER_TARGET_CHANGED', 'ThreatBar_Update')
-		DB:RegisterEvent('UNIT_THREAT_LIST_UPDATE', 'ThreatBar_Update')
-        DB:RegisterEvent('RAID_ROSTER_UPDATE', 'ThreatBar_Update')
-        DB:RegisterEvent('PARTY_MEMBERS_CHANGED', 'ThreatBar_Update')
-		DB:RegisterEvent('UNIT_FLAGS', 'ThreatBar_Update')
-		DB:RegisterEvent('UNIT_PET', 'ThreatBar_Update')
+		DB:RegisterEvent("PLAYER_TARGET_CHANGED", "ThreatBar_Update")
+		DB:RegisterEvent("UNIT_THREAT_LIST_UPDATE", "ThreatBar_Update")
+		DB:RegisterEvent("RAID_ROSTER_UPDATE", "ThreatBar_Update")
+		DB:RegisterEvent("PARTY_MEMBERS_CHANGED", "ThreatBar_Update")
+		DB:RegisterEvent("UNIT_FLAGS", "ThreatBar_Update")
+		DB:RegisterEvent("UNIT_PET", "ThreatBar_Update")
 
 		DB:ThreatBar_Update()
 	else
 		E:DisableMover(bar.holder.mover.name)
 
-		DB:UnregisterEvent('PLAYER_TARGET_CHANGED')
-		DB:UnregisterEvent('UNIT_THREAT_LIST_UPDATE')
-        DB:UnregisterEvent('RAID_ROSTER_UPDATE')
-        DB:UnregisterEvent('PARTY_MEMBERS_CHANGED')
-		DB:UnregisterEvent('UNIT_FLAGS')
-		DB:UnregisterEvent('UNIT_PET')
+		DB:UnregisterEvent("PLAYER_TARGET_CHANGED")
+		DB:UnregisterEvent("UNIT_THREAT_LIST_UPDATE")
+		DB:UnregisterEvent("RAID_ROSTER_UPDATE")
+		DB:UnregisterEvent("PARTY_MEMBERS_CHANGED")
+		DB:UnregisterEvent("UNIT_FLAGS")
+		DB:UnregisterEvent("UNIT_PET")
 	end
 end
 
 function DB:ThreatBar()
-	local Threat = DB:CreateBar('ElvUI_ThreatBar', 'Threat', DB.ThreatBar_Update, nil, nil, {'TOPRIGHT', E.UIParent, 'TOPRIGHT', -3, -245})
+	local Threat = DB:CreateBar(
+		"ElvUI_ThreatBar",
+		"Threat",
+		DB.ThreatBar_Update,
+		nil,
+		nil,
+		{ "TOPRIGHT", E.UIParent, "TOPRIGHT", -3, -245 }
+	)
 	Threat:SetMinMaxValues(0, 100)
 	Threat.list = {}
 
-	E:CreateMover(Threat.holder, 'ThreatBarMover', L["Threat Bar"], nil, nil, nil, nil, nil, 'databars,threat')
+	E:CreateMover(Threat.holder, "ThreatBarMover", L["Threat Bar"], nil, nil, nil, nil, nil, "databars,threat")
 
 	DB:ThreatBar_Toggle()
 end

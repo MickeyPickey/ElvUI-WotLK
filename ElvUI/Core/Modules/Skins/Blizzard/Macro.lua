@@ -7,7 +7,9 @@ local unpack = unpack
 --WoW API / Variables
 
 S:AddCallbackForAddon("Blizzard_MacroUI", "Skin_Blizzard_MacroUI", function()
-	if not E.private.skins.blizzard.enable or not E.private.skins.blizzard.macro then return end
+	if not E.private.skins.blizzard.enable or not E.private.skins.blizzard.macro then
+		return
+	end
 
 	MacroFrame:StripTextures()
 	MacroFrame:CreateBackdrop("Transparent")
@@ -44,7 +46,7 @@ S:AddCallbackForAddon("Blizzard_MacroUI", "Skin_Blizzard_MacroUI", function()
 	S:HandleButton(MacroNewButton)
 
 	for i = 1, 2 do
-		local tab = _G["MacroFrameTab"..i]
+		local tab = _G["MacroFrameTab" .. i]
 		tab:StripTextures()
 		S:HandleButton(tab)
 
@@ -62,8 +64,8 @@ S:AddCallbackForAddon("Blizzard_MacroUI", "Skin_Blizzard_MacroUI", function()
 	end
 
 	for i = 1, MAX_ACCOUNT_MACROS do
-		local button = _G["MacroButton"..i]
-		local buttonIcon = _G["MacroButton"..i.."Icon"]
+		local button = _G["MacroButton" .. i]
+		local buttonIcon = _G["MacroButton" .. i .. "Icon"]
 
 		if button then
 			button:StripTextures()

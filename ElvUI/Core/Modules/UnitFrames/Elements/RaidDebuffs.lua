@@ -18,18 +18,20 @@ function UF:Construct_RaidDebuffs(frame)
 	rdebuff.count = rdebuff:CreateFontString(nil, "OVERLAY")
 	rdebuff.count:FontTemplate(nil, 10, "OUTLINE")
 	rdebuff.count:Point("BOTTOMRIGHT", 0, 2)
-	rdebuff.count:SetTextColor(1, .9, 0)
+	rdebuff.count:SetTextColor(1, 0.9, 0)
 
 	rdebuff.time = rdebuff:CreateFontString(nil, "OVERLAY")
 	rdebuff.time:FontTemplate(nil, 10, "OUTLINE")
 	rdebuff.time:Point("CENTER")
-	rdebuff.time:SetTextColor(1, .9, 0)
+	rdebuff.time:SetTextColor(1, 0.9, 0)
 
 	return rdebuff
 end
 
 function UF:Configure_RaidDebuffs(frame)
-	if not frame.VARIABLES_SET then return end
+	if not frame.VARIABLES_SET then
+		return
+	end
 	local db = frame.db
 	local rdebuffs = frame.RaidDebuffs
 

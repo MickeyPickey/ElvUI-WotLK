@@ -5,7 +5,9 @@ local S = E:GetModule("Skins")
 --WoW API / Variables
 
 S:AddCallbackForAddon("Blizzard_BarbershopUI", "Skin_Blizzard_BarbershopUI", function()
-	if not E.private.skins.blizzard.enable or not E.private.skins.blizzard.barber then return end
+	if not E.private.skins.blizzard.enable or not E.private.skins.blizzard.barber then
+		return
+	end
 
 	BarberShopFrame:CreateBackdrop("Transparent")
 	BarberShopFrame.backdrop:Point("TOPLEFT", 44, -70)
@@ -16,8 +18,8 @@ S:AddCallbackForAddon("Blizzard_BarbershopUI", "Skin_Blizzard_BarbershopUI", fun
 	BarberShopFrameBackground:Kill()
 
 	for i = 1, 4 do
-		S:HandleNextPrevButton(_G["BarberShopFrameSelector"..i.."Prev"])
-		S:HandleNextPrevButton(_G["BarberShopFrameSelector"..i.."Next"])
+		S:HandleNextPrevButton(_G["BarberShopFrameSelector" .. i .. "Prev"])
+		S:HandleNextPrevButton(_G["BarberShopFrameSelector" .. i .. "Next"])
 	end
 
 	BarberShopFrameMoneyFrame:StripTextures()

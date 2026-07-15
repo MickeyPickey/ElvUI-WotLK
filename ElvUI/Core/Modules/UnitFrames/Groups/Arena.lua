@@ -37,7 +37,17 @@ function UF:Construct_ArenaFrames(frame)
 	frame.unitframeType = "arena"
 
 	ArenaHeader:Point("BOTTOMRIGHT", E.UIParent, "RIGHT", -105, -165)
-	E:CreateMover(ArenaHeader, ArenaHeader:GetName().."Mover", L["Arena Frames"], nil, nil, nil, "ALL,ARENA", nil, "unitframe,arena,generalGroup")
+	E:CreateMover(
+		ArenaHeader,
+		ArenaHeader:GetName() .. "Mover",
+		L["Arena Frames"],
+		nil,
+		nil,
+		nil,
+		"ALL,ARENA",
+		nil,
+		"unitframe,arena,generalGroup"
+	)
 	frame.mover = ArenaHeader.mover
 end
 
@@ -57,7 +67,11 @@ function UF:Update_ArenaFrames(frame, db)
 		frame.POWERBAR_OFFSET = frame.USE_POWERBAR_OFFSET and db.power.offset or 0
 
 		frame.POWERBAR_HEIGHT = not frame.USE_POWERBAR and 0 or db.power.height
-		frame.POWERBAR_WIDTH = frame.USE_MINI_POWERBAR and (frame.UNIT_WIDTH - (frame.BORDER*2))/2 or (frame.POWERBAR_DETACHED and db.power.detachedWidth or (frame.UNIT_WIDTH - ((frame.BORDER+frame.SPACING)*2)))
+		frame.POWERBAR_WIDTH = frame.USE_MINI_POWERBAR and (frame.UNIT_WIDTH - (frame.BORDER * 2)) / 2
+			or (
+				frame.POWERBAR_DETACHED and db.power.detachedWidth
+				or (frame.UNIT_WIDTH - ((frame.BORDER + frame.SPACING) * 2))
+			)
 
 		frame.USE_PORTRAIT = db.portrait and db.portrait.enable
 		frame.USE_PORTRAIT_OVERLAY = frame.USE_PORTRAIT
@@ -125,13 +139,13 @@ function UF:Update_ArenaFrames(frame, db)
 		end
 	else
 		if db.growthDirection == "UP" then
-			frame:Point("BOTTOMRIGHT", _G["ElvUF_Arena"..frame.index-1], "TOPRIGHT", 0, db.spacing)
+			frame:Point("BOTTOMRIGHT", _G["ElvUF_Arena" .. frame.index - 1], "TOPRIGHT", 0, db.spacing)
 		elseif db.growthDirection == "RIGHT" then
-			frame:Point("LEFT", _G["ElvUF_Arena"..frame.index-1], "RIGHT", db.spacing, 0)
+			frame:Point("LEFT", _G["ElvUF_Arena" .. frame.index - 1], "RIGHT", db.spacing, 0)
 		elseif db.growthDirection == "LEFT" then
-			frame:Point("RIGHT", _G["ElvUF_Arena"..frame.index-1], "LEFT", -db.spacing, 0)
+			frame:Point("RIGHT", _G["ElvUF_Arena" .. frame.index - 1], "LEFT", -db.spacing, 0)
 		else --Down
-			frame:Point("TOPRIGHT", _G["ElvUF_Arena"..frame.index-1], "BOTTOMRIGHT", 0, -db.spacing)
+			frame:Point("TOPRIGHT", _G["ElvUF_Arena" .. frame.index - 1], "BOTTOMRIGHT", 0, -db.spacing)
 		end
 	end
 
@@ -146,4 +160,4 @@ function UF:Update_ArenaFrames(frame, db)
 	frame:UpdateAllElements("ForceUpdate")
 end
 
-UF.unitgroupstoload.arena = {5}
+UF.unitgroupstoload.arena = { 5 }

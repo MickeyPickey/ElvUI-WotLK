@@ -1,10 +1,11 @@
 local ElvUI = select(2, ...)
-ElvUI[2] = ElvUI[1].Libs.ACL:GetLocale('ElvUI', ElvUI[1]:GetLocale()) -- Locale doesn't exist yet, make it exist.
+ElvUI[2] = ElvUI[1].Libs.ACL:GetLocale("ElvUI", ElvUI[1]:GetLocale()) -- Locale doesn't exist yet, make it exist.
 local E, L, V, P, G = unpack(ElvUI)
 local LC = E.Libs.Compat
 
 local _G = _G
-local tonumber, pairs, ipairs, error, unpack, select, tostring = tonumber, pairs, ipairs, error, unpack, select, tostring
+local tonumber, pairs, ipairs, error, unpack, select, tostring =
+	tonumber, pairs, ipairs, error, unpack, select, tostring
 local strjoin, wipe, sort, tinsert, tremove, tContains = strjoin, wipe, sort, tinsert, tremove, tContains
 local format, strfind, strrep, strlen, sub, gsub = format, strfind, strrep, strlen, strsub, gsub
 local assert, type, pcall, xpcall, next, print = assert, type, pcall, xpcall, next, print
@@ -37,44 +38,44 @@ local GetAddOnMetadata = GetAddOnMetadata
 -- GLOBALS: ElvCharacterDB
 
 --Modules
-local ActionBars = E:GetModule('ActionBars')
-local AFK = E:GetModule('AFK')
-local Auras = E:GetModule('Auras')
-local Bags = E:GetModule('Bags')
-local Blizzard = E:GetModule('Blizzard')
-local Chat = E:GetModule('Chat')
-local DataBars = E:GetModule('DataBars')
-local DataTexts = E:GetModule('DataTexts')
-local Layout = E:GetModule('Layout')
-local Minimap = E:GetModule('Minimap')
-local NamePlates = E:GetModule('NamePlates')
-local Tooltip = E:GetModule('Tooltip')
-local TotemTracker = E:GetModule('TotemTracker')
-local UnitFrames = E:GetModule('UnitFrames')
+local ActionBars = E:GetModule("ActionBars")
+local AFK = E:GetModule("AFK")
+local Auras = E:GetModule("Auras")
+local Bags = E:GetModule("Bags")
+local Blizzard = E:GetModule("Blizzard")
+local Chat = E:GetModule("Chat")
+local DataBars = E:GetModule("DataBars")
+local DataTexts = E:GetModule("DataTexts")
+local Layout = E:GetModule("Layout")
+local Minimap = E:GetModule("Minimap")
+local NamePlates = E:GetModule("NamePlates")
+local Tooltip = E:GetModule("Tooltip")
+local TotemTracker = E:GetModule("TotemTracker")
+local UnitFrames = E:GetModule("UnitFrames")
 local LSM = E.Libs.LSM
 
 --Constants
 E.noop = function() end
 E.isMacClient = IsMacClient()
-E.title = format('%s%s|r', E.InfoColor, 'ElvUI')
-E.toc = tonumber(GetAddOnMetadata('ElvUI', 'X-Interface'))
-E.version, E.versionString = E:ParseVersionString('ElvUI')
-E.myfaction, E.myLocalizedFaction = UnitFactionGroup('player')
-E.myLocalizedClass, E.myclass = UnitClass('player')
-E.myLocalizedRace, E.myrace = UnitRace('player')
-E.mygender = UnitSex('player')
-E.mylevel = UnitLevel('player')
-E.myname = UnitName('player')
+E.title = format("%s%s|r", E.InfoColor, "ElvUI")
+E.toc = tonumber(GetAddOnMetadata("ElvUI", "X-Interface"))
+E.version, E.versionString = E:ParseVersionString("ElvUI")
+E.myfaction, E.myLocalizedFaction = UnitFactionGroup("player")
+E.myLocalizedClass, E.myclass = UnitClass("player")
+E.myLocalizedRace, E.myrace = UnitRace("player")
+E.mygender = UnitSex("player")
+E.mylevel = UnitLevel("player")
+E.myname = UnitName("player")
 E.myrealm = GetRealmName()
-E.mynameRealm = format('%s - %s', E.myname, E.myrealm) -- contains spaces/dashes in realm (for profile keys)
+E.mynameRealm = format("%s - %s", E.myname, E.myrealm) -- contains spaces/dashes in realm (for profile keys)
 E.physicalWidth, E.physicalHeight = GetPhysicalScreenSize()
 E.screenWidth, E.screenHeight = GetScreenWidth(), GetScreenHeight()
-E.resolution = format('%dx%d', E.physicalWidth, E.physicalHeight)
+E.resolution = format("%dx%d", E.physicalWidth, E.physicalHeight)
 E.perfect = 768 / E.physicalHeight
 E.NewSign = [[|TInterface\OptionsFrame\UI-OptionsFrame-NewFeatureIcon:14:14|t]]
 E.NewSignNoWhatsNew = [[|TInterface\OptionsFrame\UI-OptionsFrame-NewFeatureIcon:14:14:0:0|t]]
 E.TexturePath = [[Interface\AddOns\ElvUI\Media\Textures\]] -- for plugins?
-E.ClearTexture = '' -- used to clear: Set (Normal, Disabled, Checked, Pushed, Highlight) Texture
+E.ClearTexture = "" -- used to clear: Set (Normal, Disabled, Checked, Pushed, Highlight) Texture
 E.UserList = {}
 
 -- oUF Defines
@@ -92,73 +93,75 @@ E.RegisteredModules = {}
 E.RegisteredInitialModules = {}
 E.valueColorUpdateFuncs = setmetatable({}, {
 	__newindex = function(_, key, value)
-		if type(key) == 'function' then return end
+		if type(key) == "function" then
+			return
+		end
 		rawset(E.valueColorUpdateFuncs, key, value)
-	end
+	end,
 })
 
-E.TexCoords = {0, 1, 0, 1}
+E.TexCoords = { 0, 1, 0, 1 }
 E.FrameLocks = {}
 E.VehicleLocks = {}
 E.CreditsList = {}
 E.ReverseTimer = {} -- Spells that we want to show the duration backwards (oUF_RaidDebuffs, ???)
 E.InversePoints = {
-	BOTTOM = 'TOP',
-	BOTTOMLEFT = 'TOPLEFT',
-	BOTTOMRIGHT = 'TOPRIGHT',
-	CENTER = 'CENTER',
-	LEFT = 'RIGHT',
-	RIGHT = 'LEFT',
-	TOP = 'BOTTOM',
-	TOPLEFT = 'BOTTOMLEFT',
-	TOPRIGHT = 'BOTTOMRIGHT'
+	BOTTOM = "TOP",
+	BOTTOMLEFT = "TOPLEFT",
+	BOTTOMRIGHT = "TOPRIGHT",
+	CENTER = "CENTER",
+	LEFT = "RIGHT",
+	RIGHT = "LEFT",
+	TOP = "BOTTOM",
+	TOPLEFT = "BOTTOMLEFT",
+	TOPRIGHT = "BOTTOMRIGHT",
 }
 
 E.InverseAnchors = {
-	BOTTOM = 'TOP',
-	BOTTOMLEFT = 'TOPRIGHT',
-	BOTTOMRIGHT = 'TOPLEFT',
-	CENTER = 'CENTER',
-	LEFT = 'RIGHT',
-	RIGHT = 'LEFT',
-	TOP = 'BOTTOM',
-	TOPLEFT = 'BOTTOMRIGHT',
-	TOPRIGHT = 'BOTTOMLEFT'
+	BOTTOM = "TOP",
+	BOTTOMLEFT = "TOPRIGHT",
+	BOTTOMRIGHT = "TOPLEFT",
+	CENTER = "CENTER",
+	LEFT = "RIGHT",
+	RIGHT = "LEFT",
+	TOP = "BOTTOM",
+	TOPLEFT = "BOTTOMRIGHT",
+	TOPRIGHT = "BOTTOMLEFT",
 }
 
 E.HealingClasses = {
 	PALADIN = 1,
 	SHAMAN = 3,
 	DRUID = 3,
-	PRIEST = {1, 2}
+	PRIEST = { 1, 2 },
 }
 
 --Workaround for people wanting to use white and it reverting to their class color.
-E.PriestColors = { r = 0.99, g = 0.99, b = 0.99, colorStr = 'fffcfcfc' }
+E.PriestColors = { r = 0.99, g = 0.99, b = 0.99, colorStr = "fffcfcfc" }
 
 E.DispelClasses = {
-	PRIEST = {Magic = true, Disease = true},
-	SHAMAN = {Magic = false, Curse = true},
-	PALADIN = {Poison = true, Magic = false, Disease = true},
-	MAGE = {Curse = true},
-	DRUID = {Magic = false, Curse = true, Poison = true}
+	PRIEST = { Magic = true, Disease = true },
+	SHAMAN = { Magic = false, Curse = true },
+	PALADIN = { Poison = true, Magic = false, Disease = true },
+	MAGE = { Curse = true },
+	DRUID = { Magic = false, Curse = true, Poison = true },
 }
 
 --This frame everything in ElvUI should be anchored to for Eyefinity support.
-E.UIParent = CreateFrame('Frame', 'ElvUIParent', UIParent)
+E.UIParent = CreateFrame("Frame", "ElvUIParent", UIParent)
 E.UIParent:SetFrameLevel(UIParent:GetFrameLevel())
 E.UIParent:SetSize(E.screenWidth, E.screenHeight)
-E.UIParent:SetPoint('BOTTOM')
+E.UIParent:SetPoint("BOTTOM")
 E.UIParent.origHeight = E.UIParent:GetHeight()
 E.snapBars[#E.snapBars + 1] = E.UIParent
 
 E.UFParent = _G.ElvUFParent -- created in oUF
 E.UFParent:SetParent(E.UIParent)
-E.UFParent:SetFrameStrata('LOW')
+E.UFParent:SetFrameStrata("LOW")
 
-E.HiddenFrame = CreateFrame('Frame', nil, UIParent)
-E.HiddenFrame:SetPoint('BOTTOM')
-E.HiddenFrame:SetSize(1,1)
+E.HiddenFrame = CreateFrame("Frame", nil, UIParent)
+E.HiddenFrame:SetPoint("BOTTOM")
+E.HiddenFrame:SetSize(1, 1)
 E.HiddenFrame:Hide()
 
 do -- used in Options
@@ -169,12 +172,12 @@ do -- used in Options
 end
 
 do
-	local a1, a2 = '', '[%s%-]'
+	local a1, a2 = "", "[%s%-]"
 	function E:ShortenRealm(realm)
 		return gsub(realm, a2, a1)
 	end
 
-	local a3 = format('%%-%s', E:ShortenRealm(E.myrealm))
+	local a3 = format("%%-%s", E:ShortenRealm(E.myrealm))
 	function E:StripMyRealm(name)
 		return gsub(name, a3, a1)
 	end
@@ -182,7 +185,7 @@ end
 
 function E:Print(...)
 	local frame = E.db and _G[E.db.general.messageRedirect] or _G.DEFAULT_CHAT_FRAME
-	local msg = strjoin('', E.media.hexvaluecolor or '|cff00b3ff', 'ElvUI:|r ', ...)
+	local msg = strjoin("", E.media.hexvaluecolor or "|cff00b3ff", "ElvUI:|r ", ...)
 	frame:AddMessage(msg)
 end
 
@@ -199,7 +202,9 @@ function E:GrabColorPickerValues(r, g, b)
 	r, g, b = _G.ColorPickerFrame:GetColorRGB()
 
 	-- swap back to the old values
-	if oldR then _G.ColorPickerFrame:SetColorRGB(oldR, oldG, oldB) end
+	if oldR then
+		_G.ColorPickerFrame:SetColorRGB(oldR, oldG, oldB)
+	end
 
 	-- free it up..
 	_G.ColorPickerFrame.noColorCallback = nil
@@ -235,10 +240,10 @@ end
 
 function E:SetColorTable(t, data)
 	if not data.r or not data.g or not data.b then
-		error('SetColorTable: Could not unpack color values.')
+		error("SetColorTable: Could not unpack color values.")
 	end
 
-	if t and (type(t) == 'table') then
+	if t and (type(t) == "table") then
 		local r, g, b, a = E:UpdateColorTable(data)
 
 		t.r, t.g, t.b, t.a = r, g, b, a
@@ -251,15 +256,23 @@ function E:SetColorTable(t, data)
 end
 
 function E:VerifyColorTable(data)
-	if data.r > 1 or data.r < 0 then data.r = 1 end
-	if data.g > 1 or data.g < 0 then data.g = 1 end
-	if data.b > 1 or data.b < 0 then data.b = 1 end
-	if data.a and (data.a > 1 or data.a < 0) then data.a = 1 end
+	if data.r > 1 or data.r < 0 then
+		data.r = 1
+	end
+	if data.g > 1 or data.g < 0 then
+		data.g = 1
+	end
+	if data.b > 1 or data.b < 0 then
+		data.b = 1
+	end
+	if data.a and (data.a > 1 or data.a < 0) then
+		data.a = 1
+	end
 end
 
 function E:UpdateColorTable(data)
 	if not data.r or not data.g or not data.b then
-		error('UpdateColorTable: Could not unpack color values.')
+		error("UpdateColorTable: Could not unpack color values.")
 	end
 
 	E:VerifyColorTable(data)
@@ -269,7 +282,7 @@ end
 
 function E:GetColorTable(data)
 	if not data.r or not data.g or not data.b then
-		error('GetColorTable: Could not unpack color values.')
+		error("GetColorTable: Could not unpack color values.")
 	end
 
 	E:VerifyColorTable(data)
@@ -279,16 +292,18 @@ function E:GetColorTable(data)
 end
 
 function E:UpdateMedia(mediaType)
-	if not E.db.general or not E.private.general then return end
+	if not E.db.general or not E.private.general then
+		return
+	end
 
-	E.media.normFont = LSM:Fetch('font', E.db.general.font)
-	E.media.combatFont = LSM:Fetch('font', E.private.general.dmgfont)
-	E.media.blankTex = LSM:Fetch('background', 'ElvUI Blank')
-	E.media.normTex = LSM:Fetch('statusbar', E.private.general.normTex)
-	E.media.glossTex = LSM:Fetch('statusbar', E.private.general.glossTex)
+	E.media.normFont = LSM:Fetch("font", E.db.general.font)
+	E.media.combatFont = LSM:Fetch("font", E.private.general.dmgfont)
+	E.media.blankTex = LSM:Fetch("background", "ElvUI Blank")
+	E.media.normTex = LSM:Fetch("statusbar", E.private.general.normTex)
+	E.media.glossTex = LSM:Fetch("statusbar", E.private.general.glossTex)
 
 	if mediaType then -- callback from SharedMedia: LSM.Register
-		if mediaType == 'font' then
+		if mediaType == "font" then
 			E:UpdateBlizzardFonts()
 		end
 
@@ -297,9 +312,11 @@ function E:UpdateMedia(mediaType)
 
 	-- Colors
 	E.media.bordercolor = E:SetColorTable(E.media.bordercolor, E:UpdateClassColor(E.db.general.bordercolor))
-	E.media.unitframeBorderColor = E:SetColorTable(E.media.unitframeBorderColor, E:UpdateClassColor(E.db.unitframe.colors.borderColor))
+	E.media.unitframeBorderColor =
+		E:SetColorTable(E.media.unitframeBorderColor, E:UpdateClassColor(E.db.unitframe.colors.borderColor))
 	E.media.backdropcolor = E:SetColorTable(E.media.backdropcolor, E:UpdateClassColor(E.db.general.backdropcolor))
-	E.media.backdropfadecolor = E:SetColorTable(E.media.backdropfadecolor, E:UpdateClassColor(E.db.general.backdropfadecolor))
+	E.media.backdropfadecolor =
+		E:SetColorTable(E.media.backdropfadecolor, E:UpdateClassColor(E.db.general.backdropfadecolor))
 
 	-- Custom Glow Color
 	-- E.media.customGlowColor = E:SetColorTable(E.media.customGlowColor, E:UpdateClassColor(E.db.general.customGlow.color))
@@ -308,7 +325,7 @@ function E:UpdateMedia(mediaType)
 	E.media.rgbvaluecolor = E:SetColorTable(E.media.rgbvaluecolor, value)
 	E.media.hexvaluecolor = E:RGBToHex(value.r, value.g, value.b)
 
---[[ 	if E.private.nameplates.enable then
+	--[[ 	if E.private.nameplates.enable then
 		-- Colors for Target Indicator
 		E:UpdateClassColor(E.db.nameplates.colors.glowColor)
 		E:UpdateClassColor(E.db.nameplates.colors.lowHealthColor)
@@ -409,7 +426,10 @@ function E:UpdateBorderColors()
 	local r, g, b = unpack(E.media.bordercolor)
 	for frame in pairs(E.frames) do
 		if frame and frame.template then
-			if not (frame.ignoreUpdates or frame.forcedBorderColors) and (frame.template == 'Default' or frame.template == 'Transparent') then
+			if
+				not (frame.ignoreUpdates or frame.forcedBorderColors)
+				and (frame.template == "Default" or frame.template == "Transparent")
+			then
 				frame:SetBackdropBorderColor(r, g, b)
 			end
 		else
@@ -420,7 +440,10 @@ function E:UpdateBorderColors()
 	local r2, g2, b2 = unpack(E.media.unitframeBorderColor)
 	for frame in pairs(E.unitFrameElements) do
 		if frame and frame.template then
-			if not (frame.ignoreUpdates or frame.forcedBorderColors) and (frame.template == 'Default' or frame.template == 'Transparent') then
+			if
+				not (frame.ignoreUpdates or frame.forcedBorderColors)
+				and (frame.template == "Default" or frame.template == "Transparent")
+			then
 				frame:SetBackdropBorderColor(r2, g2, b2)
 			end
 		else
@@ -438,9 +461,9 @@ function E:UpdateBackdropColors()
 			if not frame.ignoreUpdates then
 				if frame.callbackBackdropColor then
 					frame:callbackBackdropColor()
-				elseif frame.template == 'Default' then
+				elseif frame.template == "Default" then
 					frame:SetBackdropColor(r, g, b)
-				elseif frame.template == 'Transparent' then
+				elseif frame.template == "Transparent" then
 					frame:SetBackdropColor(r2, g2, b2, frame.customBackdropAlpha or a2)
 				end
 			end
@@ -454,9 +477,9 @@ function E:UpdateBackdropColors()
 			if not frame.ignoreUpdates then
 				if frame.callbackBackdropColor then
 					frame:callbackBackdropColor()
-				elseif frame.template == 'Default' then
+				elseif frame.template == "Default" then
 					frame:SetBackdropColor(r, g, b)
-				elseif frame.template == 'Transparent' then
+				elseif frame.template == "Transparent" then
 					frame:SetBackdropColor(r2, g2, b2, frame.customBackdropAlpha or a2)
 				end
 			end
@@ -486,9 +509,9 @@ end
 
 function E:UpdateStatusBars()
 	for statusBar in pairs(E.statusBars) do
-		if statusBar and statusBar:IsObjectType('StatusBar') then
+		if statusBar and statusBar:IsObjectType("StatusBar") then
 			statusBar:SetStatusBarTexture(E.media.normTex)
-		elseif statusBar and statusBar:IsObjectType('Texture') then
+		elseif statusBar and statusBar:IsObjectType("Texture") then
 			statusBar:SetTexture(E.media.normTex)
 		end
 	end
@@ -509,16 +532,16 @@ do
 		popup.accept = info.accept
 		popup.cancel = info.cancel or cancel
 
-		E:StaticPopup_Show('INCOMPATIBLE_ADDON', popup.button1, popup.button2)
+		E:StaticPopup_Show("INCOMPATIBLE_ADDON", popup.button1, popup.button2)
 	end
 end
 
 function E:IsIncompatible(module, addons)
 	for _, addon in ipairs(addons) do
 		local incompatible
-		if addon == 'Leatrix_Plus' then
+		if addon == "Leatrix_Plus" then
 			local db = _G.LeaPlusDB
-			incompatible = db and db.MinimapMod == 'On'
+			incompatible = db and db.MinimapMod == "On"
 		else
 			incompatible = E:IsAddOnEnabled(addon)
 		end
@@ -534,50 +557,75 @@ do
 	local ADDONS = {
 		ActionBar = {
 			info = {
-				enabled = function() return E.private.actionbar.enable end,
-				accept = function() E.private.actionbar.enable = false; ReloadUI() end,
-				name = 'ElvUI ActionBars'
+				enabled = function()
+					return E.private.actionbar.enable
+				end,
+				accept = function()
+					E.private.actionbar.enable = false
+					ReloadUI()
+				end,
+				name = "ElvUI ActionBars",
 			},
-			'Bartender4',
-			'Dominos'
+			"Bartender4",
+			"Dominos",
 		},
 		Chat = {
 			info = {
-				enabled = function() return E.private.chat.enable end,
-				accept = function() E.private.chat.enable = false; ReloadUI() end,
-				name = 'ElvUI Chat'
+				enabled = function()
+					return E.private.chat.enable
+				end,
+				accept = function()
+					E.private.chat.enable = false
+					ReloadUI()
+				end,
+				name = "ElvUI Chat",
 			},
-			'Prat-3.0',
-			'Chatter',
-			'Glass'
+			"Prat-3.0",
+			"Chatter",
+			"Glass",
 		},
 		NamePlates = {
 			info = {
-				enabled = function() return E.private.nameplates.enable end,
-				accept = function() E.private.nameplates.enable = false; ReloadUI() end,
-				name = 'ElvUI NamePlates'
+				enabled = function()
+					return E.private.nameplates.enable
+				end,
+				accept = function()
+					E.private.nameplates.enable = false
+					ReloadUI()
+				end,
+				name = "ElvUI NamePlates",
 			},
-			'TidyPlates',
-			'Healers-Have-To-Die',
-			'Kui_Nameplates',
-			'Aloft'
+			"TidyPlates",
+			"Healers-Have-To-Die",
+			"Kui_Nameplates",
+			"Aloft",
 		},
 		ToolTip = {
 			info = {
-				enabled = function() return E.private.tooltip.enable end,
-				accept = function() E.private.tooltip.enable = false; ReloadUI() end,
-				name = 'ElvUI ToolTip'
+				enabled = function()
+					return E.private.tooltip.enable
+				end,
+				accept = function()
+					E.private.tooltip.enable = false
+					ReloadUI()
+				end,
+				name = "ElvUI ToolTip",
 			},
-			'TipTac'
+			"TipTac",
 		},
 		Minimap = {
 			info = {
-				enabled = function() return E.private.general.minimap.enable end,
-				accept = function() E.private.general.minimap.enable = false; ReloadUI() end,
-				name = 'ElvUI Minimap',
+				enabled = function()
+					return E.private.general.minimap.enable
+				end,
+				accept = function()
+					E.private.general.minimap.enable = false
+					ReloadUI()
+				end,
+				name = "ElvUI Minimap",
 			},
-			'Leatrix_Plus', -- has custom check in IsIncompatible
-			'SexyMap'
+			"Leatrix_Plus", -- has custom check in IsIncompatible
+			"SexyMap",
 		},
 	}
 
@@ -587,12 +635,14 @@ do
 		if ADDONS[module] then
 			tinsert(ADDONS[module], addonName)
 		else
-			print(module, 'is not in the incompatibility list.')
+			print(module, "is not in the incompatibility list.")
 		end
 	end
 
 	function E:CheckIncompatible()
-		if E.global.ignoreIncompatible then return end
+		if E.global.ignoreIncompatible then
+			return
+		end
 
 		for module, addons in pairs(ADDONS) do
 			if addons[1] and addons.info.enabled() and E:IsIncompatible(module, addons) then
@@ -603,13 +653,13 @@ do
 end
 
 function E:CopyTable(current, default, merge)
-	if type(current) ~= 'table' then
+	if type(current) ~= "table" then
 		current = {}
 	end
 
-	if type(default) == 'table' then
+	if type(default) == "table" then
 		for option, value in pairs(default) do
-			local isTable = type(value) == 'table'
+			local isTable = type(value) == "table"
 			if not merge or (isTable or current[option] == nil) then
 				current[option] = (isTable and E:CopyTable(current[option], value, merge)) or value
 			end
@@ -620,13 +670,13 @@ function E:CopyTable(current, default, merge)
 end
 
 function E:RemoveEmptySubTables(tbl)
-	if type(tbl) ~= 'table' then
-		E:Print('Bad argument #1 to \'RemoveEmptySubTables\' (table expected)')
+	if type(tbl) ~= "table" then
+		E:Print("Bad argument #1 to 'RemoveEmptySubTables' (table expected)")
 		return
 	end
 
 	for k, v in pairs(tbl) do
-		if type(v) == 'table' then
+		if type(v) == "table" then
 			if next(v) == nil then
 				tbl[k] = nil
 			else
@@ -642,24 +692,28 @@ end
 --param generatedKeys : table defined in `Distributor.lua` to allow user generated tables to be exported (customTexts, customCurrencies, etc).
 --return : a copy of cleanTable with duplicate key/value pairs removed
 function E:RemoveTableDuplicates(cleanTable, checkTable, generatedKeys)
-	if type(cleanTable) ~= 'table' then
-		E:Print('Bad argument #1 to \'RemoveTableDuplicates\' (table expected)')
+	if type(cleanTable) ~= "table" then
+		E:Print("Bad argument #1 to 'RemoveTableDuplicates' (table expected)")
 		return
 	end
-	if type(checkTable) ~= 'table' then
-		E:Print('Bad argument #2 to \'RemoveTableDuplicates\' (table expected)')
+	if type(checkTable) ~= "table" then
+		E:Print("Bad argument #2 to 'RemoveTableDuplicates' (table expected)")
 		return
 	end
 
 	local rtdCleaned = {}
-	local keyed = type(generatedKeys) == 'table'
+	local keyed = type(generatedKeys) == "table"
 	for option, value in pairs(cleanTable) do
 		local default, genTable, genOption = checkTable[option]
-		if keyed then genTable = generatedKeys[option] else genOption = generatedKeys end
+		if keyed then
+			genTable = generatedKeys[option]
+		else
+			genOption = generatedKeys
+		end
 
 		-- we only want to add settings which are existing in the default table, unless it's allowed by generatedKeys
 		if default ~= nil or (genTable or genOption ~= nil) then
-			if type(value) == 'table' and type(default) == 'table' then
+			if type(value) == "table" and type(default) == "table" then
 				if genOption ~= nil then
 					rtdCleaned[option] = E:RemoveTableDuplicates(value, default, genOption)
 				else
@@ -683,18 +737,18 @@ end
 --param blacklistTable : table you want to check against.
 --return : a copy of cleanTable with blacklisted key/value pairs removed
 function E:FilterTableFromBlacklist(cleanTable, blacklistTable)
-	if type(cleanTable) ~= 'table' then
-		E:Print('Bad argument #1 to \'FilterTableFromBlacklist\' (table expected)')
+	if type(cleanTable) ~= "table" then
+		E:Print("Bad argument #1 to 'FilterTableFromBlacklist' (table expected)")
 		return
 	end
-	if type(blacklistTable) ~= 'table' then
-		E:Print('Bad argument #2 to \'FilterTableFromBlacklist\' (table expected)')
+	if type(blacklistTable) ~= "table" then
+		E:Print("Bad argument #2 to 'FilterTableFromBlacklist' (table expected)")
 		return
 	end
 
 	local tfbCleaned = {}
 	for option, value in pairs(cleanTable) do
-		if type(value) == 'table' and blacklistTable[option] and type(blacklistTable[option]) == 'table' then
+		if type(value) == "table" and blacklistTable[option] and type(blacklistTable[option]) == "table" then
 			tfbCleaned[option] = E:FilterTableFromBlacklist(value, blacklistTable[option])
 		else
 			-- Filter out blacklisted keys
@@ -714,9 +768,9 @@ local function KeySort(a, b)
 	local A, B = type(a), type(b)
 
 	if A == B then
-		if A == 'number' or A == 'string' then
+		if A == "number" or A == "string" then
 			return a < b
-		elseif A == 'boolean' then
+		elseif A == "boolean" then
 			return (a and 1 or 0) > (b and 1 or 0)
 		end
 	end
@@ -724,32 +778,45 @@ local function KeySort(a, b)
 	return A < B
 end
 
-do	--The code in this function is from WeakAuras, credit goes to Mirrored and the WeakAuras Team
+do --The code in this function is from WeakAuras, credit goes to Mirrored and the WeakAuras Team
 	--Code slightly modified by Simpy, sorting from @sighol
 	local function Recurse(tbl, level, ret)
 		local tkeys = {}
-		for i in pairs(tbl) do tinsert(tkeys, i) end
+		for i in pairs(tbl) do
+			tinsert(tkeys, i)
+		end
 		sort(tkeys, KeySort)
 
 		for _, i in ipairs(tkeys) do
 			local v = tbl[i]
 
-			ret = ret..strrep('    ', level)..'['
-			if type(i) == 'string' then ret = ret..'"'..i..'"' else ret = ret..i end
-			ret = ret..'] = '
-
-			if type(v) == 'number' then
-				ret = ret..v..',\n'
-			elseif type(v) == 'string' then
-				ret = ret..'"'..v:gsub('\\', '\\\\'):gsub('\n', '\\n'):gsub('"', '\\"'):gsub('\124', '\124\124')..'",\n'
-			elseif type(v) == 'boolean' then
-				if v then ret = ret..'true,\n' else ret = ret..'false,\n' end
-			elseif type(v) == 'table' then
-				ret = ret..'{\n'
-				ret = Recurse(v, level + 1, ret)
-				ret = ret..strrep('    ', level)..'},\n'
+			ret = ret .. strrep("    ", level) .. "["
+			if type(i) == "string" then
+				ret = ret .. '"' .. i .. '"'
 			else
-				ret = ret..'"'..tostring(v)..'",\n'
+				ret = ret .. i
+			end
+			ret = ret .. "] = "
+
+			if type(v) == "number" then
+				ret = ret .. v .. ",\n"
+			elseif type(v) == "string" then
+				ret = ret
+					.. '"'
+					.. v:gsub("\\", "\\\\"):gsub("\n", "\\n"):gsub('"', '\\"'):gsub("\124", "\124\124")
+					.. '",\n'
+			elseif type(v) == "boolean" then
+				if v then
+					ret = ret .. "true,\n"
+				else
+					ret = ret .. "false,\n"
+				end
+			elseif type(v) == "table" then
+				ret = ret .. "{\n"
+				ret = Recurse(v, level + 1, ret)
+				ret = ret .. strrep("    ", level) .. "},\n"
+			else
+				ret = ret .. '"' .. tostring(v) .. '",\n'
 			end
 		end
 
@@ -757,35 +824,38 @@ do	--The code in this function is from WeakAuras, credit goes to Mirrored and th
 	end
 
 	function E:TableToLuaString(inTable)
-		if type(inTable) ~= 'table' then
-			E:Print('Invalid argument #1 to E:TableToLuaString (table expected)')
+		if type(inTable) ~= "table" then
+			E:Print("Invalid argument #1 to E:TableToLuaString (table expected)")
 			return
 		end
 
-		local ret = '{\n'
-		if inTable then ret = Recurse(inTable, 1, ret) end
-		ret = ret..'}'
+		local ret = "{\n"
+		if inTable then
+			ret = Recurse(inTable, 1, ret)
+		end
+		ret = ret .. "}"
 
 		return ret
 	end
 end
 
-do	--The code in this function is from WeakAuras, credit goes to Mirrored and the WeakAuras Team
+do --The code in this function is from WeakAuras, credit goes to Mirrored and the WeakAuras Team
 	--Code slightly modified by Simpy, sorting from @sighol
-	local lineStructureTable, profileFormat = {}, {
-		profile = 'E.db',
-		private = 'E.private',
-		global = 'E.global',
-		filters = 'E.global',
-		styleFilters = 'E.global'
-	}
+	local lineStructureTable, profileFormat =
+		{}, {
+			profile = "E.db",
+			private = "E.private",
+			global = "E.global",
+			filters = "E.global",
+			styleFilters = "E.global",
+		}
 
 	local function BuildLineStructure(str) -- str is profileText
 		for _, v in ipairs(lineStructureTable) do
-			if type(v) == 'string' then
-				str = str..'["'..v..'"]'
+			if type(v) == "string" then
+				str = str .. '["' .. v .. '"]'
 			else
-				str = str..'['..v..']'
+				str = str .. "[" .. v .. "]"
 			end
 		end
 
@@ -795,7 +865,9 @@ do	--The code in this function is from WeakAuras, credit goes to Mirrored and th
 	local sameLine
 	local function Recurse(tbl, ret, profileText)
 		local tkeys = {}
-		for i in pairs(tbl) do tinsert(tkeys, i) end
+		for i in pairs(tbl) do
+			tinsert(tkeys, i)
+		end
 		sort(tkeys, KeySort)
 
 		local lineStructure = BuildLineStructure(profileText)
@@ -803,38 +875,41 @@ do	--The code in this function is from WeakAuras, credit goes to Mirrored and th
 			local v = tbl[k]
 
 			if not sameLine then
-				ret = ret..lineStructure
+				ret = ret .. lineStructure
 			end
 
-			ret = ret..'['
+			ret = ret .. "["
 
-			if type(k) == 'string' then
-				ret = ret..'"'..k..'"'
+			if type(k) == "string" then
+				ret = ret .. '"' .. k .. '"'
 			else
-				ret = ret..k
+				ret = ret .. k
 			end
 
-			if type(v) == 'table' then
+			if type(v) == "table" then
 				tinsert(lineStructureTable, k)
 				sameLine = true
-				ret = ret..']'
+				ret = ret .. "]"
 				ret = Recurse(v, ret, profileText)
 			else
 				sameLine = false
-				ret = ret..'] = '
+				ret = ret .. "] = "
 
-				if type(v) == 'number' then
-					ret = ret..v..'\n'
-				elseif type(v) == 'string' then
-					ret = ret..'"'..v:gsub('\\', '\\\\'):gsub('\n', '\\n'):gsub('"', '\\"'):gsub('\124', '\124\124')..'"\n'
-				elseif type(v) == 'boolean' then
+				if type(v) == "number" then
+					ret = ret .. v .. "\n"
+				elseif type(v) == "string" then
+					ret = ret
+						.. '"'
+						.. v:gsub("\\", "\\\\"):gsub("\n", "\\n"):gsub('"', '\\"'):gsub("\124", "\124\124")
+						.. '"\n'
+				elseif type(v) == "boolean" then
 					if v then
-						ret = ret..'true\n'
+						ret = ret .. "true\n"
 					else
-						ret = ret..'false\n'
+						ret = ret .. "false\n"
 					end
 				else
-					ret = ret..'"'..tostring(v)..'"\n'
+					ret = ret .. '"' .. tostring(v) .. '"\n'
 				end
 			end
 		end
@@ -846,11 +921,13 @@ do	--The code in this function is from WeakAuras, credit goes to Mirrored and th
 
 	function E:ProfileTableToPluginFormat(inTable, profileType)
 		local profileText = profileFormat[profileType]
-		if not profileText then return end
+		if not profileText then
+			return
+		end
 
 		wipe(lineStructureTable)
 
-		local ret = ''
+		local ret = ""
 		if inTable and profileType then
 			sameLine = false
 			ret = Recurse(inTable, ret, profileText)
@@ -860,10 +937,10 @@ do	--The code in this function is from WeakAuras, credit goes to Mirrored and th
 	end
 end
 
-do	--Split string by multi-character delimiter (the strsplit / string.split function provided by WoW doesn't allow multi-character delimiter)
+do --Split string by multi-character delimiter (the strsplit / string.split function provided by WoW doesn't allow multi-character delimiter)
 	local splitTable = {}
 	function E:SplitString(str, delim)
-		assert(type (delim) == 'string' and strlen(delim) > 0, 'bad delimiter')
+		assert(type(delim) == "string" and strlen(delim) > 0, "bad delimiter")
 
 		local start = 1
 		wipe(splitTable) -- results table
@@ -871,7 +948,9 @@ do	--Split string by multi-character delimiter (the strsplit / string.split func
 		-- find each instance of a string followed by the delimiter
 		while true do
 			local pos = strfind(str, delim, start, true) -- plain find
-			if not pos then break end
+			if not pos then
+				break
+			end
 
 			tinsert(splitTable, sub(str, start, pos - 1))
 			start = pos + strlen(delim)
@@ -889,39 +968,44 @@ do
 	function E:SendMessage()
 		if IsInRaid() then
 			local _, instanceType = IsInInstance()
-			SendAddonMessage('ELVUI_VERSIONCHK', E.version, (instanceType == 'pvp' and 'BATTLEGROUND') or 'RAID')
+			SendAddonMessage("ELVUI_VERSIONCHK", E.version, (instanceType == "pvp" and "BATTLEGROUND") or "RAID")
 		elseif IsInGroup() then
-			SendAddonMessage('ELVUI_VERSIONCHK', E.version, 'PARTY')
+			SendAddonMessage("ELVUI_VERSIONCHK", E.version, "PARTY")
 		elseif IsInGuild() then
-			SendAddonMessage('ELVUI_VERSIONCHK', E.version, 'GUILD')
+			SendAddonMessage("ELVUI_VERSIONCHK", E.version, "GUILD")
 		end
 
 		SendMessageWaiting = nil
 	end
 
 	local SendRecieveGroupSize = 0
-	local PLAYER_NAME = format('%s-%s', E.myname, E:ShortenRealm(E.myrealm))
+	local PLAYER_NAME = format("%s-%s", E.myname, E:ShortenRealm(E.myrealm))
 	local function SendRecieve(_, event, prefix, message, _, sender)
-		if event == 'CHAT_MSG_ADDON' then
-			if sender == PLAYER_NAME then return end
-			if prefix == 'ELVUI_VERSIONCHK' then
+		if event == "CHAT_MSG_ADDON" then
+			if sender == PLAYER_NAME then
+				return
+			end
+			if prefix == "ELVUI_VERSIONCHK" then
 				local ver, msg, inCombat = E.version, tonumber(message), InCombatLockdown()
 
 				E.UserList[E:StripMyRealm(sender)] = msg
 
 				if msg and (msg > ver) and not E.recievedOutOfDateMessage then -- you're outdated D:
-					E:Print(L["ElvUI is out of date. You can download the newest version from https://github.com/ElvUI-WotLK."])
+					E:Print(
+						L["ElvUI is out of date. You can download the newest version from https://github.com/ElvUI-WotLK."]
+					)
 
 					if msg and ((msg - ver) >= 0.05) and not inCombat then
-						E.PopupDialogs.ELVUI_UPDATE_AVAILABLE.text = L["ElvUI is five or more revisions out of date. You can download the newest version from https://github.com/ElvUI-WotLK."]..format('|n|nSender %s : Version %s', sender, msg)
+						E.PopupDialogs.ELVUI_UPDATE_AVAILABLE.text = L["ElvUI is five or more revisions out of date. You can download the newest version from https://github.com/ElvUI-WotLK."]
+							.. format("|n|nSender %s : Version %s", sender, msg)
 
-						E:StaticPopup_Show('ELVUI_UPDATE_AVAILABLE')
+						E:StaticPopup_Show("ELVUI_UPDATE_AVAILABLE")
 					end
 
 					E.recievedOutOfDateMessage = true
 				end
 			end
-		elseif event == 'PARTY_MEMBERS_CHANGED' or event == 'RAID_ROSTER_UPDATE' then
+		elseif event == "PARTY_MEMBERS_CHANGED" or event == "RAID_ROSTER_UPDATE" then
 			local num = GetNumGroupMembers()
 			if num ~= SendRecieveGroupSize then
 				if num > 1 and num > SendRecieveGroupSize then
@@ -931,19 +1015,19 @@ do
 				end
 				SendRecieveGroupSize = num
 			end
-		elseif event == 'PLAYER_ENTERING_WORLD' then
+		elseif event == "PLAYER_ENTERING_WORLD" then
 			if not SendMessageWaiting then
 				SendMessageWaiting = E:Delay(10, E.SendMessage)
 			end
 		end
 	end
 
-	local f = CreateFrame('Frame')
-	f:RegisterEvent('CHAT_MSG_ADDON')
-	f:RegisterEvent('RAID_ROSTER_UPDATE')
-	f:RegisterEvent('PARTY_MEMBERS_CHANGED')
-	f:RegisterEvent('PLAYER_ENTERING_WORLD')
-	f:SetScript('OnEvent', SendRecieve)
+	local f = CreateFrame("Frame")
+	f:RegisterEvent("CHAT_MSG_ADDON")
+	f:RegisterEvent("RAID_ROSTER_UPDATE")
+	f:RegisterEvent("PARTY_MEMBERS_CHANGED")
+	f:RegisterEvent("PLAYER_ENTERING_WORLD")
+	f:SetScript("OnEvent", SendRecieve)
 end
 
 function E:UpdateStart(skipCallback, skipUpdateDB)
@@ -956,14 +1040,18 @@ function E:UpdateStart(skipCallback, skipUpdateDB)
 	E:UpdateUnitFrames()
 
 	if not skipCallback then
-		E.callbacks:Fire('StaggeredUpdate')
+		E.callbacks:Fire("StaggeredUpdate")
 	end
 end
 
 do
 	local function ConvertAurawatch(spell)
-		if spell.sizeOverride then spell.sizeOverride = nil end
-		if spell.size then spell.size = nil end
+		if spell.sizeOverride then
+			spell.sizeOverride = nil
+		end
+		if spell.size then
+			spell.size = nil
+		end
 
 		if not spell.sizeOffset then
 			spell.sizeOffset = 0
@@ -973,14 +1061,16 @@ do
 			spell.style = spell.styleOverride
 			spell.styleOverride = nil
 		elseif not spell.style then
-			spell.style = 'coloredIcon'
+			spell.style = "coloredIcon"
 		end
 	end
 
 	local ttModSwap
 	do -- tooltip convert
-		local swap = {ALL = 'HIDE', NONE = 'SHOW'}
-		ttModSwap = function(val) return swap[val] end
+		local swap = { ALL = "HIDE", NONE = "SHOW" }
+		ttModSwap = function(val)
+			return swap[val]
+		end
 	end
 
 	function E:DBConvert()
@@ -1022,7 +1112,23 @@ do
 				E.db.unitframe.OORAlpha = nil
 			end
 
-			for _, unit in pairs({'target', 'targettarget', 'targettargettarget', 'focus', 'focustarget', 'pet', 'pettarget', 'boss', 'arena', 'party', 'raid', 'raid40', 'raidpet', 'tank', 'assist'}) do
+			for _, unit in pairs({
+				"target",
+				"targettarget",
+				"targettargettarget",
+				"focus",
+				"focustarget",
+				"pet",
+				"pettarget",
+				"boss",
+				"arena",
+				"party",
+				"raid",
+				"raid40",
+				"raidpet",
+				"tank",
+				"assist",
+			}) do
 				if E.db.unitframe.units[unit].rangeCheck ~= nil then
 					local enabled = E.db.unitframe.units[unit].rangeCheck
 					E.db.unitframe.units[unit].fader.enable = enabled
@@ -1061,7 +1167,7 @@ do
 
 		--Convert cropIcon to tristate
 		local cropIcon = E.db.general.cropIcon
-		if type(cropIcon) == 'boolean' then
+		if type(cropIcon) == "boolean" then
 			E.db.general.cropIcon = (cropIcon and 2) or 0
 		end
 
@@ -1073,8 +1179,8 @@ do
 		end
 
 		--Heal Prediction is now a table instead of a bool
-		for _, unit in ipairs({'player', 'target', 'focus', 'pet', 'arena', 'party', 'raid', 'raid40', 'raidpet'}) do
-			if type(E.db.unitframe.units[unit].healPrediction) ~= 'table' then
+		for _, unit in ipairs({ "player", "target", "focus", "pet", "arena", "party", "raid", "raid40", "raidpet" }) do
+			if type(E.db.unitframe.units[unit].healPrediction) ~= "table" then
 				local enabled = E.db.unitframe.units[unit].healPrediction
 				E.db.unitframe.units[unit].healPrediction = E:CopyTable({}, P.unitframe.units[unit].healPrediction)
 				E.db.unitframe.units[unit].healPrediction.enable = enabled
@@ -1094,18 +1200,24 @@ do
 
 		--Tooltip FactionColors Setting
 		for i = 1, 8 do
-			local oldTable = E.db.tooltip.factionColors[''..i]
+			local oldTable = E.db.tooltip.factionColors["" .. i]
 			if oldTable then
 				local newTable = E:CopyTable({}, P.tooltip.factionColors[i]) -- import full table
 				E.db.tooltip.factionColors[i] = E:CopyTable(newTable, oldTable)
-				E.db.tooltip.factionColors[''..i] = nil
+				E.db.tooltip.factionColors["" .. i] = nil
 			end
 		end
 
 		-- Wipe some old variables off profiles
-		if E.global.uiScaleInformed then E.global.uiScaleInformed = nil end
-		if E.global.nameplatesResetInformed then E.global.nameplatesResetInformed = nil end
-		if E.global.userInformedNewChanges1 then E.global.userInformedNewChanges1 = nil end
+		if E.global.uiScaleInformed then
+			E.global.uiScaleInformed = nil
+		end
+		if E.global.nameplatesResetInformed then
+			E.global.nameplatesResetInformed = nil
+		end
+		if E.global.userInformedNewChanges1 then
+			E.global.userInformedNewChanges1 = nil
+		end
 
 		-- cvar nameplate visibility stuff
 		if E.db.nameplates.units.FRIENDLY_NPC.showAlways ~= nil then
@@ -1121,7 +1233,8 @@ do
 			E.db.nameplates.units.ENEMY_NPC.minors = nil
 		end
 		if E.db.nameplates.units.ENEMY_PLAYER.minions ~= nil or E.db.nameplates.units.ENEMY_NPC.minions ~= nil then
-			E.db.nameplates.visibility.enemy.minions = E.db.nameplates.units.ENEMY_PLAYER.minions or E.db.nameplates.units.ENEMY_NPC.minions
+			E.db.nameplates.visibility.enemy.minions = E.db.nameplates.units.ENEMY_PLAYER.minions
+				or E.db.nameplates.units.ENEMY_NPC.minions
 			E.db.nameplates.units.ENEMY_PLAYER.minions = nil
 			E.db.nameplates.units.ENEMY_NPC.minions = nil
 		end
@@ -1144,7 +1257,7 @@ do
 		-- fix aurabars colors
 		local auraBarColors = E.global.unitframe.AuraBarColors
 		for spell, info in pairs(auraBarColors) do
-			if type(spell) == 'string' then
+			if type(spell) == "string" then
 				local _, _, _, _, _, _, spellID = E:GetSpellInfo(spell)
 				if spellID and not auraBarColors[spellID] then
 					auraBarColors[spellID] = info
@@ -1153,38 +1266,55 @@ do
 				end
 			end
 
-			if type(info) == 'boolean' then
+			if type(info) == "boolean" then
 				auraBarColors[spell] = { color = { r = 1, g = 1, b = 1 }, enable = info }
-			elseif type(info) == 'table' then
+			elseif type(info) == "table" then
 				if info.r or info.g or info.b then
-					auraBarColors[spell] = { color = { r = info.r or 1, g = info.g or 1, b = info.b or 1 }, enable = true }
+					auraBarColors[spell] =
+						{ color = { r = info.r or 1, g = info.g or 1, b = info.b or 1 }, enable = true }
 				elseif info.color then -- azil created a void hole, delete it -x-
-					if info.color.color then info.color.color = nil end
-					if info.color.enable then info.color.enable = nil end
-					if info.color.a then info.color.a = nil end -- alpha isnt supported by this
+					if info.color.color then
+						info.color.color = nil
+					end
+					if info.color.enable then
+						info.color.enable = nil
+					end
+					if info.color.a then
+						info.color.a = nil
+					end -- alpha isnt supported by this
 				end
 			end
 		end
 
-		if E.db.unitframe.colors.debuffHighlight.blendMode == 'MOD' then
+		if E.db.unitframe.colors.debuffHighlight.blendMode == "MOD" then
 			E.db.unitframe.colors.debuffHighlight.blendMode = P.unitframe.colors.debuffHighlight.blendMode
 		end
 
 		do -- tooltip modifier code was dumb, change it but keep the past setting
 			local swap = ttModSwap(E.db.tooltip.modifierID)
-			if swap then E.db.tooltip.modifierID = swap end
+			if swap then
+				E.db.tooltip.modifierID = swap
+			end
 
 			swap = ttModSwap(E.db.tooltip.visibility.bags)
-			if swap then E.db.tooltip.visibility.bags = swap end
+			if swap then
+				E.db.tooltip.visibility.bags = swap
+			end
 
 			swap = ttModSwap(E.db.tooltip.visibility.unitFrames)
-			if swap then E.db.tooltip.visibility.unitFrames = swap end
+			if swap then
+				E.db.tooltip.visibility.unitFrames = swap
+			end
 
 			swap = ttModSwap(E.db.tooltip.visibility.actionbars)
-			if swap then E.db.tooltip.visibility.actionbars = swap end
+			if swap then
+				E.db.tooltip.visibility.actionbars = swap
+			end
 
 			swap = ttModSwap(E.db.tooltip.visibility.combatOverride)
-			if swap then E.db.tooltip.visibility.combatOverride = swap end
+			if swap then
+				E.db.tooltip.visibility.combatOverride = swap
+			end
 
 			-- remove the old combat variable and just use the mod since it supports show/hide states
 			local hideInCombat = E.db.tooltip.visibility.combat
@@ -1192,14 +1322,14 @@ do
 				E.db.tooltip.visibility.combat = nil
 
 				local override = E.db.tooltip.visibility.combatOverride
-				if hideInCombat and (override ~= 'SHIFT' and override ~= 'CTRL' and override ~= 'ALT') then -- wouldve been NONE but now it would be HIDE
-					E.db.tooltip.visibility.combatOverride = 'HIDE'
+				if hideInCombat and (override ~= "SHIFT" and override ~= "CTRL" and override ~= "ALT") then -- wouldve been NONE but now it would be HIDE
+					E.db.tooltip.visibility.combatOverride = "HIDE"
 				end
 			end
 		end
 
 		for i = 1, 10 do
-			local bar = E.db.actionbar['bar'..i]
+			local bar = E.db.actionbar["bar" .. i]
 			if bar.buttonsize then
 				bar.buttonSize = bar.buttonsize
 				bar.buttonsize = nil
@@ -1232,13 +1362,19 @@ do
 			E.db.actionbar.convertPages = nil
 		end
 		if not E.db.convertPages then
-			local bar2, bar3, bar5, bar6 = E.db.actionbar.bar2, E.db.actionbar.bar3, E.db.actionbar.bar5, E.db.actionbar.bar6
-			E.db.actionbar.bar2, E.db.actionbar.bar3, E.db.actionbar.bar5, E.db.actionbar.bar6 = E:CopyTable({}, bar6), E:CopyTable({}, bar5), E:CopyTable({}, bar2), E:CopyTable({}, bar3)
+			local bar2, bar3, bar5, bar6 =
+				E.db.actionbar.bar2, E.db.actionbar.bar3, E.db.actionbar.bar5, E.db.actionbar.bar6
+			E.db.actionbar.bar2, E.db.actionbar.bar3, E.db.actionbar.bar5, E.db.actionbar.bar6 =
+				E:CopyTable({}, bar6), E:CopyTable({}, bar5), E:CopyTable({}, bar2), E:CopyTable({}, bar3)
 
 			if E.db.movers then
-				local bar2mover, bar3mover, bar5mover, bar6mover = E.db.movers.ElvAB_2, E.db.movers.ElvAB_3, E.db.movers.ElvAB_5, E.db.movers.ElvAB_6
-				if bar6mover == 'BOTTOM,ElvUI_Bar2,TOP,0,2' then bar6mover = ActionBars.barDefaults.bar2.position end
-				E.db.movers.ElvAB_2, E.db.movers.ElvAB_3, E.db.movers.ElvAB_5, E.db.movers.ElvAB_6 = bar6mover, bar5mover, bar2mover, bar3mover
+				local bar2mover, bar3mover, bar5mover, bar6mover =
+					E.db.movers.ElvAB_2, E.db.movers.ElvAB_3, E.db.movers.ElvAB_5, E.db.movers.ElvAB_6
+				if bar6mover == "BOTTOM,ElvUI_Bar2,TOP,0,2" then
+					bar6mover = ActionBars.barDefaults.bar2.position
+				end
+				E.db.movers.ElvAB_2, E.db.movers.ElvAB_3, E.db.movers.ElvAB_5, E.db.movers.ElvAB_6 =
+					bar6mover, bar5mover, bar2mover, bar3mover
 			end
 
 			E.db.convertPages = true
@@ -1251,18 +1387,18 @@ do
 
 		-- tooltip item count to be more optional
 		local itemCount = E.db.tooltip.itemCount
-		if type(itemCount) == 'string' then
+		if type(itemCount) == "string" then
 			local db = E:CopyTable({}, P.tooltip.itemCount)
-			if itemCount == 'BAGS_ONLY' then
+			if itemCount == "BAGS_ONLY" then
 				db.bags = true
 				db.bank = false
-			elseif itemCount == 'BANK_ONLY' then
+			elseif itemCount == "BANK_ONLY" then
 				db.bags = false
 				db.bank = true
-			elseif itemCount == 'BOTH' then
+			elseif itemCount == "BOTH" then
 				db.bags = true
 				db.bank = true
-			elseif itemCount == 'NONE' then
+			elseif itemCount == "NONE" then
 				db.bags = false
 				db.bank = false
 			end
@@ -1277,7 +1413,9 @@ do
 					name = data.NAME or nil,
 					showMax = data.SHOW_MAX or nil,
 					currencyTooltip = data.DISPLAY_IN_MAIN_TOOLTIP or nil,
-					nameStyle = data.DISPLAY_STYLE and (strfind(data.DISPLAY_STYLE, 'ABBR') and 'abbr' or strfind(data.DISPLAY_STYLE, 'TEXT') and 'full' or 'none') or nil
+					nameStyle = data.DISPLAY_STYLE
+							and (strfind(data.DISPLAY_STYLE, "ABBR") and "abbr" or strfind(data.DISPLAY_STYLE, "TEXT") and "full" or "none")
+						or nil,
 				}
 
 				if next(info) then
@@ -1300,7 +1438,7 @@ function E:DBConvertDev()
 	end
 
 	-- hide text -> hide name & hide time
-	for _, unit in ipairs({'player','target','focus','pet','boss','arena','party'}) do
+	for _, unit in ipairs({ "player", "target", "focus", "pet", "boss", "arena", "party" }) do
 		local db = E.db.unitframe.units[unit].castbar
 		local previous = db.hidetext
 		if previous ~= nil then
@@ -1321,8 +1459,12 @@ function E:UpdateDB()
 	E:SetupDB()
 
 	-- default the non thing pixel border color to 191919, otherwise its 000000
-	if not E.PixelMode then P.general.bordercolor = { r = 0.1, g = 0.1, b = 0.1 } end
-	if not E.db.unitframe.thinBorders then P.unitframe.colors.borderColor = { r = 0.1, g = 0.1, b = 0.1 } end
+	if not E.PixelMode then
+		P.general.bordercolor = { r = 0.1, g = 0.1, b = 0.1 }
+	end
+	if not E.db.unitframe.thinBorders then
+		P.unitframe.colors.borderColor = { r = 0.1, g = 0.1, b = 0.1 }
+	end
 end
 
 function E:UpdateMoverPositions()
@@ -1351,7 +1493,7 @@ function E:UpdateMediaItems(skipCallback)
 	E:UpdateStatusBars()
 
 	if not skipCallback then
-		E.callbacks:Fire('StaggeredUpdate')
+		E.callbacks:Fire("StaggeredUpdate")
 	end
 end
 
@@ -1362,7 +1504,7 @@ function E:UpdateLayout(skipCallback)
 	Layout:SetDataPanelStyle()
 
 	if not skipCallback then
-		E.callbacks:Fire('StaggeredUpdate')
+		E.callbacks:Fire("StaggeredUpdate")
 	end
 end
 
@@ -1372,12 +1514,12 @@ function E:UpdateActionBars(skipCallback)
 	ActionBars:UpdateMicroButtons()
 	ActionBars:UpdatePetCooldownSettings()
 
-	if E.myclass == 'SHAMAN' then
+	if E.myclass == "SHAMAN" then
 		ActionBars:UpdateTotemBindings()
 	end
 
 	if not skipCallback then
-		E.callbacks:Fire('StaggeredUpdate')
+		E.callbacks:Fire("StaggeredUpdate")
 	end
 end
 
@@ -1386,7 +1528,7 @@ function E:UpdateNamePlates(skipCallback)
 	NamePlates:StyleFilterInitialize()
 
 	if not skipCallback then
-		E.callbacks:Fire('StaggeredUpdate')
+		E.callbacks:Fire("StaggeredUpdate")
 	end
 end
 
@@ -1400,7 +1542,7 @@ function E:UpdateBags(skipCallback)
 	Bags:UpdateLayouts()
 
 	if not skipCallback then
-		E.callbacks:Fire('StaggeredUpdate')
+		E.callbacks:Fire("StaggeredUpdate")
 	end
 end
 
@@ -1409,7 +1551,7 @@ function E:UpdateChat(skipCallback)
 	Chat:UpdateEditboxAnchors()
 
 	if not skipCallback then
-		E.callbacks:Fire('StaggeredUpdate')
+		E.callbacks:Fire("StaggeredUpdate")
 	end
 end
 
@@ -1418,7 +1560,7 @@ function E:UpdateDataBars(skipCallback)
 	DataBars:UpdateAll()
 
 	if not skipCallback then
-		E.callbacks:Fire('StaggeredUpdate')
+		E.callbacks:Fire("StaggeredUpdate")
 	end
 end
 
@@ -1426,7 +1568,7 @@ function E:UpdateDataTexts(skipCallback)
 	DataTexts:LoadDataTexts()
 
 	if not skipCallback then
-		E.callbacks:Fire('StaggeredUpdate')
+		E.callbacks:Fire("StaggeredUpdate")
 	end
 end
 
@@ -1434,16 +1576,20 @@ function E:UpdateMinimap(skipCallback)
 	Minimap:UpdateSettings()
 
 	if not skipCallback then
-		E.callbacks:Fire('StaggeredUpdate')
+		E.callbacks:Fire("StaggeredUpdate")
 	end
 end
 
 function E:UpdateAuras(skipCallback)
-	if Auras.BuffFrame then Auras:UpdateHeader(Auras.BuffFrame) end
-	if Auras.DebuffFrame then Auras:UpdateHeader(Auras.DebuffFrame) end
+	if Auras.BuffFrame then
+		Auras:UpdateHeader(Auras.BuffFrame)
+	end
+	if Auras.DebuffFrame then
+		Auras:UpdateHeader(Auras.DebuffFrame)
+	end
 
 	if not skipCallback then
-		E.callbacks:Fire('StaggeredUpdate')
+		E.callbacks:Fire("StaggeredUpdate")
 	end
 end
 
@@ -1453,12 +1599,12 @@ function E:UpdateMisc(skipCallback)
 	ActionBars:PositionAndSizeTotemBar()
 
 	if not skipCallback then
-		E.callbacks:Fire('StaggeredUpdate')
+		E.callbacks:Fire("StaggeredUpdate")
 	end
 end
 
 function E:UpdateEnd()
-	E:UpdateCooldownSettings('all')
+	E:UpdateCooldownSettings("all")
 
 	if E.RefreshGUI then
 		E:RefreshGUI()
@@ -1486,14 +1632,14 @@ do
 		if nextUpdate then
 			tremove(staggerTable, 1)
 
-			if nextUpdate == 'UpdateNamePlates' or nextUpdate == 'UpdateBags' then
+			if nextUpdate == "UpdateNamePlates" or nextUpdate == "UpdateBags" then
 				nextDelay = 0.05
 			end
 
 			E:Delay(nextDelay or staggerDelay, E[nextUpdate])
 		end
 	end
-	E:RegisterCallback('StaggeredUpdate', CallStaggeredUpdate)
+	E:RegisterCallback("StaggeredUpdate", CallStaggeredUpdate)
 
 	function E:StaggeredUpdateAll(event)
 		if not E.initialized then
@@ -1501,33 +1647,33 @@ do
 			return
 		end
 
-		if (not event or event == 'OnProfileChanged' or event == 'OnProfileCopied') and not E.staggerUpdateRunning then
-			tinsert(staggerTable, 'UpdateLayout')
+		if (not event or event == "OnProfileChanged" or event == "OnProfileCopied") and not E.staggerUpdateRunning then
+			tinsert(staggerTable, "UpdateLayout")
 			if ActionBars.Initialized then
-				tinsert(staggerTable, 'UpdateActionBars')
+				tinsert(staggerTable, "UpdateActionBars")
 			end
 			if NamePlates.Initialized then
-				tinsert(staggerTable, 'UpdateNamePlates')
+				tinsert(staggerTable, "UpdateNamePlates")
 			end
 			if Bags.Initialized then
-				tinsert(staggerTable, 'UpdateBags')
+				tinsert(staggerTable, "UpdateBags")
 			end
 			if Chat.Initialized then
-				tinsert(staggerTable, 'UpdateChat')
+				tinsert(staggerTable, "UpdateChat")
 			end
 			if Tooltip.Initialized then
-				tinsert(staggerTable, 'UpdateTooltip')
+				tinsert(staggerTable, "UpdateTooltip")
 			end
-			tinsert(staggerTable, 'UpdateDataBars')
-			tinsert(staggerTable, 'UpdateDataTexts')
+			tinsert(staggerTable, "UpdateDataBars")
+			tinsert(staggerTable, "UpdateDataTexts")
 			if Minimap.Initialized then
-				tinsert(staggerTable, 'UpdateMinimap')
+				tinsert(staggerTable, "UpdateMinimap")
 			end
 			if Auras.BuffFrame or Auras.DebuffFrame then
-				tinsert(staggerTable, 'UpdateAuras')
+				tinsert(staggerTable, "UpdateAuras")
 			end
-			tinsert(staggerTable, 'UpdateMisc')
-			tinsert(staggerTable, 'UpdateEnd')
+			tinsert(staggerTable, "UpdateMisc")
+			tinsert(staggerTable, "UpdateEnd")
 
 			--Stagger updates
 			E.staggerUpdateRunning = true
@@ -1573,10 +1719,10 @@ function E:UpdateAll(doUpdates)
 end
 
 do
-	E.ObjectEventTable, E.ObjectEventFrame = {}, CreateFrame('Frame')
+	E.ObjectEventTable, E.ObjectEventFrame = {}, CreateFrame("Frame")
 	local eventFrame, eventTable = E.ObjectEventFrame, E.ObjectEventTable
 
-	eventFrame:SetScript('OnEvent', function(_, event, ...)
+	eventFrame:SetScript("OnEvent", function(_, event, ...)
 		local objs = eventTable[event]
 		if objs then
 			for object, funcs in pairs(objs) do
@@ -1589,7 +1735,7 @@ do
 
 	function E:HasFunctionForObject(event, object, func)
 		if not (event and object and func) then
-			E:Print('Error. Usage: HasFunctionForObject(event, object, func)')
+			E:Print("Error. Usage: HasFunctionForObject(event, object, func)")
 			return
 		end
 
@@ -1600,7 +1746,7 @@ do
 
 	function E:IsEventRegisteredForObject(event, object)
 		if not (event and object) then
-			E:Print('Error. Usage: IsEventRegisteredForObject(event, object)')
+			E:Print("Error. Usage: IsEventRegisteredForObject(event, object)")
 			return
 		end
 
@@ -1620,7 +1766,7 @@ do
 	-- @param func The function you want executed for this object.
 	function E:RegisterEventForObject(event, object, func)
 		if not (event and object and func) then
-			E:Print('Error. Usage: RegisterEventForObject(event, object, func)')
+			E:Print("Error. Usage: RegisterEventForObject(event, object, func)")
 			return
 		end
 
@@ -1633,7 +1779,7 @@ do
 
 		local funcs = objs[object]
 		if not funcs then
-			objs[object] = {func}
+			objs[object] = { func }
 		elseif not tContains(funcs, func) then
 			tinsert(funcs, func)
 		end
@@ -1646,7 +1792,7 @@ do
 	-- @param func The function you want unregistered for the object.
 	function E:UnregisterEventForObject(event, object, func)
 		if not (event and object and func) then
-			E:Print('Error. Usage: UnregisterEventForObject(event, object, func)')
+			E:Print("Error. Usage: UnregisterEventForObject(event, object, func)")
 			return
 		end
 
@@ -1673,7 +1819,7 @@ do
 
 	function E:UnregisterAllEventsForObject(object, func)
 		if not (object and func) then
-			E:Print('Error. Usage: UnregisterAllEventsForObject(object, func)')
+			E:Print("Error. Usage: UnregisterAllEventsForObject(object, func)")
 			return
 		end
 
@@ -1686,10 +1832,12 @@ do
 end
 
 function E:ResetUI(...)
-	if E:AlertCombat() then return end
+	if E:AlertCombat() then
+		return
+	end
 
-	if ... == '' or ... == ' ' or ... == nil then
-		E:StaticPopup_Show('RESETUI_CHECK')
+	if ... == "" or ... == " " or ... == nil then
+		E:StaticPopup_Show("RESETUI_CHECK")
 		return
 	end
 
@@ -1706,12 +1854,14 @@ do
 
 	function E:CallLoadFunc(func, ...)
 		-- xpcall in 3.3.5 (Lua 5.1) does not forward extra arguments to func
-		local n = select('#', ...)
+		local n = select("#", ...)
 		if n == 0 then
 			xpcall(func, Errorhandler)
 		else
-			local args = {...}
-			xpcall(function() return func(unpack(args, 1, n)) end, Errorhandler)
+			local args = { ... }
+			xpcall(function()
+				return func(unpack(args, 1, n))
+			end, Errorhandler)
 		end
 	end
 end
@@ -1720,11 +1870,13 @@ function E:CallLoadedModule(obj, silent, object, index)
 	local name, func = obj.name, obj.func
 
 	local module = name and E:GetModule(name, silent)
-	if not module then return end
+	if not module then
+		return
+	end
 
-	if func and type(func) == 'string' then
+	if func and type(func) == "string" then
 		E:CallLoadFunc(module[func], module)
-	elseif func and type(func) == 'function' then
+	elseif func and type(func) == "function" then
 		E:CallLoadFunc(func, module)
 	elseif module.Initialize then
 		E:CallLoadFunc(module.Initialize, module)
@@ -1778,9 +1930,15 @@ function E:DBConversions()
 end
 
 function E:ConvertActionBarKeybinds()
-	for oldcmd, newcmd in pairs({ ELVUIBAR6BUTTON = 'ELVUIBAR2BUTTON', EXTRABAR7BUTTON = 'ELVUIBAR7BUTTON', EXTRABAR8BUTTON = 'ELVUIBAR8BUTTON', EXTRABAR9BUTTON = 'ELVUIBAR9BUTTON', EXTRABAR10BUTTON = 'ELVUIBAR10BUTTON' }) do
+	for oldcmd, newcmd in pairs({
+		ELVUIBAR6BUTTON = "ELVUIBAR2BUTTON",
+		EXTRABAR7BUTTON = "ELVUIBAR7BUTTON",
+		EXTRABAR8BUTTON = "ELVUIBAR8BUTTON",
+		EXTRABAR9BUTTON = "ELVUIBAR9BUTTON",
+		EXTRABAR10BUTTON = "ELVUIBAR10BUTTON",
+	}) do
 		for i = 1, 12 do
-			local oldkey, newkey = format('%s%d', oldcmd, i), format('%s%d', newcmd, i)
+			local oldkey, newkey = format("%s%d", oldcmd, i), format("%s%d", newcmd, i)
 			for _, key in next, { GetBindingKey(oldkey) } do
 				SetBinding(key, newkey)
 			end
@@ -1797,9 +1955,13 @@ do
 	-- Shamelessly taken from AceDB-3.0 and stripped down by Simpy
 	function E:CopyDefaults(dest, src)
 		for k, v in pairs(src) do
-			if type(v) == 'table' then
-				if not rawget(dest, k) then rawset(dest, k, {}) end
-				if type(dest[k]) == 'table' then E:CopyDefaults(dest[k], v) end
+			if type(v) == "table" then
+				if not rawget(dest, k) then
+					rawset(dest, k, {})
+				end
+				if type(dest[k]) == "table" then
+					E:CopyDefaults(dest[k], v)
+				end
 			elseif rawget(dest, k) == nil then
 				rawset(dest, k, v)
 			end
@@ -1812,9 +1974,11 @@ do
 		setmetatable(db, nil)
 
 		for k, v in pairs(defaults) do
-			if type(v) == 'table' and type(db[k]) == 'table' then
+			if type(v) == "table" and type(db[k]) == "table" then
 				E:RemoveDefaults(db[k], v)
-				if next(db[k]) == nil then db[k] = nil end
+				if next(db[k]) == nil then
+					db[k] = nil
+				end
 			elseif db[k] == defaults[k] then
 				db[k] = nil
 			end
@@ -1827,9 +1991,11 @@ end
 local delayedTimer
 local delayedFuncs = {}
 function E:DelayedUpdate(func, ...)
-	delayedFuncs[func] = {...}
+	delayedFuncs[func] = { ... }
 
-	if delayedTimer then return end
+	if delayedTimer then
+		return
+	end
 
 	delayedTimer = E:ScheduleTimer(function()
 		for f in pairs(delayedFuncs) do
@@ -1847,24 +2013,24 @@ function E:Initialize()
 	wipe(E.private)
 
 	E.myspec = GetSpecialization()
-	E.myguid = UnitGUID('player')
+	E.myguid = UnitGUID("player")
 
-	E.data = E.Libs.AceDB:New('ElvDB', E.DF, true)
-	E.data.RegisterCallback(E, 'OnProfileChanged', 'StaggeredUpdateAll')
-	E.data.RegisterCallback(E, 'OnProfileCopied', 'StaggeredUpdateAll')
-	E.data.RegisterCallback(E, 'OnProfileReset', 'OnProfileReset')
+	E.data = E.Libs.AceDB:New("ElvDB", E.DF, true)
+	E.data.RegisterCallback(E, "OnProfileChanged", "StaggeredUpdateAll")
+	E.data.RegisterCallback(E, "OnProfileCopied", "StaggeredUpdateAll")
+	E.data.RegisterCallback(E, "OnProfileReset", "OnProfileReset")
 
-	E.charSettings = E.Libs.AceDB:New('ElvPrivateDB', E.privateVars)
-	E.charSettings.RegisterCallback(E, 'OnProfileChanged', ReloadUI)
-	E.charSettings.RegisterCallback(E, 'OnProfileCopied', ReloadUI)
-	E.charSettings.RegisterCallback(E, 'OnProfileReset', 'OnPrivateProfileReset')
+	E.charSettings = E.Libs.AceDB:New("ElvPrivateDB", E.privateVars)
+	E.charSettings.RegisterCallback(E, "OnProfileChanged", ReloadUI)
+	E.charSettings.RegisterCallback(E, "OnProfileCopied", ReloadUI)
+	E.charSettings.RegisterCallback(E, "OnProfileReset", "OnPrivateProfileReset")
 
 	E:UpdateDB()
 	E:UIScale()
 	E:LoadStaticPopups()
 
 	if E.OtherAddons.Tukui then
-		E:StaticPopup_Show('TUKUI_ELVUI_INCOMPATIBLE')
+		E:StaticPopup_Show("TUKUI_ELVUI_INCOMPATIBLE")
 	else
 		E:BuildPrefixValues()
 		E:LoadAPI()
@@ -1874,13 +2040,13 @@ function E:Initialize()
 		E:UpdateMedia()
 		E:UpdateDispelColors()
 		E:UpdateCustomClassColors()
-		E:UpdateCooldownSettings('all')
+		E:UpdateCooldownSettings("all")
 
 		E.initialized = true
 
 		E:Tutorials()
 
-		E.Libs.DualSpec:EnhanceDatabase(E.data, 'ElvUI')
+		E.Libs.DualSpec:EnhanceDatabase(E.data, "ElvUI")
 
 		if E.db.general.tagUpdateRate and (E.db.general.tagUpdateRate ~= P.general.tagUpdateRate) then
 			E:TagUpdateRate(E.db.general.tagUpdateRate)
@@ -1896,18 +2062,18 @@ function E:Initialize()
 
 		if E.version ~= E.Libs.version then
 			E.updateRequestTriggered = true
-			E:StaticPopup_Show('UPDATE_REQUEST')
+			E:StaticPopup_Show("UPDATE_REQUEST")
 		end
 
-		if GetCVar('scriptProfile') == '1' then
-			E:StaticPopup_Show('SCRIPT_PROFILE')
+		if GetCVar("scriptProfile") == "1" then
+			E:StaticPopup_Show("SCRIPT_PROFILE")
 		end
 
 		if E.db.general.loginmessage then
 			local msg = format(L["LOGIN_MSG"], E.versionString)
 
 			if Chat.Initialized then -- setup the link
-				_, msg = Chat:FindURL('CHAT_MSG_DUMMY', msg)
+				_, msg = Chat:FindURL("CHAT_MSG_DUMMY", msg)
 			end
 
 			print(msg)

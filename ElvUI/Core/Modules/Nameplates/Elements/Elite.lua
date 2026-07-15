@@ -6,7 +6,9 @@ local NP = E:GetModule("NamePlates")
 
 function NP:Update_Elite(frame)
 	local db = self.db.units[frame.UnitType].eliteIcon
-	if not db then return end
+	if not db then
+		return
+	end
 
 	local icon = frame.Elite
 	if db.enable then
@@ -28,7 +30,9 @@ end
 
 function NP:Configure_Elite(frame)
 	local db = self.db.units[frame.UnitType].eliteIcon
-	if not db then return end
+	if not db then
+		return
+	end
 
 	local icon = frame.Elite
 
