@@ -96,6 +96,7 @@ GenGen.locale = ACH:Select(
 		zhTW = "正體中文",
 		koKR = "한국어",
 		itIT = "Italiano",
+		jaJP = "日本語",
 	},
 	nil,
 	nil,
