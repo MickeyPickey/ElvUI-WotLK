@@ -18,21 +18,22 @@ L["LEFT"] = "GAUCHE"
 L["RIGHT"] = "DROITE"
 L["TOP"] = "HAUT"
 ------------  Strata  ------------
-L["BACKGROUND"] = true
-L["DIALOG"] = true
-L["HIGH"] = true
-L["LOW"] = true
-L["MEDIUM"] = true
-L["TOOLTIP"] = true
+L["BACKGROUND"] = "ARRIÈRE-PLAN"
+L["DIALOG"] = "DIALOGUE"
+L["HIGH"] = "ÉLEVÉ"
+L["LOW"] = "FAIBLE"
+L["MEDIUM"] = "MOYEN"
+L["TOOLTIP"] = "INFOBULLE"
 ----------------------------------
 
-L["BigWigs Spell Rename"] = true
+L["BigWigs Spell Rename"] = "Renommage des sorts BigWigs"
 L["Allows BigWigs to rename specific encounter spells on your castbar to something better to understand.\nExample: 'Impaling Eruption' becomes 'Frontal' and 'Twilight Massacre' becomes 'Dash'."] =
-	true
-L["Add Aura ID"] = true
-L["Remove Aura"] = true
-L["Select Aura"] = true
-L["Add an aura to the filter. Aura IDs can be acquired using the tooltip to find the correct ID."] = true
+	"Permet à BigWigs de renommer certains sorts de rencontre sur votre barre d'incantation en quelque chose de plus compréhensible.\nExemple : « Impaling Eruption » devient « Frontal » et « Twilight Massacre » devient « Dash »."
+L["Add Aura ID"] = "Ajouter un ID d'aura"
+L["Remove Aura"] = "Retirer l'aura"
+L["Select Aura"] = "Sélectionner l'aura"
+L["Add an aura to the filter. Aura IDs can be acquired using the tooltip to find the correct ID."] =
+	"Ajoute une aura au filtre. Les ID d'aura peuvent être obtenus à l'aide de l'infobulle pour trouver le bon ID."
 L["Primary Unit"] = "Unité principale"
 L["Requires the unit to be the primary target to display."] =
 	"Nécessite que l'unité soit la cible principale pour s'afficher."
@@ -117,7 +118,7 @@ L["ALT_KEY_TEXT"] = "ALT"
 L["Always Display"] = "Toujours afficher"
 L["Always Show Player"] = "Toujours afficher le joueur"
 L["Always Show Realm"] = "Toujours afficher le royaume"
-L["Always Split Professions"] = true
+L["Always Split Professions"] = "Toujours séparer les métiers"
 L["Anchor Point"] = "Point d'ancrage"
 L["Anchor"] = "Point d'ancrage"
 L["Anima Diversion"] = "Détournement d'anima"
@@ -169,7 +170,7 @@ L["Ascending or Descending order."] = "Ordre ascendant ou descendant."
 L["Ascending"] = "Ascendant"
 L["Assigned Icon"] = "Icône assignée"
 L["Assist Frames"] = "Cadre des Soutiens"
-L["Assist"] = true
+L["Assist"] = "Soutien"
 L["At what point should the text be displayed. Set to -1 to disable."] =
 	"A quel moment le texte devrait être affiché. Mettre à -1 pour désactiver."
 L["Attach Text To"] = "Attacher le texte à"
@@ -292,7 +293,7 @@ L["Bottom Right"] = "En bas à droite"
 L["Bottom to Top"] = "Du bas vers le haut"
 L["Bottom"] = "En bas"
 L["BUFFOPTIONS_LABEL"] = "Améliorations et affaiblissements"
-L["Buffs on Debuffs"] = true
+L["Buffs on Debuffs"] = "Améliorations sur affaiblissements"
 L["Button Flash"] = "Bouton Flash"
 L["Button Height"] = "Hauteur des Boutons"
 L["Button Settings"] = "Paramètres des Boutons"
@@ -554,7 +555,7 @@ L["DEBUG_DESC"] =
 	"Disable all addons (including Plugins) except ElvUI. During the same session, this can be clicked to reenable them."
 L["Decimal Length"] = "Chiffres après la virgule"
 L["Decode Text"] = "Texte décodé"
-L["Decode"] = true
+L["Decode"] = "Décoder"
 L["Default Color"] = "Couleur par défaut"
 L["Default Font"] = "Police par défaut"
 L["Default Settings"] = "Options par défaut"
@@ -720,7 +721,7 @@ L["Equipped"] = "Équipé"
 L["Error decoding data. Import string may be corrupted!"] =
 	"Erreur lors du décodage des données. Celles-ci sont peut être corropues"
 L["Error exporting profile!"] = "Erreur d'exportation du profil"
-L["Quest Progress and Error Text"] = true
+L["Quest Progress and Error Text"] = "Texte de progression de quête et d'erreur"
 L["Event Log"] = "Journal d'evennements"
 L["Exclude Name"] = "Exclure le nom"
 L["Excluded names will not be class colored."] = "Exclure les noms sans couleur de classe"
@@ -823,7 +824,7 @@ L["Global (Account Settings)"] = "Global (Configuration du compte)"
 L["Global Fade Transparency"] = "Option générale de transparence et d'affichage"
 L["Global"] = true
 L["Glow"] = "Lueur"
-L["GM Chat"] = true
+L["GM Chat"] = "Discussion MJ"
 L["Gold Format"] = "Format monétaire"
 L["Good Color"] = "Bonne couleur"
 L["Good Scale"] = "Bonne échelle"
@@ -845,7 +846,7 @@ L["Growth Y-Direction"] = "Direction de croissance Y"
 L["Growth"] = "Croissance"
 L["Guardians"] = "Gardiens"
 L["Guide Frame"] = "Cadre du guide"
-L["Guide:"] = true
+L["Guide:"] = "Guide :"
 L["Guild Bank"] = "Banque de guilde"
 L["Guild Control Frame"] = "Gestion de Guilde"
 L["Guild Ranks"] = "Rangs de la guilde"
@@ -892,7 +893,7 @@ L["Hide Channels"] = "Cacher les canaux"
 L["Hide Chat Toggles"] = "Masquer les boutons de chat"
 L["Hide Copy Button"] = "Masquer le bouton de copie"
 L["Hide Delay"] = "Délai de dissimulation"
-L["Hide Quest Progress and Error Text"] = true
+L["Hide Quest Progress and Error Text"] = "Masquer le texte de progression de quête et d'erreur"
 L["Hide Frame"] = "Masquer le cadre"
 L["Hide Icon"] = "Masquer l'icône"
 L["Hide In Combat"] = "Cacher en combat"
@@ -912,7 +913,8 @@ L["Hide Zone Text"] = "Masquer le texte de zone"
 L["Hide"] = "Masquer"
 L["Hides the bling animation on buttons at the end of the global cooldown."] =
 	"Cacher l'animation des boutons à la fin du rechargement global."
-L["Hides the yellow quest progress text and red error text at the top of the screen while in combat."] = true
+L["Hides the yellow quest progress text and red error text at the top of the screen while in combat."] =
+	"Masque le texte jaune de progression de quête et le texte rouge d'erreur en haut de l'écran pendant le combat."
 L["High"] = "Élevé"
 L["Highlight Color Style"] = "Style de couleur de surbrillance"
 L["History Size"] = "Taille de l'historique"
@@ -1268,7 +1270,7 @@ L["Max Bars"] = "Barres maximum"
 L["Max Distance"] = "Distance maximale"
 L["Max Lines"] = "Lignes maximales"
 L["Max Overflow is set to zero. Absorb Overflows will be hidden when using Overflow style.\nIf used together Max Overflow at zero and Overflow mode will act like Normal mode without the ending sliver of overflow."] =
-	true
+	"Le débordement maximum est réglé sur zéro. Les débordements d'absorption seront masqués lorsque le style Débordement est utilisé.\nS'ils sont combinés, un débordement maximum à zéro et le mode Débordement se comporteront comme le mode Normal, sans le fin liseré de débordement final."
 L["Max Overflow"] = "Dépassement maximum"
 L["Max Wraps"] = "Retour à la ligne maximale"
 L["Maximum Duration"] = "Durée maximum"
@@ -1469,7 +1471,7 @@ L["Percent"] = "Pourcentage"
 L["Percentage amount for horizontal overlap of Nameplates."] =
 	"Pourcentage de chevauchement horizontal des barres de nom."
 L["Percentage amount for vertical overlap of Nameplates."] = "Pourcentage de chevauchement vertical des barres de nom."
-L["Trading Post"] = true
+L["Trading Post"] = "Comptoir"
 L["Personal"] = "Personnel"
 L["Pet Battle"] = "Combat de mascottes"
 L["Pet Group"] = "Groupe de familiers"
@@ -1528,9 +1530,9 @@ L["Profile imported successfully!"] = "Profil importé avec succès"
 L["Profile Name"] = "Nom du profil"
 L["Profile Specific"] = "Profil spécifique"
 L["Profile"] = "Profil"
-L["Profiles"] = true
+L["Profiles"] = "Profils"
 L["Progress Bar"] = "Barre de progression"
-L["PTR Version"] = true
+L["PTR Version"] = "Version PTR"
 L["Puts coordinates on the world map."] = "Mettre les coordonnées sur la carte du monde"
 L["PvP & Prestige Icon"] = "Icône prestige de PVP"
 L["PvP Classification Indicator"] = "Indicateur de classification JcJ"
@@ -1602,12 +1604,12 @@ L["Replace Name Font"] = "Remplacer la police des noms"
 L["Replace Nameplate Fonts"] = "Remplacer les polices des barres de nom"
 L["Replace Text on Me"] = "Remplacer le texte sur moi"
 L["Replaces the default Blizzard fonts on various panels and frames with the fonts chosen in the Media section of the ElvUI Options. NOTE: Any font that inherits from the fonts ElvUI usually replaces will be affected as well if you disable this. Enabled by default."] =
-	true
+	"Remplace les polices Blizzard par défaut sur divers panneaux et cadres par les polices choisies dans la section Médias des options d'ElvUI. NOTE : Toute police qui hérite des polices qu'ElvUI remplace habituellement sera également affectée si vous désactivez ceci. Activé par défaut."
 L["Replaces the font on Blizzard Nameplates."] = "Remplace la police sur les barres de nom de Blizzard."
 L["Replaces the StatusBar texture setting on Unitframes and Nameplates with the primary texture."] =
 	"Remplace la texture de la barre d'état sur les cadres d'unité et les noms par la texture principale."
 L["Reposition Window"] = "Repositionner la fenêtre"
-L["Reputation Alpha"] = true
+L["Reputation Alpha"] = "Transparence de la réputation"
 L["Reputation"] = "Réputation"
 L["Require All"] = "Requiert tous"
 L["Require holding the Alt key down to move cursor or cycle through messages in the editbox."] =
@@ -1873,7 +1875,7 @@ L["Target Marker Icon"] = "Icône de marqueur de cible"
 L["Target On Mouse-Down"] = "Cibler lors d'un appui sur le clic (et non pas en relachant le clic)"
 L["Target Reticle"] = "Réticule de cible"
 L["Target units on mouse down rather than mouse up.\n|cffff3333Note:|r If Clique is enabled, this option only effects ElvUI frames if they are not blacklisted in Clique."] =
-	true
+	"Cibler les unités au clic (bouton enfoncé) plutôt qu'au relâchement.\n|cffff3333Note :|r Si Clique est activé, cette option n'affecte les cadres ElvUI que s'ils ne sont pas dans la liste noire de Clique."
 L["Target"] = "Cible"
 L["Target/Low Health Indicator"] = "Indicateur de la cible"
 L["Targeted Glow"] = "Lueur de ciblage"
@@ -2009,7 +2011,7 @@ L["Threshold before the icon will fade out and back in. Set to -1 to disable."] 
 	"Seuil avant que l'icône ne s'estompe et réapparaisse. Mettre -1 pour désactiver."
 L["Threshold Colors"] = "Couleurs de seuil"
 L["Ticket Tracker"] = "Suivi des tickets"
-L["Ticks"] = true
+L["Ticks"] = "Graduations"
 L["Time Indicator Colors"] = "Couleurs des indicateurs de temps"
 L["Time Options"] = "Options de temps"
 L["Time Remaining"] = "Temps restant"

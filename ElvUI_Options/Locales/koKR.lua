@@ -4,11 +4,11 @@ local L = ElvUI[1].Libs.ACL:NewLocale("ElvUI", "koKR")
 L["ALT"] = true
 L["CTRL"] = true
 L["SHIFT"] = true
-L["NONE"] = true
-L["GROUP"] = true
+L["NONE"] = "없음"
+L["GROUP"] = "그룹"
 
 -----------  Position  -----------
-L["CENTER"] = true
+L["CENTER"] = "가운데"
 L["BOTTOM"] = "아래쪽"
 L["BOTTOMLEFT"] = "아래 왼쪽"
 L["BOTTOMRIGHT"] = "아래 오른쪽"
@@ -26,17 +26,20 @@ L["MEDIUM"] = true
 L["TOOLTIP"] = true
 ----------------------------------
 
-L["BigWigs Spell Rename"] = true
+L["BigWigs Spell Rename"] = "BigWigs 주문 이름 변경"
 L["Allows BigWigs to rename specific encounter spells on your castbar to something better to understand.\nExample: 'Impaling Eruption' becomes 'Frontal' and 'Twilight Massacre' becomes 'Dash'."] =
-	true
-L["Add Aura ID"] = true
-L["Remove Aura"] = true
-L["Select Aura"] = true
-L["Add an aura to the filter. Aura IDs can be acquired using the tooltip to find the correct ID."] = true
-L["Primary Unit"] = true
-L["Requires the unit to be the primary target to display."] = true
-L["Pet Specific"] = true
-L["Use the profile specific filter Aura Indicator (Pet) instead of the global filter Aura Indicator."] = true
+	"BigWigs가 시전바에 표시되는 특정 조우 주문의 이름을 더 이해하기 쉬운 것으로 바꿀 수 있게 합니다.\n예시: 'Impaling Eruption'이 'Frontal'로, 'Twilight Massacre'가 'Dash'로 바뀝니다."
+L["Add Aura ID"] = "오라 ID 추가"
+L["Remove Aura"] = "오라 제거"
+L["Select Aura"] = "오라 선택"
+L["Add an aura to the filter. Aura IDs can be acquired using the tooltip to find the correct ID."] =
+	"필터에 오라를 추가합니다. 오라 ID는 툴팁을 통해 확인할 수 있습니다."
+L["Primary Unit"] = "주 대상"
+L["Requires the unit to be the primary target to display."] =
+	"해당 유닛이 주 대상일 경우에만 표시됩니다."
+L["Pet Specific"] = "소환수 전용"
+L["Use the profile specific filter Aura Indicator (Pet) instead of the global filter Aura Indicator."] =
+	"전역 필터 Aura Indicator 대신 프로필 전용 필터 Aura Indicator (소환수)를 사용합니다."
 L["%s and then %s"] = "%s 이후 %s"
 L["24-Hour Time"] = "24시제로 표시"
 L["2D"] = "이미지"
@@ -57,13 +60,14 @@ L["Add / Remove"] = "추가/삭제"
 L["Add a Item Name or ID to the list."] = "목록에 아이템 이름이나 ID를 추가합니다."
 L["Add a Name or NPC ID to the list."] = "목록에 NPC 이름이나 ID를 추가합니다."
 L["Add a spell to the filter."] = "필터에 주문을 추가합니다."
-L["Add an Item by dragging it, shift-clicking, or entering the Item ID onto this field."] = true
+L["Add an Item by dragging it, shift-clicking, or entering the Item ID onto this field."] =
+	"아이템을 드래그하거나 Shift-클릭하거나 ID를 입력하여 이 필드에 추가합니다."
 L["Add Currency by ID"] = "화폐 ID 추가"
 L["Add Currency"] = "화페 추가"
 L["Add Current"] = "현재 상태 추가"
 L["Add Instance ID"] = "던전 ID 추가"
 L["Add Item Name or ID"] = "아이템 이름/ID 추가"
-L["Add Item"] = true
+L["Add Item"] = "아이템 추가"
 L["Add Map ID"] = "지도 ID 추가"
 L["Add Name or NPC ID"] = "이름 또는 NPC ID 추가"
 L["Add Regular Filter"] = "일반 필터 추가"
@@ -299,7 +303,7 @@ L["By Type"] = "종류에 따라서"
 L["Calendar Frame"] = "달력 프레임"
 L["Calendar"] = "달력"
 L["Camera Distance Scale"] = "3d 모델 크기"
-L["Camera Spin"] = true
+L["Camera Spin"] = "카메라 회전"
 L["Camera"] = "시야"
 L["Can Attack"] = "공격 가능"
 L["Can Not Attack"] = "공격 불가"
@@ -314,7 +318,8 @@ L["CHALLENGE_MODE"] = "도전 모드"
 L["Change settings for the display of the location text that is on the minimap."] =
 	"미니맵 상단에 있는 지역명의 표시방법을 결정합니다."
 L["Change the alpha level of the frame."] = "해당 프레임의 투명한 수준을 결정합니다."
-L["Change the scale of the Game Menu which shows up when you press ESC."] = true
+L["Change the scale of the Game Menu which shows up when you press ESC."] =
+	"ESC 키를 눌렀을 때 표시되는 게임 메뉴의 크기를 조절합니다."
 L["Change the width and controls how big of an area on the screen will accept clicks to target unit."] =
 	"너비를 변경하여 목표대상에 클릭을 할수있는 영역의 제어합니다."
 L["Changelog"] = "Elvui 포럼"
@@ -491,7 +496,7 @@ L["Count Text"] = "카운트 문자"
 L["Covenant Preview"] = "퀘스트 미리보기"
 L["Covenant Renown"] = "성약의 단 영예"
 L["Covenant Sanctum"] = "성약의 단 성소"
-L["Craft"] = true
+L["Craft"] = "제작"
 L["Create a filter, once created a filter can be set inside the buffs/debuffs section of each unit."] =
 	"각 유닛의 강화/약화효과에 필터를 생성합니다."
 L["Create Custom Text"] = "사용자 지정 문자 생성"
@@ -720,17 +725,17 @@ L["ENERGY"] = "기력"
 L["Energy/Mana Regen Tick"] = "기력/마나 재생 틱"
 L["Engineering"] = "기계공학"
 L["Enhanced PVP Messages"] = "향상된 PVP 메시지"
-L["Equipped Item"] = true
+L["Equipped Item"] = "착용 중인 아이템"
 L["Equipped"] = "착용"
 L["Error decoding data. Import string may be corrupted!"] =
 	"데이터 해독에 오류. 문자열 가져오기가 오염된 것 같습니다!"
 L["Error exporting profile!"] = "프로필 내보내기 오류!"
-L["Quest Progress and Error Text"] = true
+L["Quest Progress and Error Text"] = "퀘스트 진행 및 오류 메시지"
 L["Event Log"] = "이벤트 로그"
 L["Exclude Name"] = "제외할 이름"
 L["Excluded names will not be class colored."] = "제외할 이름은 직업 색상으로 표시하지 않습니다."
 L["Excluded Names"] = "제외된 이름 목록"
-L["Expansion Button"] = true
+L["Expansion Button"] = "확장 버튼"
 L["Expansion Landing Page"] = "확장된 렌딩 페이지"
 L["Expiring"] = "초읽기 색상"
 L["Export Now"] = "지금 내보내기"
@@ -818,13 +823,13 @@ L["FRIENDLY_PLAYER"] = "우호적인 플레이어"
 L["Friends"] = "친구"
 L["From Me"] = "나에게"
 L["From Pet"] = "팻에게"
-L["Full Bar"] = true
+L["Full Bar"] = "전체 바"
 L["Full Overlay"] = "전체 채움"
 L["Full Time"] = "총 시간"
 L["Full"] = "전체"
 L["FURY"] = "격노"
 L["Gaining Threat"] = "어그로 획득"
-L["Game Menu"] = true
+L["Game Menu"] = "게임 메뉴"
 L["GARRISON_LOCATION_TOOLTIP"] = "주둔지"
 L["Gems"] = "보석"
 L["Gender"] = "성별"
@@ -863,7 +868,7 @@ L["Guild Control Frame"] = "길드 관리 창"
 L["Guild Ranks"] = "길드 내 등급 표시"
 L["Guild Registrar"] = "길드 등록"
 L["Guild"] = "길드"
-L["Half Bar"] = true
+L["Half Bar"] = "반쪽 바"
 L["Happy"] = "행복함"
 L["Has Aura"] = "오라가 있음"
 L["Has No Stealable"] = "훔칠 수 없음"
@@ -890,7 +895,7 @@ L["Help Frame"] = "도움말 프레임"
 L["Help"] = "도움말"
 L["Herbalism"] = "약초 채집"
 L["Here you can add items that you want to be excluded from sorting. To remove an item just click on its name in the list."] =
-	true
+	"정렬에서 제외할 아이템을 여기에 추가할 수 있습니다. 아이템을 제거하려면 목록에서 해당 이름을 클릭하세요."
 L["HH:MM Threshold"] = "시:분 표시 변경 값(분)"
 L["HH:MM"] = "시:분"
 L["Hide At Max Level"] = "만렙시 숨김"
@@ -904,7 +909,7 @@ L["Hide Channels"] = "체널 숨김"
 L["Hide Chat Toggles"] = "채팅창 숨김[<][>] 버튼"
 L["Hide Copy Button"] = "복사 버튼 숨기기"
 L["Hide Delay"] = "숨김 지연"
-L["Hide Quest Progress and Error Text"] = true
+L["Hide Quest Progress and Error Text"] = "퀘스트 진행 및 오류 메시지 숨기기"
 L["Hide Frame"] = "프레임 숨김"
 L["Hide Icon"] = "아이콘 숨김"
 L["Hide In Combat"] = "전투시 숨김"
@@ -923,7 +928,8 @@ L["Hide Zone Text"] = "지역명 숨김"
 L["Hide"] = "숨김"
 L["Hides the bling animation on buttons at the end of the global cooldown."] =
 	"재사용 대기 시간 만료시 버튼이 깜빡이는 것을 숨깁니다."
-L["Hides the yellow quest progress text and red error text at the top of the screen while in combat."] = true
+L["Hides the yellow quest progress text and red error text at the top of the screen while in combat."] =
+	"전투 중 화면 상단의 노란색 퀘스트 진행 문구와 빨간색 오류 문구를 숨깁니다."
 L["High"] = "높음"
 L["Highlight Color Style"] = "색상 스타일 강조"
 L["History Size"] = "채팅기록 기록 크기(줄)"
@@ -1101,8 +1107,8 @@ L["If you unlock actionbars then trying to move a spell might instantly cast it 
 	"[단축키를 누를때 실행]을 켜고(on) 해당 옵션을 끄기(off) 한후 단축바 아이이콘 이동하면 스킬이 발동됩니다."
 L["Ignore mouse events."] =
 	"아이콘이 마우스에 전혀 반응하지 않도록 합니다. 클릭 입력도 아이콘을 통과하게 됩니다."
-L["Ignored Items (Global)"] = true
-L["Ignored Items (Profile)"] = true
+L["Ignored Items (Global)"] = "제외된 아이템 (전체)"
+L["Ignored Items (Profile)"] = "제외된 아이템 (프로필)"
 L["Import Now"] = "지금 가져오기"
 L["Import Profile"] = "프로필 가져오기"
 L["Import"] = "입력"
@@ -1215,13 +1221,13 @@ L["Left Position"] = "왼쪽 위치"
 L["Left Shift"] = "왼쪽 Shift"
 L["Left to Right"] = "왼쪽에서 오른쪽으로"
 L["Left"] = "왼쪽"
-L["Left"] = true
+L["Left"] = "왼쪽"
 L["Level"] = "레벨"
 L["LEVEL_BOSS"] = "대상이 BOSS인 경우 -1로 설정하고 비활성화하려면 0으로 설정하십시오."
 L["LF Guild Frame"] = "길드 찾기 창"
 L["LFG Queue"] = "파티찾기 표시기"
 L["LFG_TITLE"] = "파티 찾기"
-L["Library Dropdown"] = true
+L["Library Dropdown"] = "라이브러리 드롭다운"
 L["Limit the number of rows or columns."] =
 	"표시줄 수를 제한해 최종적으로 보여줄 오라의 총 개수를 제한합니다."
 L["Lines"] = "선"
@@ -1298,7 +1304,7 @@ L["Max Overflow"] = "오버힐 보기"
 L["Max Wraps"] = "표시줄 최대 수"
 L["Maximum Duration"] = "지속시간 제한"
 L["Maximum Level"] = "최대 레벨"
-L["Maximum tick rate allowed for tag updates per second."] = true
+L["Maximum tick rate allowed for tag updates per second."] = "초당 태그 업데이트 허용 최대 틱 속도"
 L["Maximum Time Left"] = "현재 남은 시간"
 L["Media"] = "미디어"
 L["Merchant Frame"] = "상인 창"
@@ -1370,7 +1376,7 @@ L["New Item Glow"] = "새로운 아이템 발광"
 L["New Panel"] = "새로운 패널만들기"
 L["No Alert In Combat"] = "전투 중 알리지 않기"
 L["No Duration"] = "영구버프 바 숨김"
-L["No Icon"] = true
+L["No Icon"] = "아이콘 없음"
 L["No Label"] = "라벨 없음"
 L["No NPC Title"] = "NPC 제목 없음"
 L["No Sorting"] = "구분 없음"
@@ -1429,8 +1435,8 @@ L["Offset of the powerbar to the healthbar, set to 0 to disable."] =
 	"디자인 설정을 무시하고 자원바를 생명력바 뒤로 겹친 후, 드러남 정도를 결정합니다.\n\n0으로 설정하면 겹치지 않고 디자인 설정대로 배치합니다."
 L["Offset"] = "생명력바와 겹쳐 표시"
 L["On Cooldown"] = "재사용 대기시간 켜기"
-L["On Me"] = true
-L["On Pet"] = true
+L["On Me"] = "나에게"
+L["On Pet"] = "소환수에게"
 L["On screen positions for different elements."] = "다른 요소에 대한 화면 위치."
 L["Only Free Slots"] = "남은 공간만"
 L["Only highlight the aura that originated from you and not others."] =
@@ -1496,7 +1502,7 @@ L["Per Row"] = "한 줄에 표시할 아이콘 수"
 L["Percent"] = "%"
 L["Percentage amount for horizontal overlap of Nameplates."] = "이름표의 수평 겹침 비율을 나타냅니다."
 L["Percentage amount for vertical overlap of Nameplates."] = "이름표의 수직 겹침 비율을 나타냅니다."
-L["Trading Post"] = true
+L["Trading Post"] = "교역소"
 L["Personal"] = "개인의"
 L["Pet Battle"] = "애완동물대전 관련"
 L["Pet Experience"] = "팻 경험치"
@@ -1889,7 +1895,7 @@ L["Tab Panels"] = "패널 탭 설정"
 L["Tab Selector"] = "창이름 탭 선택"
 L["Tabard Frame"] = "휘장 프레임"
 L["Table"] = "테이블"
-L["Tag Update Rate"] = true
+L["Tag Update Rate"] = "태그 업데이트 주기"
 L["Tagged NPC"] = "선점된 유닛"
 L["TALENTS"] = "특성"
 L["Talking Head Backdrop"] = "말머리 배경"
@@ -1908,7 +1914,7 @@ L["Target Indicator Color"] = "타겟 지정 색상"
 L["Target Info"] = "대상선택 정보"
 L["Target Marker Icon"] = "대상 아이콘 저정"
 L["Target On Mouse-Down"] = "마우스를 누를 때 작동"
-L["Target Reticle"] = true
+L["Target Reticle"] = "대상 표식"
 L["Target units on mouse down rather than mouse up.\n|cffff3333Note:|r If Clique is enabled, this option only effects ElvUI frames if they are not blacklisted in Clique."] =
 	"마우스 뗄 때가 아닌, 마우스 누를 때 대상 유닛을 지정합니다.\n|cffff3333참고:|r Clique가 활성화된 경우 이 옵션은 ElvUI 프레임이 Clique에서 블랙리스트에 포함되지 않은 경우에만 영향을 미칩니다."
 L["Target"] = "대상"
@@ -2071,7 +2077,7 @@ L["Toggle Anchors"] = "프레임 이동 모드"
 L["Toggle Off While In Combat"] = "전투 중 비활성화"
 L["Toggle On While In Combat"] = "전투 중 활성화"
 L["Toggle showing of the left and right chat panels."] = "패널의 배경 표시 여부를 결정합니다."
-L["Toggle the camera spin on the AFK screen."] = true
+L["Toggle the camera spin on the AFK screen."] = "자리 비움 화면의 카메라 회전을 켜거나 끕니다."
 L["Toggle the chat tab panel backdrop."] = "패널 상단에 위치한 탭 부분의 표시 여부를 결정합니다."
 L["Tooltip Body"] = "툴팁 설명 본문"
 L["Tooltip Header"] = "툴팁 제목"
@@ -2218,7 +2224,7 @@ L["Whisper"] = "귓속말"
 L["Whitelist"] = "화이트리스트"
 L["Width Multiplier"] = "배경 가로길이 배율"
 L["Width"] = "가로 길이"
-L["Wiki:"] = true
+L["Wiki:"] = "위키:"
 L["Will attempt to sell another item in set interval after previous one was sold."] =
 	"잡동산이 아이템이 판매될때 아이탬간의 시간차를 설정합니다."
 L["Will display mana when main power is:"] = "기본 에너지가 다음과 같을 때 마나를 표시합니다.:"
@@ -2285,17 +2291,17 @@ L["blockNoDuration"] = "[Block] No Duration"
 L["blockNonPersonal"] = "[Block] Non Personal"
 L["blockNotDispellable"] = "[Block] Not Dispellable"
 L["blockMount"] = "[Block] Mount"
-L["Mount"] = true
+L["Mount"] = "탈것"
 L["CastByNPC"] = "Cast By NPC"
 L["CastByPlayers"] = "Cast By Players"
 L["CastByUnit"] = "Cast By Unit"
-L["Dispellable"] = true
+L["Dispellable"] = "해제 가능"
 L["MyPet"] = "My Pet"
 L["nonPersonal"] = "Non Personal"
 L["notCastByUnit"] = "Not Cast By Unit"
 L["notDispellable"] = "Not Dispellable"
 L["OtherPet"] = "Other Pet"
-L["Personal"] = true
+L["Personal"] = "개인"
 ----------------------------------
 
 L["ACTIONBARS_DESC"] = "행동단축바의 설정을 변경합니다."
@@ -2335,7 +2341,7 @@ L["^A blacklist filter is only effective against filters that come after it in t
 	"|cffFF0000!!!|r^블랙리스트 필터는 우선 순위 목록에서 그 뒤에 오는 필터에 대해서만 적용됩니다. 앞선 필터에서 아무것도 작용도 하지안습니다.|r"
 L["*Boss:|r ^Auras (debuffs only?) cast by a boss unit.|r"] =
 	"*Boss:|r ^보스 유닛이 오라(디버프 만?)를 보여줍니다.|r"
-L["*Mount:|r ^Auras which are classified as mounts.|r"] = true
+L["*Mount:|r ^Auras which are classified as mounts.|r"] = "*탈것:|r ^탈것으로 분류되는 오라입니다.|r"
 L["*Personal:|r ^Auras cast by yourself.|r"] =
 	"*Personal|r-^본인의주문: 자신이 시전한 오라(버프/디버프)를 보여줍니다.|r"
 L["*nonPersonal:|r ^Auras cast by anyone other than yourself.|r"] =
