@@ -2,7 +2,7 @@
 local E = unpack(ElvUI)
 local L = E.Libs.ACL:NewLocale("ElvUI", "trTR")
 
-L["Restrict Pings"] = true
+L["Restrict Pings"] = "Pingleri Kisitla"
 L["Player"] = "Oyuncu"
 L["Small"] = "Kucuk"
 L["Medium"] = "Orta"
@@ -14,11 +14,13 @@ L["ELVUI_DESC"] = ("*ElvUI|r |cFFffffffWorld of Warcraft icin eksiksiz bir Kulla
 	E.InfoColor
 )
 L["UPDATE_REQUEST"] = "There seems to be an issue with your installation. Please reinstall ElvUI."
-L[" |cff00ff00bound to |r"] = true
+L[" |cff00ff00bound to |r"] = " |cff00ff00su tusa bagli: |r"
 L["%s frame has a conflicting anchor point. Forcing the Buffs to be attached to the main unitframe."] =
 	"%s cercevesinin cakisan bir baglanti noktasi var. Guclendirmeler'i Ana cerceveye baglamaya zorluyor.'"
-L["%s is attempting to share the Private Profile (%s) with you. Would you like to accept the request?"] = true
-L["%s is attempting to share the Global Profile with you. Would you like to accept the request?"] = true
+L["%s is attempting to share the Private Profile (%s) with you. Would you like to accept the request?"] =
+	"%s, Ozel Profili (%s) sizinle paylasmaya calisiyor. Istegi kabul etmek ister misiniz?"
+L["%s is attempting to share the Global Profile with you. Would you like to accept the request?"] =
+	"%s, Genel Profili sizinle paylasmaya calisiyor. Istegi kabul etmek ister misiniz?"
 L["%s is attempting to share the Profile (%s) with you. Would you like to accept the request?"] =
 	"%s Sizinle (%s) Profilini paylasmak istiyor. istegi kabul etmek ister misiniz?"
 L["(Ctrl & Shift Click) Toggle CPU Profiling"] = "CPU Monitorunu Aktiflestirmek icin Ctrl & Shift Click'e Basin'"
@@ -126,7 +128,7 @@ L["Debuffs"] = "Zayiflaticilar"
 L["Deficit:"] = "Acik:"
 L["Delete gray items?"] = "Gri ogeler silinsin mi?"
 L["Deposit Reagents"] = "Sarf Malzemelerini Koy"
-L["Deposit Warbound Items"] = true
+L["Deposit Warbound Items"] = "Warbound Ogeleri Yatir"
 L["Disable Warning"] = "Uyariyi Devre Disi Birak"
 L["Disable"] = "Devre Disi Birak"
 L["Disabled"] = "Devre Disi Birakildi"
@@ -142,13 +144,14 @@ L["Download"] = "Indir"
 L["DPS"] = true
 L["Durability Frame"] = "Dayaniklilik Cercevesi"
 L["Earned:"] = "Kazanilan:"
-L["Elite"] = true
+L["Elite"] = "Elit"
 L["ElvUI has a dual spec feature which allows you to load different profiles based on your current spec on the fly. You can enable it in the profiles tab."] =
 	"ElvUI, aninda mevcut spesifikasyonunuza gore farkli profiller yuklemenize izin veren ikili bir ozellik ozelligine sahiptir. Bunu profiller sekmesinde etkinlestirebilirsiniz."
 L["ElvUI Installation"] = "ElvUI Kurulumu"
 L["ElvUI is five or more revisions out of date. You can download the newest version from tukui.org."] =
 	"ElvUI bes veya daha fazla revizyon guncel degil. En yeni surumu tukui.org adresinden indirebilirsiniz."
-L["ElvUI is out of date. You can download the newest version from tukui.org."] = true
+L["ElvUI is out of date. You can download the newest version from tukui.org."] =
+	"ElvUI guncel degil. En yeni surumu tukui.org adresinden indirebilirsiniz."
 L["ElvUI Plugin Installation"] = "ElvUI Eklenti Kurulumu"
 L["Status"] = "Durumu"
 L["ElvUI Version:"] = "ElvUI Surumu:"
@@ -156,16 +159,18 @@ L["Error resetting UnitFrame."] = "Birim cercevesi sifirlanirken hata olustu."
 L["EventToastWidget"] = "OlayikazBileseni"
 L["Experience Bar"] = "Deneyim Cubugu"
 L["Experience"] = "Deneyim"
-L["Download complete from %s, would you like to apply changes now?"] = true
+L["Download complete from %s, would you like to apply changes now?"] =
+	"%s kaynagindan indirme tamamlandi, degisiklikleri simdi uygulamak ister misiniz?"
 L["Finished"] = "Tamamlandi"
 L["Fishy Loot"] = "supheli Ganimet"
-L["Focus Aura Bars"] = true
+L["Focus Aura Bars"] = "Odak Aura Cubuklari"
 L["Focus Castbar"] = "Odagin Yetenek Cubugu"
 L["Focus Frame"] = "Odak Cercevesi"
 L["FocusTarget Frame"] = "OdakHedefi Cercevesi"
 L["Frame"] = "Cerceve"
 L["Friends List"] = "Arkadas Listesi"
-L["From time to time you should compare your ElvUI version against the most recent version on our website."] = true
+L["From time to time you should compare your ElvUI version against the most recent version on our website."] =
+	"Zaman zaman ElvUI surumunuzu web sitemizdeki en son surumle karsilastirmalisiniz."
 L["G"] = true
 L["Ghost"] = "Hayalet"
 L["GM Ticket Frame"] = "GM Destek cercevesi"
@@ -173,8 +178,8 @@ L["Gold"] = "Altin"
 L["goldabbrev"] = "|cffffd700g|r"
 L["Grays"] = "Griler"
 L["Grid Size:"] = "Izgara Boyutu"
-L["Heal Power"] = true
-L["Healer"] = true
+L["Heal Power"] = "Iyilestirme Gucu"
+L["Healer"] = "Healer"
 L["Hold Control + Right Click:"] = "CTRL Basili Tut + Sag Tik"
 L["Hold Shift + Drag:"] = "Shift Basili Tut + Surukle"
 L["Hold Shift + Right Click:"] = "Shift Basili Tut + Sag Tik"
@@ -202,18 +207,18 @@ L["Importance: |cffD3CF00Medium|r"] = "onemli: |cFF33FF33Orta|r"
 L["Importance: |cffFF3333High|r"] = "onemli: |cFF33FF33Yuksek|r"
 L["In Combat"] = "Catismada"
 L["In Progress"] = "Devam Etmekte"
-L["Include Reagents"] = true
+L["Include Reagents"] = "Bilesenleri Dahil Et"
 L["INCOMPATIBLE_ADDON"] = "%s, %s ile uyumlu degil.\nLutfen kullanilacak AddOn/modulu secin."
 L["Installation Complete"] = "Yukleme Tamamlandi"
 L["Interrupted %s's |cff71d5ff|Hspell:%d:0|h[%s]|h|r!"] = "%s's |cff71d5ff|Hspell:%d:0|h[%s]|h|r Engellendi!"
 L["Invalid Target"] = "Gecersiz Hedef"
 L["is looking for members"] = "uye ariyor."
 L["It appears one of your AddOns have disabled the AddOn Blizzard_CompactRaidFrames. This can cause errors and other issues. The AddOn will now be re-enabled."] =
-	true
+	"Gorunuse gore AddOn'larinizdan biri Blizzard_CompactRaidFrames AddOn'unu devre disi birakmis. Bu, hatalara ve diger sorunlara neden olabilir. AddOn simdi yeniden etkinlestirilecek."
 L["Item level: %.2f"] = "Esya Seviyesi: %.2f"
 L["Item Level:"] = "Esya Seviyesi:"
 L["joined a group"] = "gruba katildi."
-L["Key"] = true
+L["Key"] = "Tus"
 L["KEY_ALT"] = "A"
 L["KEY_CTRL"] = "C"
 L["KEY_META"] = "M"
@@ -241,8 +246,8 @@ L["Left Click:"] = "Sol Tik:"
 L["Level %d"] = "Seviye %d"
 L["Level"] = "Seviye"
 L["List of installations in queue:"] = "Kuyruktaki kurulumlarin listesi:"
-L["Loadouts"] = true
-L["Location"] = true
+L["Loadouts"] = "Dizilimler"
+L["Location"] = "Konum"
 L["Lock"] = "Kilit"
 L["LOGIN_MSG"] = ("*ElvUI|r surum *%s|r'ye hos geldiniz, oyun ici yapilandirma menusune erismek icin */ec|r yazin. Teknik destege ihtiyaciniz varsa bizi https://www.tukui adresinden ziyaret edebilirsiniz. .org veya Discord'umuza katilin: https://discord.tukui.org"):gsub(
 	"*",
@@ -261,7 +266,7 @@ L["lvl"] = "svy"
 L["MA Frames"] = "MA Cercevesi"
 L["Max Level"] = "Maks. Seviye"
 L["Micro Bar"] = "Mikro Cubuk"
-L["Minimap Cluster"] = true
+L["Minimap Cluster"] = "Mini-harita Kumesi"
 L["Minimap"] = "Mini-harita"
 L["MirrorTimer"] = "EsZamanlayici"
 L["Mission(s) Report:"] = "Gorev Raporu(lari):"
@@ -278,7 +283,7 @@ L["New Profile will create a fresh profile for this character."] =
 	"Yeni Profil, bu karakter icin yeni bir profil olusturacak."
 L["New Profile"] = "Yeni Profil"
 L["No bindings set."] = "Baglama ayarlanmadi."
-L["No gray items to sell."] = true
+L["No gray items to sell."] = "Satilacak gri esya yok."
 L["No Guild"] = "Lonca Yok"
 L["No Loot"] = "Ganimet Yok"
 L["None"] = "Hicbiri"
@@ -298,7 +303,7 @@ L["P"] = true
 L["Paragon"] = true
 L["Party Frames"] = "Parti Cerceveleri"
 L["Pending"] = "Beklemede."
-L["Pet Aura Bars"] = true
+L["Pet Aura Bars"] = "Evcil Hayvan Aura Cubuklari"
 L["Pet Bar"] = "Evcil Hayvan Cubugu"
 L["Pet Castbar"] = "Evcil Hayvan Yetenek Cubugu"
 L["Pet Experience Bar"] = "Evcil Hayvan Deneyim Cubugu"
@@ -306,7 +311,7 @@ L["Pet Experience"] = "Evcil Hayvan Deneyim Cubugu"
 L["Pet Frame"] = "Evcil Hayvan Cercevesi"
 L["PetTarget Frame"] = "EvcilHayvanHedef Cercevesi"
 L["PL"] = true
-L["Player Aura Bars"] = true
+L["Player Aura Bars"] = "Oyuncu Aura Cubuklari"
 L["Player Buffs"] = "Oyuncu Guclendirmeleri"
 L["Player Castbar"] = "Oyuncu Yetenek Cubugu"
 L["Player Debuffs"] = "Oyuncu Zayiflaticilari"
@@ -331,7 +336,7 @@ L["Profit:"] = "Kar:"
 L["Purchase Bags"] = "Canta Satin Al"
 L["Purchase"] = "Satin alma"
 L["Quest Log XP:"] = "Gorev Gunlugu Deneyim Puani:"
-L["Quest Log"] = true
+L["Quest Log"] = "Gorev Gunlugu"
 L["Quest Objective Frame"] = "Gorev Objektif Cercevesi"
 L["Quest Timer Frame"] = "Gorev Zamanlayici Cercevesi"
 L["R"] = true
@@ -374,7 +379,7 @@ L["silverabbrev"] = "|cffc7c7cfs|r"
 L["Sort Bags"] = "Cantalari Sirala"
 L["SP"] = true
 L["Spec"] = "Uzm"
-L["Spell Haste"] = true
+L["Spell Haste"] = "Buyu Haste"
 L["Spell Hit"] = "Buyu Vurusu"
 L["Spell Power"] = "Buyu Gucu"
 L["Spent:"] = "Harcanan:"
@@ -388,7 +393,7 @@ L["Steps"] = "Adimlar"
 L["Sticky Frames"] = "Yapiskan Cerceveler"
 L["System"] = "Sistem"
 L["Talent/Loot Specialization"] = "Yetenek/Ganimet Uzmanligi"
-L["Target Aura Bars"] = true
+L["Target Aura Bars"] = "Hedef Aura Cubuklari"
 L["Target Castbar"] = "Hedef Yetenek Cubugu"
 L["Target Frame"] = "Hedef Cercevesi"
 L["Target Mitigation"] = "Hedef Azaltmasi"
@@ -417,7 +422,7 @@ L["This setting caused a conflicting anchor point, where '%s' would be attached 
 L["This will change the layout of your unitframes and actionbars."] =
 	"Bu, birim cercevelerinizin ve eylem cubuklarinizin duzenini degistirecek."
 L["Threat Bar"] = "Hiddet Cubugu"
-L["Time Alert Frame"] = true
+L["Time Alert Frame"] = "Zaman Uyari Cercevesi"
 L["To list all available ElvUI commands, type in chat /ehelp"] =
 	"Mevcut tum ElvUI komutlarini listelemek icin chat /ehelp yazin"
 L["To quickly move around certain elements of the UI, type /emove"] =
@@ -427,11 +432,11 @@ L["To setup chat colors, chat channels and chat font size, right-click the chat 
 L["Toggle Bags"] = "cantalari Ac/Kapat"
 L["Toggle Chat Frame"] = "Sohbet Cercevesini Ac/Kapat"
 L["Toggle Configuration"] = "Yapilandirmayi Degistir"
-L["Toggle Mover Mode"] = true
+L["Toggle Mover Mode"] = "Tasiyici Modunu Ac/Kapat"
 L["Toggle Volume Stream"] = "Ses Akisini Ac/Kapat"
 L["Tooltip"] = "Ipucu Penceresi"
 L["TopCenterWidget"] = "UstMerkezBileseni"
-L["Torghast Choice Toggle"] = true
+L["Torghast Choice Toggle"] = "Torghast Secim Anahtari"
 L["Total CPU:"] = "Toplam CPU:"
 L["Total: "] = "Toplam: "
 L["Totem Bar"] = "Totem Cubugu"
@@ -484,7 +489,7 @@ L["Your profile was successfully recieved by the player."] = "Profilin oyuncu ta
 L["Zone Ability"] = "Bolge Yetenegi"
 L["|cFFE30000Lua error recieved. You can view the error message when you exit combat."] =
 	"|cFFE30000Lua hatasi alindi. catismadan ciktiginizda hata mesajini goruntuleyebilirsiniz."
-L["|cffFFFFFFControl + Left Click:|r Change Loadout"] = true
+L["|cffFFFFFFControl + Left Click:|r Change Loadout"] = "|cffFFFFFFControl + Sol Tik:|r Dizilimi Degistir"
 L["|cffFFFFFFLeft Click:|r Change Talent Specialization"] = "|cffFFFFFFSol Tik:|r Yetenek Uzmanligini Degistir"
 L["|cFFffffffLeft Click:|r Select Volume Stream"] = "|cFFffffffSol Tik:|r Ses Akisini Seciniz."
 L["|cFFffffffMiddle Click:|r Toggle Mute Master Stream"] = "|cFFffffffOrta Tik:|r Ana Akisi Sessize Al/Kapat"
@@ -519,5 +524,5 @@ L["EHELP_COMMANDS"] = ([=[Tum onemli *ElvUI|r komutlarinin listesi:
  */guildlist|r ^minPlayers|r  -  Dumps the sorted list of guilds from the finder.
  */guildapply|r ^"message"|r  -  Applies to the top 5 new guilds with an optional message.
 ]=]):gsub("*", E.InfoColor):gsub("%^", E.InfoColor2)
-L["New Mail"] = true
-L["No Mail"] = true
+L["New Mail"] = "Yeni Posta"
+L["No Mail"] = "Posta Yok"

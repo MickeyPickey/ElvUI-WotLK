@@ -4,8 +4,8 @@ local L = ElvUI[1].Libs.ACL:NewLocale("ElvUI", "trTR")
 L["ALT"] = true
 L["CTRL"] = true
 L["SHIFT"] = true
-L["NONE"] = true
-L["GROUP"] = true
+L["NONE"] = "Hicbiri"
+L["GROUP"] = "GRUP"
 
 -----------  Position  -----------
 L["CENTER"] = true
@@ -22,26 +22,29 @@ L["BACKGROUND"] = true
 L["DIALOG"] = true
 L["HIGH"] = true
 L["LOW"] = true
-L["MEDIUM"] = true
+L["MEDIUM"] = "Orta"
 L["TOOLTIP"] = true
 ----------------------------------
 
-L["BigWigs Spell Rename"] = true
+L["BigWigs Spell Rename"] = "BigWigs Buyu Yeniden Adlandirma"
 L["Allows BigWigs to rename specific encounter spells on your castbar to something better to understand.\nExample: 'Impaling Eruption' becomes 'Frontal' and 'Twilight Massacre' becomes 'Dash'."] =
-	true
-L["Add Aura ID"] = true
-L["Remove Aura"] = true
-L["Select Aura"] = true
-L["Add an aura to the filter. Aura IDs can be acquired using the tooltip to find the correct ID."] = true
-L["Primary Unit"] = true
-L["Requires the unit to be the primary target to display."] = true
-L["Pet Specific"] = true
-L["Use the profile specific filter Aura Indicator (Pet) instead of the global filter Aura Indicator."] = true
+	"BigWigs'in castbar'inizdaki belirli karsilasma yeteneklerini daha anlasilir bir seye yeniden adlandirmasina izin verir.\nOrnek: 'Impaling Eruption' 'Frontal' olur ve 'Twilight Massacre' 'Dash' olur."
+L["Add Aura ID"] = "Aura Kimligi Ekle"
+L["Remove Aura"] = "Aurayi Kaldir"
+L["Select Aura"] = "Aura Sec"
+L["Add an aura to the filter. Aura IDs can be acquired using the tooltip to find the correct ID."] =
+	"Filtreye bir aura ekleyin. Aura Kimlikleri, dogru kimligi bulmak icin ipucu penceresi kullanilarak elde edilebilir."
+L["Primary Unit"] = "Birincil Birim"
+L["Requires the unit to be the primary target to display."] =
+	"Goruntulemek icin birimin birincil hedef olmasini gerektirir."
+L["Pet Specific"] = "Evcil Hayvana Ozel"
+L["Use the profile specific filter Aura Indicator (Pet) instead of the global filter Aura Indicator."] =
+	"Genel filtre Aura Gostergeleri yerine profile ozel filtre Aura Gostergeleri (Evcil Hayvan) kullanin."
 L["%s and then %s"] = "%s ve ardından %s"
 L["24-Hour Time"] = "24 Saatlik Zaman"
 L["2D"] = true
 L["3D"] = true
-L["Abbreviate Name"] = true
+L["Abbreviate Name"] = "Ismi Kisalt"
 L["Above Chat (Inside)"] = "Sohbetin Ustunde (Iceride)"
 L["Above Chat"] = "Sohbetin Ustunde"
 L["Above"] = "Ustunde"
@@ -57,13 +60,14 @@ L["Add / Remove"] = "Ekle / Kaldir"
 L["Add a Item Name or ID to the list."] = "Listeye bir Oge Ismi veya Kimligi ekleyin."
 L["Add a Name or NPC ID to the list."] = "Listeye bir Isim veya NPC Kimligi ekleyin."
 L["Add a spell to the filter."] = "Filtreye bir buyu ekle."
-L["Add an Item by dragging it, shift-clicking, or entering the Item ID onto this field."] = true
+L["Add an Item by dragging it, shift-clicking, or entering the Item ID onto this field."] =
+	"Bir Ogeyi surukleyerek, shift-tiklayarak veya Oge Kimligini bu alana girerek ekleyin."
 L["Add Currency by ID"] = "Kimlige gore Para Birimi Ekle"
 L["Add Currency"] = "Para Birimi Ekle"
 L["Add Current"] = "Mevcut Ekle"
 L["Add Instance ID"] = "Ornek Kimligi Ekle"
 L["Add Item Name or ID"] = "Oge Ismi veya Kimligi Ekle"
-L["Add Item"] = true
+L["Add Item"] = "Oge Ekle"
 L["Add Map ID"] = "Harita Kimligi Ekle"
 L["Add Name or NPC ID"] = "Isim veya NPC Kimligi Ekle"
 L["Add Regular Filter"] = "Normal Filtre Ekle"
@@ -71,7 +75,7 @@ L["Add Special Filter"] = "Ozel Filtre Ekle"
 L["Add Spell ID or Name"] = "Buyu Kimligi veya Isim Ekle"
 L["Add SpellID"] = "Buyu Kimligi Ekle"
 L["Add Subzone Name"] = "Alt Bolge Ismi Ekle"
-L["Add Texture"] = true
+L["Add Texture"] = "Doku Ekle"
 L["Add Zone Name"] = "Bolge Ismi Ekle"
 L["Add"] = "Ekle"
 L["Added Instance ID: %s"] = "Ornek Kimligi Eklendi: %s"
@@ -87,7 +91,8 @@ L["Adds an arrow infront of the chat lines to copy the entire line."] =
 	"Tum satiri kopyalamak icin sohbet satirlarinin onune bir ok ekler."
 L["Adjust the height of your left chat panel."] = "Sol sohbet panelinizin yuksekligini ayarlayin."
 L["Adjust the height of your right chat panel."] = "Sag sohbet panelinizin yuksekligini ayarlayin."
-L["Adjust the scale of the minimap and also the pins. Eg: Quests, Resource nodes, Group members"] = true
+L["Adjust the scale of the minimap and also the pins. Eg: Quests, Resource nodes, Group members"] =
+	"Mini-haritanin ve ayrica isaretcilerin olcegini ayarlayin. Orn: Gorevler, Kaynak dugumleri, Grup uyeleri"
 L["Adjust the size of the minimap."] = "Mini haritanin boyutunu ayarlayin."
 L["Adjust the width of the bag frame."] = "Canta cercevesinin genisligini ayarlayin."
 L["Adjust the width of the bank frame."] = "Banka cercevesinin genisligini ayarlayin."
@@ -96,7 +101,7 @@ L["Adjust the width of your right chat panel."] = "Sag sohbet panelinizin genisl
 L["ADVENTURE_MAP_TITLE"] = "Gozetleme Haritasi"
 L["Alert Frames"] = "Uyari Cerceveleri"
 L["Alerts"] = "Uyarilar"
-L["Alive"] = true
+L["Alive"] = "Canli"
 L["Alliance"] = "Alliance"
 L["Allied Races"] = "Ittifak Irklar"
 L["Allow Masque to handle the skinning of this element."] = "Masque'in bu elementin dis gorunusunu islemesine izin ver."
@@ -113,14 +118,14 @@ L["ALT_KEY_TEXT"] = "ALT"
 L["Always Display"] = "Her Zaman Goster"
 L["Always Show Player"] = "Her Zaman Oyuncuyu Goster"
 L["Always Show Realm"] = "Daima Diyarı Goster"
-L["Always Split Professions"] = true
+L["Always Split Professions"] = "Meslekleri Her Zaman Ayir"
 L["Anchor Point"] = "Dayanak Noktasi"
 L["Anchor"] = "Capa"
-L["Anima Diversion"] = true
+L["Anima Diversion"] = "Anima Yonlendirmesi"
 L["Announce Interrupts"] = "Kesintileri Bildir"
 L["Announce when you interrupt a spell to the specified chat channel."] =
 	"Belirtilen sohbet kanalina bir buyuyu boldugunuzde duyurun."
-L["Another Players Pet"] = true
+L["Another Players Pet"] = "Baska Bir Oyuncunun Evcil Hayvani"
 L["Any"] = "Hic"
 L["Applies the font and font size settings throughout the entire user interface. Note: Some font size settings will be skipped due to them having a smaller font size by default."] =
 	"Yazi tipi ve yazi tipi boyutu ayarlarini tum kullanici arayuzune uygular. Not: Varsayilan olarak daha kucuk yazi tipi boyutuna sahip olduklari icin bazi yazi tipi boyutu ayarlari atlanacaktir."
@@ -153,7 +158,7 @@ L["Are you sure you want to reset Tooltip settings?"] =
 	"Ipucu cercevesi ayarlarini sifirlamak istediginizden emin misiniz?"
 L["Are you sure you want to reset UnitFrames settings?"] =
 	"Birim cerceveleri ayarlarini sifirlamak istediginizden emin misiniz?"
-L["Arena Registrar"] = true
+L["Arena Registrar"] = "Arena Kayit Gorevlisi"
 L["Arrow Scale"] = "Ok Olcegi"
 L["Arrow Spacing"] = "Ok Araligi"
 L["Arrow Texture"] = "Ok Dokusu"
@@ -173,12 +178,12 @@ L["Attempts to center UI elements in a 16:9 format for ultrawide monitors"] =
 L["Auction House"] = "Muzayede evi"
 L["AUCTIONS"] = "Ihaleler"
 L["Aura Filters"] = "Aura Filtreleri"
-L["Aura Highlight"] = true
+L["Aura Highlight"] = "Aura Vurgusu"
 L["Aura Indicator"] = "Aura Gostergeleri"
 L["Auto Add New Spells"] = "Yeni Buyuleri Otomatik Ekle"
 L["Auto Hide"] = "Otomatik Gizleme"
 L["Auto Repair"] = "Otomatik Tamir Et"
-L["Auto Self Cast"] = true
+L["Auto Self Cast"] = "Otomatik Kendine Buyu"
 L["Auto Toggle"] = "Otomatik Ac / Kapat"
 L["Auto Track Reputation"] = "Itibari Oto-Takip Et"
 L["Auto-Close Pet Battle Log"] = "Otomatik Kapat Evcil Hayvan Savas Gunlugu"
@@ -196,7 +201,7 @@ L["Automatically vendor gray items when visiting a vendor."] =
 	"Bir saticiyi ziyaret ederken gri ogeleri otomatik olarak sat."
 L["Automation"] = "Otomasyon"
 L["Available Tags"] = "Kullanilabilir Etiketler"
-L["Azerite Essence"] = true
+L["Azerite Essence"] = "Azerite Ozu"
 L["Azerite"] = "Azerite"
 L["AZERITE_RESPEC_TITLE"] = "Azerite Reforger"
 L["Backdrop color of transparent frames"] = "Seffaf cercevelerin arkaplan rengi"
@@ -211,7 +216,7 @@ L["Backpack Only"] = "Sadece Sirt cantasi"
 L["Bad Color"] = "Tehdit Rengi"
 L["Bad Scale"] = "Tehdit Olcegi"
 L["Bad Transition Color"] = "Tehdit Gecis Rengi"
-L["Bad Transition"] = true
+L["Bad Transition"] = "Kotu Gecis"
 L["Bad"] = "Tehdit"
 L["Bag %d"] = "Canta %d"
 L["Bag Assignment"] = "Canta Atama"
@@ -229,16 +234,17 @@ L["BALANCE_ENERGY_LUNAR"] = "Lunar Energy"
 L["BALANCE_ENERGY_SOLAR"] = "Solar Energy"
 L["Bar %s is used for stance or forms.\nYou will have to adjust paging to use this bar.\nAre you sure?"] =
 	"%s cubugu durus veya formlar icin kullanilir.\nBu cubugu kullanmak icin sayfalamayi ayarlamaniz gerekecek.\nEmin misiniz?"
-L["Bar %s is used for stance or forms.\nYou will have to adjust paging to use this bar.\nAre you sure?"] = true
+L["Bar %s is used for stance or forms.\nYou will have to adjust paging to use this bar.\nAre you sure?"] =
+	"%s Cubugu durus veya sekiller icin kullanilir.\nBu cubugu kullanmak icin sayfalamayi ayarlamaniz gerekecek.\nEmin misiniz?"
 L["Bar Direction"] = "Cubuk Yonu"
 L["Bar Settings"] = "Cubuk Ayarlari"
 L["BARBERSHOP"] = "Berber Dukkani"
 L["Bars will transition smoothly."] = "Cubuklar puruzsuz gecis yapacak."
-L["Battlefield"] = true
+L["Battlefield"] = "Muharebe Alani"
 L["BATTLEFIELDS"] = "Savas Alanlari"
 L["Battleground Friendly"] = "Savas Alanlari Dost"
 L["Battleground Texts"] = "Savas Alani Metinleri"
-L["Battlegrounds"] = true
+L["Battlegrounds"] = "Savas Alanlari"
 L["Begin a new row or column after this many auras."] = "Bu kadar cok auradan sonra yeni bir satir veya sutuna basla."
 L["Below Chat (Inside)"] = "Sohbetin Altinda (Iceride)"
 L["Below Chat"] = "Sohbetin Altinda"
@@ -280,7 +286,7 @@ L["Bottom Right"] = "Sag Alt"
 L["Bottom to Top"] = "Asagidan Yukariya"
 L["Bottom"] = "Alt"
 L["BUFFOPTIONS_LABEL"] = "Guclendiriciler Zayiflaticilar"
-L["Buffs on Debuffs"] = true
+L["Buffs on Debuffs"] = "Debuff'lar Uzerinde Buff'lar"
 L["Button Flash"] = "Dugme Flasi"
 L["Button Height"] = "Dugme Yuksekligi"
 L["Button Settings"] = "Dugme Ayarlari"
@@ -292,7 +298,7 @@ L["Buttons"] = "Dugmeler"
 L["By Type"] = "Tipe Gore"
 L["Calendar Frame"] = "Takvim Cercevesi"
 L["Camera Distance Scale"] = "Kamera Mesafe Olcegi"
-L["Camera Spin"] = true
+L["Camera Spin"] = "Kamera Donusu"
 L["Camera"] = "Kamera"
 L["Can Attack"] = "Saldirabilir"
 L["Can Not Attack"] = "Saldiramaz"
@@ -306,7 +312,8 @@ L["CHALLENGE_MODE"] = "Meydan Okuma Modu"
 L["Change settings for the display of the location text that is on the minimap."] =
 	"Mini haritadaki konum metninin goruntulenmesi icin ayarlari degistirin."
 L["Change the alpha level of the frame."] = "Cercevenin alfa seviyesini degistirin."
-L["Change the scale of the Game Menu which shows up when you press ESC."] = true
+L["Change the scale of the Game Menu which shows up when you press ESC."] =
+	"ESC tusuna bastiginizda gorunen Oyun Menusunun olcegini degistirin."
 L["Change the width and controls how big of an area on the screen will accept clicks to target unit."] =
 	"Genisligi degistirin ve ekrandaki bir alanin ne kadar buyuk bir bolumunun hedef birime yapilan tiklamalari kabul edecegini kontrol edin."
 L["Changelog"] = "Degisiklik gunlugu"
@@ -326,9 +333,9 @@ L["Chat EditBox Position"] = "Sohbet Duzenleme Kutusu Konumu"
 L["Chat Output"] = "Sohbet ciktisi"
 L["Chat Panels"] = "Sohbet Panelleri"
 L["CHAT_MSG_EMOTE"] = "Ifade"
-L["Check Focus Cast"] = true
-L["Check Mouseover Cast"] = true
-L["Check Self Cast"] = true
+L["Check Focus Cast"] = "Odak Buyusunu Kontrol Et"
+L["Check Mouseover Cast"] = "Mouseover Buyusunu Kontrol Et"
+L["Check Self Cast"] = "Kendine Buyuyu Kontrol Et"
 L["Check these to only have the filter active in certain difficulties. If none are checked, it is active in all difficulties."] =
 	"Filtrenin yalnizca belirli zorluklarda etkin olmasi icin bunlari isaretleyin. Hicbiri isaretlenmezse, tum zorluklarda etkindir."
 L["CheckBox Skin"] = "Onay Kutusu Gorunumu"
@@ -341,7 +348,7 @@ L["Choose when you want the tooltip to show in combat. If a modifier is chosen, 
 	"Ipucu penceresinin savasta ne zaman gosterilmesini istediginizi secin. Bir degistirici secilirse, ipucu penceresini gostermek icin bunu basili tutmaniz gerekir."
 L["Choose when you want the tooltip to show. If a modifier is chosen, then you need to hold that down to show the tooltip."] =
 	"Ipucu penceresinin ne zaman gosterilmesini istediginizi secin. Bir degistirici secilirse, ipucu penceresini gostermek icin bunu basili tutmaniz gerekir."
-L["Chromie Time Frame"] = true
+L["Chromie Time Frame"] = "Chromie Time Cercevesi"
 L["Clamp nameplates to the top of the screen when outside of view."] =
 	"Gorus alaninin disindayken isim levhalarini ekranin ust kismina tutturun."
 L["Clamp Nameplates"] = "Isim Levhalarini Sikistir"
@@ -350,10 +357,10 @@ L["Class Castbars"] = "Sinif Yetenek Cubugu"
 L["Class Color Mentions"] = "Sinif Renk Mansiyonlari"
 L["Class Color Override"] = "Sinif Renk Gecersiz Kilma"
 L["Class Color Source"] = "Sinif Renk Kaynagi"
-L["Class Color"] = true
+L["Class Color"] = "Sinif Rengi"
 L["Class Health"] = "Sinif Sagligi"
 L["Class Icon"] = "Sinif Ikonu"
-L["Class Order"] = true
+L["Class Order"] = "Sinif Sirasi"
 L["Class Power"] = "Sinif Gucu"
 L["Class Resources"] = "Sinif Kaynaklari"
 L["CLASS"] = "Sinif"
@@ -365,19 +372,20 @@ L["Click Through"] = "Tiklamayla"
 L["Clickable Height"] = "Tiklanabilir Yukseklik"
 L["Clickable Size"] = "Tiklanabilir Boyut"
 L["Clickable Width / Width"] = "Tiklanabilir Genislik / Genislik"
-L["Cluster Backdrop"] = true
+L["Cluster Backdrop"] = "Kume Arka Plani"
 L["Coding:"] = "Kodlama:"
 L["COLLECTIONS"] = "Koleksiyonlar"
 L["Color all buffs that reduce the unit's incoming damage."] =
 	"Birimin, gelen hasarini azaltan tum guclendirmelerini renklendirin."
 L["Color aurabar debuffs by type."] = "Aura cubuklarinin turlerine gore zayiflatmalari renklendirin."
 L["Color Backdrop"] = "Renk Arka Plani"
-L["Color by Happiness"] = true
+L["Color by Happiness"] = "Mutluluga Gore Renklendir"
 L["Color By Spec"] = "Uzmanliga Gore Renk"
-L["Color by Unit Class"] = true
+L["Color by Unit Class"] = "Birim Sinifina Gore Renklendir"
 L["Color by Value"] = "Degere Gore Renk"
-L["Color castbar by the class of the unit's class."] = true
-L["Color castbar by the reaction of the unit to the player."] = true
+L["Color castbar by the class of the unit's class."] = "Castbar'i birimin sinifina gore renklendir."
+L["Color castbar by the reaction of the unit to the player."] =
+	"Castbar'i birimin oyuncuya karsi reaksiyonuna gore renklendir."
 L["Color castbars by the class of player units."] = "Oyuncu birimlerinin sinifina gore yetenek cubugunu renklendirin."
 L["Color castbars by the reaction type of non-player units."] =
 	"Oyuncu olmayan birimlerin tepki turune gore yetenek cubugunu renklendirin."
@@ -395,10 +403,10 @@ L["Color of the actionbutton when out of power (Mana, Rage, Focus, Holy Power)."
 	"Guc bittiginde eylem dugmesinin rengi (Mana, Rage, Focus, Holy Power)."
 L["Color of the actionbutton when out of range."] = "Menzil disindayken eylem dugmesinin rengi."
 L["Color of the actionbutton when usable."] = "Kullanilabilir oldugunda eylem dugmesinin rengi."
-L["Color of the Targets Aura time when expiring."] = true
-L["Color of the Targets Aura time."] = true
+L["Color of the Targets Aura time when expiring."] = "Suresi dolarken Hedefin Aura zamaninin rengi."
+L["Color of the Targets Aura time."] = "Hedefin Aura zamaninin rengi."
 L["Color Override"] = "Renk Gecersiz Kilma"
-L["Color Picker"] = true
+L["Color Picker"] = "Renk Secici"
 L["Color power by classcolor or reaction."] = "Sinif rengine veya reaksiyonuna gore renk gucu."
 L["Color power by color selection."] = "Renk secimine gore guc rengi."
 L["Color score based on Blizzards API."] = "Blizzards API'sine dayali renk puani."
@@ -409,8 +417,8 @@ L["Color the unit healthbar if there is a debuff that can be dispelled by you."]
 	"Sizin tarafinizdan yok edilebilecek bir zayiflatici varsa, birim saglik cubugunu renklendirin."
 L["Color tooltip border based on Item Quality."] = "Oge Kalitesine dayali renk ipucu penceresi kenarligi."
 L["Color Turtle Buffs"] = "Kaplumbaga Guclendiricileri Rengi"
-L["Color when at half of the Low Health Threshold"] = true
-L["Color when at Low Health Threshold"] = true
+L["Color when at half of the Low Health Threshold"] = "Dusuk Saglik Esiginin yarisindaki renk"
+L["Color when at Low Health Threshold"] = "Dusuk Saglik Esigindeki renk"
 L["Color when the text is about to expire."] = "Metnin suresi dolmak uzereyken renklendirin."
 L["Color when the text is in the days format."] = "Metin gun biciminde oldugunda renklendirin."
 L["Color when the text is in the hours format."] = "Metin saat biciminde oldugunda renklendirin."
@@ -440,9 +448,9 @@ L["Condensed (Spaced)"] = "Yogun (Aralikli)"
 L["Condensed"] = "Yogunlastirilmis"
 L["Conditions"] = "Kosullar"
 L["Configure Auras"] = "Auralari yapilandir"
-L["Connected"] = true
-L["Conscious"] = true
-L["Content"] = true
+L["Connected"] = "Bagli"
+L["Conscious"] = "Bilincli"
+L["Content"] = "Icerik"
 L["Contribution"] = "Katki"
 L["Control enemy nameplates toggling on or off when in combat."] =
 	"Savastayken dusman isim levhalarini acilip kapanmasini kontrol edin."
@@ -470,10 +478,10 @@ L["Copy settings from"] = "Ayarlari suradan kopyala"
 L["Core |cff1784d1ElvUI|r options."] = "cekirdek |cff1784d1ElvUI|r secenekleri."
 L["Cosmetic"] = "Kozmetik"
 L["Count Text"] = "Metin Sayisi"
-L["Covenant Preview"] = true
-L["Covenant Renown"] = true
-L["Covenant Sanctum"] = true
-L["Craft"] = true
+L["Covenant Preview"] = "Covenant Onizlemesi"
+L["Covenant Renown"] = "Covenant Sohreti"
+L["Covenant Sanctum"] = "Covenant Kutsal Alani"
+L["Craft"] = "Uret"
 L["Create a filter, once created a filter can be set inside the buffs/debuffs section of each unit."] =
 	"Bir filtre olusturun, bir kez olusturulduktan sonra her birimin guclendirici/zayiflatici bolumunde bir filtre ayarlanabilir."
 L["Create Custom Text"] = "Ozel Metin Olustur"
@@ -507,8 +515,8 @@ L["Custom Dead Backdrop"] = "Ozel Olu Arka Plan"
 L["Custom Faction Colors"] = "Ozel Fraksiyon Renkleri"
 L["Custom Font"] = "Ozel Yazi Tipi"
 L["Custom Glow"] = "Ozel Parilti"
-L["Custom Label"] = true
-L["Custom Name"] = true
+L["Custom Label"] = "Ozel Etiket"
+L["Custom Name"] = "Ozel Isim"
 L["Custom Power Prediction Color"] = "Ozel Guc Tahmini Rengi"
 L["Custom StatusBar"] = "Ozel Durum cubugu"
 L["Custom Texts"] = "Ozel Metinler"
@@ -522,26 +530,26 @@ L["Darken Inactive"] = "Aktif Degilse Karart"
 L["DataBars"] = "Veri Cubuklari"
 L["Datatext Panel (Left)"] = "Veri Metni Paneli (Sol)"
 L["Datatext Panel (Right)"] = "Veri Metni Paneli (Sag)"
-L["DataText Panels"] = true
+L["DataText Panels"] = "Veri Metni Panelleri"
 L["DataTexts"] = "Veri Metinleri"
 L["Days"] = "Gunler"
-L["Dead or Ghost"] = true
+L["Dead or Ghost"] = "Olu veya Hayalet"
 L["DEATH_RECAP_TITLE"] = "Olum Ozeti"
 L["Debuff Highlighting"] = "Zayiflatici Vurgulamasi"
-L["Debuffs on Buffs"] = true
+L["Debuffs on Buffs"] = "Buff'lar Uzerinde Debuff'lar"
 L["Debug Tools"] = "Hata Ayiklama Araclari"
 L["DEBUG_DESC"] =
 	"Disable all addons (including Plugins) except ElvUI. During the same session, this can be clicked to reenable them."
 L["Decimal Length"] = "Ondalik Uzunlugu"
 L["Decode Text"] = "Metnin Kodunu Coz"
-L["Decode"] = true
+L["Decode"] = "Kodu Coz"
 L["Default Color"] = "Varsayilan Renk"
 L["Default Font"] = "Varsayilan Yazi Tipi"
 L["Default Settings"] = "Varsayilan Ayarlari"
 L["DEFAULT"] = "Varsayilan"
 L["Defines how the group is sorted."] = "Grubun nasil siralanacagini tanimlar."
 L["Defines the sort order of the selected sort method."] = "Secilen siralama yonteminin siralama duzenini tanimlar."
-L["Delay Alpha"] = true
+L["Delay Alpha"] = "Alfa Gecikmesi"
 L["Delete a created filter, you cannot delete pre-existing filters, only custom ones."] =
 	"Olusturulan bir filtreyi silin, onceden var olan filtreleri silemezsiniz, yalnizca ozel olanlari silebilirsiniz."
 L["Delete Filter"] = "Filtreyi Sil"
@@ -550,7 +558,7 @@ L["Desaturate Cooldowns"] = "Solgun Soguma Suresi"
 L["Desaturate Icon"] = "Solgun Ikon"
 L["Desaturate Junk"] = "Solgun onemsiz"
 L["Desaturate Voice Icons"] = "Solgun Ses Ikonlari"
-L["Desaturate"] = true
+L["Desaturate"] = "Doygunlugu Azalt"
 L["Desaturated Icon"] = "Solgunlastirilmis Ikon"
 L["Descending"] = "Azalan"
 L["Detach From Frame"] = "Kareyi Cerceveden Ayir"
@@ -562,7 +570,7 @@ L["Direction the bar moves on gains/losses"] = "cubugun kazanclar/kayiplar uzeri
 L["Direction the health bar moves when gaining/losing health."] =
 	"Saglik kazanirken/kaybederken saglik cubugunun yon degistirmesi."
 L["Disable Blizzard Skins"] = "Blizzard Kaplamalarini Devre Disi Birak"
-L["Disable Cluster"] = true
+L["Disable Cluster"] = "Kumeyi Devre Disi Birak"
 L["Disable Sort"] = "Siralamayi Devre Disi Birak"
 L["Disable Tutorial Buttons"] = "Ogretici Dugmeleri Devre Disi Birak"
 L["Disabled Blizzard Frames"] = "Devre Disi Birakilmis Blizzard Cerceveleri"
@@ -579,7 +587,8 @@ L["Display a panel across the top of the screen. This is for cosmetic only."] =
 	"Ekranin ust kisminda bir panel goruntuleyin. Bu yalnizca kozmetik icindir."
 L["Display a spark texture at the end of the castbar statusbar to help show the differance between castbar and backdrop."] =
 	"Yetenek cubugu ve arka plan arasindaki farki gostermeye yardimci olmak icin, yetenek cubugunu durumuna gore sonunda bir kivilcim efekti goruntuleyin."
-L["Display a tank icon over known tanks inside battlegrounds or arenas."] = true
+L["Display a tank icon over known tanks inside battlegrounds or arenas."] =
+	"Savas alanlari veya arenalarda bilinen tanklarin uzerinde bir tank ikonu goster."
 L["Display battleground messages in the middle of the screen."] = "Ekranin ortasinda savas alani mesajlarini goster."
 L["Display bind names on action buttons."] = "Eylem dugmelerinde baglama adlarini Goster."
 L["Display Character Info"] = "Karakter Bilgilerini Goster"
@@ -611,7 +620,7 @@ L["Display player titles."] = "Oyuncu unvanlarini goster."
 L["Display Player"] = "Oyuncuyu Goster"
 L["Display Style"] = "Goruntu Stili"
 L["Display Target"] = "Hedefi Goster"
-L["Display Target's Aura Duration, when there is no CD displaying."] = true
+L["Display Target's Aura Duration, when there is no CD displaying."] = "CD gorunmuyorken Hedefin Aura Suresini goster."
 L["Display Text"] = "Metni Goster"
 L["Display the castbar icon inside the castbar."] = "Yetenek ikonunu yetenek cubugunda goster"
 L["Display the current Mythic+ Dungeon Score."] = "Mevcut Mitik+ Zindan skorunu goster."
@@ -621,7 +630,7 @@ L["Display the item level and current specialization of the unit on modifier pre
 	"Degistiriciye basildiginda birimin oge seviyesini ve mevcut uzmanligini goruntuleyin."
 L["Display the name of the unit on the chat bubble. This will not work if backdrop is disabled or when you are in an instance."] =
 	"Birimin adini sohbet balonunda goruntuleyin. Arka plan devre disiysa veya bir ornekteyseniz bu calismaz."
-L["Display the target of current cast."] = true
+L["Display the target of current cast."] = "Mevcut buyunun hedefini goster."
 L["Display the unit name who interrupted a spell on the castbar. You should increase the Time to Hold to show properly."] =
 	"Yetenek cubugunda buyunun hedefindeki birimin adini goster. Duzgun gorunmesi icin Yetenek Kullanim Suresini artirmalisin."
 L["Display the unit role in the tooltip."] = "Birim rolunu ipucu penceresinde goster."
@@ -648,13 +657,13 @@ L["Duration Enable"] = "Sure Etkinlestir"
 L["Duration Text"] = "Sure Metni"
 L["Duration"] = "Sure"
 L["Editbox History"] = "Duzenleme Kutusu Gecmisi"
-L["Editor Manager"] = true
+L["Editor Manager"] = "Duzenleyici Yoneticisi"
 L["Elite Icon"] = "Elit Ikonu"
 L["ELVUI_CREDITS"] =
 	"Bu eklentiyi test etme, kodlama ve bagis yoluyla bana yardimci olan kisilerle bu eklentiyi surdurmeme yardim ettikleri icin asagidaki kisilere ozel bir not vermek istiyorum. Bagislar icin lutfen not edin; Forumlarda bana mesaj atanlarin isimlerini paylasiyorum, isminiz eksikse ve isminizin eklenmesini istiyorsaniz lutfen mesaj atin."
 L["Emote"] = "Ifade"
 L["Emotion Icons"] = "Duygu Ikonları"
-L["Empower Stages"] = true
+L["Empower Stages"] = "Guclendirme Asamalari"
 L["Enable + Adjust Movers"] = "Etkinlestir + Tasiyicilari Ayarla"
 L["Enable a sound if you select a unit."] = "Bir birim secerseniz sesi etkinlestirin."
 L["Enable Blizzard Skins"] = "Blizzard Kaplamalarini Etkinlestir"
@@ -668,11 +677,13 @@ L["Enable/Disable the loot frame."] = "Ganimet cercevesini etkinlestirin/devre d
 L["Enable/Disable the loot roll frame."] = "Ganimet rulo cercevesini etkinlestirin/devre disi birakin."
 L["Enable/Disable the minimap. |cffFF3333Warning: This will prevent you from seeing the minimap datatexts.|r"] =
 	"Mini haritayi etkinlestirin/devre disi birakin. |cffFF3333Uyari: Bu, mini harita veri metinlerini gormenizi engeller.|r"
-L["Enable/Disable the on-screen zone text when you change zones."] = true
-L["Enable/Disable the World Map Enhancements."] = true
+L["Enable/Disable the on-screen zone text when you change zones."] =
+	"Bolge degistirdiginizde ekrandaki bolge metnini Etkinlestir/Devre Disi Birak."
+L["Enable/Disable the World Map Enhancements."] = "Dunya Haritasi Gelistirmelerini Etkinlestir/Devre Disi Birak."
 L["Enabled"] = "Etkinlestirilmis"
 L["Enables the ElvUI Raid Control panel."] = "ElvUI Baskin Kontrol panelini etkinlestirir."
-L["Enables the five-second-rule ticks for Mana classes and Energy ticks for Rogues and Druids."] = true
+L["Enables the five-second-rule ticks for Mana classes and Energy ticks for Rogues and Druids."] =
+	"Mana siniflari icin bes saniye kurali tiklerini ve Rogue ve Druidler icin Energy tiklerini etkinlestirir."
 L["Enabling this allows raid-wide sorting however you will not be able to distinguish between groups."] =
 	"Bunu etkinlestirmek, baskin genelinde siralamaya izin verir, ancak gruplar arasinda ayrim yapamazsiniz."
 L["Enabling this inverts the grouping order when the raid is not full, this will reverse the direction it starts from."] =
@@ -687,37 +698,38 @@ L["Enemy"] = "Dusman"
 L["ENEMY_NPC"] = "Dusman NPC"
 L["ENEMY_PLAYER"] = "Dusman Oyuncu"
 L["ENERGY"] = "Energy"
-L["Energy/Mana Regen Tick"] = true
+L["Energy/Mana Regen Tick"] = "Energy/Mana Yenilenme Tiki"
 L["Engineering"] = "Muhendislik"
 L["Enhanced PVP Messages"] = "Gelistirilmis PVP Mesajlari"
-L["Equipped Item"] = true
-L["Equipped"] = true
+L["Equipped Item"] = "Takili Oge"
+L["Equipped"] = "Takili"
 L["Error decoding data. Import string may be corrupted!"] =
 	"Veri kodu cozulurken hata olustu. Ice aktarma dizesi bozulmus olabilir!"
 L["Error exporting profile!"] = "Profil disa aktarilirken hata olustu!"
-L["Quest Progress and Error Text"] = true
+L["Quest Progress and Error Text"] = "Gorev Ilerlemesi ve Hata Metni"
 L["Event Log"] = "Olay gunlugu"
 L["Exclude Name"] = "Isimleri Haric Tut"
 L["Excluded names will not be class colored."] = "Haric tutulan isimler sinif renginde olmayacak."
 L["Excluded Names"] = "Haric Tutulan Isimler"
-L["Expansion Button"] = true
-L["Expansion Landing Page"] = true
+L["Expansion Button"] = "Genisleme Dugmesi"
+L["Expansion Landing Page"] = "Genisleme Karsilama Sayfasi"
 L["Expiring"] = "Suresi doluyor"
 L["Export Now"] = "simdi Disa Aktar"
 L["Export Profile"] = "Profili Disa Aktar"
-L["Export"] = true
+L["Export"] = "Disa Aktar"
 L["Exported"] = "Ihracat"
 L["Extra Buttons"] = "Ekstra Dugmeler"
 L["Fade Chat Toggles"] = "Sohbet Kaybolmasi Gecisi"
 L["Fade Duration"] = "Kaybolma suresi"
 L["Fade Out Delay"] = "Kaybolma Gecikmesi"
-L["Fade out the tooltip when it disappers, instant otherwise. Cursor anchored tooltips are unaffected."] = true
+L["Fade out the tooltip when it disappers, instant otherwise. Cursor anchored tooltips are unaffected."] =
+	"Kaybolurken ipucu penceresini yavasca soldur, aksi halde aninda. Imlece sabitlenmis ipucu pencereleri etkilenmez."
 L["Fade Out"] = "Yavasca Kaybolma"
 L["Fade Tabs No Backdrop"] = "Sekmeleri Soldur Arka Plan Yok"
 L["Fade the chat text when there is no activity."] = "Etkinlik olmadiginda sohbet metinlerinin yavasca kaybolmasi."
 L["Fade Threshold"] = "Kaybolma esigi"
 L["Fade Undocked Tabs"] = "Yerlestirilmemis Sekmelerin Kaybolmasi"
-L["Faded Charging Rune"] = true
+L["Faded Charging Rune"] = "Solmus Dolum Runu"
 L["Fader"] = "Soldurma"
 L["Fades the buttons that toggle chat windows when that window has been toggled off."] =
 	"Bu pencere kapatıldığında sohbet pencerelerini değiştiren düğmeleri soldurur."
@@ -733,7 +745,7 @@ L["Filter Search"] = "Filtre Arama"
 L["Filter Type"] = "Filtre Tipi"
 L["Filters Page"] = "Filtreler Sayfasi"
 L["Filters"] = "Filtreler"
-L["Flash Client Icon"] = true
+L["Flash Client Icon"] = "Istemci Ikonunu Yanip Sondur"
 L["Flash Invites"] = "Flas Davetler"
 L["Flash Threshold"] = "Flas Esigi"
 L["Flash"] = "Flas"
@@ -742,7 +754,7 @@ L["Fluid Buffs on Debuffs"] = "Guclendiricilerin, Zayiflaticilarin uzerine akis 
 L["Fluid Debuffs on Buffs"] = "Zayiflaticilarin, Guclendiricilerin uzerine akis pozisyonu."
 L["Flyout Button Size"] = "Firlayan Dugme Boyutu"
 L["Flyout Direction"] = "Firlama Yonu"
-L["Focus Cast Key"] = true
+L["Focus Cast Key"] = "Odak Buyu Tusu"
 L["Focus"] = "Focus"
 L["FOCUS"] = "FOCUS"
 L["Focused Glow"] = "Odagin Pariltisi"
@@ -779,20 +791,20 @@ L["Friendly"] = "Arkadas canlisi"
 L["FRIENDLY_NPC"] = "Dost NPC"
 L["FRIENDLY_PLAYER"] = "Dost Oyuncu"
 L["Friends"] = "Arkadaslar"
-L["From Me"] = true
-L["From Pet"] = true
-L["Full Bar"] = true
+L["From Me"] = "Benden"
+L["From Pet"] = "Evcil Hayvandan"
+L["Full Bar"] = "Tam Cubuk"
 L["Full Overlay"] = "Tam Yerlesimli"
 L["Full Time"] = "Tam zamanli"
 L["Full"] = "Dolu"
 L["FURY"] = "Fury"
 L["Gaining Threat"] = "Hiddet Kazanimi"
-L["Game Menu"] = true
+L["Game Menu"] = "Oyun Menusu"
 L["GARRISON_LOCATION_TOOLTIP"] = "Garnizon"
 L["Gems"] = "Mucevherler"
 L["Gender"] = "Cinsiyet"
 L["General"] = "Genel"
-L["Generic Trait"] = true
+L["Generic Trait"] = "Genel Ozellik"
 L["Global (Account Settings)"] = "Genel (Hesap Ayarlari)"
 L["Global Fade Transparency"] = "Genel Solma Seffafligi"
 L["Global"] = "Genel"
@@ -802,7 +814,7 @@ L["Gold Format"] = "Altin Bicimi"
 L["Good Color"] = "Guvenli Renk"
 L["Good Scale"] = "Guvenlik Olcegi"
 L["Good Transition Color"] = "Guvenli Gecis Rengi"
-L["Good Transition"] = true
+L["Good Transition"] = "Iyi Gecis"
 L["Good"] = "Guvenli"
 L["Gossip Frame"] = "Dedikodu Cercevesi"
 L["Group By"] = "Grupla"
@@ -810,27 +822,28 @@ L["Group Spacing"] = "Grup Araligi"
 L["Group Units"] = "Grup Birimleri"
 L["Grouping & Sorting"] = "Gruplama ve Siralama"
 L["Groups Per Row/Column"] = "Satir/Sutun Basina Gruplar"
-L["Groups will be maxed as Mythic to 4, Other Raids to 6, and PVP / World to 8."] = true
+L["Groups will be maxed as Mythic to 4, Other Raids to 6, and PVP / World to 8."] =
+	"Gruplar Mythic icin 4, Diger Baskinlar icin 6 ve PVP / Dunya icin 8 olarak maksimuma ayarlanacak."
 L["Growth direction from the first unitframe."] = "Ilk birim cerceveden buyume yonu."
 L["Growth Direction"] = "Buyume Yonu"
 L["Growth X-Direction"] = "Buyume X Yonu"
 L["Growth Y-Direction"] = "Buyume Y Yonu"
 L["Growth"] = "Buyume"
 L["Guardians"] = "Muhafizlar"
-L["Guide Frame"] = true
+L["Guide Frame"] = "Kilavuz Cercevesi"
 L["Guide:"] = "Kilavuz:"
 L["Guild Bank"] = "Lonca Bankasi"
 L["Guild Control Frame"] = "Lonca Kontrol Cercevesi"
 L["Guild Ranks"] = "Lonca Rutbeleri"
 L["Guild Registrar"] = "Lonca Kayit Memuru"
 L["Guild"] = "Lonca"
-L["Half Bar"] = true
-L["Happy"] = true
-L["Has Aura"] = true
-L["Has No Stealable"] = true
-L["Has NPC Title"] = true
-L["Has Stealable"] = true
-L["Headers"] = true
+L["Half Bar"] = "Yarim Cubuk"
+L["Happy"] = "Mutlu"
+L["Has Aura"] = "Aurasi Var"
+L["Has No Stealable"] = "Calinabilir Buyusu Yok"
+L["Has NPC Title"] = "NPC Unvani Var"
+L["Has Stealable"] = "Calinabilir Buyusu Var"
+L["Headers"] = "Basliklar"
 L["Heal Absorbs"] = "Iyilesme Absorbesi"
 L["Heal Prediction"] = "Iyilesme Tahmini"
 L["Healer Icon"] = "Iyilestirici Ikonunu"
@@ -838,7 +851,7 @@ L["Health Backdrop Multiplier"] = "Saglik Arka Plani carpani"
 L["Health Backdrop"] = "Saglik Arka Plani"
 L["Health Bar"] = "Saglik Cubugu"
 L["Health Border"] = "Saglik Siniri"
-L["Health Breakpoint"] = true
+L["Health Breakpoint"] = "Saglik Kirilma Noktasi"
 L["Health By Value"] = "Degere Gore Saglik"
 L["Health Color"] = "Saglik Rengi"
 L["Health Threshold"] = "Saglik Esigi"
@@ -851,7 +864,7 @@ L["Help Frame"] = "Yardim Cercevesi"
 L["Help"] = "Yardim"
 L["Herbalism"] = "Bitkicilik"
 L["Here you can add items that you want to be excluded from sorting. To remove an item just click on its name in the list."] =
-	true
+	"Buraya siralamadan haric tutmak istediginiz ogeleri ekleyebilirsiniz. Bir ogeyi kaldirmak icin listedeki adina tiklamaniz yeterlidir."
 L["HH:MM Threshold"] = "SS:DD Esigi"
 L["HH:MM"] = "SS:DD"
 L["Hide At Max Level"] = "Maksimum Seviyede Gizle"
@@ -865,9 +878,9 @@ L["Hide Channels"] = "Kanallari Gizle"
 L["Hide Chat Toggles"] = "Sohbet Gecislerini Gizle"
 L["Hide Copy Button"] = "Kopyala Dugmesini Gizle"
 L["Hide Delay"] = "Gecikmeyi Gizle"
-L["Hide Quest Progress and Error Text"] = true
+L["Hide Quest Progress and Error Text"] = "Gorev Ilerlemesini ve Hata Metnini Gizle"
 L["Hide Frame"] = "Cerceveyi Gizle"
-L["Hide Icon"] = true
+L["Hide Icon"] = "Ikonu Gizle"
 L["Hide In Combat"] = "Catismada Gizle"
 L["Hide In Keystone"] = "Meydan Okuma'da Gizle"
 L["Hide In Vehicle"] = "Aracta Gizle"
@@ -880,13 +893,14 @@ L["Hide the channel names in chat."] = "Sohbette kanal adlarini gizle."
 L["Hide Time"] = "Zaman Gizle"
 L["Hide Voice Buttons"] = "Ses Dugmelerini Gizle"
 L["Hide When Empty"] = "Bos Oldugunda Gizle"
-L["Hide Zone Text"] = true
+L["Hide Zone Text"] = "Bolge Metnini Gizle"
 L["Hide"] = "GIZLE"
 L["Hides the bling animation on buttons at the end of the global cooldown."] =
 	"Soguma suresinin bitimindeki parilti animasyonunu gizler."
-L["Hides the yellow quest progress text and red error text at the top of the screen while in combat."] = true
-L["High"] = true
-L["Highlight Color Style"] = true
+L["Hides the yellow quest progress text and red error text at the top of the screen while in combat."] =
+	"Catismada iken ekranin ust kismindaki sari gorev ilerleme metnini ve kirmizi hata metnini gizler."
+L["High"] = "Yuksek"
+L["Highlight Color Style"] = "Vurgu Renk Stili"
 L["History Size"] = "Tarih Boyutu"
 L["History"] = "Tarih"
 L["HOLY_POWER"] = "Holy Power"
@@ -933,10 +947,14 @@ L["If enabled then it will require all auras to activate the filter. Otherwise i
 	"Etkinlestirilirse, filtreyi etkinlestirmek icin tum auralara ihtiyac duyacaktir. Aksi takdirde, onu etkinlestirmek icin yalnizca herhangi bir auraya ihtiyac duyacaktir."
 L["If enabled then it will require all cooldowns to activate the filter. Otherwise it will only require any one of the cooldowns to activate it."] =
 	"Etkinlestirilirse, filtreyi etkinlestirmek icin tum bekleme surelerini gerektirecektir. Aksi takdirde, etkinlestirmek icin yalnizca herhangi bir bekleme suresini gerektirecektir."
-L["If enabled then the filter will activate if the unit is casting anything."] = true
-L["If enabled then the filter will activate if the unit is channeling anything."] = true
-L["If enabled then the filter will activate if the unit is not casting anything."] = true
-L["If enabled then the filter will activate if the unit is not channeling anything."] = true
+L["If enabled then the filter will activate if the unit is casting anything."] =
+	"Etkinlestirilirse, filtre unite herhangi bir sey kullaniyorsa etkinlesir."
+L["If enabled then the filter will activate if the unit is channeling anything."] =
+	"Etkinlestirilirse, filtre unite herhangi bir seyi kanalliyorsa etkinlesir."
+L["If enabled then the filter will activate if the unit is not casting anything."] =
+	"Etkinlestirilirse, filtre unite herhangi bir sey kullanmiyorsa etkinlesir."
+L["If enabled then the filter will activate if the unit is not channeling anything."] =
+	"Etkinlestirilirse, filtre unite herhangi bir seyi kanallamiyorsa etkinlesir."
 L["If enabled then the filter will only activate if the level of the unit is equal to or higher than this value."] =
 	"Etkinlestirilirse, filtre yalnizca unitenin seviyesi bu degere esit veya daha yuksekse etkinlesir."
 L["If enabled then the filter will only activate if the level of the unit is equal to or lower than this value."] =
@@ -955,22 +973,28 @@ L["If enabled then the filter will only activate when the unit can be attacked b
 	"Etkinlestirilirse, filtre yalnizca birime aktif oyuncu tarafindan saldiriya ugradiginda etkinlesir."
 L["If enabled then the filter will only activate when the unit can not be attacked by the active player."] =
 	"Etkinlestirilirse, filtre yalnizca birime aktif oyuncu tarafindan saldirilamazsa etkinlesir."
-L["If enabled then the filter will only activate when the unit has a stealable buff(s)."] = true
-L["If enabled then the filter will only activate when the unit has no stealable buff(s)."] = true
+L["If enabled then the filter will only activate when the unit has a stealable buff(s)."] =
+	"Etkinlestirilirse, filtre yalnizca unitenin calinabilir buff'u oldugunda etkinlesir."
+L["If enabled then the filter will only activate when the unit has no stealable buff(s)."] =
+	"Etkinlestirilirse, filtre yalnizca unitenin calinabilir buff'u olmadiginda etkinlesir."
 L["If enabled then the filter will only activate when the unit is controlled by the player."] =
 	"Etkinlestirilirse, filtre yalnizca unite oynatici tarafindan kontrol edildiginde etkinlesir."
 L["If enabled then the filter will only activate when the unit is in a Vehicle."] =
 	"Etkinlestirilirse, filtre yalnizca unite bir Aractayken etkinlesir."
 L["If enabled then the filter will only activate when the unit is in combat."] =
 	"Etkinlestirilirse, filtre yalnizca birim catismadayken etkinlesir."
-L["If enabled then the filter will only activate when the unit is in your Party."] = true
-L["If enabled then the filter will only activate when the unit is in your Raid."] = true
+L["If enabled then the filter will only activate when the unit is in your Party."] =
+	"Etkinlestirilirse, filtre yalnizca unite Partinizde oldugunda etkinlesir."
+L["If enabled then the filter will only activate when the unit is in your Raid."] =
+	"Etkinlestirilirse, filtre yalnizca unite Baskininizda oldugunda etkinlesir."
 L["If enabled then the filter will only activate when the unit is not controlled by the player."] =
 	"Etkinlestirilirse, filtre yalnizca unite oynatici tarafindan kontrol edilmediginde etkinlesir."
 L["If enabled then the filter will only activate when the unit is not in a Vehicle."] =
 	"Etkinlestirilirse, filtre yalnizca unite bir Aracta olmadiginda etkinlesir."
-L["If enabled then the filter will only activate when the unit is not in your Party."] = true
-L["If enabled then the filter will only activate when the unit is not in your Raid."] = true
+L["If enabled then the filter will only activate when the unit is not in your Party."] =
+	"Etkinlestirilirse, filtre yalnizca unite Partinizde olmadiginda etkinlesir."
+L["If enabled then the filter will only activate when the unit is not in your Raid."] =
+	"Etkinlestirilirse, filtre yalnizca unite Baskininizda olmadiginda etkinlesir."
 L["If enabled then the filter will only activate when the unit is not owned by the player."] =
 	"Etkinlestirilirse, filtre yalnizca unite oyuncuya ait olmadiginda etkinlesir."
 L["If enabled then the filter will only activate when the unit is not pvp-flagged."] =
@@ -1011,7 +1035,8 @@ L["If enabled then the filter will only activate when you are resting at an Inn.
 	"Etkinlestirilirse, filtre yalnizca bir Han'da dinlenirken etkinlesir."
 L["If enabled then the filter will only activate when you are targeting the unit."] =
 	"Etkinlestirilirse, filtre yalnizca birimi hedeflediginizde etkinlesir."
-L["If enabled then the filter will only activate when you have a target."] = true
+L["If enabled then the filter will only activate when you have a target."] =
+	"Etkinlestirilirse, filtre yalnizca bir hedefiniz oldugunda etkinlesir."
 L["If enabled, the style filter will only activate when you are in one of the instances specified in Instance ID."] =
 	"Etkinlestirilirse, stil filtresi yalnizca ornek Kimligi'nde belirtilen orneklerden birinde oldugunuzda etkinlesir."
 L["If enabled, the style filter will only activate when you are in one of the maps specified in Map ID."] =
@@ -1047,24 +1072,24 @@ L["If you have any plugins supporting this feature installed you can find them i
 L["If you unlock actionbars then trying to move a spell might instantly cast it if you cast spells on key press instead of key release."] =
 	"Eylem cubuklarinin kilidini acarsaniz, bir buyuyu hareket ettirmeye calismak, tusu serbest birakmak yerine tusa basarak buyu yaparsaniz, buyuyu aninda yapabilir."
 L["Ignore mouse events."] = "Fare olaylarini yoksay."
-L["Ignored Items (Global)"] = true
-L["Ignored Items (Profile)"] = true
+L["Ignored Items (Global)"] = "Yok Sayilan Ogeler (Genel)"
+L["Ignored Items (Profile)"] = "Yok Sayilan Ogeler (Profil)"
 L["Import Now"] = "simdi Ice Aktar"
-L["Import Profile"] = true
-L["Import"] = true
+L["Import Profile"] = "Profili Ice Aktar"
+L["Import"] = "Ice Aktar"
 L["Importing"] = "Ice Aktariyor"
-L["In Combat Label"] = true
+L["In Combat Label"] = "Catismada Etiketi"
 L["In Combat"] = "Catismada"
 L["In Party"] = "Partide"
-L["In Pet Battle"] = true
+L["In Pet Battle"] = "Evcil Hayvan Savasinda"
 L["In Raid"] = "Baskin'da"
 L["In Vehicle"] = "Aracta"
 L["Inactivity Timer"] = "Hareketsizlik Zamanlayicisi"
 L["Index"] = "Indeks"
 L["Indicate whether buffs you cast yourself should be separated before or after."] =
 	"Kendiniz yaptiginiz guclendirmelerin once mi sonra mi ayrilacagini belirtin."
-L["Indicator Expiring"] = true
-L["Indicator"] = true
+L["Indicator Expiring"] = "Gosterge Suresi Doluyor"
+L["Indicator"] = "Gosterge"
 L["Individual Units"] = "Bireysel Birimler"
 L["InfoPanel Border"] = "Bilgi Paneli Sinirlari"
 L["Information Panel"] = "Bilgi Paneli"
@@ -1075,7 +1100,7 @@ L["Inscription"] = "Yazit"
 L["Inset"] = "Ilave"
 L["Inspect Data"] = "Verileri Incele"
 L["Inspect"] = "Incelemek"
-L["Install"] = true
+L["Install"] = "Kur"
 L["Instance Difficulty"] = "ornek Zorlugu"
 L["Instance ID"] = "Ornek Kimligi"
 L["Instance Type"] = "Ornek Turu"
@@ -1106,23 +1131,23 @@ L["INVTYPE_WAIST"] = "Waist"
 L["INVTYPE_WEAPONMAINHAND"] = "Main Hand"
 L["INVTYPE_WEAPONOFFHAND"] = "Off Hand"
 L["INVTYPE_WRIST"] = "Wrist"
-L["Is Being Resurrected"] = true
+L["Is Being Resurrected"] = "Diriltiliyor mu?"
 L["Is Casting Anything"] = "Herhangi Bir Yetenek Kullaniyor Mu?"
 L["Is Channeling Anything"] = "Periyodik Yetenek Kullaniyor Mu?"
-L["Is Charmed"] = true
+L["Is Charmed"] = "Buyulenmis mi?"
 L["Is Focused"] = "Odakta Mi?"
 L["Is Pet"] = "Evcil Hayvan Mi?"
-L["Is Possessed"] = true
+L["Is Possessed"] = "Ele Gecirilmis mi?"
 L["Is PvP"] = "PvP'de Mi?"
 L["Is Resting"] = "Dinlenmede Mi?"
 L["Is Targeted"] = "Hedefte Mi?"
 L["Is Targeting Player"] = "Secilen Oyuncu Mu?"
-L["Is Trivial"] = true
+L["Is Trivial"] = "Onemsiz mi?"
 L["Island Party Pose"] = "Ada Partisi Pozu"
 L["ISLANDS_HEADER"] = "Ada Kesifleri"
 L["Item Count"] = "Esya sayisi"
 L["Item Info"] = "Oge Bilgisi"
-L["Item Interaction"] = true
+L["Item Interaction"] = "Oge Etkilesimi"
 L["Item Level Threshold"] = "Oge Seviye Esigi"
 L["Item Level"] = "Oge Seviyesi"
 L["Item Quality"] = "Esya Kalitesi"
@@ -1143,7 +1168,7 @@ L["Keybind Text"] = "Tus Baglama Metni"
 L["Keyword Alert"] = "Anahtar Kelime Uyarisi"
 L["Keyword Alerts"] = "Anahtar Kelime Uyarilari"
 L["Keywords"] = "Anahtar kelimeler"
-L["Known Spells"] = true
+L["Known Spells"] = "Bilinen Buyuler"
 L["Label"] = "Etiket"
 L["LANGUAGE"] = "Diller"
 L["Larger Font"] = "Daha Buyuk Yazi Tipi"
@@ -1160,20 +1185,20 @@ L["Left Panel Width"] = "Sol Panel Genisligi"
 L["Left Position"] = "Sol Pozisyon"
 L["Left Shift"] = "Sol shift"
 L["Left to Right"] = "Soldan saga"
-L["Left"] = true
+L["Left"] = "Sol"
 L["LEVEL_BOSS"] = "Patron birimleri için seviyeyi -1'e veya devre dışı bırakmak için 0'a ayarlayın."
 L["LF Guild Frame"] = "Lonca Ariyorum Cercevesi"
 L["LFG Queue"] = "LFG Sirasi"
 L["LFG_TITLE"] = "Grup Arıyorum"
-L["Library Dropdown"] = true
+L["Library Dropdown"] = "Kutuphane Acilir Menusu"
 L["Limit the number of rows or columns."] = "Satir veya sutun sayisini sinirlayin."
 L["Lines"] = "Cizgiler"
 L["Link to the latest development version."] = "En son gelistirme surumune baglanti."
 L["Link to the latest PTR version."] = "En son PTR surumune baglanti."
 L["List of words to color in chat if found in a message. If you wish to add multiple words you must separate the word with a comma. To search for your current name you can use %MYNAME%.\n\nExample:\n%MYNAME%, ElvUI, RBGs, Tank"] =
 	"Bir mesajda bulunursa, sohbette renklendirilecek kelimelerin listesi. Birden fazla kelime eklemek istiyorsaniz, kelimeyi virgulle ayirmalisiniz. Mevcut adinizi aramak icin %MYNAME% kullanabilirsiniz.\n\nornek:\n %MYNAME%, ElvUI, RBG'ler, Tank"
-L["Load Distance"] = true
-L["Loadout Only"] = true
+L["Load Distance"] = "Yukleme Mesafesi"
+L["Loadout Only"] = "Yalnizca Dizilim"
 L["Local Time"] = "Yerel zaman"
 L["Location Text"] = "Konum Metni"
 L["Lock Distance Max"] = "Kilit Mesafesi Maks"
@@ -1185,12 +1210,12 @@ L["Login Message"] = "Giris Mesaji"
 L["Loot Roll"] = "Ganimet Rulosu"
 L["Losing Threat"] = "Hiddet Kaybetmek"
 L["LOSS_OF_CONTROL"] = "Kontrol Kaybi Uyarilari"
-L["Low Health Color"] = true
-L["Low Health Half"] = true
+L["Low Health Color"] = "Dusuk Saglik Rengi"
+L["Low Health Half"] = "Dusuk Saglik Yarisi"
 L["Low Health Threshold"] = "Dusuk Saglik Esigi"
 L["Low Threat"] = "Dusuk Hiddet"
 L["Low Threshold"] = "Dusuk Esik"
-L["Low"] = true
+L["Low"] = "Dusuk"
 L["Lower numbers mean a higher priority. Filters are processed in order from 1 to 100."] =
 	"Dusuk sayilar daha yuksek oncelik anlamina gelir. Filtreler 1'den 100'e kadar sirayla islenir."
 L["LUNAR_POWER"] = "Lunar Power"
@@ -1204,7 +1229,7 @@ L["Main backdrop color of the UI."] = "Kullanici arayuzunun ana arka plan rengi.
 L["Main border color of the UI."] = "Kullanici arayuzunun ana sinir rengi."
 L["Main Options"] = "Ana Secenekler"
 L["Main statusbar texture."] = "Ana durum cubugu dokusu."
-L["Major Factions"] = true
+L["Major Factions"] = "Baslica Fraksiyonlar"
 L["Make textures transparent."] = "Dokulari seffaf hale getirin."
 L["Make the unitframe glow when it is below this percent of health."] =
 	"Birim cercevesinin bu saglik yuzdesinin altina dustugunde parlamasini saglayin."
@@ -1221,8 +1246,8 @@ L["Masque"] = true
 L["Match if Item Name or ID is NOT in the list."] = "Oge Ismi veya Kimligi listede YOKSA eslestirin."
 L["Match if Name or NPC ID is NOT in the list."] = "Isim veya NPC Kimligi listede YOKSA eslestirin."
 L["Match Player Level"] = "Oyuncu Seviyesini Eslestir"
-L["Match this trigger if the spell is not known."] = true
-L["Max Allowed Groups"] = true
+L["Match this trigger if the spell is not known."] = "Buyu bilinmiyorsa bu tetikleyiciyi eslestir."
+L["Max Allowed Groups"] = "Izin Verilen Maksimum Grup"
 L["Max Alpha"] = "Maksimum Alfa"
 L["Max amount of overflow allowed to extend past the end of the health bar."] =
 	"Saglik cubugunun sonunu gecmesine izin verilen maksimum tasma miktari."
@@ -1235,7 +1260,8 @@ L["Max Overflow"] = "Maksimum Tasma"
 L["Max Wraps"] = "Maksimum Sarma"
 L["Maximum Duration"] = "Maksimum Sure"
 L["Maximum Level"] = "Maksimum seviye"
-L["Maximum tick rate allowed for tag updates per second."] = true
+L["Maximum tick rate allowed for tag updates per second."] =
+	"Saniye basina etiket guncellemeleri icin izin verilen maksimum tik orani."
 L["Maximum Time Left"] = "Maksimum kalan sure"
 L["Media"] = "Medya"
 L["Merchant Frame"] = "Tuccar Cercevesi"
@@ -1258,19 +1284,19 @@ L["Minus"] = "Zavalli"
 L["Minutes"] = "Dakika"
 L["Mirror Timers"] = "Ayna Zamanlayicilar"
 L["Misc Frames"] = "Cesitli Cerceveler"
-L["Missing Aura"] = true
+L["Missing Aura"] = "Eksik Aura"
 L["Missing"] = "Eksik"
 L["MM:SS Threshold"] = "DD:SS Esigi"
 L["MM:SS"] = "DD:SS"
 L["Model Rotation"] = "Model Dondurme"
-L["Modified Rate"] = true
+L["Modified Rate"] = "Degistirilmis Oran"
 L["Modifier Count"] = "Degistirici Sayisi"
 L["Modifier for IDs"] = "Kimlikler Icin Degistirici"
 L["Module Control"] = "Modul Kontrolu"
 L["Module Copy"] = "Modul Kopyalama"
 L["Module Reset"] = "Modul Sifirlama"
 L["Monitor"] = "Monitor"
-L["Mouseover Cast Key"] = true
+L["Mouseover Cast Key"] = "Mouseover Kullanma Tusu"
 L["Mouseover Glow"] = "Fare Uzerine Geldiginde Parilti"
 L["Mouseover Highlight"] = "Fare Uzerine Geldiginde Vurgulama"
 L["Mouseover"] = "Fare Uzerine Geldiginde"
@@ -1279,15 +1305,16 @@ L["Multi-Monitor Support"] = "Coklu Monitor Destegi"
 L["Multiple Ranks"] = "Coklu Rutbeler"
 L["Multiply the backdrops height or width by this value. This is usefull if you wish to have more than one bar behind a backdrop."] =
 	"Arka planin yuksekligini veya genisligini bu degerle carpin. Bir fonun arkasinda birden fazla cubuk olmasini istiyorsaniz bu kullanislidir."
-L["Must be in group with the player if he isn't on the same server as you."] = true
-L["My Guild"] = true
+L["Must be in group with the player if he isn't on the same server as you."] =
+	"Sizinle ayni sunucuda degilse oyuncuyla ayni grupta olmalidir."
+L["My Guild"] = "Loncam"
 L["Mythic+ Best Run"] = "Mitik+ En Iyi Kosu"
 L["Mythic+ Data"] = "Mitik+ Veri"
 L["Mythic+ Score"] = "Mitik+ Puani"
 L["Name Font"] = "Isim Yazi Tipi"
 L["Name Only"] = "Sadece Isim"
-L["Name Style"] = true
-L["Name Taken"] = true
+L["Name Style"] = "Isim Stili"
+L["Name Taken"] = "Isim Alinmis"
 L["Name"] = "Isim"
 L["Name: Current / Max - Percent"] = "Isim: Mevcut / Maks - Yuzde"
 L["Name: Current / Max"] = "Isim: Mevcut / Maks"
@@ -1298,18 +1325,18 @@ L["NamePlate Style Filters"] = "Isim Levhasi Stili Filtreleri"
 L["Nameplate Thin Borders"] = "Isim Levhasi Ince Kenarliklar"
 L["Nameplate"] = "Isim Levhasi"
 L["Nameplates"] = "Isim Levhalari"
-L["Names"] = true
+L["Names"] = "Isimler"
 L["Negative Match"] = "Olumsuz Eslesme"
 L["Neutral"] = "Dogal"
 L["New Item Glow"] = "Yeni Oge Pariltisi"
 L["New Panel"] = "Yeni Panel"
 L["No Alert In Combat"] = "Catismada Uyari Yok"
 L["No Duration"] = "Sure Yok"
-L["No Icon"] = true
+L["No Icon"] = "Ikon Yok"
 L["No Label"] = "Etiket yok"
-L["No NPC Title"] = true
+L["No NPC Title"] = "NPC Basligi Yok"
 L["No Sorting"] = "Siralama Yok"
-L["No Target"] = true
+L["No Target"] = "Hedef Yok"
 L["Non-Interruptible"] = "Engellenemez"
 L["Non-Raid Frame"] = "Baskin Olmayan Cerceve"
 L["Non-Target Alpha"] = "Hedef Olmayan Alfa"
@@ -1317,29 +1344,29 @@ L["Normal Font"] = "Normal Yazi Tipi"
 L["Normal Outline"] = "Normal Anahat"
 L["Normal Size"] = "Normal boyut"
 L["Normal"] = true
-L["Not Another Players Pet"] = true
-L["Not Being Resurrected"] = true
+L["Not Another Players Pet"] = "Baska Bir Oyuncunun Evcil Hayvani Degil"
+L["Not Being Resurrected"] = "Diriltilmiyor"
 L["Not Casting Anything"] = "Hicbir yetenek kullanmiyor"
 L["Not Channeling Anything"] = "Hicbir periyodik yetenek kullanmiyor"
-L["Not Charmed"] = true
+L["Not Charmed"] = "Buyulenmemis"
 L["Not Focused"] = "Odaklanmamis"
-L["Not in Party"] = true
-L["Not in Raid"] = true
-L["Not Known"] = true
-L["Not My Guild"] = true
+L["Not in Party"] = "Partide Degil"
+L["Not in Raid"] = "Baskinda Degil"
+L["Not Known"] = "Bilinmiyor"
+L["Not My Guild"] = "Loncam Degil"
 L["Not Owned By Player"] = "Oyuncuya Ait Degil"
-L["Not Pet Battle"] = true
+L["Not Pet Battle"] = "Evcil Hayvan Savasi Degil"
 L["Not Pet"] = "Evcil hayvan degil"
 L["Not Player Controlled"] = "Oyuncu Kontrollu Degil"
-L["Not Possessed"] = true
+L["Not Possessed"] = "Ele Gecirilmemis"
 L["Not PvP"] = "PvP degil"
-L["Not Quest Unit"] = true
-L["Not Resting"] = true
+L["Not Quest Unit"] = "Gorev Birimi Degil"
+L["Not Resting"] = "Dinlenmiyor"
 L["Not Spell"] = "Buyu degil"
 L["Not Tap Denied"] = "Tiklama engelli degil"
 L["Not Targeted"] = "Hedef Alinmamis"
 L["Not Targeting Player"] = "Oyuncuyu Hedeflemiyor"
-L["Not Trivial"] = true
+L["Not Trivial"] = "Onemsiz Degil"
 L["Not Usable"] = "Kullanilamaz halde"
 L["NPC"] = "NPC"
 L["Num Rows"] = "Sayi Satir"
@@ -1364,16 +1391,16 @@ L["Offset of the powerbar to the healthbar, set to 0 to disable."] =
 	"Guc cubugunun saglik cubuguna kaymasi, devre disi birakmak icin 0'a ayarlayin."
 L["Offset"] = "Ofset"
 L["On Cooldown"] = "Soguma suresinde"
-L["On Me"] = true
-L["On Pet"] = true
+L["On Me"] = "Uzerimde"
+L["On Pet"] = "Evcil Hayvanda"
 L["On screen positions for different elements."] = "Farkli ogeler icin ekran konumlari."
 L["Only Free Slots"] = "Yalnizca ucretsiz Slotlar"
 L["Only highlight the aura that originated from you and not others."] =
 	"Baskalarindan degil, yalnizca sizden gelen aurayi vurgulayin."
-L["Only load nameplates for units within this range."] = true
-L["Only Low"] = true
+L["Only load nameplates for units within this range."] = "Yalnizca bu menzildeki birimler icin nameplate'leri yukle."
+L["Only Low"] = "Sadece Dusuk"
 L["Only Match SpellID"] = "Yalnizca SpellID'yi Eslestir"
-L["Only show icons instead of specialization names"] = true
+L["Only show icons instead of specialization names"] = "Uzmanlik isimleri yerine yalnizca ikonlari goster"
 L["Only Used Slots"] = "Yalnizca Kullanilan Yuvalar"
 L["OPACITY"] = "Opaklik"
 L["OPTION_TOOLTIP_ACTION_BUTTON_USE_KEY_DOWN"] =
@@ -1385,7 +1412,7 @@ L["Other AddOns"] = "Diger Eklentiler"
 L["Other Filter"] = "Diger Filtre"
 L["Other's First"] = "Digerlerinin Ilk"
 L["Others"] = "Digerleri"
-L["Out of Combat Label"] = true
+L["Out of Combat Label"] = "Catisma Disi Etiketi"
 L["Out of Combat"] = "Catisma Disi"
 L["Out of Power"] = "Guc Yok"
 L["Out of Range"] = "Mesafe Disi"
@@ -1394,18 +1421,19 @@ L["Over Absorbs"] = "Asiri Absorbe"
 L["Over Heal Absorbs"] = "Asiri Iyilestirme Absorbesi"
 L["Over Health Threshold"] = "Asiri Saglik Esigi"
 L["Over Power Threshold"] = "Asiri Guc Esigi"
-L["Overflow"] = true
+L["Overflow"] = "Tasma"
 L["Overlap Horizontal"] = "Yatay ortusme"
 L["Overlap Vertical"] = "Dikey ortusme"
 L["Overlay Alpha"] = "Kaplama Alfa"
-L["Overlay mode is forced when the Frame Orientation is set to Middle."] = true
+L["Overlay mode is forced when the Frame Orientation is set to Middle."] =
+	"Cerceve Yonlendirmesi Orta olarak ayarlandiginda Kaplama modu zorunlu kilinir."
 L["Overlay"] = "Kaplama"
 L["Override the default class color setting."] = "Varsayilan sinif renk ayarini gecersiz kil."
 L["Owned By Player"] = "Oyuncuya Aittir"
 L["PAIN"] = "Pain"
 L["Panel Backdrop"] = "Panel Arka Plani"
 L["Panel Height"] = "Panel Yuksekligi"
-L["Panel Options"] = true
+L["Panel Options"] = "Panel Secenekleri"
 L["Panel Snapping"] = "Panel Yapistirma"
 L["Panel Texture (Left)"] = "Panel Dokusu (Sol)"
 L["Panel Texture (Right)"] = "Panel Dokusu (Sag)"
@@ -1420,16 +1448,16 @@ L["Party Indicator"] = "Parti Gostergesi"
 L["Party Only"] = "Sadece Parti"
 L["Party PVP"] = "Parti PVP'si"
 L["Party"] = "Parti"
-L["Pause"] = true
+L["Pause"] = "Duraklat"
 L["Per Row"] = "Satir Basina"
 L["Percent"] = "Yuzde"
 L["Percentage amount for horizontal overlap of Nameplates."] = "Isim Levhalari yatay ortusmesi icin yuzde miktari."
 L["Percentage amount for vertical overlap of Nameplates."] = "Isim Levhalari dikey ortusmesi icin yuzde miktari."
-L["Trading Post"] = true
+L["Trading Post"] = "Ticaret Merkezi"
 L["Personal"] = "Kisiye Ozel"
 L["Pet Battle"] = "Evcil Hayvan Savasi"
 L["Pet Group"] = "Evcil Hayvan Grubu"
-L["Pet Happiness"] = true
+L["Pet Happiness"] = "Evcil Hayvan Mutlulugu"
 L["Pet"] = "Evcil Hayvan"
 L["Petition Frame"] = "Dilekce Cercevesi"
 L["Pets"] = "Evcil Hayvanlar"
@@ -1438,17 +1466,17 @@ L["Phase Indicator"] = "Faz Gostergesi"
 L["PICKUP_ACTION_KEY_TEXT"] = "Islem Anahtarini Al"
 L["Pin Voice Buttons"] = "Ses Dugmelerini Sabitle"
 L["Player Bars"] = "Oyuncu Cubuklari"
-L["Player Choice Frame"] = true
+L["Player Choice Frame"] = "Oyuncu Secim Cercevesi"
 L["Player Controlled"] = "Oyuncu Kontrollu"
 L["Player Frame Aura Bars"] = "Oyuncu Cercevesi Aura Cubuklari"
 L["Player Health"] = "Oyuncu Sagligi"
 L["Player Power"] = "Oyuncu Gucu"
-L["Player Spell"] = true
+L["Player Spell"] = "Oyuncu Buyusu"
 L["Player Target"] = "Oyuncu Hedefi"
 L["Player Titles"] = "Oyuncu Unvanlari"
 L["PLAYER_DIFFICULTY1"] = "Normal"
 L["Plugin"] = "Eklenti"
-L["Plugins"] = true
+L["Plugins"] = "Eklentiler"
 L["Poison Effect"] = "Zehir Etkisi"
 L["Portrait"] = "Portre"
 L["Position of bonus quest reward frame relative to the objective tracker."] =
@@ -1468,16 +1496,16 @@ L["Power text will be hidden on NPC targets, in addition the name text will be r
 L["Power Threshold"] = "Guc Esigi"
 L["Power"] = "Guc"
 L["POWER_TYPE_ARCANE_CHARGES"] = "Arcane Yukleri"
-L["POWER_TYPE_ESSENCE"] = true
-L["Prefer Target Color"] = true
+L["POWER_TYPE_ESSENCE"] = "Essence"
+L["Prefer Target Color"] = "Hedef Rengini Tercih Et"
 L["Prevent the same messages from displaying in chat more than once within this set amount of seconds, set to zero to disable."] =
 	"Ayni mesajlarin, devre disi birakmak icin sifira ayarlanmis bu ayarlanan saniye miktari icinde sohbette birden fazla kez goruntulenmesini onleyin."
 L["Primary Texture"] = "Birincil Doku"
 L["Priority"] = "oncelik"
 L["Private (Character Settings)"] = "Ozel (Karakter Ayarlari)"
-L["Private"] = true
+L["Private"] = "Ozel"
 L["Profession Bags"] = "Meslek cantalari"
-L["Profession Quality"] = true
+L["Profession Quality"] = "Meslek Kalitesi"
 L["Professions"] = "Meslekler"
 L["PROFESSIONS_COOKING"] = "Ascilik"
 L["PROFESSIONS_CRAFTING"] = "Crafting"
@@ -1497,22 +1525,22 @@ L["PvP Indicator"] = "PvP Gostergesi"
 L["PvP Text"] = "PvP Metni"
 L["PVP Trinket"] = "PVP Biblosu"
 L["Quality Background"] = "Kalite Arka Plani"
-L["Quality Itemlevel"] = true
+L["Quality Itemlevel"] = "Kalite Oge Seviyesi"
 L["Quality Name"] = "Kalite Ismi"
 L["Quality StatusBar"] = "Kalite Durum cubugu"
 L["Quest Boss"] = "Gorev Patronu"
 L["Quest Choice"] = "Gorev Secimi"
 L["Quest Experience"] = "Gorev Deneyimi"
 L["Quest Frames"] = "Gorev Cerceveleri"
-L["Quest Icon"] = true
+L["Quest Icon"] = "Gorev Ikonu"
 L["Quest Starter Icon"] = "Gorev Baslatici Ikonunu"
 L["Quest Starter"] = "Gorev Baslatici"
-L["Quest Unit"] = true
+L["Quest Unit"] = "Gorev Birimi"
 L["Quests in Current Zone Only"] = "Yalnizca Gecerli Bolgedeki Gorevler"
 L["Quests"] = "Gorevler"
 L["Queue Status"] = "Sira Durumu"
 L["Quick Join Messages"] = "Hizli Katilma Mesajlari"
-L["Quiver / Ammo"] = true
+L["Quiver / Ammo"] = "Sadak / Cephane"
 L["RAGE"] = "Rage"
 L["Raid Debuff Indicator"] = "Baskin Zayiflatici Gostergesi"
 L["Raid Difficulty"] = "Baskin Zorlugu"
@@ -1525,15 +1553,15 @@ L["Raid-Wide Sorting"] = "Baskin Genisliginde Siralama"
 L["RAID_CONTROL"] = "Baskin Kontrlu"
 L["RAID_INFO_WORLD_BOSS"] = "Dunya Patronu"
 L["Range"] = "Menzil"
-L["Rarity Color"] = true
+L["Rarity Color"] = "Nadirlik Rengi"
 L["Reaction Castbars"] = "Yetenek Cubugu Reaksiyonu"
-L["Reaction Color"] = true
+L["Reaction Color"] = "Reaksiyon Rengi"
 L["Reaction Colors"] = "Reaksiyon Renkleri"
 L["Reaction Type"] = "Reaksiyon Tipi"
-L["Reaction"] = true
+L["Reaction"] = "Reaksiyon"
 L["Reactions"] = "Reaksiyonlar"
 L["Ready Check Icon"] = "Hazirlik Kontrol Ikonu"
-L["Reagent"] = true
+L["Reagent"] = "Sarf Malzemesi"
 L["Reforge"] = true
 L["Remaining / Max"] = "Kalan / Maks"
 L["Remaining"] = "Geriye kalan"
@@ -1548,7 +1576,7 @@ L["Remove Spell - %s"] = "Buyu Kaldir - %s"
 L["Remove Spell ID or Name"] = "Yazim Kimligini veya Ismi Kaldir"
 L["Remove Spell"] = "Buyu Kaldir"
 L["Remove Subzone Name"] = "Alt Bolge Ismini Kaldir"
-L["Remove Texture"] = true
+L["Remove Texture"] = "Dokuyu Kaldir"
 L["Remove Zone Name"] = "Bolge Ismini Kaldir"
 L["Renown"] = true
 L["Replace Blizzard Fonts"] = "Blizzard Yazi Tiplerini Degistir"
@@ -1561,7 +1589,7 @@ L["Replace Nameplate Fonts"] = "Isim Levhalari Yazi Tiplerini Degistirin"
 L["Replace Text on Me"] = "uzerimdeki Metni Degistir"
 L["Replaces the default Blizzard fonts on various panels and frames with the fonts chosen in the Media section of the ElvUI Options. NOTE: Any font that inherits from the fonts ElvUI usually replaces will be affected as well if you disable this. Enabled by default."] =
 	"cesitli panel ve cercevelerdeki varsayilan Blizzard yazi tiplerini, ElvUI Seceneklerinin Medya bolumunde secilen yazi tipleriyle degistirir. NOT: ElvUI'nin genellikle degistirdigi yazi tiplerinden miras kalan herhangi bir yazi tipi de, bunu devre disi birakirsaniz etkilenecektir. Varsayilan olarak etkindir. "
-L["Replaces the font on Blizzard Nameplates."] = true
+L["Replaces the font on Blizzard Nameplates."] = "Blizzard Nameplate'lerindeki yazi tipini degistirir."
 L["Replaces the StatusBar texture setting on Unitframes and Nameplates with the primary texture."] =
 	"Birim cerceveleri ve Isim Levhalari Durum cubugu doku ayarini birincil doku ile degistirir."
 L["Reposition Window"] = "Pencereyi Yeniden Konumlandir"
@@ -1570,21 +1598,21 @@ L["Reputation"] = "Itibar"
 L["Require All"] = "Tum Gereksinimler"
 L["Require holding the Alt key down to move cursor or cycle through messages in the editbox."] =
 	"Imleci hareket ettirmek veya duzenleme kutusundaki mesajlar arasinda gecis yapmak icin Alt tusunu basili tutmayi gerektir."
-L["Require Target"] = true
+L["Require Target"] = "Hedef Gerektir"
 L["Reset Action Paging"] = "Eylem cagrisini Sifirla"
-L["Reset all frames to their original positions."] = true
+L["Reset all frames to their original positions."] = "Tum cerceveleri orijinal konumlarina sifirlar."
 L["Reset Aura Filters"] = "Aura Filtrelerini Sifirla"
 L["Reset Chat Position"] = "Sohbet Konumunu Sifirla"
 L["Reset CVars"] = "Cvars'i Sifirla"
 L["Reset Editbox History"] = "Duzenleme Kutusu Gecmisini Sifirla"
-L["Reset Filter - %s"] = true
+L["Reset Filter - %s"] = "Filtreyi Sifirla - %s"
 L["Reset filter priority to the default state."] = "Filtre onceligini varsayilan duruma sifirla."
 L["Reset Filter"] = "Filtreyi Sifirla"
 L["Reset History"] = "Gecmisi Sifirla"
 L["Reset Nameplate CVars to the ElvUI recommended defaults."] =
 	"Isim Levhalari CVar'larini ElvUI tarafindan onerilen varsayilanlara sifirlayin."
 L["Reset Priority"] = "Onceligi Sifirla"
-L["Reset the size and position of this frame."] = true
+L["Reset the size and position of this frame."] = "Bu cercevenin boyutunu ve konumunu sifirlar."
 L["Reset Zoom"] = "Yakinlastirmayi Sifirla"
 L["Rest Icon"] = "Dinlenme Ikonu"
 L["Rested Experience"] = "Dinlenmis Deneyim"
@@ -1602,7 +1630,7 @@ L["Reverse Toggle will enable Cooldown Text on this module when the global setti
 L["Reverse Toggle"] = "Ters Gecis"
 L["Reverse"] = "Tersi"
 L["REVERSE_NEW_LOOT_TEXT"] = "En Sol cantaya Yagma"
-L["Reversed"] = true
+L["Reversed"] = "Tersine Cevrilmis"
 L["Reward Icon"] = "Idul Ikonu"
 L["Reward Position"] = "Idul Pozisyonu"
 L["Right Alt"] = "Sag Alt"
@@ -1616,10 +1644,10 @@ L["Right Shift"] = "Saga kaydirma"
 L["Right to Left"] = "Sagdan sola"
 L["Right"] = "Sag"
 L["Role Icon"] = "Rol Ikonu"
-L["Role Order"] = true
+L["Role Order"] = "Rol Sirasi"
 L["ROLE"] = "Rol"
-L["Round Timers"] = true
-L["Run the installation process."] = true
+L["Round Timers"] = "Zamanlayicilari Yuvarla"
+L["Run the installation process."] = "Kurulum islemini calistir."
 L["RUNE_BLOOD"] = "Blood Runu"
 L["RUNE_CHARGE"] = "Run Sarjı"
 L["RUNE_DEATH"] = "Death Runu"
@@ -1632,7 +1660,7 @@ L["Say"] = "Soyle"
 L["Scale"] = "Olcek"
 L["Scale Nameplates to UI Scale."] = "İsim levhalarını arayüz ölçeğine göre ayarla."
 L["SCENARIOS"] = "Senaryolar"
-L["School"] = true
+L["School"] = "Okul"
 L["Scrap Icon"] = "Hurda Ikonu"
 L["SCRAP_BUTTON"] = "Hurda"
 L["Scroll Interval"] = "Kaydirma Araligi"
@@ -1642,7 +1670,7 @@ L["Search"] = "Arama"
 L["Secondary Texture"] = "Ikincil Doku"
 L["Seconds"] = "Saniye"
 L["Securely Tanking"] = "Guvenli Tanklama"
-L["Seen Textures"] = true
+L["Seen Textures"] = "Gorulen Dokular"
 L["Select a profile to copy from/to."] = "Kopyalanacak/icine kopyalanacak bir profil secin."
 L["Select a unit to copy settings from."] = "Ayarlari kopyalamak icin bir birim secin."
 L["Select Filter"] = "Filtreyi Sec"
@@ -1654,7 +1682,7 @@ L["Selection Power"] = "Secim Gucu"
 L["Selection"] = "Secim"
 L["Selector Color"] = "Secici Renk"
 L["Selector Style"] = "Secici Stili"
-L["Self Cast Key"] = true
+L["Self Cast Key"] = "Kendine Kullanma Tusu"
 L["Sell Interval"] = "Satis Araligi"
 L["Sends your current profile to your target."] = "Mevcut profilinizi hedefinize gonderir."
 L["Sends your filter settings to your target."] = "Filtre ayarlarinizi hedefinize gonderir."
@@ -1694,7 +1722,7 @@ L["SHORT"] = "Kisa"
 L["Shortcut to global filters."] = "Kuresel filtrelere kisayol."
 L["Shorten the channel names in chat."] = "Sohbette kanal adlarini kisaltin."
 L["Should tooltip be anchored to mouse cursor"] = "Ipucu penceresi fare imlecine sabitlenmeli mi"
-L["Show All Tracking Options"] = true
+L["Show All Tracking Options"] = "Tum Izleme Seceneklerini Goster"
 L["Show an incoming heal prediction bar on the unitframe. Also display a slightly different colored bar for incoming overheals."] =
 	"Alınacak tahmini iyilestirmeyi birim cercevesinde goster. Ayrica gelen iyilestirme tahmini icin farkli renk vurgusunda bir cubuk goster."
 L["Show Assigned Color"] = "Atanan Rengi Goster"
@@ -1707,7 +1735,7 @@ L["Show Bubbles"] = "Kabarciklari Goster"
 L["Show clickable Quick Join messages inside of the chat."] =
 	"Sohbetin icinde tiklanabilir Hizli Katilma mesajlarini goster."
 L["Show Coins"] = "Paralari Goster"
-L["Show Continent"] = true
+L["Show Continent"] = "Kitayi Goster"
 L["Show Count"] = "Sayiyi Goster"
 L["Show Dispellable Debuffs"] = "Dildirilebilir Zayiflaticilari Goster"
 L["Show ElvUI users and their version of ElvUI."] = "ElvUI kullanicilarini ve ElvUI surumlerini goster."
@@ -1718,21 +1746,21 @@ L["Show For Healers"] = "Healer Icin Goster"
 L["Show For Tanks"] = "Tanklar Icin Goster"
 L["Show Icon"] = "Ikonu Goster"
 L["Show In Combat"] = "Savasta Goster"
-L["Show Label"] = true
+L["Show Label"] = "Etiketi Goster"
 L["Show Max Currency"] = "Maks Para Birimi Goster"
 L["Show Only Names"] = "Yalnizca Isimleri Goster"
 L["Show PvP Badge Indicator if available"] = "Varsa PvP Rozet Gostergesini Goster"
 L["Show Quality Color"] = "Kalite Rengini Goster"
 L["Show QuestXP"] = "Gorev Deneyim Puanini Goster"
 L["Show Special Bags Color"] = "Ozel Canta Rengini Goster"
-L["Show Subzone"] = true
-L["Show Text"] = true
+L["Show Subzone"] = "Alt Bolgeyi Goster"
+L["Show Text"] = "Metni Goster"
 L["Show the castbar icon desaturated if a spell is not interruptible."] =
 	"Bir yetenek engellenemiyorsa, yetenek cubugu ikonunun doygunlugu azaltilmis olarak goster."
 L["Show Title"] = "Basligi Goster"
 L["Show When Not Active"] = "Aktif Degilken Goster"
 L["Show With Target"] = "Hedef Ile Goster"
-L["Show Zone"] = true
+L["Show Zone"] = "Bolgeyi Goster"
 L["Show"] = "GOSTER"
 L["Show/Hide Test Frame"] = "Test Cercevesini Goster/Gizle"
 L["Shows a swipe animation when a spell is recharging but still has charges left."] =
@@ -1743,14 +1771,14 @@ L["Shows item level of each item, enchants, and gems when inspecting another pla
 	"Baska bir oyuncuyu incelerken her ogenin, buyulerin ve mucevherlerin oge seviyesini gosterir."
 L["Side Arrows"] = "Yan Oklar"
 L["Size and Positions"] = "Boyut ve Konumlar"
-L["Size Offset"] = true
+L["Size Offset"] = "Boyut Ofseti"
 L["Size Override"] = "Boyut Gecersiz Kilma"
 L["Size"] = "Boyut"
 L["Skin Backdrop (No Borders)"] = "Cilt Arka Plani (Sinir Yok)"
 L["Skin Backdrop"] = "Cilt Arka Plani"
 L["Skin the blizzard chat bubbles."] = "Blizzard sohbet baloncuklarini gorun."
 L["Skins"] = "Kaplamalar"
-L["Slots"] = true
+L["Slots"] = "Yuvalar"
 L["Smaller World Map Scale"] = "Daha Kucuk Dunya Haritasi Olcegi"
 L["Smaller World Map"] = "Daha Kucuk Dunya Haritasi"
 L["Smart Aura Position"] = "Akilli Aura Pozisyonu"
@@ -1773,8 +1801,8 @@ L["Spacing"] = "Bosluk"
 L["Spam Interval"] = "Spam Araligi"
 L["Spark"] = "Kivilcim"
 L["Spec Icon"] = "Uzmanlik Ikonu"
-L["Spec/Loadout"] = true
-L["Specializations Only"] = true
+L["Spec/Loadout"] = "Uzmanlik/Dizilim"
+L["Specializations Only"] = "Yalnizca Uzmanliklar"
 L["SPEED"] = "Hiz"
 L["Spell/Item IDs"] = "Buyu/Oge Kimlikleri"
 L["SPELLBOOK"] = "Buyu Kitabi"
@@ -1785,7 +1813,7 @@ L["Stack Counter"] = "Yigin Sayaci"
 L["Stack Threshold"] = "Yigin Esigi"
 L["Start Near Center"] = "Merkeze Yakin Baslat"
 L["Status Bar"] = "Durum cubugu"
-L["StatusBar Color"] = true
+L["StatusBar Color"] = "Durum Cubugu Rengi"
 L["Statusbar Fill Orientation"] = "Durum cubugu Doldurma Yonu"
 L["StatusBar Texture"] = "Durum cubugu Dokusu"
 L["Statusbar"] = "Durum cubugu"
@@ -1806,11 +1834,11 @@ L["Tab Font Size"] = "Sekme Yazi Tipi Boyutu"
 L["Tab Font"] = "Sekme Yazi Tipi"
 L["Tab Panel Transparency"] = "Sekme Paneli Seffafligi"
 L["Tab Panel"] = "Sekme Paneli"
-L["Tab Panels"] = true
+L["Tab Panels"] = "Sekme Panelleri"
 L["Tab Selector"] = "Sekme Secici"
 L["Tabard Frame"] = "Cubbe Cercevesi"
 L["Table"] = "Masa"
-L["Tag Update Rate"] = true
+L["Tag Update Rate"] = "Etiket Guncelleme Orani"
 L["Tagged NPC"] = "Etiketli NPC"
 L["TALENTS"] = "Yetenekler"
 L["Talking Head Backdrop"] = "Konusan Kafa Arka Plani"
@@ -1818,18 +1846,18 @@ L["Talking Head Scale"] = "Konusan Kafa Olcegi"
 L["Talking Head"] = "Konusan kafa"
 L["Tank Colors"] = "Tank Renkleri"
 L["Tank Frames"] = "Tank Cerceveleri"
-L["Tank Icon"] = true
+L["Tank Icon"] = "Tank Ikonu"
 L["Tank"] = "Tank"
 L["Tap Denied"] = "Dokunus Reddedildi"
 L["Tapped"] = "Dokunuldu"
-L["Target Aura Expiring"] = true
-L["Target Aura"] = true
+L["Target Aura Expiring"] = "Hedef Aura Suresi Doluyor"
+L["Target Aura"] = "Hedef Aurasi"
 L["Target Group"] = "Hedef Grup"
 L["Target Indicator Color"] = "Hedef Gosterge Rengi"
 L["Target Info"] = "Hedef Bilgisi"
 L["Target Marker Icon"] = "Hedef Isaretleyici Ikonu"
 L["Target On Mouse-Down"] = "Fare Asagi uzerinde Hedef"
-L["Target Reticle"] = true
+L["Target Reticle"] = "Hedef Nisangahi"
 L["Target units on mouse down rather than mouse up.\n|cffff3333Note:|r If Clique is enabled, this option only effects ElvUI frames if they are not blacklisted in Clique."] =
 	"Hedef birimleri fare yukari degil asagi konumdayken hedefleyin.\n|cffff3333Not:|r Clique etkinlestirilirse, bu secenek yalnizca ElvUI cercevelerini Clique'de kara listeye alinmamissa etkiler."
 L["Target"] = "Hedef"
@@ -1839,7 +1867,7 @@ L["Targeting Sound"] = "Hedefleme Sesi"
 L["Targeting"] = "Hedefleme"
 L["TargetTarget"] = "HedefHedef"
 L["TargetTargetTarget"] = "HedefHedefHedef"
-L["Template"] = true
+L["Template"] = "Sablon"
 L["Testing:"] = "Testleri Yapanlar:"
 L["Text Color"] = "Metin Rengi"
 L["Text Fade"] = "Metin Solmasi"
@@ -1850,8 +1878,8 @@ L["Text Position"] = "Metin Konumu"
 L["Text Threshold"] = "Metin Esigi"
 L["Text Toggle On NPC"] = "NPC'de Metin Gecisi"
 L["Text"] = "Metin"
-L["Texts"] = true
-L["Texture Matching"] = true
+L["Texts"] = "Metinler"
+L["Texture Matching"] = "Doku Eslestirme"
 L["Texture"] = "Doku"
 L["Textured Icon"] = "Dokulu Ikon"
 L["Textures"] = "Dokular"
@@ -1907,7 +1935,7 @@ L["These filters use a list of spells to determine if an aura should be allowed 
 L["Thin Borders"] = "Ince Sinirlar"
 L["This allows you to create a new datatext which will track the currency with the supplied currency ID. The datatext can be added to a panel immediately after creation."] =
 	"Bu, saglanan para birimi kimligiyle para birimini izleyecek yeni bir veri metni olusturmaniza olanak tanir. Veri metni, olusturulduktan hemen sonra bir panele eklenebilir."
-L["This changes the size of the Aura Icon by this value."] = true
+L["This changes the size of the Aura Icon by this value."] = "Bu, Aura Ikonunun boyutunu bu deger kadar degistirir."
 L["This dictates the size of the icon when it is not attached to the castbar."] =
 	"Bu, yetenek cubuguna bagli olmadiginda ikonun boyutunu belirler."
 L["This feature will allow you to transfer settings to other characters."] =
@@ -1915,7 +1943,7 @@ L["This feature will allow you to transfer settings to other characters."] =
 L["This is for Customized Icons in your Interface/Icons folder."] =
 	"Bu, Arayuz/Ikonlar klasorunuzdeki ozellestirilmis Ikonlar icindir."
 L["This list will display any textures Boss Mods have sent to the Boss Mod Auras element during the current session."] =
-	true
+	"Bu liste, gecerli oturum sirasinda Boss Modlarinin Boss Mod Auralari ogesine gonderdigi tum dokulari goruntuler."
 L["This opens the AuraBar Colors filter. These settings affect specific spells."] =
 	"Bu, Aura cubuklari Renkleri filtresini acar. Bu ayarlar belirli buyuleri etkiler."
 L["This opens the UnitFrames Color settings. These settings affect all unitframes."] =
@@ -1937,7 +1965,8 @@ L["This setting controls the size of text in item comparison tooltips."] =
 L["This setting will be updated upon changing stances."] = "Bu ayar, duruslar degistirildiginde guncellenecektir."
 L["This texture will get used on objects like chat windows and dropdown menus."] =
 	"Bu doku, sohbet pencereleri ve acilir menuler gibi nesnelerde kullanilacak."
-L["This uses the IsPlayerSpell API which is only required sometimes."] = true
+L["This uses the IsPlayerSpell API which is only required sometimes."] =
+	"Bu, yalnizca bazen gereken IsPlayerSpell API'sini kullanir."
 L["This will allow you to toggle flashing of the time datatext when there are calendar invites."] =
 	"Bu, takvim davetleri oldugunda zaman veri metninin yanip sonmesini degistirmenize olanak tanir."
 L["This will join auras together which are normally separated. Example: Bolstering and Force of Nature."] =
@@ -1948,7 +1977,7 @@ L["This will pin the voice buttons to the chat's tab panel. Unchecking it will c
 L["This will reset the contents of this filter back to default. Any spell you have added to this filter will be removed."] =
 	"Bu, bu filtrenin icerigini varsayilana sifirlayacaktir. Bu filtreye eklediginiz tum buyuler kaldirilacaktir."
 L["This works like a macro, you can run different situations to get the actionbar to page differently.\n Example: '[combat] 2;'"] =
-	true
+	"Bu bir makro gibi calisir, eylem cubugunun farkli sekilde sayfalanmasi icin farkli durumlar calistirabilirsiniz.\n Ornek: '[combat] 2;'"
 L["This works like a macro, you can run different situations to get the actionbar to show/hide differently.\n Example: '[combat] show;hide'"] =
 	"Bu bir makro gibi calisir, eylem cubugunun farkli sekilde gosterilmesini/gizlenmesini saglamak icin farkli durumlar calistirabilirsiniz.\n ornek: '[catisma] goster;gizle'"
 L["Display Mode"] = "Ekran Modu"
@@ -1967,21 +1996,21 @@ L["Ticks"] = "Tikler"
 L["Time Indicator Colors"] = "Zaman Gosterge Renkleri"
 L["Time Options"] = "Zaman Secenekleri"
 L["Time Remaining"] = "Kalan sure"
-L["Time Text"] = true
+L["Time Text"] = "Zaman Metni"
 L["Time To Hold"] = "Tutma Zamani"
 L["Time"] = "Zaman"
 L["TIMEMANAGER_TITLE"] = "Saat"
-L["Timer Only"] = true
+L["Timer Only"] = "Yalnizca Zamanlayici"
 L["TIMESTAMPS_LABEL"] = "Sohbet Zaman Damgalari"
 L["Title will only appear if Name Only is enabled or triggered in a Style Filter."] =
 	"Baslik yalnizca Yalnizca Isim etkinlestirilirse veya bir Stil Filtresinde tetiklenirse gorunur."
-L["Title"] = true
+L["Title"] = "Baslik"
 L["Toggle 24-hour mode for the time datatext."] = "Saat veri metni icin 24 saat modunu degistir."
 L["Toggle Anchors"] = "capalari Degistir"
 L["Toggle Off While In Combat"] = "Catismadayken Kapat"
 L["Toggle On While In Combat"] = "Catismadayken Ac/Kapat"
 L["Toggle showing of the left and right chat panels."] = "Sol ve sag sohbet panellerinin gosterilmesini ac/kapat."
-L["Toggle the camera spin on the AFK screen."] = true
+L["Toggle the camera spin on the AFK screen."] = "AFK ekranindaki kamera donusunu ac/kapat."
 L["Toggle the chat tab panel backdrop."] = "Sohbet sekmesi paneli arka planini ac/kapat."
 L["Toggle Tutorials"] = "Ogreticileri Degistir"
 L["Tooltip Body"] = "Arac Ipucu Govdesi"
@@ -1993,14 +2022,14 @@ L["Top Panel"] = "Ust panel"
 L["Top Right"] = "Sag Ust"
 L["Top to Bottom"] = "Yukaridan Asagiya"
 L["Top"] = "Tepe"
-L["Torghast Level Picker"] = true
+L["Torghast Level Picker"] = "Torghast Seviye Secici"
 L["TOTEM_AIR"] = "Hava Totemi"
 L["TOTEM_EARTH"] = "Toprak Totemi"
 L["TOTEM_FIRE"] = "Ates Totemi"
 L["TOTEM_WATER"] = "Su Totemi"
 L["Totems"] = "Totemler"
 L["Tracked Quests Only"] = "Yalnizca Izlenen Gorevler"
-L["Tracking"] = true
+L["Tracking"] = "Izleme"
 L["TRADE"] = "Ticaret"
 L["TRADESKILLS"] = "Ticaret Becerileri"
 L["Trainer Frame"] = "Egitmen Cercevesi"
@@ -2013,18 +2042,18 @@ L["Trivial"] = "Onemsiz"
 L["Turtle Color"] = "Kaplumbaga Rengi"
 L["Tutorials"] = "Ogreticiler"
 L["Ultrawide Support"] = "Ultra Genis Monitor Destegi"
-L["Unconscious"] = true
+L["Unconscious"] = "Baygin"
 L["Under Health Threshold"] = "Saglik Esigi Altinda"
 L["Under Power Threshold"] = "Guc Esigi Altinda"
 L["Unfriendly"] = "Dusmanca"
-L["Unhappy"] = true
-L["Unit Class Color"] = true
+L["Unhappy"] = "Mutsuz"
+L["Unit Class Color"] = "Birim Sinif Rengi"
 L["Unit Conditions"] = "Birim Kosullari"
 L["Unit Faction"] = "Birim Fraksiyonu"
 L["Unit Prefix Style"] = "Birim onek Stili"
 L["Unit Target"] = "Birim Hedef"
 L["Unit Type"] = "Birim tipi"
-L["Unit"] = true
+L["Unit"] = "Birim"
 L["UNIT_NAME_PLAYER_TITLE"] = "Basliklar"
 L["UNIT_NAMEPLATES_AUTOMODE"] = "Isim Levhalarinin Daima Goster"
 L["UNIT_NAMEPLATES_TYPE_1"] = "ortusen Isim Levhalari"
@@ -2057,12 +2086,12 @@ L["Use Dead Backdrop"] = "Olu Arka Plani Kullan"
 L["Use Default"] = "Varsayilani Kullan"
 L["Use drag and drop to rearrange filter priority or right click to remove a filter."] =
 	"Filtre onceligini yeniden duzenlemek icin surukle ve birak ozelligini kullanin veya bir filtreyi kaldirmak icin sag tiklayin."
-L["Use Icons"] = true
+L["Use Icons"] = "Ikonlari Kullan"
 L["Use Indicator Color"] = "Gosterge Rengini Kullan"
 L["Use Instance ID or Name"] = "Ornek Kimligini veya Ismini Kullan"
 L["Use Map ID or Name"] = "Harita Kimligini veya Ismini Kullan"
 L["Use Modifier for Item Count"] = "Oge Sayisi icin Degistiriciyi Kullan"
-L["Use Off Tank Color when another Tank has threat."] = true
+L["Use Off Tank Color when another Tank has threat."] = "Baska bir Tank hiddet topladiginda Destek Tank Rengini kullan."
 L["Use Portrait"] = "Portreyi Kullan"
 L["Use Real ID BattleTag"] = "Gercek Kimlik BattleTag Kullan"
 L["Use Shift+LeftClick to toggle between friendly or enemy or normal state. Normal state will allow the filter to be checked on all units. Friendly state is for friendly units only and enemy state is for enemy units."] =
@@ -2071,13 +2100,14 @@ L["Use Static Position"] = "Statik Konumu Kullan"
 L["Use Subzone Names"] = "Alt Bolge Isimlerini Kullan"
 L["Use the custom backdrop color instead of a multiple of the main color."] =
 	"Ana rengin bir kati yerine ozel zemin rengini kullanin."
-L["Use the profile specific filter Aura Indicator (Profile) instead of the global filter Aura Indicator."] = true
+L["Use the profile specific filter Aura Indicator (Profile) instead of the global filter Aura Indicator."] =
+	"Genel filtre Aura Gostergeleri yerine profile ozel filtre Aura Gostergeleri (Profil) kullanin."
 L["Use thin borders on certain nameplate elements."] = "Belirli isim levhasi ogelerinde ince kenarliklar kullanin."
 L["Use thin borders on certain unitframe elements."] = "Belirli birim cerceve ogelerinde ince kenarliklar kullanin."
 L["Use this backdrop color for units that are dead or ghosts."] =
 	"olu veya hayalet olan birimler icin bu zemin rengini kullanin."
 L["Use Threat Color"] = "Hiddet Rengini Kullan"
-L["Use Value Color"] = true
+L["Use Value Color"] = "Deger Rengini Kullan"
 L["Use Zone Names"] = "Bolge Isimlerini Kullan"
 L["Used as Raid Debuff Indicator"] = "Baskin Zayiflatici Gostergesi olarak kullanilir"
 L["Used/Total"] = "Kullanilan/Toplam"
@@ -2095,10 +2125,10 @@ L["Visibility State"] = "Gorunurluk Durumu"
 L["Visibility"] = "Gorunurluk"
 L["VOID_STORAGE"] = "Bosluk Depolama"
 L["WeakAuras"] = true
-L["Weekly Rewards"] = true
+L["Weekly Rewards"] = "Haftalik Oduller"
 L["What point to anchor to the frame you set to attach to."] =
 	"Eklemeyi ayarladiginiz cerceveye hangi noktayi tutturacaksiniz?"
-L["What to attach the anchor frame to."] = true
+L["What to attach the anchor frame to."] = "Capa cercevesinin nereye ilistirilecegi."
 L["Whats New"] = "Ne var ne yok"
 L["When disabled, the Chat Background color has to be set via Blizzards Chat Tabs Background setting."] =
 	"Devre disi birakildiginda, Sohbet Arka Plani rengi, Blizzards Sohbet Sekmeleri Arka Plani ayari araciligiyla ayarlanmalidir."
@@ -2137,7 +2167,7 @@ L["X-Offset"] = "X-Ofseti"
 L["XP Quest Percent"] = "Gorev Deneyim Puani Yuzdesi"
 L["Y-Offset"] = "Y-Ofseti"
 L["Yell"] = "Bagir"
-L["You are about to reset paging. Are you sure?"] = true
+L["You are about to reset paging. Are you sure?"] = "Sayfalamayi sifirlamak uzeresiniz. Emin misiniz?"
 L['You are going to copy settings for |cffD3CF00"%s"|r from your current |cff4beb2c"%s"|r profile to |cff4beb2c"%s"|r profile. Are you sure?'] =
 	'Mevcut |cff4beb2c"%s"|r profilinizden |cffD3CF00"%s"|r icin ayarlari |cff4beb2c"%s"|r profiline kopyalayacaksiniz. Emin misiniz?'
 L['You are going to copy settings for |cffD3CF00"%s"|r from |cff4beb2c"%s"|r profile to your current |cff4beb2c"%s"|r profile. Are you sure?'] =
@@ -2187,7 +2217,7 @@ L["blockNoDuration"] = "[Blok] Sure Yok"
 L["blockNonPersonal"] = "[Blok] Kisisel Olmayan"
 L["blockNotDispellable"] = "[Blok] Arindirilamaz"
 L["blockMount"] = "[Blok] Mount"
-L["Mount"] = true
+L["Mount"] = "Binek"
 L["CastByNPC"] = "NPC Tarafindan Kullanilan Yetenek"
 L["CastByPlayers"] = "Oyuncular Tarafindan Kullanilan Yetenek"
 L["CastByUnit"] = "Birime Gore Kullanilan Yetenek"
@@ -2227,32 +2257,44 @@ Or for most users it would be easier to simply put a tga file into your WoW fold
 
 ----------  FilterHelp  ----------
 L["*Whitelists:|r ^Boss, Mount, MyPet, OtherPet, Personal, nonPersonal, CastByUnit, notCastByUnit, Dispellable (includes steal-able), notDispellable, CastByNPC, CastByPlayers, BlizzardNameplate|r"] =
-	true
+	"*Beyaz listeler:|r ^Boss, Mount, MyPet, OtherPet, Personal, nonPersonal, CastByUnit, notCastByUnit, Dispellable (calinabilir olanlar dahil), notDispellable, CastByNPC, CastByPlayers, BlizzardNameplate|r"
 L["*Blacklists:|r ^blockMount, blockNonPersonal, blockCastByPlayers, blockNoDuration, blockDispellable, blockNotDispellable | A blacklist filter is only effective against filters that come after it in the priority list. It will not block anything from the filters before it.|r"] =
-	true
+	"*Kara listeler:|r ^blockMount, blockNonPersonal, blockCastByPlayers, blockNoDuration, blockDispellable, blockNotDispellable | Bir kara liste filtresi yalnizca oncelik listesinde kendisinden sonra gelen filtrelere karsi etkilidir. Kendisinden onceki filtrelerden hicbir seyi engellemez.|r"
 L["^A blacklist filter is only effective against filters that come after it in the priority list. It will not block anything from the filters before it."] =
-	true
-L["*Boss:|r ^Auras (debuffs only?) cast by a boss unit.|r"] = true
-L["*Mount:|r ^Auras which are classified as mounts.|r"] = true
-L["*Personal:|r ^Auras cast by yourself.|r"] = true
-L["*nonPersonal:|r ^Auras cast by anyone other than yourself.|r"] = true
+	"^Bir kara liste filtresi yalnizca oncelik listesinde kendisinden sonra gelen filtrelere karsi etkilidir. Kendisinden onceki filtrelerden hicbir seyi engellemez."
+L["*Boss:|r ^Auras (debuffs only?) cast by a boss unit.|r"] =
+	"*Boss:|r ^Bir boss birimi tarafindan kullanilan Aura'lar (yalnizca debuff'lar mi?).|r"
+L["*Mount:|r ^Auras which are classified as mounts.|r"] = "*Mount:|r ^Binek olarak siniflandirilan Auralar.|r"
+L["*Personal:|r ^Auras cast by yourself.|r"] = "*Personal:|r ^Kendiniz tarafindan kullanilan Auralar.|r"
+L["*nonPersonal:|r ^Auras cast by anyone other than yourself.|r"] =
+	"*nonPersonal:|r ^Kendiniz disinda herhangi biri tarafindan kullanilan Auralar.|r"
 L["*CastByUnit:|r ^Auras cast by the unit of the unitframe or nameplate (so on target frame it only shows auras cast by the target unit).|r"] =
-	true
-L["*notCastByUnit:|r ^Auras cast by anyone other than the unit of the unitframe or nameplate.|r"] = true
-L["*Dispellable:|r ^Auras you can either dispel or spellsteal.|r"] = true
-L["*CastByNPC:|r ^Auras cast by any NPC.|r"] = true
-L["*CastByPlayers:|r ^Auras cast by any player-controlled unit (so no NPCs).|r"] = true
+	"*CastByUnit:|r ^Birim cercevesinin veya nameplate'in birimi tarafindan kullanilan Aura'lar (yani hedef cercevesinde yalnizca hedef birim tarafindan kullanilan aura'lari gosterir).|r"
+L["*notCastByUnit:|r ^Auras cast by anyone other than the unit of the unitframe or nameplate.|r"] =
+	"*notCastByUnit:|r ^Birim cercevesinin veya nameplate'in birimi disinda herhangi biri tarafindan kullanilan Aura'lar.|r"
+L["*Dispellable:|r ^Auras you can either dispel or spellsteal.|r"] =
+	"*Dispellable:|r ^Dagitabileceginiz veya buyu calabileceginiz Auralar.|r"
+L["*CastByNPC:|r ^Auras cast by any NPC.|r"] = "*CastByNPC:|r ^Herhangi bir NPC tarafindan kullanilan Auralar.|r"
+L["*CastByPlayers:|r ^Auras cast by any player-controlled unit (so no NPCs).|r"] =
+	"*CastByPlayers:|r ^Herhangi bir oyuncu kontrollu birim tarafindan kullanilan Auralar (yani NPC yok).|r"
 L["*blockCastByPlayers:|r ^Blocks any aura that is cast by player-controlled units (so will only show auras cast by NPCs).|r"] =
-	true
-L["*blockNoDuration:|r ^Blocks any aura without a duration.|r"] = true
-L["*blockNonPersonal:|r ^Blocks any aura that is not cast by yourself.|r"] = true
-L["*Show Everything:|r ^Set 'Max Duration' to 0 & Leave Priority List Empty or (1) Personal | (2) nonPersonal"] = true
-L["*Block Blacklisted Auras, Show Everything Else:|r ^(1) Blacklist| (2) Personal | (3) nonPersonal"] = true
-L["*Block Auras Without Duration, Show Everything Else:|r ^(1) blockNoDuration | (2) Personal | (3) nonPersonal"] = true
+	"*blockCastByPlayers:|r ^Oyuncu kontrollu birimler tarafindan kullanilan tum auralari engeller (yani yalnizca NPC'ler tarafindan kullanilan auralari gosterir).|r"
+L["*blockNoDuration:|r ^Blocks any aura without a duration.|r"] =
+	"*blockNoDuration:|r ^Suresi olmayan tum auralari engeller.|r"
+L["*blockNonPersonal:|r ^Blocks any aura that is not cast by yourself.|r"] =
+	"*blockNonPersonal:|r ^Kendiniz tarafindan kullanilmayan tum auralari engeller.|r"
+L["*Show Everything:|r ^Set 'Max Duration' to 0 & Leave Priority List Empty or (1) Personal | (2) nonPersonal"] =
+	"*Her Seyi Goster:|r ^'Maks Sure' degerini 0 yapin & Oncelik Listesini Bos Birakin veya (1) Personal | (2) nonPersonal"
+L["*Block Blacklisted Auras, Show Everything Else:|r ^(1) Blacklist| (2) Personal | (3) nonPersonal"] =
+	"*Kara Listedeki Auralari Engelle, Diger Her Seyi Goster:|r ^(1) Blacklist| (2) Personal | (3) nonPersonal"
+L["*Block Auras Without Duration, Show Everything Else:|r ^(1) blockNoDuration | (2) Personal | (3) nonPersonal"] =
+	"*Suresi Olmayan Auralari Engelle, Diger Her Seyi Goster:|r ^(1) blockNoDuration | (2) Personal | (3) nonPersonal"
 L["*Block Auras Without Duration, Block Blacklisted Auras, Show Everything Else:|r ^(1) blockNoDuration | (2) Blacklist | (3) Personal | (4) nonPersonal"] =
-	true
-L["*Block Everything, Except Your Own Auras:|r ^(1) Personal"] = true
-L["*Block Everything, Except Whitelisted Auras:|r ^(1) Whitelist"] = true
+	"*Suresi Olmayan Auralari Engelle, Kara Listedeki Auralari Engelle, Diger Her Seyi Goster:|r ^(1) blockNoDuration | (2) Blacklist | (3) Personal | (4) nonPersonal"
+L["*Block Everything, Except Your Own Auras:|r ^(1) Personal"] =
+	"*Kendi Auralariniz Haric Her Seyi Engelle:|r ^(1) Personal"
+L["*Block Everything, Except Whitelisted Auras:|r ^(1) Whitelist"] =
+	"*Beyaz Listedeki Auralar Haric Her Seyi Engelle:|r ^(1) Whitelist"
 L["*Block Everything, Except Whitelisted Auras That Are Cast By Yourself:|r ^(1) blockNonPersonal | (2) Whitelist"] =
-	true
+	"*Kendi Kullandiginiz Beyaz Listedeki Auralar Haric Her Seyi Engelle:|r ^(1) blockNonPersonal | (2) Whitelist"
 ----------------------------------
