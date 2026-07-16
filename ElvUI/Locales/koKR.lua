@@ -2,7 +2,7 @@
 local E = unpack(ElvUI)
 local L = E.Libs.ACL:NewLocale("ElvUI", "koKR")
 
-L["Restrict Pings"] = true
+L["Restrict Pings"] = "핑 제한"
 L["Player"] = "플레이어"
 L["Small"] = "작은"
 L["Medium"] = "중간"
@@ -17,8 +17,10 @@ L["UPDATE_REQUEST"] = "There seems to be an issue with your installation. Please
 L[" |cff00ff00bound to |r"] = " |cff00ff00키로 다음의 행동을 실행합니다 |r"
 L["%s frame has a conflicting anchor point. Forcing the Buffs to be attached to the main unitframe."] =
 	"%s 프레임에 버프를 본체 프레임에 강제로 연결하는 충돌 앵커가 있습니다."
-L["%s is attempting to share the Private Profile (%s) with you. Would you like to accept the request?"] = true
-L["%s is attempting to share the Global Profile with you. Would you like to accept the request?"] = true
+L["%s is attempting to share the Private Profile (%s) with you. Would you like to accept the request?"] =
+	"%s 유저가 개인 프로필을 (%s) 전송하려 합니다. 받으시겠습니까?"
+L["%s is attempting to share the Global Profile with you. Would you like to accept the request?"] =
+	"%s 유저가 전체 프로필을 전송하려 합니다. 받으시겠습니까?"
 L["%s is attempting to share the Profile (%s) with you. Would you like to accept the request?"] =
 	"%s 유저가 ElvUI 설정을 (%s) 전송하려 합니다. 받으시겠습니까?"
 L["(Ctrl & Shift Click) Toggle CPU Profiling"] = "(CTRL & Shift 클릭) CPU 프로파일링 전환"
@@ -126,7 +128,7 @@ L["Debuffs"] = "약화 효과"
 L["Deficit:"] = "손해:"
 L["Delete gray items?"] = "잡템을 삭제하시겠습니까?"
 L["Deposit Reagents"] = _G.REAGENTBANK_DEPOSIT
-L["Deposit Warbound Items"] = true
+L["Deposit Warbound Items"] = "전쟁 귀속 아이템 보관"
 L["Disable Warning"] = "비활성화 경고"
 L["Disable"] = "비활성화"
 L["Disabled"] = "장애가 있는"
@@ -157,7 +159,8 @@ L["Error resetting UnitFrame."] = "유닛 프레임 초기화 오류"
 L["EventToastWidget"] = "이벤트 알림"
 L["Experience Bar"] = "경험치 바"
 L["Experience"] = "경험치"
-L["Download complete from %s, would you like to apply changes now?"] = true
+L["Download complete from %s, would you like to apply changes now?"] =
+	"%s 유저에게서 다운로드가 완료되었습니다. 지금 변경 사항을 적용할까요?"
 L["Finished"] = "마침"
 L["Fishy Loot"] = "낚시 전리품"
 L["Focus Aura Bars"] = "주시대상 오라 바"
@@ -166,7 +169,8 @@ L["Focus Frame"] = "주시대상 프레임"
 L["FocusTarget Frame"] = "주시대상의 대상 프레임"
 L["Frame"] = "유닛 프레임"
 L["Friends List"] = "친구 목록"
-L["From time to time you should compare your ElvUI version against the most recent version on our website."] = true
+L["From time to time you should compare your ElvUI version against the most recent version on our website."] =
+	"가끔씩 사용 중인 ElvUI 버전을 저희 웹사이트의 최신 버전과 비교해 보시기 바랍니다."
 L["G"] = "길드"
 L["Ghost"] = "유령"
 L["GM Ticket Frame"] = "GM 요청 번호표"
@@ -202,7 +206,7 @@ L["Importance: |cFF33FF33Low|r"] = "중요도 : |cFF33FF33낮음|r"
 L["Importance: |cffD3CF00Medium|r"] = "중요도: |cffD3CF00보통|r"
 L["Importance: |cffFF3333High|r"] = "중요도: |cffFF3333높음|r"
 L["In Progress"] = "진행 중"
-L["Include Reagents"] = true
+L["Include Reagents"] = "재료 포함"
 L["INCOMPATIBLE_ADDON"] =
 	"%s의 기능이 ElvUI의 %s 모듈과 충돌 됩니다. \n사용할 기능 또는 모듈을 선택하세요."
 L["Installation Complete"] = "설치 완료"
@@ -237,7 +241,7 @@ L["KEY_SPACE"] = "Spc"
 L["Layout Set"] = "레이아웃 설정"
 L["Layout"] = "레이아웃"
 L["Left Chat"] = "왼쪽 패널"
-L["Right Click:"] = true
+L["Right Click:"] = "오른쪽 클릭:"
 L["Left Click:"] = "왼 클릭 :"
 L["Level %d"] = "레벨 %d"
 L["Level"] = "레벨"
@@ -276,7 +280,7 @@ L["New Profile will create a fresh profile for this character."] =
 	"'새로운 프로필'은, 이 캐릭터에 대한 프로필을 만듭니다."
 L["New Profile"] = "새로운 프로필"
 L["No bindings set."] = "설정한 단축키가 없습니다."
-L["No gray items to sell."] = true
+L["No gray items to sell."] = "판매할 잡템이 없습니다."
 L["No Guild"] = "길드 없음"
 L["No Loot"] = "전리품 없음"
 L["None"] = "없음"
@@ -426,7 +430,7 @@ L["To setup chat colors, chat channels and chat font size, right-click the chat 
 L["Toggle Bags"] = "가방 슬롯 보기"
 L["Toggle Chat Frame"] = "패널 표시 전환"
 L["Toggle Configuration"] = "ElvUI 설정 창 열기"
-L["Toggle Mover Mode"] = true
+L["Toggle Mover Mode"] = "프레임 이동 모드 전환"
 L["Toggle Tutorials"] = "튜토리얼 학습"
 L["Toggle Volume Stream"] = "볼륨 조정 열기"
 L["Tooltip"] = "툴팁"
@@ -524,7 +528,7 @@ L["EHELP_COMMANDS"] = ([=[*ElvUI의 주요 명령어 목록입니다.|r 명령�
  */guildlist|r ^minPlayers|r  -  Dumps the sorted list of guilds from the finder.
  */guildapply|r ^"message"|r  -  Applies to the top 5 new guilds with an optional message.
 ]=]):gsub("*", E.InfoColor):gsub("%^", E.InfoColor2)
-L["In Combat"] = true
-L["Out of Combat"] = true
-L["New Mail"] = true
-L["No Mail"] = true
+L["In Combat"] = "전투 중"
+L["Out of Combat"] = "비전투 중"
+L["New Mail"] = "새 편지"
+L["No Mail"] = "편지 없음"

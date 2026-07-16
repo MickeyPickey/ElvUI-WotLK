@@ -2,7 +2,7 @@
 local E = unpack(ElvUI)
 local L = E.Libs.ACL:NewLocale("ElvUI", "zhTW")
 
-L["Restrict Pings"] = true
+L["Restrict Pings"] = "限制指示"
 L["Player"] = "玩家"
 L["Small"] = "小"
 L["Medium"] = "中"
@@ -243,7 +243,7 @@ L["KEY_SPACE"] = "SpB"
 L["Layout Set"] = "版面配置設定"
 L["Layout"] = "介面佈局"
 L["Left Chat"] = "左側對話框"
-L["Right Click:"] = true
+L["Right Click:"] = "滑鼠右鍵:"
 L["Left Click:"] = "滑鼠左鍵："
 L["Level %d"] = "等級 %d"
 L["Level"] = "等級"
@@ -425,7 +425,7 @@ L["To setup chat colors, chat channels and chat font size, right-click the chat 
 L["Toggle Bags"] = "開啟/關閉背包"
 L["Toggle Chat Frame"] = "開關對話框架"
 L["Toggle Configuration"] = "開啟/關閉設定"
-L["Toggle Mover Mode"] = true
+L["Toggle Mover Mode"] = "開啟/關閉移動模式"
 L["Toggle Volume Stream"] = "開啟/關閉音頻流"
 L["Tooltip"] = "浮動提示"
 L["TopCenterWidget"] = "中間上方組件"
@@ -516,7 +516,7 @@ L["EHELP_COMMANDS"] = ([=[一些重要的 *ElvUI|r 命令:
  */guildlist|r ^minPlayers|r  -  Dumps the sorted list of guilds from the finder.
  */guildapply|r ^"message"|r  -  Applies to the top 5 new guilds with an optional message.
 ]=]):gsub("*", E.InfoColor):gsub("%^", E.InfoColor2)
-L["In Combat"] = true
-L["Out of Combat"] = true
-L["New Mail"] = true
-L["No Mail"] = true
+L["In Combat"] = "戰鬥中"
+L["Out of Combat"] = "戰鬥外"
+L["New Mail"] = "新郵件"
+L["No Mail"] = "無郵件"

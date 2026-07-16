@@ -2,7 +2,7 @@
 local E = unpack(ElvUI)
 local L = E.Libs.ACL:NewLocale("ElvUI", "frFR")
 
-L["Restrict Pings"] = true
+L["Restrict Pings"] = "Restreindre les pings"
 L["Player"] = "Joueur"
 L["Small"] = "Petit"
 L["Medium"] = "Moyen"
@@ -17,8 +17,10 @@ L["UPDATE_REQUEST"] = "There seems to be an issue with your installation. Please
 L[" |cff00ff00bound to |r"] = "|cff00ff00lié à |r"
 L["%s frame has a conflicting anchor point. Forcing the Buffs to be attached to the main unitframe."] =
 	"Le cadre %s a un point d'ancrage en conflit. Les améliorations seront forcées à s'attacher à la frame principale de l'unité."
-L["%s is attempting to share the Private Profile (%s) with you. Would you like to accept the request?"] = true
-L["%s is attempting to share the Global Profile with you. Would you like to accept the request?"] = true
+L["%s is attempting to share the Private Profile (%s) with you. Would you like to accept the request?"] =
+	"%s essaie de partager le Profil privé (%s) avec vous. Souhaitez-vous accepter la demande ?"
+L["%s is attempting to share the Global Profile with you. Would you like to accept the request?"] =
+	"%s essaie de partager le Profil global avec vous. Souhaitez-vous accepter la demande ?"
 L["%s is attempting to share the Profile (%s) with you. Would you like to accept the request?"] =
 	"%s tente de partager le Profil (%s) avec vous. Souhaitez-vous accepter la demande ?"
 L["(Ctrl & Shift Click) Toggle CPU Profiling"] = "(Ctrl & Shift Clic) Basculer le profilage du CPU"
@@ -127,7 +129,7 @@ L["Debuffs"] = "Affaiblissements"
 L["Deficit:"] = "Déficit :"
 L["Delete gray items?"] = "Supprimer les objets gris ?"
 L["Deposit Reagents"] = "Déposer les composants"
-L["Deposit Warbound Items"] = true
+L["Deposit Warbound Items"] = "Déposer les objets liés au butin de guerre"
 L["Disable Warning"] = "Désactiver l'avertissement"
 L["Disable"] = "Désactiver"
 L["Disabled"] = "Désactivé"
@@ -158,7 +160,8 @@ L["Error resetting UnitFrame."] = "Erreur lors de la réinitialisation du cadre 
 L["EventToastWidget"] = "Widget de message d'événement"
 L["Experience Bar"] = "Barre d'expérience"
 L["Experience"] = "Expérience"
-L["Download complete from %s, would you like to apply changes now?"] = true
+L["Download complete from %s, would you like to apply changes now?"] =
+	"Téléchargement terminé depuis %s, souhaitez-vous appliquer les modifications maintenant ?"
 L["Finished"] = "Terminé"
 L["Fishy Loot"] = "Butin de pêche"
 L["Focus Aura Bars"] = "Barres d'auras de la focalisation"
@@ -433,7 +436,7 @@ L["To setup chat colors, chat channels and chat font size, right-click the chat 
 L["Toggle Bags"] = "Basculer les sacs"
 L["Toggle Chat Frame"] = "Basculer le cadre de discussion"
 L["Toggle Configuration"] = "Basculer la configuration"
-L["Toggle Mover Mode"] = true
+L["Toggle Mover Mode"] = "Basculer le mode de déplacement"
 L["Toggle Volume Stream"] = "Basculer le flux de volume"
 L["Tooltip"] = "Infobulle"
 L["TopCenterWidget"] = "Widget du centre supérieur"
@@ -529,5 +532,5 @@ L["EHELP_COMMANDS"] = ([=[Voici une liste de toutes les commandes importantes d'
  */guildlist|r ^minPlayers|r  -  Dumps the sorted list of guilds from the finder.
  */guildapply|r ^"message"|r  -  Applies to the top 5 new guilds with an optional message.
 ]=]):gsub("*", E.InfoColor):gsub("%^", E.InfoColor2)
-L["New Mail"] = true
-L["No Mail"] = true
+L["New Mail"] = "Nouveau courrier"
+L["No Mail"] = "Pas de courrier"

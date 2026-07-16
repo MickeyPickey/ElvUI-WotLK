@@ -432,7 +432,7 @@ L["To setup chat colors, chat channels and chat font size, right-click the chat 
 L["Toggle Bags"] = "背包开关"
 L["Toggle Chat Frame"] = "开关聊天框架"
 L["Toggle Configuration"] = "设置开关"
-L["Toggle Mover Mode"] = true
+L["Toggle Mover Mode"] = "移动模式开关"
 L["Toggle Volume Stream"] = "切换音频流"
 L["Tooltip"] = "鼠标提示"
 L["TopCenterWidget"] = "顶部中心小工具"
@@ -525,7 +525,7 @@ L["EHELP_COMMANDS"] = ([=[这里列出了重要的 *ElvUI|r 命令：
  */guildlist|r ^minPlayers|r  -  Dumps the sorted list of guilds from the finder.
  */guildapply|r ^"message"|r  -  Applies to the top 5 new guilds with an optional message.
 ]=]):gsub("*", E.InfoColor):gsub("%^", E.InfoColor2)
-L["In Combat"] = true
-L["Out of Combat"] = true
-L["New Mail"] = true
-L["No Mail"] = true
+L["In Combat"] = "战斗中"
+L["Out of Combat"] = "战斗外"
+L["New Mail"] = "新邮件"
+L["No Mail"] = "没有邮件"

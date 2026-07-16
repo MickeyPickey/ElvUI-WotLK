@@ -8,7 +8,7 @@ L["NONE"] = "Nichts"
 L["GROUP"] = "Gruppe"
 
 -----------  Position  -----------
-L["CENTER"] = true
+L["CENTER"] = "Mitte"
 L["BOTTOM"] = "Unten"
 L["BOTTOMLEFT"] = "Unten Links"
 L["BOTTOMRIGHT"] = "Unten Rechts"
@@ -18,26 +18,28 @@ L["LEFT"] = "Links"
 L["RIGHT"] = "Rechts"
 L["TOP"] = "Oben"
 ------------  Strata  ------------
-L["BACKGROUND"] = true
+L["BACKGROUND"] = "Hintergrund"
 L["DIALOG"] = true
-L["HIGH"] = true
-L["LOW"] = true
-L["MEDIUM"] = true
+L["HIGH"] = "Hoch"
+L["LOW"] = "Niedrig"
+L["MEDIUM"] = "Mittel"
 L["TOOLTIP"] = true
 ----------------------------------
 
-L["BigWigs Spell Rename"] = true
+L["BigWigs Spell Rename"] = "BigWigs Zauberumbenennung"
 L["Allows BigWigs to rename specific encounter spells on your castbar to something better to understand.\nExample: 'Impaling Eruption' becomes 'Frontal' and 'Twilight Massacre' becomes 'Dash'."] =
-	true
+	"Ermöglicht es BigWigs, bestimmte Begegnungszauber auf deiner Zauberleiste in etwas Verständlicheres umzubenennen.\nBeispiel: 'Impaling Eruption' wird zu 'Frontal' und 'Twilight Massacre' wird zu 'Dash'."
 L["Add Aura ID"] = "Aura ID hinzufügen"
 L["Remove Aura"] = "Aura entfernen"
 L["Select Aura"] = "Aura auswählen"
 L["Add an aura to the filter. Aura IDs can be acquired using the tooltip to find the correct ID."] =
 	"Fügt eine Aura zum Filter hinzu. Aura IDs können mit dem Tooltip gefunden werden."
-L["Primary Unit"] = true
-L["Requires the unit to be the primary target to display."] = true
-L["Pet Specific"] = true
-L["Use the profile specific filter Aura Indicator (Pet) instead of the global filter Aura Indicator."] = true
+L["Primary Unit"] = "Primäre Einheit"
+L["Requires the unit to be the primary target to display."] =
+	"Erfordert, dass die Einheit das primäre Ziel für die Anzeige ist."
+L["Pet Specific"] = "Begleiterspezifisch"
+L["Use the profile specific filter Aura Indicator (Pet) instead of the global filter Aura Indicator."] =
+	"Verwende den profilspezifischen Filter Auren-Indikator (Haustier) anstelle des globalen Filters Auren-Indikator."
 L["%s and then %s"] = "%s und dann %s"
 L["24-Hour Time"] = "24-Stunden Format"
 L["2D"] = "2D"
@@ -116,7 +118,7 @@ L["ALT_KEY_TEXT"] = "ALT"
 L["Always Display"] = "Immer anzeigen"
 L["Always Show Player"] = "Spieler immer anzeigen"
 L["Always Show Realm"] = "Server immer anzeigen"
-L["Always Split Professions"] = true
+L["Always Split Professions"] = "Immer Berufe trennen"
 L["Anchor Point"] = "Ankerpunkt"
 L["Anchor"] = "Anker"
 L["Anima Diversion"] = "Anima Umleitung"
@@ -709,12 +711,12 @@ L["ENERGY"] = "Energie"
 L["Energy/Mana Regen Tick"] = "Energie/Mana Regenerations Tick"
 L["Engineering"] = "Ingenieurskunst"
 L["Enhanced PVP Messages"] = "Erweiterte PvP Nachrichten"
-L["Equipped Item"] = true
+L["Equipped Item"] = "Ausgerüstete Gegenstände"
 L["Equipped"] = "Ausgerüstet"
 L["Error decoding data. Import string may be corrupted!"] =
 	"Fehler beim entschlüsseln der Daten. Die importierende Zeichenfolge scheint beschädigt zu sein!"
 L["Error exporting profile!"] = "Fehler beim Exportieren des Profils!"
-L["Quest Progress and Error Text"] = true
+L["Quest Progress and Error Text"] = "Questfortschritt und Fehlertext"
 L["Event Log"] = "Eventlog"
 L["Exclude Name"] = "Ausgeschlossener Name"
 L["Excluded names will not be class colored."] = "Ausgeschlossene Namen werden nicht in Klassenfarbe erscheinen."
@@ -885,7 +887,7 @@ L["Hide Channels"] = "Verstecke Kanäle"
 L["Hide Chat Toggles"] = "Versteckt Chatschalter"
 L["Hide Copy Button"] = "Verstecke Kopiertaste"
 L["Hide Delay"] = "Versteckungsverzögerung"
-L["Hide Quest Progress and Error Text"] = true
+L["Hide Quest Progress and Error Text"] = "Questfortschritt und Fehlermeldungen ausblenden"
 L["Hide Frame"] = "Verstecke Fenster"
 L["Hide Icon"] = "Verstecke Symbol"
 L["Hide In Combat"] = "Im Kampf ausblenden"
@@ -904,7 +906,8 @@ L["Hide Zone Text"] = "Verstecke Zonentext"
 L["Hide"] = "Verstecken"
 L["Hides the bling animation on buttons at the end of the global cooldown."] =
 	"Versteckt das Leuchten auf den Tasten am Ende der globalen Abklingzeit."
-L["Hides the yellow quest progress text and red error text at the top of the screen while in combat."] = true
+L["Hides the yellow quest progress text and red error text at the top of the screen while in combat."] =
+	"Blendet während des Kampfes den gelben Questfortschrittstext und den roten Fehlertext am oberen Bildschirmrand aus."
 L["High"] = "Hoch"
 L["Highlight Color Style"] = "Farbstil hervorheben"
 L["History Size"] = "Historiengröße"
@@ -1464,7 +1467,7 @@ L["Percentage amount for horizontal overlap of Nameplates."] =
 	"Prozentualler Wert für horizontales überlappen der Namensplaketten."
 L["Percentage amount for vertical overlap of Nameplates."] =
 	"Prozentualler Wert für vertikales überlappen der Namensplaketten."
-L["Trading Post"] = true
+L["Trading Post"] = "Handelsposten"
 L["Personal"] = "Persönlich"
 L["Pet Battle"] = "Haustierkampf"
 L["Pet Group"] = "Begleiter Gruppe"
@@ -1866,7 +1869,7 @@ L["Target Indicator Color"] = "Ziel Indikatorfarbe"
 L["Target Info"] = "Zielinfo"
 L["Target Marker Icon"] = "Zielmarkierungssymbol"
 L["Target On Mouse-Down"] = "Ziel bei Maus-Runter"
-L["Target Reticle"] = true
+L["Target Reticle"] = "Zielvisier"
 L["Target units on mouse down rather than mouse up.\n|cffff3333Note:|r If Clique is enabled, this option only effects ElvUI frames if they are not blacklisted in Clique."] =
 	"Ziele auf Einheiten mit gedrückter Maus runter statt Maus hoch.\n|cffff3333Note:|r Wenn Clique aktiviert ist, wirkt sich diese Option nur auf ElvUI Fenster aus, wenn sie nicht auf der schwarzen Liste in Clique stehen."
 L["Target"] = "Ziel"
@@ -2271,30 +2274,40 @@ Für die meisten Anwender ist es allerdigns einfacher, eine tga-Datei in ihren W
 
 ----------  FilterHelp  ----------
 L["*Whitelists:|r ^Boss, Mount, MyPet, OtherPet, Personal, nonPersonal, CastByUnit, notCastByUnit, Dispellable (includes steal-able), notDispellable, CastByNPC, CastByPlayers, BlizzardNameplate|r"] =
-	true
+	"*Whitelists:|r ^Boss, Mount, MyPet, OtherPet, Personal, nonPersonal, CastByUnit, notCastByUnit, Dispellable (beinhaltet stehlbare), notDispellable, CastByNPC, CastByPlayers, BlizzardNameplate|r"
 L["*Blacklists:|r ^blockMount, blockNonPersonal, blockCastByPlayers, blockNoDuration, blockDispellable, blockNotDispellable | A blacklist filter is only effective against filters that come after it in the priority list. It will not block anything from the filters before it.|r"] =
-	true
+	"*Blacklists:|r ^blockMount, blockNonPersonal, blockCastByPlayers, blockNoDuration, blockDispellable, blockNotDispellable | Ein Blacklist-Filter wirkt nur gegen Filter, die in der Prioritätenliste nach ihm kommen. Er blockiert nichts von den Filtern vor ihm.|r"
 L["^A blacklist filter is only effective against filters that come after it in the priority list. It will not block anything from the filters before it."] =
-	true
-L["*Boss:|r ^Auras (debuffs only?) cast by a boss unit.|r"] = true
-L["*Mount:|r ^Auras which are classified as mounts.|r"] = true
-L["*Personal:|r ^Auras cast by yourself.|r"] = true
-L["*nonPersonal:|r ^Auras cast by anyone other than yourself.|r"] = true
+	"^Ein Blacklist-Filter wirkt nur gegen Filter, die in der Prioritätenliste nach ihm kommen. Er blockiert nichts von den Filtern vor ihm."
+L["*Boss:|r ^Auras (debuffs only?) cast by a boss unit.|r"] =
+	"*Boss:|r ^Auren (nur Schwächungszauber?), die von einer Bosseinheiten gewirkt werden.|r"
+L["*Mount:|r ^Auras which are classified as mounts.|r"] = "*Reittier:|r ^Auren, die als Reittiere klassifiziert sind.|r"
+L["*Personal:|r ^Auras cast by yourself.|r"] = "*Persönlich:|r ^Von dir selbst erzeugte Auren.|r"
+L["*nonPersonal:|r ^Auras cast by anyone other than yourself.|r"] =
+	"*nonPersonal:|r ^Auren, die von jemand anderem als dir selbst gewirkt werden.|r"
 L["*CastByUnit:|r ^Auras cast by the unit of the unitframe or nameplate (so on target frame it only shows auras cast by the target unit).|r"] =
-	true
-L["*notCastByUnit:|r ^Auras cast by anyone other than the unit of the unitframe or nameplate.|r"] = true
-L["*Dispellable:|r ^Auras you can either dispel or spellsteal.|r"] = true
-L["*CastByNPC:|r ^Auras cast by any NPC.|r"] = true
-L["*CastByPlayers:|r ^Auras cast by any player-controlled unit (so no NPCs).|r"] = true
+	"*GewirktvonEinheit:|r ^Auren, die von der Einheit im Einheitenrahmen oder Namensschild gewirkt werden (im Zielrahmen werden also nur Auren angezeigt, die von der Zieleinheit gewirkt werden).|r"
+L["*notCastByUnit:|r ^Auras cast by anyone other than the unit of the unitframe or nameplate.|r"] =
+	"*notCastByUnit:|r ^Auren, die von jemand anderem als der Einheit des Einheitenfensters oder der Namensplakette gewirkt werden.|r"
+L["*Dispellable:|r ^Auras you can either dispel or spellsteal.|r"] =
+	"*Bannbar:|r ^Auren, die du entweder bannen oder Zauber stehlen kannst.|r"
+L["*CastByNPC:|r ^Auras cast by any NPC.|r"] = "*CastByNPC:|r ^Auren, die von beliebigen NPCs gewirkt werden.|r"
+L["*CastByPlayers:|r ^Auras cast by any player-controlled unit (so no NPCs).|r"] =
+	"*CastByPlayers:|r ^Auren, die von beliebigen, von Spielern gesteuerten Einheiten gewirkt werden (also keine NPCs).|r"
 L["*blockCastByPlayers:|r ^Blocks any aura that is cast by player-controlled units (so will only show auras cast by NPCs).|r"] =
-	true
-L["*blockNoDuration:|r ^Blocks any aura without a duration.|r"] = true
-L["*blockNonPersonal:|r ^Blocks any aura that is not cast by yourself.|r"] = true
-L["*Show Everything:|r ^Set 'Max Duration' to 0 & Leave Priority List Empty or (1) Personal | (2) nonPersonal"] = true
-L["*Block Blacklisted Auras, Show Everything Else:|r ^(1) Blacklist| (2) Personal | (3) nonPersonal"] = true
-L["*Block Auras Without Duration, Show Everything Else:|r ^(1) blockNoDuration | (2) Personal | (3) nonPersonal"] = true
+	"*blockCastByPlayers:|r ^Blockiert jede Aura, die von spielergesteuerten Einheiten gewirkt wird (zeigt also nur von NSCs gewirkte Auren).|r"
+L["*blockNoDuration:|r ^Blocks any aura without a duration.|r"] =
+	"*blockNoDuration:|r ^Blockiert jede Aura ohne Dauer.|r"
+L["*blockNonPersonal:|r ^Blocks any aura that is not cast by yourself.|r"] =
+	"*blockNonPersonal:|r ^Blockiert jede Aura, die nicht von dir selbst gewirkt wird.|r"
+L["*Show Everything:|r ^Set 'Max Duration' to 0 & Leave Priority List Empty or (1) Personal | (2) nonPersonal"] =
+	"*Alles anzeigen:|r ^Setze 'Max. Dauer' auf 0 & lasse die Prioritätenliste leer oder (1) Personal | (2) nonPersonal"
+L["*Block Blacklisted Auras, Show Everything Else:|r ^(1) Blacklist| (2) Personal | (3) nonPersonal"] =
+	"*Auren auf der Blacklist blockieren, alles andere anzeigen:|r ^(1) Blacklist| (2) Personal | (3) nonPersonal"
+L["*Block Auras Without Duration, Show Everything Else:|r ^(1) blockNoDuration | (2) Personal | (3) nonPersonal"] =
+	"*Auren ohne Dauer blockieren, alles andere anzeigen:|r ^(1) blockNoDuration | (2) Personal | (3) nonPersonal"
 L["*Block Auras Without Duration, Block Blacklisted Auras, Show Everything Else:|r ^(1) blockNoDuration | (2) Blacklist | (3) Personal | (4) nonPersonal"] =
-	true
+	"*Auren ohne Dauer blockieren, Auren auf der Blacklist blockieren, alles andere anzeigen:|r ^(1) blockNoDuration | (2) Blacklist | (3) Personal | (4) nonPersonal"
 L["*Block Everything, Except Your Own Auras:|r ^(1) Personal"] =
 	"*Blockiere alles, außer deiner eigenen Aura:|r ^(1) Persönlich"
 L["*Block Everything, Except Whitelisted Auras:|r ^(1) Whitelist"] =

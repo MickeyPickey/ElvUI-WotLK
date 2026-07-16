@@ -14,8 +14,10 @@ L["UPDATE_REQUEST"] = "There seems to be an issue with your installation. Please
 L[" |cff00ff00bound to |r"] = " |cff00ff00gebunden zu |r"
 L["%s frame has a conflicting anchor point. Forcing the Buffs to be attached to the main unitframe."] =
 	"%s Frame hat einen Ankerpunkt-Konflikt. Die Stärkungszauber werden am Einheitenfenster angeheftet."
-L["%s is attempting to share the Private Profile (%s) with you. Would you like to accept the request?"] = true
-L["%s is attempting to share the Global Profile with you. Would you like to accept the request?"] = true
+L["%s is attempting to share the Private Profile (%s) with you. Would you like to accept the request?"] =
+	"%s versucht, das private Profil (%s) mit Ihnen zu teilen. Möchten Sie die Anfrage annehmen?"
+L["%s is attempting to share the Global Profile with you. Would you like to accept the request?"] =
+	"%s versucht, das globale Profil mit Ihnen zu teilen. Möchten Sie die Anfrage annehmen?"
 L["%s is attempting to share the Profile (%s) with you. Would you like to accept the request?"] =
 	"%s versucht das Profil (%s) mit dir zu teilen. Möchtest du die Anfrage annehmen?"
 L["(Ctrl & Shift Click) Toggle CPU Profiling"] = "(Ctrl & Shift Click) CPU-Profiling umschalten"
@@ -154,7 +156,8 @@ L["Error resetting UnitFrame."] = "Fehler beim Zurücksetzen des Einheitenfester
 L["EventToastWidget"] = "EventToast Widget"
 L["Experience Bar"] = "Erfahrungsleiste"
 L["Experience"] = "Erfahrung"
-L["Download complete from %s, would you like to apply changes now?"] = true
+L["Download complete from %s, would you like to apply changes now?"] =
+	"Download von %s abgeschlossen. Möchtest Du die Änderungen jetzt anwenden?"
 L["Finished"] = "Abgeschlossen"
 L["Fishy Loot"] = "Faule Beute"
 L["Focus Aura Bars"] = "Fokus Aurenleiste"
@@ -275,7 +278,7 @@ L["New Profile will create a fresh profile for this character."] =
 	"Neues Profil erstellt ein ganz neues Profil für diesen Charakter."
 L["New Profile"] = "Neues Profil"
 L["No bindings set."] = "Keine Belegungen gesetzt."
-L["No gray items to sell."] = true
+L["No gray items to sell."] = "Keine grauen Gegenstände zu verkaufen."
 L["No Guild"] = "Keine Gilde"
 L["No Loot"] = "Keine Beute"
 L["None"] = "Nichts"
@@ -422,7 +425,7 @@ L["To setup chat colors, chat channels and chat font size, right-click the chat 
 L["Toggle Bags"] = "Taschen an-/ausschalten"
 L["Toggle Chat Frame"] = "Chatfenster an-/ausschalten"
 L["Toggle Configuration"] = "Konfiguration an-/ausschalten"
-L["Toggle Mover Mode"] = true
+L["Toggle Mover Mode"] = "Mover-Modus umschalten"
 L["Toggle Volume Stream"] = "Lautstärke Stream an-/ausschalten"
 L["Tooltip"] = "Tooltip"
 L["TopCenterWidget"] = "Oberes Center Widget"
@@ -516,7 +519,7 @@ L["EHELP_COMMANDS"] = ([=[Hier ist eine liste aller wichtigen *ElvUI|r Kommandos
  */guildlist|r ^minPlayers|r  -  Dumps the sorted list of guilds from the finder.
  */guildapply|r ^"message"|r  -  Applies to the top 5 new guilds with an optional message.
 ]=]):gsub("*", E.InfoColor):gsub("%^", E.InfoColor2)
-L["In Combat"] = true
-L["Out of Combat"] = true
-L["New Mail"] = true
-L["No Mail"] = true
+L["In Combat"] = "Im Kampf"
+L["Out of Combat"] = "Ausserhalb des Kampfes"
+L["New Mail"] = "Neue Mail"
+L["No Mail"] = "Keine Mail"
